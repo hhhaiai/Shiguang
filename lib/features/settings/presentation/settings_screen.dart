@@ -1323,12 +1323,29 @@ class _CropOverlayPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final overlayPaint = Paint()..color = Colors.black.withValues(alpha: 0.6);
-    final clearPaint = Paint()..blendMode = BlendMode.clear;
+    final top = cropRect.top.clamp(0.0, size.height);
+    final bottom = cropRect.bottom.clamp(0.0, size.height);
+    final left = cropRect.left.clamp(0.0, size.width);
+    final right = cropRect.right.clamp(0.0, size.width);
 
-    canvas.saveLayer(Offset.zero & size, Paint());
-    canvas.drawRect(Offset.zero & size, overlayPaint);
-    canvas.drawRect(cropRect, clearPaint);
-    canvas.restore();
+    if (top > 0) {
+      canvas.drawRect(Rect.fromLTWH(0, 0, size.width, top), overlayPaint);
+    }
+    if (bottom < size.height) {
+      canvas.drawRect(
+        Rect.fromLTWH(0, bottom, size.width, size.height - bottom),
+        overlayPaint,
+      );
+    }
+    if (left > 0 && bottom > top) {
+      canvas.drawRect(Rect.fromLTWH(0, top, left, bottom - top), overlayPaint);
+    }
+    if (right < size.width && bottom > top) {
+      canvas.drawRect(
+        Rect.fromLTWH(right, top, size.width - right, bottom - top),
+        overlayPaint,
+      );
+    }
 
     final borderPaint = Paint()
       ..color = Colors.white
