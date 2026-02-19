@@ -1,0 +1,186 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:8387209989021689740",
+      "lastPropertyId": "8:4102734331881836246",
+      "name": "LocalAccount",
+      "properties": [
+        {
+          "id": "1:7651191783685551095",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:4800505655401967285",
+          "name": "username",
+          "type": 9,
+          "flags": 2080,
+          "indexId": "1:5306775368572039102"
+        },
+        {
+          "id": "4:8444142867025216891",
+          "name": "salt",
+          "type": 9
+        },
+        {
+          "id": "5:9140948016188979973",
+          "name": "createdAt",
+          "type": 6
+        },
+        {
+          "id": "6:1374530709866844278",
+          "name": "lastLoginAt",
+          "type": 6
+        },
+        {
+          "id": "7:1391358188374180405",
+          "name": "avatarPath",
+          "type": 9
+        },
+        {
+          "id": "8:4102734331881836246",
+          "name": "hashedPrivatePin",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:1672874557235948914",
+      "lastPropertyId": "11:8715231777229702110",
+      "name": "LocalReminder",
+      "properties": [
+        {
+          "id": "1:2551175573278444858",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:3084510366033723997",
+          "name": "accountId",
+          "type": 6
+        },
+        {
+          "id": "3:7437584395128343164",
+          "name": "diaryId",
+          "type": 6
+        },
+        {
+          "id": "4:434271976669366204",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "5:8211127878340036937",
+          "name": "body",
+          "type": 9
+        },
+        {
+          "id": "6:5954630141555527682",
+          "name": "triggerAt",
+          "type": 6
+        },
+        {
+          "id": "7:6557925892616308834",
+          "name": "repeatRule",
+          "type": 9
+        },
+        {
+          "id": "8:5726619411539027155",
+          "name": "timezone",
+          "type": 9
+        },
+        {
+          "id": "9:1114222100931515827",
+          "name": "isEnabled",
+          "type": 1
+        },
+        {
+          "id": "10:7948132776375586498",
+          "name": "createdAt",
+          "type": 6
+        },
+        {
+          "id": "11:8715231777229702110",
+          "name": "updatedAt",
+          "type": 6
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:4824835630835980189",
+      "lastPropertyId": "9:7042085998957608069",
+      "name": "VectorDiary",
+      "properties": [
+        {
+          "id": "1:8380703313951790088",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1638055139379730927",
+          "name": "accountId",
+          "type": 6
+        },
+        {
+          "id": "3:1828475112365076525",
+          "name": "rawText",
+          "type": 9
+        },
+        {
+          "id": "4:5684995069897707780",
+          "name": "aiSummary",
+          "type": 9
+        },
+        {
+          "id": "5:6460992397292974401",
+          "name": "aiTags",
+          "type": 9
+        },
+        {
+          "id": "6:9065914301272196941",
+          "name": "embedding",
+          "type": 28,
+          "flags": 8,
+          "indexId": "2:8063833302195115438"
+        },
+        {
+          "id": "7:4430047299906514391",
+          "name": "createdAt",
+          "type": 6
+        },
+        {
+          "id": "8:4367878058869685764",
+          "name": "updatedAt",
+          "type": 6
+        },
+        {
+          "id": "9:7042085998957608069",
+          "name": "isDeleted",
+          "type": 1
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "3:4824835630835980189",
+  "lastIndexId": "2:8063833302195115438",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    4311661093606891552
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}

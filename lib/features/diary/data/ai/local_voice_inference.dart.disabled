@@ -1,0 +1,88 @@
+import 'dart:async';
+import 'dart:io';
+import 'package:flutter/services.dart';
+import 'package:ort/ort.dart';
+import 'package:path_provider/path_provider.dart';
+
+/// Local speech recognition using ONNX Runtime.
+/// Uses SenseVoice model for speech-to-text.
+///
+/// Note: Full on-device ASR requires complex audio preprocessing
+/// and model-specific output parsing. This is a placeholder for
+/// future implementation.
+class LocalVoiceInference {
+  static const String _modelAssetPath =
+      'assets/models/sensevoice-onnx/model_quant.onnx';
+
+  Session? _session;
+  bool _initialized = false;
+  bool _initializing = false;
+
+  Future<void> ensureInitialized() async {
+    if (_initialized && _session != null) return;
+    if (_initializing) return;
+
+    _initializing = true;
+    try {
+      await Ort.ensureInitialized(
+        throwOnFail: true,
+        options: const OrtInitializationOptions(showDebugMessages: false),
+      );
+      final modelPath = await _ensureModelOnDisk();
+
+      _session = await Session.builder()
+          .withIntraThreads(2)
+          .commitFromFile(modelPath);
+
+      _initialized = true;
+    } catch (e) {
+      _initialized = false;
+      rethrow;
+    } finally {
+      _initializing = false;
+    }
+  }
+
+  Future<String> _ensureModelOnDisk() async {
+    final supportDir = await getApplicationSupportDirectory();
+    final modelDir = Directory('${supportDir.path}/models/sensevoice');
+    if (!modelDir.existsSync()) {
+      modelDir.createSync(recursive: true);
+    }
+
+    final modelFile = File('${modelDir.path}/model_quant.onnx');
+    if (!modelFile.existsSync() || modelFile.lengthSync() == 0) {
+      final data = await rootBundle.load(_modelAssetPath);
+      await modelFile.writeAsBytes(data.buffer.asUint8List());
+    }
+    return modelFile.path;
+  }
+
+  /// Process audio PCM data and return recognized text.
+  /// Returns placeholder - full implementation requires model-specific parsing.
+  Future<String> recognize(Uint8List pcmData) async {
+    await ensureInitialized();
+    if (_session == null) {
+      throw StateError('Voice inference not initialized');
+    }
+
+    // Placeholder: Real implementation requires:
+    // 1. Audio preprocessing (VAD, feature extraction)
+    // 2. Model input formatting
+    // 3. Output decoding (CTC/attention decoder)
+
+    // For now, indicate that local recognition needs more work
+    throw UnimplementedError(
+      'On-device ASR requires local server or cloud service. '
+      'Please configure Voice AI endpoint in Settings.',
+    );
+  }
+
+  bool get isInitialized => _initialized;
+
+  void dispose() {
+    _session?.dispose();
+    _session = null;
+    _initialized = false;
+  }
+}

@@ -1,0 +1,2 @@
+assets/models/embedding/bge-small-zh-v1.5-ONNX/onnx/*.onnx_data filter=lfs diff=lfs merge=lfs -text
+third_party/ort_patched/ios/*.a filter=lfs diff=lfs merge=lfs -text
