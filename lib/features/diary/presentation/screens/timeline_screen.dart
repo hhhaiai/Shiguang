@@ -34,7 +34,9 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
 
   Future<void> _preloadLocalAsr() async {
     final settings = ref.read(settingsProvider);
-    if (!settings.preferLocalAi) return;
+    if (settings.voiceRecognitionEngine != VoiceRecognitionEngine.localModel) {
+      return;
+    }
 
     final preloader = SenseVoiceOnnxLocalVoiceAI();
     try {
@@ -49,11 +51,6 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
     } finally {
       preloader.dispose();
     }
-  }
-
-  void _logout() {
-    ref.read(authProvider.notifier).logout();
-    context.go('/');
   }
 
   void _openDiaryInput() {
@@ -73,7 +70,7 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('${currentUser?.username ?? "User"}'),
+        title: Text(currentUser?.username ?? 'User'),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
@@ -210,9 +207,9 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
   }
 
   void _showAiChat(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute<void>(builder: (_) => const AiChatScreen()),
-    );
+    Navigator.of(
+      context,
+    ).push(MaterialPageRoute<void>(builder: (_) => const AiChatScreen()));
   }
 
   void _openSearchPage(BuildContext context) {
@@ -323,138 +320,135 @@ class _TimelineSearchPageState extends ConsumerState<_TimelineSearchPage> {
         ),
         body: Column(
           children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
-            child: TextField(
-              controller: _searchController,
-              focusNode: _searchFocusNode,
-              textInputAction: TextInputAction.search,
-              autofocus: true,
-              onTap: () => requestKeyboardFocus(
-                context,
-                _searchFocusNode,
-              ),
-              onSubmitted: (_) => unawaited(_runSearch()),
-              decoration: InputDecoration(
-                hintText: '搜索你的记录...',
-                prefixIcon: const Icon(Icons.search),
-                suffixIcon: query.isEmpty
-                    ? null
-                    : IconButton(
-                        icon: const Icon(Icons.close),
-                        onPressed: _clearSearchInput,
-                      ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+              child: TextField(
+                controller: _searchController,
+                focusNode: _searchFocusNode,
+                textInputAction: TextInputAction.search,
+                autofocus: true,
+                onTap: () => requestKeyboardFocus(context, _searchFocusNode),
+                onSubmitted: (_) => unawaited(_runSearch()),
+                decoration: InputDecoration(
+                  hintText: '搜索你的记录...',
+                  prefixIcon: const Icon(Icons.search),
+                  suffixIcon: query.isEmpty
+                      ? null
+                      : IconButton(
+                          icon: const Icon(Icons.close),
+                          onPressed: _clearSearchInput,
+                        ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  isDense: true,
                 ),
-                isDense: true,
               ),
             ),
-          ),
-          Expanded(
-            child: _loading
-                ? const Center(child: CircularProgressIndicator())
-                : _hasSearched
-                ? ListView(
-                    children: [
-                      _SectionHeader(
-                        title: '完整匹配',
-                        count: exactMatches.length,
-                        icon: Icons.check_circle_outline,
-                      ),
-                      if (exactMatches.isEmpty)
-                        const _EmptySection(message: '无完整匹配结果')
-                      else
-                        _SearchResultWrap(
-                          diaries: exactMatches,
-                          query: query,
-                          matchTypeLabel: '完整匹配',
-                          matchTypeColor: Colors.green,
+            Expanded(
+              child: _loading
+                  ? const Center(child: CircularProgressIndicator())
+                  : _hasSearched
+                  ? ListView(
+                      children: [
+                        _SectionHeader(
+                          title: '完整匹配',
+                          count: exactMatches.length,
+                          icon: Icons.check_circle_outline,
                         ),
-                      const Divider(height: 24, thickness: 1),
-                      _SectionHeader(
-                        title: '模糊匹配',
-                        count: fuzzyMatches.length,
-                        icon: Icons.blur_on,
-                      ),
-                      if (fuzzyMatches.isEmpty)
-                        const _EmptySection(message: '无模糊匹配结果')
-                      else
-                        _SearchResultWrap(
-                          diaries: fuzzyMatches,
-                          query: query,
-                          matchTypeLabel: '向量匹配',
-                          matchTypeColor: Colors.deepPurple,
+                        if (exactMatches.isEmpty)
+                          const _EmptySection(message: '无完整匹配结果')
+                        else
+                          _SearchResultWrap(
+                            diaries: exactMatches,
+                            query: query,
+                            matchTypeLabel: '完整匹配',
+                            matchTypeColor: Colors.green,
+                          ),
+                        const Divider(height: 24, thickness: 1),
+                        _SectionHeader(
+                          title: '模糊匹配',
+                          count: fuzzyMatches.length,
+                          icon: Icons.blur_on,
                         ),
-                      const Divider(height: 24, thickness: 1),
-                      _SectionHeader(
-                        title: '网络匹配',
-                        count: networkMatches.length,
-                        icon: Icons.public,
-                      ),
-                      if (_networkLoading)
-                        const Padding(
-                          padding: EdgeInsets.fromLTRB(16, 0, 16, 12),
-                          child: LinearProgressIndicator(minHeight: 2),
+                        if (fuzzyMatches.isEmpty)
+                          const _EmptySection(message: '无模糊匹配结果')
+                        else
+                          _SearchResultWrap(
+                            diaries: fuzzyMatches,
+                            query: query,
+                            matchTypeLabel: '向量匹配',
+                            matchTypeColor: Colors.deepPurple,
+                          ),
+                        const Divider(height: 24, thickness: 1),
+                        _SectionHeader(
+                          title: '网络匹配',
+                          count: networkMatches.length,
+                          icon: Icons.public,
                         ),
-                      if (networkMatches.isEmpty)
-                        const _EmptySection(message: '网络匹配未启用（本地优先）')
-                      else
-                        _SearchResultWrap(
-                          diaries: networkMatches,
-                          query: query,
-                          matchTypeLabel: '网络匹配',
-                          matchTypeColor: Colors.blue,
-                        ),
-                      const SizedBox(height: 16),
-                    ],
-                  )
-                : (history.isEmpty
-                      ? const Center(child: Text('暂无历史搜索'))
-                      : ListView(
-                          padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-                          children: [
-                            Row(
-                              children: [
-                                const Text(
-                                  '历史搜索',
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                                const Spacer(),
-                                TextButton(
-                                  onPressed: () {
-                                    ref
-                                        .read(settingsProvider.notifier)
-                                        .clearSearchHistory();
-                                  },
-                                  child: const Text('清空'),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 6),
-                            Wrap(
-                              spacing: 8,
-                              runSpacing: 8,
-                              children: history
-                                  .map(
-                                    (item) => ActionChip(
-                                      avatar: const Icon(
-                                        Icons.history,
-                                        size: 16,
-                                      ),
-                                      label: Text(item),
-                                      onPressed: () =>
-                                          unawaited(_runSearch(item)),
+                        if (_networkLoading)
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(16, 0, 16, 12),
+                            child: LinearProgressIndicator(minHeight: 2),
+                          ),
+                        if (networkMatches.isEmpty)
+                          const _EmptySection(message: '网络匹配未启用（本地优先）')
+                        else
+                          _SearchResultWrap(
+                            diaries: networkMatches,
+                            query: query,
+                            matchTypeLabel: '网络匹配',
+                            matchTypeColor: Colors.blue,
+                          ),
+                        const SizedBox(height: 16),
+                      ],
+                    )
+                  : (history.isEmpty
+                        ? const Center(child: Text('暂无历史搜索'))
+                        : ListView(
+                            padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+                            children: [
+                              Row(
+                                children: [
+                                  const Text(
+                                    '历史搜索',
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w700,
                                     ),
-                                  )
-                                  .toList(growable: false),
-                            ),
-                          ],
-                        )),
-          ),
+                                  ),
+                                  const Spacer(),
+                                  TextButton(
+                                    onPressed: () {
+                                      ref
+                                          .read(settingsProvider.notifier)
+                                          .clearSearchHistory();
+                                    },
+                                    child: const Text('清空'),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 6),
+                              Wrap(
+                                spacing: 8,
+                                runSpacing: 8,
+                                children: history
+                                    .map(
+                                      (item) => ActionChip(
+                                        avatar: const Icon(
+                                          Icons.history,
+                                          size: 16,
+                                        ),
+                                        label: Text(item),
+                                        onPressed: () =>
+                                            unawaited(_runSearch(item)),
+                                      ),
+                                    )
+                                    .toList(growable: false),
+                              ),
+                            ],
+                          )),
+            ),
           ],
         ),
       ),

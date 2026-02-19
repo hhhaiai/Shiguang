@@ -16,6 +16,7 @@ import '../../../../core/ui/keyboard.dart';
 import '../../../settings/data/settings_provider.dart';
 import '../../data/ai/sensevoice_local_voice_ai.dart';
 import '../../data/ai/sensevoice_onnx_local_voice_ai.dart';
+import '../../data/ai/system_speech_voice_ai.dart';
 import '../../domain/interfaces/i_local_voice_ai.dart';
 
 class DiaryInputSheet extends ConsumerStatefulWidget {
@@ -340,7 +341,10 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
 
   Future<void> _preloadVoiceAi() async {
     if (!mounted) return;
-    if (!_shouldUseOnDeviceVoice) return;
+    final settings = ref.read(settingsProvider);
+    if (settings.voiceRecognitionEngine != VoiceRecognitionEngine.localModel) {
+      return;
+    }
 
     _voiceAI ??= _createVoiceAi();
     final ai = _voiceAI;
@@ -419,6 +423,16 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
     }
     _bindVoiceStream();
 
+    if (activeVoiceAi != null && !activeVoiceAi.requiresPcmStream) {
+      if (!mounted) return;
+      setState(() {
+        _isRecording = true;
+        _asrReady = true;
+      });
+      requestKeyboardFocus(context, target.focusNode);
+      return;
+    }
+
     try {
       _recorderStateSubscription = _audioRecorder.onStateChanged().listen((
         state,
@@ -494,14 +508,17 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
 
   ILocalVoiceAI _createVoiceAi() {
     final settings = ref.read(settingsProvider);
-    return _shouldUseOnDeviceVoice
-        ? SenseVoiceOnnxLocalVoiceAI()
-        : SenseVoiceLocalVoiceAI(endpoint: settings.voiceAiEndpoint);
-  }
-
-  bool get _shouldUseOnDeviceVoice {
-    final settings = ref.read(settingsProvider);
-    return settings.preferLocalAi;
+    switch (settings.voiceRecognitionEngine) {
+      case VoiceRecognitionEngine.localModel:
+        return SenseVoiceOnnxLocalVoiceAI();
+      case VoiceRecognitionEngine.systemNative:
+        return SystemSpeechVoiceAI();
+      case VoiceRecognitionEngine.endpointCloud:
+        return SenseVoiceLocalVoiceAI(
+          endpoint: settings.voiceAiEndpoint,
+          enforceLocalEndpoint: false,
+        );
+    }
   }
 
   void _bindVoiceStream() {

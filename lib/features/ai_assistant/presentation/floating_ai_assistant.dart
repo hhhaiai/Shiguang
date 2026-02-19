@@ -7,6 +7,7 @@ import '../../../core/ui/keyboard.dart';
 import '../../settings/data/settings_provider.dart';
 import '../../diary/data/ai/sensevoice_onnx_local_voice_ai.dart';
 import '../../diary/data/ai/sensevoice_local_voice_ai.dart';
+import '../../diary/data/ai/system_speech_voice_ai.dart';
 import '../../diary/data/ai/llm_providers.dart';
 import '../../diary/domain/interfaces/i_local_voice_ai.dart';
 import '../../diary/domain/interfaces/i_local_llm.dart';
@@ -80,10 +81,20 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
     });
 
     final settings = ref.read(settingsProvider);
-    final useOnDevice = settings.preferLocalAi;
-    _voiceAI = useOnDevice
-        ? SenseVoiceOnnxLocalVoiceAI()
-        : SenseVoiceLocalVoiceAI(endpoint: settings.voiceAiEndpoint);
+    switch (settings.voiceRecognitionEngine) {
+      case VoiceRecognitionEngine.localModel:
+        _voiceAI = SenseVoiceOnnxLocalVoiceAI();
+        break;
+      case VoiceRecognitionEngine.systemNative:
+        _voiceAI = SystemSpeechVoiceAI();
+        break;
+      case VoiceRecognitionEngine.endpointCloud:
+        _voiceAI = SenseVoiceLocalVoiceAI(
+          endpoint: settings.voiceAiEndpoint,
+          enforceLocalEndpoint: false,
+        );
+        break;
+    }
     if (_voiceAI is SenseVoiceOnnxLocalVoiceAI) {
       unawaited((_voiceAI! as SenseVoiceOnnxLocalVoiceAI).prepare());
     }
@@ -112,6 +123,10 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
         unawaited(_stopListening(submitFallback: false));
       },
     );
+
+    if (_voiceAI != null && !_voiceAI!.requiresPcmStream) {
+      return;
+    }
 
     try {
       final audioStream = await _audioRecorder.startStream(

@@ -151,6 +151,9 @@ class SenseVoiceLocalVoiceAI implements ILocalVoiceAI {
   bool get isListening => _isListening;
 
   @override
+  bool get requiresPcmStream => true;
+
+  @override
   void dispose() {
     stop();
     _controller?.close();

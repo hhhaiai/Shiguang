@@ -12,6 +12,7 @@ import '../../../settings/data/settings_provider.dart';
 import '../../data/ai/llm_providers.dart';
 import '../../data/ai/sensevoice_local_voice_ai.dart';
 import '../../data/ai/sensevoice_onnx_local_voice_ai.dart';
+import '../../data/ai/system_speech_voice_ai.dart';
 import '../../domain/interfaces/i_local_llm.dart';
 import '../../domain/interfaces/i_local_voice_ai.dart';
 
@@ -92,6 +93,16 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
     }
     _bindVoiceStream();
 
+    if (activeVoiceAi != null && !activeVoiceAi.requiresPcmStream) {
+      if (!mounted) return;
+      setState(() {
+        _isRecording = true;
+        _asrReady = true;
+      });
+      requestKeyboardFocus(context, _inputFocusNode);
+      return;
+    }
+
     try {
       _recorderStateSubscription = _audioRecorder.onStateChanged().listen((
         state,
@@ -154,10 +165,17 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
 
   ILocalVoiceAI _createVoiceAi() {
     final settings = ref.read(settingsProvider);
-    final useOnDevice = settings.preferLocalAi;
-    return useOnDevice
-        ? SenseVoiceOnnxLocalVoiceAI()
-        : SenseVoiceLocalVoiceAI(endpoint: settings.voiceAiEndpoint);
+    switch (settings.voiceRecognitionEngine) {
+      case VoiceRecognitionEngine.localModel:
+        return SenseVoiceOnnxLocalVoiceAI();
+      case VoiceRecognitionEngine.systemNative:
+        return SystemSpeechVoiceAI();
+      case VoiceRecognitionEngine.endpointCloud:
+        return SenseVoiceLocalVoiceAI(
+          endpoint: settings.voiceAiEndpoint,
+          enforceLocalEndpoint: false,
+        );
+    }
   }
 
   void _bindVoiceStream() {

@@ -17,6 +17,10 @@ abstract class ILocalVoiceAI {
   /// Check if currently listening
   bool get isListening;
 
+  /// Whether this engine needs external PCM frames through [sendAudio].
+  /// System speech services can return `false`.
+  bool get requiresPcmStream => true;
+
   /// Dispose resources
   void dispose();
 }

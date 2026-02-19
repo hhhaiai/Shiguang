@@ -6,13 +6,19 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:share_plus/share_plus.dart';
 
+import '../../../core/objectbox/objectbox_providers.dart';
 import '../../../core/ui/keyboard.dart';
 import '../../auth/presentation/controllers/auth_controller.dart';
 import '../../diary/data/ai/qwen_gguf_local_llm.dart';
+import '../../diary/presentation/controllers/timeline_controller.dart';
+import '../../reminder/presentation/controllers/reminder_controller.dart';
+import '../data/local_sync_service.dart';
 import '../data/settings_provider.dart';
 
 class SettingsScreen extends ConsumerStatefulWidget {
@@ -34,6 +40,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       maxHeight: 2048,
     );
     if (image == null) return;
+    if (!mounted) return;
 
     final croppedPath = await Navigator.of(context).push<String?>(
       MaterialPageRoute(
@@ -277,51 +284,48 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           const Divider(),
           _buildSectionHeader(context, 'AI Service'),
           ListTile(
-            leading: const Icon(Icons.shield),
-            title: const Text('Local-Only Policy'),
-            subtitle: Text(
-              Platform.isAndroid
-                  ? 'Android: only loopback endpoints are allowed'
-                  : 'iOS: loopback and private LAN endpoints are allowed',
+            leading: const Icon(Icons.chat_bubble_outline),
+            title: const Text('AI 对话模型来源'),
+            subtitle: Text(_chatProviderLabel(settings.chatModelProvider)),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+            child: DropdownButtonFormField<ChatModelProvider>(
+              value: settings.chatModelProvider,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: '聊天模型',
+              ),
+              items: ChatModelProvider.values
+                  .map(
+                    (provider) => DropdownMenuItem(
+                      value: provider,
+                      child: Text(_chatProviderLabel(provider)),
+                    ),
+                  )
+                  .toList(growable: false),
+              onChanged: (value) {
+                if (value == null) return;
+                ref.read(settingsProvider.notifier).setChatModelProvider(value);
+              },
             ),
           ),
-          ListTile(
-            leading: const Icon(Icons.smart_toy_outlined),
-            title: const Text('Qwen GGUF Runtime'),
-            subtitle: Text(
-              Platform.isAndroid
-                  ? 'Android local model: ${QwenGgufLocalLLM.modelFileName}'
-                  : 'Current platform falls back to endpoint mode',
-            ),
-          ),
-          ListTile(
-            leading: const Icon(Icons.mic),
-            title: const Text('Voice AI Endpoint'),
-            subtitle: Text(
-              settings.voiceAiEndpoint,
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-            onTap: () => _showEndpointDialog(
-              context,
-              ref,
-              'Voice AI Endpoint',
-              settings.voiceAiEndpoint,
-              (value) =>
-                  ref.read(settingsProvider.notifier).setVoiceAiEndpoint(value),
-            ),
-          ),
-          ListTile(
-            leading: const Icon(Icons.hub),
-            title: const Text('Embedding Model'),
-            subtitle: Text(
-              'On-device bge-small-zh-v1.5-ONNX (model.onnx + model.onnx_data)',
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-          ),
-          if (!settings.preferLocalAi || !Platform.isAndroid)
+          if (settings.chatModelProvider == ChatModelProvider.local)
             ListTile(
-              leading: const Icon(Icons.chat_bubble_outline),
-              title: const Text('LLM Endpoint'),
+              leading: const Icon(Icons.memory),
+              title: const Text('本地模型'),
+              subtitle: Text(
+                Platform.isAndroid
+                    ? 'Android: ${QwenGgufLocalLLM.modelFileName}'
+                    : Platform.isIOS
+                    ? 'iOS: fllama 本地模型'
+                    : 'Desktop: 使用本地 Ollama Endpoint',
+              ),
+            ),
+          if (settings.chatModelProvider == ChatModelProvider.ollama) ...[
+            ListTile(
+              leading: const Icon(Icons.hub),
+              title: const Text('Ollama Endpoint'),
               subtitle: Text(
                 settings.llmEndpoint,
                 style: Theme.of(context).textTheme.bodySmall,
@@ -329,24 +333,334 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               onTap: () => _showEndpointDialog(
                 context,
                 ref,
-                'LLM Endpoint',
+                'Ollama Endpoint',
                 settings.llmEndpoint,
                 (value) =>
                     ref.read(settingsProvider.notifier).setLlmEndpoint(value),
               ),
             ),
-          SwitchListTile(
-            secondary: const Icon(Icons.memory),
-            title: const Text('Prefer Local AI'),
-            subtitle: Text(
-              Platform.isAndroid
-                  ? 'Use on-device ASR + Embedding + Qwen GGUF'
-                  : 'Use local endpoint ASR + endpoint LLM + local embedding',
+            ListTile(
+              leading: const Icon(Icons.token),
+              title: const Text('Ollama Model'),
+              subtitle: Text(
+                settings.llmModel,
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+              onTap: () => _showTextDialog(
+                context,
+                title: 'Ollama Model',
+                currentValue: settings.llmModel,
+                hintText: 'qwen2.5:0.5b',
+                onSave: (value) =>
+                    ref.read(settingsProvider.notifier).setLlmModel(value),
+              ),
             ),
-            value: settings.preferLocalAi,
-            onChanged: (value) {
-              ref.read(settingsProvider.notifier).setPreferLocalAi(value);
-            },
+          ],
+          if (settings.chatModelProvider == ChatModelProvider.openai) ...[
+            ListTile(
+              leading: const Icon(Icons.link),
+              title: const Text('OpenAI Endpoint'),
+              subtitle: Text(
+                settings.openAiEndpoint,
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+              onTap: () => _showTextDialog(
+                context,
+                title: 'OpenAI Endpoint',
+                currentValue: settings.openAiEndpoint,
+                hintText: 'https://api.openai.com/v1',
+                onSave: (value) => ref
+                    .read(settingsProvider.notifier)
+                    .setOpenAiEndpoint(value),
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.vpn_key_outlined),
+              title: const Text('OpenAI API Key'),
+              subtitle: Text(_maskSecret(settings.openAiApiKey)),
+              onTap: () => _showTextDialog(
+                context,
+                title: 'OpenAI API Key',
+                currentValue: settings.openAiApiKey,
+                hintText: 'sk-...',
+                obscureText: true,
+                onSave: (value) =>
+                    ref.read(settingsProvider.notifier).setOpenAiApiKey(value),
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.token),
+              title: const Text('OpenAI Model'),
+              subtitle: Text(settings.openAiModel),
+              onTap: () => _showTextDialog(
+                context,
+                title: 'OpenAI Model',
+                currentValue: settings.openAiModel,
+                hintText: 'gpt-4o-mini',
+                onSave: (value) =>
+                    ref.read(settingsProvider.notifier).setOpenAiModel(value),
+              ),
+            ),
+          ],
+          if (settings.chatModelProvider == ChatModelProvider.gemini) ...[
+            ListTile(
+              leading: const Icon(Icons.link),
+              title: const Text('Gemini Endpoint'),
+              subtitle: Text(
+                settings.geminiEndpoint,
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+              onTap: () => _showTextDialog(
+                context,
+                title: 'Gemini Endpoint',
+                currentValue: settings.geminiEndpoint,
+                hintText: 'https://generativelanguage.googleapis.com/v1beta',
+                onSave: (value) => ref
+                    .read(settingsProvider.notifier)
+                    .setGeminiEndpoint(value),
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.vpn_key_outlined),
+              title: const Text('Gemini API Key'),
+              subtitle: Text(_maskSecret(settings.geminiApiKey)),
+              onTap: () => _showTextDialog(
+                context,
+                title: 'Gemini API Key',
+                currentValue: settings.geminiApiKey,
+                hintText: 'AIza...',
+                obscureText: true,
+                onSave: (value) =>
+                    ref.read(settingsProvider.notifier).setGeminiApiKey(value),
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.token),
+              title: const Text('Gemini Model'),
+              subtitle: Text(settings.geminiModel),
+              onTap: () => _showTextDialog(
+                context,
+                title: 'Gemini Model',
+                currentValue: settings.geminiModel,
+                hintText: 'gemini-1.5-flash',
+                onSave: (value) =>
+                    ref.read(settingsProvider.notifier).setGeminiModel(value),
+              ),
+            ),
+          ],
+          if (settings.chatModelProvider == ChatModelProvider.anthropic) ...[
+            ListTile(
+              leading: const Icon(Icons.link),
+              title: const Text('Anthropic Endpoint'),
+              subtitle: Text(
+                settings.anthropicEndpoint,
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+              onTap: () => _showTextDialog(
+                context,
+                title: 'Anthropic Endpoint',
+                currentValue: settings.anthropicEndpoint,
+                hintText: 'https://api.anthropic.com/v1',
+                onSave: (value) => ref
+                    .read(settingsProvider.notifier)
+                    .setAnthropicEndpoint(value),
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.vpn_key_outlined),
+              title: const Text('Anthropic API Key'),
+              subtitle: Text(_maskSecret(settings.anthropicApiKey)),
+              onTap: () => _showTextDialog(
+                context,
+                title: 'Anthropic API Key',
+                currentValue: settings.anthropicApiKey,
+                hintText: 'sk-ant-...',
+                obscureText: true,
+                onSave: (value) => ref
+                    .read(settingsProvider.notifier)
+                    .setAnthropicApiKey(value),
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.token),
+              title: const Text('Anthropic Model'),
+              subtitle: Text(settings.anthropicModel),
+              onTap: () => _showTextDialog(
+                context,
+                title: 'Anthropic Model',
+                currentValue: settings.anthropicModel,
+                hintText: 'claude-3-5-sonnet-latest',
+                onSave: (value) => ref
+                    .read(settingsProvider.notifier)
+                    .setAnthropicModel(value),
+              ),
+            ),
+          ],
+          if (settings.chatModelProvider == ChatModelProvider.custom) ...[
+            ListTile(
+              leading: const Icon(Icons.settings_suggest_outlined),
+              title: const Text('Custom 协议'),
+              subtitle: Text(_customProtocolLabel(settings.customLlmProtocol)),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+              child: DropdownButtonFormField<CustomLlmProtocol>(
+                value: settings.customLlmProtocol,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: '协议类型',
+                ),
+                items: CustomLlmProtocol.values
+                    .map(
+                      (protocol) => DropdownMenuItem(
+                        value: protocol,
+                        child: Text(_customProtocolLabel(protocol)),
+                      ),
+                    )
+                    .toList(growable: false),
+                onChanged: (value) {
+                  if (value == null) return;
+                  ref
+                      .read(settingsProvider.notifier)
+                      .setCustomLlmProtocol(value);
+                },
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.link),
+              title: const Text('Custom Endpoint'),
+              subtitle: Text(
+                settings.customEndpoint,
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+              onTap: () => _showTextDialog(
+                context,
+                title: 'Custom Endpoint',
+                currentValue: settings.customEndpoint,
+                hintText: 'https://your-model-endpoint/v1',
+                onSave: (value) => ref
+                    .read(settingsProvider.notifier)
+                    .setCustomEndpoint(value),
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.vpn_key_outlined),
+              title: const Text('Custom API Key'),
+              subtitle: Text(_maskSecret(settings.customApiKey)),
+              onTap: () => _showTextDialog(
+                context,
+                title: 'Custom API Key',
+                currentValue: settings.customApiKey,
+                hintText: 'Optional for local/custom servers',
+                obscureText: true,
+                onSave: (value) =>
+                    ref.read(settingsProvider.notifier).setCustomApiKey(value),
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.token),
+              title: const Text('Custom Model'),
+              subtitle: Text(settings.customModel),
+              onTap: () => _showTextDialog(
+                context,
+                title: 'Custom Model',
+                currentValue: settings.customModel,
+                hintText: 'Model ID',
+                onSave: (value) =>
+                    ref.read(settingsProvider.notifier).setCustomModel(value),
+              ),
+            ),
+          ],
+          const Divider(),
+          ListTile(
+            leading: const Icon(Icons.mic),
+            title: const Text('语音识别引擎'),
+            subtitle: Text(_voiceEngineLabel(settings.voiceRecognitionEngine)),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+            child: SegmentedButton<VoiceRecognitionEngine>(
+              segments: const [
+                ButtonSegment(
+                  value: VoiceRecognitionEngine.localModel,
+                  icon: Icon(Icons.memory_outlined),
+                  label: Text('本地模型'),
+                ),
+                ButtonSegment(
+                  value: VoiceRecognitionEngine.systemNative,
+                  icon: Icon(Icons.phone_android_outlined),
+                  label: Text('系统识别'),
+                ),
+                ButtonSegment(
+                  value: VoiceRecognitionEngine.endpointCloud,
+                  icon: Icon(Icons.cloud_outlined),
+                  label: Text('端点识别'),
+                ),
+              ],
+              selected: {settings.voiceRecognitionEngine},
+              onSelectionChanged: (selection) {
+                if (selection.isEmpty) return;
+                ref
+                    .read(settingsProvider.notifier)
+                    .setVoiceRecognitionEngine(selection.first);
+              },
+            ),
+          ),
+          if (settings.voiceRecognitionEngine ==
+              VoiceRecognitionEngine.localModel)
+            const ListTile(
+              leading: Icon(Icons.hub_outlined),
+              title: Text('本地语音模型'),
+              subtitle: Text('SenseVoice ONNX（端侧）'),
+            ),
+          if (settings.voiceRecognitionEngine ==
+              VoiceRecognitionEngine.systemNative)
+            const ListTile(
+              leading: Icon(Icons.info_outline),
+              title: Text('系统语音识别'),
+              subtitle: Text('使用 Android / iOS 内置识别服务（可能走云端）'),
+            ),
+          if (settings.voiceRecognitionEngine ==
+              VoiceRecognitionEngine.endpointCloud)
+            ListTile(
+              leading: const Icon(Icons.cloud_outlined),
+              title: const Text('Voice AI Endpoint'),
+              subtitle: Text(
+                settings.voiceAiEndpoint,
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+              onTap: () => _showEndpointDialog(
+                context,
+                ref,
+                'Voice AI Endpoint',
+                settings.voiceAiEndpoint,
+                (value) => ref
+                    .read(settingsProvider.notifier)
+                    .setVoiceAiEndpoint(value),
+              ),
+            ),
+          const ListTile(
+            leading: Icon(Icons.hub),
+            title: Text('Embedding Model'),
+            subtitle: Text(
+              'On-device bge-small-zh-v1.5-ONNX (model.onnx + model.onnx_data)',
+            ),
+          ),
+          const Divider(),
+          _buildSectionHeader(context, '多端同步'),
+          ListTile(
+            leading: const Icon(Icons.sync_alt_outlined),
+            title: const Text('发送到其他设备（LocalSend）'),
+            subtitle: const Text('导出本地备份并通过分享面板发送'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => _shareBackupViaLocalSend(ref),
+          ),
+          ListTile(
+            leading: const Icon(Icons.download_outlined),
+            title: const Text('从 LocalSend 接收并导入'),
+            subtitle: const Text('选择接收到的备份 JSON，合并导入本地数据'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => _importBackupViaLocalSend(ref),
           ),
           const Divider(),
           _buildSectionHeader(context, 'Auto Generation'),
@@ -422,6 +736,55 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     );
   }
 
+  String _chatProviderLabel(ChatModelProvider provider) {
+    switch (provider) {
+      case ChatModelProvider.local:
+        return '本地模型';
+      case ChatModelProvider.openai:
+        return 'OpenAI';
+      case ChatModelProvider.gemini:
+        return 'Gemini';
+      case ChatModelProvider.anthropic:
+        return 'Anthropic (Claude)';
+      case ChatModelProvider.ollama:
+        return 'Ollama';
+      case ChatModelProvider.custom:
+        return '自定义';
+    }
+  }
+
+  String _customProtocolLabel(CustomLlmProtocol protocol) {
+    switch (protocol) {
+      case CustomLlmProtocol.openai:
+        return 'OpenAI Compatible';
+      case CustomLlmProtocol.gemini:
+        return 'Gemini';
+      case CustomLlmProtocol.anthropic:
+        return 'Anthropic';
+      case CustomLlmProtocol.ollama:
+        return 'Ollama';
+    }
+  }
+
+  String _voiceEngineLabel(VoiceRecognitionEngine engine) {
+    switch (engine) {
+      case VoiceRecognitionEngine.localModel:
+        return '本地模型（默认）';
+      case VoiceRecognitionEngine.systemNative:
+        return '系统识别（Android/iOS）';
+      case VoiceRecognitionEngine.endpointCloud:
+        return '端点识别（Cloud/WS）';
+    }
+  }
+
+  String _maskSecret(String value) {
+    final trimmed = value.trim();
+    if (trimmed.isEmpty) return '未设置';
+    if (trimmed.length <= 8) return '*' * trimmed.length;
+    final suffix = trimmed.substring(trimmed.length - 4);
+    return '********$suffix';
+  }
+
   Future<void> _showEndpointDialog(
     BuildContext context,
     WidgetRef ref,
@@ -444,9 +807,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           decoration: InputDecoration(
             border: const OutlineInputBorder(),
             hintText: 'ws://127.0.0.1:8008/... or http://127.0.0.1:11434',
-            helperText: Platform.isAndroid
-                ? 'Allowed on Android: 127.0.0.1 / localhost'
-                : 'Allowed on iOS: 127.0.0.1 / localhost / private LAN IP',
+            helperText: 'Supports local/LAN/public endpoints',
           ),
         ),
         actions: [
@@ -467,6 +828,185 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       controller.dispose();
       focusNode.dispose();
     });
+  }
+
+  Future<void> _showTextDialog(
+    BuildContext context, {
+    required String title,
+    required String currentValue,
+    required void Function(String value) onSave,
+    String? hintText,
+    String? helperText,
+    bool obscureText = false,
+  }) {
+    final controller = TextEditingController(text: currentValue);
+    final focusNode = FocusNode();
+
+    return showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(title),
+        content: TextField(
+          controller: controller,
+          focusNode: focusNode,
+          autofocus: true,
+          onTap: () => requestKeyboardFocus(context, focusNode),
+          obscureText: obscureText,
+          decoration: InputDecoration(
+            border: const OutlineInputBorder(),
+            hintText: hintText,
+            helperText: helperText,
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Cancel'),
+          ),
+          FilledButton(
+            onPressed: () {
+              onSave(controller.text.trim());
+              Navigator.pop(context);
+            },
+            child: const Text('Save'),
+          ),
+        ],
+      ),
+    ).whenComplete(() {
+      controller.dispose();
+      focusNode.dispose();
+    });
+  }
+
+  Future<void> _shareBackupViaLocalSend(WidgetRef ref) async {
+    try {
+      final objectBox = ref.read(objectBoxServiceProvider);
+      final settings = ref.read(settingsProvider);
+      final backupService = LocalSyncBackupService(objectBox);
+      final file = await backupService.createBackupFile(settings: settings);
+
+      await Share.shareXFiles(
+        [XFile(file.path)],
+        subject: 'Shiguang LocalSend Backup',
+        text: '拾光本地备份（建议在接收端通过 LocalSend 接收）',
+      );
+
+      if (!mounted) return;
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('备份已导出: ${file.path}')));
+    } catch (error) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('导出失败: $error'), backgroundColor: Colors.red),
+      );
+    }
+  }
+
+  Future<void> _importBackupViaLocalSend(WidgetRef ref) async {
+    try {
+      final picked = await FilePicker.platform.pickFiles(
+        type: FileType.custom,
+        allowedExtensions: const ['json'],
+        allowMultiple: false,
+        withData: false,
+        dialogTitle: '选择 LocalSend 接收的备份文件',
+      );
+      if (picked == null || picked.files.isEmpty) return;
+
+      final path = picked.files.single.path;
+      if (path == null || path.trim().isEmpty) {
+        throw Exception('未获取到文件路径');
+      }
+
+      if (!mounted) return;
+      final applySettings = await _showImportSettingsOption();
+      if (applySettings == null) return;
+
+      final objectBox = ref.read(objectBoxServiceProvider);
+      final backupService = LocalSyncBackupService(objectBox);
+      final result = await backupService.importBackupFile(file: File(path));
+
+      if (applySettings && result.importedSettings != null) {
+        ref
+            .read(settingsProvider.notifier)
+            .applyBackupSettings(
+              result.importedSettings!,
+              includeApiKeys: false,
+            );
+      }
+
+      ref.invalidate(timelineProvider);
+      ref.invalidate(reminderProvider);
+      ref.invalidate(reminderRepositoryProvider);
+
+      if (!mounted) return;
+      _showImportResultDialog(result, appliedSettings: applySettings);
+    } catch (error) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('导入失败: $error'), backgroundColor: Colors.red),
+      );
+    }
+  }
+
+  Future<bool?> _showImportSettingsOption() {
+    return showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('导入选项'),
+        content: const Text('是否同时导入设置项？\n（不会覆盖 API Key）'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('取消'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: const Text('仅导入数据'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(context, true),
+            child: const Text('数据+设置'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showImportResultDialog(
+    LocalSyncImportResult result, {
+    required bool appliedSettings,
+  }) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('导入完成'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              '账号: +${result.createdAccounts} / 更新 ${result.updatedAccounts}',
+            ),
+            Text('日记: +${result.createdDiaries} / 更新 ${result.updatedDiaries}'),
+            Text(
+              '提醒: +${result.createdReminders} / 更新 ${result.updatedReminders}',
+            ),
+            Text('跳过: ${result.skipped}'),
+            Text('总变更: ${result.totalChanged}'),
+            const SizedBox(height: 8),
+            Text(appliedSettings ? '已应用备份中的设置项。' : '未应用备份中的设置项。'),
+          ],
+        ),
+        actions: [
+          FilledButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('确定'),
+          ),
+        ],
+      ),
+    );
   }
 
   void _showLogoutDialog(BuildContext context, WidgetRef ref) {
