@@ -461,7 +461,7 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
           sampleRate: 16000,
           numChannels: 1,
           autoGain: true,
-          echoCancel: false,
+          echoCancel: true,
           noiseSuppress: true,
           audioInterruption: AudioInterruptionMode.none,
           streamBufferSize: 1600,

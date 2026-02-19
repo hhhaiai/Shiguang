@@ -132,6 +132,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     final settings = ref.watch(settingsProvider);
+    final language = settings.language;
     final currentUser = ref.watch(authProvider.notifier).getCurrentUser();
     final rawName = (currentUser?.username ?? 'U').trim();
     final avatarInitial = rawName.isNotEmpty
@@ -247,27 +248,62 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           _buildSectionHeader(context, '外观'),
           ListTile(
             leading: const Icon(Icons.palette_outlined),
-            title: const Text('Theme Mode'),
-            subtitle: const Text('Light / Dark / Follow System'),
+            title: Text(
+              _i18n(
+                language,
+                zhHans: '主题模式',
+                zhHant: '主題模式',
+                en: 'Theme Mode',
+              ),
+            ),
+            subtitle: Text(
+              _i18n(
+                language,
+                zhHans: '浅色 / 深色 / 跟随系统',
+                zhHant: '淺色 / 深色 / 跟隨系統',
+                en: 'Light / Dark / Follow System',
+              ),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
             child: SegmentedButton<AppThemeMode>(
-              segments: const [
+              segments: [
                 ButtonSegment<AppThemeMode>(
                   value: AppThemeMode.dark,
-                  icon: Icon(Icons.dark_mode_outlined),
-                  label: Text('Dark'),
+                  icon: const Icon(Icons.dark_mode_outlined),
+                  label: Text(
+                    _i18n(
+                      language,
+                      zhHans: '深色',
+                      zhHant: '深色',
+                      en: 'Dark',
+                    ),
+                  ),
                 ),
                 ButtonSegment<AppThemeMode>(
                   value: AppThemeMode.light,
-                  icon: Icon(Icons.light_mode_outlined),
-                  label: Text('Light'),
+                  icon: const Icon(Icons.light_mode_outlined),
+                  label: Text(
+                    _i18n(
+                      language,
+                      zhHans: '浅色',
+                      zhHant: '淺色',
+                      en: 'Light',
+                    ),
+                  ),
                 ),
                 ButtonSegment<AppThemeMode>(
                   value: AppThemeMode.system,
-                  icon: Icon(Icons.phone_android),
-                  label: Text('System'),
+                  icon: const Icon(Icons.phone_android),
+                  label: Text(
+                    _i18n(
+                      language,
+                      zhHans: '系统',
+                      zhHant: '系統',
+                      en: 'System',
+                    ),
+                  ),
                 ),
               ],
               selected: {settings.themeMode},
@@ -281,7 +317,15 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             ),
           ),
           const Divider(),
-          _buildSectionHeader(context, 'AI Service'),
+          _buildSectionHeader(
+            context,
+            _i18n(
+              language,
+              zhHans: 'AI 服务',
+              zhHant: 'AI 服務',
+              en: 'AI Service',
+            ),
+          ),
           ListTile(
             leading: const Icon(Icons.chat_bubble_outline),
             title: const Text('AI 对话模型来源'),
@@ -662,11 +706,33 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             onTap: () => _importBackupViaLocalSend(ref),
           ),
           const Divider(),
-          _buildSectionHeader(context, 'Auto Generation'),
+          _buildSectionHeader(
+            context,
+            _i18n(
+              language,
+              zhHans: '自动生成',
+              zhHant: '自動生成',
+              en: 'Auto Generation',
+            ),
+          ),
           SwitchListTile(
             secondary: const Icon(Icons.summarize),
-            title: const Text('Auto Generate Summary'),
-            subtitle: const Text('Generate AI summary for new entries'),
+            title: Text(
+              _i18n(
+                language,
+                zhHans: '自动生成摘要',
+                zhHant: '自動生成摘要',
+                en: 'Auto Generate Summary',
+              ),
+            ),
+            subtitle: Text(
+              _i18n(
+                language,
+                zhHans: '为新内容自动生成 AI 摘要',
+                zhHant: '為新內容自動生成 AI 摘要',
+                en: 'Generate AI summary for new entries',
+              ),
+            ),
             value: settings.autoGenerateSummary,
             onChanged: (value) {
               ref.read(settingsProvider.notifier).setAutoGenerateSummary(value);
@@ -674,8 +740,22 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           ),
           SwitchListTile(
             secondary: const Icon(Icons.hub),
-            title: const Text('Auto Generate Embedding'),
-            subtitle: const Text('Generate vector embedding for search'),
+            title: Text(
+              _i18n(
+                language,
+                zhHans: '自动生成向量',
+                zhHant: '自動生成向量',
+                en: 'Auto Generate Embedding',
+              ),
+            ),
+            subtitle: Text(
+              _i18n(
+                language,
+                zhHans: '为搜索自动生成向量嵌入',
+                zhHant: '為搜尋自動生成向量嵌入',
+                en: 'Generate vector embedding for search',
+              ),
+            ),
             value: settings.autoGenerateEmbedding,
             onChanged: (value) {
               ref
@@ -684,16 +764,45 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             },
           ),
           const Divider(),
-          _buildSectionHeader(context, 'About'),
-          const ListTile(
+          _buildSectionHeader(
+            context,
+            _i18n(
+              language,
+              zhHans: '关于',
+              zhHant: '關於',
+              en: 'About',
+            ),
+          ),
+          ListTile(
             leading: Icon(Icons.info),
-            title: Text('拾光'),
-            subtitle: Text('Version 1.0.0'),
+            title: const Text('拾光'),
+            subtitle: Text(
+              _i18n(
+                language,
+                zhHans: '版本 1.0.0',
+                zhHant: '版本 1.0.0',
+                en: 'Version 1.0.0',
+              ),
+            ),
           ),
           ListTile(
             leading: const Icon(Icons.storage),
-            title: const Text('Database'),
-            subtitle: const Text('ObjectBox with HNSW index'),
+            title: Text(
+              _i18n(
+                language,
+                zhHans: '数据库',
+                zhHant: '資料庫',
+                en: 'Database',
+              ),
+            ),
+            subtitle: Text(
+              _i18n(
+                language,
+                zhHans: 'ObjectBox + HNSW 向量索引',
+                zhHant: 'ObjectBox + HNSW 向量索引',
+                en: 'ObjectBox with HNSW index',
+              ),
+            ),
             onTap: () => _showDatabaseInfo(context),
           ),
           const SizedBox(height: 24),
@@ -733,6 +842,22 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         ),
       ),
     );
+  }
+
+  String _i18n(
+    AppLanguage language, {
+    required String zhHans,
+    String? zhHant,
+    required String en,
+  }) {
+    switch (language) {
+      case AppLanguage.zhHans:
+        return zhHans;
+      case AppLanguage.zhHant:
+        return zhHant ?? zhHans;
+      case AppLanguage.en:
+        return en;
+    }
   }
 
   String _chatProviderLabel(ChatModelProvider provider) {
@@ -791,6 +916,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     String currentValue,
     void Function(String) onSave,
   ) {
+    final language = ref.read(settingsProvider).language;
     final controller = TextEditingController(text: currentValue);
     final focusNode = FocusNode();
 
@@ -806,20 +932,34 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           decoration: InputDecoration(
             border: const OutlineInputBorder(),
             hintText: 'ws://127.0.0.1:8008/... or http://127.0.0.1:11434',
-            helperText: 'Supports local/LAN/public endpoints',
+            helperText: _i18n(
+              language,
+              zhHans: '支持本地 / 局域网 / 公网端点',
+              zhHant: '支援本地 / 區域網 / 公網端點',
+              en: 'Supports local/LAN/public endpoints',
+            ),
           ),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            child: Text(
+              _i18n(
+                language,
+                zhHans: '取消',
+                zhHant: '取消',
+                en: 'Cancel',
+              ),
+            ),
           ),
           FilledButton(
             onPressed: () {
               onSave(controller.text.trim());
               Navigator.pop(context);
             },
-            child: const Text('Save'),
+            child: Text(
+              _i18n(language, zhHans: '保存', zhHant: '保存', en: 'Save'),
+            ),
           ),
         ],
       ),
@@ -838,6 +978,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     String? helperText,
     bool obscureText = false,
   }) {
+    final language = ref.read(settingsProvider).language;
     final controller = TextEditingController(text: currentValue);
     final focusNode = FocusNode();
 
@@ -860,14 +1001,23 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            child: Text(
+              _i18n(
+                language,
+                zhHans: '取消',
+                zhHant: '取消',
+                en: 'Cancel',
+              ),
+            ),
           ),
           FilledButton(
             onPressed: () {
               onSave(controller.text.trim());
               Navigator.pop(context);
             },
-            child: const Text('Save'),
+            child: Text(
+              _i18n(language, zhHans: '保存', zhHant: '保存', en: 'Save'),
+            ),
           ),
         ],
       ),
@@ -1064,24 +1214,60 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
   }
 
   void _showDatabaseInfo(BuildContext context) {
+    final language = ref.read(settingsProvider).language;
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Database Info'),
-        content: const Column(
+        title: Text(
+          _i18n(
+            language,
+            zhHans: '数据库信息',
+            zhHant: '資料庫資訊',
+            en: 'Database Info',
+          ),
+        ),
+        content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Storage: ObjectBox'),
-            Text('Vector Index: HNSW'),
-            Text('Dimensions: 384'),
-            Text('Embedding Model: bge-small-zh-v1.5'),
+            Text(
+              _i18n(
+                language,
+                zhHans: '存储: ObjectBox',
+                zhHant: '儲存: ObjectBox',
+                en: 'Storage: ObjectBox',
+              ),
+            ),
+            Text(
+              _i18n(
+                language,
+                zhHans: '向量索引: HNSW',
+                zhHant: '向量索引: HNSW',
+                en: 'Vector Index: HNSW',
+              ),
+            ),
+            Text(
+              _i18n(
+                language,
+                zhHans: '向量维度: 384',
+                zhHant: '向量維度: 384',
+                en: 'Dimensions: 384',
+              ),
+            ),
+            Text(
+              _i18n(
+                language,
+                zhHans: '向量模型: bge-small-zh-v1.5',
+                zhHant: '向量模型: bge-small-zh-v1.5',
+                en: 'Embedding Model: bge-small-zh-v1.5',
+              ),
+            ),
           ],
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('OK'),
+            child: Text(_i18n(language, zhHans: '确定', zhHant: '確定', en: 'OK')),
           ),
         ],
       ),
@@ -1099,14 +1285,20 @@ class _AvatarCropperScreen extends StatefulWidget {
 }
 
 class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
-  final GlobalKey _repaintKey = GlobalKey();
+  final GlobalKey _viewerKey = GlobalKey();
   final TransformationController _controller = TransformationController();
+
+  static const double _cropMinSize = 140;
+  static const double _cropMargin = 8;
+
   ui.Image? _decoded;
   String? _loadError;
   double _minScale = 1.0;
-  double _maxScale = 4.0;
+  double _maxScale = 8.0;
   bool _isSaving = false;
-  double? _lastCropSize;
+  Size? _lastViewportSize;
+  Rect? _cropRect;
+  int _rotationQuarterTurns = 0;
 
   @override
   void initState() {
@@ -1142,21 +1334,111 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
     }
   }
 
-  void _initTransform(double cropSize) {
+  double _viewportImageWidth(ui.Image image) {
+    return _rotationQuarterTurns.isOdd
+        ? image.height.toDouble()
+        : image.width.toDouble();
+  }
+
+  double _viewportImageHeight(ui.Image image) {
+    return _rotationQuarterTurns.isOdd
+        ? image.width.toDouble()
+        : image.height.toDouble();
+  }
+
+  Rect _clampCropRect(Rect rect, Size viewport) {
+    final maxSize = math.max(
+      _cropMinSize,
+      math.min(
+        viewport.width - _cropMargin * 2,
+        viewport.height - _cropMargin * 2,
+      ),
+    );
+    final size = rect.width.clamp(_cropMinSize, maxSize).toDouble();
+    final minCenterX = _cropMargin + size / 2;
+    final maxCenterX = viewport.width - _cropMargin - size / 2;
+    final minCenterY = _cropMargin + size / 2;
+    final maxCenterY = viewport.height - _cropMargin - size / 2;
+    final centerX = rect.center.dx.clamp(minCenterX, maxCenterX).toDouble();
+    final centerY = rect.center.dy.clamp(minCenterY, maxCenterY).toDouble();
+    return Rect.fromCenter(
+      center: Offset(centerX, centerY),
+      width: size,
+      height: size,
+    );
+  }
+
+  void _ensureCropRect(Size viewport) {
+    if (_cropRect == null) {
+      final size = math.max(
+        _cropMinSize,
+        math.min(viewport.width, viewport.height) * 0.62,
+      );
+      _cropRect = Rect.fromCenter(
+        center: Offset(viewport.width / 2, viewport.height / 2),
+        width: size,
+        height: size,
+      );
+    } else {
+      _cropRect = _clampCropRect(_cropRect!, viewport);
+    }
+  }
+
+  void _initTransform(Size viewportSize) {
     final image = _decoded;
     if (image == null) return;
-    if (_lastCropSize != null && (_lastCropSize! - cropSize).abs() < 1) return;
+    if (_lastViewportSize != null &&
+        (_lastViewportSize!.width - viewportSize.width).abs() < 1 &&
+        (_lastViewportSize!.height - viewportSize.height).abs() < 1) {
+      return;
+    }
 
-    final scale = math.max(cropSize / image.width, cropSize / image.height);
+    final cropRect = _cropRect;
+    if (cropRect == null) return;
+    final imageWidth = _viewportImageWidth(image);
+    final imageHeight = _viewportImageHeight(image);
+    final scale = math.max(cropRect.width / imageWidth, cropRect.height / imageHeight);
     _minScale = scale;
-    _maxScale = scale * 4;
+    _maxScale = scale * 8;
 
-    final dx = (cropSize - image.width * scale) / 2;
-    final dy = (cropSize - image.height * scale) / 2;
+    final dx = (viewportSize.width - imageWidth * scale) / 2;
+    final dy = (viewportSize.height - imageHeight * scale) / 2;
     _controller.value = Matrix4.identity()
       ..translate(dx, dy)
       ..scale(scale);
-    _lastCropSize = cropSize;
+    _lastViewportSize = viewportSize;
+  }
+
+  void _ensureImageCanCoverCrop() {
+    final image = _decoded;
+    final cropRect = _cropRect;
+    final viewport = _lastViewportSize;
+    if (image == null || cropRect == null || viewport == null) return;
+
+    final imageWidth = _viewportImageWidth(image);
+    final imageHeight = _viewportImageHeight(image);
+    final requiredScale =
+        math.max(cropRect.width / imageWidth, cropRect.height / imageHeight);
+    if (requiredScale > _minScale) {
+      _minScale = requiredScale;
+      _maxScale = math.max(_maxScale, requiredScale * 8);
+    }
+
+    final currentScale = _controller.value.getMaxScaleOnAxis();
+    if (currentScale >= requiredScale) return;
+
+    final dx = (viewport.width - imageWidth * requiredScale) / 2;
+    final dy = (viewport.height - imageHeight * requiredScale) / 2;
+    _controller.value = Matrix4.identity()
+      ..translate(dx, dy)
+      ..scale(requiredScale);
+  }
+
+  void _rotateClockwise() {
+    setState(() {
+      _rotationQuarterTurns = (_rotationQuarterTurns + 1) % 4;
+      _lastViewportSize = null;
+    });
   }
 
   Future<void> _saveCropped(double pixelRatio) async {
@@ -1171,18 +1453,53 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
 
     try {
       final boundary =
-          _repaintKey.currentContext?.findRenderObject()
+          _viewerKey.currentContext?.findRenderObject()
               as RenderRepaintBoundary?;
       if (boundary == null) {
         ScaffoldMessenger.of(
           context,
-        ).showSnackBar(const SnackBar(content: Text('裁剪区域未就绪，请重试')));
+        ).showSnackBar(const SnackBar(content: Text('图片区域未就绪，请重试')));
+        return;
+      }
+      final cropRect = _cropRect;
+      if (cropRect == null) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('裁剪框未就绪，请重试')));
         return;
       }
 
       final safePixelRatio = pixelRatio.clamp(1.0, 3.0).toDouble();
-      final image = await boundary.toImage(pixelRatio: safePixelRatio);
-      final byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+      final fullImage = await boundary.toImage(pixelRatio: safePixelRatio);
+      final sourceRect = Rect.fromLTWH(
+        cropRect.left * safePixelRatio,
+        cropRect.top * safePixelRatio,
+        cropRect.width * safePixelRatio,
+        cropRect.height * safePixelRatio,
+      ).intersect(
+        Rect.fromLTWH(
+          0,
+          0,
+          fullImage.width.toDouble(),
+          fullImage.height.toDouble(),
+        ),
+      );
+      if (sourceRect.width < 1 || sourceRect.height < 1) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('裁剪范围无效，请重试')));
+        return;
+      }
+
+      final recorder = ui.PictureRecorder();
+      final canvas = Canvas(recorder);
+      final targetRect = Rect.fromLTWH(0, 0, sourceRect.width, sourceRect.height);
+      canvas.drawImageRect(fullImage, sourceRect, targetRect, Paint());
+      final cropped = await recorder.endRecording().toImage(
+        targetRect.width.round(),
+        targetRect.height.round(),
+      );
+      final byteData = await cropped.toByteData(format: ui.ImageByteFormat.png);
       if (byteData == null) {
         if (!mounted) return;
         ScaffoldMessenger.of(
@@ -1262,41 +1579,87 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
           ? const Center(child: CircularProgressIndicator())
           : LayoutBuilder(
               builder: (context, constraints) {
-                final size = math.max(
-                  80.0,
-                  math.min(constraints.maxWidth - 32, constraints.maxHeight - 120),
-                );
-                _initTransform(size);
-                final cropRect = Rect.fromCenter(
-                  center: Offset(
-                    constraints.maxWidth / 2,
-                    constraints.maxHeight / 2,
-                  ),
-                  width: size,
-                  height: size,
-                );
+                final viewport = Size(constraints.maxWidth, constraints.maxHeight);
+                _ensureCropRect(viewport);
+                _initTransform(viewport);
+                _ensureImageCanCoverCrop();
+                final cropRect = _cropRect!;
 
                 return Stack(
                   children: [
-                    Positioned.fill(child: Container(color: Colors.black)),
-                    Center(
+                    Positioned.fill(
                       child: RepaintBoundary(
-                        key: _repaintKey,
+                        key: _viewerKey,
                         child: ClipRect(
-                          child: SizedBox(
-                            width: size,
-                            height: size,
-                            child: InteractiveViewer(
-                              transformationController: _controller,
-                              minScale: _minScale,
-                              maxScale: _maxScale,
-                              boundaryMargin: EdgeInsets.zero,
-                              child: RawImage(
-                                image: _decoded,
-                                fit: BoxFit.cover,
-                                filterQuality: FilterQuality.high,
+                          child: InteractiveViewer(
+                            transformationController: _controller,
+                            constrained: false,
+                            minScale: _minScale,
+                            maxScale: _maxScale,
+                            boundaryMargin: const EdgeInsets.all(2400),
+                            child: SizedBox(
+                              width: _viewportImageWidth(_decoded!),
+                              height: _viewportImageHeight(_decoded!),
+                              child: Center(
+                                child: Transform.rotate(
+                                  angle: _rotationQuarterTurns * math.pi / 2,
+                                  child: SizedBox(
+                                    width: _decoded!.width.toDouble(),
+                                    height: _decoded!.height.toDouble(),
+                                    child: RawImage(
+                                      image: _decoded,
+                                      filterQuality: FilterQuality.high,
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned.fromRect(
+                      rect: cropRect,
+                      child: GestureDetector(
+                        behavior: HitTestBehavior.translucent,
+                        onPanUpdate: (details) {
+                          setState(() {
+                            _cropRect = _clampCropRect(
+                              _cropRect!.shift(details.delta),
+                              viewport,
+                            );
+                          });
+                        },
+                      ),
+                    ),
+                    Positioned(
+                      left: cropRect.right - 26,
+                      top: cropRect.bottom - 26,
+                      child: GestureDetector(
+                        behavior: HitTestBehavior.opaque,
+                        onPanUpdate: (details) {
+                          final current = _cropRect!;
+                          final delta = (details.delta.dx + details.delta.dy) / 2;
+                          final resized = Rect.fromCenter(
+                            center: current.center,
+                            width: current.width + delta * 2,
+                            height: current.height + delta * 2,
+                          );
+                          setState(() {
+                            _cropRect = _clampCropRect(resized, viewport);
+                          });
+                        },
+                        child: Container(
+                          width: 44,
+                          height: 44,
+                          decoration: BoxDecoration(
+                            color: Colors.black.withValues(alpha: 0.35),
+                            borderRadius: BorderRadius.circular(22),
+                          ),
+                          child: const Icon(
+                            Icons.open_in_full,
+                            color: Colors.white,
+                            size: 18,
                           ),
                         ),
                       ),
@@ -1305,6 +1668,44 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
                       child: CustomPaint(
                         size: Size(constraints.maxWidth, constraints.maxHeight),
                         painter: _CropOverlayPainter(cropRect: cropRect),
+                      ),
+                    ),
+                    Positioned(
+                      left: 16,
+                      right: 16,
+                      bottom: 16,
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          color: Colors.black.withValues(alpha: 0.45),
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 14,
+                            vertical: 10,
+                          ),
+                          child: Row(
+                            children: [
+                              IconButton(
+                                onPressed: _rotateClockwise,
+                                icon: const Icon(
+                                  Icons.rotate_90_degrees_cw,
+                                  color: Colors.white,
+                                ),
+                                tooltip: '旋转 90°',
+                              ),
+                              Expanded(
+                                child: Text(
+                                  '拖动框可移动选区；拖动右下角可缩放选区；图片支持双指缩放/移动',
+                                  style: Theme.of(context).textTheme.bodySmall
+                                      ?.copyWith(
+                                        color: Colors.white.withValues(alpha: 0.9),
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -1322,7 +1723,7 @@ class _CropOverlayPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final overlayPaint = Paint()..color = Colors.black.withValues(alpha: 0.6);
+    final overlayPaint = Paint()..color = Colors.black.withValues(alpha: 0.45);
     final top = cropRect.top.clamp(0.0, size.height);
     final bottom = cropRect.bottom.clamp(0.0, size.height);
     final left = cropRect.left.clamp(0.0, size.width);
@@ -1352,6 +1753,19 @@ class _CropOverlayPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
     canvas.drawRect(cropRect, borderPaint);
+
+    final guidePaint = Paint()
+      ..color = Colors.white.withValues(alpha: 0.45)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1;
+    final stepX = cropRect.width / 3;
+    final stepY = cropRect.height / 3;
+    for (var i = 1; i <= 2; i++) {
+      final x = cropRect.left + stepX * i;
+      final y = cropRect.top + stepY * i;
+      canvas.drawLine(Offset(x, cropRect.top), Offset(x, cropRect.bottom), guidePaint);
+      canvas.drawLine(Offset(cropRect.left, y), Offset(cropRect.right, y), guidePaint);
+    }
   }
 
   @override

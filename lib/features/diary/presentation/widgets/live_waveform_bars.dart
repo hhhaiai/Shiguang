@@ -29,7 +29,6 @@ class LiveWaveformBars extends StatelessWidget {
       height: maxHeight,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(compact ? 12 : 18),
-        border: Border.all(color: primary.withValues(alpha: 0.12)),
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,

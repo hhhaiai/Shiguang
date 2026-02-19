@@ -20,8 +20,8 @@ class SystemSpeechVoiceAI implements ILocalVoiceAI {
   bool _isStopping = false;
   bool _isDisposed = false;
   int _seq = 0;
-  double _minSoundLevel = 0;
-  double _maxSoundLevel = 0;
+  double _noiseFloor = 0;
+  double _peakLevel = 0;
   Timer? _restartTimer;
   Timer? _closeFallbackTimer;
 
@@ -45,8 +45,8 @@ class SystemSpeechVoiceAI implements ILocalVoiceAI {
     _levelController ??= StreamController<double>.broadcast();
     _keepListening = true;
     _seq = 0;
-    _minSoundLevel = 0;
-    _maxSoundLevel = 0;
+    _noiseFloor = 0;
+    _peakLevel = 0;
     _closeFallbackTimer?.cancel();
     if (!_speech.isListening && !_isStopping) {
       unawaited(_startSystemListening());
@@ -123,17 +123,32 @@ class SystemSpeechVoiceAI implements ILocalVoiceAI {
   void _onSoundLevel(double level) {
     if (_isDisposed || !_keepListening) return;
 
-    if (_minSoundLevel == 0 || level < _minSoundLevel) {
-      _minSoundLevel = level;
-    }
-    if (_maxSoundLevel == 0 || level > _maxSoundLevel) {
-      _maxSoundLevel = level;
+    if (!level.isFinite) {
+      return;
     }
 
-    final range = math.max(4.0, _maxSoundLevel - _minSoundLevel);
-    final normalized = ((level - _minSoundLevel) / range).clamp(0.0, 1.0);
-    final emphasized = math.pow(normalized, 1.2).toDouble();
-    _levelController?.add(math.max(0.03, emphasized));
+    // speech_to_text levels vary by platform. Normalize both dB-like negatives
+    // and positive ranges into a stable [0, 1] animation signal.
+    var sample = level;
+    if (sample < 0) {
+      sample += 60;
+    }
+    sample = sample.clamp(0.0, 120.0).toDouble();
+
+    if (_noiseFloor == 0) {
+      _noiseFloor = sample;
+    } else {
+      _noiseFloor = _noiseFloor * 0.95 + sample * 0.05;
+    }
+
+    _peakLevel = math.max(_peakLevel * 0.992, sample);
+    final dynamicRange = math.max(6.0, _peakLevel - _noiseFloor);
+    final normalized = ((sample - _noiseFloor) / dynamicRange).clamp(0.0, 1.0);
+    final boosted = (math.pow(normalized, 0.62).toDouble() * 0.9 + 0.1).clamp(
+      0.08,
+      1.0,
+    );
+    _levelController?.add(boosted);
   }
 
   void _onSpeechStatus(String status) {

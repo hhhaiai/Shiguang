@@ -129,7 +129,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
           sampleRate: 16000,
           numChannels: 1,
           autoGain: true,
-          echoCancel: false,
+          echoCancel: true,
           noiseSuppress: true,
           audioInterruption: AudioInterruptionMode.none,
           streamBufferSize: 1600,
@@ -497,9 +497,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                   padding: EdgeInsets.only(
                     bottom:
                         bottomInset +
-                        (keyboardVisible && _isRecording
-                            ? overlayHeight + 12
-                            : 0),
+                        (keyboardVisible && _isRecording ? overlayHeight : 0),
                   ),
                   child: Container(
                     padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
@@ -558,7 +556,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
               Positioned(
                 left: 12,
                 right: 12,
-                bottom: keyboardVisible ? bottomInset + 6 : 70,
+                bottom: keyboardVisible ? bottomInset : 70,
                 child: Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 10,
@@ -567,9 +565,6 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                   decoration: BoxDecoration(
                     color: theme.colorScheme.surface,
                     borderRadius: BorderRadius.circular(14),
-                    border: Border.all(
-                      color: theme.colorScheme.outline.withValues(alpha: 0.2),
-                    ),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withValues(alpha: 0.08),

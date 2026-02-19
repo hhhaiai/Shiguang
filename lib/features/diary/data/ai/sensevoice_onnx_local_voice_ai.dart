@@ -121,7 +121,11 @@ class SenseVoiceOnnxLocalVoiceAI implements ILocalVoiceAI {
     SenseVoiceAsrTuning? tuning,
   }) : _language = language,
        _textNorm = textNorm,
-       _tuning = tuning ?? SenseVoiceAsrTuning.balanced();
+       _tuning =
+           tuning ??
+           (Platform.isAndroid
+               ? SenseVoiceAsrTuning.accurate()
+               : SenseVoiceAsrTuning.balanced());
 
   Future<void> prepare() async {
     _prepareFuture ??= _prepareInternal();
