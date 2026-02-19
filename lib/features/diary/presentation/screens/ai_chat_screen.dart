@@ -15,6 +15,7 @@ import '../../data/ai/sensevoice_onnx_local_voice_ai.dart';
 import '../../data/ai/system_speech_voice_ai.dart';
 import '../../domain/interfaces/i_local_llm.dart';
 import '../../domain/interfaces/i_local_voice_ai.dart';
+import '../widgets/live_waveform_bars.dart';
 
 class AiChatScreen extends ConsumerStatefulWidget {
   const AiChatScreen({super.key});
@@ -516,7 +517,9 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                       children: [
                         IconButton(
                           icon: Icon(
-                            Icons.mic,
+                            _isRecording
+                                ? Icons.stop_circle_outlined
+                                : Icons.mic,
                             color: _isRecording ? Colors.red.shade600 : null,
                           ),
                           onPressed: _toggleRecording,
@@ -558,7 +561,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                 bottom: keyboardVisible ? bottomInset + 6 : 70,
                 child: Container(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 8,
+                    horizontal: 10,
                     vertical: 6,
                   ),
                   decoration: BoxDecoration(
@@ -577,65 +580,29 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                   ),
                   child: Row(
                     children: [
-                      IconButton(
-                        visualDensity: VisualDensity.compact,
-                        iconSize: 18,
-                        onPressed: _toggleRecording,
-                        icon: Icon(Icons.mic, color: Colors.red.shade600),
-                      ),
                       Expanded(
-                        child: SizedBox(
-                          height: 28,
-                          child: Row(
-                            children: _waveform
-                                .map(
-                                  (level) => Expanded(
-                                    child: Align(
-                                      alignment: Alignment.bottomCenter,
-                                      child: SizedBox(
-                                        width: 2,
-                                        child: Container(
-                                          margin: const EdgeInsets.symmetric(
-                                            horizontal: 1,
-                                          ),
-                                          height: 6 + (22 * level),
-                                          decoration: BoxDecoration(
-                                            color: theme.colorScheme.primary
-                                                .withValues(alpha: 0.9),
-                                            borderRadius: BorderRadius.circular(
-                                              2,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                )
-                                .toList(growable: false),
-                          ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              _asrReady
+                                  ? 'Listening...'
+                                  : 'ASR reconnecting...',
+                              style: theme.textTheme.labelSmall?.copyWith(
+                                color: _asrReady
+                                    ? theme.colorScheme.primary
+                                    : Colors.orange.shade700,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            LiveWaveformBars(samples: _waveform, compact: true),
+                          ],
                         ),
-                      ),
-                      IconButton(
-                        visualDensity: VisualDensity.compact,
-                        iconSize: 18,
-                        onPressed: _toggleRecording,
-                        icon: const Icon(Icons.stop),
                       ),
                     ],
                   ),
-                ),
-              ),
-            if (_isRecording && !_asrReady)
-              Positioned(
-                left: 16,
-                right: 16,
-                bottom: keyboardVisible
-                    ? bottomInset + overlayHeight + 10
-                    : overlayHeight + 76,
-                child: Text(
-                  'ASR unavailable. Recording is still active.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 12, color: Colors.orange.shade700),
                 ),
               ),
           ],

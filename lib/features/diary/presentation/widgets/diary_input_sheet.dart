@@ -18,6 +18,7 @@ import '../../data/ai/sensevoice_local_voice_ai.dart';
 import '../../data/ai/sensevoice_onnx_local_voice_ai.dart';
 import '../../data/ai/system_speech_voice_ai.dart';
 import '../../domain/interfaces/i_local_voice_ai.dart';
+import 'live_waveform_bars.dart';
 
 class DiaryInputSheet extends ConsumerStatefulWidget {
   final Function(String text) onSubmit;
@@ -1065,46 +1066,8 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
                                                         16,
                                                         10,
                                                       ),
-                                                  child: SizedBox(
-                                                    height: 72,
-                                                    child: Row(
-                                                      children: _waveform
-                                                          .map(
-                                                            (level) => Expanded(
-                                                              child: Align(
-                                                                alignment: Alignment
-                                                                    .bottomCenter,
-                                                                child: Container(
-                                                                  margin:
-                                                                      const EdgeInsets.symmetric(
-                                                                        horizontal:
-                                                                            1,
-                                                                      ),
-                                                                  height:
-                                                                      10 +
-                                                                      (62 *
-                                                                          level),
-                                                                  decoration: BoxDecoration(
-                                                                    color: theme
-                                                                        .colorScheme
-                                                                        .primary
-                                                                        .withValues(
-                                                                          alpha:
-                                                                              0.95,
-                                                                        ),
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                          2,
-                                                                        ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          )
-                                                          .toList(
-                                                            growable: false,
-                                                          ),
-                                                    ),
+                                                  child: LiveWaveformBars(
+                                                    samples: _waveform,
                                                   ),
                                                 )
                                               : const SizedBox(
@@ -1180,46 +1143,9 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
                                       child: Row(
                                         children: [
                                           Expanded(
-                                            child: SizedBox(
-                                              height: 28,
-                                              child: Row(
-                                                children: _waveform
-                                                    .map(
-                                                      (level) => Expanded(
-                                                        child: Align(
-                                                          alignment: Alignment
-                                                              .bottomCenter,
-                                                          child: SizedBox(
-                                                            width: 3,
-                                                            child: Container(
-                                                              margin:
-                                                                  const EdgeInsets.symmetric(
-                                                                    horizontal:
-                                                                        1,
-                                                                  ),
-                                                              height:
-                                                                  6 +
-                                                                  (22 * level),
-                                                              decoration: BoxDecoration(
-                                                                color: theme
-                                                                    .colorScheme
-                                                                    .primary
-                                                                    .withValues(
-                                                                      alpha:
-                                                                          0.9,
-                                                                    ),
-                                                                borderRadius:
-                                                                    BorderRadius.circular(
-                                                                      2,
-                                                                    ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    )
-                                                    .toList(growable: false),
-                                              ),
+                                            child: LiveWaveformBars(
+                                              samples: _waveform,
+                                              compact: true,
                                             ),
                                           ),
                                           IconButton(
