@@ -25,6 +25,7 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
     with SingleTickerProviderStateMixin {
   bool _isExpanded = false;
   bool _isListening = false;
+  bool _isStoppingListening = false;
   bool _isSpeaking = false;
   String _listeningText = '';
   bool _speechSubmitted = false;
@@ -63,7 +64,7 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
   }
 
   Future<void> _startListening() async {
-    if (_isListening) return;
+    if (_isListening || _isStoppingListening) return;
 
     final hasPermission = await _audioRecorder.hasPermission(request: true);
     if (!hasPermission) {
@@ -122,6 +123,11 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
         ).showSnackBar(SnackBar(content: Text('Voice error: $error')));
         unawaited(_stopListening(submitFallback: false));
       },
+      onDone: () {
+        if (_isListening && !_isStoppingListening) {
+          unawaited(_stopListening(submitFallback: true));
+        }
+      },
     );
 
     if (_voiceAI != null && !_voiceAI!.requiresPcmStream) {
@@ -166,28 +172,34 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
   }
 
   Future<void> _stopListening({bool submitFallback = true}) async {
-    await _audioSubscription?.cancel();
-    _audioSubscription = null;
+    if (_isStoppingListening) return;
+    _isStoppingListening = true;
+    try {
+      await _audioSubscription?.cancel();
+      _audioSubscription = null;
 
-    if (await _audioRecorder.isRecording()) {
-      await _audioRecorder.stop();
+      if (await _audioRecorder.isRecording()) {
+        await _audioRecorder.stop();
+      }
+
+      _voiceAI?.stop();
+      await Future<void>.delayed(const Duration(milliseconds: 650));
+      await _voiceSubscription?.cancel();
+      _voiceSubscription = null;
+      _voiceAI?.dispose();
+      _voiceAI = null;
+
+      if (submitFallback &&
+          !_speechSubmitted &&
+          _listeningText.trim().isNotEmpty) {
+        _submitSpeechResult(_listeningText.trim());
+      }
+
+      if (!mounted) return;
+      setState(() => _isListening = false);
+    } finally {
+      _isStoppingListening = false;
     }
-
-    _voiceAI?.stop();
-    await Future<void>.delayed(const Duration(milliseconds: 650));
-    await _voiceSubscription?.cancel();
-    _voiceSubscription = null;
-    _voiceAI?.dispose();
-    _voiceAI = null;
-
-    if (submitFallback &&
-        !_speechSubmitted &&
-        _listeningText.trim().isNotEmpty) {
-      _submitSpeechResult(_listeningText.trim());
-    }
-
-    if (!mounted) return;
-    setState(() => _isListening = false);
   }
 
   void _submitSpeechResult(String text) {

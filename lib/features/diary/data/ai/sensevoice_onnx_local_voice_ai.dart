@@ -678,6 +678,9 @@ class SenseVoiceOnnxLocalVoiceAI implements ILocalVoiceAI {
   bool get requiresPcmStream => true;
 
   @override
+  Stream<double> get levelStream => const Stream<double>.empty();
+
+  @override
   void dispose() {
     _partialTimer?.cancel();
     _partialTimer = null;

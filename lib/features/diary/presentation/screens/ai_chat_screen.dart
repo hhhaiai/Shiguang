@@ -34,6 +34,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
 
   ILocalVoiceAI? _voiceAI;
   StreamSubscription<VoiceResult>? _voiceSubscription;
+  StreamSubscription<double>? _levelSubscription;
   StreamSubscription<Uint8List>? _audioSubscription;
   StreamSubscription<Amplitude>? _amplitudeSubscription;
   StreamSubscription<RecordState>? _recorderStateSubscription;
@@ -53,6 +54,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
     unawaited(_amplitudeSubscription?.cancel() ?? Future.value());
     unawaited(_recorderStateSubscription?.cancel() ?? Future.value());
     unawaited(_voiceSubscription?.cancel() ?? Future.value());
+    unawaited(_levelSubscription?.cancel() ?? Future.value());
     _voiceAI?.dispose();
     unawaited(_audioRecorder.dispose());
     _textController.dispose();
@@ -92,6 +94,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
       unawaited(activeVoiceAi.prepare());
     }
     _bindVoiceStream();
+    _bindVoiceLevelStream();
 
     if (activeVoiceAi != null && !activeVoiceAi.requiresPcmStream) {
       if (!mounted) return;
@@ -205,7 +208,27 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
           unawaited(_stopRecording(resetText: false));
         }
       },
+      onDone: () {
+        if (_isRecording && !_isStoppingRecording) {
+          unawaited(_stopRecording(resetText: false));
+        }
+      },
     );
+  }
+
+  void _bindVoiceLevelStream() {
+    final voiceAI = _voiceAI;
+    if (voiceAI == null) return;
+    unawaited(_levelSubscription?.cancel() ?? Future.value());
+
+    _levelSubscription = voiceAI.levelStream.listen((level) {
+      if (!mounted || !_isRecording) return;
+      final normalized = level.clamp(0.0, 1.0).toDouble();
+      setState(() {
+        _waveform.removeAt(0);
+        _waveform.add(math.max(0.03, normalized));
+      });
+    }, onError: (_) {});
   }
 
   void _applyRecognizedText(String recognizedText) {
@@ -284,6 +307,8 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
       _amplitudeSubscription = null;
       await _recorderStateSubscription?.cancel();
       _recorderStateSubscription = null;
+      await _levelSubscription?.cancel();
+      _levelSubscription = null;
 
       if (await _audioRecorder.isRecording()) {
         await _audioRecorder.stop();

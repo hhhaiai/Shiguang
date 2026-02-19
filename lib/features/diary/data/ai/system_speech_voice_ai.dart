@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math' as math;
 import 'dart:typed_data';
 
 import 'package:speech_to_text/speech_recognition_error.dart';
@@ -12,8 +13,17 @@ class SystemSpeechVoiceAI implements ILocalVoiceAI {
   final stt.SpeechToText _speech = stt.SpeechToText();
 
   StreamController<VoiceResult>? _controller;
+  StreamController<double>? _levelController;
   bool _isListening = false;
+  bool _initialized = false;
+  bool _keepListening = false;
+  bool _isStopping = false;
+  bool _isDisposed = false;
   int _seq = 0;
+  double _minSoundLevel = 0;
+  double _maxSoundLevel = 0;
+  Timer? _restartTimer;
+  Timer? _closeFallbackTimer;
 
   @override
   bool get requiresPcmStream => false;
@@ -22,32 +32,63 @@ class SystemSpeechVoiceAI implements ILocalVoiceAI {
   bool get isListening => _isListening;
 
   @override
+  Stream<double> get levelStream =>
+      _levelController?.stream ?? const Stream<double>.empty();
+
+  @override
   Stream<VoiceResult> listen() {
+    if (_isDisposed) {
+      throw StateError('System speech recognizer is disposed');
+    }
+
     _controller ??= StreamController<VoiceResult>.broadcast();
-    unawaited(_startSystemListening());
+    _levelController ??= StreamController<double>.broadcast();
+    _keepListening = true;
+    _seq = 0;
+    _minSoundLevel = 0;
+    _maxSoundLevel = 0;
+    _closeFallbackTimer?.cancel();
+    if (!_speech.isListening && !_isStopping) {
+      unawaited(_startSystemListening());
+    }
     return _controller!.stream;
   }
 
   Future<void> _startSystemListening() async {
     try {
-      if (_speech.isListening) {
+      if (_isDisposed ||
+          _isStopping ||
+          _speech.isListening ||
+          !_keepListening) {
         return;
       }
 
-      final available = await _speech.initialize(
-        onError: _onSpeechError,
-        onStatus: _onSpeechStatus,
-      );
+      if (!_initialized) {
+        final available = await _speech.initialize(
+          onError: _onSpeechError,
+          onStatus: _onSpeechStatus,
+        );
 
-      if (!available) {
-        throw Exception('System speech recognition not available');
+        if (!available) {
+          throw Exception('System speech recognition not available');
+        }
+        _initialized = true;
+      }
+
+      if (_isDisposed ||
+          _isStopping ||
+          _speech.isListening ||
+          !_keepListening) {
+        return;
       }
 
       _isListening = true;
-      _seq = 0;
 
       await _speech.listen(
         onResult: _onSpeechResult,
+        onSoundLevelChange: _onSoundLevel,
+        listenFor: const Duration(minutes: 5),
+        pauseFor: const Duration(seconds: 3),
         listenOptions: stt.SpeechListenOptions(
           listenMode: stt.ListenMode.dictation,
           partialResults: true,
@@ -75,15 +116,50 @@ class SystemSpeechVoiceAI implements ILocalVoiceAI {
 
   void _onSpeechError(SpeechRecognitionError error) {
     _isListening = false;
+    if (_isDisposed) return;
     _controller?.addError(Exception(error.errorMsg));
+  }
+
+  void _onSoundLevel(double level) {
+    if (_isDisposed || !_keepListening) return;
+
+    if (_minSoundLevel == 0 || level < _minSoundLevel) {
+      _minSoundLevel = level;
+    }
+    if (_maxSoundLevel == 0 || level > _maxSoundLevel) {
+      _maxSoundLevel = level;
+    }
+
+    final range = math.max(4.0, _maxSoundLevel - _minSoundLevel);
+    final normalized = ((level - _minSoundLevel) / range).clamp(0.0, 1.0);
+    final emphasized = math.pow(normalized, 1.2).toDouble();
+    _levelController?.add(math.max(0.03, emphasized));
   }
 
   void _onSpeechStatus(String status) {
     final normalized = status.toLowerCase();
+    if (normalized.contains('listening')) {
+      _isListening = true;
+      _closeFallbackTimer?.cancel();
+      return;
+    }
+
     if (normalized.contains('done') || normalized.contains('not listening')) {
       _isListening = false;
-      _controller?.close();
-      _controller = null;
+      if (_isDisposed) {
+        _closeStreams();
+        return;
+      }
+
+      if (_keepListening && !_isStopping) {
+        _restartTimer?.cancel();
+        _restartTimer = Timer(const Duration(milliseconds: 120), () {
+          unawaited(_startSystemListening());
+        });
+        return;
+      }
+
+      _closeStreams();
     }
   }
 
@@ -103,16 +179,53 @@ class SystemSpeechVoiceAI implements ILocalVoiceAI {
   }
 
   Future<void> _stopInternal() async {
-    if (_speech.isListening) {
-      await _speech.stop();
+    _keepListening = false;
+    _isStopping = true;
+    _restartTimer?.cancel();
+    _closeFallbackTimer?.cancel();
+
+    try {
+      if (_speech.isListening) {
+        await _speech.stop();
+      }
+    } finally {
+      _isStopping = false;
+      _isListening = false;
+      _scheduleFallbackClose();
     }
-    _isListening = false;
+  }
+
+  void _scheduleFallbackClose() {
+    _closeFallbackTimer?.cancel();
+    _closeFallbackTimer = Timer(const Duration(milliseconds: 450), () {
+      if (!_keepListening) {
+        _closeStreams();
+      }
+    });
+  }
+
+  void _closeStreams() {
+    final controller = _controller;
+    if (controller != null) {
+      unawaited(controller.close());
+    }
+    _controller = null;
+
+    final levelController = _levelController;
+    if (levelController != null) {
+      unawaited(levelController.close());
+    }
+    _levelController = null;
   }
 
   @override
   void dispose() {
-    stop();
-    unawaited(_controller?.close() ?? Future<void>.value());
-    _controller = null;
+    _isDisposed = true;
+    _keepListening = false;
+    _restartTimer?.cancel();
+    _closeFallbackTimer?.cancel();
+    unawaited(_speech.cancel());
+    _closeStreams();
+    _isListening = false;
   }
 }

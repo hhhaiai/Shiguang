@@ -41,7 +41,7 @@ dependencies:
 
   # Audio Recording
   record: ^6.1.1
-  speech_to_text: ^7.1.0
+  speech_to_text: 7.1.0
   file_picker: ^8.1.2
 
   # Permissions
