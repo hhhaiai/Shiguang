@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'dart:math' as math;
-import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
@@ -1103,11 +1102,11 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
   final GlobalKey _repaintKey = GlobalKey();
   final TransformationController _controller = TransformationController();
   ui.Image? _decoded;
-  Uint8List? _imageBytes;
+  String? _loadError;
   double _minScale = 1.0;
   double _maxScale = 4.0;
   bool _isSaving = false;
-  bool _hasInitTransform = false;
+  double? _lastCropSize;
 
   @override
   void initState() {
@@ -1122,20 +1121,31 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
   }
 
   Future<void> _loadImage() async {
-    final bytes = await widget.file.readAsBytes();
-    final codec = await ui.instantiateImageCodec(bytes);
-    final frame = await codec.getNextFrame();
-    if (!mounted) return;
-    setState(() {
-      _decoded = frame.image;
-      _imageBytes = bytes;
-    });
+    try {
+      final bytes = await widget.file.readAsBytes();
+      if (bytes.isEmpty) {
+        throw const FormatException('empty-image');
+      }
+      final codec = await ui.instantiateImageCodec(bytes);
+      final frame = await codec.getNextFrame();
+      if (!mounted) return;
+      setState(() {
+        _decoded = frame.image;
+        _loadError = null;
+      });
+    } catch (_) {
+      if (!mounted) return;
+      setState(() {
+        _decoded = null;
+        _loadError = '图片加载失败，请重新选择';
+      });
+    }
   }
 
   void _initTransform(double cropSize) {
     final image = _decoded;
     if (image == null) return;
-    if (_hasInitTransform) return;
+    if (_lastCropSize != null && (_lastCropSize! - cropSize).abs() < 1) return;
 
     final scale = math.max(cropSize / image.width, cropSize / image.height);
     _minScale = scale;
@@ -1146,22 +1156,40 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
     _controller.value = Matrix4.identity()
       ..translate(dx, dy)
       ..scale(scale);
-    _hasInitTransform = true;
+    _lastCropSize = cropSize;
   }
 
   Future<void> _saveCropped(double pixelRatio) async {
     if (_isSaving) return;
+    if (_decoded == null) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('图片尚未加载完成')));
+      return;
+    }
     setState(() => _isSaving = true);
 
     try {
       final boundary =
           _repaintKey.currentContext?.findRenderObject()
               as RenderRepaintBoundary?;
-      if (boundary == null) return;
+      if (boundary == null) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('裁剪区域未就绪，请重试')));
+        return;
+      }
 
-      final image = await boundary.toImage(pixelRatio: pixelRatio);
+      final safePixelRatio = pixelRatio.clamp(1.0, 3.0).toDouble();
+      final image = await boundary.toImage(pixelRatio: safePixelRatio);
       final byteData = await image.toByteData(format: ui.ImageByteFormat.png);
-      if (byteData == null) return;
+      if (byteData == null) {
+        if (!mounted) return;
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('裁剪失败，请重试')));
+        return;
+      }
 
       final bytes = byteData.buffer.asUint8List();
       final dir = await getApplicationDocumentsDirectory();
@@ -1191,13 +1219,14 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
   @override
   Widget build(BuildContext context) {
     final deviceRatio = MediaQuery.of(context).devicePixelRatio;
+    final canSave = !_isSaving && _decoded != null && _loadError == null;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('裁剪头像'),
         actions: [
           TextButton(
-            onPressed: _isSaving ? null : () => _saveCropped(deviceRatio),
+            onPressed: canSave ? () => _saveCropped(deviceRatio) : null,
             child: _isSaving
                 ? const SizedBox(
                     width: 16,
@@ -1208,13 +1237,34 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
           ),
         ],
       ),
-      body: _decoded == null || _imageBytes == null
+      body: _loadError != null
+          ? Center(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      _loadError!,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
+                    const SizedBox(height: 12),
+                    FilledButton(
+                      onPressed: _loadImage,
+                      child: const Text('重新选择'),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          : _decoded == null
           ? const Center(child: CircularProgressIndicator())
           : LayoutBuilder(
               builder: (context, constraints) {
-                final size = math.min(
-                  constraints.maxWidth - 32,
-                  constraints.maxHeight - 120,
+                final size = math.max(
+                  80.0,
+                  math.min(constraints.maxWidth - 32, constraints.maxHeight - 120),
                 );
                 _initTransform(size);
                 final cropRect = Rect.fromCenter(
@@ -1241,9 +1291,10 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
                               minScale: _minScale,
                               maxScale: _maxScale,
                               boundaryMargin: EdgeInsets.zero,
-                              child: Image.memory(
-                                _imageBytes!,
+                              child: RawImage(
+                                image: _decoded,
                                 fit: BoxFit.cover,
+                                filterQuality: FilterQuality.high,
                               ),
                             ),
                           ),
