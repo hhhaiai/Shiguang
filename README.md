@@ -102,9 +102,32 @@ flutter run -d <device_id>
 # iOS
 flutter build ios --release
 
-# Android
-flutter build apk --release
+# Android（通用包：armeabi-v7a / arm64-v8a / x86_64）
+flutter build apk --release --target-platform android-arm,android-arm64,android-x64
 ```
+
+### 5. 编译与安装（推荐命令）
+
+```bash
+# iOS 模拟器安装运行
+flutter run -d "iPhone 15"
+
+# Android 真机快速调试安装（arm64）
+./scripts/android_fast_debug_install.sh <device_id>
+
+# Android 三 ABI 通用 Release 包
+./scripts/android_universal_release_build.sh
+```
+
+### 6. Android 编译提速说明
+
+项目已启用稳定提速配置（见 `android/gradle.properties`）：
+
+- Gradle Daemon（`org.gradle.daemon=true`）
+- 并行构建（`org.gradle.parallel=true`）
+- 本地构建缓存（`org.gradle.caching=true`）
+- Kotlin 增量编译（`kotlin.incremental=true`）
+- Android 资源编译优化（`android.nonTransitiveRClass=true`、`android.nonFinalResIds=true`）
 
 ## SenseVoice 集成
 
