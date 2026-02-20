@@ -1155,6 +1155,29 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   .setAutoGenerateEmbedding(value);
             },
           ),
+          SwitchListTile(
+            secondary: const Icon(Icons.public),
+            title: Text(
+              _i18n(
+                language,
+                zhHans: '启用网络搜索',
+                zhHant: '啟用網路搜尋',
+                en: 'Enable Network Search',
+              ),
+            ),
+            subtitle: Text(
+              _i18n(
+                language,
+                zhHans: '搜索页与 AI 对话可联网检索（默认关闭）',
+                zhHant: '搜尋頁與 AI 對話可連網檢索（預設關閉）',
+                en: 'Allow online retrieval for search and AI chat (off by default)',
+              ),
+            ),
+            value: settings.enableNetworkSearch,
+            onChanged: (value) {
+              ref.read(settingsProvider.notifier).setEnableNetworkSearch(value);
+            },
+          ),
           const Divider(),
           _buildSectionHeader(
             context,

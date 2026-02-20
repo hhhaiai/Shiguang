@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../core/i18n/app_i18n.dart';
 import '../../../../core/ui/adaptive_navigation.dart';
@@ -366,6 +367,7 @@ class _TimelineSearchPageState extends ConsumerState<_TimelineSearchPage> {
   Future<void> _runSearch([String? input]) async {
     final query = (input ?? _searchController.text).trim();
     if (query.isEmpty) return;
+    final networkSearchEnabled = ref.read(settingsProvider).enableNetworkSearch;
 
     _searchController
       ..text = query
@@ -374,9 +376,13 @@ class _TimelineSearchPageState extends ConsumerState<_TimelineSearchPage> {
     setState(() {
       _loading = true;
       _hasSearched = true;
-      _networkLoading = true;
+      _networkLoading = networkSearchEnabled;
     });
 
+    Future<List<VectorDiary>>? networkFuture;
+    if (networkSearchEnabled) {
+      networkFuture = ref.read(timelineProvider.notifier).searchNetwork(query);
+    }
     final result = await ref.read(timelineProvider.notifier).search(query);
     if (!mounted) return;
 
@@ -385,14 +391,26 @@ class _TimelineSearchPageState extends ConsumerState<_TimelineSearchPage> {
       _loading = false;
     });
     ref.read(settingsProvider.notifier).addSearchHistory(query);
-    unawaited(_loadNetworkMatches(query));
+    if (networkFuture != null) {
+      unawaited(_loadNetworkMatches(query, pending: networkFuture));
+    }
   }
 
-  Future<void> _loadNetworkMatches(String query) async {
-    await Future<void>.delayed(const Duration(milliseconds: 250));
+  Future<void> _loadNetworkMatches(
+    String query, {
+    Future<List<VectorDiary>>? pending,
+  }) async {
+    final networkMatches =
+        await (pending ??
+            ref.read(timelineProvider.notifier).searchNetwork(query));
     if (!mounted || _searchController.text.trim() != query) return;
 
     setState(() {
+      _searchResult = TimelineSearchResult(
+        exactMatches: _searchResult.exactMatches,
+        fuzzyMatches: _searchResult.fuzzyMatches,
+        networkMatches: networkMatches,
+      );
       _networkLoading = false;
     });
   }
@@ -410,6 +428,9 @@ class _TimelineSearchPageState extends ConsumerState<_TimelineSearchPage> {
   @override
   Widget build(BuildContext context) {
     final history = ref.watch(settingsProvider.select((s) => s.searchHistory));
+    final networkSearchEnabled = ref.watch(
+      settingsProvider.select((s) => s.enableNetworkSearch),
+    );
     final query = _searchController.text.trim();
     final exactMatches = _searchResult.exactMatches;
     final fuzzyMatches = _searchResult.fuzzyMatches;
@@ -533,11 +554,17 @@ class _TimelineSearchPageState extends ConsumerState<_TimelineSearchPage> {
                           ),
                         if (networkMatches.isEmpty)
                           _EmptySection(
-                            message: context.t(
-                              zhHans: '网络匹配未启用（本地优先）',
-                              zhHant: '網路匹配未啟用（本地優先）',
-                              en: 'Network match is disabled (local-first).',
-                            ),
+                            message: networkSearchEnabled
+                                ? context.t(
+                                    zhHans: '暂无网络匹配结果',
+                                    zhHant: '暫無網路匹配結果',
+                                    en: 'No network matches',
+                                  )
+                                : context.t(
+                                    zhHans: '网络搜索已关闭，请到设置开启',
+                                    zhHant: '網路搜尋已關閉，請到設定開啟',
+                                    en: 'Network search is off. Enable it in Settings.',
+                                  ),
                           )
                         else
                           _SearchResultWrap(
@@ -719,6 +746,9 @@ class _SearchResultWrap extends StatelessWidget {
 }
 
 class _SearchResultCard extends StatelessWidget {
+  static const String _networkUrlTagPrefix = 'network:url:';
+  static const String _networkSourceTagPrefix = 'network:source:';
+
   final VectorDiary diary;
   final String query;
   final String matchTypeLabel;
@@ -746,11 +776,69 @@ class _SearchResultCard extends StatelessWidget {
     return count;
   }
 
+  String? _extractTagValue(String? tags, String prefix) {
+    if (tags == null || tags.isEmpty) return null;
+    final lines = tags.split('\n');
+    for (final line in lines) {
+      if (line.startsWith(prefix)) {
+        final value = line.substring(prefix.length).trim();
+        if (value.isNotEmpty) return value;
+      }
+    }
+    return null;
+  }
+
+  Future<void> _handleTap(BuildContext context) async {
+    final networkUrl = _extractTagValue(diary.aiTags, _networkUrlTagPrefix);
+    if (networkUrl != null) {
+      final uri = Uri.tryParse(networkUrl);
+      if (uri == null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              context.t(zhHans: '链接无效', zhHant: '連結無效', en: 'Invalid link'),
+            ),
+          ),
+        );
+        return;
+      }
+      final launched = await launchUrl(
+        uri,
+        mode: LaunchMode.externalApplication,
+      );
+      if (!launched && context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              context.t(
+                zhHans: '无法打开网页',
+                zhHant: '無法開啟網頁',
+                en: 'Unable to open web page',
+              ),
+            ),
+          ),
+        );
+      }
+      return;
+    }
+
+    final uri = Uri(
+      path: '/diary/${diary.id}',
+      queryParameters: {'q': query, 'match': matchTypeLabel},
+    );
+    context.push(uri.toString());
+  }
+
   @override
   Widget build(BuildContext context) {
     final date = DateTime.fromMillisecondsSinceEpoch(diary.updatedAt);
     final content = DiaryContentCodec.decode(diary.rawText);
     final visibleText = content.text;
+    final networkUrl = _extractTagValue(diary.aiTags, _networkUrlTagPrefix);
+    final networkSource = _extractTagValue(
+      diary.aiTags,
+      _networkSourceTagPrefix,
+    );
     final matchCount =
         _countMatches(visibleText, query) +
         _countMatches(diary.aiSummary ?? '', query);
@@ -759,13 +847,7 @@ class _SearchResultCard extends StatelessWidget {
       color: Colors.transparent,
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
-        onTap: () {
-          final uri = Uri(
-            path: '/diary/${diary.id}',
-            queryParameters: {'q': query, 'match': matchTypeLabel},
-          );
-          context.push(uri.toString());
-        },
+        onTap: () => unawaited(_handleTap(context)),
         child: Container(
           height: 112,
           padding: const EdgeInsets.all(10),
@@ -790,24 +872,55 @@ class _SearchResultCard extends StatelessWidget {
                 style: const TextStyle(fontSize: 13),
               ),
               const Spacer(),
-              Text(
-                context.t(
-                  zhHans: '匹配:$matchCount',
-                  zhHant: '匹配:$matchCount',
-                  en: 'Matches: $matchCount',
+              if (networkUrl == null)
+                Text(
+                  context.t(
+                    zhHans: '匹配:$matchCount',
+                    zhHant: '匹配:$matchCount',
+                    en: 'Matches: $matchCount',
+                  ),
+                  style: TextStyle(
+                    fontSize: 11,
+                    color: matchTypeColor,
+                    fontWeight: FontWeight.w700,
+                  ),
+                )
+              else
+                Text(
+                  context.t(
+                    zhHans: '来源: ${networkSource ?? '网络'}',
+                    zhHant: '來源: ${networkSource ?? '網路'}',
+                    en: 'Source: ${networkSource ?? 'Web'}',
+                  ),
+                  style: TextStyle(
+                    fontSize: 11,
+                    color: matchTypeColor,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
-                style: TextStyle(
-                  fontSize: 11,
-                  color: matchTypeColor,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
               Text(
-                formatDateTimeWithSeconds(context, date),
+                networkUrl == null
+                    ? formatDateTimeWithSeconds(context, date)
+                    : (Uri.tryParse(networkUrl)?.host ?? networkUrl),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(fontSize: 10, color: Colors.grey[500]),
               ),
+              if (networkUrl != null)
+                Text(
+                  context.t(
+                    zhHans: '点击打开网页',
+                    zhHant: '點擊開啟網頁',
+                    en: 'Tap to open web page',
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 9,
+                    color: Colors.grey[500],
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
             ],
           ),
         ),

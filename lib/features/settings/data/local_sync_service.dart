@@ -469,6 +469,7 @@ class LocalSyncBackupService {
       'customLlmProtocol': settings.customLlmProtocol.name,
       'autoGenerateSummary': settings.autoGenerateSummary,
       'autoGenerateEmbedding': settings.autoGenerateEmbedding,
+      'enableNetworkSearch': settings.enableNetworkSearch,
       if (includeApiKeys) ...{
         'openAiApiKey': settings.openAiApiKey,
         'geminiApiKey': settings.geminiApiKey,

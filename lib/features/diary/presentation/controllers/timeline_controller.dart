@@ -5,8 +5,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../../../core/objectbox/objectbox_providers.dart';
 import '../../../auth/presentation/controllers/auth_controller.dart';
+import '../../../settings/data/settings_provider.dart';
 import '../../data/ai/embedding_service.dart';
 import '../../data/entities/vector_diary.dart';
+import '../../data/network/web_search_service.dart';
 import '../../data/repositories/vector_diary_repository.dart';
 import '../../domain/diary_content_codec.dart';
 
@@ -41,6 +43,10 @@ EmbeddingService embeddingService(Ref ref) {
   ref.onDispose(service.dispose);
   return service;
 }
+
+final webSearchServiceProvider = Provider<WebSearchService>((ref) {
+  return WebSearchService();
+});
 
 @riverpod
 class Timeline extends _$Timeline {
@@ -234,6 +240,51 @@ class Timeline extends _$Timeline {
           .map((entry) => entry.item)
           .toList(growable: false),
     );
+  }
+
+  Future<List<VectorDiary>> searchNetwork(String query, {int limit = 8}) async {
+    final settings = ref.read(settingsProvider);
+    if (!settings.enableNetworkSearch) {
+      return const [];
+    }
+
+    final accountId = ref.read(authProvider);
+    if (accountId == null) return const [];
+
+    final normalizedQuery = query.trim();
+    if (normalizedQuery.isEmpty) {
+      return const [];
+    }
+
+    final items = await ref
+        .read(webSearchServiceProvider)
+        .search(normalizedQuery, limit: limit);
+    if (items.isEmpty) return const [];
+
+    final now = DateTime.now().millisecondsSinceEpoch;
+    return items
+        .asMap()
+        .entries
+        .map((entry) {
+          final index = entry.key;
+          final item = entry.value;
+          final rawText = [
+            item.title.trim(),
+            item.snippet.trim(),
+            item.url.trim(),
+          ].where((line) => line.isNotEmpty).join('\n');
+
+          return VectorDiary(
+            id: -(index + 1),
+            accountId: accountId,
+            rawText: rawText,
+            aiSummary: item.url,
+            aiTags: 'network:url:${item.url}\nnetwork:source:${item.source}',
+            createdAt: now,
+            updatedAt: now,
+          );
+        })
+        .toList(growable: false);
   }
 
   List<VectorDiary> _searchByText(List<VectorDiary> all, String query) {

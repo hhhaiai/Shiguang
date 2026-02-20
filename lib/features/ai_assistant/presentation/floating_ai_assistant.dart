@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:typed_data';
+import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:record/record.dart';
@@ -10,6 +11,7 @@ import '../../diary/data/ai/sensevoice_onnx_local_voice_ai.dart';
 import '../../diary/data/ai/sensevoice_local_voice_ai.dart';
 import '../../diary/data/ai/system_speech_voice_ai.dart';
 import '../../diary/data/ai/llm_providers.dart';
+import '../../diary/data/network/web_search_service.dart';
 import '../../diary/domain/interfaces/i_local_voice_ai.dart';
 import '../../diary/domain/interfaces/i_local_llm.dart';
 
@@ -34,6 +36,7 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
   final _textController = TextEditingController();
   final _inputFocusNode = FocusNode();
   final _audioRecorder = AudioRecorder();
+  final _webSearchService = WebSearchService();
   ILocalVoiceAI? _voiceAI;
   StreamSubscription<VoiceResult>? _voiceSubscription;
   StreamSubscription<Uint8List>? _audioSubscription;
@@ -252,6 +255,11 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
 
   void _requestAiResponse(String userText) async {
     final llm = ref.read(localLlmProvider);
+    final networkSearchEnabled = ref.read(settingsProvider).enableNetworkSearch;
+    final Future<List<WebSearchResultItem>>? networkSearchFuture =
+        networkSearchEnabled
+        ? _webSearchService.search(userText, limit: 6)
+        : null;
 
     // Build context from previous messages, excluding current user turn
     // because `llm.chat` appends the current user message itself.
@@ -276,7 +284,37 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
     });
 
     try {
-      final response = await llm.chat(message: userText, context: chatContext);
+      final networkItems = networkSearchFuture == null
+          ? const <WebSearchResultItem>[]
+          : await networkSearchFuture;
+      String? preprocessedNetworkContext;
+      if (networkItems.isNotEmpty) {
+        final preprocessPrompt = _buildNetworkPreprocessPrompt(
+          userText: userText,
+          items: networkItems,
+        );
+        try {
+          preprocessedNetworkContext = await llm.chat(
+            message: preprocessPrompt,
+            context: const [],
+          );
+        } catch (error) {
+          if (kDebugMode) {
+            debugPrint('[Floating AI] network preprocess failed: $error');
+          }
+        }
+      }
+
+      final finalMessage = _buildFinalUserPrompt(
+        userText: userText,
+        networkItems: networkItems,
+        preprocessedNetworkContext: preprocessedNetworkContext,
+      );
+
+      final response = await llm.chat(
+        message: finalMessage,
+        context: chatContext,
+      );
       if (!mounted) return;
       setState(() {
         _messages.add(_ChatMessage(text: response, isUser: false));
@@ -298,6 +336,71 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
         _isSpeaking = false;
       });
     }
+  }
+
+  String _serializeNetworkItems(List<WebSearchResultItem> items) {
+    if (items.isEmpty) return '[]';
+    final lines = <String>[];
+    for (var i = 0; i < items.length; i++) {
+      final item = items[i];
+      lines.add(
+        '- #${i + 1}\n'
+        '  title: ${item.title.replaceAll('\n', ' ').trim()}\n'
+        '  snippet: ${item.snippet.replaceAll('\n', ' ').trim()}\n'
+        '  url: ${item.url}\n'
+        '  source: ${item.source}',
+      );
+    }
+    return lines.join('\n');
+  }
+
+  String _buildNetworkPreprocessPrompt({
+    required String userText,
+    required List<WebSearchResultItem> items,
+  }) {
+    final serialized = _serializeNetworkItems(items);
+    return '''
+你是检索信息预处理助手。请基于用户问题和网络检索结果，输出结构化预处理结果，供后续主回答模型使用。
+
+用户问题:
+$userText
+
+网络检索结果:
+$serialized
+
+输出要求：
+1. 使用简体中文输出。
+2. 只输出 3 个部分，按以下固定标题：
+   [事实要点]
+   [可能冲突或不确定点]
+   [可引用来源]
+3. 每部分最多 5 条，精炼、客观，不要写总结性套话。
+4. 在 [可引用来源] 中保留可用 URL。
+''';
+  }
+
+  String _buildFinalUserPrompt({
+    required String userText,
+    required List<WebSearchResultItem> networkItems,
+    String? preprocessedNetworkContext,
+  }) {
+    if (networkItems.isEmpty ||
+        preprocessedNetworkContext == null ||
+        preprocessedNetworkContext.trim().isEmpty) {
+      return userText;
+    }
+
+    return '''
+请基于用户问题回答，并优先参考下面的“网络预处理结果”。
+如果网络信息和常识冲突，请明确标注不确定性。
+如引用网络信息，请在回答末尾附上“参考来源”并给出 URL。
+
+用户问题:
+$userText
+
+网络预处理结果:
+${preprocessedNetworkContext.trim()}
+''';
   }
 
   @override

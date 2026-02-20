@@ -69,6 +69,7 @@ class AppSettings {
   final bool preferLocalAi;
   final bool autoGenerateSummary;
   final bool autoGenerateEmbedding;
+  final bool enableNetworkSearch;
   final AppThemeMode themeMode;
   final AppLanguage language;
   final List<String> searchHistory;
@@ -101,6 +102,7 @@ class AppSettings {
     this.preferLocalAi = true,
     this.autoGenerateSummary = true,
     this.autoGenerateEmbedding = true,
+    this.enableNetworkSearch = false,
     this.themeMode = AppThemeMode.system,
     this.language = AppLanguage.zhHans,
     this.searchHistory = const [],
@@ -186,6 +188,7 @@ class AppSettings {
     bool? preferLocalAi,
     bool? autoGenerateSummary,
     bool? autoGenerateEmbedding,
+    bool? enableNetworkSearch,
     AppThemeMode? themeMode,
     AppLanguage? language,
     List<String>? searchHistory,
@@ -214,6 +217,7 @@ class AppSettings {
       autoGenerateSummary: autoGenerateSummary ?? this.autoGenerateSummary,
       autoGenerateEmbedding:
           autoGenerateEmbedding ?? this.autoGenerateEmbedding,
+      enableNetworkSearch: enableNetworkSearch ?? this.enableNetworkSearch,
       themeMode: themeMode ?? this.themeMode,
       language: language ?? this.language,
       searchHistory: searchHistory ?? this.searchHistory,
@@ -276,6 +280,9 @@ class SettingsNotifier extends StateNotifier<AppSettings> {
       final autoGenerateEmbedding = decoded['autoGenerateEmbedding'] is bool
           ? decoded['autoGenerateEmbedding'] as bool
           : true;
+      final enableNetworkSearch = decoded['enableNetworkSearch'] is bool
+          ? decoded['enableNetworkSearch'] as bool
+          : false;
 
       final themeModeRaw = (decoded['themeMode'] as String?)?.trim();
       final themeMode = AppThemeMode.values.firstWhere(
@@ -375,6 +382,7 @@ class SettingsNotifier extends StateNotifier<AppSettings> {
         preferLocalAi: derivedPreferLocalAi,
         autoGenerateSummary: autoGenerateSummary,
         autoGenerateEmbedding: autoGenerateEmbedding,
+        enableNetworkSearch: enableNetworkSearch,
         themeMode: themeMode,
         language: language,
         searchHistory: List.unmodifiable(searchHistory),
@@ -420,6 +428,7 @@ class SettingsNotifier extends StateNotifier<AppSettings> {
       'preferLocalAi': state.preferLocalAi,
       'autoGenerateSummary': state.autoGenerateSummary,
       'autoGenerateEmbedding': state.autoGenerateEmbedding,
+      'enableNetworkSearch': state.enableNetworkSearch,
       'themeMode': state.themeMode.name,
       'language': state.language.code,
       'searchHistory': state.searchHistory,
@@ -503,6 +512,10 @@ class SettingsNotifier extends StateNotifier<AppSettings> {
 
   void setAutoGenerateEmbedding(bool auto) {
     _setState(state.copyWith(autoGenerateEmbedding: auto));
+  }
+
+  void setEnableNetworkSearch(bool enabled) {
+    _setState(state.copyWith(enableNetworkSearch: enabled));
   }
 
   void setThemeMode(AppThemeMode mode) {
@@ -657,6 +670,9 @@ class SettingsNotifier extends StateNotifier<AppSettings> {
     final autoGenerateEmbedding = imported['autoGenerateEmbedding'] is bool
         ? imported['autoGenerateEmbedding'] as bool
         : state.autoGenerateEmbedding;
+    final enableNetworkSearch = imported['enableNetworkSearch'] is bool
+        ? imported['enableNetworkSearch'] as bool
+        : state.enableNetworkSearch;
     final derivedPreferLocalAi =
         chatModelProvider == ChatModelProvider.local &&
         voiceRecognitionEngine == VoiceRecognitionEngine.localModel;
@@ -726,6 +742,7 @@ class SettingsNotifier extends StateNotifier<AppSettings> {
         customLlmProtocol: customLlmProtocol,
         autoGenerateSummary: autoGenerateSummary,
         autoGenerateEmbedding: autoGenerateEmbedding,
+        enableNetworkSearch: enableNetworkSearch,
         openAiApiKey: includeApiKeys
             ? (imported['openAiApiKey'] as String?)?.trim() ??
                   state.openAiApiKey

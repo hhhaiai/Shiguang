@@ -64,6 +64,7 @@ dependencies:
   # ONNX Runtime for local AI
   fftea: ^1.5.0+1
   llama_cpp_dart: ^0.2.2
+  url_launcher: ^6.3.2
 
 dev_dependencies:
   flutter_test:
