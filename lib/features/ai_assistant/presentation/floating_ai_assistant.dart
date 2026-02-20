@@ -3,6 +3,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:record/record.dart';
+import '../../../core/i18n/app_i18n.dart';
 import '../../../core/ui/keyboard.dart';
 import '../../settings/data/settings_provider.dart';
 import '../../diary/data/ai/sensevoice_onnx_local_voice_ai.dart';
@@ -70,7 +71,15 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
     if (!hasPermission) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Microphone permission required')),
+        SnackBar(
+          content: Text(
+            context.t(
+              zhHans: '需要麦克风权限',
+              zhHant: '需要麥克風權限',
+              en: 'Microphone permission required',
+            ),
+          ),
+        ),
       );
       return;
     }
@@ -118,9 +127,17 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
         setState(() {
           _isListening = false;
         });
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text('Voice error: $error')));
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              context.t(
+                zhHans: '语音错误: $error',
+                zhHant: '語音錯誤: $error',
+                en: 'Voice error: $error',
+              ),
+            ),
+          ),
+        );
         unawaited(_stopListening(submitFallback: false));
       },
       onDone: () {
@@ -161,9 +178,17 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
       setState(() {
         _isListening = false;
       });
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('Mic start failed: $error')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            context.t(
+              zhHans: '麦克风启动失败: $error',
+              zhHant: '麥克風啟動失敗: $error',
+              en: 'Mic start failed: $error',
+            ),
+          ),
+        ),
+      );
       await _voiceSubscription?.cancel();
       _voiceSubscription = null;
       _voiceAI?.dispose();
@@ -237,7 +262,7 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
       history.removeLast();
     }
 
-    final context = history
+    final chatContext = history
         .map(
           (m) => ChatMessage(
             role: m.isUser ? 'user' : 'assistant',
@@ -251,7 +276,7 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
     });
 
     try {
-      final response = await llm.chat(message: userText, context: context);
+      final response = await llm.chat(message: userText, context: chatContext);
       if (!mounted) return;
       setState(() {
         _messages.add(_ChatMessage(text: response, isUser: false));
@@ -261,7 +286,14 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
       if (!mounted) return;
       setState(() {
         _messages.add(
-          _ChatMessage(text: '抱歉，AI服务暂时不可用: $error', isUser: false),
+          _ChatMessage(
+            text: context.t(
+              zhHans: '抱歉，AI服务暂时不可用: $error',
+              zhHant: '抱歉，AI 服務暫時不可用: $error',
+              en: 'Sorry, AI service is temporarily unavailable: $error',
+            ),
+            isUser: false,
+          ),
         );
         _isSpeaking = false;
       });
@@ -314,9 +346,13 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
                           child: Icon(Icons.smart_toy, size: 20),
                         ),
                         const SizedBox(width: 8),
-                        const Text(
-                          'AI Assistant',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                        Text(
+                          context.t(
+                            zhHans: 'AI 助手',
+                            zhHant: 'AI 助手',
+                            en: 'AI Assistant',
+                          ),
+                          style: const TextStyle(fontWeight: FontWeight.bold),
                         ),
                         const Spacer(),
                         IconButton(
@@ -355,7 +391,11 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
                                 Expanded(
                                   child: Text(
                                     _listeningText.isEmpty
-                                        ? 'Listening...'
+                                        ? context.t(
+                                            zhHans: '正在聆听...',
+                                            zhHant: '正在聆聽...',
+                                            en: 'Listening...',
+                                          )
                                         : _listeningText,
                                     style: TextStyle(
                                       color: Colors.red.shade700,
@@ -397,8 +437,12 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
                                     scrollPadding: EdgeInsets.only(
                                       bottom: bottomInset + 24,
                                     ),
-                                    decoration: const InputDecoration(
-                                      hintText: 'Type a message...',
+                                    decoration: InputDecoration(
+                                      hintText: context.t(
+                                        zhHans: '输入消息...',
+                                        zhHant: '輸入訊息...',
+                                        en: 'Type a message...',
+                                      ),
                                       border: InputBorder.none,
                                       isDense: true,
                                     ),

@@ -4,10 +4,10 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:intl/intl.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../../../../core/i18n/app_i18n.dart';
 import '../../../../core/ui/edge_swipe_back.dart';
 import '../../data/entities/vector_diary.dart';
 import '../../domain/diary_content_codec.dart';
@@ -109,16 +109,24 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
       }
     } catch (e) {
       if (!mounted) return;
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('Failed to share: $e')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            context.t(
+              zhHans: '分享失败: $e',
+              zhHant: '分享失敗: $e',
+              en: 'Failed to share: $e',
+            ),
+          ),
+        ),
+      );
     }
   }
 
   void _editDiary(VectorDiary diary) {
     showDiaryInputSheet(
       context,
-      title: '编辑文章',
+      title: context.t(zhHans: '编辑文章', zhHant: '編輯文章', en: 'Edit Entry'),
       initialRawText: diary.rawText,
       onSubmit: (text) {
         ref
@@ -255,7 +263,7 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
     if (widgets.isEmpty) {
       widgets.add(
         Text(
-          '暂无内容',
+          context.t(zhHans: '暂无内容', zhHant: '暫無內容', en: 'No content'),
           style: TextStyle(fontSize: 16, height: 1.6, color: scheme.onSurface),
         ),
       );
@@ -392,7 +400,6 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
   Widget build(BuildContext context) {
     final diaries = ref.watch(timelineProvider);
     final diary = diaries.where((d) => d.id == widget.diaryId).firstOrNull;
-    final dateFormat = DateFormat('EEEE, MMMM d, yyyy • HH:mm');
 
     if (diary == null) {
       return Scaffold(
@@ -402,7 +409,15 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
             onPressed: () => context.pop(),
           ),
         ),
-        body: const Center(child: Text('Diary not found')),
+        body: Center(
+          child: Text(
+            context.t(
+              zhHans: '未找到该记录',
+              zhHant: '找不到該記錄',
+              en: 'Diary not found',
+            ),
+          ),
+        ),
       );
     }
 
@@ -427,7 +442,9 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
             icon: const Icon(Icons.arrow_back),
             onPressed: () => context.pop(),
           ),
-          title: const Text('文章查看'),
+          title: Text(
+            context.t(zhHans: '文章查看', zhHant: '文章檢視', en: 'Entry Details'),
+          ),
           actions: [
             IconButton(
               icon: const Icon(Icons.edit),
@@ -456,7 +473,7 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Text(
-                        dateFormat.format(date),
+                        formatDateTimeLong(context, date),
                         style: TextStyle(
                           color: Theme.of(
                             context,
@@ -488,7 +505,13 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Text(
-                            '${widget.matchType ?? '搜索匹配'} · ${offsets.length}处',
+                            context.t(
+                              zhHans:
+                                  '${widget.matchType ?? '搜索匹配'} · ${offsets.length}处',
+                              zhHant:
+                                  '${widget.matchType ?? '搜尋匹配'} · ${offsets.length}處',
+                              en: '${widget.matchType ?? 'Search Match'} · ${offsets.length} hits',
+                            ),
                             style: TextStyle(
                               color: Theme.of(
                                 context,
@@ -511,7 +534,11 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
                           ),
                           const SizedBox(width: 8),
                           Text(
-                            'AI Summary',
+                            context.t(
+                              zhHans: 'AI 摘要',
+                              zhHant: 'AI 摘要',
+                              en: 'AI Summary',
+                            ),
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Theme.of(context).colorScheme.primary,

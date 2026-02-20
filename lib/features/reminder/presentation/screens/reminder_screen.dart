@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:intl/intl.dart';
 import '../controllers/reminder_controller.dart';
+import '../../../../core/i18n/app_i18n.dart';
 import '../../../../core/ui/keyboard.dart';
 import '../../../../core/ui/adaptive_navigation.dart';
 
@@ -14,7 +14,10 @@ class ReminderScreen extends ConsumerWidget {
     final isCupertino = isCupertinoPlatform(Theme.of(context).platform);
 
     return Scaffold(
-      appBar: AppBar(centerTitle: isCupertino, title: const Text('Reminders')),
+      appBar: AppBar(
+        centerTitle: isCupertino,
+        title: Text(context.t(zhHans: '提醒', zhHant: '提醒', en: 'Reminders')),
+      ),
       body: reminders.isEmpty
           ? Center(
               child: Column(
@@ -27,7 +30,11 @@ class ReminderScreen extends ConsumerWidget {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'No reminders',
+                    context.t(
+                      zhHans: '暂无提醒',
+                      zhHant: '暫無提醒',
+                      en: 'No reminders',
+                    ),
                     style: TextStyle(color: Colors.grey[600], fontSize: 16),
                   ),
                 ],
@@ -38,7 +45,6 @@ class ReminderScreen extends ConsumerWidget {
               itemCount: reminders.length,
               itemBuilder: (context, index) {
                 final reminder = reminders[index];
-                final dateFormat = DateFormat('MMM d, yyyy • HH:mm');
                 final date = DateTime.fromMillisecondsSinceEpoch(
                   reminder.triggerAt,
                 );
@@ -65,7 +71,7 @@ class ReminderScreen extends ConsumerWidget {
                             : TextDecoration.lineThrough,
                       ),
                     ),
-                    subtitle: Text(dateFormat.format(date)),
+                    subtitle: Text(formatDateTimeShort(context, date)),
                     trailing: IconButton(
                       icon: const Icon(Icons.delete_outline),
                       onPressed: () {
@@ -98,7 +104,9 @@ class ReminderScreen extends ConsumerWidget {
         return StatefulBuilder(
           builder: (context, setState) {
             return AlertDialog(
-              title: const Text('Add Reminder'),
+              title: Text(
+                context.t(zhHans: '添加提醒', zhHant: '新增提醒', en: 'Add Reminder'),
+              ),
               content: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -107,9 +115,13 @@ class ReminderScreen extends ConsumerWidget {
                     focusNode: titleFocusNode,
                     autofocus: true,
                     onTap: () => requestKeyboardFocus(context, titleFocusNode),
-                    decoration: const InputDecoration(
-                      labelText: 'Title',
-                      border: OutlineInputBorder(),
+                    decoration: InputDecoration(
+                      labelText: context.t(
+                        zhHans: '标题',
+                        zhHant: '標題',
+                        en: 'Title',
+                      ),
+                      border: const OutlineInputBorder(),
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -117,9 +129,13 @@ class ReminderScreen extends ConsumerWidget {
                     controller: bodyController,
                     focusNode: bodyFocusNode,
                     onTap: () => requestKeyboardFocus(context, bodyFocusNode),
-                    decoration: const InputDecoration(
-                      labelText: 'Description (optional)',
-                      border: OutlineInputBorder(),
+                    decoration: InputDecoration(
+                      labelText: context.t(
+                        zhHans: '描述（可选）',
+                        zhHant: '描述（可選）',
+                        en: 'Description (optional)',
+                      ),
+                      border: const OutlineInputBorder(),
                     ),
                     maxLines: 2,
                   ),
@@ -127,9 +143,7 @@ class ReminderScreen extends ConsumerWidget {
                   ListTile(
                     contentPadding: EdgeInsets.zero,
                     leading: const Icon(Icons.access_time),
-                    title: Text(
-                      DateFormat('MMM d, yyyy • HH:mm').format(selectedDate),
-                    ),
+                    title: Text(formatDateTimeShort(context, selectedDate)),
                     onTap: () async {
                       final date = await showDatePicker(
                         context: context,
@@ -163,7 +177,9 @@ class ReminderScreen extends ConsumerWidget {
               actions: [
                 TextButton(
                   onPressed: () => Navigator.pop(context),
-                  child: const Text('Cancel'),
+                  child: Text(
+                    context.t(zhHans: '取消', zhHant: '取消', en: 'Cancel'),
+                  ),
                 ),
                 FilledButton(
                   onPressed: () {
@@ -181,7 +197,7 @@ class ReminderScreen extends ConsumerWidget {
                       Navigator.pop(context);
                     }
                   },
-                  child: const Text('Add'),
+                  child: Text(context.t(zhHans: '添加', zhHant: '新增', en: 'Add')),
                 ),
               ],
             );

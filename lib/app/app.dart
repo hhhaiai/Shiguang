@@ -47,9 +47,10 @@ class _AppState extends ConsumerState<App> {
       AppThemeMode.dark => ThemeMode.dark,
       AppThemeMode.system => ThemeMode.system,
     };
+    final appTitle = settings.language == AppLanguage.en ? 'Shiguang' : '拾光';
 
     return MaterialApp.router(
-      title: '拾光',
+      title: appTitle,
       debugShowCheckedModeBanner: false,
       themeMode: themeMode,
       locale: settings.language.locale,

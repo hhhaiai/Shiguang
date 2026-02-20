@@ -6,8 +6,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:intl/intl.dart';
 
+import '../../../../core/i18n/app_i18n.dart';
 import '../../../../core/ui/adaptive_navigation.dart';
 import '../../../../core/ui/edge_swipe_back.dart';
 import '../../../../core/ui/keyboard.dart';
@@ -58,7 +58,7 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
   void _openDiaryInput() {
     showDiaryInputSheet(
       context,
-      title: '写文章',
+      title: context.t(zhHans: '写文章', zhHant: '寫文章', en: 'Write'),
       onSubmit: (text) {
         ref.read(timelineProvider.notifier).createDiary(rawText: text);
       },
@@ -70,36 +70,51 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
     final diaries = ref.watch(timelineProvider);
     final currentUser = ref.watch(authProvider.notifier).getCurrentUser();
     final isCupertino = isCupertinoPlatform(Theme.of(context).platform);
+    final fallbackUserName = context.t(zhHans: '用户', zhHant: '使用者', en: 'User');
 
     return Scaffold(
       appBar: AppBar(
         centerTitle: isCupertino,
-        title: Text(currentUser?.username ?? 'User'),
+        title: Text(currentUser?.username ?? fallbackUserName),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () => context.push('/settings'),
-            tooltip: '设置',
+            tooltip: context.t(zhHans: '设置', zhHant: '設定', en: 'Settings'),
           ),
         ],
       ),
       body: Stack(
         children: [
           diaries.isEmpty
-              ? const Center(
+              ? Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.note_add, size: 64, color: Colors.grey),
-                      SizedBox(height: 16),
+                      const Icon(Icons.note_add, size: 64, color: Colors.grey),
+                      const SizedBox(height: 16),
                       Text(
-                        'No memories yet',
-                        style: TextStyle(color: Colors.grey, fontSize: 16),
+                        context.t(
+                          zhHans: '还没有记忆',
+                          zhHant: '還沒有記憶',
+                          en: 'No memories yet',
+                        ),
+                        style: const TextStyle(
+                          color: Colors.grey,
+                          fontSize: 16,
+                        ),
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Text(
-                        'Tap + to capture your thoughts',
-                        style: TextStyle(color: Colors.grey, fontSize: 14),
+                        context.t(
+                          zhHans: '点击 + 记录你的想法',
+                          zhHant: '點擊 + 記錄你的想法',
+                          en: 'Tap + to capture your thoughts',
+                        ),
+                        style: const TextStyle(
+                          color: Colors.grey,
+                          fontSize: 14,
+                        ),
                       ),
                     ],
                   ),
@@ -122,13 +137,20 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
                           borderRadius: BorderRadius.circular(12),
                         ),
                         alignment: Alignment.centerRight,
-                        child: const Row(
+                        child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Icon(Icons.delete_outline, color: Colors.white),
-                            SizedBox(width: 8),
+                            const Icon(
+                              Icons.delete_outline,
+                              color: Colors.white,
+                            ),
+                            const SizedBox(width: 8),
                             Text(
-                              'Delete',
+                              context.t(
+                                zhHans: '删除',
+                                zhHant: '刪除',
+                                en: 'Delete',
+                              ),
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w600,
@@ -141,20 +163,42 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
                         return await showDialog<bool>(
                               context: context,
                               builder: (context) => AlertDialog(
-                                title: const Text('Delete Memory'),
-                                content: const Text(
-                                  'This entry will be removed from your timeline.',
+                                title: Text(
+                                  context.t(
+                                    zhHans: '删除记录',
+                                    zhHant: '刪除記錄',
+                                    en: 'Delete Memory',
+                                  ),
+                                ),
+                                content: Text(
+                                  context.t(
+                                    zhHans: '这条记录将从时间线移除。',
+                                    zhHant: '這條記錄將從時間線移除。',
+                                    en: 'This entry will be removed from your timeline.',
+                                  ),
                                 ),
                                 actions: [
                                   TextButton(
                                     onPressed: () =>
                                         Navigator.pop(context, false),
-                                    child: const Text('Cancel'),
+                                    child: Text(
+                                      context.t(
+                                        zhHans: '取消',
+                                        zhHant: '取消',
+                                        en: 'Cancel',
+                                      ),
+                                    ),
                                   ),
                                   FilledButton(
                                     onPressed: () =>
                                         Navigator.pop(context, true),
-                                    child: const Text('Delete'),
+                                    child: Text(
+                                      context.t(
+                                        zhHans: '删除',
+                                        zhHant: '刪除',
+                                        en: 'Delete',
+                                      ),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -205,7 +249,7 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
               icon: Icon(isCupertino ? CupertinoIcons.search : Icons.search),
               iconSize: 28,
               onPressed: () => _openSearchPage(context),
-              tooltip: '搜索',
+              tooltip: context.t(zhHans: '搜索', zhHant: '搜尋', en: 'Search'),
             ),
             IconButton(
               icon: Icon(
@@ -215,7 +259,11 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
               ),
               iconSize: 28,
               onPressed: () => _showAiChat(context),
-              tooltip: 'AI 对话',
+              tooltip: context.t(
+                zhHans: 'AI 对话',
+                zhHant: 'AI 對話',
+                en: 'AI Chat',
+              ),
             ),
             _buildCreateButton(context, isCupertino),
           ],
@@ -253,7 +301,7 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
             size: 28,
             color: colorScheme.onPrimary,
           ),
-          tooltip: '新建',
+          tooltip: context.t(zhHans: '新建', zhHant: '新增', en: 'Create'),
         ),
       ),
     );
@@ -372,7 +420,7 @@ class _TimelineSearchPageState extends ConsumerState<_TimelineSearchPage> {
         appBar: AppBar(
           leading: const BackButton(),
           centerTitle: true,
-          title: const Text('搜索'),
+          title: Text(context.t(zhHans: '搜索', zhHant: '搜尋', en: 'Search')),
         ),
         body: Column(
           children: [
@@ -386,7 +434,11 @@ class _TimelineSearchPageState extends ConsumerState<_TimelineSearchPage> {
                 onTap: () => requestKeyboardFocus(context, _searchFocusNode),
                 onSubmitted: (_) => unawaited(_runSearch()),
                 decoration: InputDecoration(
-                  hintText: '搜索你的记录...',
+                  hintText: context.t(
+                    zhHans: '搜索你的记录...',
+                    zhHant: '搜尋你的記錄...',
+                    en: 'Search your records...',
+                  ),
                   prefixIcon: const Icon(Icons.search),
                   suffixIcon: query.isEmpty
                       ? null
@@ -408,37 +460,69 @@ class _TimelineSearchPageState extends ConsumerState<_TimelineSearchPage> {
                   ? ListView(
                       children: [
                         _SectionHeader(
-                          title: '完整匹配',
+                          title: context.t(
+                            zhHans: '完整匹配',
+                            zhHant: '完整匹配',
+                            en: 'Exact Matches',
+                          ),
                           count: exactMatches.length,
                           icon: Icons.check_circle_outline,
                         ),
                         if (exactMatches.isEmpty)
-                          const _EmptySection(message: '无完整匹配结果')
+                          _EmptySection(
+                            message: context.t(
+                              zhHans: '无完整匹配结果',
+                              zhHant: '無完整匹配結果',
+                              en: 'No exact matches',
+                            ),
+                          )
                         else
                           _SearchResultWrap(
                             diaries: exactMatches,
                             query: query,
-                            matchTypeLabel: '完整匹配',
+                            matchTypeLabel: context.t(
+                              zhHans: '完整匹配',
+                              zhHant: '完整匹配',
+                              en: 'Exact',
+                            ),
                             matchTypeColor: Colors.green,
                           ),
                         const Divider(height: 24, thickness: 1),
                         _SectionHeader(
-                          title: '模糊匹配',
+                          title: context.t(
+                            zhHans: '模糊匹配',
+                            zhHant: '模糊匹配',
+                            en: 'Fuzzy Matches',
+                          ),
                           count: fuzzyMatches.length,
                           icon: Icons.blur_on,
                         ),
                         if (fuzzyMatches.isEmpty)
-                          const _EmptySection(message: '无模糊匹配结果')
+                          _EmptySection(
+                            message: context.t(
+                              zhHans: '无模糊匹配结果',
+                              zhHant: '無模糊匹配結果',
+                              en: 'No fuzzy matches',
+                            ),
+                          )
                         else
                           _SearchResultWrap(
                             diaries: fuzzyMatches,
                             query: query,
-                            matchTypeLabel: '向量匹配',
+                            matchTypeLabel: context.t(
+                              zhHans: '向量匹配',
+                              zhHant: '向量匹配',
+                              en: 'Vector',
+                            ),
                             matchTypeColor: Colors.deepPurple,
                           ),
                         const Divider(height: 24, thickness: 1),
                         _SectionHeader(
-                          title: '网络匹配',
+                          title: context.t(
+                            zhHans: '网络匹配',
+                            zhHant: '網路匹配',
+                            en: 'Network Matches',
+                          ),
                           count: networkMatches.length,
                           icon: Icons.public,
                         ),
@@ -448,26 +532,48 @@ class _TimelineSearchPageState extends ConsumerState<_TimelineSearchPage> {
                             child: LinearProgressIndicator(minHeight: 2),
                           ),
                         if (networkMatches.isEmpty)
-                          const _EmptySection(message: '网络匹配未启用（本地优先）')
+                          _EmptySection(
+                            message: context.t(
+                              zhHans: '网络匹配未启用（本地优先）',
+                              zhHant: '網路匹配未啟用（本地優先）',
+                              en: 'Network match is disabled (local-first).',
+                            ),
+                          )
                         else
                           _SearchResultWrap(
                             diaries: networkMatches,
                             query: query,
-                            matchTypeLabel: '网络匹配',
+                            matchTypeLabel: context.t(
+                              zhHans: '网络匹配',
+                              zhHant: '網路匹配',
+                              en: 'Network',
+                            ),
                             matchTypeColor: Colors.blue,
                           ),
                         const SizedBox(height: 16),
                       ],
                     )
                   : (history.isEmpty
-                        ? const Center(child: Text('暂无历史搜索'))
+                        ? Center(
+                            child: Text(
+                              context.t(
+                                zhHans: '暂无历史搜索',
+                                zhHant: '暫無歷史搜尋',
+                                en: 'No search history',
+                              ),
+                            ),
+                          )
                         : ListView(
                             padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
                             children: [
                               Row(
                                 children: [
-                                  const Text(
-                                    '历史搜索',
+                                  Text(
+                                    context.t(
+                                      zhHans: '历史搜索',
+                                      zhHant: '歷史搜尋',
+                                      en: 'Search History',
+                                    ),
                                     style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.w700,
@@ -480,7 +586,13 @@ class _TimelineSearchPageState extends ConsumerState<_TimelineSearchPage> {
                                           .read(settingsProvider.notifier)
                                           .clearSearchHistory();
                                     },
-                                    child: const Text('清空'),
+                                    child: Text(
+                                      context.t(
+                                        zhHans: '清空',
+                                        zhHant: '清空',
+                                        en: 'Clear',
+                                      ),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -636,7 +748,6 @@ class _SearchResultCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dateFormat = DateFormat('yyyy/MM/dd HH:mm:ss');
     final date = DateTime.fromMillisecondsSinceEpoch(diary.updatedAt);
     final content = DiaryContentCodec.decode(diary.rawText);
     final visibleText = content.text;
@@ -667,14 +778,24 @@ class _SearchResultCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                visibleText.isEmpty ? '[图片记忆]' : visibleText,
+                visibleText.isEmpty
+                    ? context.t(
+                        zhHans: '[图片记忆]',
+                        zhHant: '[圖片記憶]',
+                        en: '[Image memory]',
+                      )
+                    : visibleText,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(fontSize: 13),
               ),
               const Spacer(),
               Text(
-                '匹配:$matchCount',
+                context.t(
+                  zhHans: '匹配:$matchCount',
+                  zhHant: '匹配:$matchCount',
+                  en: 'Matches: $matchCount',
+                ),
                 style: TextStyle(
                   fontSize: 11,
                   color: matchTypeColor,
@@ -682,7 +803,7 @@ class _SearchResultCard extends StatelessWidget {
                 ),
               ),
               Text(
-                dateFormat.format(date),
+                formatDateTimeWithSeconds(context, date),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(fontSize: 10, color: Colors.grey[500]),
@@ -703,7 +824,6 @@ class _DiaryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dateFormat = DateFormat('yyyy/MM/dd HH:mm:ss');
     final date = DateTime.fromMillisecondsSinceEpoch(diary.updatedAt);
     final content = DiaryContentCodec.decode(diary.rawText);
     final visibleText = content.text;
@@ -722,7 +842,7 @@ class _DiaryCard extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      dateFormat.format(date),
+                      formatDateTimeWithSeconds(context, date),
                       style: TextStyle(color: Colors.grey[600], fontSize: 12),
                     ),
                   ),
@@ -730,7 +850,13 @@ class _DiaryCard extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                visibleText.isEmpty ? '[图片记忆]' : visibleText,
+                visibleText.isEmpty
+                    ? context.t(
+                        zhHans: '[图片记忆]',
+                        zhHant: '[圖片記憶]',
+                        en: '[Image memory]',
+                      )
+                    : visibleText,
                 maxLines: 4,
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(fontSize: 15),

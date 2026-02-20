@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
+import '../../../../core/i18n/app_i18n.dart';
 import '../controllers/auth_controller.dart';
 import '../../../../core/ui/keyboard.dart';
 
@@ -48,9 +49,17 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
   Future<void> _submit() async {
     final username = _usernameController.text.trim();
     if (username.isEmpty) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('Please enter a username')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            context.t(
+              zhHans: '请输入用户名',
+              zhHant: '請輸入使用者名稱',
+              en: 'Please enter a username',
+            ),
+          ),
+        ),
+      );
       return;
     }
 
@@ -58,9 +67,17 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
     final confirmPin = _confirmPinController.text;
 
     if (privatePin.isNotEmpty && privatePin != confirmPin) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('PINs do not match')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            context.t(
+              zhHans: 'PIN 不一致',
+              zhHant: 'PIN 不一致',
+              en: 'PINs do not match',
+            ),
+          ),
+        ),
+      );
       return;
     }
 
@@ -123,7 +140,11 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
               ),
               const SizedBox(height: 8),
               Text(
-                'Tap to add avatar',
+                context.t(
+                  zhHans: '点击添加头像',
+                  zhHant: '點擊新增頭像',
+                  en: 'Tap to add avatar',
+                ),
                 style: Theme.of(
                   context,
                 ).textTheme.bodySmall?.copyWith(color: Colors.grey),
@@ -133,26 +154,35 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
               TextField(
                 controller: _usernameController,
                 focusNode: _usernameFocusNode,
-                onTap: () => requestKeyboardFocus(
-                  context,
-                  _usernameFocusNode,
-                ),
-                decoration: const InputDecoration(
-                  labelText: 'Your Name',
-                  prefixIcon: Icon(Icons.badge),
-                  border: OutlineInputBorder(),
+                onTap: () => requestKeyboardFocus(context, _usernameFocusNode),
+                decoration: InputDecoration(
+                  labelText: context.t(
+                    zhHans: '你的名字',
+                    zhHant: '你的名字',
+                    en: 'Your Name',
+                  ),
+                  prefixIcon: const Icon(Icons.badge),
+                  border: const OutlineInputBorder(),
                 ),
                 textCapitalization: TextCapitalization.words,
               ),
               const SizedBox(height: 24),
               // Private PIN (optional)
               Text(
-                'Private PIN (optional)',
+                context.t(
+                  zhHans: '私密 PIN（可选）',
+                  zhHant: '私密 PIN（可選）',
+                  en: 'Private PIN (optional)',
+                ),
                 style: Theme.of(context).textTheme.titleSmall,
               ),
               const SizedBox(height: 8),
               Text(
-                'Used to encrypt private records',
+                context.t(
+                  zhHans: '用于加密私密记录',
+                  zhHant: '用於加密私密記錄',
+                  en: 'Used to encrypt private records',
+                ),
                 style: Theme.of(
                   context,
                 ).textTheme.bodySmall?.copyWith(color: Colors.grey),
@@ -161,15 +191,21 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
               TextField(
                 controller: _privatePinController,
                 focusNode: _privatePinFocusNode,
-                onTap: () => requestKeyboardFocus(
-                  context,
-                  _privatePinFocusNode,
-                ),
-                decoration: const InputDecoration(
-                  labelText: 'Private PIN',
-                  prefixIcon: Icon(Icons.lock),
-                  border: OutlineInputBorder(),
-                  hintText: 'Leave empty for no encryption',
+                onTap: () =>
+                    requestKeyboardFocus(context, _privatePinFocusNode),
+                decoration: InputDecoration(
+                  labelText: context.t(
+                    zhHans: '私密 PIN',
+                    zhHant: '私密 PIN',
+                    en: 'Private PIN',
+                  ),
+                  prefixIcon: const Icon(Icons.lock),
+                  border: const OutlineInputBorder(),
+                  hintText: context.t(
+                    zhHans: '留空则不加密',
+                    zhHant: '留空則不加密',
+                    en: 'Leave empty for no encryption',
+                  ),
                 ),
                 obscureText: true,
                 keyboardType: TextInputType.number,
@@ -179,14 +215,16 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
               TextField(
                 controller: _confirmPinController,
                 focusNode: _confirmPinFocusNode,
-                onTap: () => requestKeyboardFocus(
-                  context,
-                  _confirmPinFocusNode,
-                ),
-                decoration: const InputDecoration(
-                  labelText: 'Confirm PIN',
-                  prefixIcon: Icon(Icons.lock_outline),
-                  border: OutlineInputBorder(),
+                onTap: () =>
+                    requestKeyboardFocus(context, _confirmPinFocusNode),
+                decoration: InputDecoration(
+                  labelText: context.t(
+                    zhHans: '确认 PIN',
+                    zhHant: '確認 PIN',
+                    en: 'Confirm PIN',
+                  ),
+                  prefixIcon: const Icon(Icons.lock_outline),
+                  border: const OutlineInputBorder(),
                 ),
                 obscureText: true,
                 keyboardType: TextInputType.number,
@@ -203,7 +241,13 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
                           width: 20,
                           child: CircularProgressIndicator(strokeWidth: 2),
                         )
-                      : const Text('Get Started'),
+                      : Text(
+                          context.t(
+                            zhHans: '开始使用',
+                            zhHant: '開始使用',
+                            en: 'Get Started',
+                          ),
+                        ),
                 ),
               ),
             ],
