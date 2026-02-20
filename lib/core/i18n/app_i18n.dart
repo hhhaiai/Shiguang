@@ -4,10 +4,6 @@ import 'package:intl/intl.dart';
 enum AppLocaleKind { zhHans, zhHant, en }
 
 AppLocaleKind resolveAppLocaleKind(Locale locale) {
-  if (locale.languageCode == 'en') {
-    return AppLocaleKind.en;
-  }
-
   if (locale.languageCode == 'zh') {
     final country = locale.countryCode?.toUpperCase();
     final script = locale.scriptCode?.toUpperCase();
@@ -17,9 +13,10 @@ AppLocaleKind resolveAppLocaleKind(Locale locale) {
         country == 'MO') {
       return AppLocaleKind.zhHant;
     }
+    return AppLocaleKind.zhHans;
   }
 
-  return AppLocaleKind.zhHans;
+  return AppLocaleKind.en;
 }
 
 String i18nText(
@@ -46,28 +43,31 @@ String _localeTag(BuildContext context) {
 String formatDateTimeShort(BuildContext context, DateTime dateTime) {
   final localeKind = resolveAppLocaleKind(Localizations.localeOf(context));
   final locale = _localeTag(context);
-  if (localeKind == AppLocaleKind.en) {
-    return DateFormat('MMM d, yyyy • HH:mm', locale).format(dateTime);
+  if (localeKind == AppLocaleKind.zhHans ||
+      localeKind == AppLocaleKind.zhHant) {
+    return DateFormat('yyyy/MM/dd HH:mm', locale).format(dateTime);
   }
-  return DateFormat('yyyy/MM/dd HH:mm', locale).format(dateTime);
+  return DateFormat.yMd(locale).add_Hm().format(dateTime);
 }
 
 String formatDateTimeWithSeconds(BuildContext context, DateTime dateTime) {
   final localeKind = resolveAppLocaleKind(Localizations.localeOf(context));
   final locale = _localeTag(context);
-  if (localeKind == AppLocaleKind.en) {
-    return DateFormat('MMM d, yyyy • HH:mm:ss', locale).format(dateTime);
+  if (localeKind == AppLocaleKind.zhHans ||
+      localeKind == AppLocaleKind.zhHant) {
+    return DateFormat('yyyy/MM/dd HH:mm:ss', locale).format(dateTime);
   }
-  return DateFormat('yyyy/MM/dd HH:mm:ss', locale).format(dateTime);
+  return DateFormat.yMd(locale).add_Hms().format(dateTime);
 }
 
 String formatDateTimeLong(BuildContext context, DateTime dateTime) {
   final localeKind = resolveAppLocaleKind(Localizations.localeOf(context));
   final locale = _localeTag(context);
-  if (localeKind == AppLocaleKind.en) {
-    return DateFormat('EEEE, MMMM d, yyyy • HH:mm', locale).format(dateTime);
+  if (localeKind == AppLocaleKind.zhHans ||
+      localeKind == AppLocaleKind.zhHant) {
+    return DateFormat('yyyy年M月d日 EEEE HH:mm', locale).format(dateTime);
   }
-  return DateFormat('yyyy年M月d日 EEEE HH:mm', locale).format(dateTime);
+  return DateFormat.yMMMMEEEEd(locale).add_Hm().format(dateTime);
 }
 
 extension AppI18nBuildContext on BuildContext {

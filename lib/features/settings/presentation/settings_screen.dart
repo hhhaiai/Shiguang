@@ -1264,14 +1264,13 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     String? zhHant,
     required String en,
   }) {
-    switch (language) {
-      case AppLanguage.zhHans:
-        return zhHans;
-      case AppLanguage.zhHant:
-        return zhHant ?? zhHans;
-      case AppLanguage.en:
-        return en;
+    if (language.isZhHans) {
+      return zhHans;
     }
+    if (language.isZhHant) {
+      return zhHant ?? zhHans;
+    }
+    return en;
   }
 
   String _chatProviderLabel(ChatModelProvider provider, AppLanguage language) {
@@ -1762,22 +1761,27 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             en: 'Choose Language',
           ),
         ),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: AppLanguage.values.map((lang) {
-            final isSelected = lang == currentLanguage;
-            return ListTile(
-              title: Text(lang.displayName),
-              subtitle: Text(lang.shortName),
-              trailing: isSelected
-                  ? const Icon(Icons.check, color: Colors.green)
-                  : null,
-              onTap: () {
-                ref.read(settingsProvider.notifier).setLanguage(lang);
-                Navigator.pop(context);
-              },
-            );
-          }).toList(),
+        content: SizedBox(
+          width: double.maxFinite,
+          height: 420,
+          child: ListView.builder(
+            itemCount: AppLanguage.values.length,
+            itemBuilder: (context, index) {
+              final lang = AppLanguage.values[index];
+              final isSelected = lang == currentLanguage;
+              return ListTile(
+                title: Text(lang.displayName),
+                subtitle: Text(lang.shortName),
+                trailing: isSelected
+                    ? const Icon(Icons.check, color: Colors.green)
+                    : null,
+                onTap: () {
+                  ref.read(settingsProvider.notifier).setLanguage(lang);
+                  Navigator.pop(context);
+                },
+              );
+            },
+          ),
         ),
       ),
     );

@@ -10,26 +10,184 @@ import '../../../core/utils/local_endpoint_policy.dart';
 enum AppThemeMode { system, light, dark }
 
 enum AppLanguage {
-  zhHans('zh', '简体中文', '简中'),
-  zhHant('zh_TW', '繁體中文', '繁中'),
-  en('en', 'English', 'English');
+  zhHans('zh-Hans', '简体中文'),
+  zhHant('zh-Hant', '繁體中文'),
+  zhHk('zh-HK', '繁體中文（香港）'),
+  en('en', 'English'),
+  es('es', 'Español'),
+  fr('fr', 'Français'),
+  de('de', 'Deutsch'),
+  it('it', 'Italiano'),
+  ptPt('pt-PT', 'Português (Portugal)'),
+  ptBr('pt-BR', 'Português (Brasil)'),
+  nl('nl', 'Nederlands'),
+  ru('ru', 'Русский'),
+  pl('pl', 'Polski'),
+  uk('uk', 'Українська'),
+  ro('ro', 'Română'),
+  cs('cs', 'Čeština'),
+  sk('sk', 'Slovenčina'),
+  hu('hu', 'Magyar'),
+  sv('sv', 'Svenska'),
+  nb('nb', 'Norsk bokmål'),
+  da('da', 'Dansk'),
+  fi('fi', 'Suomi'),
+  el('el', 'Ελληνικά'),
+  bg('bg', 'Български'),
+  sr('sr', 'Српски'),
+  hr('hr', 'Hrvatski'),
+  sl('sl', 'Slovenščina'),
+  lt('lt', 'Lietuvių'),
+  lv('lv', 'Latviešu'),
+  et('et', 'Eesti'),
+  ga('ga', 'Gaeilge'),
+  cy('cy', 'Cymraeg'),
+  isLang('is', 'Íslenska'),
+  ca('ca', 'Català'),
+  eu('eu', 'Euskara'),
+  gl('gl', 'Galego'),
+  sq('sq', 'Shqip'),
+  mt('mt', 'Malti'),
+  mk('mk', 'Македонски'),
+  bs('bs', 'Bosanski'),
+  cnr('cnr', 'Crnogorski'),
+  ja('ja', '日本語'),
+  ko('ko', '한국어'),
+  mn('mn', 'Монгол'),
+  mnMong('mn-Mong', 'ᠮᠣᠩᠭᠣᠯ'),
+  vi('vi', 'Tiếng Việt'),
+  th('th', 'ไทย'),
+  id('id', 'Bahasa Indonesia'),
+  ms('ms', 'Bahasa Melayu'),
+  fil('fil', 'Filipino'),
+  my('my', 'မြန်မာ'),
+  km('km', 'ខ្មែរ'),
+  lo('lo', 'ລາວ'),
+  su('su', 'Basa Sunda'),
+  jv('jv', 'Basa Jawa'),
+  hi('hi', 'हिन्दी'),
+  bn('bn', 'বাংলা'),
+  ur('ur', 'اردو'),
+  ta('ta', 'தமிழ்'),
+  te('te', 'తెలుగు'),
+  mr('mr', 'मराठी'),
+  gu('gu', 'ગુજરાતી'),
+  kn('kn', 'ಕನ್ನಡ'),
+  ml('ml', 'മലയാളം'),
+  pa('pa', 'ਪੰਜਾਬੀ'),
+  ne('ne', 'नेपाली'),
+  si('si', 'සිංහල'),
+  ar('ar', 'العربية'),
+  he('he', 'עברית'),
+  fa('fa', 'فارسی'),
+  tr('tr', 'Türkçe'),
+  ckb('ckb', 'کوردی سۆرانی'),
+  ku('ku', 'Kurdî'),
+  az('az', 'Azərbaycan dili'),
+  hy('hy', 'Հայերեն'),
+  ka('ka', 'ქართული'),
+  sw('sw', 'Kiswahili'),
+  zu('zu', 'isiZulu'),
+  xh('xh', 'isiXhosa'),
+  yo('yo', 'Yorùbá'),
+  ig('ig', 'Igbo'),
+  ha('ha', 'Hausa'),
+  am('am', 'አማርኛ'),
+  so('so', 'Soomaali'),
+  af('af', 'Afrikaans'),
+  ht('ht', 'Kreyòl ayisyen'),
+  frCa('fr-CA', 'Français (Canada)'),
+  qu('qu', 'Runasimi');
 
   final String code;
   final String displayName;
-  final String shortName;
 
-  const AppLanguage(this.code, this.displayName, this.shortName);
+  const AppLanguage(this.code, this.displayName);
+
+  bool get isZhHans => this == AppLanguage.zhHans;
+
+  bool get isZhHant => this == AppLanguage.zhHant || this == AppLanguage.zhHk;
+
+  bool get isChinese => isZhHans || isZhHant;
+
+  String get shortName {
+    if (this == AppLanguage.zhHans) {
+      return '简中';
+    }
+    if (this == AppLanguage.zhHant) {
+      return '繁中';
+    }
+    if (this == AppLanguage.zhHk) {
+      return '繁中HK';
+    }
+    return code;
+  }
 
   Locale get locale {
-    if (this == AppLanguage.zhHant) {
-      return const Locale('zh', 'TW');
+    return _localeFromLanguageTag(code);
+  }
+
+  static Locale _localeFromLanguageTag(String tag) {
+    final normalized = tag.trim().replaceAll('_', '-');
+    if (normalized.isEmpty) {
+      return const Locale('en');
     }
-    return Locale(code);
+
+    final parts = normalized.split('-');
+    final languageCode = parts.first.toLowerCase();
+    String? scriptCode;
+    String? countryCode;
+
+    if (parts.length >= 2) {
+      final second = parts[1];
+      if (second.length == 4) {
+        scriptCode =
+            '${second[0].toUpperCase()}${second.substring(1).toLowerCase()}';
+        if (parts.length >= 3 && parts[2].isNotEmpty) {
+          countryCode = parts[2].toUpperCase();
+        }
+      } else if (second.isNotEmpty) {
+        countryCode = second.toUpperCase();
+      }
+    }
+
+    return Locale.fromSubtags(
+      languageCode: languageCode,
+      scriptCode: scriptCode,
+      countryCode: countryCode,
+    );
+  }
+
+  static String _normalizeCode(String code) {
+    return code.trim().replaceAll('_', '-').toLowerCase();
   }
 
   static AppLanguage fromCode(String code) {
+    final normalized = _normalizeCode(code);
+    if (normalized.isEmpty) {
+      return AppLanguage.zhHans;
+    }
+
+    const aliases = <String, AppLanguage>{
+      'zh': AppLanguage.zhHans,
+      'zh-cn': AppLanguage.zhHans,
+      'zh-sg': AppLanguage.zhHans,
+      'zh-hans': AppLanguage.zhHans,
+      'zh-tw': AppLanguage.zhHant,
+      'zh-mo': AppLanguage.zhHant,
+      'zh-hant': AppLanguage.zhHant,
+      'zh-hk': AppLanguage.zhHk,
+      'pt': AppLanguage.ptBr,
+      'no': AppLanguage.nb,
+      'iw': AppLanguage.he,
+    };
+    final byAlias = aliases[normalized];
+    if (byAlias != null) {
+      return byAlias;
+    }
+
     return AppLanguage.values.firstWhere(
-      (lang) => lang.code == code,
+      (lang) => _normalizeCode(lang.code) == normalized,
       orElse: () => AppLanguage.zhHans,
     );
   }

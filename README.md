@@ -129,6 +129,16 @@ flutter run -d "iPhone 15"
 - Kotlin 增量编译（`kotlin.incremental=true`）
 - Android 资源编译优化（`android.nonTransitiveRClass=true`、`android.nonFinalResIds=true`）
 
+### 7. 国际化与 UTF-8
+
+- 项目统一使用 UTF-8 编码（见根目录 `.editorconfig` 与 `android/gradle.properties`）。
+- 语言选择已扩展为全球多语言（含欧洲、东亚、东南亚、南亚、中东非洲、撒哈拉以南非洲、美洲语言）。
+- 当前 UI 文案策略：
+  - 简体中文：使用 `zh-Hans`
+  - 繁体中文：使用 `zh-Hant` / `zh-HK`
+  - 其他语言：先统一回退英文文案，避免乱码或崩溃；后续可逐语种补齐翻译。
+- 语言配置入口：设置页 `Language`，列表支持滚动选择。
+
 ## SenseVoice 集成
 
 ### 本地模型部署（Phase 2）
