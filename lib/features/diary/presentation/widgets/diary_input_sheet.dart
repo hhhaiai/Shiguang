@@ -11,6 +11,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:record/record.dart';
 
+import '../../../../core/ui/adaptive_navigation.dart';
 import '../../../../core/ui/edge_swipe_back.dart';
 import '../../../../core/ui/keyboard.dart';
 import '../../../settings/data/settings_provider.dart';
@@ -1424,7 +1425,8 @@ void showDiaryInputSheet(
   String? title,
 }) {
   Navigator.of(context).push(
-    MaterialPageRoute<void>(
+    adaptivePageRoute<void>(
+      context,
       builder: (context) => DiaryInputSheet(
         onSubmit: onSubmit,
         initialRawText: initialRawText,

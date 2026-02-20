@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:math' as math;
 import 'dart:ui' as ui;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -12,6 +13,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../../core/objectbox/objectbox_providers.dart';
+import '../../../core/ui/adaptive_navigation.dart';
 import '../../../core/ui/keyboard.dart';
 import '../../auth/presentation/controllers/auth_controller.dart';
 import '../../diary/data/ai/qwen_gguf_local_llm.dart';
@@ -42,7 +44,8 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     if (!mounted) return;
 
     final croppedPath = await Navigator.of(context).push<String?>(
-      MaterialPageRoute(
+      adaptivePageRoute<String?>(
+        context,
         builder: (_) => _AvatarCropperScreen(file: File(image.path)),
       ),
     );
@@ -134,13 +137,15 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     final settings = ref.watch(settingsProvider);
     final language = settings.language;
     final currentUser = ref.watch(authProvider.notifier).getCurrentUser();
+    final isCupertino =
+        !kIsWeb && isCupertinoPlatform(Theme.of(context).platform);
     final rawName = (currentUser?.username ?? 'U').trim();
     final avatarInitial = rawName.isNotEmpty
         ? rawName.substring(0, 1).toUpperCase()
         : 'U';
 
     return Scaffold(
-      appBar: AppBar(title: const Text('设置')),
+      appBar: AppBar(centerTitle: isCupertino, title: const Text('设置')),
       body: ListView(
         children: [
           // 账号信息
@@ -249,12 +254,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           ListTile(
             leading: const Icon(Icons.palette_outlined),
             title: Text(
-              _i18n(
-                language,
-                zhHans: '主题模式',
-                zhHant: '主題模式',
-                en: 'Theme Mode',
-              ),
+              _i18n(language, zhHans: '主题模式', zhHant: '主題模式', en: 'Theme Mode'),
             ),
             subtitle: Text(
               _i18n(
@@ -273,36 +273,21 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   value: AppThemeMode.dark,
                   icon: const Icon(Icons.dark_mode_outlined),
                   label: Text(
-                    _i18n(
-                      language,
-                      zhHans: '深色',
-                      zhHant: '深色',
-                      en: 'Dark',
-                    ),
+                    _i18n(language, zhHans: '深色', zhHant: '深色', en: 'Dark'),
                   ),
                 ),
                 ButtonSegment<AppThemeMode>(
                   value: AppThemeMode.light,
                   icon: const Icon(Icons.light_mode_outlined),
                   label: Text(
-                    _i18n(
-                      language,
-                      zhHans: '浅色',
-                      zhHant: '淺色',
-                      en: 'Light',
-                    ),
+                    _i18n(language, zhHans: '浅色', zhHant: '淺色', en: 'Light'),
                   ),
                 ),
                 ButtonSegment<AppThemeMode>(
                   value: AppThemeMode.system,
                   icon: const Icon(Icons.phone_android),
                   label: Text(
-                    _i18n(
-                      language,
-                      zhHans: '系统',
-                      zhHant: '系統',
-                      en: 'System',
-                    ),
+                    _i18n(language, zhHans: '系统', zhHant: '系統', en: 'System'),
                   ),
                 ),
               ],
@@ -319,12 +304,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           const Divider(),
           _buildSectionHeader(
             context,
-            _i18n(
-              language,
-              zhHans: 'AI 服务',
-              zhHant: 'AI 服務',
-              en: 'AI Service',
-            ),
+            _i18n(language, zhHans: 'AI 服务', zhHant: 'AI 服務', en: 'AI Service'),
           ),
           ListTile(
             leading: const Icon(Icons.chat_bubble_outline),
@@ -766,12 +746,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           const Divider(),
           _buildSectionHeader(
             context,
-            _i18n(
-              language,
-              zhHans: '关于',
-              zhHant: '關於',
-              en: 'About',
-            ),
+            _i18n(language, zhHans: '关于', zhHant: '關於', en: 'About'),
           ),
           ListTile(
             leading: Icon(Icons.info),
@@ -788,12 +763,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           ListTile(
             leading: const Icon(Icons.storage),
             title: Text(
-              _i18n(
-                language,
-                zhHans: '数据库',
-                zhHant: '資料庫',
-                en: 'Database',
-              ),
+              _i18n(language, zhHans: '数据库', zhHant: '資料庫', en: 'Database'),
             ),
             subtitle: Text(
               _i18n(
@@ -944,12 +914,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
-              _i18n(
-                language,
-                zhHans: '取消',
-                zhHant: '取消',
-                en: 'Cancel',
-              ),
+              _i18n(language, zhHans: '取消', zhHant: '取消', en: 'Cancel'),
             ),
           ),
           FilledButton(
@@ -1002,12 +967,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
-              _i18n(
-                language,
-                zhHans: '取消',
-                zhHant: '取消',
-                en: 'Cancel',
-              ),
+              _i18n(language, zhHans: '取消', zhHant: '取消', en: 'Cancel'),
             ),
           ),
           FilledButton(
@@ -1397,7 +1357,10 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
     if (cropRect == null) return;
     final imageWidth = _viewportImageWidth(image);
     final imageHeight = _viewportImageHeight(image);
-    final scale = math.max(cropRect.width / imageWidth, cropRect.height / imageHeight);
+    final scale = math.max(
+      cropRect.width / imageWidth,
+      cropRect.height / imageHeight,
+    );
     _minScale = scale;
     _maxScale = scale * 8;
 
@@ -1417,8 +1380,10 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
 
     final imageWidth = _viewportImageWidth(image);
     final imageHeight = _viewportImageHeight(image);
-    final requiredScale =
-        math.max(cropRect.width / imageWidth, cropRect.height / imageHeight);
+    final requiredScale = math.max(
+      cropRect.width / imageWidth,
+      cropRect.height / imageHeight,
+    );
     if (requiredScale > _minScale) {
       _minScale = requiredScale;
       _maxScale = math.max(_maxScale, requiredScale * 8);
@@ -1471,19 +1436,20 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
 
       final safePixelRatio = pixelRatio.clamp(1.0, 3.0).toDouble();
       final fullImage = await boundary.toImage(pixelRatio: safePixelRatio);
-      final sourceRect = Rect.fromLTWH(
-        cropRect.left * safePixelRatio,
-        cropRect.top * safePixelRatio,
-        cropRect.width * safePixelRatio,
-        cropRect.height * safePixelRatio,
-      ).intersect(
-        Rect.fromLTWH(
-          0,
-          0,
-          fullImage.width.toDouble(),
-          fullImage.height.toDouble(),
-        ),
-      );
+      final sourceRect =
+          Rect.fromLTWH(
+            cropRect.left * safePixelRatio,
+            cropRect.top * safePixelRatio,
+            cropRect.width * safePixelRatio,
+            cropRect.height * safePixelRatio,
+          ).intersect(
+            Rect.fromLTWH(
+              0,
+              0,
+              fullImage.width.toDouble(),
+              fullImage.height.toDouble(),
+            ),
+          );
       if (sourceRect.width < 1 || sourceRect.height < 1) {
         ScaffoldMessenger.of(
           context,
@@ -1493,7 +1459,12 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
 
       final recorder = ui.PictureRecorder();
       final canvas = Canvas(recorder);
-      final targetRect = Rect.fromLTWH(0, 0, sourceRect.width, sourceRect.height);
+      final targetRect = Rect.fromLTWH(
+        0,
+        0,
+        sourceRect.width,
+        sourceRect.height,
+      );
       canvas.drawImageRect(fullImage, sourceRect, targetRect, Paint());
       final cropped = await recorder.endRecording().toImage(
         targetRect.width.round(),
@@ -1579,7 +1550,10 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
           ? const Center(child: CircularProgressIndicator())
           : LayoutBuilder(
               builder: (context, constraints) {
-                final viewport = Size(constraints.maxWidth, constraints.maxHeight);
+                final viewport = Size(
+                  constraints.maxWidth,
+                  constraints.maxHeight,
+                );
                 _ensureCropRect(viewport);
                 _initTransform(viewport);
                 _ensureImageCanCoverCrop();
@@ -1639,7 +1613,8 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
                         behavior: HitTestBehavior.opaque,
                         onPanUpdate: (details) {
                           final current = _cropRect!;
-                          final delta = (details.delta.dx + details.delta.dy) / 2;
+                          final delta =
+                              (details.delta.dx + details.delta.dy) / 2;
                           final resized = Rect.fromCenter(
                             center: current.center,
                             width: current.width + delta * 2,
@@ -1699,7 +1674,9 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
                                   '拖动框可移动选区；拖动右下角可缩放选区；图片支持双指缩放/移动',
                                   style: Theme.of(context).textTheme.bodySmall
                                       ?.copyWith(
-                                        color: Colors.white.withValues(alpha: 0.9),
+                                        color: Colors.white.withValues(
+                                          alpha: 0.9,
+                                        ),
                                       ),
                                 ),
                               ),
@@ -1763,8 +1740,16 @@ class _CropOverlayPainter extends CustomPainter {
     for (var i = 1; i <= 2; i++) {
       final x = cropRect.left + stepX * i;
       final y = cropRect.top + stepY * i;
-      canvas.drawLine(Offset(x, cropRect.top), Offset(x, cropRect.bottom), guidePaint);
-      canvas.drawLine(Offset(cropRect.left, y), Offset(cropRect.right, y), guidePaint);
+      canvas.drawLine(
+        Offset(x, cropRect.top),
+        Offset(x, cropRect.bottom),
+        guidePaint,
+      );
+      canvas.drawLine(
+        Offset(cropRect.left, y),
+        Offset(cropRect.right, y),
+        guidePaint,
+      );
     }
   }
 

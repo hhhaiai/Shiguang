@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import '../controllers/reminder_controller.dart';
 import '../../../../core/ui/keyboard.dart';
+import '../../../../core/ui/adaptive_navigation.dart';
 
 class ReminderScreen extends ConsumerWidget {
   const ReminderScreen({super.key});
@@ -11,15 +11,10 @@ class ReminderScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final reminders = ref.watch(reminderProvider);
+    final isCupertino = isCupertinoPlatform(Theme.of(context).platform);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Reminders'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => context.pop(),
-        ),
-      ),
+      appBar: AppBar(centerTitle: isCupertino, title: const Text('Reminders')),
       body: reminders.isEmpty
           ? Center(
               child: Column(
@@ -111,10 +106,7 @@ class ReminderScreen extends ConsumerWidget {
                     controller: titleController,
                     focusNode: titleFocusNode,
                     autofocus: true,
-                    onTap: () => requestKeyboardFocus(
-                      context,
-                      titleFocusNode,
-                    ),
+                    onTap: () => requestKeyboardFocus(context, titleFocusNode),
                     decoration: const InputDecoration(
                       labelText: 'Title',
                       border: OutlineInputBorder(),
@@ -124,10 +116,7 @@ class ReminderScreen extends ConsumerWidget {
                   TextField(
                     controller: bodyController,
                     focusNode: bodyFocusNode,
-                    onTap: () => requestKeyboardFocus(
-                      context,
-                      bodyFocusNode,
-                    ),
+                    onTap: () => requestKeyboardFocus(context, bodyFocusNode),
                     decoration: const InputDecoration(
                       labelText: 'Description (optional)',
                       border: OutlineInputBorder(),

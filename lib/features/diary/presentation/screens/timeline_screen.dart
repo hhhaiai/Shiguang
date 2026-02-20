@@ -1,12 +1,14 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 
+import '../../../../core/ui/adaptive_navigation.dart';
 import '../../../../core/ui/edge_swipe_back.dart';
 import '../../../../core/ui/keyboard.dart';
 import '../../../auth/presentation/controllers/auth_controller.dart';
@@ -67,9 +69,11 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
   Widget build(BuildContext context) {
     final diaries = ref.watch(timelineProvider);
     final currentUser = ref.watch(authProvider.notifier).getCurrentUser();
+    final isCupertino = isCupertinoPlatform(Theme.of(context).platform);
 
     return Scaffold(
       appBar: AppBar(
+        centerTitle: isCupertino,
         title: Text(currentUser?.username ?? 'User'),
         actions: [
           IconButton(
@@ -171,50 +175,102 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
                 ),
         ],
       ),
-      bottomNavigationBar: SizedBox(
-        height: 70,
+      bottomNavigationBar: _buildBottomActionBar(context, isCupertino),
+    );
+  }
+
+  Widget _buildBottomActionBar(BuildContext context, bool isCupertino) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
+    return SafeArea(
+      top: false,
+      child: Container(
+        height: isCupertino ? 76 : 70,
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+        decoration: BoxDecoration(
+          color: theme.scaffoldBackgroundColor.withValues(
+            alpha: isCupertino ? 0.95 : 1,
+          ),
+          border: Border(
+            top: BorderSide(
+              color: colorScheme.outlineVariant.withValues(alpha: 0.35),
+            ),
+          ),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            // 搜索按钮
             IconButton(
-              icon: const Icon(Icons.search),
+              icon: Icon(isCupertino ? CupertinoIcons.search : Icons.search),
               iconSize: 28,
               onPressed: () => _openSearchPage(context),
               tooltip: '搜索',
             ),
-            // AI 按钮
             IconButton(
-              icon: const Icon(Icons.smart_toy),
+              icon: Icon(
+                isCupertino
+                    ? CupertinoIcons.chat_bubble_2_fill
+                    : Icons.smart_toy,
+              ),
               iconSize: 28,
               onPressed: () => _showAiChat(context),
               tooltip: 'AI 对话',
             ),
-            // 加号按钮
-            SizedBox(
-              width: 56,
-              height: 56,
-              child: FloatingActionButton(
-                heroTag: 'timeline_capture_fab',
-                onPressed: _openDiaryInput,
-                child: const Icon(Icons.add, size: 32),
-              ),
-            ),
+            _buildCreateButton(context, isCupertino),
           ],
         ),
       ),
     );
   }
 
+  Widget _buildCreateButton(BuildContext context, bool isCupertino) {
+    if (!isCupertino) {
+      return SizedBox(
+        width: 56,
+        height: 56,
+        child: FloatingActionButton(
+          heroTag: 'timeline_capture_fab',
+          onPressed: _openDiaryInput,
+          child: const Icon(Icons.add, size: 32),
+        ),
+      );
+    }
+
+    final colorScheme = Theme.of(context).colorScheme;
+    return SizedBox(
+      width: 52,
+      height: 52,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: colorScheme.primary,
+          shape: BoxShape.circle,
+        ),
+        child: IconButton(
+          onPressed: _openDiaryInput,
+          icon: Icon(
+            CupertinoIcons.add,
+            size: 28,
+            color: colorScheme.onPrimary,
+          ),
+          tooltip: '新建',
+        ),
+      ),
+    );
+  }
+
   void _showAiChat(BuildContext context) {
-    Navigator.of(
-      context,
-    ).push(MaterialPageRoute<void>(builder: (_) => const AiChatScreen()));
+    Navigator.of(context).push(
+      adaptivePageRoute<void>(context, builder: (_) => const AiChatScreen()),
+    );
   }
 
   void _openSearchPage(BuildContext context) {
     Navigator.of(context).push(
-      MaterialPageRoute<void>(builder: (_) => const _TimelineSearchPage()),
+      adaptivePageRoute<void>(
+        context,
+        builder: (_) => const _TimelineSearchPage(),
+      ),
     );
   }
 }

@@ -1,6 +1,9 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import '../core/ui/adaptive_navigation.dart';
 import '../features/auth/presentation/controllers/auth_controller.dart';
 import '../features/auth/presentation/screens/setup_screen.dart';
 import '../features/diary/presentation/screens/timeline_screen.dart';
@@ -15,32 +18,53 @@ final routerProvider = GoRouter(
     return null;
   },
   routes: [
-    GoRoute(path: '/', builder: (context, state) => const _AuthWrapper()),
+    GoRoute(
+      path: '/',
+      pageBuilder: (context, state) =>
+          _buildAdaptivePage(state: state, child: const _AuthWrapper()),
+    ),
     GoRoute(
       path: '/timeline',
-      builder: (context, state) => const TimelineScreen(),
+      pageBuilder: (context, state) =>
+          _buildAdaptivePage(state: state, child: const TimelineScreen()),
     ),
     GoRoute(
       path: '/diary/:id',
-      builder: (context, state) {
+      pageBuilder: (context, state) {
         final id = int.parse(state.pathParameters['id']!);
-        return DiaryDetailScreen(
-          diaryId: id,
-          highlightQuery: state.uri.queryParameters['q'],
-          matchType: state.uri.queryParameters['match'],
+        return _buildAdaptivePage(
+          state: state,
+          child: DiaryDetailScreen(
+            diaryId: id,
+            highlightQuery: state.uri.queryParameters['q'],
+            matchType: state.uri.queryParameters['match'],
+          ),
         );
       },
     ),
     GoRoute(
       path: '/reminders',
-      builder: (context, state) => const ReminderScreen(),
+      pageBuilder: (context, state) =>
+          _buildAdaptivePage(state: state, child: const ReminderScreen()),
     ),
     GoRoute(
       path: '/settings',
-      builder: (context, state) => const SettingsScreen(),
+      pageBuilder: (context, state) =>
+          _buildAdaptivePage(state: state, child: const SettingsScreen()),
     ),
   ],
 );
+
+Page<void> _buildAdaptivePage({
+  required GoRouterState state,
+  required Widget child,
+}) {
+  if (!kIsWeb && isCupertinoPlatform(defaultTargetPlatform)) {
+    return CupertinoPage<void>(key: state.pageKey, child: child);
+  }
+
+  return MaterialPage<void>(key: state.pageKey, child: child);
+}
 
 /// Wrapper that checks auth state and redirects
 class _AuthWrapper extends ConsumerWidget {
