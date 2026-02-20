@@ -12,7 +12,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
 
-import '../../../core/i18n/app_i18n.dart';
+import '../../../l10n/generated/app_localizations.dart';
 import '../../../core/objectbox/objectbox_providers.dart';
 import '../../../core/ui/adaptive_navigation.dart';
 import '../../../core/ui/keyboard.dart';
@@ -31,6 +31,8 @@ class SettingsScreen extends ConsumerStatefulWidget {
 }
 
 class _SettingsScreenState extends ConsumerState<SettingsScreen> {
+  AppLocalizations get l10n => AppLocalizations.of(context);
+
   Future<void> _editAvatar() async {
     final source = await _pickImageSource();
     if (source == null) return;
@@ -68,24 +70,20 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             ListTile(
               leading: const Icon(Icons.camera_alt_outlined),
               title: Text(
-                context.t(zhHans: '拍摄', zhHant: '拍攝', en: 'Take Photo'),
+                l10n.takePhoto,
               ),
               onTap: () => Navigator.pop(context, ImageSource.camera),
             ),
             ListTile(
               leading: const Icon(Icons.photo_library_outlined),
               title: Text(
-                context.t(
-                  zhHans: '从相册选取',
-                  zhHant: '從相簿選取',
-                  en: 'Choose from Gallery',
-                ),
+                l10n.chooseFromGallery,
               ),
               onTap: () => Navigator.pop(context, ImageSource.gallery),
             ),
             ListTile(
               leading: const Icon(Icons.close),
-              title: Text(context.t(zhHans: '取消', zhHant: '取消', en: 'Cancel')),
+              title: Text(l10n.cancel),
               onTap: () => Navigator.pop(context),
             ),
           ],
@@ -102,7 +100,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(
-          context.t(zhHans: '修改昵称', zhHant: '修改暱稱', en: 'Edit Nickname'),
+          l10n.editNickname,
         ),
         content: TextField(
           controller: controller,
@@ -111,21 +109,17 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           onTap: () => requestKeyboardFocus(context, focusNode),
           decoration: InputDecoration(
             border: const OutlineInputBorder(),
-            hintText: context.t(
-              zhHans: '请输入昵称',
-              zhHant: '請輸入暱稱',
-              en: 'Enter nickname',
-            ),
+            hintText: l10n.enterNickname,
           ),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text(context.t(zhHans: '取消', zhHant: '取消', en: 'Cancel')),
+            child: Text(l10n.cancel),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(context, controller.text.trim()),
-            child: Text(context.t(zhHans: '保存', zhHant: '保存', en: 'Save')),
+            child: Text(l10n.save),
           ),
         ],
       ),
@@ -140,11 +134,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            context.t(
-              zhHans: '昵称已存在或无效',
-              zhHant: '暱稱已存在或無效',
-              en: 'Nickname already exists or is invalid',
-            ),
+            l10n.nicknameAlreadyExistsOrInvalid,
           ),
         ),
       );
@@ -167,7 +157,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         ? rawName.substring(0, 1).toUpperCase()
         : 'U';
     final defaultUsername = _i18n(
-      language,
       zhHans: '用户',
       zhHant: '使用者',
       en: 'User',
@@ -177,7 +166,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       appBar: AppBar(
         centerTitle: isCupertino,
         title: Text(
-          _i18n(language, zhHans: '设置', zhHant: '設定', en: 'Settings'),
+          _i18n(zhHans: '设置', zhHant: '設定', en: 'Settings'),
         ),
       ),
       body: ListView(
@@ -185,7 +174,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           // 账号信息
           _buildSectionHeader(
             context,
-            _i18n(language, zhHans: '账号', zhHant: '帳號', en: 'Account'),
+            _i18n(zhHans: '账号', zhHant: '帳號', en: 'Account'),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
@@ -268,16 +257,15 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           // 定时提醒
           _buildSectionHeader(
             context,
-            _i18n(language, zhHans: '定时', zhHant: '定時', en: 'Reminders'),
+            _i18n(zhHans: '定时', zhHant: '定時', en: 'Reminders'),
           ),
           ListTile(
             leading: const Icon(Icons.notifications_outlined),
             title: Text(
-              _i18n(language, zhHans: '定时提醒', zhHant: '定時提醒', en: 'Reminders'),
+              _i18n(zhHans: '定时提醒', zhHant: '定時提醒', en: 'Reminders'),
             ),
             subtitle: Text(
               _i18n(
-                language,
                 zhHans: '管理日程提醒和闹钟',
                 zhHant: '管理排程提醒與鬧鐘',
                 en: 'Manage scheduled reminders and alarms',
@@ -291,13 +279,12 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           // 语言
           _buildSectionHeader(
             context,
-            _i18n(language, zhHans: '语言', zhHant: '語言', en: 'Language'),
+            _i18n(zhHans: '语言', zhHant: '語言', en: 'Language'),
           ),
           ListTile(
             leading: const Icon(Icons.language),
             title: Text(
               _i18n(
-                language,
                 zhHans: '界面语言',
                 zhHant: '介面語言',
                 en: 'App Language',
@@ -312,16 +299,15 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           // 外观
           _buildSectionHeader(
             context,
-            _i18n(language, zhHans: '外观', zhHant: '外觀', en: 'Appearance'),
+            _i18n(zhHans: '外观', zhHant: '外觀', en: 'Appearance'),
           ),
           ListTile(
             leading: const Icon(Icons.palette_outlined),
             title: Text(
-              _i18n(language, zhHans: '主题模式', zhHant: '主題模式', en: 'Theme Mode'),
+              _i18n(zhHans: '主题模式', zhHant: '主題模式', en: 'Theme Mode'),
             ),
             subtitle: Text(
               _i18n(
-                language,
                 zhHans: '浅色 / 深色 / 跟随系统',
                 zhHant: '淺色 / 深色 / 跟隨系統',
                 en: 'Light / Dark / Follow System',
@@ -336,21 +322,21 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   value: AppThemeMode.dark,
                   icon: const Icon(Icons.dark_mode_outlined),
                   label: Text(
-                    _i18n(language, zhHans: '深色', zhHant: '深色', en: 'Dark'),
+                    _i18n(zhHans: '深色', zhHant: '深色', en: 'Dark'),
                   ),
                 ),
                 ButtonSegment<AppThemeMode>(
                   value: AppThemeMode.light,
                   icon: const Icon(Icons.light_mode_outlined),
                   label: Text(
-                    _i18n(language, zhHans: '浅色', zhHant: '淺色', en: 'Light'),
+                    _i18n(zhHans: '浅色', zhHant: '淺色', en: 'Light'),
                   ),
                 ),
                 ButtonSegment<AppThemeMode>(
                   value: AppThemeMode.system,
                   icon: const Icon(Icons.phone_android),
                   label: Text(
-                    _i18n(language, zhHans: '系统', zhHant: '系統', en: 'System'),
+                    _i18n(zhHans: '系统', zhHant: '系統', en: 'System'),
                   ),
                 ),
               ],
@@ -367,20 +353,19 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           const Divider(),
           _buildSectionHeader(
             context,
-            _i18n(language, zhHans: 'AI 服务', zhHant: 'AI 服務', en: 'AI Service'),
+            _i18n(zhHans: 'AI 服务', zhHant: 'AI 服務', en: 'AI Service'),
           ),
           ListTile(
             leading: const Icon(Icons.chat_bubble_outline),
             title: Text(
               _i18n(
-                language,
                 zhHans: 'AI 对话模型来源',
                 zhHant: 'AI 對話模型來源',
                 en: 'AI Chat Provider',
               ),
             ),
             subtitle: Text(
-              _chatProviderLabel(settings.chatModelProvider, language),
+              _chatProviderLabel(settings.chatModelProvider),
             ),
           ),
           Padding(
@@ -390,7 +375,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               decoration: InputDecoration(
                 border: const OutlineInputBorder(),
                 labelText: _i18n(
-                  language,
                   zhHans: '聊天模型',
                   zhHant: '聊天模型',
                   en: 'Chat Model',
@@ -400,7 +384,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   .map(
                     (provider) => DropdownMenuItem(
                       value: provider,
-                      child: Text(_chatProviderLabel(provider, language)),
+                      child: Text(_chatProviderLabel(provider)),
                     ),
                   )
                   .toList(growable: false),
@@ -415,7 +399,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               leading: const Icon(Icons.memory),
               title: Text(
                 _i18n(
-                  language,
                   zhHans: '本地模型',
                   zhHant: '本地模型',
                   en: 'Local Model',
@@ -424,20 +407,17 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               subtitle: Text(
                 Platform.isAndroid
                     ? _i18n(
-                        language,
                         zhHans: 'Android: ${QwenGgufLocalLLM.modelFileName}',
                         zhHant: 'Android: ${QwenGgufLocalLLM.modelFileName}',
                         en: 'Android: ${QwenGgufLocalLLM.modelFileName}',
                       )
                     : Platform.isIOS
                     ? _i18n(
-                        language,
                         zhHans: 'iOS: fllama 本地模型',
                         zhHant: 'iOS: fllama 本地模型',
                         en: 'iOS: fllama local model',
                       )
                     : _i18n(
-                        language,
                         zhHans: 'Desktop: 使用本地 Ollama Endpoint',
                         zhHant: 'Desktop: 使用本地 Ollama Endpoint',
                         en: 'Desktop: use local Ollama endpoint',
@@ -449,7 +429,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               leading: const Icon(Icons.hub),
               title: Text(
                 _i18n(
-                  language,
                   zhHans: 'Ollama 端点',
                   zhHant: 'Ollama 端點',
                   en: 'Ollama Endpoint',
@@ -463,7 +442,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 context,
                 ref,
                 _i18n(
-                  language,
                   zhHans: 'Ollama 端点',
                   zhHant: 'Ollama 端點',
                   en: 'Ollama Endpoint',
@@ -477,7 +455,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               leading: const Icon(Icons.token),
               title: Text(
                 _i18n(
-                  language,
                   zhHans: 'Ollama 模型',
                   zhHant: 'Ollama 模型',
                   en: 'Ollama Model',
@@ -490,7 +467,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               onTap: () => _showTextDialog(
                 context,
                 title: _i18n(
-                  language,
                   zhHans: 'Ollama 模型',
                   zhHant: 'Ollama 模型',
                   en: 'Ollama Model',
@@ -507,7 +483,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               leading: const Icon(Icons.link),
               title: Text(
                 _i18n(
-                  language,
                   zhHans: 'OpenAI 端点',
                   zhHant: 'OpenAI 端點',
                   en: 'OpenAI Endpoint',
@@ -520,7 +495,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               onTap: () => _showTextDialog(
                 context,
                 title: _i18n(
-                  language,
                   zhHans: 'OpenAI 端点',
                   zhHant: 'OpenAI 端點',
                   en: 'OpenAI Endpoint',
@@ -536,7 +510,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               leading: const Icon(Icons.vpn_key_outlined),
               title: Text(
                 _i18n(
-                  language,
                   zhHans: 'OpenAI API Key',
                   zhHant: 'OpenAI API Key',
                   en: 'OpenAI API Key',
@@ -546,7 +519,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               onTap: () => _showTextDialog(
                 context,
                 title: _i18n(
-                  language,
                   zhHans: 'OpenAI API Key',
                   zhHant: 'OpenAI API Key',
                   en: 'OpenAI API Key',
@@ -562,7 +534,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               leading: const Icon(Icons.token),
               title: Text(
                 _i18n(
-                  language,
                   zhHans: 'OpenAI 模型',
                   zhHant: 'OpenAI 模型',
                   en: 'OpenAI Model',
@@ -572,7 +543,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               onTap: () => _showTextDialog(
                 context,
                 title: _i18n(
-                  language,
                   zhHans: 'OpenAI 模型',
                   zhHant: 'OpenAI 模型',
                   en: 'OpenAI Model',
@@ -589,7 +559,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               leading: const Icon(Icons.link),
               title: Text(
                 _i18n(
-                  language,
                   zhHans: 'Gemini 端点',
                   zhHant: 'Gemini 端點',
                   en: 'Gemini Endpoint',
@@ -602,7 +571,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               onTap: () => _showTextDialog(
                 context,
                 title: _i18n(
-                  language,
                   zhHans: 'Gemini 端点',
                   zhHant: 'Gemini 端點',
                   en: 'Gemini Endpoint',
@@ -618,7 +586,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               leading: const Icon(Icons.vpn_key_outlined),
               title: Text(
                 _i18n(
-                  language,
                   zhHans: 'Gemini API Key',
                   zhHant: 'Gemini API Key',
                   en: 'Gemini API Key',
@@ -628,7 +595,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               onTap: () => _showTextDialog(
                 context,
                 title: _i18n(
-                  language,
                   zhHans: 'Gemini API Key',
                   zhHant: 'Gemini API Key',
                   en: 'Gemini API Key',
@@ -644,7 +610,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               leading: const Icon(Icons.token),
               title: Text(
                 _i18n(
-                  language,
                   zhHans: 'Gemini 模型',
                   zhHant: 'Gemini 模型',
                   en: 'Gemini Model',
@@ -654,7 +619,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               onTap: () => _showTextDialog(
                 context,
                 title: _i18n(
-                  language,
                   zhHans: 'Gemini 模型',
                   zhHant: 'Gemini 模型',
                   en: 'Gemini Model',
@@ -671,7 +635,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               leading: const Icon(Icons.link),
               title: Text(
                 _i18n(
-                  language,
                   zhHans: 'Anthropic 端点',
                   zhHant: 'Anthropic 端點',
                   en: 'Anthropic Endpoint',
@@ -684,7 +647,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               onTap: () => _showTextDialog(
                 context,
                 title: _i18n(
-                  language,
                   zhHans: 'Anthropic 端点',
                   zhHant: 'Anthropic 端點',
                   en: 'Anthropic Endpoint',
@@ -700,7 +662,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               leading: const Icon(Icons.vpn_key_outlined),
               title: Text(
                 _i18n(
-                  language,
                   zhHans: 'Anthropic API Key',
                   zhHant: 'Anthropic API Key',
                   en: 'Anthropic API Key',
@@ -710,7 +671,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               onTap: () => _showTextDialog(
                 context,
                 title: _i18n(
-                  language,
                   zhHans: 'Anthropic API Key',
                   zhHant: 'Anthropic API Key',
                   en: 'Anthropic API Key',
@@ -727,7 +687,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               leading: const Icon(Icons.token),
               title: Text(
                 _i18n(
-                  language,
                   zhHans: 'Anthropic 模型',
                   zhHant: 'Anthropic 模型',
                   en: 'Anthropic Model',
@@ -737,7 +696,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               onTap: () => _showTextDialog(
                 context,
                 title: _i18n(
-                  language,
                   zhHans: 'Anthropic 模型',
                   zhHant: 'Anthropic 模型',
                   en: 'Anthropic Model',
@@ -755,14 +713,13 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               leading: const Icon(Icons.settings_suggest_outlined),
               title: Text(
                 _i18n(
-                  language,
                   zhHans: '自定义协议',
                   zhHant: '自訂協議',
                   en: 'Custom Protocol',
                 ),
               ),
               subtitle: Text(
-                _customProtocolLabel(settings.customLlmProtocol, language),
+                _customProtocolLabel(settings.customLlmProtocol),
               ),
             ),
             Padding(
@@ -772,7 +729,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 decoration: InputDecoration(
                   border: const OutlineInputBorder(),
                   labelText: _i18n(
-                    language,
                     zhHans: '协议类型',
                     zhHant: '協議類型',
                     en: 'Protocol',
@@ -782,7 +738,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                     .map(
                       (protocol) => DropdownMenuItem(
                         value: protocol,
-                        child: Text(_customProtocolLabel(protocol, language)),
+                        child: Text(_customProtocolLabel(protocol)),
                       ),
                     )
                     .toList(growable: false),
@@ -798,7 +754,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               leading: const Icon(Icons.link),
               title: Text(
                 _i18n(
-                  language,
                   zhHans: '自定义端点',
                   zhHant: '自訂端點',
                   en: 'Custom Endpoint',
@@ -811,7 +766,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               onTap: () => _showTextDialog(
                 context,
                 title: _i18n(
-                  language,
                   zhHans: '自定义端点',
                   zhHant: '自訂端點',
                   en: 'Custom Endpoint',
@@ -827,7 +781,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               leading: const Icon(Icons.vpn_key_outlined),
               title: Text(
                 _i18n(
-                  language,
                   zhHans: '自定义 API Key',
                   zhHant: '自訂 API Key',
                   en: 'Custom API Key',
@@ -837,14 +790,12 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               onTap: () => _showTextDialog(
                 context,
                 title: _i18n(
-                  language,
                   zhHans: '自定义 API Key',
                   zhHant: '自訂 API Key',
                   en: 'Custom API Key',
                 ),
                 currentValue: settings.customApiKey,
                 hintText: _i18n(
-                  language,
                   zhHans: '本地/自定义服务可留空',
                   zhHant: '本地/自訂服務可留空',
                   en: 'Optional for local/custom servers',
@@ -858,7 +809,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               leading: const Icon(Icons.token),
               title: Text(
                 _i18n(
-                  language,
                   zhHans: '自定义模型',
                   zhHant: '自訂模型',
                   en: 'Custom Model',
@@ -868,7 +818,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               onTap: () => _showTextDialog(
                 context,
                 title: _i18n(
-                  language,
                   zhHans: '自定义模型',
                   zhHant: '自訂模型',
                   en: 'Custom Model',
@@ -876,7 +825,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 currentValue: settings.customModel,
                 hintText: AppSettings.defaultCustomModel,
                 helperText: _i18n(
-                  language,
                   zhHans: '模型 ID',
                   zhHant: '模型 ID',
                   en: 'Model ID',
@@ -891,14 +839,13 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             leading: const Icon(Icons.mic),
             title: Text(
               _i18n(
-                language,
                 zhHans: '语音识别引擎',
                 zhHant: '語音辨識引擎',
                 en: 'Speech Recognition Engine',
               ),
             ),
             subtitle: Text(
-              _voiceEngineLabel(settings.voiceRecognitionEngine, language),
+              _voiceEngineLabel(settings.voiceRecognitionEngine),
             ),
           ),
           Padding(
@@ -910,7 +857,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   icon: const Icon(Icons.memory_outlined),
                   label: Text(
                     _i18n(
-                      language,
                       zhHans: '本地模型',
                       zhHant: '本地模型',
                       en: 'Local',
@@ -922,7 +868,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   icon: const Icon(Icons.phone_android_outlined),
                   label: Text(
                     _i18n(
-                      language,
                       zhHans: '系统识别',
                       zhHant: '系統辨識',
                       en: 'System',
@@ -934,7 +879,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   icon: const Icon(Icons.cloud_outlined),
                   label: Text(
                     _i18n(
-                      language,
                       zhHans: '端点识别',
                       zhHant: '端點辨識',
                       en: 'Endpoint',
@@ -957,7 +901,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               leading: const Icon(Icons.hub_outlined),
               title: Text(
                 _i18n(
-                  language,
                   zhHans: '本地语音模型',
                   zhHant: '本地語音模型',
                   en: 'Local Speech Model',
@@ -965,7 +908,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               ),
               subtitle: Text(
                 _i18n(
-                  language,
                   zhHans: 'SenseVoice ONNX（端侧）',
                   zhHant: 'SenseVoice ONNX（端側）',
                   en: 'SenseVoice ONNX (on-device)',
@@ -978,7 +920,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               leading: const Icon(Icons.info_outline),
               title: Text(
                 _i18n(
-                  language,
                   zhHans: '系统语音识别',
                   zhHant: '系統語音辨識',
                   en: 'System Speech Recognition',
@@ -986,7 +927,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               ),
               subtitle: Text(
                 _i18n(
-                  language,
                   zhHans: '使用 Android / iOS 内置识别服务（可能走云端）',
                   zhHant: '使用 Android / iOS 內建辨識服務（可能走雲端）',
                   en: 'Use built-in Android / iOS recognizer (may use cloud)',
@@ -999,7 +939,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               leading: const Icon(Icons.cloud_outlined),
               title: Text(
                 _i18n(
-                  language,
                   zhHans: '语音识别端点',
                   zhHant: '語音辨識端點',
                   en: 'Voice AI Endpoint',
@@ -1013,7 +952,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 context,
                 ref,
                 _i18n(
-                  language,
                   zhHans: '语音识别端点',
                   zhHant: '語音辨識端點',
                   en: 'Voice AI Endpoint',
@@ -1028,7 +966,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             leading: const Icon(Icons.hub),
             title: Text(
               _i18n(
-                language,
                 zhHans: '向量模型',
                 zhHant: '向量模型',
                 en: 'Embedding Model',
@@ -1036,7 +973,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             ),
             subtitle: Text(
               _i18n(
-                language,
                 zhHans:
                     '端侧 bge-small-zh-v1.5-ONNX (model.onnx + model.onnx_data)',
                 zhHant:
@@ -1049,7 +985,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           _buildSectionHeader(
             context,
             _i18n(
-              language,
               zhHans: '多端同步',
               zhHant: '多端同步',
               en: 'Cross-Device Sync',
@@ -1059,7 +994,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             leading: const Icon(Icons.sync_alt_outlined),
             title: Text(
               _i18n(
-                language,
                 zhHans: '发送到其他设备（LocalSend）',
                 zhHant: '傳送到其他裝置（LocalSend）',
                 en: 'Send to Other Devices (LocalSend)',
@@ -1067,7 +1001,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             ),
             subtitle: Text(
               _i18n(
-                language,
                 zhHans: '导出本地备份并通过分享面板发送',
                 zhHant: '匯出本地備份並透過分享面板傳送',
                 en: 'Export backup and send via share sheet',
@@ -1080,7 +1013,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             leading: const Icon(Icons.download_outlined),
             title: Text(
               _i18n(
-                language,
                 zhHans: '从 LocalSend 接收并导入',
                 zhHant: '從 LocalSend 接收並匯入',
                 en: 'Import from LocalSend',
@@ -1088,7 +1020,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             ),
             subtitle: Text(
               _i18n(
-                language,
                 zhHans: '选择接收到的备份 JSON，合并导入本地数据',
                 zhHant: '選擇收到的備份 JSON，合併匯入本地資料',
                 en: 'Select backup JSON and merge local data',
@@ -1101,7 +1032,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           _buildSectionHeader(
             context,
             _i18n(
-              language,
               zhHans: '自动生成',
               zhHant: '自動生成',
               en: 'Auto Generation',
@@ -1111,7 +1041,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             secondary: const Icon(Icons.summarize),
             title: Text(
               _i18n(
-                language,
                 zhHans: '自动生成摘要',
                 zhHant: '自動生成摘要',
                 en: 'Auto Generate Summary',
@@ -1119,7 +1048,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             ),
             subtitle: Text(
               _i18n(
-                language,
                 zhHans: '为新内容自动生成 AI 摘要',
                 zhHant: '為新內容自動生成 AI 摘要',
                 en: 'Generate AI summary for new entries',
@@ -1134,7 +1062,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             secondary: const Icon(Icons.hub),
             title: Text(
               _i18n(
-                language,
                 zhHans: '自动生成向量',
                 zhHant: '自動生成向量',
                 en: 'Auto Generate Embedding',
@@ -1142,7 +1069,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             ),
             subtitle: Text(
               _i18n(
-                language,
                 zhHans: '为搜索自动生成向量嵌入',
                 zhHant: '為搜尋自動生成向量嵌入',
                 en: 'Generate vector embedding for search',
@@ -1159,7 +1085,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             secondary: const Icon(Icons.public),
             title: Text(
               _i18n(
-                language,
                 zhHans: '启用网络搜索',
                 zhHant: '啟用網路搜尋',
                 en: 'Enable Network Search',
@@ -1167,7 +1092,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             ),
             subtitle: Text(
               _i18n(
-                language,
                 zhHans: '搜索页与 AI 对话可联网检索（默认关闭）',
                 zhHant: '搜尋頁與 AI 對話可連網檢索（預設關閉）',
                 en: 'Allow online retrieval for search and AI chat (off by default)',
@@ -1181,16 +1105,15 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           const Divider(),
           _buildSectionHeader(
             context,
-            _i18n(language, zhHans: '关于', zhHant: '關於', en: 'About'),
+            _i18n(zhHans: '关于', zhHant: '關於', en: 'About'),
           ),
           ListTile(
             leading: Icon(Icons.info),
             title: Text(
-              _i18n(language, zhHans: '拾光', zhHant: '拾光', en: 'Shiguang'),
+              _i18n(zhHans: '拾光', zhHant: '拾光', en: 'Shiguang'),
             ),
             subtitle: Text(
               _i18n(
-                language,
                 zhHans: '版本 1.0.0',
                 zhHant: '版本 1.0.0',
                 en: 'Version 1.0.0',
@@ -1200,11 +1123,10 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           ListTile(
             leading: const Icon(Icons.storage),
             title: Text(
-              _i18n(language, zhHans: '数据库', zhHant: '資料庫', en: 'Database'),
+              _i18n(zhHans: '数据库', zhHant: '資料庫', en: 'Database'),
             ),
             subtitle: Text(
               _i18n(
-                language,
                 zhHans: 'ObjectBox + HNSW 向量索引',
                 zhHant: 'ObjectBox + HNSW 向量索引',
                 en: 'ObjectBox with HNSW index',
@@ -1229,7 +1151,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   const SizedBox(width: 8),
                   Text(
                     _i18n(
-                      language,
                       zhHans: '退出登录',
                       zhHant: '登出',
                       en: 'Log Out',
@@ -1258,26 +1179,25 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     );
   }
 
-  String _i18n(
-    AppLanguage language, {
+  String _i18n({
     required String zhHans,
     String? zhHant,
     required String en,
   }) {
-    if (language.isZhHans) {
-      return zhHans;
-    }
-    if (language.isZhHant) {
+    final locale = l10n.localeName;
+    if (locale.startsWith('zh_Hant')) {
       return zhHant ?? zhHans;
+    }
+    if (locale.startsWith('zh')) {
+      return zhHans;
     }
     return en;
   }
 
-  String _chatProviderLabel(ChatModelProvider provider, AppLanguage language) {
+  String _chatProviderLabel(ChatModelProvider provider) {
     switch (provider) {
       case ChatModelProvider.local:
         return _i18n(
-          language,
           zhHans: '本地模型',
           zhHant: '本地模型',
           en: 'Local Model',
@@ -1291,18 +1211,16 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       case ChatModelProvider.ollama:
         return 'Ollama';
       case ChatModelProvider.custom:
-        return _i18n(language, zhHans: '自定义', zhHant: '自訂', en: 'Custom');
+        return _i18n(zhHans: '自定义', zhHant: '自訂', en: 'Custom');
     }
   }
 
   String _customProtocolLabel(
     CustomLlmProtocol protocol,
-    AppLanguage language,
   ) {
     switch (protocol) {
       case CustomLlmProtocol.openai:
         return _i18n(
-          language,
           zhHans: 'OpenAI 兼容',
           zhHant: 'OpenAI 相容',
           en: 'OpenAI Compatible',
@@ -1318,26 +1236,22 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
 
   String _voiceEngineLabel(
     VoiceRecognitionEngine engine,
-    AppLanguage language,
   ) {
     switch (engine) {
       case VoiceRecognitionEngine.localModel:
         return _i18n(
-          language,
           zhHans: '本地模型（默认）',
           zhHant: '本地模型（預設）',
           en: 'Local Model (Default)',
         );
       case VoiceRecognitionEngine.systemNative:
         return _i18n(
-          language,
           zhHans: '系统识别（Android/iOS）',
           zhHant: '系統辨識（Android/iOS）',
           en: 'System Recognition (Android/iOS)',
         );
       case VoiceRecognitionEngine.endpointCloud:
         return _i18n(
-          language,
           zhHans: '端点识别（Cloud/WS）',
           zhHant: '端點辨識（Cloud/WS）',
           en: 'Endpoint Recognition (Cloud/WS)',
@@ -1348,7 +1262,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
   String _maskSecret(String value, AppLanguage language) {
     final trimmed = value.trim();
     if (trimmed.isEmpty) {
-      return _i18n(language, zhHans: '未设置', zhHant: '未設定', en: 'Not set');
+      return _i18n(zhHans: '未设置', zhHant: '未設定', en: 'Not set');
     }
     if (trimmed.length <= 8) return '*' * trimmed.length;
     final suffix = trimmed.substring(trimmed.length - 4);
@@ -1362,7 +1276,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     String currentValue,
     void Function(String) onSave,
   ) {
-    final language = ref.read(settingsProvider).language;
     final controller = TextEditingController(text: currentValue);
     final focusNode = FocusNode();
 
@@ -1378,13 +1291,11 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           decoration: InputDecoration(
             border: const OutlineInputBorder(),
             hintText: _i18n(
-              language,
               zhHans: 'ws://127.0.0.1:8008/... 或 http://127.0.0.1:11434',
               zhHant: 'ws://127.0.0.1:8008/... 或 http://127.0.0.1:11434',
               en: 'ws://127.0.0.1:8008/... or http://127.0.0.1:11434',
             ),
             helperText: _i18n(
-              language,
               zhHans: '支持本地 / 局域网 / 公网端点',
               zhHant: '支援本地 / 區域網 / 公網端點',
               en: 'Supports local/LAN/public endpoints',
@@ -1395,7 +1306,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
-              _i18n(language, zhHans: '取消', zhHant: '取消', en: 'Cancel'),
+              _i18n(zhHans: '取消', zhHant: '取消', en: 'Cancel'),
             ),
           ),
           FilledButton(
@@ -1404,7 +1315,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               Navigator.pop(context);
             },
             child: Text(
-              _i18n(language, zhHans: '保存', zhHant: '保存', en: 'Save'),
+              _i18n(zhHans: '保存', zhHant: '保存', en: 'Save'),
             ),
           ),
         ],
@@ -1424,7 +1335,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     String? helperText,
     bool obscureText = false,
   }) {
-    final language = ref.read(settingsProvider).language;
     final controller = TextEditingController(text: currentValue);
     final focusNode = FocusNode();
 
@@ -1448,7 +1358,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
-              _i18n(language, zhHans: '取消', zhHant: '取消', en: 'Cancel'),
+              _i18n(zhHans: '取消', zhHant: '取消', en: 'Cancel'),
             ),
           ),
           FilledButton(
@@ -1457,7 +1367,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               Navigator.pop(context);
             },
             child: Text(
-              _i18n(language, zhHans: '保存', zhHant: '保存', en: 'Save'),
+              _i18n(zhHans: '保存', zhHant: '保存', en: 'Save'),
             ),
           ),
         ],
@@ -1477,41 +1387,21 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
 
       await Share.shareXFiles(
         [XFile(file.path)],
-        subject: context.t(
-          zhHans: '拾光 LocalSend 备份',
-          zhHant: '拾光 LocalSend 備份',
-          en: 'Shiguang LocalSend Backup',
-        ),
-        text: context.t(
-          zhHans: '拾光本地备份（建议在接收端通过 LocalSend 接收）',
-          zhHant: '拾光本地備份（建議在接收端透過 LocalSend 接收）',
-          en: 'Local backup from Shiguang (receive via LocalSend)',
-        ),
+        subject: l10n.shiguangLocalSendBackup,
+        text: l10n.localBackupFromShiguang,
       );
 
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(
-            context.t(
-              zhHans: '备份已导出: ${file.path}',
-              zhHant: '備份已匯出: ${file.path}',
-              en: 'Backup exported: ${file.path}',
-            ),
-          ),
+          content: Text(l10n.backupExported(file.path)),
         ),
       );
     } catch (error) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(
-            context.t(
-              zhHans: '导出失败: $error',
-              zhHant: '匯出失敗: $error',
-              en: 'Export failed: $error',
-            ),
-          ),
+          content: Text(l10n.exportFailed(error.toString())),
           backgroundColor: Colors.red,
         ),
       );
@@ -1525,23 +1415,13 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         allowedExtensions: const ['json'],
         allowMultiple: false,
         withData: false,
-        dialogTitle: context.t(
-          zhHans: '选择 LocalSend 接收的备份文件',
-          zhHant: '選擇 LocalSend 接收的備份檔案',
-          en: 'Select backup file received from LocalSend',
-        ),
+        dialogTitle: l10n.selectBackupFileFromLocalSend,
       );
       if (picked == null || picked.files.isEmpty) return;
 
       final path = picked.files.single.path;
       if (path == null || path.trim().isEmpty) {
-        throw Exception(
-          context.t(
-            zhHans: '未获取到文件路径',
-            zhHant: '未取得檔案路徑',
-            en: 'Failed to resolve selected file path',
-          ),
-        );
+        throw Exception(l10n.failedToResolveFilePath);
       }
 
       if (!mounted) return;
@@ -1572,11 +1452,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            context.t(
-              zhHans: '导入失败: $error',
-              zhHant: '匯入失敗: $error',
-              en: 'Import failed: $error',
-            ),
+            l10n.importFailed(error.toString()),
           ),
           backgroundColor: Colors.red,
         ),
@@ -1589,34 +1465,26 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(
-          context.t(zhHans: '导入选项', zhHant: '匯入選項', en: 'Import Options'),
+          l10n.importOptions,
         ),
         content: Text(
-          context.t(
-            zhHans: '是否同时导入设置项？\n（不会覆盖 API Key）',
-            zhHant: '是否同時匯入設定項？\n（不會覆蓋 API Key）',
-            en: 'Import settings as well?\n(API keys will not be overwritten)',
-          ),
+          l10n.importSettingsAsWell,
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text(context.t(zhHans: '取消', zhHant: '取消', en: 'Cancel')),
+            child: Text(l10n.cancel),
           ),
           TextButton(
             onPressed: () => Navigator.pop(context, false),
             child: Text(
-              context.t(zhHans: '仅导入数据', zhHant: '僅匯入資料', en: 'Data Only'),
+              l10n.dataOnly,
             ),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(context, true),
             child: Text(
-              context.t(
-                zhHans: '数据+设置',
-                zhHant: '資料+設定',
-                en: 'Data + Settings',
-              ),
+              l10n.dataAndSettings,
             ),
           ),
         ],
@@ -1632,73 +1500,39 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(
-          context.t(zhHans: '导入完成', zhHant: '匯入完成', en: 'Import Completed'),
+          l10n.importCompleted,
         ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              context.t(
-                zhHans:
-                    '账号: +${result.createdAccounts} / 更新 ${result.updatedAccounts}',
-                zhHant:
-                    '帳號: +${result.createdAccounts} / 更新 ${result.updatedAccounts}',
-                en: 'Accounts: +${result.createdAccounts} / updated ${result.updatedAccounts}',
-              ),
+              l10n.importResultAccounts(result.createdAccounts, result.updatedAccounts),
             ),
             Text(
-              context.t(
-                zhHans:
-                    '日记: +${result.createdDiaries} / 更新 ${result.updatedDiaries}',
-                zhHant:
-                    '日記: +${result.createdDiaries} / 更新 ${result.updatedDiaries}',
-                en: 'Diaries: +${result.createdDiaries} / updated ${result.updatedDiaries}',
-              ),
+              l10n.importResultDiaries(result.createdDiaries, result.updatedDiaries),
             ),
             Text(
-              context.t(
-                zhHans:
-                    '提醒: +${result.createdReminders} / 更新 ${result.updatedReminders}',
-                zhHant:
-                    '提醒: +${result.createdReminders} / 更新 ${result.updatedReminders}',
-                en: 'Reminders: +${result.createdReminders} / updated ${result.updatedReminders}',
-              ),
+              l10n.importResultReminders(result.createdReminders, result.updatedReminders),
             ),
             Text(
-              context.t(
-                zhHans: '跳过: ${result.skipped}',
-                zhHant: '跳過: ${result.skipped}',
-                en: 'Skipped: ${result.skipped}',
-              ),
+              l10n.importResultSkipped(result.skipped),
             ),
             Text(
-              context.t(
-                zhHans: '总变更: ${result.totalChanged}',
-                zhHant: '總變更: ${result.totalChanged}',
-                en: 'Total changed: ${result.totalChanged}',
-              ),
+              l10n.importResultTotal(result.totalChanged),
             ),
             const SizedBox(height: 8),
             Text(
               appliedSettings
-                  ? context.t(
-                      zhHans: '已应用备份中的设置项。',
-                      zhHant: '已套用備份中的設定項。',
-                      en: 'Settings in backup were applied.',
-                    )
-                  : context.t(
-                      zhHans: '未应用备份中的设置项。',
-                      zhHant: '未套用備份中的設定項。',
-                      en: 'Settings in backup were not applied.',
-                    ),
+                  ? l10n.settingsApplied
+                  : l10n.settingsNotApplied,
             ),
           ],
         ),
         actions: [
           FilledButton(
             onPressed: () => Navigator.pop(context),
-            child: Text(context.t(zhHans: '确定', zhHant: '確定', en: 'OK')),
+            child: Text(l10n.ok),
           ),
         ],
       ),
@@ -1706,16 +1540,14 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
   }
 
   void _showLogoutDialog(BuildContext context, WidgetRef ref) {
-    final language = ref.read(settingsProvider).language;
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
         title: Text(
-          _i18n(language, zhHans: '退出登录', zhHant: '登出', en: 'Log Out'),
+          _i18n(zhHans: '退出登录', zhHant: '登出', en: 'Log Out'),
         ),
         content: Text(
           _i18n(
-            language,
             zhHans: '确定要退出当前账号吗？',
             zhHant: '確定要登出目前帳號嗎？',
             en: 'Are you sure you want to log out?',
@@ -1725,7 +1557,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
-              _i18n(language, zhHans: '取消', zhHant: '取消', en: 'Cancel'),
+              _i18n(zhHans: '取消', zhHant: '取消', en: 'Cancel'),
             ),
           ),
           FilledButton(
@@ -1736,7 +1568,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             },
             style: FilledButton.styleFrom(backgroundColor: Colors.red),
             child: Text(
-              _i18n(language, zhHans: '退出', zhHant: '登出', en: 'Log Out'),
+              _i18n(zhHans: '退出', zhHant: '登出', en: 'Log Out'),
             ),
           ),
         ],
@@ -1749,13 +1581,11 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     WidgetRef ref,
     AppLanguage currentLanguage,
   ) {
-    final language = ref.read(settingsProvider).language;
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
         title: Text(
           _i18n(
-            language,
             zhHans: '选择语言',
             zhHant: '選擇語言',
             en: 'Choose Language',
@@ -1788,13 +1618,11 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
   }
 
   void _showDatabaseInfo(BuildContext context) {
-    final language = ref.read(settingsProvider).language;
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
         title: Text(
           _i18n(
-            language,
             zhHans: '数据库信息',
             zhHant: '資料庫資訊',
             en: 'Database Info',
@@ -1806,7 +1634,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           children: [
             Text(
               _i18n(
-                language,
                 zhHans: '存储: ObjectBox',
                 zhHant: '儲存: ObjectBox',
                 en: 'Storage: ObjectBox',
@@ -1814,7 +1641,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             ),
             Text(
               _i18n(
-                language,
                 zhHans: '向量索引: HNSW',
                 zhHant: '向量索引: HNSW',
                 en: 'Vector Index: HNSW',
@@ -1822,7 +1648,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             ),
             Text(
               _i18n(
-                language,
                 zhHans: '向量维度: 384',
                 zhHant: '向量維度: 384',
                 en: 'Dimensions: 384',
@@ -1830,7 +1655,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             ),
             Text(
               _i18n(
-                language,
                 zhHans: '向量模型: bge-small-zh-v1.5',
                 zhHant: '向量模型: bge-small-zh-v1.5',
                 en: 'Embedding Model: bge-small-zh-v1.5',
@@ -1841,7 +1665,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text(_i18n(language, zhHans: '确定', zhHant: '確定', en: 'OK')),
+            child: Text(_i18n(zhHans: '确定', zhHant: '確定', en: 'OK')),
           ),
         ],
       ),
@@ -1862,6 +1686,14 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
   final GlobalKey _viewerKey = GlobalKey();
   final TransformationController _controller = TransformationController();
 
+  AppLocalizations get l10n => AppLocalizations.of(context);
+
+  String _t({required String zhHans, String? zhHant, required String en}) {
+    final locale = l10n.localeName;
+    if (locale == 'zh_Hant') return zhHant ?? zhHans;
+    return en;
+  }
+
   static const double _cropMinSize = 140;
   static const double _cropMargin = 8;
 
@@ -1873,10 +1705,6 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
   Size? _lastViewportSize;
   Rect? _cropRect;
   int _rotationQuarterTurns = 0;
-
-  String _t({required String zhHans, String? zhHant, required String en}) {
-    return context.t(zhHans: zhHans, zhHant: zhHant, en: en);
-  }
 
   void _showSnackMessage({
     required String zhHans,

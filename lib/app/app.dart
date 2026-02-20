@@ -5,6 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'app_router.dart';
 import '../features/settings/data/settings_provider.dart';
 import '../features/reminder/data/services/local_reminder_scheduler.dart';
+import '../l10n/generated/app_localizations.dart';
 
 class App extends ConsumerStatefulWidget {
   const App({super.key});
@@ -67,8 +68,9 @@ class _AppState extends ConsumerState<App> {
       debugShowCheckedModeBanner: false,
       themeMode: themeMode,
       locale: locale,
-      supportedLocales: supportedLocales.toList(growable: false),
-      localizationsDelegates: [
+      supportedLocales: AppLocalizations.supportedLocales,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,

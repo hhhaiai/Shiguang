@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../core/i18n/app_i18n.dart';
+import '../../../../l10n/generated/app_localizations.dart';
 import '../controllers/auth_controller.dart';
 import '../../../../core/ui/keyboard.dart';
 
@@ -33,15 +33,10 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   Future<void> _submit() async {
     final username = _usernameController.text.trim();
     final pin = _pinController.text;
+    final l10n = AppLocalizations.of(context);
 
     if (username.isEmpty || pin.isEmpty) {
-      setState(
-        () => _errorMessage = context.t(
-          zhHans: '请填写所有字段',
-          zhHant: '請填寫所有欄位',
-          en: 'Please fill in all fields',
-        ),
-      );
+      setState(() => _errorMessage = l10n.pleaseFillInAllFields);
       return;
     }
 
@@ -60,11 +55,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         if (pin.length < 4) {
           setState(() {
             _isLoading = false;
-            _errorMessage = context.t(
-              zhHans: 'PIN 至少 4 位',
-              zhHant: 'PIN 至少 4 位',
-              en: 'PIN must be at least 4 digits',
-            );
+            _errorMessage = l10n.pinAtLeast4Digits;
           });
           return;
         }
@@ -76,16 +67,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
       } else if (mounted) {
         setState(() {
           _errorMessage = _isLogin
-              ? context.t(
-                  zhHans: '用户名或 PIN 错误',
-                  zhHant: '使用者名稱或 PIN 錯誤',
-                  en: 'Invalid username or PIN',
-                )
-              : context.t(
-                  zhHans: '用户名已存在',
-                  zhHant: '使用者名稱已存在',
-                  en: 'Username already exists',
-                );
+              ? l10n.invalidUsernameOrPinError
+              : l10n.usernameAlreadyExists;
         });
       }
     } finally {
@@ -97,6 +80,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Scaffold(
       body: SafeArea(
         child: Center(
@@ -113,7 +98,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  context.t(zhHans: '拾光', zhHant: '拾光', en: 'Shiguang'),
+                  l10n.appTitle,
                   style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -121,11 +106,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  context.t(
-                    zhHans: '记录时光，拾取记忆',
-                    zhHant: '記錄時光，拾取記憶',
-                    en: 'Capture moments, keep memories',
-                  ),
+                  l10n.captureMomentsKeepMemories,
                   style: Theme.of(
                     context,
                   ).textTheme.bodyMedium?.copyWith(color: Colors.grey),
@@ -138,11 +119,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   onTap: () =>
                       requestKeyboardFocus(context, _usernameFocusNode),
                   decoration: InputDecoration(
-                    labelText: context.t(
-                      zhHans: '用户名',
-                      zhHant: '使用者名稱',
-                      en: 'Username',
-                    ),
+                    labelText: l10n.username,
                     prefixIcon: const Icon(Icons.person),
                     border: const OutlineInputBorder(),
                   ),
@@ -154,11 +131,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   focusNode: _pinFocusNode,
                   onTap: () => requestKeyboardFocus(context, _pinFocusNode),
                   decoration: InputDecoration(
-                    labelText: context.t(
-                      zhHans: 'PIN',
-                      zhHant: 'PIN',
-                      en: 'PIN',
-                    ),
+                    labelText: l10n.pin,
                     prefixIcon: const Icon(Icons.lock),
                     border: const OutlineInputBorder(),
                   ),
@@ -186,19 +159,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                           width: 20,
                           child: CircularProgressIndicator(strokeWidth: 2),
                         )
-                      : Text(
-                          _isLogin
-                              ? context.t(
-                                  zhHans: '登录',
-                                  zhHant: '登入',
-                                  en: 'Login',
-                                )
-                              : context.t(
-                                  zhHans: '创建账号',
-                                  zhHant: '建立帳號',
-                                  en: 'Create Account',
-                                ),
-                        ),
+                      : Text(_isLogin ? l10n.login : l10n.createAccount),
                 ),
                 const SizedBox(height: 16),
                 TextButton(
@@ -210,16 +171,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   },
                   child: Text(
                     _isLogin
-                        ? context.t(
-                            zhHans: '还没有账号？去创建',
-                            zhHant: '還沒有帳號？去建立',
-                            en: 'Don\'t have an account? Create one',
-                          )
-                        : context.t(
-                            zhHans: '已有账号？去登录',
-                            zhHant: '已有帳號？去登入',
-                            en: 'Already have an account? Login',
-                          ),
+                        ? l10n.dontHaveAccountCreateOne
+                        : l10n.alreadyHaveAccountLogin,
                   ),
                 ),
               ],

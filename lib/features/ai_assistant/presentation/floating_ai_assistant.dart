@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:record/record.dart';
-import '../../../core/i18n/app_i18n.dart';
+import '../../../l10n/generated/app_localizations.dart';
 import '../../../core/ui/keyboard.dart';
 import '../../settings/data/settings_provider.dart';
 import '../../diary/data/ai/sensevoice_onnx_local_voice_ai.dart';
@@ -69,20 +69,13 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
 
   Future<void> _startListening() async {
     if (_isListening || _isStoppingListening) return;
+    final l10n = AppLocalizations.of(context);
 
     final hasPermission = await _audioRecorder.hasPermission(request: true);
     if (!hasPermission) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            context.t(
-              zhHans: '需要麦克风权限',
-              zhHant: '需要麥克風權限',
-              en: 'Microphone permission required',
-            ),
-          ),
-        ),
+        SnackBar(content: Text(l10n.microphonePermissionRequired)),
       );
       return;
     }
@@ -127,19 +120,12 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
       },
       onError: (error) {
         if (!mounted) return;
+        final l10n = AppLocalizations.of(context);
         setState(() {
           _isListening = false;
         });
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              context.t(
-                zhHans: '语音错误: $error',
-                zhHant: '語音錯誤: $error',
-                en: 'Voice error: $error',
-              ),
-            ),
-          ),
+          SnackBar(content: Text(l10n.voiceError(error.toString()))),
         );
         unawaited(_stopListening(submitFallback: false));
       },
@@ -178,19 +164,12 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
       );
     } catch (error) {
       if (!mounted) return;
+      final l10n = AppLocalizations.of(context);
       setState(() {
         _isListening = false;
       });
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            context.t(
-              zhHans: '麦克风启动失败: $error',
-              zhHant: '麥克風啟動失敗: $error',
-              en: 'Mic start failed: $error',
-            ),
-          ),
-        ),
+        SnackBar(content: Text(l10n.microphoneStartFailed(error.toString()))),
       );
       await _voiceSubscription?.cancel();
       _voiceSubscription = null;
@@ -322,14 +301,11 @@ class _FloatingAiAssistantState extends ConsumerState<FloatingAiAssistant>
       });
     } catch (error) {
       if (!mounted) return;
+      final l10n = AppLocalizations.of(context);
       setState(() {
         _messages.add(
           _ChatMessage(
-            text: context.t(
-              zhHans: '抱歉，AI服务暂时不可用: $error',
-              zhHant: '抱歉，AI 服務暫時不可用: $error',
-              en: 'Sorry, AI service is temporarily unavailable: $error',
-            ),
+            text: l10n.aiServiceUnavailable(error.toString()),
             isUser: false,
           ),
         );
@@ -450,11 +426,7 @@ ${preprocessedNetworkContext.trim()}
                         ),
                         const SizedBox(width: 8),
                         Text(
-                          context.t(
-                            zhHans: 'AI 助手',
-                            zhHant: 'AI 助手',
-                            en: 'AI Assistant',
-                          ),
+                          AppLocalizations.of(context).aiAssistant,
                           style: const TextStyle(fontWeight: FontWeight.bold),
                         ),
                         const Spacer(),
@@ -483,85 +455,82 @@ ${preprocessedNetworkContext.trim()}
                     duration: const Duration(milliseconds: 180),
                     curve: Curves.easeOut,
                     padding: EdgeInsets.only(bottom: bottomInset),
-                    child: _isListening
-                        ? Container(
-                            padding: const EdgeInsets.all(12),
-                            color: Colors.red.shade50,
-                            child: Row(
-                              children: [
-                                Icon(Icons.mic, color: Colors.red.shade700),
-                                const SizedBox(width: 8),
-                                Expanded(
-                                  child: Text(
-                                    _listeningText.isEmpty
-                                        ? context.t(
-                                            zhHans: '正在聆听...',
-                                            zhHant: '正在聆聽...',
-                                            en: 'Listening...',
-                                          )
-                                        : _listeningText,
-                                    style: TextStyle(
-                                      color: Colors.red.shade700,
-                                    ),
-                                  ),
-                                ),
-                                IconButton(
-                                  icon: Icon(
-                                    Icons.stop,
-                                    color: Colors.red.shade700,
-                                  ),
-                                  onPressed: () {
-                                    unawaited(
-                                      _stopListening(submitFallback: true),
-                                    );
-                                  },
-                                  padding: EdgeInsets.zero,
-                                  constraints: const BoxConstraints(),
-                                ),
-                              ],
-                            ),
-                          )
-                        : Padding(
-                            padding: const EdgeInsets.all(8),
-                            child: Row(
-                              children: [
-                                IconButton(
-                                  icon: const Icon(Icons.mic),
-                                  onPressed: _startListening,
-                                ),
-                                Expanded(
-                                  child: TextField(
-                                    controller: _textController,
-                                    focusNode: _inputFocusNode,
-                                    onTap: () => requestKeyboardFocus(
-                                      context,
-                                      _inputFocusNode,
-                                    ),
-                                    scrollPadding: EdgeInsets.only(
-                                      bottom: bottomInset + 24,
-                                    ),
-                                    decoration: InputDecoration(
-                                      hintText: context.t(
-                                        zhHans: '输入消息...',
-                                        zhHant: '輸入訊息...',
-                                        en: 'Type a message...',
+                    child: Builder(
+                      builder: (context) {
+                        final l10n = AppLocalizations.of(context);
+                        return _isListening
+                            ? Container(
+                                padding: const EdgeInsets.all(12),
+                                color: Colors.red.shade50,
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.mic, color: Colors.red.shade700),
+                                    const SizedBox(width: 8),
+                                    Expanded(
+                                      child: Text(
+                                        _listeningText.isEmpty
+                                            ? l10n.listening
+                                            : _listeningText,
+                                        style: TextStyle(
+                                          color: Colors.red.shade700,
+                                        ),
                                       ),
-                                      border: InputBorder.none,
-                                      isDense: true,
                                     ),
-                                    onSubmitted: (_) {
-                                      if (_isSpeaking) return;
-                                      _sendMessage();
-                                    },
-                                  ),
+                                    IconButton(
+                                      icon: Icon(
+                                        Icons.stop,
+                                        color: Colors.red.shade700,
+                                      ),
+                                      onPressed: () {
+                                        unawaited(
+                                          _stopListening(submitFallback: true),
+                                        );
+                                      },
+                                      padding: EdgeInsets.zero,
+                                      constraints: const BoxConstraints(),
+                                    ),
+                                  ],
                                 ),
-                                IconButton(
-                                  icon: const Icon(Icons.send),
-                                  onPressed: _isSpeaking ? null : _sendMessage,
+                              )
+                            : Padding(
+                                padding: const EdgeInsets.all(8),
+                                child: Row(
+                                  children: [
+                                    IconButton(
+                                      icon: const Icon(Icons.mic),
+                                      onPressed: _startListening,
+                                    ),
+                                    Expanded(
+                                      child: TextField(
+                                        controller: _textController,
+                                        focusNode: _inputFocusNode,
+                                        onTap: () => requestKeyboardFocus(
+                                          context,
+                                          _inputFocusNode,
+                                        ),
+                                        scrollPadding: EdgeInsets.only(
+                                          bottom: bottomInset + 24,
+                                        ),
+                                        decoration: InputDecoration(
+                                          hintText: l10n.typeAMessage,
+                                          border: InputBorder.none,
+                                          isDense: true,
+                                        ),
+                                        onSubmitted: (_) {
+                                          if (_isSpeaking) return;
+                                          _sendMessage();
+                                        },
+                                      ),
+                                    ),
+                                    IconButton(
+                                      icon: const Icon(Icons.send),
+                                      onPressed: _isSpeaking ? null : _sendMessage,
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
-                          ),
+                              );
+                      },
+                    ),
                   ),
                 ],
               ),

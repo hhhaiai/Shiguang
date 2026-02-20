@@ -11,7 +11,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:record/record.dart';
 
-import '../../../../core/i18n/app_i18n.dart';
+import '../../../../l10n/generated/app_localizations.dart';
 import '../../../../core/ui/adaptive_navigation.dart';
 import '../../../../core/ui/edge_swipe_back.dart';
 import '../../../../core/ui/keyboard.dart';
@@ -481,15 +481,10 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
       requestKeyboardFocus(context, target.focusNode);
     } catch (error) {
       if (mounted) {
+        final l10n = AppLocalizations.of(context);
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(
-              context.t(
-                zhHans: '麦克风启动失败: $error',
-                zhHant: '麥克風啟動失敗: $error',
-                en: 'Failed to start microphone: $error',
-              ),
-            ),
+            content: Text(l10n.microphoneStartFailed(error.toString())),
             backgroundColor: Colors.red,
           ),
         );
@@ -506,15 +501,10 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
         debugPrint('[ASR] mic stream error: $error');
         await _stopRecording(resetText: false);
         if (mounted) {
+          final l10n = AppLocalizations.of(context);
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text(
-                context.t(
-                  zhHans: '麦克风中断，录音已停止',
-                  zhHant: '麥克風中斷，錄音已停止',
-                  en: 'Microphone interrupted, recording stopped.',
-                ),
-              ),
+              content: Text(l10n.microphoneInterrupted),
               backgroundColor: Colors.orange,
             ),
           );
@@ -560,16 +550,11 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
       },
       onError: (error) {
         if (!mounted) return;
+        final l10n = AppLocalizations.of(context);
         setState(() => _asrReady = false);
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(
-              context.t(
-                zhHans: '语音识别重连中: $error',
-                zhHant: '語音辨識重連中: $error',
-                en: 'ASR reconnecting: $error',
-              ),
-            ),
+            content: Text(l10n.asrReconnectingError(error.toString())),
             backgroundColor: Colors.orange,
           ),
         );
@@ -757,22 +742,16 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
     _insertInlineImageToken(persistedPath);
 
     if (mounted) {
+      final l10n = AppLocalizations.of(context);
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            context.t(
-              zhHans: '已插入图片: ${picked.name}',
-              zhHant: '已插入圖片: ${picked.name}',
-              en: 'Image inserted: ${picked.name}',
-            ),
-          ),
-        ),
+        SnackBar(content: Text(l10n.imageInserted(picked.name))),
       );
       _scheduleScrollProgressUpdate();
     }
   }
 
   Future<ImageSource?> _pickImageSource() async {
+    final l10n = AppLocalizations.of(context);
     return showModalBottomSheet<ImageSource>(
       context: context,
       builder: (context) => SafeArea(
@@ -781,25 +760,17 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
           children: [
             ListTile(
               leading: const Icon(Icons.camera_alt_outlined),
-              title: Text(
-                context.t(zhHans: '拍摄', zhHant: '拍攝', en: 'Take Photo'),
-              ),
+              title: Text(l10n.takePhoto),
               onTap: () => Navigator.pop(context, ImageSource.camera),
             ),
             ListTile(
               leading: const Icon(Icons.photo_library_outlined),
-              title: Text(
-                context.t(
-                  zhHans: '从相册选取',
-                  zhHant: '從相簿選取',
-                  en: 'Choose from Gallery',
-                ),
-              ),
+              title: Text(l10n.chooseFromGallery),
               onTap: () => Navigator.pop(context, ImageSource.gallery),
             ),
             ListTile(
               leading: const Icon(Icons.close),
-              title: Text(context.t(zhHans: '取消', zhHant: '取消', en: 'Cancel')),
+              title: Text(l10n.cancel),
               onTap: () => Navigator.pop(context),
             ),
           ],
@@ -900,6 +871,7 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final canSubmit = _hasVisibleText || _hasImages;
     final theme = Theme.of(context);
     final bottomInset = MediaQuery.viewInsetsOf(context).bottom;
@@ -913,14 +885,11 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
         backgroundColor: theme.scaffoldBackgroundColor,
         appBar: AppBar(
           leading: const BackButton(),
-          title: Text(
-            widget.title ??
-                context.t(zhHans: '写文章', zhHant: '寫文章', en: 'Write Entry'),
-          ),
+          title: Text(widget.title ?? l10n.writeEntry),
           actions: [
             TextButton(
               onPressed: canSubmit ? () => unawaited(_submit()) : null,
-              child: Text(context.t(zhHans: '保存', zhHant: '保存', en: 'Save')),
+              child: Text(l10n.save),
             ),
           ],
         ),
@@ -933,38 +902,22 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
                 child: Row(
                   children: [
                     IconButton(
-                      tooltip: context.t(
-                        zhHans: '加粗',
-                        zhHant: '粗體',
-                        en: 'Bold',
-                      ),
+                      tooltip: l10n.bold,
                       onPressed: () => _applyInlineStyle('**', '**'),
                       icon: const Icon(Icons.format_bold),
                     ),
                     IconButton(
-                      tooltip: context.t(
-                        zhHans: '斜体',
-                        zhHant: '斜體',
-                        en: 'Italic',
-                      ),
+                      tooltip: l10n.italic,
                       onPressed: () => _applyInlineStyle('*', '*'),
                       icon: const Icon(Icons.format_italic),
                     ),
                     IconButton(
-                      tooltip: context.t(
-                        zhHans: '删除线',
-                        zhHant: '刪除線',
-                        en: 'Strikethrough',
-                      ),
+                      tooltip: l10n.strikethrough,
                       onPressed: () => _applyInlineStyle('~~', '~~'),
                       icon: const Icon(Icons.strikethrough_s),
                     ),
                     IconButton(
-                      tooltip: context.t(
-                        zhHans: '图片',
-                        zhHant: '圖片',
-                        en: 'Image',
-                      ),
+                      tooltip: l10n.image,
                       onPressed: () => unawaited(_insertImageToken()),
                       icon: const Icon(Icons.image_outlined),
                     ),
@@ -1160,11 +1113,7 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
                                     right: 16,
                                     bottom: 8,
                                     child: Text(
-                                      context.t(
-                                        zhHans: '语音识别暂不可用，录音仍在继续。',
-                                        zhHant: '語音辨識暫不可用，錄音仍在繼續。',
-                                        en: 'ASR unavailable. Recording is still active.',
-                                      ),
+                                      l10n.asrUnavailableRecordingActive,
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         fontSize: 12,
@@ -1238,6 +1187,7 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
     required double bottomInset,
     required double recordingOverlayHeight,
   }) {
+    final l10n = AppLocalizations.of(context);
     final showHint = !_hasVisibleText && !_hasImages;
     final firstTextId = _firstTextBlock?.id;
     return LayoutBuilder(
@@ -1292,11 +1242,7 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
                             },
                             decoration: InputDecoration(
                               hintText: showStarterHint
-                                  ? context.t(
-                                      zhHans: '写下正文...',
-                                      zhHant: '寫下正文...',
-                                      en: 'Write your entry...',
-                                    )
+                                  ? l10n.writeYourEntry
                                   : null,
                               border: InputBorder.none,
                               filled: false,

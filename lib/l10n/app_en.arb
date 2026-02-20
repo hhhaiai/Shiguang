@@ -1,0 +1,349 @@
+{
+  "@@locale": "en",
+  "appTitle": "Shiguang",
+  "@appTitle": {
+    "description": "App name"
+  },
+
+  "settings": "Settings",
+  "account": "Account",
+  "reminders": "Reminders",
+  "language": "Language",
+  "appLanguage": "App Language",
+  "appearance": "Appearance",
+  "themeMode": "Theme Mode",
+  "dark": "Dark",
+  "light": "Light",
+  "system": "System",
+  "aiService": "AI Service",
+  "aiChatProvider": "AI Chat Provider",
+  "chatModel": "Chat Model",
+  "localModel": "Local Model",
+  "localModelDefault": "Local Model (Default)",
+  "ollamaEndpoint": "Ollama Endpoint",
+  "ollamaModel": "Ollama Model",
+  "openAiEndpoint": "OpenAI Endpoint",
+  "openAiApiKey": "OpenAI API Key",
+  "openAiModel": "OpenAI Model",
+  "geminiEndpoint": "Gemini Endpoint",
+  "geminiApiKey": "Gemini API Key",
+  "geminiModel": "Gemini Model",
+  "anthropicEndpoint": "Anthropic Endpoint",
+  "anthropicApiKey": "Anthropic API Key",
+  "anthropicModel": "Anthropic Model",
+  "customProtocol": "Custom Protocol",
+  "protocol": "Protocol",
+  "customEndpoint": "Custom Endpoint",
+  "customApiKey": "Custom API Key",
+  "customModel": "Custom Model",
+  "optionalForLocalServers": "Optional for local/custom servers",
+  "speechRecognitionEngine": "Speech Recognition Engine",
+  "local": "Local",
+  "endpoint": "Endpoint",
+  "localSpeechModel": "Local Speech Model",
+  "senseVoiceOnnx": "SenseVoice ONNX (on-device)",
+  "systemSpeechRecognition": "System Speech Recognition",
+  "systemRecognitionAndroidIos": "System Recognition (Android/iOS)",
+  "endpointRecognitionCloudWs": "Endpoint Recognition (Cloud/WS)",
+  "useBuiltInRecognizer": "Use built-in Android / iOS recognizer (may use cloud)",
+  "voiceAiEndpoint": "Voice AI Endpoint",
+  "embeddingModel": "Embedding Model",
+  "crossDeviceSync": "Cross-Device Sync",
+  "sendToOtherDevices": "Send to Other Devices (LocalSend)",
+  "exportBackupAndSend": "Export backup and send via share sheet",
+  "importFromLocalSend": "Import from LocalSend",
+  "selectBackupJson": "Select backup JSON and merge local data",
+  "autoGeneration": "Auto Generation",
+  "autoGenerateSummary": "Auto Generate Summary",
+  "generateAiSummaryForNewEntries": "Generate AI summary for new entries",
+  "autoGenerateEmbedding": "Auto Generate Embedding",
+  "generateVectorEmbedding": "Generate vector embedding for search",
+  "enableNetworkSearch": "Enable Network Search",
+  "allowOnlineRetrieval": "Allow online retrieval for search and AI chat (off by default)",
+  "about": "About",
+  "version": "Version {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "database": "Database",
+  "objectBoxWithHnsw": "ObjectBox with HNSW index",
+  "logOut": "Log Out",
+  "custom": "Custom",
+  "openAiCompatible": "OpenAI Compatible",
+  "notSet": "Not set",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "supportsLocalLanPublic": "Supports local/LAN/public endpoints",
+  "shiguangLocalSendBackup": "Shiguang LocalSend Backup",
+  "localBackupFromShiguang": "Local backup from Shiguang (receive via LocalSend)",
+  "selectBackupFileFromLocalSend": "Select backup file received from LocalSend",
+  "failedToResolveFilePath": "Failed to resolve selected file path",
+  "importOptions": "Import Options",
+  "importSettingsAsWell": "Import settings as well?\n(API keys will not be overwritten)",
+  "dataOnly": "Data Only",
+  "dataAndSettings": "Data + Settings",
+  "importCompleted": "Import Completed",
+  "settingsInBackupWereApplied": "Settings in backup were applied.",
+  "settingsInBackupWereNotApplied": "Settings in backup were not applied.",
+  "ok": "OK",
+  "cancel": "Cancel",
+  "save": "Save",
+  "delete": "Delete",
+  "clear": "Clear",
+  "add": "Add",
+  "create": "Create",
+  "edit": "Edit",
+  "search": "Search",
+  "areYouSureYouWantToLogOut": "Are you sure you want to log out?",
+  "chooseLanguage": "Choose Language",
+  "databaseInfo": "Database Info",
+  "storage": "Storage: ObjectBox",
+  "vectorIndex": "Vector Index: HNSW",
+  "dimensions": "Dimensions: 384",
+  "embeddingModelBge": "Embedding Model: bge-small-zh-v1.5",
+
+  "takePhoto": "Take Photo",
+  "chooseFromGallery": "Choose from Gallery",
+  "editNickname": "Edit Nickname",
+  "enterNickname": "Enter nickname",
+  "pleaseEnterNickname": "Please enter a nickname",
+  "nicknameAlreadyExistsOrInvalid": "Nickname already exists or is invalid",
+  "user": "User",
+  "manageScheduledReminders": "Manage scheduled reminders and alarms",
+
+  "imageFailedToLoad": "Image failed to load. Please choose again.",
+  "imageIsStillLoading": "Image is still loading",
+  "imageAreaNotReady": "Image area is not ready. Please try again.",
+  "cropFrameNotReady": "Crop frame is not ready. Please try again.",
+  "invalidCropArea": "Invalid crop area. Please try again.",
+  "cropFailed": "Crop failed. Please try again.",
+  "cropAvatar": "Crop Avatar",
+  "chooseAgain": "Choose Again",
+  "rotate90": "Rotate 90°",
+  "dragFrameToMove": "Drag the frame to move, drag bottom-right to resize; pinch to zoom and move image.",
+
+  "pleaseFillInAllFields": "Please fill in all fields",
+  "pinMustBeAtLeast4Digits": "PIN must be at least 4 digits",
+  "pinAtLeast4Digits": "PIN must be at least 4 digits",
+  "invalidUsernameOrPin": "Invalid username or PIN",
+  "invalidUsernameOrPinError": "Invalid username or PIN",
+  "usernameAlreadyExists": "Username already exists",
+  "captureMomentsKeepMemories": "Capture moments, keep memories",
+  "username": "Username",
+  "pin": "PIN",
+  "login": "Login",
+  "createAccount": "Create Account",
+  "dontHaveAccountCreateOne": "Don't have an account? Create one",
+  "alreadyHaveAccountLogin": "Already have an account? Login",
+  "pleaseEnterUsername": "Please enter a username",
+  "pinsDoNotMatch": "PINs do not match",
+  "tapToAddAvatar": "Tap to add avatar",
+  "yourName": "Your Name",
+  "privatePinOptional": "Private PIN (optional)",
+  "usedToEncryptPrivateRecords": "Used to encrypt private records",
+  "privatePin": "Private PIN",
+  "leaveEmptyForNoEncryption": "Leave empty for no encryption",
+  "confirmPin": "Confirm PIN",
+  "getStarted": "Get Started",
+
+  "noReminders": "No reminders",
+  "addReminder": "Add Reminder",
+  "title": "Title",
+  "descriptionOptional": "Description (optional)",
+  "microphonePermissionRequired": "Microphone permission required",
+
+  "aiAssistant": "AI Assistant",
+  "listening": "Listening...",
+  "typeAMessage": "Type a message...",
+  "aiChat": "AI Chat",
+  "startAConversation": "Start a conversation",
+  "typeYourMessage": "Type your message...",
+  "asrReconnecting": "ASR reconnecting...",
+  "write": "Write",
+  "writeEntry": "Write Entry",
+  "noMemoriesYet": "No memories yet",
+  "tapPlusToCapture": "Tap + to capture your thoughts",
+  "tapPlusToCaptureYourThoughts": "Tap + to capture your thoughts",
+  "deleteMemory": "Delete Memory",
+  "deleteRecord": "Delete Record",
+  "thisEntryWillBeRemoved": "This entry will be removed from your timeline.",
+  "thisRecordWillBeRemoved": "This record will be removed from your timeline.",
+
+  "searchYourRecords": "Search your records...",
+  "exactMatches": "Exact Matches",
+  "noExactMatches": "No exact matches",
+  "exact": "Exact",
+  "exactMatch": "Exact Match",
+  "fuzzyMatches": "Fuzzy Matches",
+  "noFuzzyMatches": "No fuzzy matches",
+  "vectorMatch": "Vector Match",
+  "networkMatches": "Network Matches",
+  "noNetworkMatches": "No network matches",
+  "networkSearchIsOff": "Network search is off. Enable it in Settings.",
+  "network": "Network",
+  "networkMatch": "Network Match",
+  "noSearchHistory": "No search history",
+  "searchHistory": "Search History",
+
+  "invalidLink": "Invalid link",
+  "unableToOpenWebPage": "Unable to open web page",
+  "imageMemory": "[Image memory]",
+  "tapToOpenWebPage": "Tap to open web page",
+  "editEntry": "Edit Entry",
+  "entryDetails": "Entry Details",
+  "noContent": "No content",
+  "diaryNotFound": "Diary not found",
+  "diaryNotFoundShort": "Record not found",
+  "aiSummary": "AI Summary",
+  "microphoneInterrupted": "Microphone interrupted, recording stopped.",
+
+  "bold": "Bold",
+  "italic": "Italic",
+  "strikethrough": "Strikethrough",
+  "image": "Image",
+  "asrUnavailableRecordingActive": "ASR unavailable. Recording is still active.",
+  "writeYourEntry": "Write your entry...",
+  "writeYourContent": "Write your content...",
+
+  "microphoneStartFailed": "Failed to start microphone: {error}",
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "microphoneInterruptedRecordingStopped": "Microphone interrupted, recording stopped.",
+  "asrReconnectingError": "ASR reconnecting: {error}",
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "imageInserted": "Image inserted: {name}",
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "voiceError": "Voice error: {error}",
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "aiServiceUnavailable": "Sorry, AI service is currently unavailable: {error}",
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareFailed": "Failed to share: {error}",
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "searchMatchHits": "{matchType} · {count} hits",
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "matchCount": "Match: {count}",
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sourceFromNetwork": "Source: {source}",
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "createNew": "Create",
+  "micStartFailed": "Mic start failed: {error}",
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importResultAccounts": "Accounts: +{created} / updated {updated}",
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {"type": "int"},
+      "updated": {"type": "int"}
+    }
+  },
+  "importResultDiaries": "Diaries: +{created} / updated {updated}",
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {"type": "int"},
+      "updated": {"type": "int"}
+    }
+  },
+  "importResultReminders": "Reminders: +{created} / updated {updated}",
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {"type": "int"},
+      "updated": {"type": "int"}
+    }
+  },
+  "importResultSkipped": "Skipped: {count}",
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "importResultTotal": "Total changed: {count}",
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "settingsApplied": "Settings in backup were applied.",
+  "settingsNotApplied": "Settings in backup were not applied.",
+  "backupExported": "Backup exported: {path}",
+  "@backupExported": {
+    "placeholders": {
+      "path": {"type": "String"}
+    }
+  },
+  "exportFailed": "Export failed: {error}",
+  "@exportFailed": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "importFailed": "Import failed: {error}",
+  "@importFailed": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  }
+}

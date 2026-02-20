@@ -74,6 +74,27 @@ Detailed execution and design docs live under `docs/`. Start here:
 | **对话模型** | Qwen2.5-0.5B int4 (默认) | 低资源占用 |
 | **截图分享** | screenshot, share_plus | 图片导出分享 |
 | **安全** | crypto (SHA-256), flutter_secure_storage | PIN 码哈希存储 |
+| **国际化** | Flutter l10n (.arb 文件) | 标准 i18n，支持多语言 |
+| **翻译管理** | .arb 文件 + flutter gen-l10n | 详细见 `docs/I18N.md` |
+
+### Internationalization (i18n)
+
+> **重要**：所有用户可见的字符串必须添加到 `lib/l10n/app_en.arb` 中，使用 Flutter 标准 l10n 系统。
+
+#### i18n 规范
+1. **使用 .arb 文件**：所有翻译字符串必须添加到 `lib/l10n/app_*.arb` 文件
+2. **运行生成器**：添加新字符串后执行 `flutter gen-l10n`
+3. **使用生成的代码**：`AppLocalizations.of(context).yourKey`
+4. **禁止硬编码**：禁止在代码中直接写用户可见的字符串
+5. **添加描述**：为每个键添加 `@description` 帮助译者理解
+
+#### 当前支持的语言
+- 英文 (en) - 源语言
+- 简体中文 (zh-Hans)
+- 繁体中文 (zh-Hant)
+
+#### 添加新语言
+详见 `docs/I18N.md`
 
 ### Local Service Protocol (WS, single connection)
 

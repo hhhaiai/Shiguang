@@ -8,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../l10n/generated/app_localizations.dart';
 import '../../../../core/i18n/app_i18n.dart';
 import '../../../../core/ui/adaptive_navigation.dart';
 import '../../../../core/ui/edge_swipe_back.dart';
@@ -57,9 +58,10 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
   }
 
   void _openDiaryInput() {
+    final l10n = AppLocalizations.of(context);
     showDiaryInputSheet(
       context,
-      title: context.t(zhHans: '写文章', zhHant: '寫文章', en: 'Write'),
+      title: l10n.write,
       onSubmit: (text) {
         ref.read(timelineProvider.notifier).createDiary(rawText: text);
       },
@@ -68,10 +70,11 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final diaries = ref.watch(timelineProvider);
     final currentUser = ref.watch(authProvider.notifier).getCurrentUser();
     final isCupertino = isCupertinoPlatform(Theme.of(context).platform);
-    final fallbackUserName = context.t(zhHans: '用户', zhHant: '使用者', en: 'User');
+    final fallbackUserName = l10n.user;
 
     return Scaffold(
       appBar: AppBar(
@@ -81,7 +84,7 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () => context.push('/settings'),
-            tooltip: context.t(zhHans: '设置', zhHant: '設定', en: 'Settings'),
+            tooltip: l10n.settings,
           ),
         ],
       ),
@@ -95,11 +98,7 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
                       const Icon(Icons.note_add, size: 64, color: Colors.grey),
                       const SizedBox(height: 16),
                       Text(
-                        context.t(
-                          zhHans: '还没有记忆',
-                          zhHant: '還沒有記憶',
-                          en: 'No memories yet',
-                        ),
+                        l10n.noMemoriesYet,
                         style: const TextStyle(
                           color: Colors.grey,
                           fontSize: 16,
@@ -107,11 +106,7 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        context.t(
-                          zhHans: '点击 + 记录你的想法',
-                          zhHant: '點擊 + 記錄你的想法',
-                          en: 'Tap + to capture your thoughts',
-                        ),
+                        l10n.tapPlusToCaptureYourThoughts,
                         style: const TextStyle(
                           color: Colors.grey,
                           fontSize: 14,
@@ -147,11 +142,7 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
                             ),
                             const SizedBox(width: 8),
                             Text(
-                              context.t(
-                                zhHans: '删除',
-                                zhHant: '刪除',
-                                en: 'Delete',
-                              ),
+                              l10n.delete,
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w600,
@@ -164,42 +155,18 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
                         return await showDialog<bool>(
                               context: context,
                               builder: (context) => AlertDialog(
-                                title: Text(
-                                  context.t(
-                                    zhHans: '删除记录',
-                                    zhHant: '刪除記錄',
-                                    en: 'Delete Memory',
-                                  ),
-                                ),
-                                content: Text(
-                                  context.t(
-                                    zhHans: '这条记录将从时间线移除。',
-                                    zhHant: '這條記錄將從時間線移除。',
-                                    en: 'This entry will be removed from your timeline.',
-                                  ),
-                                ),
+                                title: Text(l10n.deleteRecord),
+                                content: Text(l10n.thisRecordWillBeRemoved),
                                 actions: [
                                   TextButton(
                                     onPressed: () =>
                                         Navigator.pop(context, false),
-                                    child: Text(
-                                      context.t(
-                                        zhHans: '取消',
-                                        zhHant: '取消',
-                                        en: 'Cancel',
-                                      ),
-                                    ),
+                                    child: Text(l10n.cancel),
                                   ),
                                   FilledButton(
                                     onPressed: () =>
                                         Navigator.pop(context, true),
-                                    child: Text(
-                                      context.t(
-                                        zhHans: '删除',
-                                        zhHant: '刪除',
-                                        en: 'Delete',
-                                      ),
-                                    ),
+                                    child: Text(l10n.delete),
                                   ),
                                 ],
                               ),
@@ -225,6 +192,7 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
   }
 
   Widget _buildBottomActionBar(BuildContext context, bool isCupertino) {
+    final l10n = AppLocalizations.of(context);
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
 
@@ -250,7 +218,7 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
               icon: Icon(isCupertino ? CupertinoIcons.search : Icons.search),
               iconSize: 28,
               onPressed: () => _openSearchPage(context),
-              tooltip: context.t(zhHans: '搜索', zhHant: '搜尋', en: 'Search'),
+              tooltip: l10n.search,
             ),
             IconButton(
               icon: Icon(
@@ -260,11 +228,7 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
               ),
               iconSize: 28,
               onPressed: () => _showAiChat(context),
-              tooltip: context.t(
-                zhHans: 'AI 对话',
-                zhHant: 'AI 對話',
-                en: 'AI Chat',
-              ),
+              tooltip: l10n.aiChat,
             ),
             _buildCreateButton(context, isCupertino),
           ],
@@ -274,6 +238,7 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
   }
 
   Widget _buildCreateButton(BuildContext context, bool isCupertino) {
+    final l10n = AppLocalizations.of(context);
     if (!isCupertino) {
       return SizedBox(
         width: 56,
@@ -302,7 +267,7 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
             size: 28,
             color: colorScheme.onPrimary,
           ),
-          tooltip: context.t(zhHans: '新建', zhHant: '新增', en: 'Create'),
+          tooltip: l10n.createNew,
         ),
       ),
     );
@@ -427,6 +392,7 @@ class _TimelineSearchPageState extends ConsumerState<_TimelineSearchPage> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final history = ref.watch(settingsProvider.select((s) => s.searchHistory));
     final networkSearchEnabled = ref.watch(
       settingsProvider.select((s) => s.enableNetworkSearch),
@@ -441,7 +407,7 @@ class _TimelineSearchPageState extends ConsumerState<_TimelineSearchPage> {
         appBar: AppBar(
           leading: const BackButton(),
           centerTitle: true,
-          title: Text(context.t(zhHans: '搜索', zhHant: '搜尋', en: 'Search')),
+          title: Text(l10n.search),
         ),
         body: Column(
           children: [
@@ -455,11 +421,7 @@ class _TimelineSearchPageState extends ConsumerState<_TimelineSearchPage> {
                 onTap: () => requestKeyboardFocus(context, _searchFocusNode),
                 onSubmitted: (_) => unawaited(_runSearch()),
                 decoration: InputDecoration(
-                  hintText: context.t(
-                    zhHans: '搜索你的记录...',
-                    zhHant: '搜尋你的記錄...',
-                    en: 'Search your records...',
-                  ),
+                  hintText: l10n.searchYourRecords,
                   prefixIcon: const Icon(Icons.search),
                   suffixIcon: query.isEmpty
                       ? null
@@ -481,69 +443,37 @@ class _TimelineSearchPageState extends ConsumerState<_TimelineSearchPage> {
                   ? ListView(
                       children: [
                         _SectionHeader(
-                          title: context.t(
-                            zhHans: '完整匹配',
-                            zhHant: '完整匹配',
-                            en: 'Exact Matches',
-                          ),
+                          title: l10n.exactMatch,
                           count: exactMatches.length,
                           icon: Icons.check_circle_outline,
                         ),
                         if (exactMatches.isEmpty)
-                          _EmptySection(
-                            message: context.t(
-                              zhHans: '无完整匹配结果',
-                              zhHant: '無完整匹配結果',
-                              en: 'No exact matches',
-                            ),
-                          )
+                          _EmptySection(message: l10n.noExactMatches)
                         else
                           _SearchResultWrap(
                             diaries: exactMatches,
                             query: query,
-                            matchTypeLabel: context.t(
-                              zhHans: '完整匹配',
-                              zhHant: '完整匹配',
-                              en: 'Exact',
-                            ),
+                            matchTypeLabel: l10n.exactMatch,
                             matchTypeColor: Colors.green,
                           ),
                         const Divider(height: 24, thickness: 1),
                         _SectionHeader(
-                          title: context.t(
-                            zhHans: '模糊匹配',
-                            zhHant: '模糊匹配',
-                            en: 'Fuzzy Matches',
-                          ),
+                          title: l10n.fuzzyMatches,
                           count: fuzzyMatches.length,
                           icon: Icons.blur_on,
                         ),
                         if (fuzzyMatches.isEmpty)
-                          _EmptySection(
-                            message: context.t(
-                              zhHans: '无模糊匹配结果',
-                              zhHant: '無模糊匹配結果',
-                              en: 'No fuzzy matches',
-                            ),
-                          )
+                          _EmptySection(message: l10n.noFuzzyMatches)
                         else
                           _SearchResultWrap(
                             diaries: fuzzyMatches,
                             query: query,
-                            matchTypeLabel: context.t(
-                              zhHans: '向量匹配',
-                              zhHant: '向量匹配',
-                              en: 'Vector',
-                            ),
+                            matchTypeLabel: l10n.vectorMatch,
                             matchTypeColor: Colors.deepPurple,
                           ),
                         const Divider(height: 24, thickness: 1),
                         _SectionHeader(
-                          title: context.t(
-                            zhHans: '网络匹配',
-                            zhHant: '網路匹配',
-                            en: 'Network Matches',
-                          ),
+                          title: l10n.networkMatches,
                           count: networkMatches.length,
                           icon: Icons.public,
                         ),
@@ -555,52 +485,28 @@ class _TimelineSearchPageState extends ConsumerState<_TimelineSearchPage> {
                         if (networkMatches.isEmpty)
                           _EmptySection(
                             message: networkSearchEnabled
-                                ? context.t(
-                                    zhHans: '暂无网络匹配结果',
-                                    zhHant: '暫無網路匹配結果',
-                                    en: 'No network matches',
-                                  )
-                                : context.t(
-                                    zhHans: '网络搜索已关闭，请到设置开启',
-                                    zhHant: '網路搜尋已關閉，請到設定開啟',
-                                    en: 'Network search is off. Enable it in Settings.',
-                                  ),
+                                ? l10n.noNetworkMatches
+                                : l10n.networkSearchIsOff,
                           )
                         else
                           _SearchResultWrap(
                             diaries: networkMatches,
                             query: query,
-                            matchTypeLabel: context.t(
-                              zhHans: '网络匹配',
-                              zhHant: '網路匹配',
-                              en: 'Network',
-                            ),
+                            matchTypeLabel: l10n.networkMatch,
                             matchTypeColor: Colors.blue,
                           ),
                         const SizedBox(height: 16),
                       ],
                     )
                   : (history.isEmpty
-                        ? Center(
-                            child: Text(
-                              context.t(
-                                zhHans: '暂无历史搜索',
-                                zhHant: '暫無歷史搜尋',
-                                en: 'No search history',
-                              ),
-                            ),
-                          )
+                        ? Center(child: Text(l10n.noSearchHistory))
                         : ListView(
                             padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
                             children: [
                               Row(
                                 children: [
                                   Text(
-                                    context.t(
-                                      zhHans: '历史搜索',
-                                      zhHant: '歷史搜尋',
-                                      en: 'Search History',
-                                    ),
+                                    l10n.searchHistory,
                                     style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.w700,
@@ -613,13 +519,7 @@ class _TimelineSearchPageState extends ConsumerState<_TimelineSearchPage> {
                                           .read(settingsProvider.notifier)
                                           .clearSearchHistory();
                                     },
-                                    child: Text(
-                                      context.t(
-                                        zhHans: '清空',
-                                        zhHant: '清空',
-                                        en: 'Clear',
-                                      ),
-                                    ),
+                                    child: Text(l10n.clear),
                                   ),
                                 ],
                               ),
@@ -789,16 +689,13 @@ class _SearchResultCard extends StatelessWidget {
   }
 
   Future<void> _handleTap(BuildContext context) async {
+    final l10n = AppLocalizations.of(context);
     final networkUrl = _extractTagValue(diary.aiTags, _networkUrlTagPrefix);
     if (networkUrl != null) {
       final uri = Uri.tryParse(networkUrl);
       if (uri == null) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              context.t(zhHans: '链接无效', zhHant: '連結無效', en: 'Invalid link'),
-            ),
-          ),
+          SnackBar(content: Text(l10n.invalidLink)),
         );
         return;
       }
@@ -808,15 +705,7 @@ class _SearchResultCard extends StatelessWidget {
       );
       if (!launched && context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              context.t(
-                zhHans: '无法打开网页',
-                zhHant: '無法開啟網頁',
-                en: 'Unable to open web page',
-              ),
-            ),
-          ),
+          SnackBar(content: Text(l10n.unableToOpenWebPage)),
         );
       }
       return;
@@ -831,6 +720,7 @@ class _SearchResultCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final date = DateTime.fromMillisecondsSinceEpoch(diary.updatedAt);
     final content = DiaryContentCodec.decode(diary.rawText);
     final visibleText = content.text;
@@ -860,13 +750,7 @@ class _SearchResultCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                visibleText.isEmpty
-                    ? context.t(
-                        zhHans: '[图片记忆]',
-                        zhHant: '[圖片記憶]',
-                        en: '[Image memory]',
-                      )
-                    : visibleText,
+                visibleText.isEmpty ? l10n.imageMemory : visibleText,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(fontSize: 13),
@@ -874,11 +758,7 @@ class _SearchResultCard extends StatelessWidget {
               const Spacer(),
               if (networkUrl == null)
                 Text(
-                  context.t(
-                    zhHans: '匹配:$matchCount',
-                    zhHant: '匹配:$matchCount',
-                    en: 'Matches: $matchCount',
-                  ),
+                  l10n.matchCount(matchCount),
                   style: TextStyle(
                     fontSize: 11,
                     color: matchTypeColor,
@@ -887,11 +767,7 @@ class _SearchResultCard extends StatelessWidget {
                 )
               else
                 Text(
-                  context.t(
-                    zhHans: '来源: ${networkSource ?? '网络'}',
-                    zhHant: '來源: ${networkSource ?? '網路'}',
-                    en: 'Source: ${networkSource ?? 'Web'}',
-                  ),
+                  l10n.sourceFromNetwork(networkSource ?? l10n.network),
                   style: TextStyle(
                     fontSize: 11,
                     color: matchTypeColor,
@@ -908,11 +784,7 @@ class _SearchResultCard extends StatelessWidget {
               ),
               if (networkUrl != null)
                 Text(
-                  context.t(
-                    zhHans: '点击打开网页',
-                    zhHant: '點擊開啟網頁',
-                    en: 'Tap to open web page',
-                  ),
+                  l10n.tapToOpenWebPage,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -937,6 +809,7 @@ class _DiaryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final date = DateTime.fromMillisecondsSinceEpoch(diary.updatedAt);
     final content = DiaryContentCodec.decode(diary.rawText);
     final visibleText = content.text;
@@ -963,13 +836,7 @@ class _DiaryCard extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                visibleText.isEmpty
-                    ? context.t(
-                        zhHans: '[图片记忆]',
-                        zhHant: '[圖片記憶]',
-                        en: '[Image memory]',
-                      )
-                    : visibleText,
+                visibleText.isEmpty ? l10n.imageMemory : visibleText,
                 maxLines: 4,
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(fontSize: 15),

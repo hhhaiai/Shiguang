@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:record/record.dart';
 
-import '../../../../core/i18n/app_i18n.dart';
+import '../../../../l10n/generated/app_localizations.dart';
 import '../../../../core/ui/edge_swipe_back.dart';
 import '../../../../core/ui/keyboard.dart';
 import '../../../settings/data/settings_provider.dart';
@@ -79,20 +79,13 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
 
   Future<void> _startRecording() async {
     if (_isRecording) return;
+    final l10n = AppLocalizations.of(context);
 
     final hasPermission = await _audioRecorder.hasPermission(request: true);
     if (!hasPermission) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            context.t(
-              zhHans: '需要麦克风权限',
-              zhHant: '需要麥克風權限',
-              en: 'Microphone permission required',
-            ),
-          ),
-        ),
+        SnackBar(content: Text(l10n.microphonePermissionRequired)),
       );
       return;
     }
@@ -168,15 +161,10 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
       requestKeyboardFocus(context, _inputFocusNode);
     } catch (error) {
       if (mounted) {
+        final l10n = AppLocalizations.of(context);
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(
-              context.t(
-                zhHans: '麦克风启动失败: $error',
-                zhHant: '麥克風啟動失敗: $error',
-                en: 'Failed to start microphone: $error',
-              ),
-            ),
+            content: Text(l10n.microphoneStartFailed(error.toString())),
             backgroundColor: Colors.red,
           ),
         );
@@ -216,16 +204,11 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
       },
       onError: (error) {
         if (!mounted) return;
+        final l10n = AppLocalizations.of(context);
         setState(() => _asrReady = false);
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(
-              context.t(
-                zhHans: '语音识别重连中: $error',
-                zhHant: '語音辨識重連中: $error',
-                en: 'ASR reconnecting: $error',
-              ),
-            ),
+            content: Text(l10n.asrReconnectingError(error.toString())),
             backgroundColor: Colors.orange,
           ),
         );
@@ -449,14 +432,11 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
       _scrollToBottom();
     } catch (error) {
       if (!mounted) return;
+      final l10n = AppLocalizations.of(context);
       setState(() {
         _messages.add(
           _ChatMessage(
-            text: context.t(
-              zhHans: '抱歉，AI 服务暂时不可用: $error',
-              zhHant: '抱歉，AI 服務暫時不可用: $error',
-              en: 'Sorry, AI service is currently unavailable: $error',
-            ),
+            text: l10n.aiServiceUnavailable(error.toString()),
             isUser: false,
           ),
         );
@@ -544,6 +524,7 @@ ${preprocessedNetworkContext.trim()}
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final theme = Theme.of(context);
     final bottomInset = MediaQuery.viewInsetsOf(context).bottom;
     final keyboardVisible = bottomInset > 0;
@@ -554,9 +535,7 @@ ${preprocessedNetworkContext.trim()}
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           leading: const BackButton(),
-          title: Text(
-            context.t(zhHans: 'AI 对话', zhHant: 'AI 對話', en: 'AI Chat'),
-          ),
+          title: Text(l10n.aiChat),
           actions: [
             if (_isSpeaking)
               const Padding(
@@ -586,11 +565,7 @@ ${preprocessedNetworkContext.trim()}
                               ),
                               const SizedBox(height: 16),
                               Text(
-                                context.t(
-                                  zhHans: '开始一段对话',
-                                  zhHant: '開始一段對話',
-                                  en: 'Start a conversation',
-                                ),
+                                l10n.startAConversation,
                                 style: TextStyle(color: Colors.grey[500]),
                               ),
                             ],
@@ -669,11 +644,7 @@ ${preprocessedNetworkContext.trim()}
                               bottom: bottomInset + overlayHeight + 24,
                             ),
                             decoration: InputDecoration(
-                              hintText: context.t(
-                                zhHans: '输入内容...',
-                                zhHant: '輸入內容...',
-                                en: 'Type your message...',
-                              ),
+                              hintText: l10n.typeYourMessage,
                               border: InputBorder.none,
                               isDense: true,
                             ),
@@ -722,17 +693,7 @@ ${preprocessedNetworkContext.trim()}
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              _asrReady
-                                  ? context.t(
-                                      zhHans: '正在聆听...',
-                                      zhHant: '正在聆聽...',
-                                      en: 'Listening...',
-                                    )
-                                  : context.t(
-                                      zhHans: '语音识别重连中...',
-                                      zhHant: '語音辨識重連中...',
-                                      en: 'ASR reconnecting...',
-                                    ),
+                              _asrReady ? l10n.listening : l10n.asrReconnecting,
                               style: theme.textTheme.labelSmall?.copyWith(
                                 color: _asrReady
                                     ? theme.colorScheme.primary

@@ -1,214 +1,133 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../controllers/reminder_controller.dart';
-import '../../../../core/i18n/app_i18n.dart';
+import '../../../../l10n/generated/app_localizations.dart';
 import '../../../../core/ui/keyboard.dart';
-import '../../../../core/ui/adaptive_navigation.dart';
+import '../controllers/reminder_controller.dart';
 
-class ReminderScreen extends ConsumerWidget {
+class ReminderScreen extends ConsumerStatefulWidget {
   const ReminderScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ReminderScreen> createState() => _ReminderScreenState();
+}
+
+class _ReminderScreenState extends ConsumerState<ReminderScreen> {
+  final _titleController = TextEditingController();
+  final _descriptionController = TextEditingController();
+  final _titleFocusNode = FocusNode();
+  final _descriptionFocusNode = FocusNode();
+
+  @override
+  void dispose() {
+    _titleController.dispose();
+    _descriptionController.dispose();
+    _titleFocusNode.dispose();
+    _descriptionFocusNode.dispose();
+    super.dispose();
+  }
+
+  void _addReminder() {
+    final l10n = AppLocalizations.of(context);
+    final title = _titleController.text.trim();
+    final description = _descriptionController.text.trim();
+
+    if (title.isEmpty) return;
+
+    ref.read(reminderProvider.notifier).createReminder(
+          title: title,
+          body: description.isNotEmpty ? description : null,
+          triggerAt: DateTime.now().add(const Duration(hours: 1)),
+        );
+
+    _titleController.clear();
+    _descriptionController.clear();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final reminders = ref.watch(reminderProvider);
-    final isCupertino = isCupertinoPlatform(Theme.of(context).platform);
 
     return Scaffold(
       appBar: AppBar(
-        centerTitle: isCupertino,
-        title: Text(context.t(zhHans: '提醒', zhHant: '提醒', en: 'Reminders')),
+        title: Text(l10n.reminders),
       ),
       body: reminders.isEmpty
-          ? Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.notifications_none,
-                    size: 64,
-                    color: Colors.grey[400],
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    context.t(
-                      zhHans: '暂无提醒',
-                      zhHant: '暫無提醒',
-                      en: 'No reminders',
-                    ),
-                    style: TextStyle(color: Colors.grey[600], fontSize: 16),
-                  ),
-                ],
-              ),
-            )
+          ? Center(child: Text(l10n.noReminders))
           : ListView.builder(
-              padding: const EdgeInsets.symmetric(vertical: 8),
               itemCount: reminders.length,
               itemBuilder: (context, index) {
                 final reminder = reminders[index];
-                final date = DateTime.fromMillisecondsSinceEpoch(
-                  reminder.triggerAt,
-                );
-
-                return Card(
-                  margin: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 4,
-                  ),
-                  child: ListTile(
-                    leading: Switch(
-                      value: reminder.isEnabled,
-                      onChanged: (_) {
-                        ref
-                            .read(reminderProvider.notifier)
-                            .toggleEnabled(reminder.id);
-                      },
-                    ),
-                    title: Text(
-                      reminder.title,
-                      style: TextStyle(
-                        decoration: reminder.isEnabled
-                            ? null
-                            : TextDecoration.lineThrough,
-                      ),
-                    ),
-                    subtitle: Text(formatDateTimeShort(context, date)),
-                    trailing: IconButton(
-                      icon: const Icon(Icons.delete_outline),
-                      onPressed: () {
-                        ref
-                            .read(reminderProvider.notifier)
-                            .deleteReminder(reminder.id);
-                      },
-                    ),
+                return ListTile(
+                  title: Text(reminder.title),
+                  subtitle: reminder.body != null
+                      ? Text(reminder.body!)
+                      : null,
+                  trailing: IconButton(
+                    icon: const Icon(Icons.delete),
+                    onPressed: () {
+                      ref
+                          .read(reminderProvider.notifier)
+                          .deleteReminder(reminder.id);
+                    },
                   ),
                 );
               },
             ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => _showAddReminderDialog(context, ref),
+        onPressed: () => _showAddReminderDialog(context),
         child: const Icon(Icons.add),
       ),
     );
   }
 
-  Future<void> _showAddReminderDialog(BuildContext context, WidgetRef ref) {
-    final titleController = TextEditingController();
-    final bodyController = TextEditingController();
-    final titleFocusNode = FocusNode();
-    final bodyFocusNode = FocusNode();
-    DateTime selectedDate = DateTime.now().add(const Duration(hours: 1));
+  void _showAddReminderDialog(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
 
-    return showDialog(
+    showDialog(
       context: context,
-      builder: (context) {
-        return StatefulBuilder(
-          builder: (context, setState) {
-            return AlertDialog(
-              title: Text(
-                context.t(zhHans: '添加提醒', zhHant: '新增提醒', en: 'Add Reminder'),
+      builder: (context) => AlertDialog(
+        title: Text(l10n.addReminder),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TextField(
+              controller: _titleController,
+              focusNode: _titleFocusNode,
+              onTap: () => requestKeyboardFocus(context, _titleFocusNode),
+              decoration: InputDecoration(
+                labelText: l10n.title,
+                border: const OutlineInputBorder(),
               ),
-              content: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  TextField(
-                    controller: titleController,
-                    focusNode: titleFocusNode,
-                    autofocus: true,
-                    onTap: () => requestKeyboardFocus(context, titleFocusNode),
-                    decoration: InputDecoration(
-                      labelText: context.t(
-                        zhHans: '标题',
-                        zhHant: '標題',
-                        en: 'Title',
-                      ),
-                      border: const OutlineInputBorder(),
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  TextField(
-                    controller: bodyController,
-                    focusNode: bodyFocusNode,
-                    onTap: () => requestKeyboardFocus(context, bodyFocusNode),
-                    decoration: InputDecoration(
-                      labelText: context.t(
-                        zhHans: '描述（可选）',
-                        zhHant: '描述（可選）',
-                        en: 'Description (optional)',
-                      ),
-                      border: const OutlineInputBorder(),
-                    ),
-                    maxLines: 2,
-                  ),
-                  const SizedBox(height: 16),
-                  ListTile(
-                    contentPadding: EdgeInsets.zero,
-                    leading: const Icon(Icons.access_time),
-                    title: Text(formatDateTimeShort(context, selectedDate)),
-                    onTap: () async {
-                      final date = await showDatePicker(
-                        context: context,
-                        initialDate: selectedDate,
-                        firstDate: DateTime.now(),
-                        lastDate: DateTime.now().add(const Duration(days: 365)),
-                      );
-                      if (!context.mounted) return;
-                      if (date != null) {
-                        final time = await showTimePicker(
-                          context: context,
-                          initialTime: TimeOfDay.fromDateTime(selectedDate),
-                        );
-                        if (!context.mounted) return;
-                        if (time != null) {
-                          setState(() {
-                            selectedDate = DateTime(
-                              date.year,
-                              date.month,
-                              date.day,
-                              time.hour,
-                              time.minute,
-                            );
-                          });
-                        }
-                      }
-                    },
-                  ),
-                ],
+              autofocus: true,
+            ),
+            const SizedBox(height: 16),
+            TextField(
+              controller: _descriptionController,
+              focusNode: _descriptionFocusNode,
+              onTap: () => requestKeyboardFocus(context, _descriptionFocusNode),
+              decoration: InputDecoration(
+                labelText: l10n.descriptionOptional,
+                border: const OutlineInputBorder(),
               ),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: Text(
-                    context.t(zhHans: '取消', zhHant: '取消', en: 'Cancel'),
-                  ),
-                ),
-                FilledButton(
-                  onPressed: () {
-                    final title = titleController.text.trim();
-                    if (title.isNotEmpty) {
-                      ref
-                          .read(reminderProvider.notifier)
-                          .createReminder(
-                            title: title,
-                            body: bodyController.text.trim().isEmpty
-                                ? null
-                                : bodyController.text.trim(),
-                            triggerAt: selectedDate,
-                          );
-                      Navigator.pop(context);
-                    }
-                  },
-                  child: Text(context.t(zhHans: '添加', zhHant: '新增', en: 'Add')),
-                ),
-              ],
-            );
-          },
-        );
-      },
-    ).whenComplete(() {
-      titleController.dispose();
-      bodyController.dispose();
-      titleFocusNode.dispose();
-      bodyFocusNode.dispose();
-    });
+              maxLines: 3,
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(l10n.cancel),
+          ),
+          FilledButton(
+            onPressed: () {
+              _addReminder();
+              Navigator.pop(context);
+            },
+            child: Text(l10n.add),
+          ),
+        ],
+      ),
+    );
   }
 }
