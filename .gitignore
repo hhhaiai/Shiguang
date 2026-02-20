@@ -47,6 +47,7 @@ app.*.map.json
 # Project local cleanup / generated caches
 /tmp_debug/
 /android/.kotlin/
+/android/build/
 /android/local.properties
 /ios/Pods/
 /ios/.symlinks/
@@ -55,3 +56,5 @@ app.*.map.json
 /third_party/**/.dart_tool/
 /third_party/**/.flutter-plugins-dependencies
 /third_party/**/android/local.properties
+/third_party/**/android/.gradle/
+/third_party/**/android/build/
