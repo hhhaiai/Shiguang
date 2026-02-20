@@ -1,0 +1,360 @@
+{
+  "@@locale": "pt",
+  "languageName": "Português",
+  "languageNameEn": "Portuguese",
+  "appTitle": "Shiguang",
+  "settings": "Definições",
+  "account": "Conta",
+  "reminders": "Lembretes",
+  "language": "Idioma",
+  "appLanguage": "Idioma da aplicação",
+  "appearance": "Aparência",
+  "themeMode": "Modo de tema",
+  "dark": "Escuro",
+  "light": "Claro",
+  "system": "Sistema",
+  "aiService": "Serviço de IA",
+  "aiChatProvider": "Fornecedor de chat de IA",
+  "chatModel": "Modelo de chat",
+  "localModel": "Modelo local",
+  "localModelDefault": "Modelo local (predefinido)",
+  "ollamaEndpoint": "Endpoint Ollama",
+  "ollamaModel": "Modelo Ollama",
+  "openAiEndpoint": "Endpoint OpenAI",
+  "openAiApiKey": "Chave API OpenAI",
+  "openAiModel": "Modelo OpenAI",
+  "geminiEndpoint": "Endpoint Gemini",
+  "geminiApiKey": "Chave API Gemini",
+  "geminiModel": "Modelo Gemini",
+  "anthropicEndpoint": "Endpoint Anthropic",
+  "anthropicApiKey": "Chave API Anthropic",
+  "anthropicModel": "Modelo Anthropic",
+  "customProtocol": "Protocolo personalizado",
+  "protocol": "Protocolo",
+  "customEndpoint": "Endpoint personalizado",
+  "customApiKey": "Chave API personalizada",
+  "customModel": "Modelo personalizado",
+  "optionalForLocalServers": "Opcional para servidores locais/personalizados",
+  "speechRecognitionEngine": "Motor de reconhecimento de voz",
+  "local": "Local",
+  "endpoint": "Ponto final",
+  "localSpeechModel": "Modelo de voz local",
+  "senseVoiceOnnx": "SenseVoice ONNX (no dispositivo)",
+  "systemSpeechRecognition": "Reconhecimento de voz do sistema",
+  "systemRecognitionAndroidIos": "Reconhecimento do sistema (Android/iOS)",
+  "endpointRecognitionCloudWs": "Reconhecimento por endpoint (Cloud/WS)",
+  "useBuiltInRecognizer": "Usar reconhecimento integrado do Android/iOS (pode usar a cloud)",
+  "voiceAiEndpoint": "Endpoint de IA de voz",
+  "embeddingModel": "Modelo de embedding",
+  "crossDeviceSync": "Sincronização entre dispositivos",
+  "sendToOtherDevices": "Enviar para outros dispositivos (LocalSend)",
+  "exportBackupAndSend": "Exportar backup e enviar",
+  "importFromLocalSend": "Importar do LocalSend",
+  "selectBackupJson": "Selecionar JSON de backup e mesclar dados locais",
+  "autoGeneration": "Geração automática",
+  "autoGenerateSummary": "Gerar resumo automaticamente",
+  "generateAiSummaryForNewEntries": "Gerar resumo de IA para novas entradas",
+  "autoGenerateEmbedding": "Gerar embedding automaticamente",
+  "generateVectorEmbedding": "Gerar embedding vetorial para pesquisa",
+  "enableNetworkSearch": "Ativar pesquisa na rede",
+  "allowOnlineRetrieval": "Permitir recuperação online para pesquisa e chat de IA (desativado por padrão)",
+  "about": "Sobre",
+  "version": "Versão {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "database": "Base de dados",
+  "objectBoxWithHnsw": "ObjectBox com índice HNSW",
+  "logOut": "Terminar sessão",
+  "custom": "Personalizado",
+  "openAiCompatible": "Compatível com OpenAI",
+  "notSet": "Não definido",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... ou http://127.0.0.1:11434",
+  "supportsLocalLanPublic": "Suporta endpoints locais/LAN/públicos",
+  "shiguangLocalSendBackup": "Backup LocalSend do Shiguang",
+  "localBackupFromShiguang": "Backup local do Shiguang (receber via LocalSend)",
+  "selectBackupFileFromLocalSend": "Selecionar ficheiro de backup recebido do LocalSend",
+  "failedToResolveFilePath": "Falha ao resolver o caminho do ficheiro selecionado",
+  "importOptions": "Opções de importação",
+  "importSettingsAsWell": "Importar também definições?\n(As chaves API não serão sobrescritas)",
+  "dataOnly": "Apenas dados",
+  "dataAndSettings": "Dados + Definições",
+  "importCompleted": "Importação concluída",
+  "settingsInBackupWereApplied": "As definições do backup foram aplicadas.",
+  "settingsInBackupWereNotApplied": "As definições do backup não foram aplicadas.",
+  "ok": "OK",
+  "cancel": "Cancelar",
+  "save": "Guardar",
+  "delete": "Eliminar",
+  "clear": "Limpar",
+  "add": "Adicionar",
+  "create": "Criar",
+  "edit": "Editar",
+  "search": "Pesquisar",
+  "areYouSureYouWantToLogOut": "Tem a certeza que deseja terminar sessão?",
+  "chooseLanguage": "Escolher idioma",
+  "databaseInfo": "Info da base de dados",
+  "storage": "Armazenamento: ObjectBox",
+  "vectorIndex": "Índice vetorial: HNSW",
+  "dimensions": "Dimensões: 384",
+  "embeddingModelBge": "Modelo de embedding: bge-small-zh-v1.5",
+  "takePhoto": "Tirar foto",
+  "chooseFromGallery": "Escolher da galeria",
+  "editNickname": "Editar apelido",
+  "enterNickname": "Inserir apelido",
+  "pleaseEnterNickname": "Por favor insira um apelido",
+  "nicknameAlreadyExistsOrInvalid": "O apelido já existe ou é inválido",
+  "user": "Utilizador",
+  "manageScheduledReminders": "Gerir lembretes programados e alarmes",
+  "imageFailedToLoad": "Falha ao carregar a imagem. Por favor escolha novamente.",
+  "imageIsStillLoading": "A imagem ainda está a carregar",
+  "imageAreaNotReady": "Área de imagem não pronta. Por favor tente novamente.",
+  "cropFrameNotReady": "Moldura de corte não pronta. Por favor tente novamente.",
+  "invalidCropArea": "Área de corte inválida. Por favor tente novamente.",
+  "cropFailed": "Falha ao cortar. Por favor tente novamente.",
+  "cropAvatar": "Cortar avatar",
+  "chooseAgain": "Escolher novamente",
+  "rotate90": "Rodar 90°",
+  "dragFrameToMove": "Arraste a moldura para mover, arraste o canto inferior direito para redimensionar; belisque para zoom e mover a imagem.",
+  "pleaseFillInAllFields": "Por favor preencha todos os campos",
+  "pinMustBeAtLeast4Digits": "O PIN deve ter pelo menos 4 dígitos",
+  "pinAtLeast4Digits": "O PIN deve ter pelo menos 4 dígitos",
+  "invalidUsernameOrPin": "Nome de utilizador ou PIN inválido",
+  "invalidUsernameOrPinError": "Nome de utilizador ou PIN inválido",
+  "usernameAlreadyExists": "O nome de utilizador já existe",
+  "captureMomentsKeepMemories": "Capture momentos, guarde memórias",
+  "username": "Nome de utilizador",
+  "pin": "PIN",
+  "login": "Iniciar sessão",
+  "createAccount": "Criar conta",
+  "dontHaveAccountCreateOne": "Não tem conta? Crie uma",
+  "alreadyHaveAccountLogin": "Já tem conta? Inicie sessão",
+  "pleaseEnterUsername": "Por favor insira um nome de utilizador",
+  "pinsDoNotMatch": "Os PINs não coincidem",
+  "tapToAddAvatar": "Toque para adicionar avatar",
+  "yourName": "O seu nome",
+  "privatePinOptional": "PIN privado (opcional)",
+  "usedToEncryptPrivateRecords": "Usado para encriptar registos privados",
+  "privatePin": "PIN privado",
+  "leaveEmptyForNoEncryption": "Deixe vazio para sem encriptação",
+  "confirmPin": "Confirmar PIN",
+  "getStarted": "Começar",
+  "noReminders": "Sem lembretes",
+  "addReminder": "Adicionar lembrete",
+  "title": "Título",
+  "descriptionOptional": "Descrição (opcional)",
+  "microphonePermissionRequired": "Permissão de microfone necessária",
+  "aiAssistant": "Assistente de IA",
+  "listening": "A ouvir...",
+  "typeAMessage": "Escreva uma mensagem...",
+  "aiChat": "Chat de IA",
+  "startAConversation": "Iniciar uma conversa",
+  "typeYourMessage": "Escreva a sua mensagem...",
+  "asrReconnecting": "ASR a reconectar...",
+  "write": "Escrever",
+  "writeEntry": "Escrever entrada",
+  "noMemoriesYet": "Ainda sem memórias",
+  "tapPlusToCapture": "Toque em + para capturar os seus pensamentos",
+  "tapPlusToCaptureYourThoughts": "Toque em + para capturar os seus pensamentos",
+  "deleteMemory": "Eliminar memória",
+  "deleteRecord": "Eliminar registo",
+  "thisEntryWillBeRemoved": "Esta entrada será removida da sua linha do tempo.",
+  "thisRecordWillBeRemoved": "Este registo será removido da sua linha do tempo.",
+  "searchYourRecords": "Pesquisar nos seus registos...",
+  "exactMatches": "Correspondências exatas",
+  "noExactMatches": "Sem correspondências exatas",
+  "exact": "Exato",
+  "exactMatch": "Correspondência exata",
+  "fuzzyMatches": "Correspondências aproximadas",
+  "noFuzzyMatches": "Sem correspondências aproximadas",
+  "vectorMatch": "Correspondência vetorial",
+  "networkMatches": "Correspondências de rede",
+  "noNetworkMatches": "Sem correspondências de rede",
+  "networkSearchIsOff": "Pesquisa de rede está desativada. Ative-a nas Definições.",
+  "network": "Rede",
+  "networkMatch": "Correspondência de rede",
+  "noSearchHistory": "Sem histórico de pesquisa",
+  "searchHistory": "Histórico de pesquisa",
+  "invalidLink": "Link inválido",
+  "unableToOpenWebPage": "Incapaz de abrir página web",
+  "imageMemory": "[Memória de imagem]",
+  "tapToOpenWebPage": "Toque para abrir página web",
+  "editEntry": "Editar entrada",
+  "entryDetails": "Detalhes da entrada",
+  "noContent": "Sem conteúdo",
+  "diaryNotFound": "Diário não encontrado",
+  "diaryNotFoundShort": "Registo não encontrado",
+  "aiSummary": "Resumo de IA",
+  "microphoneInterrupted": "Microfone interrompido, gravação parada.",
+  "bold": "Negrito",
+  "italic": "Itálico",
+  "strikethrough": "Rasurado",
+  "image": "Imagem",
+  "asrUnavailableRecordingActive": "ASR indisponível. Gravação ainda ativa.",
+  "writeYourEntry": "Escreva a sua entrada...",
+  "writeYourContent": "Escreva o seu conteúdo...",
+  "microphoneStartFailed": "Falha ao iniciar microfone: {error}",
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "microphoneInterruptedRecordingStopped": "Microfone interrompido, gravação parada.",
+  "asrReconnectingError": "ASR a reconectar: {error}",
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "imageInserted": "Imagem inserida: {name}",
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "voiceError": "Erro de voz: {error}",
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "aiServiceUnavailable": "Desculpe, serviço de IA indisponível atualmente: {error}",
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareFailed": "Falha ao partilhar: {error}",
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "searchMatchHits": "{matchType} · {count} correspondências",
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "matchCount": "Correspondência: {count}",
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sourceFromNetwork": "Fonte: {source}",
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "createNew": "Criar",
+  "micStartFailed": "Falha ao iniciar microfone: {error}",
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importResultAccounts": "Contas: +{created} / atualizadas {updated}",
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultDiaries": "Diários: +{created} / atualizados {updated}",
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultReminders": "Lembretes: +{created} / atualizados {updated}",
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultSkipped": "Ignorados: {count}",
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultTotal": "Total alterado: {count}",
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsApplied": "As definições do backup foram aplicadas.",
+  "settingsNotApplied": "As definições do backup não foram aplicadas.",
+  "backupExported": "Backup exportado: {path}",
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "exportFailed": "Falha ao exportar: {error}",
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importFailed": "Falha ao importar: {error}",
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
+}

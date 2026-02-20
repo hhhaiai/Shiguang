@@ -1,0 +1,363 @@
+{
+  "@@locale": "kn",
+  "languageName": "ಕನ್ನಡ",
+  "languageNameEn": "Kannada",
+  "appTitle": "Shiguang",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "settings": "ಸೆಟ್ಟಿಂಗ್\u0027ಗಳು",
+  "account": "ಖಾತೆ",
+  "reminders": "ಜ್ಞಾಪನೆಗಳು",
+  "language": "ಭಾಷೆ",
+  "appLanguage": "ಅಪ್ಲಿಕೇಶನ್ ಭಾಷೆ",
+  "appearance": "ಗೋಚರತೆ",
+  "themeMode": "ಥೀಮ್ ಮೋಡ್",
+  "dark": "ಡಾರ್ಕ್",
+  "light": "ಲೈಟ್",
+  "system": "ಸಿಸ್ಟಂ",
+  "aiService": "AI ಸೇವೆ",
+  "aiChatProvider": "AI ಚ್ಯಾಟ್ ಪ್ರೊವೈಡರ್",
+  "chatModel": "ಚ್ಯಾಟ್ ಮಾಡೆಲ್",
+  "localModel": "ಲೋಕಲ್ ಮಾಡೆಲ್",
+  "localModelDefault": "ಲೋಕಲ್ ಮಾಡೆಲ್ (ಡಿಫಾಲ್ಟ್)",
+  "ollamaEndpoint": "Ollama ಎಂಡ್\u0027ಪಾಯಿಂಟ್",
+  "ollamaModel": "Ollama ಮಾಡೆಲ್",
+  "openAiEndpoint": "OpenAI ಎಂಡ್\u0027ಪಾಯಿಂಟ್",
+  "openAiApiKey": "OpenAI API ಕೀ",
+  "openAiModel": "OpenAI ಮಾಡೆಲ್",
+  "geminiEndpoint": "Gemini ಎಂಡ್\u0027ಪಾಯಿಂಟ್",
+  "geminiApiKey": "Gemini API ಕೀ",
+  "geminiModel": "Gemini ಮಾಡೆಲ್",
+  "anthropicEndpoint": "Anthropic ಎಂಡ್\u0027ಪಾಯಿಂಟ್",
+  "anthropicApiKey": "Anthropic API ಕೀ",
+  "anthropicModel": "Anthropic ಮಾಡೆಲ್",
+  "customProtocol": "ಕಸ್ಟಮ್ ಪ್ರೋಟೋಕಾಲ್",
+  "protocol": "ಪ್ರೋಟೋಕಾಲ್",
+  "customEndpoint": "ಕಸ್ಟಮ್ ಎಂಡ್\u0027ಪಾಯಿಂಟ್",
+  "customApiKey": "ಕಸ್ಟಮ್ API ಕೀ",
+  "customModel": "ಕಸ್ಟಮ್ ಮಾಡೆಲ್",
+  "optionalForLocalServers": "ಲೋಕಲ್/ಕಸ್ಟಮ್ ಸರ್ವರ್\u0027ಗಳಿಗೆ ಐಚ್ಛಿಕ",
+  "speechRecognitionEngine": "ಭಾಷಣ ಗುರುತಿಸುವ ಎಂಜಿನ್",
+  "local": "ಲೋಕಲ್",
+  "endpoint": "ಎಂಡ್\u0027ಪಾಯಿಂಟ್",
+  "localSpeechModel": "ಲೋಕಲ್ ಸ್ಪೀಚ್ ಮಾಡೆಲ್",
+  "senseVoiceOnnx": "SenseVoice ONNX (ಡಿವೈಸ್\u0027ನಲ್ಲಿ)",
+  "systemSpeechRecognition": "ಸಿಸ್ಟಂ ಸ್ಪೀಚ್ ಗುರುತಿಸುವಿಕೆ",
+  "systemRecognitionAndroidIos": "ಸಿಸ್ಟಂ ಗುರುತಿಸುವಿಕೆ (Android/iOS)",
+  "endpointRecognitionCloudWs": "ಎಂಡ್\u0027ಪಾಯಿಂಟ್ ಗುರುತಿಸುವಿಕೆ (Cloud/WS)",
+  "useBuiltInRecognizer": "ಅಂತರ್ನಿರ್ಮಿತ Android / iOS ಗುರುತಿಸುವವನ್ನು ಬಳಸಿ (ಕ್ಲೌಡ್ ಬಳಸಬಹುದು)",
+  "voiceAiEndpoint": "ವಾಯ್ಸ್ AI ಎಂಡ್\u0027ಪಾಯಿಂಟ್",
+  "embeddingModel": "ಎಂಬೆಡಿಂಗ್ ಮಾಡೆಲ್",
+  "crossDeviceSync": "ಕ್ರಾಸ್-ಡಿವೈಸ್ ಸಿಂಕ್",
+  "sendToOtherDevices": "ಇತರ ಡಿವೈಸ್\u0027ಗಳಿಗೆ ಕಳುಹಿಸು (LocalSend)",
+  "exportBackupAndSend": "ಬ್ಯಾಕಪ್ ಎಕ್ಸ್\u0027ಪೋರ್ಟ್ ಮಾಡಿ ಶೇರ್ ಶೀಟ್ ಮೂಲಕ ಕಳುಹಿಸು",
+  "importFromLocalSend": "LocalSend ನಿಂದ ಇಮ್ಪೋರ್ಟ್ ಮಾಡು",
+  "selectBackupJson": "ಬ್ಯಾಕಪ್ JSON ಆರಿಸಿ ಮತ್ತು ಲೋಕಲ್ ಡೇಟಾವನ್ನು ವಿಲೀನಗೊಳಿಸು",
+  "autoGeneration": "ಸ್ವಯಂ ಜನನ",
+  "autoGenerateSummary": "ಸ್ವಯಂ ಸಾರಾಂಶ ರಚಿಸು",
+  "generateAiSummaryForNewEntries": "ಹೊಸ ಎಂಟ್ರಿಗಳಿಗೆ AI ಸಾರಾಂಶ ರಚಿಸು",
+  "autoGenerateEmbedding": "ಸ್ವಯಂ ಎಂಬೆಡಿಂಗ್ ರಚಿಸು",
+  "generateVectorEmbedding": "ಹುಟ್ಟಿಗೆ ವೆಕ್ಟರ್ ಎಂಬೆಡಿಂಗ್ ರಚಿಸು",
+  "enableNetworkSearch": "ನೆಟ್ವರ್ಕ್ ಹುಟ್ಟಿಗೆ ಸಕ್ರಿಯಗೊಳಿಸು",
+  "allowOnlineRetrieval": "ಹುಟ್ಟಿಗೆ ಮತ್ತು AI ಚ್ಯಾಟ್\u0027ಗೆ ಆನ್ಲೈನ್ ಮರುಪಡೆಯಲು ಅನುಮತಿಸು (ಡಿಫಾಲ್ಟ್ ಆಫ್)",
+  "about": "ಬಗ್ಗೆ",
+  "version": "ಆವೃತ್ತಿ {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "database": "ಡೇಟಾಬೇಸ್",
+  "objectBoxWithHnsw": "HNSW ಇಂಡೆಕ್\u0027ನೊಂದಿಗೆ ObjectBox",
+  "logOut": "ಲಾಗ್ ಔಟ್",
+  "custom": "ಕಸ್ಟಮ್",
+  "openAiCompatible": "OpenAI ಹೊಂದಿಕೆಯಾದ",
+  "notSet": "ಸೆಟ್ ಆಗಿಲ್ಲ",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... ಅಥವಾ http://127.0.0.1:11434",
+  "supportsLocalLanPublic": "ಲೋಕಲ್/LAN/ಪಬ್ಲಿಕ್ ಎಂಡ್\u0027ಪಾಯಿಂಟ್\u0027ಗಳನ್ನು ಬೆಂಬಲಿಸುತ್ತದೆ",
+  "shiguangLocalSendBackup": "Shiguang LocalSend ಬ್ಯಾಕಪ್",
+  "localBackupFromShiguang": "Shiguang ನಿಂದ ಲೋಕಲ್ ಬ್ಯಾಕಪ್ (LocalSend ಮೂಲಕ ಸ್ವೀಕರಿಸು)",
+  "selectBackupFileFromLocalSend": "LocalSend ನಿಂದ ಸ್ವೀಕರಿಸಿದ ಬ್ಯಾಕಪ್ ಫೈಲನ್ನು ಆರಿಸಿ",
+  "failedToResolveFilePath": "ಆಯ್ಕೆಮಾಡಿದ ಫೈಲ್ ಪಾತೆರವನ್ನು ಪರಿಹರಿಸಲು ವಿಫಲವಾಗಿದೆ",
+  "importOptions": "ಇಮ್ಪೋರ್ಟ್ ಆಯ್ಕೆಗಳು",
+  "importSettingsAsWell": "ಸೆಟ್ಟಿಂಗ್\u0027ಗಳನ್ನು ಸಹ ಇಮ್ಪೋರ್ಟ್ ಮಾಡಬೇಕೇ?\n(API ಕೀಗಳನ್ನು ಅತಿಕ್ರಮಿಸಲಾಗುವುದಿಲ್ಲ)",
+  "dataOnly": "ಡೇಟಾ ಮಾತ್ರ",
+  "dataAndSettings": "ಡೇಟಾ + ಸೆಟ್ಟಿಂಗ್\u0027ಗಳು",
+  "importCompleted": "ಇಮ್ಪೋರ್ಟ್ ಪೂರ್ಣಗೊಂಡಿತು",
+  "settingsInBackupWereApplied": "ಬ್ಯಾಕಪ್\u0027ನಲ್ಲಿರುವ ಸೆಟ್ಟಿಂಗ್\u0027ಗಳು ಅನ್ವಯಿಸಲಾಗಿದೆ.",
+  "settingsInBackupWereNotApplied": "ಬ್ಯಾಕಪ್\u0027ನಲ್ಲಿರುವ ಸೆಟ್ಟಿಂಗ್\u0027ಗಳು ಅನ್ವಯಿಸಲಾಗಿಲ್ಲ.",
+  "ok": "ಸರಿ",
+  "cancel": "ರದ್ದುಮಾಡು",
+  "save": "ಉಳಿಸು",
+  "delete": "ಅಳಿಸು",
+  "clear": "ತೆರವುಗೊಳಿಸು",
+  "add": "ಸೇರಿಸು",
+  "create": "ರಚಿಸು",
+  "edit": "ಸಂಪಾದಿಸು",
+  "search": "ಹುಟ್ಟಿ",
+  "areYouSureYouWantToLogOut": "ನೀವು ಲಾಗ್ ಔಟ್ ಮಾಡಲು ಬಯಸುತ್ತೀರಾ?",
+  "chooseLanguage": "ಭಾಷೆಯನ್ನು ಆರಿಸಿ",
+  "databaseInfo": "ಡೇಟಾಬೇಸ್ ಮಾಹಿತಿ",
+  "storage": "ಸಂಗ್ರಹಣೆ: ObjectBox",
+  "vectorIndex": "ವೆಕ್ಟರ್ ಇಂಡೆಕ್ಸ್: HNSW",
+  "dimensions": "ಆಯಾಮಗಳು: 384",
+  "embeddingModelBge": "ಎಂಬೆಡಿಂಗ್ ಮಾಡೆಲ್: bge-small-zh-v1.5",
+  "takePhoto": "ಫೋಟೋ ತೆಗೆ",
+  "chooseFromGallery": "ಗ್ಯಾಲರಿಯಿಂದ ಆರಿಸಿ",
+  "editNickname": "ಅಡ್ಡಹೆಸರನ್ನು ಸಂಪಾದಿಸು",
+  "enterNickname": "ಅಡ್ಡಹೆಸರನ್ನು ನಮೂದಿಸಿ",
+  "pleaseEnterNickname": "ದಯವಿಟ್ಟು ಅಡ್ಡಹೆಸರನ್ನು ನಮೂದಿಸಿ",
+  "nicknameAlreadyExistsOrInvalid": "ಅಡ್ಡಹೆಸರು ಈಗಾಗಲೇ ಇದೆ ಅಥವಾ ಅಮಾನ್ಯವಾಗಿದೆ",
+  "user": "ಬಳಕೆದಾರ",
+  "manageScheduledReminders": "ನಿಗದಿತ ಜ್ಞಾಪನೆಗಳು ಮತ್ತು ಅಲಾರಂಗಳನ್ನು ನಿರ್ವಹಿಸು",
+  "imageFailedToLoad": "ಚಿತ್ರ ಲೋಡ್ ಆಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಆರಿಸಿ.",
+  "imageIsStillLoading": "ಚಿತ್ರವನ್ನು ಇನ್ನೂ ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ",
+  "imageAreaNotReady": "ಚಿತ್ರ ಪ್ರದೇಶವು ಸಿದ್ಧವಾಗಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "cropFrameNotReady": "ಕ್ರಾಪ್ ಫ್ರೇಮ್ ಸಿದ್ಧವಾಗಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "invalidCropArea": "ಅಮಾನ್ಯ ಕ್ರಾಪ್ ಪ್ರದೇಶ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "cropFailed": "ಕ್ರಾಪ್ ವಿಫಲವಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "cropAvatar": "ಅವಟಾರ್ ಕ್ರಾಪ್ ಮಾಡು",
+  "chooseAgain": "ಮತ್ತೆ ಆರಿಸಿ",
+  "rotate90": "90° ತಿರುವು",
+  "dragFrameToMove": "ಚಲಿಸಲು ಫ್ರೇಮನ್ನು ಡ್ರ್ಯಾಗ್ ಮಾಡಿ, ಗಾತ್ರಕ್ಕಾಗಿ ಕೆಳ-ಬಲ ಡ್ರ್ಯಾಗ್ ಮಾಡಿ; ಜೂಮ್ ಮತ್ತು ಚಿತ್ರವನ್ನು ಚಲಿಸಲು ಪಿಂಚ್ ಮಾಡಿ.",
+  "pleaseFillInAllFields": "ದಯವಿಟ್ಟು ಎಲ್ಲಾ ಫೀಲ್ಡ್\u0027ಗಳನ್ನು ಭರಿಸಿ",
+  "pinMustBeAtLeast4Digits": "PIN ಕನಿಷ್ಠ 4 ಅಂಕಿಗಳಾಗಿರಬೇಕು",
+  "pinAtLeast4Digits": "PIN ಕನಿಷ್ಠ 4 ಅಂಕಿಗಳಾಗಿರಬೇಕು",
+  "invalidUsernameOrPin": "ಅಮಾನ್ಯ ಬಳಕೆದಾರ ಹೆಸರು ಅಥವಾ PIN",
+  "invalidUsernameOrPinError": "ಅಮಾನ್ಯ ಬಳಕೆದಾರ ಹೆಸರು ಅಥವಾ PIN",
+  "usernameAlreadyExists": "ಬಳಕೆದಾರ ಹೆಸರು ಈಗಾಗಲೇ ಇದೆ",
+  "captureMomentsKeepMemories":  "ಕ್ಷಣಗಳನ್ನು ಸೆರೆಹಿಡಿಯುತ್ತಾ, ನೆನಪುಗಳನ್ನು ಇರಿಸಿಕೊಳ್ಳುತ್ತಾ",
+  "username": "ಬಳಕೆದಾರ ಹೆಸರು",
+  "pin": "PIN",
+  "login": "ಲಾಗಿನ್",
+  "createAccount": "ಖಾತೆ ರಚಿಸು",
+  "dontHaveAccountCreateOne": "ಖಾತೆ ಇಲ್ಲವೇ? ಒಂದನ್ನು ರಚಿಸಿ",
+  "alreadyHaveAccountLogin": "ಖಾತೆ ಇದೆಯೇ? ಲಾಗಿನ್ ಮಾಡಿ",
+  "pleaseEnterUsername": "ದಯವಿಟ್ಟು ಬಳಕೆದಾರ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
+  "pinsDoNotMatch": "PINಗಳು ಹೊಂದುವುದಿಲ್ಲ",
+  "tapToAddAvatar": "ಅವಟಾರ್ ಸೇರಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ",
+  "yourName": "ನಿಮ್ಮ ಹೆಸರು",
+  "privatePinOptional": "ಖಾಸಗಿ PIN (ಐಚ್ಛಿಕ)",
+  "usedToEncryptPrivateRecords": "ಖಾಸಗಿ ದಾಖಲೆಗಳನ್ನು ಎನ್\u0027ಕ್ರಿಪ್ಟ್ ಮಾಡಲು ಬಳಸಲಾಗುತ್ತದೆ",
+  "privatePin": "ಖಾಸಗಿ PIN",
+  "leaveEmptyForNoEncryption": "ಎನ್\u0027ಕ್ರಿಪ್ಶನ್ ಇಲ್ಲದೆ ಬಿಡಲು ಖಾಲಿ ಬಿಡಿ",
+  "confirmPin": "PIN ಖಚಿತಪಡಿಸು",
+  "getStarted": "ಪ್ರಾರಂಭಿಸು",
+  "noReminders": "ಯಾವುದೇ ಜ್ಞಾಪನೆಗಳಿಲ್ಲ",
+  "addReminder": "ಜ್ಞಾಪನೆ ಸೇರಿಸು",
+  "title": "ಶೀರ್ಷಿಕೆ",
+  "descriptionOptional": "ವರ್ಣನೆ (ಐಚ್ಛಿಕ)",
+  "microphonePermissionRequired": "ಮೈಕ್ರೊಫೋನ್ ಅನುಮತಿ ಅವಶ್ಯಕ",
+  "aiAssistant": "AI ಸಹಾಯಕ",
+  "listening": "ಕೇಳುತ್ತಿದೆ...",
+  "typeAMessage": "ಸಂದೇಶ ಬರೆಯಿರಿ...",
+  "aiChat": "AI ಚ್ಯಾಟ್",
+  "startAConversation": "ಸಂಭಾಷಣೆಯನ್ನು ಪ್ರಾರಂಭಿಸು",
+  "typeYourMessage": "ನಿಮ್ಮ ಸಂದೇಶವನ್ನು ಬರೆಯಿರಿ...",
+  "asrReconnecting": "ASR ಮರುಸಂಪರ್ಕಿಸುತ್ತಿದೆ...",
+  "write": "ಬರೆ",
+  "writeEntry": "ಎಂಟ್ರಿ ಬರೆ",
+  "noMemoriesYet": "ಇನ್ನೂ ಯಾವುದೇ ನೆನಪುಗಳಿಲ್ಲ",
+  "tapPlusToCapture": "ನಿಮ್ಮ ಆಲೋಚನೆಗಳನ್ನು ಸೆರೆಹಿಡಿಯಲು + ಟ್ಯಾಪ್ ಮಾಡಿ",
+  "tapPlusToCaptureYourThoughts": "ನಿಮ್ಮ ಆಲೋಚನೆಗಳನ್ನು ಸೆರೆಹಿಡಿಯಲು + ಟ್ಯಾಪ್ ಮಾಡಿ",
+  "deleteMemory": "ನೆನಪನ್ನು ಅಳಿಸು",
+  "deleteRecord": "ದಾಖಲೆಯನ್ನು ಅಳಿಸು",
+  "thisEntryWillBeRemoved": "ಈ ಎಂಟ್ರಿಯನ್ನು ನಿಮ್ಮ ಟೈಮ್ಲೈನ್\u0027ನಿಂದ ತೆರವುಗೊಳಿಸಲಾಗುತ್ತದೆ.",
+  "thisRecordWillBeRemoved": "ಈ ದಾಖಲೆಯನ್ನು ನಿಮ್ಮ ಟೈಮ್ಲೈನ್\u0027ನಿಂದ ತೆರವುಗೊಳಿಸಲಾಗುತ್ತದೆ.",
+  "searchYourRecords": "ನಿಮ್ಮ ದಾಖಲೆಗಳನ್ನು ಹುಟ್ಟಿ...",
+  "exactMatches": "ನಿಖರವಾದ ಹೊಂದಾಣಿಕೆಗಳು",
+  "noExactMatches": "ನಿಖರವಾದ ಹೊಂದಾಣಿಕೆಗಳಿಲ್ಲ",
+  "exact": "ನಿಖರ",
+  "exactMatch": "ನಿಖರವಾದ ಹೊಂದಾಣಿಕೆ",
+  "fuzzyMatches": "ಫಜ಼ಿ ಹೊಂದಾಣಿಕೆಗಳು",
+  "noFuzzyMatches": "ಫಜ಼ಿ ಹೊಂದಾಣಿಕೆಗಳಿಲ್ಲ",
+  "vectorMatch": "ವೆಕ್ಟರ್ ಹೊಂದಾಣಿಕೆ",
+  "networkMatches": "ನೆಟ್ವರ್ಕ್ ಹೊಂದಾಣಿಕೆಗಳು",
+  "noNetworkMatches": "ನೆಟ್ವರ್ಕ್ ಹೊಂದಾಣಿಕೆಗಳಿಲ್ಲ",
+  "networkSearchIsOff": "ನೆಟ್ವರ್ಕ್ ಹುಟ್ಟಿಗೆ ಆಫ್ ಆಗಿದೆ. ಸೆಟ್ಟಿಂಗ್\u0027ಗಳಲ್ಲಿ ಸಕ್ರಿಯಗೊಳಿಸಿ.",
+  "network": "ನೆಟ್ವರ್ಕ್",
+  "networkMatch": "ನೆಟ್ವರ್ಕ್ ಹೊಂದಾಣಿಕೆ",
+  "noSearchHistory": "ಯಾವುದೇ ಹುಟ್ಟಿ ಇತಿಹಾಸವಿಲ್ಲ",
+  "searchHistory": "ಹುಟ್ಟಿ ಇತಿಹಾಸ",
+  "invalidLink": "ಅಮಾನ್ಯ ಲಿಂಕ್",
+  "unableToOpenWebPage": "ವೆಬ್ ಪುಟವನ್ನು ತೆರೆಯಲಾಗುತ್ತಿಲ್ಲ",
+  "imageMemory": "[ಚಿತ್ರ ನೆನಪು]",
+  "tapToOpenWebPage": "ವೆಬ್ ಪುಟವನ್ನು ತೆರೆಯಲು ಟ್ಯಾಪ್ ಮಾಡಿ",
+  "editEntry": "ಎಂಟ್ರಿ ಸಂಪಾದಿಸು",
+  "entryDetails": "ಎಂಟ್ರಿ ವಿವರಗಳು",
+  "noContent": "ಯಾವುದೇ ವಿಷಯವಿಲ್ಲ",
+  "diaryNotFound": "ಡೈರಿ ಕಂಡುಬಂದಿಲ್ಲ",
+  "diaryNotFoundShort": "ದಾಖಲೆ ಕಂಡುಬಂದಿಲ್ಲ",
+  "aiSummary": "AI ಸಾರಾಂಶ",
+  "microphoneInterrupted": "ಮೈಕ್ರೊಫೋನ್ ಅಡಚಣೆ, ಧ್ವನಿಮುದ್ರಣ ನಿಂತಿದೆ.",
+  "bold": "ದಪ್ಪ",
+  "italic": "ಓರೆ",
+  "strikethrough": "ಗೆರೆ ಹಾಕಿದ",
+  "image": "ಚಿತ್ರ",
+  "asrUnavailableRecordingActive": "ASR ಲಭ್ಯವಿಲ್ಲ. ಧ್ವನಿಮುದ್ರಣ ಇನ್ನೂ ಸಕ್ರಿಯವಾಗಿದೆ.",
+  "writeYourEntry": "ನಿಮ್ಮ ಎಂಟ್ರಿಯನ್ನು ಬರೆಯಿರಿ...",
+  "writeYourContent": "ನಿಮ್ಮ ವಿಷಯವನ್ನು ಬರೆಯಿರಿ...",
+  "microphoneStartFailed": "ಮೈಕ್ರೊಫೋನ್ ಪ್ರಾರಂಭಿಸಲು ವಿಫಲವಾಗಿದೆ: {error}",
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "microphoneInterruptedRecordingStopped": "ಮೈಕ್ರೊಫೋನ್ ಅಡಚಣೆ, ಧ್ವನಿಮುದ್ರಣ ನಿಂತಿದೆ.",
+  "asrReconnectingError": "ASR ಮರುಸಂಪರ್ಕಿಸುತ್ತಿದೆ: {error}",
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "imageInserted": "ಚಿತ್ರ ಸೇರಿಸಲಾಯಿತು: {name}",
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "voiceError": "ಧ್ವನಿ ದೋಷ: {error}",
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "aiServiceUnavailable": "ಕ್ಷಮಿಸಿ, AI ಸೇವೆ ಪ್ರಸಕ್ತ ಲಭ್ಯವಿಲ್ಲ: {error}",
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareFailed": "ಹಂಚಲು ವಿಫಲವಾಗಿದೆ: {error}",
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "searchMatchHits": "{matchType} · {count} ಹಿಟ್\u0027ಗಳು",
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "matchCount": "ಹೊಂದಾಣಿಕೆ: {count}",
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sourceFromNetwork": "ಮೂಲ: {source}",
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "createNew": "ರಚಿಸು",
+  "micStartFailed": "ಮೈಕ್ ಪ್ರಾರಂಭಿಸಲು ವಿಫಲವಾಗಿದೆ: {error}",
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importResultAccounts": "ಖಾತೆಗಳು: +{created} / ನವೀಕರಿಸಲಾಗಿದೆ {updated}",
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultDiaries": "ಡೈರಿಗಳು: +{created} / ನವೀಕರಿಸಲಾಗಿದೆ {updated}",
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultReminders": "ಜ್ಞಾಪನೆಗಳು: +{created} / ನವೀಕರಿಸಲಾಗಿದೆ {updated}",
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultSkipped": "ಬಿಟ್ಟುಬಿಡಲಾಗಿದೆ: {count}",
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultTotal": "ಒಟ್ಟು ಬದಲಾವಣೆ: {count}",
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsApplied": "ಬ್ಯಾಕಪ್\u0027ನಲ್ಲಿರುವ ಸೆಟ್ಟಿಂಗ್\u0027ಗಳು ಅನ್ವಯಿಸಲಾಗಿದೆ.",
+  "settingsNotApplied": "ಬ್ಯಾಕಪ್\u0027ನಲ್ಲಿರುವ ಸೆಟ್ಟಿಂಗ್\u0027ಗಳು ಅನ್ವಯಿಸಲಾಗಿಲ್ಲ.",
+  "backupExported": "ಬ್ಯಾಕಪ್ ಎಕ್ಸ್\u0027ಪೋರ್ಟ್ ಆಗಿದೆ: {path}",
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "exportFailed": "ಎಕ್ಸ್\u0027ಪೋರ್ಟ್ ವಿಫಲವಾಗಿದೆ: {error}",
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importFailed": "ಇಮ್ಪೋರ್ಟ್ ವಿಫಲವಾಗಿದೆ: {error}",
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
+}

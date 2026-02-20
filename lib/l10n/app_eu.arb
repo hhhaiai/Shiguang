@@ -1,0 +1,363 @@
+{
+  "@@locale": "eu",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Euskara",
+  "languageNameEn": "Basque",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Ezarpenak",
+  "account": "Kontua",
+  "reminders": "Oroigarriak",
+  "language": "Hizkuntza",
+  "appLanguage": "Aplikazioaren hizkuntza",
+  "appearance": "Itxura",
+  "themeMode": "Gaiaren modua",
+  "dark": "Iluna",
+  "light": "Argia",
+  "system": "Sistema",
+  "aiService": "AI Zerbitzua",
+  "aiChatProvider": "AI Txat Hornitzailea",
+  "chatModel": "Txat eredua",
+  "localModel": "Tokiko Eredua",
+  "localModelDefault": "Tokiko eredua (lehenetsia)",
+  "ollamaEndpoint": "Ollama Endpoint",
+  "ollamaModel": "Ollama eredua",
+  "openAiEndpoint": "OpenAI Endpoint",
+  "openAiApiKey": "OpenAI API gakoa",
+  "openAiModel": "OpenAI eredua",
+  "geminiEndpoint": "Gemini Endpoint",
+  "geminiApiKey": "Gemini API gakoa",
+  "geminiModel": "Gemini ereduak",
+  "anthropicEndpoint": "Amaiera Antropikoa",
+  "anthropicApiKey": "Anthropic API gakoa",
+  "anthropicModel": "Eredu Antropikoa",
+  "customProtocol": "Protokolo pertsonalizatua",
+  "protocol": "Protokoloa",
+  "customEndpoint": "Amaiera pertsonalizatua",
+  "customApiKey": "API gako pertsonalizatua",
+  "customModel": "Eredu pertsonalizatua",
+  "optionalForLocalServers": "Zerbitzari lokal/pertsonalizatuetarako aukerakoa",
+  "speechRecognitionEngine": "Ahotsa ezagutzeko motorra",
+  "local": "Tokikoa",
+  "endpoint": "Amaiera",
+  "localSpeechModel": "Tokiko hizkera eredua",
+  "senseVoiceOnnx": "SenseVoice ONNX (gailuan)",
+  "systemSpeechRecognition": "Sistemaren ahots-ezagutza",
+  "systemRecognitionAndroidIos": "Sistemaren ezagutza (Android/iOS)",
+  "endpointRecognitionCloudWs": "Amaiera-puntuak hautematea (Hodeia/WS)",
+  "useBuiltInRecognizer": "Erabili integratutako Android / iOS ezagutzailea (hodeia erabil daiteke)",
+  "voiceAiEndpoint": "Voice AI Endpoint",
+  "embeddingModel": "Kapsulatzeko eredua",
+  "crossDeviceSync": "Gailuen arteko sinkronizazioa",
+  "sendToOtherDevices": "Bidali beste gailu batzuetara (LocalSend)",
+  "exportBackupAndSend": "Esportatu babeskopia eta bidali partekatzeko orri baten bidez",
+  "importFromLocalSend": "Inportatu LocalSend-etik",
+  "selectBackupJson": "Hautatu babeskopia JSON eta batu tokiko datuak",
+  "autoGeneration": "Auto Sorkuntza",
+  "autoGenerateSummary": "Sortu automatikoki laburpena",
+  "generateAiSummaryForNewEntries": "Sortu AI laburpena sarrera berrietarako",
+  "autoGenerateEmbedding": "Sortu automatikoki kapsulatzea",
+  "generateVectorEmbedding": "Sortu txertaketa bektoriala bilaketarako",
+  "enableNetworkSearch": "Gaitu sareko bilaketa",
+  "allowOnlineRetrieval": "Onartu bilaketak eta AI txatak lineako berreskurapena (desaktibatuta lehenespenez)",
+  "about": "Buruz",
+  "version": "{version} bertsioa",
+  "database": "Datu-basea",
+  "objectBoxWithHnsw": "ObjectBox HNSW indizearekin",
+  "logOut": "Amaitu saioa",
+  "custom": "Pertsonalizatua",
+  "openAiCompatible": "OpenAI bateragarria",
+  "notSet": "Ezarrita",
+  "supportsLocalLanPublic": "Tokiko/LAN/amaiera publikoak onartzen ditu",
+  "shiguangLocalSendBackup": "Shiguang LocalSend babeskopia",
+  "localBackupFromShiguang": "Tokiko babeskopia Shiguang-en (jaso LocalSend bidez)",
+  "selectBackupFileFromLocalSend": "Hautatu LocalSend-etik jasotako babeskopia-fitxategia",
+  "failedToResolveFilePath": "Ezin izan da ebatzi hautatutako fitxategi-bidea",
+  "importOptions": "Inportazio aukerak",
+  "importSettingsAsWell": "Ezarpenak ere inportatu?\n(API gakoak ez dira gainidatziko)",
+  "dataOnly": "Datuak soilik",
+  "dataAndSettings": "Datuak + Ezarpenak",
+  "importCompleted": "Inportazioa osatu da",
+  "settingsInBackupWereApplied": "Babeskopiako ezarpenak aplikatu dira.",
+  "settingsInBackupWereNotApplied": "Babeskopiako ezarpenak ez dira aplikatu.",
+  "ok": "Ados",
+  "cancel": "Utzi",
+  "save": "Gorde",
+  "delete": "Ezabatu",
+  "clear": "Garbi",
+  "add": "Gehitu",
+  "create": "Sortu",
+  "edit": "Editatu",
+  "search": "Bilatu",
+  "areYouSureYouWantToLogOut": "Ziur saioa amaitu nahi duzula?",
+  "chooseLanguage": "Aukeratu Hizkuntza",
+  "databaseInfo": "Datu-basearen informazioa",
+  "storage": "Biltegiratzea: ObjectBox",
+  "vectorIndex": "Bektore-indizea: HNSW",
+  "dimensions": "Neurriak: 384",
+  "embeddingModelBge": "Kapsulatzeko eredua: bge-small-zh-v1.5",
+  "takePhoto": "Argazkia atera",
+  "chooseFromGallery": "Aukeratu Galeriatik",
+  "editNickname": "Editatu goitizena",
+  "enterNickname": "Sartu ezizena",
+  "pleaseEnterNickname": "Mesedez, sartu goitizen bat",
+  "nicknameAlreadyExistsOrInvalid": "Ezizena dagoeneko badago edo baliogabea da",
+  "user": "Erabiltzailea",
+  "manageScheduledReminders": "Kudeatu programatutako abisuak eta alarmak",
+  "imageFailedToLoad": "Ezin izan da kargatu irudia. Mesedez, aukeratu berriro.",
+  "imageIsStillLoading": "Irudia oraindik kargatzen ari da",
+  "imageAreaNotReady": "Irudiaren eremua ez dago prest. Mesedez, saiatu berriro.",
+  "cropFrameNotReady": "Moztu markoa ez dago prest. Mesedez, saiatu berriro.",
+  "invalidCropArea": "Mozte-eremu baliogabea. Mesedez, saiatu berriro.",
+  "cropFailed": "Mozketak huts egin du. Mesedez, saiatu berriro.",
+  "cropAvatar": "Moztu Avatarra",
+  "chooseAgain": "Aukeratu Berriz",
+  "rotate90": "Biratu 90°",
+  "dragFrameToMove": "Arrastatu markoa mugitzeko, arrastatu beheko eskuinera tamaina aldatzeko; atximurkatu irudia handitzeko eta mugitzeko.",
+  "pleaseFillInAllFields": "Mesedez, bete eremu guztiak",
+  "pinMustBeAtLeast4Digits": "PINak 4 digitu izan behar ditu gutxienez",
+  "pinAtLeast4Digits": "PINak 4 digitu izan behar ditu gutxienez",
+  "invalidUsernameOrPin": "Erabiltzaile-izena edo PIN baliogabea",
+  "invalidUsernameOrPinError": "Erabiltzaile-izena edo PIN baliogabea",
+  "usernameAlreadyExists": "Erabiltzaile izena badago jada",
+  "captureMomentsKeepMemories": "Harrapatu uneak, gorde oroitzapenak",
+  "username": "Erabiltzaile izena",
+  "pin": "PINa",
+  "login": "Saioa hasi",
+  "createAccount": "Sortu kontua",
+  "dontHaveAccountCreateOne": "Ez al duzu konturik? Sortu bat",
+  "alreadyHaveAccountLogin": "Dagoeneko kontu bat duzu? Saioa hasi",
+  "pleaseEnterUsername": "Mesedez, idatzi erabiltzaile-izen bat",
+  "pinsDoNotMatch": "PINak ez datoz bat",
+  "tapToAddAvatar": "Ukitu avatarra gehitzeko",
+  "yourName": "Zure izena",
+  "privatePinOptional": "PIN pribatua (aukerakoa)",
+  "usedToEncryptPrivateRecords": "Erregistro pribatuak enkriptatzeko erabiltzen da",
+  "privatePin": "PIN pribatua",
+  "leaveEmptyForNoEncryption": "Utzi hutsik zifratzerik ez izateko",
+  "confirmPin": "Berretsi PINa",
+  "getStarted": "Hasi",
+  "noReminders": "Ez dago abisurik",
+  "addReminder": "Gehitu abisua",
+  "title": "Izenburua",
+  "descriptionOptional": "Deskribapena (aukerakoa)",
+  "microphonePermissionRequired": "Mikrofonoaren baimena behar da",
+  "aiAssistant": "AI Laguntzailea",
+  "listening": "Entzuten...",
+  "typeAMessage": "Idatzi mezu bat...",
+  "aiChat": "AI Txata",
+  "startAConversation": "Hasi elkarrizketa",
+  "typeYourMessage": "Idatzi zure mezua...",
+  "asrReconnecting": "ASR berriro konektatzen...",
+  "write": "Idatzi",
+  "writeEntry": "Idatzi Sarrera",
+  "noMemoriesYet": "Oraindik ez dago oroitzapenik",
+  "tapPlusToCapture": "Sakatu + zure pentsamenduak jasotzeko",
+  "tapPlusToCaptureYourThoughts": "Sakatu + zure pentsamenduak jasotzeko",
+  "deleteMemory": "Ezabatu Memoria",
+  "deleteRecord": "Ezabatu erregistroa",
+  "thisEntryWillBeRemoved": "Sarrera hau zure denbora-lerrotik kenduko da.",
+  "thisRecordWillBeRemoved": "Erregistro hau zure denbora-lerrotik kenduko da.",
+  "searchYourRecords": "Bilatu zure erregistroak...",
+  "exactMatches": "Partidu zehatzak",
+  "noExactMatches": "Ez dago partida zehatzik",
+  "exact": "Zehatza",
+  "exactMatch": "Partida zehatza",
+  "fuzzyMatches": "Partidu lausoak",
+  "noFuzzyMatches": "Partidu lausorik ez",
+  "vectorMatch": "Bektore partida",
+  "networkMatches": "Sareko partidak",
+  "noNetworkMatches": "Ez dago sareko parekorik",
+  "networkSearchIsOff": "Sareko bilaketa desaktibatuta dago. Gaitu Ezarpenak atalean.",
+  "network": "Sarea",
+  "networkMatch": "Sareko partida",
+  "noSearchHistory": "Ez dago bilaketa-historiarik",
+  "searchHistory": "Bilaketa Historia",
+  "invalidLink": "Esteka baliogabea",
+  "unableToOpenWebPage": "Ezin da web orria ireki",
+  "imageMemory": "[Irudiaren memoria]",
+  "tapToOpenWebPage": "Sakatu web orria irekitzeko",
+  "editEntry": "Editatu sarrera",
+  "entryDetails": "Sarreraren xehetasunak",
+  "noContent": "Edukirik ez",
+  "diaryNotFound": "Egunkaria ez da aurkitu",
+  "diaryNotFoundShort": "Erregistroa ez da aurkitu",
+  "aiSummary": "AIren laburpena",
+  "microphoneInterrupted": "Mikrofonoa eten da, grabazioa gelditu da.",
+  "bold": "Lodia",
+  "italic": "Etzana",
+  "strikethrough": "Markatua",
+  "image": "Irudia",
+  "asrUnavailableRecordingActive": "ASR ez dago erabilgarri. Grabaketa aktibo dago oraindik.",
+  "writeYourEntry": "Idatzi zure sarrera...",
+  "writeYourContent": "Idatzi zure edukia...",
+  "microphoneStartFailed": "Ezin izan da abiarazi mikrofonoa: {error}",
+  "microphoneInterruptedRecordingStopped": "Mikrofonoa eten da, grabazioa gelditu da.",
+  "asrReconnectingError": "ASR berriro konektatzen: {error}",
+  "imageInserted": "Txertatu da irudia: {name}",
+  "voiceError": "Ahots-errorea: {error}",
+  "aiServiceUnavailable": "Barkatu, AI zerbitzua ez dago erabilgarri une honetan: {error}",
+  "shareFailed": "Ezin izan da partekatu: {error}",
+  "searchMatchHits": "{matchType} · {count} hits",
+  "matchCount": "Bat-etortzea: {count}",
+  "sourceFromNetwork": "Iturria: {source}",
+  "createNew": "Sortu",
+  "micStartFailed": "Mikrofonoa abiarazteko huts egin du: {error}",
+  "importResultAccounts": "Kontuak: +{created} / eguneratua {updated}",
+  "importResultDiaries": "Egunkariak: +{created} / eguneratua {updated}",
+  "importResultReminders": "Abisuak: +{created} / eguneratua {updated}",
+  "importResultSkipped": "Saltatu egin da: {count}",
+  "importResultTotal": "Aldaketa guztira: {count}",
+  "settingsApplied": "Babeskopiako ezarpenak aplikatu dira.",
+  "settingsNotApplied": "Babeskopiako ezarpenak ez dira aplikatu.",
+  "backupExported": "Esportatutako babeskopia: {path}",
+  "exportFailed": "Ezin izan da esportatu: {error}",
+  "importFailed": "Ezin izan da inportatu: {error}"
+}

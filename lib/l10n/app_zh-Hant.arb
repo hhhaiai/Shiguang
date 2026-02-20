@@ -1,11 +1,16 @@
 {
   "@@locale": "zh_Hant",
+  "languageName": "繁體中文(臺灣)",
+  "languageNameEn": "Chinese (Traditional, Taiwan)",
   "appTitle": "拾光",
+  "@appTitle": {
+    "description": "App name"
+  },
   "settings": "設定",
   "account": "帳戶",
   "reminders": "提醒",
   "language": "語言",
-  "appLanguage": "應用程式語言",
+  "appLanguage": "應用語言",
   "appearance": "外觀",
   "themeMode": "主題模式",
   "dark": "深色",
@@ -27,8 +32,8 @@
   "anthropicEndpoint": "Anthropic 端點",
   "anthropicApiKey": "Anthropic API 金鑰",
   "anthropicModel": "Anthropic 模型",
-  "customProtocol": "自訂協定",
-  "protocol": "協定",
+  "customProtocol": "自訂協議",
+  "protocol": "協議",
   "customEndpoint": "自訂端點",
   "customApiKey": "自訂 API 金鑰",
   "customModel": "自訂模型",
@@ -37,27 +42,34 @@
   "local": "本地",
   "endpoint": "端點",
   "localSpeechModel": "本地語音模型",
-  "senseVoiceOnnx": "SenseVoice ONNX（設備端）",
+  "senseVoiceOnnx": "SenseVoice ONNX（裝置端）",
   "systemSpeechRecognition": "系統語音識別",
-  "systemRecognitionAndroidIos": "系統識別（Android/iOS）",
-  "endpointRecognitionCloudWs": "端點識別（雲端/WS）",
-  "useBuiltInRecognizer": "使用 Android/iOS 內建識別器（可能使用雲端）",
+  "systemRecognitionAndroidIos": "系統識別",
+  "endpointRecognitionCloudWs": "端點識別（雲/WS）",
+  "useBuiltInRecognizer": "使用 Android/iOS 內建識別器（可能使用雲）",
   "voiceAiEndpoint": "語音 AI 端點",
   "embeddingModel": "Embedding 模型",
   "crossDeviceSync": "跨裝置同步",
-  "sendToOtherDevices": "傳送到其他裝置（LocalSend）",
+  "sendToOtherDevices": "傳送到其他裝置",
   "exportBackupAndSend": "匯出備份並透過分享傳送",
   "importFromLocalSend": "從 LocalSend 匯入",
   "selectBackupJson": "選擇備份 JSON 並合併本地資料",
-  "autoGeneration": "自動生成",
-  "autoGenerateSummary": "自動生成摘要",
-  "generateAiSummaryForNewEntries": "為新條目生成 AI 摘要",
-  "autoGenerateEmbedding": "自動生成 Embedding",
-  "generateVectorEmbedding": "生成向量 Embedding 用於搜尋",
+  "autoGeneration": "自動產生",
+  "autoGenerateSummary": "自動產生摘要",
+  "generateAiSummaryForNewEntries": "為新項目產生 AI 摘要",
+  "autoGenerateEmbedding": "自動產生 Embedding",
+  "generateVectorEmbedding": "產生向量 Embedding 用於搜尋",
   "enableNetworkSearch": "啟用網路搜尋",
   "allowOnlineRetrieval": "允許線上檢索用於搜尋和 AI 對話（預設關閉）",
   "about": "關於",
   "version": "版本 {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
   "database": "資料庫",
   "objectBoxWithHnsw": "ObjectBox with HNSW 索引",
   "logOut": "登出",
@@ -71,7 +83,7 @@
   "selectBackupFileFromLocalSend": "選擇從 LocalSend 接收的備份檔案",
   "failedToResolveFilePath": "無法解析所選檔案路徑",
   "importOptions": "匯入選項",
-  "importSettingsAsWell": "是否同時匯入設定？\n（API 金鑰不會被覆蓋）",
+  "importSettingsAsWell": "是否同時匯入設定？\n（API 金鑰不會被覆寫）",
   "dataOnly": "僅匯入資料",
   "dataAndSettings": "資料 + 設定",
   "importCompleted": "匯入完成",
@@ -100,7 +112,7 @@
   "pleaseEnterNickname": "請輸入暱稱",
   "nicknameAlreadyExistsOrInvalid": "暱稱已存在或無效",
   "user": "使用者",
-  "manageScheduledReminders": "管理排程提醒和鬧鐘",
+  "manageScheduledReminders": "管理計畫的提醒和鬧鐘",
   "imageFailedToLoad": "圖片載入失敗，請重新選擇。",
   "imageIsStillLoading": "圖片仍在載入中",
   "imageAreaNotReady": "圖片區域未就緒，請重試。",
@@ -117,7 +129,7 @@
   "invalidUsernameOrPin": "使用者名稱或 PIN 無效",
   "invalidUsernameOrPinError": "使用者名稱或 PIN 錯誤",
   "usernameAlreadyExists": "使用者名稱已存在",
-  "captureMomentsKeepMemories": "捕捉瞬間，保存回憶",
+  "captureMomentsKeepMemories": "捕捉瞬間，儲存回憶",
   "username": "使用者名稱",
   "pin": "PIN",
   "login": "登入",
@@ -125,12 +137,12 @@
   "dontHaveAccountCreateOne": "沒有帳戶？建立一個",
   "alreadyHaveAccountLogin": "已有帳戶？登入",
   "pleaseEnterUsername": "請輸入使用者名稱",
-  "pinsDoNotMatch": "PIN 不匹配",
+  "pinsDoNotMatch": "PIN 不符合",
   "tapToAddAvatar": "點擊新增頭像",
   "yourName": "你的名字",
-  "privatePinOptional": "私人 PIN（可選）",
-  "usedToEncryptPrivateRecords": "用於加密私人記錄",
-  "privatePin": "私人 PIN",
+  "privatePinOptional": "私密 PIN（可選）",
+  "usedToEncryptPrivateRecords": "用於加密私密記錄",
+  "privatePin": "私密 PIN",
   "leaveEmptyForNoEncryption": "留空則不加密",
   "confirmPin": "確認 PIN",
   "getStarted": "開始",
@@ -148,13 +160,13 @@
   "asrReconnecting": "ASR 重新連線中...",
   "write": "寫作",
   "writeEntry": "寫文章",
-  "noMemoriesYet": "暫無記憶",
+  "noMemoriesYet": "暫無回憶",
   "tapPlusToCapture": "點擊 + 捕捉你的想法",
   "tapPlusToCaptureYourThoughts": "點擊 + 記錄你的想法",
-  "deleteMemory": "刪除記憶",
+  "deleteMemory": "刪除回憶",
   "deleteRecord": "刪除記錄",
-  "thisEntryWillBeRemoved": "此條目將從時間線中移除。",
-  "thisRecordWillBeRemoved": "這條記錄將從時間線移除。",
+  "thisEntryWillBeRemoved": "此項目將從時間線中移除。",
+  "thisRecordWillBeRemoved": "這筆記錄將從時間線移除。",
   "searchYourRecords": "搜尋你的記錄...",
   "exactMatches": "精確匹配",
   "noExactMatches": "無精確匹配",
@@ -172,13 +184,13 @@
   "searchHistory": "搜尋歷史",
   "invalidLink": "連結無效",
   "unableToOpenWebPage": "無法開啟網頁",
-  "imageMemory": "[圖片記憶]",
+  "imageMemory": "[圖片回憶]",
   "tapToOpenWebPage": "點擊開啟網頁",
   "editEntry": "編輯文章",
   "entryDetails": "文章詳情",
   "noContent": "暫無內容",
   "diaryNotFound": "日記未找到",
-  "diaryNotFoundShort": "找不到該記錄",
+  "diaryNotFoundShort": "未找到該記錄",
   "aiSummary": "AI 摘要",
   "microphoneInterrupted": "麥克風中斷，錄音停止。",
   "bold": "粗體",
@@ -189,25 +201,163 @@
   "writeYourEntry": "寫下你的文章...",
   "writeYourContent": "寫下正文...",
   "microphoneStartFailed": "麥克風啟動失敗: {error}",
-  "microphoneInterruptedRecordingStopped": "麥克風中斷，錄音已停止",
-  "asrReconnectingError": "語音辨識重連中: {error}",
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "microphoneInterruptedRecordingStopped": "麥克風中斷，錄音已停止。",
+  "asrReconnectingError": "語音識別重連中: {error}",
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
   "imageInserted": "已插入圖片: {name}",
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "voiceError": "語音錯誤: {error}",
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
   "aiServiceUnavailable": "抱歉，AI 服務暫時不可用: {error}",
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
   "shareFailed": "分享失敗: {error}",
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
   "searchMatchHits": "{matchType} · {count}處",
-  "matchCount": "匹配:{count}",
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "matchCount": "匹配: {count}",
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "sourceFromNetwork": "來源: {source}",
-  "createNew": "新增",
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "createNew": "新建",
   "micStartFailed": "麥克風啟動失敗: {error}",
-  "importResultAccounts": "帳號: +{created} / 更新 {updated}",
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importResultAccounts": "帳戶: +{created} / 更新 {updated}",
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
   "importResultDiaries": "日記: +{created} / 更新 {updated}",
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
   "importResultReminders": "提醒: +{created} / 更新 {updated}",
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
   "importResultSkipped": "跳過: {count}",
-  "importResultTotal": "總變更: {count}",
-  "settingsApplied": "已套用備份中的設定項。",
-  "settingsNotApplied": "未套用備份中的設定項。",
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultTotal": "總計變更: {count}",
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsApplied": "備份中的設定已套用。",
+  "settingsNotApplied": "備份中的設定未套用。",
   "backupExported": "備份已匯出: {path}",
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
   "exportFailed": "匯出失敗: {error}",
-  "importFailed": "匯入失敗: {error}"
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importFailed": "匯入失敗: {error}",
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
 }

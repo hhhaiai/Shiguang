@@ -1,0 +1,363 @@
+{
+  "@@locale": "fa",
+  "languageName": "فارسی",
+  "languageNameEn": "Persian",
+  "appTitle": "شیگوانگ",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "settings": "تنظیمات",
+  "account": "حساب",
+  "reminders": "یادآوری‌ها",
+  "language": "زبان",
+  "appLanguage": "زبان برنامه",
+  "appearance": "ظاهر",
+  "themeMode": "حالت تم",
+  "dark": "تاریک",
+  "light": "روشن",
+  "system": "سیستم",
+  "aiService": "سرویس هوش مصنوعی",
+  "aiChatProvider": "ارائه‌دهنده چت هوش مصنوعی",
+  "chatModel": "مدل چت",
+  "localModel": "مدل محلی",
+  "localModelDefault": "مدل محلی (پیش‌فرض)",
+  "ollamaEndpoint": "نقطه پایان Ollama",
+  "ollamaModel": "مدل Ollama",
+  "openAiEndpoint": "نقطه پایان OpenAI",
+  "openAiApiKey": "کلید API OpenAI",
+  "openAiModel": "مدل OpenAI",
+  "geminiEndpoint": "نقطه پایان Gemini",
+  "geminiApiKey": "کلید API Gemini",
+  "geminiModel": "مدل Gemini",
+  "anthropicEndpoint": "نقطه پایان Anthropic",
+  "anthropicApiKey": "کلید API Anthropic",
+  "anthropicModel": "مدل Anthropic",
+  "customProtocol": "پروتکل سفارشی",
+  "protocol": "پروتکل",
+  "customEndpoint": "نقطه پایان سفارشی",
+  "customApiKey": "کلید API سفارشی",
+  "customModel": "مدل سفارشی",
+  "optionalForLocalServers": "اختیاری برای سرورهای محلی/سفارشی",
+  "speechRecognitionEngine": "موتور تشخیص گفتار",
+  "local": "محلی",
+  "endpoint": "نقطه پایان",
+  "localSpeechModel": "مدل گفتار محلی",
+  "senseVoiceOnnx": "SenseVoice ONNX (روی دستگاه)",
+  "systemSpeechRecognition": "تشخیص گفتار سیستم",
+  "systemRecognitionAndroidIos": "تشخیص سیستم (Android/iOS)",
+  "endpointRecognitionCloudWs": "تشخیص نقطه پایان (Cloud/WS)",
+  "useBuiltInRecognizer": "از تشخیص‌دهنده داخلی Android / iOS استفاده کنید (ممکن است از cloud استفاده کند)",
+  "voiceAiEndpoint": "نقطه پایان هوش مصنوعی صدا",
+  "embeddingModel": "مدل تعبیه",
+  "crossDeviceSync": "همگام‌سازی بین دستگاه‌ها",
+  "sendToOtherDevices": "ارسال به دستگاه‌های دیگر (LocalSend)",
+  "exportBackupAndSend": "پشتیبان‌گیری و ارسال از طریق صفحه اشتراک‌گذاری",
+  "importFromLocalSend": "Import از LocalSend",
+  "selectBackupJson": "انتخاب JSON پشتیبان و ادغام داده‌های محلی",
+  "autoGeneration": "تولید خودکار",
+  "autoGenerateSummary": "خلاصه خودکار تولید کن",
+  "generateAiSummaryForNewEntries": "خلاصه هوش مصنوعی برای ورودی‌های جدید تولید کن",
+  "autoGenerateEmbedding": "تعبیه خودکار تولید کن",
+  "generateVectorEmbedding": "تعبیه برداری برای جستجو تولید کن",
+  "enableNetworkSearch": "جستجوی شبکه را فعال کن",
+  "allowOnlineRetrieval": "بازیابی آنلاین برای جستجو و چت هوش مصنوعی مجاز کن (به طور پیش‌فرض خاموش)",
+  "about": "درباره",
+  "version": "نسخه {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "database": "پایگاه داده",
+  "objectBoxWithHnsw": "ObjectBox با ایندکس HNSW",
+  "logOut": "خروج",
+  "custom": "سفارشی",
+  "openAiCompatible": "سازگار با OpenAI",
+  "notSet": "تنظیم نشده",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... یا http://127.0.0.1:11434",
+  "supportsLocalLanPublic": "نقاط پایان محلی/LAN/عمومی را پشتیبانی می‌کند",
+  "shiguangLocalSendBackup": "پشتیبان Shiguang LocalSend",
+  "localBackupFromShiguang": "پشتیبان محلی از Shiguang (دریافت از طریق LocalSend)",
+  "selectBackupFileFromLocalSend": "فایل پشتیبان دریافتی از LocalSend را انتخاب کنید",
+  "failedToResolveFilePath": "مسیر فایل انتخابی قابل حل نیست",
+  "importOptions": "گزینه‌های Import",
+  "importSettingsAsWell": "تنظیمات را هم Import کنید؟\n(کلیدهای API بازنویسی نمی‌شوند)",
+  "dataOnly": "فقط داده",
+  "dataAndSettings": "داده + تنظیمات",
+  "importCompleted": "Import تکمیل شد",
+  "settingsInBackupWereApplied": "تنظیمات پشتیبان اعمال شدند.",
+  "settingsInBackupWereNotApplied": "تنظیمات پشتیبان اعمال نشدند.",
+  "ok": "تأیید",
+  "cancel": "لغو",
+  "save": "ذخیره",
+  "delete": "حذف",
+  "clear": "پاک کردن",
+  "add": "افزودن",
+  "create": "ایجاد",
+  "edit": "ویرایش",
+  "search": "جستجو",
+  "areYouSureYouWantToLogOut": "آیا واقعاً می‌خواهید خارج شوید؟",
+  "chooseLanguage": "زبان را انتخاب کنید",
+  "databaseInfo": "اطلاعات پایگاه داده",
+  "storage": "حافظه: ObjectBox",
+  "vectorIndex": "ایندکس برداری: HNSW",
+  "dimensions": "ابعاد: 384",
+  "embeddingModelBge": "مدل تعبیه: bge-small-zh-v1.5",
+  "takePhoto": "عکس بگیرید",
+  "chooseFromGallery": "از گالری انتخاب کنید",
+  "editNickname": "نام مستعار را ویرایش کنید",
+  "enterNickname": "نام مستعار را وارد کنید",
+  "pleaseEnterNickname": "لطفاً یک نام مستعار وارد کنید",
+  "nicknameAlreadyExistsOrInvalid": "نام مستعار از قبل وجود دارد یا نامعتبر است",
+  "user": "کاربر",
+  "manageScheduledReminders": "مدیریت یادآوری‌ها و آلارم‌های زمان‌بندی شده",
+  "imageFailedToLoad": "تصویر بارگیری نشد. لطفاً دوباره انتخاب کنید.",
+  "imageIsStillLoading": "تصویر هنوز در حال بارگیری است",
+  "imageAreaNotReady": "ناحیه تصویر آماده نیست. لطفاً دوباره تلاش کنید.",
+  "cropFrameNotReady": "قاب برش آماده نیست. لطفاً دوباره تلاش کنید.",
+  "invalidCropArea": "ناحیه برش نامعتبر است. لطفاً دوباره تلاش کنید.",
+  "cropFailed": "برش ناموفق بود. لطفاً دوباره تلاش کنید.",
+  "cropAvatar": "آواتار را برش دهید",
+  "chooseAgain": "دوباره انتخاب کنید",
+  "rotate90": "چرخش 90 درجه",
+  "dragFrameToMove": "قاب را برای جابجایی بکشید، برای تغییر اندازه پایین-راست را بکشید؛ برای زوم و جابجایی تصویر پیچ کنید.",
+  "pleaseFillInAllFields": "لطفاً همه فیلدها را پر کنید",
+  "pinMustBeAtLeast4Digits": "PIN باید حداقل 4 رقم باشد",
+  "pinAtLeast4Digits": "PIN باید حداقل 4 رقم باشد",
+  "invalidUsernameOrPin": "نام کاربری یا PIN نامعتبر",
+  "invalidUsernameOrPinError": "نام کاربری یا PIN نامعتبر",
+  "usernameAlreadyExists": "نام کاربری از قبل وجود دارد",
+  "captureMomentsKeepMemories": "لحظات را ثبت کنید، خاطرات را نگه دارید",
+  "username": "نام کاربری",
+  "pin": "PIN",
+  "login": "ورود",
+  "createAccount": "ایجاد حساب",
+  "dontHaveAccountCreateOne": "حساب ندارید؟ یکی ایجاد کنید",
+  "alreadyHaveAccountLogin": "از قبل حساب دارید؟ وارد شوید",
+  "pleaseEnterUsername": "لطفاً نام کاربری را وارد کنید",
+  "pinsDoNotMatch": "PIN ها مطابقت ندارند",
+  "tapToAddAvatar": "برای افزودن آواتار ضربه بزنید",
+  "yourName": "نام شما",
+  "privatePinOptional": "PIN خصوصی (اختیاری)",
+  "usedToEncryptPrivateRecords": "برای رمزگذاری سوابق خصوصی استفاده می‌شود",
+  "privatePin": "PIN خصوصی",
+  "leaveEmptyForNoEncryption": "برای بدون رمزگذاری خالی بگذارید",
+  "confirmPin": "PIN را تأیید کنید",
+  "getStarted": "شروع کنید",
+  "noReminders": "بدون یادآوری",
+  "addReminder": "یادآوری اضافه کنید",
+  "title": "عنوان",
+  "descriptionOptional": "توضیحات (اختیاری)",
+  "microphonePermissionRequired": "مجوز میکروفون لازم است",
+  "aiAssistant": "دستیار هوش مصنوعی",
+  "listening": "در حال گوش دادن...",
+  "typeAMessage": "پیام تایپ کنید...",
+  "aiChat": "چت هوش مصنوعی",
+  "startAConversation": "یک مکالمه شروع کنید",
+  "typeYourMessage": "پیام خود را تایپ کنید...",
+  "asrReconnecting": "ASR در حال اتصال مجدد...",
+  "write": "نوشتن",
+  "writeEntry": "ورودی بنویسید",
+  "noMemoriesYet": "هنوز خاطره‌ای نیست",
+  "tapPlusToCapture": "برای ثبت افکار خود + را بزنید",
+  "tapPlusToCaptureYourThoughts": "برای ثبت افکار خود + را بزنید",
+  "deleteMemory": "حذف خاطره",
+  "deleteRecord": "حذف سابقه",
+  "thisEntryWillBeRemoved": "این ورودی از جدول زمانی شما حذف می‌شود.",
+  "thisRecordWillBeRemoved": "این سابقه از جدول زمانی شما حذف می‌شود.",
+  "searchYourRecords": "سوابق خود را جستجو کنید...",
+  "exactMatches": "تطابقات دقیق",
+  "noExactMatches": "بدون تطابق دقیق",
+  "exact": "دقیق",
+  "exactMatch": "تطابق دقیق",
+  "fuzzyMatches": "تطابقات تقریبی",
+  "noFuzzyMatches": "بدون تطابق تقریبی",
+  "vectorMatch": "تطابق برداری",
+  "networkMatches": "تطابقات شبکه",
+  "noNetworkMatches": "بدون تطابق شبکه",
+  "networkSearchIsOff": "جستجوی شبکه خاموش است. در تنظیمات فعال کنید.",
+  "network": "شبکه",
+  "networkMatch": "تطابق شبکه",
+  "noSearchHistory": "بدون تاریخچه جستجو",
+  "searchHistory": "تاریخچه جستجو",
+  "invalidLink": "لینک نامعتبر",
+  "unableToOpenWebPage": "قادر به باز کردن صفحه وب نیست",
+  "imageMemory": "[خاطره تصویری]",
+  "tapToOpenWebPage": "برای باز کردن صفحه وب ضربه بزنید",
+  "editEntry": "ویرایش ورودی",
+  "entryDetails": "جزئیات ورودی",
+  "noContent": "بدون محتوا",
+  "diaryNotFound": "دفترچه یافت نشد",
+  "diaryNotFoundShort": "سابقه یافت نشد",
+  "aiSummary": "خلاصه هوش مصنوعی",
+  "microphoneInterrupted": "میکروفون قطع شد، ضبط متوقف شد.",
+  "bold": "ضخیم",
+  "italic": "کج",
+  "strikethrough": "خط‌خورده",
+  "image": "تصویر",
+  "asrUnavailableRecordingActive": "ASR در دسترس نیست. ضبط هنوز فعال است.",
+  "writeYourEntry": "ورودی خود را بنویسید...",
+  "writeYourContent": "محتوای خود را بنویسید...",
+  "microphoneStartFailed": "شروع میکروفون ناموفق بود: {error}",
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "microphoneInterruptedRecordingStopped": "میکروفون قطع شد، ضبط متوقف شد.",
+  "asrReconnectingError": "ASR در حال اتصال مجدد: {error}",
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "imageInserted": "تصویر درج شد: {name}",
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "voiceError": "خطای صدا: {error}",
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "aiServiceUnavailable": "متأسفانه سرویس هوش مصنوعی در حال حاضر در دسترس نیست: {error}",
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareFailed": "اشتراک‌گذاری ناموفق بود: {error}",
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "searchMatchHits": "{matchType} · {count} نتیجه",
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "matchCount": "تطابق: {count}",
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sourceFromNetwork": "منبع: {source}",
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "createNew": "ایجاد",
+  "micStartFailed": "شروع میکروفون ناموفق بود: {error}",
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importResultAccounts": "حساب‌ها: +{created} / به‌روز شده {updated}",
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultDiaries": "دفترچه‌ها: +{created} / به‌روز شده {updated}",
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultReminders": "یادآوری‌ها: +{created} / به‌روز شده {updated}",
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultSkipped": "رد شده: {count}",
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultTotal": "مجموع تغییرات: {count}",
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsApplied": "تنظیمات پشتیبان اعمال شدند.",
+  "settingsNotApplied": "تنظیمات پشتیبان اعمال نشدند.",
+  "backupExported": "پشتیبان صادر شد: {path}",
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "exportFailed": "صادرات ناموفق بود: {error}",
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importFailed": "Import ناموفق بود: {error}",
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
+}

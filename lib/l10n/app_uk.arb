@@ -1,0 +1,363 @@
+{
+  "@@locale": "uk",
+  "languageName": "Українська",
+  "languageNameEn": "Ukrainian",
+  "appTitle": "Shiguang",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "settings": "Налаштування",
+  "account": "Обліковий запис",
+  "reminders": "Нагадування",
+  "language": "Мова",
+  "appLanguage": "Мова додатку",
+  "appearance": "Зовнішній вигляд",
+  "themeMode": "Тема",
+  "dark": "Темна",
+  "light": "Світла",
+  "system": "Системна",
+  "aiService": "AI сервіс",
+  "aiChatProvider": "AI чат провайдер",
+  "chatModel": "Чат модель",
+  "localModel": "Локальна модель",
+  "localModelDefault": "Локальна модель (за замовчуванням)",
+  "ollamaEndpoint": "Кінцева точка Оллама",
+  "ollamaModel": "Ollama модель",
+  "openAiEndpoint": "Кінцева точка OpenAI",
+  "openAiApiKey": "OpenAI API ключ",
+  "openAiModel": "OpenAI модель",
+  "geminiEndpoint": "Кінцева точка Gemini",
+  "geminiApiKey": "Gemini API ключ",
+  "geminiModel": "Gemini модель",
+  "anthropicEndpoint": "Антропна кінцева точка",
+  "anthropicApiKey": "Anthropic API ключ",
+  "anthropicModel": "Anthropic модель",
+  "customProtocol": "Власний протокол",
+  "protocol": "Протокол",
+  "customEndpoint": "Власний Endpoint",
+  "customApiKey": "Власний API ключ",
+  "customModel": "Власна модель",
+  "optionalForLocalServers": "Опціонально для локальних/власних серверів",
+  "speechRecognitionEngine": "Рушій розпізнавання мовлення",
+  "local": "Локальний",
+  "endpoint": "Кінцева точка",
+  "localSpeechModel": "Локальна мовленнєва модель",
+  "senseVoiceOnnx": "SenseVoice ONNX (на пристрої)",
+  "systemSpeechRecognition": "Системне розпізнавання мовлення",
+  "systemRecognitionAndroidIos": "Системне розпізнавання (Android/iOS)",
+  "endpointRecognitionCloudWs": "Endpoint розпізнавання (Cloud/WS)",
+  "useBuiltInRecognizer": "Використовувати вбудований Android/iOS розпізнавач (може використовувати хмару)",
+  "voiceAiEndpoint": "Кінцева точка голосового штучного інтелекту",
+  "embeddingModel": "Embedding модель",
+  "crossDeviceSync": "Синхронізація між пристроями",
+  "sendToOtherDevices": "Надіслати на інші пристрої (LocalSend)",
+  "exportBackupAndSend": "Експортувати резервну копію та надіслати через меню поділу",
+  "importFromLocalSend": "Імпорт з LocalSend",
+  "selectBackupJson": "Вибрати JSON резервної копії та об'єднати локальні дані",
+  "autoGeneration": "Автогенерація",
+  "autoGenerateSummary": "Автогенерація підсумку",
+  "generateAiSummaryForNewEntries": "Генерувати AI підсумок для нових записів",
+  "autoGenerateEmbedding": "Автогенерація Embedding",
+  "generateVectorEmbedding": "Генерувати векторний embedding для пошуку",
+  "enableNetworkSearch": "Увімкнути мережевий пошук",
+  "allowOnlineRetrieval": "Дозволити онлайн пошук для пошуку та AI чату (за замовчуванням вимкнено)",
+  "about": "Про додаток",
+  "version": "Версія {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "database": "База даних",
+  "objectBoxWithHnsw": "ObjectBox з індексом HNSW",
+  "logOut": "Вийти",
+  "custom": "Власний",
+  "openAiCompatible": "OpenAI сумісний",
+  "notSet": "Не встановлено",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... або http://127.0.0.1:11434",
+  "supportsLocalLanPublic": "Підтримує локальні/LAN/публічні endpoints",
+  "shiguangLocalSendBackup": "Shiguang LocalSend резервна копія",
+  "localBackupFromShiguang": "Локальна резервна копія від Shiguang (отримати через LocalSend)",
+  "selectBackupFileFromLocalSend": "Вибрати файл резервної копії, отриманий від LocalSend",
+  "failedToResolveFilePath": "Не вдалося визначити шлях до вибраного файлу",
+  "importOptions": "Параметри імпорту",
+  "importSettingsAsWell": "Імпортувати також налаштування?\n(API ключі не будуть перезаписані)",
+  "dataOnly": "Тільки дані",
+  "dataAndSettings": "Дані + Налаштування",
+  "importCompleted": "Імпорт завершено",
+  "settingsInBackupWereApplied": "Налаштування з резервної копії застосовано.",
+  "settingsInBackupWereNotApplied": "Налаштування з резервної копії не застосовано.",
+  "ok": "добре",
+  "cancel": "Скасувати",
+  "save": "Зберегти",
+  "delete": "Видалити",
+  "clear": "Очистити",
+  "add": "Додати",
+  "create": "Створити",
+  "edit": "Редагувати",
+  "search": "Пошук",
+  "areYouSureYouWantToLogOut": "Ви впевнені, що хочете вийти?",
+  "chooseLanguage": "Вибрати мову",
+  "databaseInfo": "Інформація про базу даних",
+  "storage": "Сховище: ObjectBox",
+  "vectorIndex": "Векторний індекс: HNSW",
+  "dimensions": "Виміри: 384",
+  "embeddingModelBge": "Embedding модель: bge-small-zh-v1.5",
+  "takePhoto": "Зробити фото",
+  "chooseFromGallery": "Вибрати з галереї",
+  "editNickname": "Змінити псевдонім",
+  "enterNickname": "Ввести псевдонім",
+  "pleaseEnterNickname": "Будь ласка, введіть псевдонім",
+  "nicknameAlreadyExistsOrInvalid": "Псевдонім вже існує або є недійсним",
+  "user": "Користувач",
+  "manageScheduledReminders": "Керувати запланованими нагадуваннями та будильниками",
+  "imageFailedToLoad": "Зображення не завантажилося. Будь ласка, виберіть ще раз.",
+  "imageIsStillLoading": "Зображення все ще завантажується",
+  "imageAreaNotReady": "Область зображення не готова. Будь ласка, спробуйте ще раз.",
+  "cropFrameNotReady": "Рамка обрізання не готова. Будь ласка, спробуйте ще раз.",
+  "invalidCropArea": "Необхідна область обрізання. Будь ласка, спробуйте ще раз.",
+  "cropFailed": "Обрізання не вдалося. Будь ласка, спробуйте ще раз.",
+  "cropAvatar": "Обрізати аватар",
+  "chooseAgain": "Вибрати ще раз",
+  "rotate90": "Повернути на 90°",
+  "dragFrameToMove": "Перетягніть рамку для переміщення, перетягніть нижній правий кут для зміни розміру; щипніть, щоб масштабувати та перемістити зображення.",
+  "pleaseFillInAllFields": "Будь ласка, заповніть усі поля",
+  "pinMustBeAtLeast4Digits": "PIN повинен містити принаймні 4 цифри",
+  "pinAtLeast4Digits": "PIN повинен містити принаймні 4 цифри",
+  "invalidUsernameOrPin": "Невірне ім'я користувача або PIN",
+  "invalidUsernameOrPinError": "Невірне ім'я користувача або PIN",
+  "usernameAlreadyExists": "Ім'я користувача вже існує",
+  "captureMomentsKeepMemories": "Зафіксуйте моменти, збережіть спогади",
+  "username": "Ім'я користувача",
+  "pin": "PIN",
+  "login": "Увійти",
+  "createAccount": "Створити обліковий запис",
+  "dontHaveAccountCreateOne": "Немає облікового запису? Створіть один",
+  "alreadyHaveAccountLogin": "Вже є обліковий запис? Увійти",
+  "pleaseEnterUsername": "Будь ласка, введіть ім'я користувача",
+  "pinsDoNotMatch": "PIN-коди не збігаються",
+  "tapToAddAvatar": "Натисніть, щоб додати аватар",
+  "yourName": "Ваше ім'я",
+  "privatePinOptional": "Приватний PIN (необов'язково)",
+  "usedToEncryptPrivateRecords": "Використовується для шифрування приватних записів",
+  "privatePin": "Приватний PIN",
+  "leaveEmptyForNoEncryption": "Залиште порожнім для відсутності шифрування",
+  "confirmPin": "Підтвердити PIN",
+  "getStarted": "Почати",
+  "noReminders": "Немає нагадувань",
+  "addReminder": "Додати нагадування",
+  "title": "Заголовок",
+  "descriptionOptional": "Опис (необов'язково)",
+  "microphonePermissionRequired": "Потрібен дозвіл на використання мікрофону",
+  "aiAssistant": "AI асистент",
+  "listening": "Слухаю...",
+  "typeAMessage": "Введіть повідомлення...",
+  "aiChat": "AI чат",
+  "startAConversation": "Розпочати розмову",
+  "typeYourMessage": "Введіть ваше повідомлення...",
+  "asrReconnecting": "ASR перепідключення...",
+  "write": "Писати",
+  "writeEntry": "Написати запис",
+  "noMemoriesYet": "Ще немає спогадів",
+  "tapPlusToCapture": "Натисніть +, щоб зафіксувати ваші думки",
+  "tapPlusToCaptureYourThoughts": "Натисніть +, щоб зафіксувати ваші думки",
+  "deleteMemory": "Видалити спогад",
+  "deleteRecord": "Видалити запис",
+  "thisEntryWillBeRemoved": "Цей запис буде видалено з вашої стрічки.",
+  "thisRecordWillBeRemoved": "Цей запис буде видалено з вашої стрічки.",
+  "searchYourRecords": "Шукати у ваших записах...",
+  "exactMatches": "Точні збіги",
+  "noExactMatches": "Немає точних збігів",
+  "exact": "Точний",
+  "exactMatch": "Точний збіг",
+  "fuzzyMatches": "Приблизні збіги",
+  "noFuzzyMatches": "Немає приблизних збігів",
+  "vectorMatch": "Векторний збіг",
+  "networkMatches": "Мережеві збіги",
+  "noNetworkMatches": "Немає мережевих збігів",
+  "networkSearchIsOff": "Мережевий пошук вимкнено. Увімкніть його в Налаштуваннях.",
+  "network": "Мережа",
+  "networkMatch": "Мережевий збіг",
+  "noSearchHistory": "Немає історії пошуку",
+  "searchHistory": "Історія пошуку",
+  "invalidLink": "Недійсне посилання",
+  "unableToOpenWebPage": "Не вдалося відкрити веб-сторінку",
+  "imageMemory": "[Зображення пам'яті]",
+  "tapToOpenWebPage": "Натисніть, щоб відкрити веб-сторінку",
+  "editEntry": "Редагувати запис",
+  "entryDetails": "Деталі запису",
+  "noContent": "Немає вмісту",
+  "diaryNotFound": "Щоденник не знайдено",
+  "diaryNotFoundShort": "Запис не знайдено",
+  "aiSummary": "AI підсумок",
+  "microphoneInterrupted": "Мікрофон перервано, запис зупинено.",
+  "bold": "Жирний",
+  "italic": "Курсив",
+  "strikethrough": "Закреслений",
+  "image": "Зображення",
+  "asrUnavailableRecordingActive": "ASR недоступний. Запис все ще триває.",
+  "writeYourEntry": "Напишіть ваш запис...",
+  "writeYourContent": "Напишіть ваш вміст...",
+  "microphoneStartFailed": "Не вдалося запустити мікрофон: {error}",
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "microphoneInterruptedRecordingStopped": "Мікрофон перервано, запис зупинено.",
+  "asrReconnectingError": "ASR перепідключення: {error}",
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "imageInserted": "Зображення вставлено: {name}",
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "voiceError": "Помилка голосу: {error}",
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "aiServiceUnavailable": "Вибачте, AI сервіс наразі недоступний: {error}",
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareFailed": "Не вдалося поділитися: {error}",
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "searchMatchHits": "{matchType} · {count} результатів",
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "matchCount": "Збіг: {count}",
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sourceFromNetwork": "Джерело: {source}",
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "createNew": "Створити",
+  "micStartFailed": "Не вдалося запустити мікрофон: {error}",
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importResultAccounts": "Облікові записи: +{created} / оновлено {updated}",
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultDiaries": "Щоденники: +{created} / оновлено {updated}",
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultReminders": "Нагадування: +{created} / оновлено {updated}",
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultSkipped": "Пропущено: {count}",
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultTotal": "Всього змінено: {count}",
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsApplied": "Налаштування з резервної копії застосовано.",
+  "settingsNotApplied": "Налаштування з резервної копії не застосовано.",
+  "backupExported": "Резервна копія експортована: {path}",
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "exportFailed": "Експорт не вдався: {error}",
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importFailed": "Імпорт не вдався: {error}",
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
+}

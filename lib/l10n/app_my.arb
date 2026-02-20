@@ -1,0 +1,363 @@
+{
+  "@@locale": "my",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "မြန်မာ",
+  "languageNameEn": "Burmese",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "ဆက်တင်များ",
+  "account": "အကောင့်",
+  "reminders": "သတိပေးချက်များ",
+  "language": "ဘာသာစကား",
+  "appLanguage": "အက်ပ်ဘာသာစကား",
+  "appearance": "အသွင်အပြင်",
+  "themeMode": "အပြင်အဆင် မုဒ်",
+  "dark": "အမှောင်",
+  "light": "အလင်း",
+  "system": "စနစ်",
+  "aiService": "AI ဝန်ဆောင်မှု",
+  "aiChatProvider": "AI Chat ပံ့ပိုးပေးသူ",
+  "chatModel": "စကားပြောပုံစံ",
+  "localModel": "Local Model",
+  "localModelDefault": "Local Model (မူရင်း)",
+  "ollamaEndpoint": "Ollama အဆုံးမှတ်",
+  "ollamaModel": "Ollama မော်ဒယ်",
+  "openAiEndpoint": "OpenAI အဆုံးမှတ်",
+  "openAiApiKey": "OpenAI API သော့",
+  "openAiModel": "OpenAI မော်ဒယ်",
+  "geminiEndpoint": "Gemini Endpoint",
+  "geminiApiKey": "Gemini API သော့",
+  "geminiModel": "Gemini မော်ဒယ်များ",
+  "anthropicEndpoint": "မနုဿအဆုံးမှတ်",
+  "anthropicApiKey": "မနုဿ API သော့",
+  "anthropicModel": "မနုဿစံပြ",
+  "customProtocol": "စိတ်ကြိုက်ပရိုတိုကော",
+  "protocol": "ပရိုတိုကော",
+  "customEndpoint": "စိတ်ကြိုက်အဆုံးမှတ်",
+  "customApiKey": "စိတ်ကြိုက် API သော့",
+  "customModel": "စိတ်ကြိုက်ပုံစံ",
+  "optionalForLocalServers": "ဒေသတွင်း/စိတ်ကြိုက်ဆာဗာများအတွက် ရွေးချယ်နိုင်သည်။",
+  "speechRecognitionEngine": "မိန့်ခွန်းအသိအမှတ်ပြုအင်ဂျင်",
+  "local": "ပြည်တွင်း",
+  "endpoint": "အဆုံးမှတ်",
+  "localSpeechModel": "Local Speech Model",
+  "senseVoiceOnnx": "SenseVoice ONNX (စက်ပေါ်တွင်)",
+  "systemSpeechRecognition": "စနစ် စကားပြော အသိအမှတ်ပြုမှု",
+  "systemRecognitionAndroidIos": "စနစ်အသိအမှတ်ပြုမှု (Android/iOS)",
+  "endpointRecognitionCloudWs": "အဆုံးမှတ် အသိအမှတ်ပြုမှု (Cloud/WS)",
+  "useBuiltInRecognizer": "built-in Android / iOS အသိအမှတ်ပြုသူကိုသုံးပါ (cloud ကိုသုံးနိုင်သည်)",
+  "voiceAiEndpoint": "Voice AI Endpoint",
+  "embeddingModel": "တသားတည်းပုံစံ",
+  "crossDeviceSync": "Cross-Device Sync",
+  "sendToOtherDevices": "အခြားစက်များသို့ ပို့ပါ (LocalSend)",
+  "exportBackupAndSend": "အရန်သိမ်းခြင်းကို ထုတ်ယူပြီး မျှဝေစာရွက်မှတစ်ဆင့် ပေးပို့ပါ။",
+  "importFromLocalSend": "LocalSend မှ တင်သွင်းပါ။",
+  "selectBackupJson": "အရန် JSON ကို ရွေးပြီး ဒေသတွင်းဒေတာကို ပေါင်းစည်းပါ။",
+  "autoGeneration": "အော်တိုမျိုးဆက်",
+  "autoGenerateSummary": "အနှစ်ချုပ်ကို အလိုအလျောက်ထုတ်ပေးသည်။",
+  "generateAiSummaryForNewEntries": "အသစ်ထည့်သွင်းမှုများအတွက် AI အနှစ်ချုပ်ကို ဖန်တီးပါ။",
+  "autoGenerateEmbedding": "အလိုအလျောက် တသားတည်း ထုတ်လုပ်သည်။",
+  "generateVectorEmbedding": "ရှာဖွေမှုအတွက် ထည့်သွင်းထားသော vector ကို ဖန်တီးပါ။",
+  "enableNetworkSearch": "ကွန်ရက်ရှာဖွေမှုကို ဖွင့်ပါ။",
+  "allowOnlineRetrieval": "ရှာဖွေမှုနှင့် AI ချတ်အတွက် အွန်လိုင်းပြန်လည်ရယူခွင့်ပြုပါ (မူလအားဖြင့် ပိတ်သည်)",
+  "about": "အကြောင်း",
+  "version": "ဗားရှင်း {version}",
+  "database": "ဒေတာဘေ့စ်",
+  "objectBoxWithHnsw": "HNSW အညွှန်းပါရှိသော ObjectBox",
+  "logOut": "Log Out လုပ်ပါ။",
+  "custom": "စိတ်ကြိုက်",
+  "openAiCompatible": "OpenAI နှင့်လိုက်ဖက်သည်။",
+  "notSet": "မသတ်မှတ်ထားဘူး။",
+  "supportsLocalLanPublic": "ဒေသတွင်း/LAN/အများပြည်သူဆိုင်ရာ အဆုံးမှတ်များကို ပံ့ပိုးပေးသည်။",
+  "shiguangLocalSendBackup": "Shiguang LocalSend Backup",
+  "localBackupFromShiguang": "Shiguang မှ ဒေသန္တရ အရန်ကူးယူခြင်း (LocalSend မှတဆင့် လက်ခံသည်)",
+  "selectBackupFileFromLocalSend": "LocalSend မှရရှိသော အရန်ဖိုင်ကို ရွေးပါ။",
+  "failedToResolveFilePath": "ရွေးချယ်ထားသော ဖိုင်လမ်းကြောင်းကို ဖြေရှင်းရန် မအောင်မြင်ပါ။",
+  "importOptions": "ရွေးချယ်စရာများကို တင်သွင်းပါ။",
+  "importSettingsAsWell": "ဆက်တင်များကိုလည်း ထည့်သွင်းမလား။\n(API သော့များကို ထပ်ရေးမည်မဟုတ်ပါ)",
+  "dataOnly": "ဒေတာသာ",
+  "dataAndSettings": "ဒေတာ + ဆက်တင်များ",
+  "importCompleted": "တင်သွင်းမှု ပြီးပါပြီ။",
+  "settingsInBackupWereApplied": "အရန်သိမ်းခြင်းရှိ ဆက်တင်များကို အသုံးပြုထားသည်။",
+  "settingsInBackupWereNotApplied": "အရန်သိမ်းခြင်းရှိ ဆက်တင်များကို အသုံးမပြုခဲ့ပါ။",
+  "ok": "အိုကေ",
+  "cancel": "မလုပ်တော့",
+  "save": "သိမ်းဆည်းပါ။",
+  "delete": "ဖျက်ပါ။",
+  "clear": "ရှင်းပါတယ်။",
+  "add": "ထည့်ပါ။",
+  "create": "ဖန်တီးပါ။",
+  "edit": "တည်းဖြတ်ပါ။",
+  "search": "ရှာရန်",
+  "areYouSureYouWantToLogOut": "ထွက်လိုသည်မှာ သေချာပါသလား။",
+  "chooseLanguage": "ဘာသာစကားကို ရွေးပါ။",
+  "databaseInfo": "ဒေတာဘေ့စ်အချက်အလက်",
+  "storage": "သိုလှောင်မှု- ObjectBox",
+  "vectorIndex": "Vector Index- HNSW",
+  "dimensions": "အတိုင်းအတာ ၃၈၄",
+  "embeddingModelBge": "ထည့်သွင်းခြင်း မော်ဒယ်- bge-small-zh-v1.5",
+  "takePhoto": "ဓာတ်ပုံရိုက်ပါ။",
+  "chooseFromGallery": "Gallery မှရွေးချယ်ပါ။",
+  "editNickname": "အမည်ပြောင်ကို တည်းဖြတ်ပါ။",
+  "enterNickname": "အမည်ပြောင်ထည့်ပါ။",
+  "pleaseEnterNickname": "ကျေးဇူးပြု၍ အမည်ဝှက်တစ်ခု ထည့်ပါ။",
+  "nicknameAlreadyExistsOrInvalid": "အမည်ပြောင်သည် ရှိနှင့်ပြီးဖြစ်သည် သို့မဟုတ် မမှန်ကန်ပါ။",
+  "user": "အသုံးပြုသူ",
+  "manageScheduledReminders": "စီစဉ်ထားသော သတိပေးချက်များနှင့် နှိုးစက်များကို စီမံပါ။",
+  "imageFailedToLoad": "ပုံအား တင်၍မရပါ။ ထပ်မံရွေးချယ်ပါ။",
+  "imageIsStillLoading": "ပုံသည် တင်နေဆဲဖြစ်သည်။",
+  "imageAreaNotReady": "ပုံဧရိယာ အဆင်သင့်မဖြစ်သေးပါ။ ထပ်စမ်းကြည့်ပါ။",
+  "cropFrameNotReady": "သီးနှံဘောင်အဆင်သင့်မဖြစ်သေးပါ။ ထပ်စမ်းကြည့်ပါ။",
+  "invalidCropArea": "သီးနှံဧရိယာ မမှန်ကန်ပါ။ ထပ်စမ်းကြည့်ပါ။",
+  "cropFailed": "ဖြတ်တောက်မှု မအောင်မြင်ပါ။ ထပ်စမ်းကြည့်ပါ။",
+  "cropAvatar": "Avatar ကိုဖြတ်ပါ။",
+  "chooseAgain": "ထပ်မံရွေးချယ်ပါ။",
+  "rotate90": "90° လှည့်ပါ။",
+  "dragFrameToMove": "ရွှေ့ရန်ဘောင်ကို ဖိဆွဲပါ၊ အရွယ်အစားပြောင်းရန် အောက်ခြေ-ညာဘက်ကို ဖိဆွဲပါ။ ဇူးမ်ချဲ့ပြီး ပုံကို ရွှေ့ရန် လိမ်ပါ။",
+  "pleaseFillInAllFields": "ကွက်လပ်အားလုံးကို ဖြည့်ပါ။",
+  "pinMustBeAtLeast4Digits": "ပင်နံပါတ်သည် အနည်းဆုံး ဂဏန်း ၄ လုံး ဖြစ်ရမည်။",
+  "pinAtLeast4Digits": "ပင်နံပါတ်သည် အနည်းဆုံး ဂဏန်း ၄ လုံး ဖြစ်ရမည်။",
+  "invalidUsernameOrPin": "အသုံးပြုသူအမည် သို့မဟုတ် ပင်နံပါတ် မမှန်ကန်ပါ။",
+  "invalidUsernameOrPinError": "အသုံးပြုသူအမည် သို့မဟုတ် ပင်နံပါတ် မမှန်ကန်ပါ။",
+  "usernameAlreadyExists": "အသုံးပြုသူအမည် ရှိနှင့်ပြီးဖြစ်သည်။",
+  "captureMomentsKeepMemories": "အခိုက်အတန့်တွေကို ဖမ်းယူ၊ အမှတ်တရတွေ သိမ်းထားပါ။",
+  "username": "အသုံးပြုသူအမည်",
+  "pin": "ပင်နံပါတ်",
+  "login": "လော့ဂ်အင်",
+  "createAccount": "အကောင့်ပြုလုပ်ပါ",
+  "dontHaveAccountCreateOne": "အကောင့်မရှိဘူးလား။ တစ်ခုဖန်တီးပါ။",
+  "alreadyHaveAccountLogin": "အကောင့်ရှိပြီးသားလား။ လော့ဂ်အင်",
+  "pleaseEnterUsername": "အသုံးပြုသူအမည်ကို ထည့်သွင်းပါ။",
+  "pinsDoNotMatch": "ပင်နံပါတ်များသည် မကိုက်ညီပါ။",
+  "tapToAddAvatar": "ကိုယ်ပွားထည့်ရန် တို့ပါ။",
+  "yourName": "သင့်နာမည်",
+  "privatePinOptional": "ကိုယ်ပိုင် PIN (ချန်လှပ်ထားနိုင်သည်)",
+  "usedToEncryptPrivateRecords": "ကိုယ်ရေးကိုယ်တာမှတ်တမ်းများကို စာဝှက်ရန်အသုံးပြုသည်။",
+  "privatePin": "သီးသန့် PIN",
+  "leaveEmptyForNoEncryption": "ကုဒ်ဝှက်ခြင်းမပြုရန် ဗလာချန်ထားပါ။",
+  "confirmPin": "ပင်နံပါတ်ကို အတည်ပြုပါ။",
+  "getStarted": "စတင်လိုက်ပါ။",
+  "noReminders": "သတိပေးချက်များမရှိပါ။",
+  "addReminder": "သတိပေးချက်ထည့်ပါ။",
+  "title": "ခေါင်းစဉ်",
+  "descriptionOptional": "ဖော်ပြချက် (ချန်လှပ်ထားနိုင်သည်)",
+  "microphonePermissionRequired": "မိုက်ခရိုဖုန်း ခွင့်ပြုချက် လိုအပ်သည်။",
+  "aiAssistant": "AI လက်ထောက်",
+  "listening": "နားထောင်နေသည်...",
+  "typeAMessage": "မက်ဆေ့ခ်ျရိုက်ပါ...",
+  "aiChat": "AI Chat",
+  "startAConversation": "စကားဝိုင်းတစ်ခု စတင်ပါ။",
+  "typeYourMessage": "သင့်မက်ဆေ့ခ်ျကို ရိုက်ထည့်ပါ...",
+  "asrReconnecting": "ASR ပြန်လည်ချိတ်ဆက်နေသည်...",
+  "write": "ရေးပါ။",
+  "writeEntry": "ဝင်ခွင့်ရေးပါ။",
+  "noMemoriesYet": "အမှတ်တရတွေ မရှိသေးပါဘူး။",
+  "tapPlusToCapture": "သင့်အတွေးများကိုဖမ်းယူရန် + ကိုနှိပ်ပါ။",
+  "tapPlusToCaptureYourThoughts": "သင့်အတွေးများကိုဖမ်းယူရန် + ကိုနှိပ်ပါ။",
+  "deleteMemory": "Memory ကိုဖျက်ပါ။",
+  "deleteRecord": "မှတ်တမ်းကိုဖျက်ပါ။",
+  "thisEntryWillBeRemoved": "ဤထည့်သွင်းမှုကို သင့်အချိန်စာရင်းမှ ဖယ်ရှားပါမည်။",
+  "thisRecordWillBeRemoved": "ဤမှတ်တမ်းကို သင်၏ timeline မှ ဖယ်ရှားပါမည်။",
+  "searchYourRecords": "သင့်မှတ်တမ်းများကို ရှာဖွေပါ...",
+  "exactMatches": "အတိအကျကိုက်ညီမှုများ",
+  "noExactMatches": "အတိအကျကိုက်ညီမှုမရှိပါ။",
+  "exact": "အတိအကျ",
+  "exactMatch": "ပွဲစဉ်အတိအကျ",
+  "fuzzyMatches": "မပီမသ ကိုက်ညီမှုများ",
+  "noFuzzyMatches": "အမိုက်စား တိုက်ဆိုင်မှုများ မရှိပါ။",
+  "vectorMatch": "Vector Match",
+  "networkMatches": "ကွန်ရက်ပွဲစဉ်များ",
+  "noNetworkMatches": "ကွန်ရက် ကိုက်ညီမှုမရှိပါ။",
+  "networkSearchIsOff": "ကွန်ရက်ရှာဖွေမှုကို ပိတ်ထားသည်။ ၎င်းကို ဆက်တင်များတွင် ဖွင့်ပါ။",
+  "network": "ကွန်ရက်",
+  "networkMatch": "ကွန်ရက်ချိတ်ဆက်မှု",
+  "noSearchHistory": "ရှာဖွေမှုမှတ်တမ်းမရှိပါ။",
+  "searchHistory": "ရှာဖွေမှုမှတ်တမ်း",
+  "invalidLink": "မမှန်ကန်သောလင့်ခ်",
+  "unableToOpenWebPage": "ဝဘ်စာမျက်နှာကို ဖွင့်၍မရပါ။",
+  "imageMemory": "[ပုံရိပ်မှတ်ဉာဏ်]",
+  "tapToOpenWebPage": "ဝဘ်စာမျက်နှာကိုဖွင့်ရန် တို့ပါ။",
+  "editEntry": "ထည့်သွင်းမှုကို တည်းဖြတ်ပါ။",
+  "entryDetails": "ဝင်ခွင့်အသေးစိတ်",
+  "noContent": "အကြောင်းအရာမရှိပါ။",
+  "diaryNotFound": "ဒိုင်ယာရီ ရှာမတွေ့ပါ။",
+  "diaryNotFoundShort": "မှတ်တမ်းမတွေ့ပါ။",
+  "aiSummary": "AI အကျဉ်းချုပ်",
+  "microphoneInterrupted": "မိုက်ခရိုဖုန်း ပြတ်တောက်ပြီး အသံသွင်းမှု ရပ်သွားသည်။",
+  "bold": "ရဲရင့်သည်။",
+  "italic": "စာလုံးစောင်း",
+  "strikethrough": "ထိုးနှက်ချက်",
+  "image": "ပုံ",
+  "asrUnavailableRecordingActive": "ASR မရနိုင်ပါ။ ရိုက်ကူးနေဆဲဖြစ်သည်။",
+  "writeYourEntry": "ဝင်ခွင့်ရေးပါ...",
+  "writeYourContent": "သင့်အကြောင်းအရာကိုရေးပါ...",
+  "microphoneStartFailed": "မိုက်ခရိုဖုန်းကို စတင်ရန် မအောင်မြင်ပါ- {error}",
+  "microphoneInterruptedRecordingStopped": "မိုက်ခရိုဖုန်း ပြတ်တောက်ပြီး အသံသွင်းမှု ရပ်သွားသည်။",
+  "asrReconnectingError": "ASR ပြန်လည်ချိတ်ဆက်နေသည်- {error}",
+  "imageInserted": "ပုံထည့်သွင်းထားသည်- {name}",
+  "voiceError": "အသံအမှား- {error}",
+  "aiServiceUnavailable": "ဝမ်းနည်းပါသည်၊ AI ဝန်ဆောင်မှုကို လောလောဆယ် မရရှိနိုင်ပါ- {error}",
+  "shareFailed": "မျှဝေရန် မအောင်မြင်ပါ- {error}",
+  "searchMatchHits": "{matchType} · {count} hits",
+  "matchCount": "ကိုက်ညီမှု- {count}",
+  "sourceFromNetwork": "အရင်းအမြစ်- {source}",
+  "createNew": "ဖန်တီးပါ။",
+  "micStartFailed": "မိုက်ကို စတင်ခြင်း မအောင်မြင်ပါ- {error}",
+  "importResultAccounts": "အကောင့်များ- +{created} / အပ်ဒိတ်လုပ်ထားသော {updated}",
+  "importResultDiaries": "ဒိုင်ယာရီများ- +{created} / မွမ်းမံထားသော {updated}",
+  "importResultReminders": "သတိပေးချက်များ- +{created} / အပ်ဒိတ်လုပ်ထားသော {updated}",
+  "importResultSkipped": "ကျော်သွားသည်- {count}",
+  "importResultTotal": "စုစုပေါင်း ပြောင်းလဲခဲ့သည်- {count}",
+  "settingsApplied": "အရန်သိမ်းခြင်းရှိ ဆက်တင်များကို အသုံးပြုထားသည်။",
+  "settingsNotApplied": "အရန်သိမ်းခြင်းရှိ ဆက်တင်များကို အသုံးမပြုခဲ့ပါ။",
+  "backupExported": "မိတ္တူကူးယူထားသည်- {path}",
+  "exportFailed": "ထုတ်ယူမှု မအောင်မြင်ပါ- {error}",
+  "importFailed": "တင်သွင်းမှု မအောင်မြင်ပါ- {error}"
+}

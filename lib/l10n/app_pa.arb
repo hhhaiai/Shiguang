@@ -1,0 +1,363 @@
+{
+  "@@locale": "pa",
+  "languageName": "ਪੰਜਾਬੀ",
+  "languageNameEn": "Punjabi",
+  "appTitle": "Shiguang",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "settings": "ਸੈਟਿੰਗਾਂ",
+  "account": "ਖਾਤਾ",
+  "reminders": "ਰੀਮਾਈਂਡਰ",
+  "language": "ਭਾਸ਼ਾ",
+  "appLanguage": "ਐਪ ਭਾਸ਼ਾ",
+  "appearance": "ਦਿੱਖ",
+  "themeMode": "ਥੀਮ ਮੋਡ",
+  "dark": "ਡਾਰਕ",
+  "light": "ਲਾਈਟ",
+  "system": "ਸਿਸਟਮ",
+  "aiService": "AI ਸੇਵਾ",
+  "aiChatProvider": "AI ਚੈਟ ਪ੍ਰੋਵਾਈਡਰ",
+  "chatModel": "ਚੈਟ ਮਾਡਲ",
+  "localModel": "ਲੋਕਲ ਮਾਡਲ",
+  "localModelDefault": "ਲੋਕਲ ਮਾਡਲ (ਡਿਫਾਲਟ)",
+  "ollamaEndpoint": "Ollama ਐਂਡਪੁਆਂਟ",
+  "ollamaModel": "Ollama ਮਾਡਲ",
+  "openAiEndpoint": "OpenAI ਐਂਡਪੁਆਂਟ",
+  "openAiApiKey": "OpenAI API ਕੁੰਜੀ",
+  "openAiModel": "OpenAI ਮਾਡਲ",
+  "geminiEndpoint": "Gemini ਐਂਡਪੁਆਂਟ",
+  "geminiApiKey": "Gemini API ਕੁੰਜੀ",
+  "geminiModel": "Gemini ਮਾਡਲ",
+  "anthropicEndpoint": "Anthropic ਐਂਡਪੁਆਂਟ",
+  "anthropicApiKey": "Anthropic API ਕੁੰਜੀ",
+  "anthropicModel": "Anthropic ਮਾਡਲ",
+  "customProtocol": "ਕਸਟਮ ਪ੍ਰੋਟੋਕੌਲ",
+  "protocol": "ਪ੍ਰੋਟੋਕੌਲ",
+  "customEndpoint": "ਕਸਟਮ ਐਂਡਪੁਆਂਟ",
+  "customApiKey": "ਕਸਟਮ API ਕੁੰਜੀ",
+  "customModel": "ਕਸਟਮ ਮਾਡਲ",
+  "optionalForLocalServers": "ਲੋਕਲ/ਕਸਟਮ ਸਰਵਰਾਂ ਲਈ ਵਿਕਲਪਿਕ",
+  "speechRecognitionEngine": "ਸਪੀਚ ਰਿਕਗਨਿਸ਼ਨ ਇੰਜਿਨ",
+  "local": "ਲੋਕਲ",
+  "endpoint": "ਐਂਡਪੁਆਂਟ",
+  "localSpeechModel": "ਲੋਕਲ ਸਪੀਚ ਮਾਡਲ",
+  "senseVoiceOnnx": "SenseVoice ONNX (ਡਿਵਾਈਸ ਤੇ)",
+  "systemSpeechRecognition": "ਸਿਸਟਮ ਸਪੀਚ ਰਿਕਗਨਿਸ਼ਨ",
+  "systemRecognitionAndroidIos": "ਸਿਸਟਮ ਰਿਕਗਨਿਸ਼ਨ (Android/iOS)",
+  "endpointRecognitionCloudWs": "ਐਂਡਪੁਆਂਟ ਰਿਕਗਨਿਸ਼ਨ (Cloud/WS)",
+  "useBuiltInRecognizer": "ਬਿਲਟ-ਇਨ Android / iOS ਰਿਕਗਨਾਈਜ਼ਰ ਦੀ ਵਰਤੋਂ ਕਰੋ (ਕਲਾਂਡ ਦੀ ਵਰਤੋਂ ਕਰ ਸਕਦਾ ਹੈ)",
+  "voiceAiEndpoint": "ਵੌਇਸ AI ਐਂਡਪੁਆਂਟ",
+  "embeddingModel": "ਐਂਬੈਡਿੰਗ ਮਾਡਲ",
+  "crossDeviceSync": "ਕ੍ਰਾਸ-ਡਿਵਾਈਸ ਸਿੰਕ",
+  "sendToOtherDevices": "ਹੋਰ ਡਿਵਾਈਸਾਂ ਨੂੰ ਭੇਜੋ (LocalSend)",
+  "exportBackupAndSend": "ਬੈਕਅੱਪ ਐਕਸਪੋਰਟ ਕਰੋ ਅਤੇ ਸੇਰ ਸ਼ੀਟ ਰਾਹੀਂ ਭੇਜੋ",
+  "importFromLocalSend": "LocalSend ਤੋਂ ਇੰਪੋਰਟ ਕਰੋ",
+  "selectBackupJson": "ਬੈਕਅੱਪ JSON ਚੁਣੋ ਅਤੇ ਲੋਕਲ ਡਾਟਾ ਮਰਜ ਕਰੋ",
+  "autoGeneration": "ਆਟੋ ਜਨਰੇਸ਼ਨ",
+  "autoGenerateSummary": "ਆਟੋ ਸਾਰਾਂਸ਼ ਬਣਾਓ",
+  "generateAiSummaryForNewEntries": "ਨਵੀਂ ਐਂਟਰੀਆਂ ਲਈ AI ਸਾਰਾਂਸ਼ ਬਣਾਓ",
+  "autoGenerateEmbedding": "ਆਟੋ ਐਂਬੈਡਿੰਗ ਬਣਾਓ",
+  "generateVectorEmbedding": "ਖੋਜ ਲਈ ਵੈਕਟਰ ਐਂਬੈਡਿੰਗ ਬਣਾਓ",
+  "enableNetworkSearch": "ਨੈੱਟਵਰਕ ਖੋਜ ਨੂੰ ਸਮਰੱਥ ਬਣਾਓ",
+  "allowOnlineRetrieval": "ਖੋਜ ਅਤੇ AI ਚੈਟ ਲਈ ਆਨਲਾਈਨ ਮੁੜ-ਪ੍ਰਾਪਤ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿਓ (ਡਿਫਾਲਟ ਆਫ)",
+  "about": "ਬਾਰੇ",
+  "version": "ਵਰਜ਼ਨ {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "database": "ਡੇਟਾਬੇਸ",
+  "objectBoxWithHnsw": "HNSW ਇੰਡੈਕਸ ਨਾਲ ObjectBox",
+  "logOut": "ਲਾਗ ਆਉਟ",
+  "custom": "ਕਸਟਮ",
+  "openAiCompatible": "OpenAI ਅਨੁਕੂਲ",
+  "notSet": "ਸੈਟ ਨਹੀਂ",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... ਜਾਂ http://127.0.0.1:11434",
+  "supportsLocalLanPublic": "ਲੋਕਲ/LAN/ਪਬਲਿਕ ਐਂਡਪੁਆਂਟਾਂ ਨੂੰ ਸਮਰਥਨ ਦਿੰਦਾ ਹੈ",
+  "shiguangLocalSendBackup": "Shiguang LocalSend ਬੈਕਅੱਪ",
+  "localBackupFromShiguang": "Shiguang ਤੋਂ ਲੋਕਲ ਬੈਕਅੱਪ (LocalSend ਰਾਹੀਂ ਪ੍ਰਾਪਤ ਕਰੋ)",
+  "selectBackupFileFromLocalSend": "LocalSend ਤੋਂ ਪ੍ਰਾਪਤ ਬੈਕਅੱਪ ਫਾਈਲ ਚੁਣੋ",
+  "failedToResolveFilePath": "ਚੁਣੀ ਗਈ ਫਾਈਲ ਪਾਥ ਨੂੰ ਹੱਲ ਕਰਨ ਵਿੱਚ ਅਸਫਲ",
+  "importOptions": "ਇੰਪੋਰਟ ਵਿਕਲਪ",
+  "importSettingsAsWell": "ਸੈਟਿੰਗਾਂ ਨੂੰ ਵੀ ਇੰਪੋਰਟ ਕਰਨਾ ਹੈ?\n(API ਕੁੰਜੀਆਂ ਓਵਰਰਾਈਟ ਨਹੀਂ ਕੀਤੀਆਂ ਜਾਣਗੀਆਂ)",
+  "dataOnly": "ਸਿਰਫ਼ ਡਾਟਾ",
+  "dataAndSettings": "ਡਾਟਾ + ਸੈਟਿੰਗਾਂ",
+  "importCompleted": "ਇੰਪੋਰਟ ਪੂਰਾ",
+  "settingsInBackupWereApplied": "ਬੈਕਅੱਪ ਵਿੱਚ ਸੈਟਿੰਗਾਂ ਲਾਗੂ ਕੀਤੀਆਂ ਗਈਆਂ.",
+  "settingsInBackupWereNotApplied": "ਬੈਕਅੱਪ ਵਿੱਚ ਸੈਟਿੰਗਾਂ ਲਾਗੂ ਨਹੀਂ ਕੀਤੀਆਂ.",
+  "ok": "ਠੀਕ ਹੈ",
+  "cancel": "ਰੱਦ ਕਰੋ",
+  "save": "ਸੇਵ ਕਰੋ",
+  "delete": "ਮਿਟਾਓ",
+  "clear": "ਸਾਫ਼ ਕਰੋ",
+  "add": "ਜੋੜੋ",
+  "create": "ਬਣਾਓ",
+  "edit": "ਸੋਧੋ",
+  "search": "ਖੋਜ",
+  "areYouSureYouWantToLogOut": "ਕੀ ਤੁਸੀਂ ਲਾਗ ਆਉਟ ਕਰਨਾ ਚਾਹੁਦੇ ਹੋ?",
+  "chooseLanguage": "ਭਾਸ਼ਾ ਚੁਣੋ",
+  "databaseInfo": "ਡੇਟਾਬੇਸ ਜਾਣਕਾਰੀ",
+  "storage": "ਸਟੋਰੇਜ: ObjectBox",
+  "vectorIndex": "ਵੈਕਟਰ ਇੰਡੈਕਸ: HNSW",
+  "dimensions": "ਅਯਾਮ: 384",
+  "embeddingModelBge": "ਐਂਬੈਡਿੰਗ ਮਾਡਲ: bge-small-zh-v1.5",
+  "takePhoto": "ਫੋਟੋ ਲਓ",
+  "chooseFromGallery": "ਗੈਲਰੀ ਤੋਂ ਚੁਣੋ",
+  "editNickname": "ਉਪਨਾਮਾ ਸੋਧੋ",
+  "enterNickname": "ਉਪਨਾਮਾ ਦਾਖਲ ਕਰੋ",
+  "pleaseEnterNickname": "ਕਿਰਪਾ ਕਰਕੇ ਉਪਨਾਮਾ ਦਾਖਲ ਕਰੋ",
+  "nicknameAlreadyExistsOrInvalid": "ਉਪਨਾਮਾ ਪਹਿਲਾਂ ਤੋਂ ਮੌਜੂਦ ਹੈ ਜਾਂ ਅਧਿਕਾਰਤ ਨਹੀਂ",
+  "user": "ਉਪਯੋਗਕਰਤਾ",
+  "manageScheduledReminders": "ਨਿਰਧਾਰਿਤ ਰੀਮਾਈਂਡਰਾਂ ਅਤੇ ਅਲਾਰਮਾਂ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰੋ",
+  "imageFailedToLoad": "ਤਸਵੀਰ ਲੋਡ ਹੋਣ ਵਿੱਚ ਅਸਫਲ। ਕਿਰਪਾ ਕਰਕੇ ਫਿਰ ਚੁਣੋ।",
+  "imageIsStillLoading": "ਤਸਵੀਰ ਹਾਲੇ ਲੋਡ ਹੋ ਰਹੀ ਹੈ",
+  "imageAreaNotReady": "ਤਸਵੀਰ ਖੇਤਰ ਤਿਆਰ ਨਹੀਂ। ਕਿਰਪਾ ਕਰਕੇ ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+  "cropFrameNotReady": "ਕ੍ਰੌਪ ਫਰੇਮ ਤਿਆਰ ਨਹੀਂ। ਕਿਰਪਾ ਕਰਕੇ ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+  "invalidCropArea": "ਅਧਿਕਾਰਤ ਕ੍ਰੌਪ ਖੇਤਰ। ਕਿਰਪਾ ਕਰਕੇ ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+  "cropFailed": "ਕ੍ਰੌਪ ਅਸਫਲ। ਕਿਰਪਾ ਕਰਕੇ ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+  "cropAvatar": "ਅਵਟਾਰ ਕ੍ਰੌਪ ਕਰੋ",
+  "chooseAgain": "ਫਿਰ ਚੁਣੋ",
+  "rotate90": "90° ਘੁਮਾਓ",
+  "dragFrameToMove": "ਹਿਲਾਉਣ ਲਈ ਫਰੇਮ ਖਿੱਚੋ, ਆਕਾਰ ਲਈ ਹੇਠਾਂ-ਸੱਜਾ ਖਿੱਚੋ; ਜ਼ੂਮ ਕਰਨ ਅਤੇ ਤਸਵੀਰ ਹਿਲਾਉਣ ਲਈ ਪਿੰਚ ਕਰੋ।",
+  "pleaseFillInAllFields": "ਕਿਰਪਾ ਕਰਕੇ ਸਾਰੇ ਖੇਤਰ ਭਰੋ",
+  "pinMustBeAtLeast4Digits": "PIN ਘੱਟੋਂ 4 ਅੰਕ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ",
+  "pinAtLeast4Digits": "PIN ਘੱਟੋਂ 4 ਅੰਕ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ",
+  "invalidUsernameOrPin": "ਅਧਿਕਾਰਤ ਉਪਯੋਗਕਰਤਾ ਨਾਮ ਜਾਂ PIN",
+  "invalidUsernameOrPinError": "ਅਧਿਕਾਰਤ ਉਪਯੋਗਕਰਤਾ ਨਾਮ ਜਾਂ PIN",
+  "usernameAlreadyExists": "ਉਪਯੋਗਕਰਤਾ ਨਾਮ ਪਹਿਲਾਂ ਤੋਂ ਮੌਜੂਦ ਹੈ",
+  "captureMomentsKeepMemories": "ਪਲ ਕੈਪਚਰ ਕਰੋ, ਯਾਦਾਂ ਸਾਂਭ-ਸੰਭਾਲ ਕਰੋ",
+  "username": "ਉਪਯੋਗਕਰਤਾ ਨਾਮ",
+  "pin": "PIN",
+  "login": "ਲਾਗਿਨ",
+  "createAccount": "ਖਾਤਾ ਬਣਾਓ",
+  "dontHaveAccountCreateOne": "ਖਾਤਾ ਨਹੀਂ ਹੈ? ਇੱਕ ਬਣਾਓ",
+  "alreadyHaveAccountLogin": "ਖਾਤਾ ਹੈ? ਲਾਗਿਨ ਕਰੋ",
+  "pleaseEnterUsername": "ਕਿਰਪਾ ਕਰਕੇ ਉਪਯੋਗਕਰਤਾ ਨਾਮ ਦਾਖਲ ਕਰੋ",
+  "pinsDoNotMatch": "PIN ਮੇਲ ਨਹੀਂ ਖਾਂਦੇ",
+  "tapToAddAvatar": "ਅਵਟਾਰ ਜੋੜਨ ਲਈ ਟੈਪ ਕਰੋ",
+  "yourName": "ਤੁਹਾਡਾ ਨਾਮ",
+  "privatePinOptional": "ਪ੍ਰਾਈਵੇਟ PIN (ਵਿਕਲਪਿਕ)",
+  "usedToEncryptPrivateRecords": "ਪ੍ਰਾਈਵੇਟ ਰਿਕਾਰਡ ਐਨਕ੍ਰਿਪਟ ਕਰਨ ਲਈ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ",
+  "privatePin": "ਪ੍ਰਾਈਵੇਟ PIN",
+  "leaveEmptyForNoEncryption": "ਐਨਕ੍ਰਿਪਸ਼ਨ ਲਈ ਖਾਲੀ ਛੱਡ ਦਿਓ",
+  "confirmPin": "PIN ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ",
+  "getStarted": "ਸ਼ੁਰੂ ਕਰੋ",
+  "noReminders": "ਕੋਈ ਰੀਮਾਈਂਡਰ ਨਹੀਂ",
+  "addReminder": "ਰੀਮਾਈਂਡਰ ਜੋੜੋ",
+  "title": "ਸਿਰਲੇਖ",
+  "descriptionOptional": "ਵਰਣਨ (ਵਿਕਲਪਿਕ)",
+  "microphonePermissionRequired": "ਮਾਈਕ੍ਰੋਫ਼ੋਨ ਦੀ ਅਨੁਮਤੀ ਲੋੜੀਂਦੀ ਹੈ",
+  "aiAssistant": "AI ਸਹਾਇਕ",
+  "listening": "ਸੁਣ ਰਿਹਾ ਹੈ...",
+  "typeAMessage": "ਸੁਨੇਹਾ ਟਾਈਪ ਕਰੋ...",
+  "aiChat": "AI ਚੈਟ",
+  "startAConversation": "ਗੱਲਬਾਤ ਸ਼ੁਰੂ ਕਰੋ",
+  "typeYourMessage": "ਆਪਣਾ ਸੁਨੇਹਾ ਟਾਈਪ ਕਰੋ...",
+  "asrReconnecting": "ASR ਮੁੜ ਕਨੈਕਟ ਹੋ ਰਿਹਾ ਹੈ...",
+  "write": "ਲਿਖੋ",
+  "writeEntry": "ਐਂਟਰੀ ਲਿਖੋ",
+  "noMemoriesYet": "ਹਾਲੇ ਕੋਈ ਯਾਦ ਨਹੀਂ",
+  "tapPlusToCapture": "ਆਪਣੇ ਵਿਚਾਰ ਕੈਪਚਰ ਕਰਨ ਲਈ + ਟੈਪ ਕਰੋ",
+  "tapPlusToCaptureYourThoughts": "ਆਪਣੇ ਵਿਚਾਰ ਕੈਪਚਰ ਕਰਨ ਲਈ + ਟੈਪ ਕਰੋ",
+  "deleteMemory": "ਯਾਦ ਮਿਟਾਓ",
+  "deleteRecord": "ਰਿਕਾਰਡ ਮਿਟਾਓ",
+  "thisEntryWillBeRemoved": "ਇਹ ਐਂਟਰੀ ਤੁਹਾਡੇ ਟਾਈਮਲਾਈਨ ਤੋਂ ਹਟਾ ਦਿੱਤੀ ਜਾਵੇਗੀ।",
+  "thisRecordWillBeRemoved": "ਇਹ ਰਿਕਾਰਡ ਤੁਹਾਡੇ ਟਾਈਮਲਾਈਨ ਤੋਂ ਹਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ।",
+  "searchYourRecords": "ਆਪਣੇ ਰਿਕਾਰਡ ਖੋਜੋ...",
+  "exactMatches": "ਸਹੀ ਮੇਲ",
+  "noExactMatches": "ਕੋਈ ਸਹੀ ਮੇਲ ਨਹੀਂ",
+  "exact": "ਸਹੀ",
+  "exactMatch": "ਸਹੀ ਮੇਲ",
+  "fuzzyMatches": "ਫੱਜ਼ੀ ਮੇਲ",
+  "noFuzzyMatches": "ਕੋਈ ਫੱਜ਼ੀ ਮੇਲ ਨਹੀਂ",
+  "vectorMatch": "ਵੈਕਟਰ ਮੇਲ",
+  "networkMatches": "ਨੈੱਟਵਰਕ ਮੇਲ",
+  "noNetworkMatches": "ਕੋਈ ਨੈੱਟਵਰਕ ਮੇਲ ਨਹੀਂ",
+  "networkSearchIsOff": "ਨੈੱਟਵਰਕ ਖੋਜ ਬੰਦ ਹੈ। ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਸਮਰੱਥ ਬਣਾਓ।",
+  "network": "ਨੈੱਟਵਰਕ",
+  "networkMatch": "ਨੈੱਟਵਰਕ ਮੇਲ",
+  "noSearchHistory": "ਕੋਈ ਖੋਜ ਇਤਿਹਾਸ ਨਹੀਂ",
+  "searchHistory": "ਖੋਜ ਇਤਿਹਾਸ",
+  "invalidLink": "ਅਧਿਕਾਰਤ ਲਿੰਕ",
+  "unableToOpenWebPage": "ਵੈਬ ਪੇਜ ਖੋਲ੍ਹ ਨਹੀਂ ਸਕਦਾ",
+  "imageMemory": "[ਤਸਵੀਰ ਯਾਦ]",
+  "tapToOpenWebPage": "ਵੈਬ ਪੇਜ ਖੋਲ੍ਹਣ ਲਈ ਟੈਪ ਕਰੋ",
+  "editEntry": "ਐਂਟਰੀ ਸੋਧੋ",
+  "entryDetails": "ਐਂਟਰੀ ਵੇਰਵਾ",
+  "noContent": "ਕੋਈ ਸਮੱਗਰੀ ਨਹੀਂ",
+  "diaryNotFound": "ਡਾਇਰੀ ਨਹੀਂ ਮਿਲੀ",
+  "diaryNotFoundShort": "ਰਿਕਾਰਡ ਨਹੀਂ ਮਿਲਾ",
+  "aiSummary": "AI ਸਾਰਾਂਸ਼",
+  "microphoneInterrupted": "ਮਾਈਕ੍ਰੋਫ਼ੋਨ ਵਿੱਚ ਵਿਘਨ, ਰਿਕਾਰਡਿੰਗ ਰੁਕ ਗਈ।",
+  "bold": "ਬੋਲਡ",
+  "italic": "ਇਟਾਲਿਕ",
+  "strikethrough": "ਸਟ੍ਰਾਈਕਥਰੂ",
+  "image": "ਤਸਵੀਰ",
+  "asrUnavailableRecordingActive": "ASR ਉਪਲਬਧ ਨਹੀਂ। ਰਿਕਾਰਡਿੰਗ ਅਜੇ ਵੀ ਸਰਗਰਮ ਹੈ।",
+  "writeYourEntry": "ਆਪਣੀ ਐਂਟਰੀ ਲਿਖੋ...",
+  "writeYourContent": "ਆਪਣੀ ਸਮੱਗਰੀ ਲਿਖੋ...",
+  "microphoneStartFailed": "ਮਾਈਕ੍ਰੋਫ਼ੋਨ ਸ਼ੁਰੂ ਕਰਨ ਵਿੱਚ ਅਸਫਲ: {error}",
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "microphoneInterruptedRecordingStopped": "ਮਾਈਕ੍ਰੋਫ਼ੋਨ ਵਿੱਚ ਵਿਘਨ, ਰਿਕਾਰਡਿੰਗ ਰੁਕ ਗਈ।",
+  "asrReconnectingError": "ASR ਮੁੜ ਕਨੈਕਟ ਹੋ ਰਿਹਾ ਹੈ: {error}",
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "imageInserted": "ਤਸਵੀਰ ਸ਼ਾਮਲ ਕੀਤੀ: {name}",
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "voiceError": "ਵੌਇਸ ਗਲਤੀ: {error}",
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "aiServiceUnavailable": "ਮਾਫ਼ ਕਰਨਾ, AI ਸੇਵਾ ਇਸ ਵੇਲੇ ਉਪਲਬਧ ਨਹੀਂ: {error}",
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareFailed": "ਸ਼ੇਅਰ ਕਰਨ ਵਿੱਚ ਅਸਫਲ: {error}",
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "searchMatchHits": "{matchType} · {count} ਹਿੱਟ",
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "matchCount": "ਮੇਲ: {count}",
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sourceFromNetwork": "ਸਰੋਤਾ: {source}",
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "createNew": "ਬਣਾਓ",
+  "micStartFailed": "ਮਾਈਕ ਸ਼ੁਰੂ ਕਰਨ ਵਿੱਚ ਅਸਫਲ: {error}",
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importResultAccounts": "ਖਾਤੇ: +{created} / ਅੱਪਡੇਟ {updated}",
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultDiaries": "ਡਾਇਰੀਆਂ: +{created} / ਅੱਪਡੇਟ {updated}",
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultReminders": "ਰੀਮਾਈਂਡਰ: +{created} / ਅੱਪਡੇਟ {updated}",
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultSkipped": "ਛੱਡਿਆ ਗਿਆ: {count}",
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultTotal": "ਕੁੱਲ ਬਦਲਾਅ: {count}",
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsApplied": "ਬੈਕਅੱਪ ਵਿੱਚ ਸੈਟਿੰਗਾਂ ਲਾਗੂ ਕੀਤੀਆਂ ਗਈਆਂ।",
+  "settingsNotApplied": "ਬੈਕਅੱਪ ਵਿੱਚ ਸੈਟਿੰਗਾਂ ਲਾਗੂ ਨਹੀਂ ਕੀਤੀਆਂ।",
+  "backupExported": "ਬੈਕਅੱਪ ਐਕਸਪੋਰਟ: {path}",
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "exportFailed": "ਐਕਸਪੋਰਟ ਅਸਫਲ: {error}",
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importFailed": "ਇੰਪੋਰਟ ਅਸਫਲ: {error}",
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
+}

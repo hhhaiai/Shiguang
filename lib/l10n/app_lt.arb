@@ -1,0 +1,363 @@
+{
+  "@@locale": "lt",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Lietuvių",
+  "languageNameEn": "Lithuanian",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... arba http://127.0.0.1:11434",
+  "appTitle": "Šiguangas",
+  "settings": "Nustatymai",
+  "account": "sąskaita",
+  "reminders": "Priminimai",
+  "language": "Kalba",
+  "appLanguage": "Programos kalba",
+  "appearance": "Išvaizda",
+  "themeMode": "Temos režimas",
+  "dark": "Tamsus",
+  "light": "Šviesa",
+  "system": "Sistema",
+  "aiService": "AI paslauga",
+  "aiChatProvider": "AI pokalbių teikėjas",
+  "chatModel": "Pokalbių modelis",
+  "localModel": "Vietinis modelis",
+  "localModelDefault": "Vietinis modelis (numatytasis)",
+  "ollamaEndpoint": "Ollamos galutinis taškas",
+  "ollamaModel": "Ollama modelis",
+  "openAiEndpoint": "OpenAI galutinis taškas",
+  "openAiApiKey": "OpenAI API raktas",
+  "openAiModel": "OpenAI modelis",
+  "geminiEndpoint": "Dvynių galutinis taškas",
+  "geminiApiKey": "Gemini API raktas",
+  "geminiModel": "Dvynių modeliai",
+  "anthropicEndpoint": "Antropinis galutinis taškas",
+  "anthropicApiKey": "Antropinis API raktas",
+  "anthropicModel": "Antropinis modelis",
+  "customProtocol": "Pasirinktinis protokolas",
+  "protocol": "protokolas",
+  "customEndpoint": "Pasirinktinis galutinis taškas",
+  "customApiKey": "Pasirinktinis API raktas",
+  "customModel": "Individualus modelis",
+  "optionalForLocalServers": "Neprivaloma vietiniams / pasirinktiniams serveriams",
+  "speechRecognitionEngine": "Kalbos atpažinimo variklis",
+  "local": "Vietinis",
+  "endpoint": "Galutinis taškas",
+  "localSpeechModel": "Vietinis kalbos modelis",
+  "senseVoiceOnnx": "„SenseVoice ONNX“ (įrenginyje)",
+  "systemSpeechRecognition": "Sistemos kalbos atpažinimas",
+  "systemRecognitionAndroidIos": "Sistemos atpažinimas („Android“ / „iOS“)",
+  "endpointRecognitionCloudWs": "Galinio taško atpažinimas (debesis / WS)",
+  "useBuiltInRecognizer": "Naudokite įmontuotą Android / iOS atpažintuvą (gali naudoti debesį)",
+  "voiceAiEndpoint": "Balso AI galutinis taškas",
+  "embeddingModel": "Įdėjimo modelis",
+  "crossDeviceSync": "Kelių įrenginių sinchronizavimas",
+  "sendToOtherDevices": "Siųsti į kitus įrenginius (LocalSend)",
+  "exportBackupAndSend": "Eksportuokite atsarginę kopiją ir išsiųskite per bendrinimo lapą",
+  "importFromLocalSend": "Importuoti iš LocalSend",
+  "selectBackupJson": "Pasirinkite atsarginę JSON kopiją ir sujunkite vietinius duomenis",
+  "autoGeneration": "Auto generacija",
+  "autoGenerateSummary": "Automatiškai generuoti suvestinę",
+  "generateAiSummaryForNewEntries": "Sukurkite naujų įrašų AI suvestinę",
+  "autoGenerateEmbedding": "Automatinis įterpimo generavimas",
+  "generateVectorEmbedding": "Sukurkite vektorinį įterpimą paieškai",
+  "enableNetworkSearch": "Įgalinti tinklo paiešką",
+  "allowOnlineRetrieval": "Leisti paieškai ir AI pokalbiams gauti internete (išjungta pagal numatytuosius nustatymus)",
+  "about": "Apie",
+  "version": "{version} versija",
+  "database": "Duomenų bazė",
+  "objectBoxWithHnsw": "ObjectBox su HNSW indeksu",
+  "logOut": "Atsijungti",
+  "custom": "Pasirinktinis",
+  "openAiCompatible": "Suderinamas su OpenAI",
+  "notSet": "Nenustatyta",
+  "supportsLocalLanPublic": "Palaiko vietinius / LAN / viešuosius galinius taškus",
+  "shiguangLocalSendBackup": "Shiguang LocalSend atsarginė kopija",
+  "localBackupFromShiguang": "Vietinė atsarginė kopija iš Shiguang (gauti per LocalSend)",
+  "selectBackupFileFromLocalSend": "Pasirinkite atsarginės kopijos failą, gautą iš LocalSend",
+  "failedToResolveFilePath": "Nepavyko nustatyti pasirinkto failo kelio",
+  "importOptions": "Importavimo parinktys",
+  "importSettingsAsWell": "Taip pat importuoti nustatymus?\n(API raktai nebus perrašyti)",
+  "dataOnly": "Tik duomenys",
+  "dataAndSettings": "Duomenys + nustatymai",
+  "importCompleted": "Importavimas baigtas",
+  "settingsInBackupWereApplied": "Buvo pritaikyti atsarginės kopijos nustatymai.",
+  "settingsInBackupWereNotApplied": "Atsarginės kopijos nustatymai nebuvo pritaikyti.",
+  "ok": "Gerai",
+  "cancel": "Atšaukti",
+  "save": "Išsaugoti",
+  "delete": "Ištrinti",
+  "clear": "Aišku",
+  "add": "Pridėti",
+  "create": "Sukurti",
+  "edit": "Redaguoti",
+  "search": "Ieškoti",
+  "areYouSureYouWantToLogOut": "Ar tikrai norite atsijungti?",
+  "chooseLanguage": "Pasirinkite Kalba",
+  "databaseInfo": "Duomenų bazės informacija",
+  "storage": "Saugykla: ObjectBox",
+  "vectorIndex": "Vektorinis indeksas: HNSW",
+  "dimensions": "Matmenys: 384",
+  "embeddingModelBge": "Įdėjimo modelis: bge-small-zh-v1.5",
+  "takePhoto": "Fotografuoti",
+  "chooseFromGallery": "Pasirinkite iš galerijos",
+  "editNickname": "Redaguoti slapyvardį",
+  "enterNickname": "Įveskite slapyvardį",
+  "pleaseEnterNickname": "Įveskite slapyvardį",
+  "nicknameAlreadyExistsOrInvalid": "Slapyvardis jau egzistuoja arba neteisingas",
+  "user": "Vartotojas",
+  "manageScheduledReminders": "Tvarkykite suplanuotus priminimus ir pavojaus signalus",
+  "imageFailedToLoad": "Nepavyko įkelti vaizdo. Pasirinkite dar kartą.",
+  "imageIsStillLoading": "Vaizdas vis dar įkeliamas",
+  "imageAreaNotReady": "Vaizdo sritis neparengta. Bandykite dar kartą.",
+  "cropFrameNotReady": "Apkarpymo rėmelis neparengtas. Bandykite dar kartą.",
+  "invalidCropArea": "Netinkamas pasėlių plotas. Bandykite dar kartą.",
+  "cropFailed": "Apkarpymas nepavyko. Bandykite dar kartą.",
+  "cropAvatar": "Apkarpyti avatarą",
+  "chooseAgain": "Pasirinkite Dar kartą",
+  "rotate90": "Pasukite 90°",
+  "dragFrameToMove": "Vilkite rėmelį, kad perkeltumėte, vilkite į apačią į dešinę, kad pakeistumėte dydį; suimkite, kad padidintumėte ir perkeltumėte vaizdą.",
+  "pleaseFillInAllFields": "Prašome užpildyti visus laukus",
+  "pinMustBeAtLeast4Digits": "PIN kodą turi sudaryti bent 4 skaitmenys",
+  "pinAtLeast4Digits": "PIN kodą turi sudaryti bent 4 skaitmenys",
+  "invalidUsernameOrPin": "Neteisingas vartotojo vardas arba PIN kodas",
+  "invalidUsernameOrPinError": "Neteisingas vartotojo vardas arba PIN kodas",
+  "usernameAlreadyExists": "Vartotojo vardas jau yra",
+  "captureMomentsKeepMemories": "Užfiksuokite akimirkas, saugokite prisiminimus",
+  "username": "Vartotojo vardas",
+  "pin": "PIN kodas",
+  "login": "Prisijungti",
+  "createAccount": "Sukurti paskyrą",
+  "dontHaveAccountCreateOne": "Neturite paskyros? Sukurkite vieną",
+  "alreadyHaveAccountLogin": "Jau turite paskyrą? Prisijungti",
+  "pleaseEnterUsername": "Įveskite vartotojo vardą",
+  "pinsDoNotMatch": "PIN kodai nesutampa",
+  "tapToAddAvatar": "Bakstelėkite, kad pridėtumėte avatarą",
+  "yourName": "Jūsų Vardas",
+  "privatePinOptional": "Privatus PIN (neprivaloma)",
+  "usedToEncryptPrivateRecords": "Naudojamas privačių įrašų šifravimui",
+  "privatePin": "Privatus PIN kodas",
+  "leaveEmptyForNoEncryption": "Palikite tuščią, kad nebūtų šifruojama",
+  "confirmPin": "Patvirtinkite PIN kodą",
+  "getStarted": "Pradėkite",
+  "noReminders": "Jokių priminimų",
+  "addReminder": "Pridėti priminimą",
+  "title": "Pavadinimas",
+  "descriptionOptional": "Aprašymas (nebūtina)",
+  "microphonePermissionRequired": "Reikalingas mikrofono leidimas",
+  "aiAssistant": "AI asistentas",
+  "listening": "Klausau...",
+  "typeAMessage": "Įveskite žinutę...",
+  "aiChat": "AI pokalbis",
+  "startAConversation": "Pradėkite pokalbį",
+  "typeYourMessage": "Įveskite savo žinutę...",
+  "asrReconnecting": "ASR vėl jungiasi...",
+  "write": "Rašyti",
+  "writeEntry": "Rašyti įrašą",
+  "noMemoriesYet": "Atsiminimų dar nėra",
+  "tapPlusToCapture": "Palieskite +, kad užfiksuotumėte savo mintis",
+  "tapPlusToCaptureYourThoughts": "Palieskite +, kad užfiksuotumėte savo mintis",
+  "deleteMemory": "Ištrinti atmintį",
+  "deleteRecord": "Ištrinti įrašą",
+  "thisEntryWillBeRemoved": "Šis įrašas bus pašalintas iš jūsų laiko juostos.",
+  "thisRecordWillBeRemoved": "Šis įrašas bus pašalintas iš jūsų laiko juostos.",
+  "searchYourRecords": "Ieškokite savo įrašų...",
+  "exactMatches": "Tikslios rungtynės",
+  "noExactMatches": "Tikslių atitikmenų nėra",
+  "exact": "Tiksliai",
+  "exactMatch": "Tiksli atitiktis",
+  "fuzzyMatches": "Neaiškios rungtynės",
+  "noFuzzyMatches": "Nėra neaiškių atitikmenų",
+  "vectorMatch": "Vektorinės rungtynės",
+  "networkMatches": "Tinklo rungtynės",
+  "noNetworkMatches": "Nėra tinklo atitikčių",
+  "networkSearchIsOff": "Tinklo paieška išjungta. Įgalinkite jį nustatymuose.",
+  "network": "Tinklas",
+  "networkMatch": "Tinklo rungtynės",
+  "noSearchHistory": "Nėra paieškos istorijos",
+  "searchHistory": "Paieškos istorija",
+  "invalidLink": "Netinkama nuoroda",
+  "unableToOpenWebPage": "Nepavyko atidaryti tinklalapio",
+  "imageMemory": "[vaizdo atmintis]",
+  "tapToOpenWebPage": "Bakstelėkite, kad atidarytumėte tinklalapį",
+  "editEntry": "Redaguoti įrašą",
+  "entryDetails": "Įvesties informacija",
+  "noContent": "Nėra turinio",
+  "diaryNotFound": "Dienoraštis nerastas",
+  "diaryNotFoundShort": "Įrašas nerastas",
+  "aiSummary": "AI santrauka",
+  "microphoneInterrupted": "Mikrofonas nutrūko, įrašymas sustabdytas.",
+  "bold": "Paryškintas",
+  "italic": "Kursyvas",
+  "strikethrough": "Perbraukta",
+  "image": "Vaizdas",
+  "asrUnavailableRecordingActive": "ASR nepasiekiamas. Įrašymas vis dar aktyvus.",
+  "writeYourEntry": "Parašykite savo įrašą...",
+  "writeYourContent": "Parašykite savo turinį...",
+  "microphoneStartFailed": "Nepavyko paleisti mikrofono: {error}",
+  "microphoneInterruptedRecordingStopped": "Mikrofonas nutrūko, įrašymas sustabdytas.",
+  "asrReconnectingError": "ASR prisijungimas iš naujo: {error}",
+  "imageInserted": "Įterptas vaizdas: {name}",
+  "voiceError": "Balso klaida: {error}",
+  "aiServiceUnavailable": "Atsiprašome, AI paslauga šiuo metu nepasiekiama: {error}",
+  "shareFailed": "Nepavyko bendrinti: {error}",
+  "searchMatchHits": "{matchType} · {count} paspaudimų",
+  "matchCount": "Atitiktis: {count}",
+  "sourceFromNetwork": "Šaltinis: {source}",
+  "createNew": "Sukurti",
+  "micStartFailed": "Nepavyko paleisti mikrofono: {error}",
+  "importResultAccounts": "Paskyros: +{created} / atnaujinta {updated}",
+  "importResultDiaries": "Dienoraščiai: +{created} / atnaujinta {updated}",
+  "importResultReminders": "Priminimai: +{created} / atnaujinta {updated}",
+  "importResultSkipped": "Praleista: {count}",
+  "importResultTotal": "Iš viso pakeista: {count}",
+  "settingsApplied": "Buvo pritaikyti atsarginės kopijos nustatymai.",
+  "settingsNotApplied": "Atsarginės kopijos nustatymai nebuvo pritaikyti.",
+  "backupExported": "Atsarginė kopija eksportuota: {path}",
+  "exportFailed": "Eksportuoti nepavyko: {error}",
+  "importFailed": "Importuoti nepavyko: {error}"
+}

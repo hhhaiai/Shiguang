@@ -1,0 +1,363 @@
+{
+  "@@locale": "fil",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Filipino",
+  "languageNameEn": "Filipino",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Mga setting",
+  "account": "Account",
+  "reminders": "Mga paalala",
+  "language": "Wika",
+  "appLanguage": "Wika ng App",
+  "appearance": "Hitsura",
+  "themeMode": "Mode ng Tema",
+  "dark": "Madilim",
+  "light": "Liwanag",
+  "system": "Sistema",
+  "aiService": "Serbisyo ng AI",
+  "aiChatProvider": "AI Chat Provider",
+  "chatModel": "Modelo ng Chat",
+  "localModel": "Lokal na Modelo",
+  "localModelDefault": "Lokal na Modelo (Default)",
+  "ollamaEndpoint": "Ollama Endpoint",
+  "ollamaModel": "Ollama Model",
+  "openAiEndpoint": "OpenAI Endpoint",
+  "openAiApiKey": "OpenAI API Key",
+  "openAiModel": "Modelo ng OpenAI",
+  "geminiEndpoint": "Gemini Endpoint",
+  "geminiApiKey": "Gemini API Key",
+  "geminiModel": "Mga Modelong Gemini",
+  "anthropicEndpoint": "Anthropic Endpoint",
+  "anthropicApiKey": "Anthropic API Key",
+  "anthropicModel": "Modelong Antropiko",
+  "customProtocol": "Custom na Protocol",
+  "protocol": "Protocol",
+  "customEndpoint": "Custom na Endpoint",
+  "customApiKey": "Custom na API Key",
+  "customModel": "Custom na Modelo",
+  "optionalForLocalServers": "Opsyonal para sa mga lokal/custom na server",
+  "speechRecognitionEngine": "Speech Recognition Engine",
+  "local": "Lokal",
+  "endpoint": "Endpoint",
+  "localSpeechModel": "Lokal na Modelo ng Pagsasalita",
+  "senseVoiceOnnx": "SenseVoice ONNX (on-device)",
+  "systemSpeechRecognition": "System Speech Recognition",
+  "systemRecognitionAndroidIos": "System Recognition (Android/iOS)",
+  "endpointRecognitionCloudWs": "Endpoint Recognition (Cloud/WS)",
+  "useBuiltInRecognizer": "Gumamit ng built-in na Android / iOS na kinikilala (maaaring gumamit ng cloud)",
+  "voiceAiEndpoint": "Endpoint ng Voice AI",
+  "embeddingModel": "Pag-embed ng Modelo",
+  "crossDeviceSync": "Cross-Device Sync",
+  "sendToOtherDevices": "Ipadala sa Iba Pang Mga Device (LocalSend)",
+  "exportBackupAndSend": "I-export ang backup at ipadala sa pamamagitan ng share sheet",
+  "importFromLocalSend": "Mag-import mula sa LocalSend",
+  "selectBackupJson": "Piliin ang backup na JSON at pagsamahin ang lokal na data",
+  "autoGeneration": "Auto Generation",
+  "autoGenerateSummary": "Awtomatikong Bumuo ng Buod",
+  "generateAiSummaryForNewEntries": "Bumuo ng buod ng AI para sa mga bagong entry",
+  "autoGenerateEmbedding": "Awtomatikong Bumuo ng Pag-embed",
+  "generateVectorEmbedding": "Bumuo ng pag-embed ng vector para sa paghahanap",
+  "enableNetworkSearch": "Paganahin ang Network Search",
+  "allowOnlineRetrieval": "Payagan ang online retrieval para sa paghahanap at AI chat (naka-off bilang default)",
+  "about": "Tungkol sa",
+  "version": "Bersyon {version}",
+  "database": "Database",
+  "objectBoxWithHnsw": "ObjectBox na may HNSW index",
+  "logOut": "Log Out",
+  "custom": "Custom",
+  "openAiCompatible": "OpenAI Compatible",
+  "notSet": "Hindi nakatakda",
+  "supportsLocalLanPublic": "Sinusuportahan ang mga lokal/LAN/pampublikong endpoint",
+  "shiguangLocalSendBackup": "Shiguang LocalSend Backup",
+  "localBackupFromShiguang": "Lokal na backup mula sa Shiguang (makatanggap sa pamamagitan ng LocalSend)",
+  "selectBackupFileFromLocalSend": "Piliin ang backup na file na natanggap mula sa LocalSend",
+  "failedToResolveFilePath": "Nabigong lutasin ang napiling landas ng file",
+  "importOptions": "Mga Opsyon sa Pag-import",
+  "importSettingsAsWell": "Mag-import din ng mga setting?\n(Hindi ma-overwrite ang mga API key)",
+  "dataOnly": "Data Lang",
+  "dataAndSettings": "Data + Mga Setting",
+  "importCompleted": "Nakumpleto ang Pag-import",
+  "settingsInBackupWereApplied": "Inilapat ang mga setting sa backup.",
+  "settingsInBackupWereNotApplied": "Hindi nailapat ang mga setting sa backup.",
+  "ok": "OK",
+  "cancel": "Kanselahin",
+  "save": "I-save",
+  "delete": "Tanggalin",
+  "clear": "Maaliwalas",
+  "add": "Idagdag",
+  "create": "Lumikha",
+  "edit": "I-edit",
+  "search": "Maghanap",
+  "areYouSureYouWantToLogOut": "Sigurado ka bang gusto mong mag-log out?",
+  "chooseLanguage": "Pumili ng Wika",
+  "databaseInfo": "Impormasyon sa Database",
+  "storage": "Imbakan: ObjectBox",
+  "vectorIndex": "Vector Index: HNSW",
+  "dimensions": "Mga sukat: 384",
+  "embeddingModelBge": "Pag-embed ng Modelo: bge-small-zh-v1.5",
+  "takePhoto": "Kumuha ng Larawan",
+  "chooseFromGallery": "Pumili mula sa Gallery",
+  "editNickname": "I-edit ang Palayaw",
+  "enterNickname": "Ilagay ang palayaw",
+  "pleaseEnterNickname": "Mangyaring maglagay ng palayaw",
+  "nicknameAlreadyExistsOrInvalid": "Umiiral na o di-wasto ang palayaw",
+  "user": "Gumagamit",
+  "manageScheduledReminders": "Pamahalaan ang mga nakaiskedyul na paalala at alarma",
+  "imageFailedToLoad": "Nabigong ma-load ang larawan. Mangyaring pumili muli.",
+  "imageIsStillLoading": "Naglo-load pa rin ang larawan",
+  "imageAreaNotReady": "Hindi pa handa ang lugar ng larawan. Pakisubukang muli.",
+  "cropFrameNotReady": "Ang crop frame ay hindi pa handa. Pakisubukang muli.",
+  "invalidCropArea": "Di-wastong crop area. Pakisubukang muli.",
+  "cropFailed": "Nabigo ang pag-crop. Pakisubukang muli.",
+  "cropAvatar": "I-crop ang Avatar",
+  "chooseAgain": "Pumili Muli",
+  "rotate90": "Iikot 90°",
+  "dragFrameToMove": "I-drag ang frame upang ilipat, i-drag sa ibaba-kanan upang baguhin ang laki; kurutin para mag-zoom at ilipat ang imahe.",
+  "pleaseFillInAllFields": "Mangyaring punan ang lahat ng mga patlang",
+  "pinMustBeAtLeast4Digits": "Ang PIN ay dapat na hindi bababa sa 4 na digit",
+  "pinAtLeast4Digits": "Ang PIN ay dapat na hindi bababa sa 4 na digit",
+  "invalidUsernameOrPin": "Di-wastong username o PIN",
+  "invalidUsernameOrPinError": "Di-wastong username o PIN",
+  "usernameAlreadyExists": "Umiiral na ang username",
+  "captureMomentsKeepMemories": "Kunin ang mga sandali, panatilihin ang mga alaala",
+  "username": "Username",
+  "pin": "PIN",
+  "login": "Mag-login",
+  "createAccount": "Lumikha ng Account",
+  "dontHaveAccountCreateOne": "Walang account? Lumikha ng isa",
+  "alreadyHaveAccountLogin": "Mayroon ka nang account? Mag-login",
+  "pleaseEnterUsername": "Mangyaring magpasok ng isang username",
+  "pinsDoNotMatch": "Hindi tugma ang mga PIN",
+  "tapToAddAvatar": "I-tap para magdagdag ng avatar",
+  "yourName": "Pangalan mo",
+  "privatePinOptional": "Pribadong PIN (opsyonal)",
+  "usedToEncryptPrivateRecords": "Ginagamit upang i-encrypt ang mga pribadong tala",
+  "privatePin": "Pribadong PIN",
+  "leaveEmptyForNoEncryption": "Iwanang walang laman para walang encryption",
+  "confirmPin": "Kumpirmahin ang PIN",
+  "getStarted": "Magsimula",
+  "noReminders": "Walang mga paalala",
+  "addReminder": "Magdagdag ng Paalala",
+  "title": "Pamagat",
+  "descriptionOptional": "Paglalarawan (opsyonal)",
+  "microphonePermissionRequired": "Kinakailangan ang pahintulot sa mikropono",
+  "aiAssistant": "AI Assistant",
+  "listening": "Nakikinig...",
+  "typeAMessage": "Mag-type ng mensahe...",
+  "aiChat": "AI Chat",
+  "startAConversation": "Magsimula ng pag-uusap",
+  "typeYourMessage": "I-type ang iyong mensahe...",
+  "asrReconnecting": "Muling kumokonekta ang ASR...",
+  "write": "Sumulat",
+  "writeEntry": "Sumulat ng Entry",
+  "noMemoriesYet": "Wala pang alaala",
+  "tapPlusToCapture": "I-tap ang + para makuha ang iyong mga iniisip",
+  "tapPlusToCaptureYourThoughts": "I-tap ang + para makuha ang iyong mga iniisip",
+  "deleteMemory": "Tanggalin ang Memorya",
+  "deleteRecord": "Tanggalin ang Tala",
+  "thisEntryWillBeRemoved": "Aalisin ang entry na ito sa iyong timeline.",
+  "thisRecordWillBeRemoved": "Aalisin ang tala na ito sa iyong timeline.",
+  "searchYourRecords": "Hanapin ang iyong mga tala...",
+  "exactMatches": "Mga Eksaktong Tugma",
+  "noExactMatches": "Walang eksaktong tugma",
+  "exact": "Eksakto",
+  "exactMatch": "Eksaktong Tugma",
+  "fuzzyMatches": "Malabo na Tugma",
+  "noFuzzyMatches": "Walang malabo na tugma",
+  "vectorMatch": "Vector Match",
+  "networkMatches": "Mga Tugma sa Network",
+  "noNetworkMatches": "Walang tugma sa network",
+  "networkSearchIsOff": "Naka-off ang paghahanap sa network. Paganahin ito sa Mga Setting.",
+  "network": "Network",
+  "networkMatch": "Tugma sa Network",
+  "noSearchHistory": "Walang history ng paghahanap",
+  "searchHistory": "Kasaysayan ng Paghahanap",
+  "invalidLink": "Di-wastong link",
+  "unableToOpenWebPage": "Hindi mabuksan ang web page",
+  "imageMemory": "[Image memory]",
+  "tapToOpenWebPage": "I-tap para buksan ang web page",
+  "editEntry": "I-edit ang Entry",
+  "entryDetails": "Mga Detalye ng Entry",
+  "noContent": "Walang nilalaman",
+  "diaryNotFound": "Hindi natagpuan ang talaarawan",
+  "diaryNotFoundShort": "Hindi nahanap ang record",
+  "aiSummary": "Buod ng AI",
+  "microphoneInterrupted": "Naputol ang mikropono, huminto ang pagre-record.",
+  "bold": "Matapang",
+  "italic": "Italic",
+  "strikethrough": "Strikethrough",
+  "image": "Imahe",
+  "asrUnavailableRecordingActive": "Hindi available ang ASR. Aktibo pa rin ang pagre-record.",
+  "writeYourEntry": "Isulat ang iyong entry...",
+  "writeYourContent": "Isulat ang iyong nilalaman...",
+  "microphoneStartFailed": "Nabigong simulan ang mikropono: {error}",
+  "microphoneInterruptedRecordingStopped": "Naputol ang mikropono, huminto ang pagre-record.",
+  "asrReconnectingError": "Muling kumonekta sa ASR: {error}",
+  "imageInserted": "Inilagay ang larawan: {name}",
+  "voiceError": "Error sa boses: {error}",
+  "aiServiceUnavailable": "Paumanhin, kasalukuyang hindi available ang serbisyo ng AI: {error}",
+  "shareFailed": "Nabigong ibahagi: {error}",
+  "searchMatchHits": "{matchType} · {count} hit",
+  "matchCount": "Tugma: {count}",
+  "sourceFromNetwork": "Pinagmulan: {source}",
+  "createNew": "Lumikha",
+  "micStartFailed": "Nabigo ang pagsisimula ng mikropono: {error}",
+  "importResultAccounts": "Mga Account: +{created} / na-update {updated}",
+  "importResultDiaries": "Diary: +{created} / na-update {updated}",
+  "importResultReminders": "Mga Paalala: +{created} / na-update {updated}",
+  "importResultSkipped": "Nilaktawan: {count}",
+  "importResultTotal": "Kabuuang nabago: {count}",
+  "settingsApplied": "Inilapat ang mga setting sa backup.",
+  "settingsNotApplied": "Hindi nailapat ang mga setting sa backup.",
+  "backupExported": "Na-export ang backup: {path}",
+  "exportFailed": "Nabigo ang pag-export: {error}",
+  "importFailed": "Nabigo ang pag-import: {error}"
+}

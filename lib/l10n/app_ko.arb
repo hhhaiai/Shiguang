@@ -1,0 +1,360 @@
+{
+  "@@locale": "ko",
+  "languageName": "한국어",
+  "languageNameEn": "Korean",
+  "appTitle": "Shiguang",
+  "settings": "설정",
+  "account": "계정",
+  "reminders": "알림",
+  "language": "언어",
+  "appLanguage": "앱 언어",
+  "appearance": "외관",
+  "themeMode": "테마 모드",
+  "dark": "다크",
+  "light": "라이트",
+  "system": "시스템",
+  "aiService": "AI 서비스",
+  "aiChatProvider": "AI 채팅 제공자",
+  "chatModel": "채팅 모델",
+  "localModel": "로컬 모델",
+  "localModelDefault": "로컬 모델 (기본)",
+  "ollamaEndpoint": "Ollama 엔드포인트",
+  "ollamaModel": "Ollama 모델",
+  "openAiEndpoint": "OpenAI 엔드포인트",
+  "openAiApiKey": "OpenAI API 키",
+  "openAiModel": "OpenAI 모델",
+  "geminiEndpoint": "Gemini 엔드포인트",
+  "geminiApiKey": "Gemini API 키",
+  "geminiModel": "Gemini 모델",
+  "anthropicEndpoint": "Anthropic 엔드포인트",
+  "anthropicApiKey": "Anthropic API 키",
+  "anthropicModel": "Anthropic 모델",
+  "customProtocol": "사용자 정의 프로토콜",
+  "protocol": "프로토콜",
+  "customEndpoint": "사용자 정의 엔드포인트",
+  "customApiKey": "사용자 정의 API 키",
+  "customModel": "사용자 정의 모델",
+  "optionalForLocalServers": "로컬/사용자 정의 서버는 선택사항",
+  "speechRecognitionEngine": "음성 인식 엔진",
+  "local": "로컬",
+  "endpoint": "엔드포인트",
+  "localSpeechModel": "로컬 음성 모델",
+  "senseVoiceOnnx": "SenseVoice ONNX (장치 내)",
+  "systemSpeechRecognition": "시스템 음성 인식",
+  "systemRecognitionAndroidIos": "시스템 인식 (Android/iOS)",
+  "endpointRecognitionCloudWs": "엔드포인트 인식 (Cloud/WS)",
+  "useBuiltInRecognizer": "Android/iOS 내장 인식기 사용 (클라우드 사용 가능)",
+  "voiceAiEndpoint": "음성 AI 엔드포인트",
+  "embeddingModel": "임베딩 모델",
+  "crossDeviceSync": "기기 간 동기화",
+  "sendToOtherDevices": "다른 기기로 보내기 (LocalSend)",
+  "exportBackupAndSend": "백업 내보내기 및 보내기",
+  "importFromLocalSend": "LocalSend에서 가져오기",
+  "selectBackupJson": "백업 JSON 선택 및 로컬 데이터 병합",
+  "autoGeneration": "자동 생성",
+  "autoGenerateSummary": "요약 자동 생성",
+  "generateAiSummaryForNewEntries": "새 항목에 AI 요약 생성",
+  "autoGenerateEmbedding": "임베딩 자동 생성",
+  "generateVectorEmbedding": "검색용 벡터 임베딩 생성",
+  "enableNetworkSearch": "네트워크 검색 활성화",
+  "allowOnlineRetrieval": "검색 및 AI 채팅을 위한 온라인 검색 허용 (기본적으로 꺼짐)",
+  "about": "정보",
+  "version": "버전 {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "database": "데이터베이스",
+  "objectBoxWithHnsw": "HNSW 인덱스가 있는 ObjectBox",
+  "logOut": "로그아웃",
+  "custom": "사용자 정의",
+  "openAiCompatible": "OpenAI 호환",
+  "notSet": "설정되지 않음",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... 또는 http://127.0.0.1:11434",
+  "supportsLocalLanPublic": "로컬/LAN/공용 엔드포인트 지원",
+  "shiguangLocalSendBackup": "Shiguang LocalSend 백업",
+  "localBackupFromShiguang": "Shiguang의 로컬 백업 (LocalSend로 수신)",
+  "selectBackupFileFromLocalSend": "LocalSend에서 수신한 백업 파일 선택",
+  "failedToResolveFilePath": "선택한 파일 경로를 해결하지 못했습니다",
+  "importOptions": "가져오기 옵션",
+  "importSettingsAsWell": "설정도 가져오시겠습니까?\n(API 키는 덮어쓰지 않습니다)",
+  "dataOnly": "데이터만",
+  "dataAndSettings": "데이터 + 설정",
+  "importCompleted": "가져오기 완료",
+  "settingsInBackupWereApplied": "백업의 설정이 적용되었습니다.",
+  "settingsInBackupWereNotApplied": "백업의 설정이 적용되지 않았습니다.",
+  "ok": "확인",
+  "cancel": "취소",
+  "save": "저장",
+  "delete": "삭제",
+  "clear": "지우기",
+  "add": "추가",
+  "create": "만들기",
+  "edit": "편집",
+  "search": "검색",
+  "areYouSureYouWantToLogOut": "로그아웃하시겠습니까?",
+  "chooseLanguage": "언어 선택",
+  "databaseInfo": "데이터베이스 정보",
+  "storage": "저장소: ObjectBox",
+  "vectorIndex": "벡터 인덱스: HNSW",
+  "dimensions": "차원: 384",
+  "embeddingModelBge": "임베딩 모델: bge-small-zh-v1.5",
+  "takePhoto": "사진 찍기",
+  "chooseFromGallery": "갤러리에서 선택",
+  "editNickname": "닉네임 편집",
+  "enterNickname": "닉네임 입력",
+  "pleaseEnterNickname": "닉네임을 입력해 주세요",
+  "nicknameAlreadyExistsOrInvalid": "닉네임이 이미 존재하거나 유효하지 않습니다",
+  "user": "사용자",
+  "manageScheduledReminders": "예약된 알림 및 알람 관리",
+  "imageFailedToLoad": "이미지를 불러오지 못했습니다. 다시 선택해 주세요.",
+  "imageIsStillLoading": "이미지를 아직 불러오는 중입니다",
+  "imageAreaNotReady": "이미지 영역이 준비되지 않았습니다. 다시 시도해 주세요.",
+  "cropFrameNotReady": "자르기 프레임이 준비되지 않았습니다. 다시 시도해 주세요.",
+  "invalidCropArea": "잘못된 자르기 영역입니다. 다시 시도해 주세요.",
+  "cropFailed": "자르기 실패했습니다. 다시 시도해 주세요.",
+  "cropAvatar": "아바타 자르기",
+  "chooseAgain": "다시 선택",
+  "rotate90": "90도 회전",
+  "dragFrameToMove": "프레임을 드래그하여 이동, 우하단을 드래그하여 크기 조절; 두 손가락으로 줌 및 이미지 이동.",
+  "pleaseFillInAllFields": "모든 필드를 입력해 주세요",
+  "pinMustBeAtLeast4Digits": "PIN은 최소 4자리여야 합니다",
+  "pinAtLeast4Digits": "PIN은 최소 4자리여야 합니다",
+  "invalidUsernameOrPin": "사용자 이름 또는 PIN이 유효하지 않습니다",
+  "invalidUsernameOrPinError": "사용자 이름 또는 PIN이 유효하지 않습니다",
+  "usernameAlreadyExists": "사용자 이름이 이미 존재합니다",
+  "captureMomentsKeepMemories": "순간을 포착하고 추억을 보존",
+  "username": "사용자 이름",
+  "pin": "PIN",
+  "login": "로그인",
+  "createAccount": "계정 만들기",
+  "dontHaveAccountCreateOne": "계정이 없으신가요? 만들기",
+  "alreadyHaveAccountLogin": "이미 계정이 있으신가요? 로그인",
+  "pleaseEnterUsername": "사용자 이름을 입력해 주세요",
+  "pinsDoNotMatch": "PIN이 일치하지 않습니다",
+  "tapToAddAvatar": "탭하여 아바타 추가",
+  "yourName": "이름",
+  "privatePinOptional": "개인 PIN (선택사항)",
+  "usedToEncryptPrivateRecords": "개인 기록 암호화에 사용",
+  "privatePin": "개인 PIN",
+  "leaveEmptyForNoEncryption": "암호화 안 함은 빈칸으로 두기",
+  "confirmPin": "PIN 확인",
+  "getStarted": "시작하기",
+  "noReminders": "알림 없음",
+  "addReminder": "알림 추가",
+  "title": "제목",
+  "descriptionOptional": "설명 (선택사항)",
+  "microphonePermissionRequired": "마이크 권한 필요",
+  "aiAssistant": "AI 어시스턴트",
+  "listening": "듣는 중...",
+  "typeAMessage": "메시지 입력...",
+  "aiChat": "AI 채팅",
+  "startAConversation": "대화 시작",
+  "typeYourMessage": "메시지 입력...",
+  "asrReconnecting": "ASR 재연결 중...",
+  "write": "쓰기",
+  "writeEntry": "항목 쓰기",
+  "noMemoriesYet": "아직 추억이 없습니다",
+  "tapPlusToCapture": "+를 눌러 생각 기록",
+  "tapPlusToCaptureYourThoughts": "+를 눌러 생각 기록",
+  "deleteMemory": "추억 삭제",
+  "deleteRecord": "기록 삭제",
+  "thisEntryWillBeRemoved": "이 항목은 타임라인에서 제거됩니다.",
+  "thisRecordWillBeRemoved": "이 기록은 타임라인에서 제거됩니다.",
+  "searchYourRecords": "기록 검색...",
+  "exactMatches": "정확한 일치",
+  "noExactMatches": "정확한 일치 없음",
+  "exact": "정확",
+  "exactMatch": "정확한 일치",
+  "fuzzyMatches": "유사 일치",
+  "noFuzzyMatches": "유사 일치 없음",
+  "vectorMatch": "벡터 일치",
+  "networkMatches": "네트워크 일치",
+  "noNetworkMatches": "네트워크 일치 없음",
+  "networkSearchIsOff": "네트워크 검색이 꺼져 있습니다. 설정에서 활성화해 주세요.",
+  "network": "네트워크",
+  "networkMatch": "네트워크 일치",
+  "noSearchHistory": "검색 기록 없음",
+  "searchHistory": "검색 기록",
+  "invalidLink": "잘못된 링크",
+  "unableToOpenWebPage": "웹 페이지를 열 수 없습니다",
+  "imageMemory": "[이미지 기억]",
+  "tapToOpenWebPage": "탭하여 웹 페이지 열기",
+  "editEntry": "항목 편집",
+  "entryDetails": "항목 상세",
+  "noContent": "내용 없음",
+  "diaryNotFound": "다이어리를 찾을 수 없습니다",
+  "diaryNotFoundShort": "기록을 찾을 수 없습니다",
+  "aiSummary": "AI 요약",
+  "microphoneInterrupted": "마이크가 중단되어 녹음이 중지되었습니다.",
+  "bold": "굵게",
+  "italic": "기울임꼴",
+  "strikethrough": "취소선",
+  "image": "이미지",
+  "asrUnavailableRecordingActive": "ASR 사용 불가. 녹음은 여전히 활성 상태입니다.",
+  "writeYourEntry": "항목을 작성해 주세요...",
+  "writeYourContent": "내용을 작성해 주세요...",
+  "microphoneStartFailed": "마이크 시작 실패: {error}",
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "microphoneInterruptedRecordingStopped": "마이크가 중단되어 녹음이 중지되었습니다.",
+  "asrReconnectingError": "ASR 재연결 중: {error}",
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "imageInserted": "이미지 삽입됨: {name}",
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "voiceError": "음성 오류: {error}",
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "aiServiceUnavailable": "죄송합니다. AI 서비스가 현재 사용할 수 없습니다: {error}",
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareFailed": "공유 실패: {error}",
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "searchMatchHits": "{matchType} · {count}개 일치",
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "matchCount": "일치: {count}",
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sourceFromNetwork": "출처: {source}",
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "createNew": "만들기",
+  "micStartFailed": "마이크 시작 실패: {error}",
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importResultAccounts": "계정: +{created} / 업데이트 {updated}",
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultDiaries": "다이어리: +{created} / 업데이트 {updated}",
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultReminders": "알림: +{created} / 업데이트 {updated}",
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultSkipped": "건너뛰기: {count}",
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultTotal": "총 변경: {count}",
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsApplied": "백업의 설정이 적용되었습니다.",
+  "settingsNotApplied": "백업의 설정이 적용되지 않았습니다.",
+  "backupExported": "백업 내보냄: {path}",
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "exportFailed": "내보내기 실패: {error}",
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importFailed": "가져오기 실패: {error}",
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
+}

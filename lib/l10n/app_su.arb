@@ -1,0 +1,363 @@
+{
+  "@@locale": "su",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Basa Sunda",
+  "languageNameEn": "Sundanese",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Setélan",
+  "account": "Rekening",
+  "reminders": "Pangéling-ngéling",
+  "language": "Basa",
+  "appLanguage": "Basa Aplikasi",
+  "appearance": "Penampilan",
+  "themeMode": "Mode Téma",
+  "dark": "Poek",
+  "light": "Caang",
+  "system": "Sistim",
+  "aiService": "Layanan AI",
+  "aiChatProvider": "AI Chat Provider",
+  "chatModel": "Modél obrolan",
+  "localModel": "Modél Lokal",
+  "localModelDefault": "Modél Lokal (Default)",
+  "ollamaEndpoint": "Ollama Endpoint",
+  "ollamaModel": "Modél Ollama",
+  "openAiEndpoint": "OpenAI Endpoint",
+  "openAiApiKey": "Konci API OpenAI",
+  "openAiModel": "Modél OpenAI",
+  "geminiEndpoint": "Gemini Endpoint",
+  "geminiApiKey": "Gemini API Key",
+  "geminiModel": "Modél Gemini",
+  "anthropicEndpoint": "Titik Tungtung Antropik",
+  "anthropicApiKey": "Konci API antropik",
+  "anthropicModel": "Modél Antropik",
+  "customProtocol": "Protokol Adat",
+  "protocol": "Protokol",
+  "customEndpoint": "Custom Endpoint",
+  "customApiKey": "Custom API Key",
+  "customModel": "Modél custom",
+  "optionalForLocalServers": "Pilihan pikeun lokal / server custom",
+  "speechRecognitionEngine": "Mesin Pangenal Biantara",
+  "local": "Lokal",
+  "endpoint": "Titik tungtung",
+  "localSpeechModel": "Modél Biantara Lokal",
+  "senseVoiceOnnx": "SenseVoice ONNX (dina alat)",
+  "systemSpeechRecognition": "Pangenal Biantara Sistem",
+  "systemRecognitionAndroidIos": "Pangenal Sistem (Android/ios)",
+  "endpointRecognitionCloudWs": "Pangenal Titik Tungtung (Cloud/WS)",
+  "useBuiltInRecognizer": "Anggo pangenal Android / iOS anu diwangun (tiasa nganggo awan)",
+  "voiceAiEndpoint": "Sora AI Endpoint",
+  "embeddingModel": "Modél Embedding",
+  "crossDeviceSync": "Sinkronisasi lintas-alat",
+  "sendToOtherDevices": "Kirim ka Alat Lain (LocalSend)",
+  "exportBackupAndSend": "Ékspor cadangan sareng kirimkeun via lambar saham",
+  "importFromLocalSend": "Impor ti LocalSend",
+  "selectBackupJson": "Pilih cadangan JSON sareng gabungkeun data lokal",
+  "autoGeneration": "Generasi Otomatis",
+  "autoGenerateSummary": "Otomatis Generate Ringkesan",
+  "generateAiSummaryForNewEntries": "Ngahasilkeun kasimpulan AI pikeun éntri anyar",
+  "autoGenerateEmbedding": "Otomatis Ngahasilkeun Embedding",
+  "generateVectorEmbedding": "Ngahasilkeun embedding vektor pikeun milarian",
+  "enableNetworkSearch": "Aktipkeun Search Network",
+  "allowOnlineRetrieval": "Ngidinan panéangan online pikeun milarian sareng obrolan AI (pareum sacara standar)",
+  "about": "Ngeunaan",
+  "version": "Vérsi {version}",
+  "database": "Pangkalan data",
+  "objectBoxWithHnsw": "ObjectBox kalawan indéks HNSW",
+  "logOut": "Kaluar",
+  "custom": "Adat",
+  "openAiCompatible": "OpenAI Cocog",
+  "notSet": "Teu diatur",
+  "supportsLocalLanPublic": "Ngarojong lokal / LAN / titik tungtung umum",
+  "shiguangLocalSendBackup": "Shiguang LocalSend Nyadangkeun",
+  "localBackupFromShiguang": "Cadangan lokal ti Shiguang (nampi via LocalSend)",
+  "selectBackupFileFromLocalSend": "Pilih payel cadangan nampi ti LocalSend",
+  "failedToResolveFilePath": "Gagal ngabéréskeun jalur file anu dipilih",
+  "importOptions": "Pilihan impor",
+  "importSettingsAsWell": "Setélan impor ogé?\n(Konci API moal ditimpa)",
+  "dataOnly": "Data Ngan",
+  "dataAndSettings": "Data + Setélan",
+  "importCompleted": "Impor Réngsé",
+  "settingsInBackupWereApplied": "Setélan dina cadangan diterapkeun.",
+  "settingsInBackupWereNotApplied": "Setélan dina cadangan teu dilarapkeun.",
+  "ok": "OKÉ",
+  "cancel": "Ngabolaykeun",
+  "save": "Simpen",
+  "delete": "Hapus",
+  "clear": "Jelas",
+  "add": "Tambihan",
+  "create": "Nyiptakeun",
+  "edit": "Édit",
+  "search": "Pilarian",
+  "areYouSureYouWantToLogOut": "Anjeun yakin rék kaluar?",
+  "chooseLanguage": "Pilih Basa",
+  "databaseInfo": "Inpormasi pangkalan data",
+  "storage": "Panyimpenan: ObjectBox",
+  "vectorIndex": "Indéks Véktor: HNSW",
+  "dimensions": "Ukuran: 384",
+  "embeddingModelBge": "Embedding Modél: bge-leutik-zh-v1.5",
+  "takePhoto": "Nyokot Poto",
+  "chooseFromGallery": "Pilih ti Galeri",
+  "editNickname": "Edit Nickname",
+  "enterNickname": "Lebetkeun landihan",
+  "pleaseEnterNickname": "Mangga lebetkeun nickname",
+  "nicknameAlreadyExistsOrInvalid": "Nickname geus aya atawa teu valid",
+  "user": "Pamaké",
+  "manageScheduledReminders": "Atur panginget sareng alarm anu dijadwalkeun",
+  "imageFailedToLoad": "Gambar gagal dimuat. Mangga pilih deui.",
+  "imageIsStillLoading": "Gambar masih dimuat",
+  "imageAreaNotReady": "Wewengkon gambar teu siap. Mangga cobian deui.",
+  "cropFrameNotReady": "Pigura pamotongan teu siap. Mangga cobian deui.",
+  "invalidCropArea": "Wewengkon pamotongan teu valid. Mangga cobian deui.",
+  "cropFailed": "Pamotongan gagal. Mangga cobian deui.",
+  "cropAvatar": "Potong Avatar",
+  "chooseAgain": "Pilih Deui",
+  "rotate90": "Puteran 90°",
+  "dragFrameToMove": "Sered pigura pikeun mindahkeun, sered ka katuhu handap pikeun ngarobah ukuran; ciwit pikeun ngazum sareng mindahkeun gambar.",
+  "pleaseFillInAllFields": "Mangga eusian sagala widang",
+  "pinMustBeAtLeast4Digits": "PIN kedah sahenteuna 4 digit",
+  "pinAtLeast4Digits": "PIN kedah sahenteuna 4 digit",
+  "invalidUsernameOrPin": "ngaran pamaké atawa PIN teu valid",
+  "invalidUsernameOrPinError": "ngaran pamaké atawa PIN teu valid",
+  "usernameAlreadyExists": "Ngaran pamaké geus aya",
+  "captureMomentsKeepMemories": "Candak moments, tetep kenangan",
+  "username": "Ngaran pamaké",
+  "pin": "PIN",
+  "login": "Lebet",
+  "createAccount": "Ngadamel akun",
+  "dontHaveAccountCreateOne": "Teu gaduh akun? Jieun hiji",
+  "alreadyHaveAccountLogin": "Geus boga akun? Lebet",
+  "pleaseEnterUsername": "Mangga lebetkeun ngaran pamaké",
+  "pinsDoNotMatch": "PIN teu cocog",
+  "tapToAddAvatar": "Ketok pikeun nambahkeun avatar",
+  "yourName": "Nami anjeun",
+  "privatePinOptional": "PIN swasta (opsional)",
+  "usedToEncryptPrivateRecords": "Dipaké pikeun énkripsi rékaman pribadi",
+  "privatePin": "PIN swasta",
+  "leaveEmptyForNoEncryption": "Ninggalkeun kosong pikeun euweuh enkripsi",
+  "confirmPin": "Konfirmasi PIN",
+  "getStarted": "Mimitian",
+  "noReminders": "Taya panginget",
+  "addReminder": "Tambahkeun Panginget",
+  "title": "Judul",
+  "descriptionOptional": "Katerangan (opsional)",
+  "microphonePermissionRequired": "idin mikropon diperlukeun",
+  "aiAssistant": "Asisten AI",
+  "listening": "Dengekeun...",
+  "typeAMessage": "Ketik pesen...",
+  "aiChat": "AI Chat",
+  "startAConversation": "Mimitian paguneman",
+  "typeYourMessage": "Ketik pesen anjeun...",
+  "asrReconnecting": "ASR nyambung deui...",
+  "write": "Tulis",
+  "writeEntry": "Tulis Éntri",
+  "noMemoriesYet": "Euweuh kenangan acan",
+  "tapPlusToCapture": "Ketok + pikeun moto pikiran anjeun",
+  "tapPlusToCaptureYourThoughts": "Ketok + pikeun moto pikiran anjeun",
+  "deleteMemory": "Pupus Mémori",
+  "deleteRecord": "Pupus Rékam",
+  "thisEntryWillBeRemoved": "Éntri ieu bakal dipiceun tina timeline anjeun.",
+  "thisRecordWillBeRemoved": "Rékam ieu bakal dipupus tina timeline anjeun.",
+  "searchYourRecords": "Pilarian rékaman anjeun...",
+  "exactMatches": "Cocog Pas",
+  "noExactMatches": "Taya patandingan pasti",
+  "exact": "Persis",
+  "exactMatch": "Cocog Pas",
+  "fuzzyMatches": "Cocog Fuzzy",
+  "noFuzzyMatches": "Taya patandingan Fuzzy",
+  "vectorMatch": "Véktor Cocog",
+  "networkMatches": "Pertandingan jaringan",
+  "noNetworkMatches": "Taya jaringan cocog",
+  "networkSearchIsOff": "Pilarian jaringan pareum. Aktipkeun dina Setélan.",
+  "network": "Jaringan",
+  "networkMatch": "Pertandingan Jaringan",
+  "noSearchHistory": "Taya sajarah pilarian",
+  "searchHistory": "Sajarah Pilarian",
+  "invalidLink": "Tumbu teu valid",
+  "unableToOpenWebPage": "Teu tiasa muka halaman wéb",
+  "imageMemory": "[Memori gambar]",
+  "tapToOpenWebPage": "Ketok pikeun muka halaman wéb",
+  "editEntry": "Éntri Éntri",
+  "entryDetails": "Rincian Éntri",
+  "noContent": "Taya eusi",
+  "diaryNotFound": "Diary teu kapanggih",
+  "diaryNotFoundShort": "Rékam teu kapanggih",
+  "aiSummary": "Ringkesan AI",
+  "microphoneInterrupted": "Mikropon diganggu, ngarékam eureun.",
+  "bold": "Kandel",
+  "italic": "Miring",
+  "strikethrough": "neunggeul",
+  "image": "Gambar",
+  "asrUnavailableRecordingActive": "ASR teu sadia. Ngarékam masih aktip.",
+  "writeYourEntry": "Tulis entri anjeun ...",
+  "writeYourContent": "Tulis eusi anjeun...",
+  "microphoneStartFailed": "Gagal ngamimitian mikropon: {error}",
+  "microphoneInterruptedRecordingStopped": "Mikropon diganggu, ngarékam eureun.",
+  "asrReconnectingError": "ASR nyambungkeun deui: {error}",
+  "imageInserted": "Gambar diselapkeun: {name}",
+  "voiceError": "Kasalahan sora: {error}",
+  "aiServiceUnavailable": "Punten, jasa AI ayeuna teu sayogi: {error}",
+  "shareFailed": "Gagal dibagikeun: {error}",
+  "searchMatchHits": "{matchType} · {count} hits",
+  "matchCount": "Cocog: {count}",
+  "sourceFromNetwork": "Sumber: {source}",
+  "createNew": "Nyiptakeun",
+  "micStartFailed": "Mic mimiti gagal: {error}",
+  "importResultAccounts": "Akun: +{created} / diropéa {updated}",
+  "importResultDiaries": "Diaries: +{created} / diropéa {updated}",
+  "importResultReminders": "Panginget: +{created} / diropéa {updated}",
+  "importResultSkipped": "Dilewatan: {count}",
+  "importResultTotal": "Total robah: {count}",
+  "settingsApplied": "Setélan dina cadangan diterapkeun.",
+  "settingsNotApplied": "Setélan dina cadangan teu dilarapkeun.",
+  "backupExported": "Cadangan diékspor: {path}",
+  "exportFailed": "Ékspor gagal: {error}",
+  "importFailed": "Impor gagal: {error}"
+}

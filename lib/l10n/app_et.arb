@@ -1,0 +1,363 @@
+{
+  "@@locale": "et",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Eesti",
+  "languageNameEn": "Estonian",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... või http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Seaded",
+  "account": "konto",
+  "reminders": "Meeldetuletused",
+  "language": "Keel",
+  "appLanguage": "Rakenduse keel",
+  "appearance": "Välimus",
+  "themeMode": "Teema režiim",
+  "dark": "Tume",
+  "light": "Valgus",
+  "system": "Süsteem",
+  "aiService": "AI teenus",
+  "aiChatProvider": "AI vestluse pakkuja",
+  "chatModel": "Vestlusmudel",
+  "localModel": "Kohalik mudel",
+  "localModelDefault": "Kohalik mudel (vaikimisi)",
+  "ollamaEndpoint": "Ollama lõpp-punkt",
+  "ollamaModel": "Ollama mudel",
+  "openAiEndpoint": "OpenAI lõpp-punkt",
+  "openAiApiKey": "OpenAI API võti",
+  "openAiModel": "OpenAI mudel",
+  "geminiEndpoint": "Kaksikute lõpp-punkt",
+  "geminiApiKey": "Gemini API võti",
+  "geminiModel": "Kaksikute mudelid",
+  "anthropicEndpoint": "Antroopiline lõpp-punkt",
+  "anthropicApiKey": "Antroopiline API võti",
+  "anthropicModel": "Antroopiline mudel",
+  "customProtocol": "Kohandatud protokoll",
+  "protocol": "Protokoll",
+  "customEndpoint": "Kohandatud lõpp-punkt",
+  "customApiKey": "Kohandatud API võti",
+  "customModel": "Kohandatud mudel",
+  "optionalForLocalServers": "Kohalike/kohandatud serverite jaoks valikuline",
+  "speechRecognitionEngine": "Kõnetuvastusmootor",
+  "local": "Kohalik",
+  "endpoint": "Lõpp-punkt",
+  "localSpeechModel": "Kohalik kõnemudel",
+  "senseVoiceOnnx": "SenseVoice ONNX (seadmes)",
+  "systemSpeechRecognition": "Süsteemne kõnetuvastus",
+  "systemRecognitionAndroidIos": "Süsteemituvastus (Android/iOS)",
+  "endpointRecognitionCloudWs": "Lõpp-punkti tuvastamine (pilv/WS)",
+  "useBuiltInRecognizer": "Kasutage sisseehitatud Androidi / iOS-i tuvastajat (võib kasutada pilve)",
+  "voiceAiEndpoint": "Voice AI lõpp-punkt",
+  "embeddingModel": "Mudeli manustamine",
+  "crossDeviceSync": "Seadmetevaheline sünkroonimine",
+  "sendToOtherDevices": "Saada teistele seadmetele (LocalSend)",
+  "exportBackupAndSend": "Eksportige varukoopia ja saatke jagamislehe kaudu",
+  "importFromLocalSend": "Importige teenusest LocalSend",
+  "selectBackupJson": "Valige varu JSON ja ühendage kohalikud andmed",
+  "autoGeneration": "Automaatne genereerimine",
+  "autoGenerateSummary": "Loo kokkuvõte automaatselt",
+  "generateAiSummaryForNewEntries": "Looge uute kirjete jaoks tehisintellekti kokkuvõte",
+  "autoGenerateEmbedding": "Manustamise automaatne loomine",
+  "generateVectorEmbedding": "Genereerige otsinguks vektormanustus",
+  "enableNetworkSearch": "Luba võrguotsing",
+  "allowOnlineRetrieval": "Otsingu ja tehisintellekti vestluse jaoks võrgust toomise lubamine (vaikimisi väljas)",
+  "about": "Umbes",
+  "version": "Versioon {version}",
+  "database": "Andmebaas",
+  "objectBoxWithHnsw": "ObjectBox HNSW indeksiga",
+  "logOut": "Logi välja",
+  "custom": "Kohandatud",
+  "openAiCompatible": "OpenAI-ga ühilduv",
+  "notSet": "Pole määratud",
+  "supportsLocalLanPublic": "Toetab kohalikke/LAN/avalikke lõpp-punkte",
+  "shiguangLocalSendBackup": "Shiguang LocalSendi varukoopia",
+  "localBackupFromShiguang": "Kohalik varukoopia Shiguangist (saamine LocalSendi kaudu)",
+  "selectBackupFileFromLocalSend": "Valige LocalSendilt saadud varukoopiafail",
+  "failedToResolveFilePath": "Valitud failitee lahendamine ebaõnnestus",
+  "importOptions": "Impordivalikud",
+  "importSettingsAsWell": "Kas importida ka sätteid?\n(API võtmeid ei kirjutata üle)",
+  "dataOnly": "Ainult andmed",
+  "dataAndSettings": "Andmed + Seaded",
+  "importCompleted": "Import on lõpetatud",
+  "settingsInBackupWereApplied": "Varunduse sätted rakendati.",
+  "settingsInBackupWereNotApplied": "Varunduse sätteid ei rakendatud.",
+  "ok": "OK",
+  "cancel": "Tühista",
+  "save": "Salvesta",
+  "delete": "Kustuta",
+  "clear": "Selge",
+  "add": "Lisa",
+  "create": "Loo",
+  "edit": "Muuda",
+  "search": "Otsi",
+  "areYouSureYouWantToLogOut": "Kas soovite kindlasti välja logida?",
+  "chooseLanguage": "Valige keel",
+  "databaseInfo": "Andmebaasi teave",
+  "storage": "Salvestusruum: ObjectBox",
+  "vectorIndex": "Vektorindeks: HNSW",
+  "dimensions": "Mõõdud: 384",
+  "embeddingModelBge": "Manusmudel: bge-small-zh-v1.5",
+  "takePhoto": "Pildista",
+  "chooseFromGallery": "Valige galeriist",
+  "editNickname": "Redigeeri hüüdnime",
+  "enterNickname": "Sisestage hüüdnimi",
+  "pleaseEnterNickname": "Palun sisestage hüüdnimi",
+  "nicknameAlreadyExistsOrInvalid": "Hüüdnimi on juba olemas või on kehtetu",
+  "user": "Kasutaja",
+  "manageScheduledReminders": "Hallake ajastatud meeldetuletusi ja häireid",
+  "imageFailedToLoad": "Pildi laadimine ebaõnnestus. Palun valige uuesti.",
+  "imageIsStillLoading": "Pilti laaditakse endiselt",
+  "imageAreaNotReady": "Pildiala pole valmis. Palun proovi uuesti.",
+  "cropFrameNotReady": "Kärpimisraam pole valmis. Palun proovi uuesti.",
+  "invalidCropArea": "Kehtetu kärpimisala. Palun proovi uuesti.",
+  "cropFailed": "Kärpimine ebaõnnestus. Palun proovi uuesti.",
+  "cropAvatar": "Kärbi avatari",
+  "chooseAgain": "Valige uuesti",
+  "rotate90": "Pöörake 90°",
+  "dragFrameToMove": "Liigutamiseks lohistage raami, suuruse muutmiseks lohistage alt paremale; pildi suumimiseks ja liigutamiseks pigistage kokku.",
+  "pleaseFillInAllFields": "Palun täitke kõik väljad",
+  "pinMustBeAtLeast4Digits": "PIN-kood peab olema vähemalt 4-kohaline",
+  "pinAtLeast4Digits": "PIN-kood peab olema vähemalt 4-kohaline",
+  "invalidUsernameOrPin": "Kehtetu kasutajanimi või PIN-kood",
+  "invalidUsernameOrPinError": "Kehtetu kasutajanimi või PIN-kood",
+  "usernameAlreadyExists": "Kasutajanimi on juba olemas",
+  "captureMomentsKeepMemories": "Jäädvustage hetki, hoidke mälestusi",
+  "username": "Kasutajanimi",
+  "pin": "PIN-kood",
+  "login": "Logi sisse",
+  "createAccount": "Loo konto",
+  "dontHaveAccountCreateOne": "Kas teil pole kontot? Looge üks",
+  "alreadyHaveAccountLogin": "Kas teil on juba konto? Logi sisse",
+  "pleaseEnterUsername": "Palun sisesta kasutajanimi",
+  "pinsDoNotMatch": "PIN-koodid ei ühti",
+  "tapToAddAvatar": "Avatari lisamiseks puudutage",
+  "yourName": "Sinu nimi",
+  "privatePinOptional": "Privaatne PIN-kood (valikuline)",
+  "usedToEncryptPrivateRecords": "Kasutatakse privaatsete kirjete krüptimiseks",
+  "privatePin": "Privaatne PIN-kood",
+  "leaveEmptyForNoEncryption": "Krüptimise vältimiseks jätke tühjaks",
+  "confirmPin": "Kinnitage PIN-kood",
+  "getStarted": "Alustage",
+  "noReminders": "Ei mingeid meeldetuletusi",
+  "addReminder": "Lisa meeldetuletus",
+  "title": "Pealkiri",
+  "descriptionOptional": "Kirjeldus (valikuline)",
+  "microphonePermissionRequired": "Vajalik mikrofoni luba",
+  "aiAssistant": "AI assistent",
+  "listening": "Kuulan...",
+  "typeAMessage": "Sisestage sõnum...",
+  "aiChat": "AI vestlus",
+  "startAConversation": "Alustage vestlust",
+  "typeYourMessage": "Sisestage oma sõnum...",
+  "asrReconnecting": "ASR-i taasühendamine...",
+  "write": "Kirjutage",
+  "writeEntry": "Kirjuta kanne",
+  "noMemoriesYet": "Pole veel mälestusi",
+  "tapPlusToCapture": "Puudutage oma mõtete jäädvustamiseks nuppu +",
+  "tapPlusToCaptureYourThoughts": "Puudutage oma mõtete jäädvustamiseks nuppu +",
+  "deleteMemory": "Kustuta mälu",
+  "deleteRecord": "Kustuta kirje",
+  "thisEntryWillBeRemoved": "See kirje eemaldatakse teie ajaskaalalt.",
+  "thisRecordWillBeRemoved": "See kirje eemaldatakse teie ajaskaalalt.",
+  "searchYourRecords": "Otsige oma kirjeid...",
+  "exactMatches": "Täpsed vasted",
+  "noExactMatches": "Täpseid vasteid pole",
+  "exact": "Täpne",
+  "exactMatch": "Täpne vaste",
+  "fuzzyMatches": "Hägused vasted",
+  "noFuzzyMatches": "Hägusaid vasteid pole",
+  "vectorMatch": "Vektori matš",
+  "networkMatches": "Võrgu vasted",
+  "noNetworkMatches": "Võrgustiku vasteid pole",
+  "networkSearchIsOff": "Võrguotsing on välja lülitatud. Luba see seadetes.",
+  "network": "Võrk",
+  "networkMatch": "Võrgu vaste",
+  "noSearchHistory": "Otsinguajalugu pole",
+  "searchHistory": "Otsinguajalugu",
+  "invalidLink": "Vigane link",
+  "unableToOpenWebPage": "Veebilehte ei saa avada",
+  "imageMemory": "[Pildimälu]",
+  "tapToOpenWebPage": "Puudutage veebilehe avamiseks",
+  "editEntry": "Redigeeri kirjet",
+  "entryDetails": "Sisenemise üksikasjad",
+  "noContent": "Sisu puudub",
+  "diaryNotFound": "Päevikut ei leitud",
+  "diaryNotFoundShort": "Kirjet ei leitud",
+  "aiSummary": "AI kokkuvõte",
+  "microphoneInterrupted": "Mikrofon katkestatud, salvestamine peatatud.",
+  "bold": "Paks",
+  "italic": "Kursiiv",
+  "strikethrough": "Läbikriipsutatud",
+  "image": "Pilt",
+  "asrUnavailableRecordingActive": "ASR pole saadaval. Salvestamine on endiselt aktiivne.",
+  "writeYourEntry": "Kirjutage oma sissekanne...",
+  "writeYourContent": "Kirjutage oma sisu...",
+  "microphoneStartFailed": "Mikrofoni käivitamine ebaõnnestus: {error}",
+  "microphoneInterruptedRecordingStopped": "Mikrofon katkestatud, salvestamine peatatud.",
+  "asrReconnectingError": "ASR-i taasühendamine: {error}",
+  "imageInserted": "Pilt sisestatud: {name}",
+  "voiceError": "Hääleviga: {error}",
+  "aiServiceUnavailable": "Kahjuks pole AI teenus praegu saadaval: {error}",
+  "shareFailed": "Jagamine ebaõnnestus: {error}",
+  "searchMatchHits": "{matchType} · {count} tabamust",
+  "matchCount": "Vaste: {count}",
+  "sourceFromNetwork": "Allikas: {source}",
+  "createNew": "Loo",
+  "micStartFailed": "Mikrofoni käivitamine ebaõnnestus: {error}",
+  "importResultAccounts": "Kontod: +{created} / värskendatud {updated}",
+  "importResultDiaries": "Päevikud: +{created} / uuendatud {updated}",
+  "importResultReminders": "Meeldetuletused: +{created} / uuendatud {updated}",
+  "importResultSkipped": "Vahele jäetud: {count}",
+  "importResultTotal": "Muudetud kokku: {count}",
+  "settingsApplied": "Varunduse sätted rakendati.",
+  "settingsNotApplied": "Varunduse sätteid ei rakendatud.",
+  "backupExported": "Varukoopia eksporditud: {path}",
+  "exportFailed": "Eksport ebaõnnestus: {error}",
+  "importFailed": "Import ebaõnnestus: {error}"
+}

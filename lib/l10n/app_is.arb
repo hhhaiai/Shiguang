@@ -1,0 +1,363 @@
+{
+  "@@locale": "is",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Íslenska",
+  "languageNameEn": "Icelandic",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... eða http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Stillingar",
+  "account": "Reikningur",
+  "reminders": "Áminningar",
+  "language": "Tungumál",
+  "appLanguage": "Tungumál apps",
+  "appearance": "Útlit",
+  "themeMode": "Þemahamur",
+  "dark": "Myrkur",
+  "light": "Ljós",
+  "system": "Kerfi",
+  "aiService": "AI þjónusta",
+  "aiChatProvider": "AI spjallveita",
+  "chatModel": "Spjall líkan",
+  "localModel": "Staðbundið líkan",
+  "localModelDefault": "Staðbundið líkan (sjálfgefið)",
+  "ollamaEndpoint": "Ollama endapunktur",
+  "ollamaModel": "Ollama fyrirmynd",
+  "openAiEndpoint": "OpenAI endapunktur",
+  "openAiApiKey": "OpenAI API lykill",
+  "openAiModel": "OpenAI líkan",
+  "geminiEndpoint": "Gemini endapunktur",
+  "geminiApiKey": "Gemini API lykill",
+  "geminiModel": "Gemini líkan",
+  "anthropicEndpoint": "Antropískur endapunktur",
+  "anthropicApiKey": "Anthropic API lykill",
+  "anthropicModel": "Mannræn fyrirmynd",
+  "customProtocol": "Sérsniðin bókun",
+  "protocol": "Bókun",
+  "customEndpoint": "Sérsniðinn endapunktur",
+  "customApiKey": "Sérsniðinn API lykill",
+  "customModel": "Sérsniðin líkan",
+  "optionalForLocalServers": "Valfrjálst fyrir staðbundna/sérsniðna netþjóna",
+  "speechRecognitionEngine": "Talgreiningarvél",
+  "local": "Staðbundið",
+  "endpoint": "Endapunktur",
+  "localSpeechModel": "Staðbundið tallíkan",
+  "senseVoiceOnnx": "SenseVoice ONNX (í tæki)",
+  "systemSpeechRecognition": "Kerfistalgreining",
+  "systemRecognitionAndroidIos": "Kerfisþekking (Android/iOS)",
+  "endpointRecognitionCloudWs": "Endpunktagreining (ský/WS)",
+  "useBuiltInRecognizer": "Notaðu innbyggða Android / iOS auðkenningu (má nota ský)",
+  "voiceAiEndpoint": "Rödd AI endapunktur",
+  "embeddingModel": "Innfelling líkan",
+  "crossDeviceSync": "Samstilling yfir tæki",
+  "sendToOtherDevices": "Senda í önnur tæki (LocalSend)",
+  "exportBackupAndSend": "Flyttu út öryggisafrit og sendu í gegnum deiliblað",
+  "importFromLocalSend": "Flytja inn frá LocalSend",
+  "selectBackupJson": "Veldu öryggisafrit af JSON og sameinaðu staðbundin gögn",
+  "autoGeneration": "Sjálfvirk kynslóð",
+  "autoGenerateSummary": "Mynda sjálfkrafa samantekt",
+  "generateAiSummaryForNewEntries": "Búðu til gervigreindarsamantekt fyrir nýjar færslur",
+  "autoGenerateEmbedding": "Mynda innfellingu sjálfkrafa",
+  "generateVectorEmbedding": "Búðu til vektorinnfellingu fyrir leit",
+  "enableNetworkSearch": "Virkja netleit",
+  "allowOnlineRetrieval": "Leyfa sókn á netinu fyrir leit og gervigreind spjall (slökkt sjálfgefið)",
+  "about": "Um",
+  "version": "Útgáfa {version}",
+  "database": "Gagnagrunnur",
+  "objectBoxWithHnsw": "ObjectBox með HNSW vísitölu",
+  "logOut": "Skráðu þig út",
+  "custom": "Sérsniðin",
+  "openAiCompatible": "OpenAI samhæft",
+  "notSet": "Ekki stillt",
+  "supportsLocalLanPublic": "Styður staðbundna/LAN/opinbera endapunkta",
+  "shiguangLocalSendBackup": "Shiguang LocalSend öryggisafrit",
+  "localBackupFromShiguang": "Staðbundið öryggisafrit frá Shiguang (móttaka með LocalSend)",
+  "selectBackupFileFromLocalSend": "Veldu öryggisafrit sem var móttekin frá LocalSend",
+  "failedToResolveFilePath": "Mistókst að leysa valda skráarslóð",
+  "importOptions": "Innflutningsvalkostir",
+  "importSettingsAsWell": "Flytja líka inn stillingar?\n(API lyklum verður ekki skrifað yfir)",
+  "dataOnly": "Aðeins gögn",
+  "dataAndSettings": "Gögn + Stillingar",
+  "importCompleted": "Innflutningi lokið",
+  "settingsInBackupWereApplied": "Stillingar í öryggisafriti voru notaðar.",
+  "settingsInBackupWereNotApplied": "Stillingar í öryggisafriti voru ekki notaðar.",
+  "ok": "Allt í lagi",
+  "cancel": "Hætta við",
+  "save": "Vista",
+  "delete": "Eyða",
+  "clear": "Hreinsa",
+  "add": "Bæta við",
+  "create": "Búa til",
+  "edit": "Breyta",
+  "search": "Leita",
+  "areYouSureYouWantToLogOut": "Ertu viss um að þú viljir skrá þig út?",
+  "chooseLanguage": "Veldu Tungumál",
+  "databaseInfo": "Upplýsingar um gagnagrunn",
+  "storage": "Geymsla: ObjectBox",
+  "vectorIndex": "Vektorvísitala: HNSW",
+  "dimensions": "Stærðir: 384",
+  "embeddingModelBge": "Innfelling líkan: bge-small-zh-v1.5",
+  "takePhoto": "Taktu mynd",
+  "chooseFromGallery": "Veldu úr Gallerí",
+  "editNickname": "Breyta gælunafni",
+  "enterNickname": "Sláðu inn gælunafn",
+  "pleaseEnterNickname": "Vinsamlegast sláðu inn gælunafn",
+  "nicknameAlreadyExistsOrInvalid": "Gælunafn er þegar til eða er ógilt",
+  "user": "Notandi",
+  "manageScheduledReminders": "Stjórna áætluðum áminningum og viðvörunum",
+  "imageFailedToLoad": "Ekki tókst að hlaða mynd. Vinsamlegast veldu aftur.",
+  "imageIsStillLoading": "Myndin er enn að hlaðast inn",
+  "imageAreaNotReady": "Myndsvæði er ekki tilbúið. Vinsamlegast reyndu aftur.",
+  "cropFrameNotReady": "Skurðarrammi er ekki tilbúinn. Vinsamlegast reyndu aftur.",
+  "invalidCropArea": "Ógilt uppskerusvæði. Vinsamlegast reyndu aftur.",
+  "cropFailed": "Skera mistókst. Vinsamlegast reyndu aftur.",
+  "cropAvatar": "Skera Avatar",
+  "chooseAgain": "Veldu aftur",
+  "rotate90": "Snúið 90°",
+  "dragFrameToMove": "Dragðu rammann til að færa, dragðu neðst til hægri til að breyta stærð; klíptu til að þysja og færa mynd.",
+  "pleaseFillInAllFields": "Vinsamlegast fylltu út alla reiti",
+  "pinMustBeAtLeast4Digits": "PIN-númer verður að vera að minnsta kosti 4 tölustafir",
+  "pinAtLeast4Digits": "PIN-númer verður að vera að minnsta kosti 4 tölustafir",
+  "invalidUsernameOrPin": "Ógilt notendanafn eða PIN-númer",
+  "invalidUsernameOrPinError": "Ógilt notendanafn eða PIN-númer",
+  "usernameAlreadyExists": "Notandanafn er þegar til",
+  "captureMomentsKeepMemories": "Fanga augnablik, geymdu minningar",
+  "username": "Notandanafn",
+  "pin": "PIN-númer",
+  "login": "Innskráning",
+  "createAccount": "Búðu til reikning",
+  "dontHaveAccountCreateOne": "Ertu ekki með reikning? Búðu til einn",
+  "alreadyHaveAccountLogin": "Ertu nú þegar með reikning? Innskráning",
+  "pleaseEnterUsername": "Vinsamlegast sláðu inn notandanafn",
+  "pinsDoNotMatch": "PIN-númer passa ekki saman",
+  "tapToAddAvatar": "Pikkaðu til að bæta við avatar",
+  "yourName": "Nafn þitt",
+  "privatePinOptional": "Einka PIN (valfrjálst)",
+  "usedToEncryptPrivateRecords": "Notað til að dulkóða einkagögn",
+  "privatePin": "Einka PIN",
+  "leaveEmptyForNoEncryption": "Skildu eftir tómt fyrir enga dulkóðun",
+  "confirmPin": "Staðfestu PIN",
+  "getStarted": "Byrjaðu",
+  "noReminders": "Engar áminningar",
+  "addReminder": "Bæta við áminningu",
+  "title": "Titill",
+  "descriptionOptional": "Lýsing (valfrjálst)",
+  "microphonePermissionRequired": "Hljóðnemaheimild krafist",
+  "aiAssistant": "AI aðstoðarmaður",
+  "listening": "Hlustar...",
+  "typeAMessage": "Sláðu inn skilaboð...",
+  "aiChat": "AI spjall",
+  "startAConversation": "Byrjaðu samtal",
+  "typeYourMessage": "Sláðu inn skilaboðin þín...",
+  "asrReconnecting": "ASR tengir aftur...",
+  "write": "Skrifaðu",
+  "writeEntry": "Skrifaðu færslu",
+  "noMemoriesYet": "Engar minningar ennþá",
+  "tapPlusToCapture": "Ýttu á + til að fanga hugsanir þínar",
+  "tapPlusToCaptureYourThoughts": "Ýttu á + til að fanga hugsanir þínar",
+  "deleteMemory": "Eyða minni",
+  "deleteRecord": "Eyða skrá",
+  "thisEntryWillBeRemoved": "Þessi færsla verður fjarlægð af tímalínunni þinni.",
+  "thisRecordWillBeRemoved": "Þessi skrá verður fjarlægð af tímalínunni þinni.",
+  "searchYourRecords": "Leitaðu í skránum þínum...",
+  "exactMatches": "Nákvæmar samsvörun",
+  "noExactMatches": "Engar nákvæmar samsvörun",
+  "exact": "Nákvæmlega",
+  "exactMatch": "Nákvæm samsvörun",
+  "fuzzyMatches": "Óljósar eldspýtur",
+  "noFuzzyMatches": "Engar óljósar samsvörun",
+  "vectorMatch": "Vector Match",
+  "networkMatches": "Netsamsvörun",
+  "noNetworkMatches": "Engin netsamsvörun",
+  "networkSearchIsOff": "Slökkt er á netleit. Virkjaðu það í stillingum.",
+  "network": "Net",
+  "networkMatch": "Netsamsvörun",
+  "noSearchHistory": "Enginn leitarferill",
+  "searchHistory": "Leitarferill",
+  "invalidLink": "Ógildur tengill",
+  "unableToOpenWebPage": "Ekki tókst að opna vefsíðu",
+  "imageMemory": "[Myndarminni]",
+  "tapToOpenWebPage": "Bankaðu til að opna vefsíðu",
+  "editEntry": "Breyta færslu",
+  "entryDetails": "Upplýsingar um inngöngu",
+  "noContent": "Ekkert efni",
+  "diaryNotFound": "Dagbók fannst ekki",
+  "diaryNotFoundShort": "Skrá fannst ekki",
+  "aiSummary": "AI samantekt",
+  "microphoneInterrupted": "Hljóðnemi rofinn, upptaka stöðvuð.",
+  "bold": "Djarft",
+  "italic": "Skáletrun",
+  "strikethrough": "Yfirstrikað",
+  "image": "Mynd",
+  "asrUnavailableRecordingActive": "ASR ekki tiltækt. Upptaka er enn virk.",
+  "writeYourEntry": "Skrifaðu færsluna þína...",
+  "writeYourContent": "Skrifaðu efnið þitt...",
+  "microphoneStartFailed": "Mistókst að ræsa hljóðnemann: {error}",
+  "microphoneInterruptedRecordingStopped": "Hljóðnemi rofinn, upptaka stöðvuð.",
+  "asrReconnectingError": "ASR tengir aftur: {error}",
+  "imageInserted": "Mynd sett inn: {name}",
+  "voiceError": "Raddvilla: {error}",
+  "aiServiceUnavailable": "Því miður er gervigreind þjónusta ekki tiltæk eins og er: {error}",
+  "shareFailed": "Mistókst að deila: {error}",
+  "searchMatchHits": "{matchType} · {count} hits",
+  "matchCount": "Samsvörun: {count}",
+  "sourceFromNetwork": "Heimild: {source}",
+  "createNew": "Búa til",
+  "micStartFailed": "Ekki tókst að ræsa hljóðnema: {error}",
+  "importResultAccounts": "Reikningar: +{created} / uppfært {updated}",
+  "importResultDiaries": "Dagbækur: +{created} / uppfært {updated}",
+  "importResultReminders": "Áminningar: +{created} / uppfært {updated}",
+  "importResultSkipped": "Sleppt: {count}",
+  "importResultTotal": "Samtals breytt: {count}",
+  "settingsApplied": "Stillingar í öryggisafriti voru notaðar.",
+  "settingsNotApplied": "Stillingar í öryggisafriti voru ekki notaðar.",
+  "backupExported": "Afrit flutt út: {path}",
+  "exportFailed": "Útflutningur mistókst: {error}",
+  "importFailed": "Innflutningur mistókst: {error}"
+}

@@ -1,0 +1,360 @@
+{
+  "@@locale": "ja",
+  "languageName": "日本語",
+  "languageNameEn": "Japanese",
+  "appTitle": "Shiguang",
+  "settings": "設定",
+  "account": "アカウント",
+  "reminders": "リマインダー",
+  "language": "言語",
+  "appLanguage": "アプリの言語",
+  "appearance": "外観",
+  "themeMode": "テーマモード",
+  "dark": "ダーク",
+  "light": "ライト",
+  "system": "システム",
+  "aiService": "AIサービス",
+  "aiChatProvider": "AIチャットプロバイダー",
+  "chatModel": "チャットモデル",
+  "localModel": "ローカルモデル",
+  "localModelDefault": "ローカルモデル（デフォルト）",
+  "ollamaEndpoint": "Ollamaエンドポイント",
+  "ollamaModel": "Ollamaモデル",
+  "openAiEndpoint": "OpenAIエンドポイント",
+  "openAiApiKey": "OpenAI APIキー",
+  "openAiModel": "OpenAIモデル",
+  "geminiEndpoint": "Geminiエンドポイント",
+  "geminiApiKey": "Gemini APIキー",
+  "geminiModel": "Geminiモデル",
+  "anthropicEndpoint": "Anthropicエンドポイント",
+  "anthropicApiKey": "Anthropic APIキー",
+  "anthropicModel": "Anthropicモデル",
+  "customProtocol": "カスタムプロトコル",
+  "protocol": "プロトコル",
+  "customEndpoint": "カスタムエンドポイント",
+  "customApiKey": "カスタムAPIキー",
+  "customModel": "カスタムモデル",
+  "optionalForLocalServers": "ローカル/カスタムサーバーは任意",
+  "speechRecognitionEngine": "音声認識エンジン",
+  "local": "ローカル",
+  "endpoint": "エンドポイント",
+  "localSpeechModel": "ローカル音声モデル",
+  "senseVoiceOnnx": "SenseVoice ONNX（デバイス上）",
+  "systemSpeechRecognition": "システム音声認識",
+  "systemRecognitionAndroidIos": "システム認識（Android/iOS）",
+  "endpointRecognitionCloudWs": "エンドポイント認識（Cloud/WS）",
+  "useBuiltInRecognizer": "Android/iOSの組み込み認識を使用（クラウド使用の可能性あり）",
+  "voiceAiEndpoint": "音声AIエンドポイント",
+  "embeddingModel": "Embeddingモデル",
+  "crossDeviceSync": "クロスデバイス同期",
+  "sendToOtherDevices": "他のデバイスに送信（LocalSend）",
+  "exportBackupAndSend": "バックアップをエクスポートして送信",
+  "importFromLocalSend": "LocalSendからインポート",
+  "selectBackupJson": "バックアップJSONを選択してローカルデータをマージ",
+  "autoGeneration": "自動生成",
+  "autoGenerateSummary": "要約を自動生成",
+  "generateAiSummaryForNewEntries": "新しいエントリにAI要約を生成",
+  "autoGenerateEmbedding": "Embeddingを自動生成",
+  "generateVectorEmbedding": "検索用のベクトルEmbeddingを生成",
+  "enableNetworkSearch": "ネットワーク検索を有効にする",
+  "allowOnlineRetrieval": "検索とAIチャットのオンライン取得を許可（デフォルトではオフ）",
+  "about": "について",
+  "version": "バージョン {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "database": "データベース",
+  "objectBoxWithHnsw": "HNSWインデックス付きObjectBox",
+  "logOut": "ログアウト",
+  "custom": "カスタム",
+  "openAiCompatible": "OpenAI互換",
+  "notSet": "未設定",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... または http://127.0.0.1:11434",
+  "supportsLocalLanPublic": "ローカル/LAN/パブリックエンドポイントをサポート",
+  "shiguangLocalSendBackup": "Shiguang LocalSendバックアップ",
+  "localBackupFromShiguang": "Shiguangからのローカルバックアップ（LocalSendで受信）",
+  "selectBackupFileFromLocalSend": "LocalSendで受信したバックアップファイルを選択",
+  "failedToResolveFilePath": "選択したファイルパスを解決できませんでした",
+  "importOptions": "インポートオプション",
+  "importSettingsAsWell": "設定もインポートしますか？\n（APIキーは上書きされません）",
+  "dataOnly": "データのみ",
+  "dataAndSettings": "データ + 設定",
+  "importCompleted": "インポート完了",
+  "settingsInBackupWereApplied": "バックアップの設定が適用されました。",
+  "settingsInBackupWereNotApplied": "バックアップの設定は適用されませんでした。",
+  "ok": "わかりました",
+  "cancel": "キャンセル",
+  "save": "保存",
+  "delete": "削除",
+  "clear": "クリア",
+  "add": "追加",
+  "create": "作成",
+  "edit": "編集",
+  "search": "検索",
+  "areYouSureYouWantToLogOut": "ログアウトしてもよろしいですか？",
+  "chooseLanguage": "言語を選択",
+  "databaseInfo": "データベース情報",
+  "storage": "ストレージ: ObjectBox",
+  "vectorIndex": "ベクトルインデックス: HNSW",
+  "dimensions": "次元: 384",
+  "embeddingModelBge": "Embeddingモデル: bge-small-zh-v1.5",
+  "takePhoto": "写真を撮る",
+  "chooseFromGallery": "ギャラリーから選択",
+  "editNickname": "ニックネームを編集",
+  "enterNickname": "ニックネームを入力",
+  "pleaseEnterNickname": "ニックネームを入力してください",
+  "nicknameAlreadyExistsOrInvalid": "ニックネームは既に存在するか無効です",
+  "user": "ユーザー",
+  "manageScheduledReminders": "スケジュールされたリマインダーとアラームを管理",
+  "imageFailedToLoad": "画像の読み込みに失敗しました。再度選択してください。",
+  "imageIsStillLoading": "画像はまだ読み込み中です",
+  "imageAreaNotReady": "画像エリアの準備ができません。再度お試しください。",
+  "cropFrameNotReady": "切り抜きフレームの準備ができません。再度お試しください。",
+  "invalidCropArea": "無効な切り抜き領域です。再度お試しください。",
+  "cropFailed": "切り抜きに失敗しました。再度お試しください。",
+  "cropAvatar": "アバターをトリミング",
+  "chooseAgain": "再選択",
+  "rotate90": "90°回転",
+  "dragFrameToMove": "フレームをドラッグして移動、右下をドラッグしてリサイズ、ピンチでズームと画像移動。",
+  "pleaseFillInAllFields": "すべてのフィールドを入力してください",
+  "pinMustBeAtLeast4Digits": "PINは4桁以上である必要があります",
+  "pinAtLeast4Digits": "PINは4桁以上である必要があります",
+  "invalidUsernameOrPin": "ユーザー名またはPINが無効です",
+  "invalidUsernameOrPinError": "ユーザー名またはPINが無効です",
+  "usernameAlreadyExists": "ユーザー名は既に存在します",
+  "captureMomentsKeepMemories": "瞬間を捉え、記憶を残す",
+  "username": "ユーザー名",
+  "pin": "PIN",
+  "login": "ログイン",
+  "createAccount": "アカウント作成",
+  "dontHaveAccountCreateOne": "アカウントをお持ちでないですか？作成する",
+  "alreadyHaveAccountLogin": "既にアカウントをお持ちですか？ログイン",
+  "pleaseEnterUsername": "ユーザー名を入力してください",
+  "pinsDoNotMatch": "PINが一致しません",
+  "tapToAddAvatar": "タップしてアバターを追加",
+  "yourName": "お名前",
+  "privatePinOptional": "プライベートPIN（任意）",
+  "usedToEncryptPrivateRecords": "プライベート記録の暗号化に使用",
+  "privatePin": "プライベートPIN",
+  "leaveEmptyForNoEncryption": "暗号化なしは空のまま",
+  "confirmPin": "PINを確認",
+  "getStarted": "始める",
+  "noReminders": "リマインダーなし",
+  "addReminder": "リマインダーを追加",
+  "title": "タイトル",
+  "descriptionOptional": "説明（任意）",
+  "microphonePermissionRequired": "マイクの許可が必要です",
+  "aiAssistant": "AIアシスタント",
+  "listening": "聞いています...",
+  "typeAMessage": "メッセージを入力...",
+  "aiChat": "AIチャット",
+  "startAConversation": "会話を始める",
+  "typeYourMessage": "メッセージを入力...",
+  "asrReconnecting": "ASR再接続中...",
+  "write": "書く",
+  "writeEntry": "エントリを書く",
+  "noMemoriesYet": "まだ記憶がありません",
+  "tapPlusToCapture": "+をタップして考えを記録",
+  "tapPlusToCaptureYourThoughts": "+をタップして考えを記録",
+  "deleteMemory": "記憶を削除",
+  "deleteRecord": "記録を削除",
+  "thisEntryWillBeRemoved": "このエントリはタイムラインから削除されます。",
+  "thisRecordWillBeRemoved": "この記録はタイムラインから削除されます。",
+  "searchYourRecords": "記録を検索...",
+  "exactMatches": "完全一致",
+  "noExactMatches": "完全一致なし",
+  "exact": "完全",
+  "exactMatch": "完全一致",
+  "fuzzyMatches": "ファジー一致",
+  "noFuzzyMatches": "ファジー一致なし",
+  "vectorMatch": "ベクトル一致",
+  "networkMatches": "ネットワーク一致",
+  "noNetworkMatches": "ネットワーク一致なし",
+  "networkSearchIsOff": "ネットワーク検索はオフです。設定で有効にしてください。",
+  "network": "ネットワーク",
+  "networkMatch": "ネットワーク一致",
+  "noSearchHistory": "検索履歴なし",
+  "searchHistory": "検索履歴",
+  "invalidLink": "無効なリンク",
+  "unableToOpenWebPage": "Webページを開けません",
+  "imageMemory": "[画像記憶]",
+  "tapToOpenWebPage": "タップしてWebページを開く",
+  "editEntry": "エントリを編集",
+  "entryDetails": "エントリ詳細",
+  "noContent": "内容なし",
+  "diaryNotFound": "日記が見つかりません",
+  "diaryNotFoundShort": "記録が見つかりません",
+  "aiSummary": "AI要約",
+  "microphoneInterrupted": "マイクが中断され、録音停止了。",
+  "bold": "太字",
+  "italic": "斜体",
+  "strikethrough": "取り消し線",
+  "image": "画像",
+  "asrUnavailableRecordingActive": "ASR利用不可。録音はまだアクティブです。",
+  "writeYourEntry": "エントリを書いてください...",
+  "writeYourContent": "内容を書いてください...",
+  "microphoneStartFailed": "マイクの起動に失敗しました: {error}",
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "microphoneInterruptedRecordingStopped": "マイクが中断され、録音停止了。",
+  "asrReconnectingError": "ASR再接続中: {error}",
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "imageInserted": "画像挿入: {name}",
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "voiceError": "音声エラー: {error}",
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "aiServiceUnavailable": "申し訳ありませんが、AIサービスは現在利用できません: {error}",
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareFailed": "共有に失敗しました: {error}",
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "searchMatchHits": "{matchType} · {count}件",
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "matchCount": "一致: {count}",
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sourceFromNetwork": "ソース: {source}",
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "createNew": "作成",
+  "micStartFailed": "マイクの起動に失敗しました: {error}",
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importResultAccounts": "アカウント: +{created} / 更新 {updated}",
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultDiaries": "日記: +{created} / 更新 {updated}",
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultReminders": "リマインダー: +{created} / 更新 {updated}",
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultSkipped": "スキップ: {count}",
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultTotal": "変更合計: {count}",
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsApplied": "バックアップの設定が適用されました。",
+  "settingsNotApplied": "バックアップの設定は適用されませんでした。",
+  "backupExported": "バックアップをエクスポートしました: {path}",
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "exportFailed": "エクスポートに失敗しました: {error}",
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importFailed": "インポートに失敗しました: {error}",
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
+}

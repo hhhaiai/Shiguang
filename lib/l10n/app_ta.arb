@@ -1,0 +1,363 @@
+{
+  "@@locale": "ta",
+  "languageName": "தமிழ்",
+  "languageNameEn": "Tamil",
+  "appTitle": "சிகுவாங்",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "settings": "அமைப்புகள்",
+  "account": "கணக்கு",
+  "reminders": "நினைவூட்டல்கள்",
+  "language": "மொழி",
+  "appLanguage": "ஆப் மொழி",
+  "appearance": "தோற்றம்",
+  "themeMode": "தீம் மோட்",
+  "dark": "இருள்",
+  "light": "வெளிச்சம்",
+  "system": "அமைப்பு",
+  "aiService": "AI சேவை",
+  "aiChatProvider": "AI சாட் வழங்குநர்",
+  "chatModel": "சாட் மாடல்",
+  "localModel": "உள்ளூர் மாடல்",
+  "localModelDefault": "உள்ளூர் மாடல் (இயல்புநிலை)",
+  "ollamaEndpoint": "Ollama முனையம்",
+  "ollamaModel": "Ollama மாடல்",
+  "openAiEndpoint": "OpenAI முனையம்",
+  "openAiApiKey": "OpenAI API விசை",
+  "openAiModel": "OpenAI மாடல்",
+  "geminiEndpoint": "Gemini முனையம்",
+  "geminiApiKey": "Gemini API விசை",
+  "geminiModel": "Gemini மாடல்",
+  "anthropicEndpoint": "Anthropic முனையம்",
+  "anthropicApiKey": "Anthropic API விசை",
+  "anthropicModel": "Anthropic மாடல்",
+  "customProtocol": "தனிப்பயன் நெறிமுறை",
+  "protocol": "நெறிமுறை",
+  "customEndpoint": "தனிப்பயன் முனையம்",
+  "customApiKey": "தனிப்பயன் API விசை",
+  "customModel": "தனிப்பயன் மாடல்",
+  "optionalForLocalServers": "உள்ளூர்/தனிப்பயன் சேவகங்களுக்கு விருப்பமானது",
+  "speechRecognitionEngine": " Speech Recognition Engine",
+  "local": "உள்ளூர்",
+  "endpoint": "முனையம்",
+  "localSpeechModel": "உள்ளூர் Speech மாடல்",
+  "senseVoiceOnnx": "SenseVoice ONNX (சாதனத்தில்)",
+  "systemSpeechRecognition": "அமைப்பு Speech Recognition",
+  "systemRecognitionAndroidIos": "அமைப்பு Recognition (Android/iOS)",
+  "endpointRecognitionCloudWs": "முனையம் Recognition (Cloud/WS)",
+  "useBuiltInRecognizer": "உள்ளிடப்பட்ட Android / iOS recognizer ஐப் பயன்படுத்தவும் (Cloud ஐப் பயன்படுத்தக்கூடும்)",
+  "voiceAiEndpoint": "Voice AI முனையம்",
+  "embeddingModel": "Embedding மாடல்",
+  "crossDeviceSync": "குறுக்கு-சாதனம் ஒத்திசைவு",
+  "sendToOtherDevices": "மற்ற சாதனங்களுக்கு அனுப்பு (LocalSend)",
+  "exportBackupAndSend": "Backup ஐ ஏற்றுமதி செய்து share sheet மூலம் அனுப்பு",
+  "importFromLocalSend": "LocalSend லிருந்து இறக்கு",
+  "selectBackupJson": "Backup JSON ஐத் தேர்ந்தெடுத்து உள்ளூர் தரவை ஒன்றிணை",
+  "autoGeneration": "தானியங்கி உருவாக்கம்",
+  "autoGenerateSummary": "தானியங்கி சுருக்கம் உருவாக்கு",
+  "generateAiSummaryForNewEntries": "புதிய உள்ளீடுகளுக்கு AI சுருக்கம் உருவாக்கு",
+  "autoGenerateEmbedding": "தானியங்கி Embedding உருவாக்கு",
+  "generateVectorEmbedding": "தேடலுக்கு Vector Embedding உருவாக்கு",
+  "enableNetworkSearch": "Network Search ஐ இயக்கு",
+  "allowOnlineRetrieval": "Search மற்றும் AI Chatக்கு Online Retrievalக்கு அனுமதி கொடு (இயல்புநிலையில் முடக்கம்)",
+  "about": "பற்றி",
+  "version": "பதிப்பு {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "database": "தரவுத்தளம்",
+  "objectBoxWithHnsw": "HNSW குறியீட்டுடன் ObjectBox",
+  "logOut": "வெளியேறு",
+  "custom": "தனிப்பயன்",
+  "openAiCompatible": "OpenAI ஒத்துப்போகிற",
+  "notSet": "அமைக்கப்படவில்லை",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... அல்லது http://127.0.0.1:11434",
+  "supportsLocalLanPublic": "உள்ளூர்/LAN/பொதுவான முனையங்களை ஆதரிக்கிறது",
+  "shiguangLocalSendBackup": "Shiguang LocalSend காப்புப்பிரதி",
+  "localBackupFromShiguang": "Shiguang லிருந்து உள்ளூர் backup (LocalSend மூலம் 수신)",
+  "selectBackupFileFromLocalSend": "LocalSend லிருந்து பெறப்பட்ட backup கோப்பைத் தேர்ந்தெடு",
+  "failedToResolveFilePath": "தேர்ந்தெடுத்த கோப்பு பாதையைத் தீர்க்க முடியவில்லை",
+  "importOptions": "இறக்கு விருப்பங்கள்",
+  "importSettingsAsWell": "அமைப்புகளையும் இறக்குவதா?\n(API விசைகள் மீறப்படாது)",
+  "dataOnly": "தரவு மட்டும்",
+  "dataAndSettings": "தரவு + அமைப்புகள்",
+  "importCompleted": "இறக்கு முடிவடைந்தது",
+  "settingsInBackupWereApplied": "Backupல் உள்ள அமைப்புகள் பயன்படுத்தப்பட்டன.",
+  "settingsInBackupWereNotApplied": "Backupல் உள்ள அமைப்புகள் பயன்படுத்தப்படவில்லை.",
+  "ok": "சரி",
+  "cancel": "ரத்து",
+  "save": "சேமி",
+  "delete": "நீக்கு",
+  "clear": "துடை",
+  "add": "சேர்",
+  "create": "உருவாக்கு",
+  "edit": "திருத்து",
+  "search": "தேடு",
+  "areYouSureYouWantToLogOut": "நீங்கள் உண்மையாகவே வெளியேற விரும்புகிறீர்களா?",
+  "chooseLanguage": "மொழியைத் தேர்ந்தெடு",
+  "databaseInfo": "தரவுத்தள தகவல்",
+  "storage": "சேமிப்பு: ObjectBox",
+  "vectorIndex": "Vector குறியீடு: HNSW",
+  "dimensions": "பரிமாணங்கள்: 384",
+  "embeddingModelBge": "Embedding மாடல்: bge-small-zh-v1.5",
+  "takePhoto": "புகைப்படம் எடு",
+  "chooseFromGallery": "கேலரியில் இருந்து தேர்வுசெய்",
+  "editNickname": "மேல்ப்படை திருத்து",
+  "enterNickname": "மேல்ப்படை உள்ளிடு",
+  "pleaseEnterNickname": "தயவுச் செய்து மேல்ப்படை ஒன்றை உள்ளிடுங்கள்",
+  "nicknameAlreadyExistsOrInvalid": "மேல்ப்படை ஏற்கனவே உள்ளது அல்லது தவறானது",
+  "user": "பயனர்",
+  "manageScheduledReminders": "திட்டமிடப்பட்ட நினைவூட்டல்கள் மற்றும் அலாரங்களை நிர்வகி",
+  "imageFailedToLoad": "படம் ஏற்றத் தோல்வியுற்றது. தயவுச் செய்து மீண்டும் தேர்வுசெய்.",
+  "imageIsStillLoading": "படம் இன்னும் ஏற்றுகிறது",
+  "imageAreaNotReady": "படப் பகுதி தயாராக இல்லை. தயவுச் செய்து மீண்டும் முயற்சி செய்.",
+  "cropFrameNotReady": "Crop frame தயாராக இல்லை. தயவுச் செய்து மீண்டும் முயற்சி செய்.",
+  "invalidCropArea": "தவறான crop பகுதி. தயவுச் செய்து மீண்டும் முயற்சி செய்.",
+  "cropFailed": "Crop தோல்வியுற்றது. தயவுச் செய்து மீண்டும் முயற்சி செய்.",
+  "cropAvatar": "Avatar Crop ஆக்கு",
+  "chooseAgain": "மீண்டும் தேர்வுசெய்",
+  "rotate90": "90° சுற்று",
+  "dragFrameToMove": "நகர்த்த frame ஐ இழுக்கவும், மறுஅளவிற்கு கீழ்-வலதுபுறம் இழுக்கவும்; Zoom மற்றும் படம் நகர்த்த Pinch செய்.",
+  "pleaseFillInAllFields": "தயவுச் செய்து அனைத்து புலங்களையும் நிரப்புங்கள்",
+  "pinMustBeAtLeast4Digits": "PIN குறைந்தது 4 இலக்கங்கள் இருக்க வேண்டும்",
+  "pinAtLeast4Digits": "PIN குறைந்தது 4 இலக்கங்கள் இருக்க வேண்டும்",
+  "invalidUsernameOrPin": "தவறான பயனர்ப்பெயர் அல்லது PIN",
+  "invalidUsernameOrPinError": "தவறான பயனர்ப்பெயர் அல்லது PIN",
+  "usernameAlreadyExists": "பயனர்ப்பெயர் ஏற்கனவே உள்ளது",
+  "captureMomentsKeepMemories": "நிமிடங்களைப் பதிவுச் செய், நினைவகளைக் காப்பாற்று",
+  "username": "பயனர்ப்பெயர்",
+  "pin": "PIN",
+  "login": "உள்நுழைக",
+  "createAccount": "கணக்கை உருவாக்கு",
+  "dontHaveAccountCreateOne": "கணக்கு இல்லையா? ஒன்றை உருவாக்கு",
+  "alreadyHaveAccountLogin": "ஏற்கனவே கணக்கு உள்ளதா? Login செய்",
+  "pleaseEnterUsername": "தயவுச் செய்து பயனர்ப்பெயரை உள்ளிடுங்கள்",
+  "pinsDoNotMatch": "PINகள் பொருந்தவில்லை",
+  "tapToAddAvatar": "Avatar சேர்க்க tap செய்",
+  "yourName": "உங்க பெயர்",
+  "privatePinOptional": "தனிப்பட்ட PIN (விருப்பமான)",
+  "usedToEncryptPrivateRecords": "தனிப்பட்ட பதிவுகளை குறியாக்கப் பயன்படுகிறது",
+  "privatePin": "தனிப்பட்ட PIN",
+  "leaveEmptyForNoEncryption": "குறியாக்கம் இல்லாமல் விடுங்கள்",
+  "confirmPin": "PIN உறுதிச் செய்",
+  "getStarted": "தொடங்கு",
+  "noReminders": "நினைவூட்டல்கள் இல்லை",
+  "addReminder": "நினைவூட்டல் சேர்",
+  "title": "தலைப்பு",
+  "descriptionOptional": "விளக்கம் (விருப்பமான)",
+  "microphonePermissionRequired": "மைக்ரோஃபோன் அனுமதி தேவை",
+  "aiAssistant": "AI உதவியாளர்",
+  "listening": "கேட்கிறது...",
+  "typeAMessage": "செய்தி டைப் செய்...",
+  "aiChat": "AI அரட்டை",
+  "startAConversation": "உரையாடலைத் தொடங்கு",
+  "typeYourMessage": "உங்கள் செய்தியைத் தட்டச் செய்...",
+  "asrReconnecting": "ASR மீண்டும் இணைகிறது...",
+  "write": "எழுது",
+  "writeEntry": "உள்ளீடு எழுது",
+  "noMemoriesYet": "இன்னும் நினைவகள் இல்லை",
+  "tapPlusToCapture": "உங்கள் சிந்தனைகளைப் பதிவுச் செய்ய + ஐ tap செய்",
+  "tapPlusToCaptureYourThoughts": "உங்கள் சிந்தனைகளைப் பதிவுச் செய்ய + ஐ tap செய்",
+  "deleteMemory": "நினைவை நீக்கு",
+  "deleteRecord": "பதிவை நீக்கு",
+  "thisEntryWillBeRemoved": "இந்த உள்ளீடு உங்கள் நேரவரிசையில் இருந்து நீக்கப்படும்.",
+  "thisRecordWillBeRemoved": "இந்த பதிவு உங்கள் நேரவரிசையில் இருந்து நீக்கப்படும்.",
+  "searchYourRecords": "உங்கள் பதிவுகளைத் தேடு...",
+  "exactMatches": "சரியான பொருத்தங்கள்",
+  "noExactMatches": "சரியான பொருத்தங்கள் இல்லை",
+  "exact": "சரியான",
+  "exactMatch": "சரியான பொருத்தம்",
+  "fuzzyMatches": "மங்கலான பொருத்தங்கள்",
+  "noFuzzyMatches": "மங்கலான பொருத்தங்கள் இல்லை",
+  "vectorMatch": "Vector பொருத்தம்",
+  "networkMatches": "Network பொருத்தங்கள்",
+  "noNetworkMatches": "Network பொருத்தங்கள் இல்லை",
+  "networkSearchIsOff": "Network search முடக்கப்பட்டுள்ளது. அமைப்புகளில் இதை இயக்கவும்.",
+  "network": "நெட்வொர்க்",
+  "networkMatch": "Network பொருத்தம்",
+  "noSearchHistory": "தேடல் வரலாறு இல்லை",
+  "searchHistory": "தேடல் வரலாறு",
+  "invalidLink": "தவறான இணைப்பு",
+  "unableToOpenWebPage": "வலைப்பக்கத்தைத் திறக்க முடியவில்லை",
+  "imageMemory": "[பட நினைவு]",
+  "tapToOpenWebPage": "வலைப்பக்கத்தைத் திறக்க tap செய்",
+  "editEntry": "உள்ளீடு திருத்து",
+  "entryDetails": "உள்ளீடு விவரங்கள்",
+  "noContent": "உள்ளடக்கம் இல்லை",
+  "diaryNotFound": "டைரி கிடைக்கவில்லை",
+  "diaryNotFoundShort": "பதிவு கிடைக்கவில்லை",
+  "aiSummary": "AI சுருக்கம்",
+  "microphoneInterrupted": "மைக்ரோஃபோன் தடைபட, பதிவு நிறுத்தப்பட்டது.",
+  "bold": "தடித்த",
+  "italic": "சாய்வு",
+  "strikethrough": "கோடிட்ட",
+  "image": "படம்",
+  "asrUnavailableRecordingActive": "ASR கிடைக்கவில்லை. பதிவு இன்னும் சுறுசுறுப்பாக உள்ளது.",
+  "writeYourEntry": "உங்கள் உள்ளீட்டை எழுதுங்கள்...",
+  "writeYourContent": "உங்கள் உள்ளடக்கத்தை எழுதுங்கள்...",
+  "microphoneStartFailed": "மைக்ரோஃபோனைத் தொடங்கத் தோல்வியுற்றது: {error}",
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "microphoneInterruptedRecordingStopped": "மைக்ரோஃபோன் தடைபட, பதிவு நிறுத்தப்பட்டது.",
+  "asrReconnectingError": "ASR மீண்டும் இணைகிறது: {error}",
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "imageInserted": "படம் செருகப்பட்டது: {name}",
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "voiceError": "Voice பிழை: {error}",
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "aiServiceUnavailable": "மன்னிக்கவும், AI சேவை தற்போது கிடைக்கவில்லை: {error}",
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareFailed": "பகிரத் தோல்வியுற்றது: {error}",
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "searchMatchHits": "{matchType}·{count}வெற்றி",
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "matchCount": "பொருத்தம்: {count}",
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sourceFromNetwork": "மூலம்: {source}",
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "createNew": "உருவாக்கு",
+  "micStartFailed": "Mic தொடங்கத் தோல்வியுற்றது: {error}",
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importResultAccounts": "கணக்குகள்: +{created} / புதுப்பித்த {updated}",
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultDiaries": "டைரிகள்: +{created} / புதுப்பித்த {updated}",
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultReminders": "நினைவூட்டல்கள்: +{created} / புதுப்பித்த {updated}",
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultSkipped": "தவிர்க்கப்பட்டது: {count}",
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultTotal": "மொத்த மாற்றம்: {count}",
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsApplied": "Backupல் உள்ள அமைப்புகள் பயன்படுத்தப்பட்டன.",
+  "settingsNotApplied": "Backupல் உள்ள அமைப்புகள் பயன்படுத்தப்படவில்லை.",
+  "backupExported": "Backup ஏற்றுமதி செய்யப்பட்டது: {path}",
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "exportFailed": "ஏற்றுமதி தோல்வியுற்றது: {error}",
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importFailed": "இறக்கு தோல்வியுற்றது: {error}",
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
+}

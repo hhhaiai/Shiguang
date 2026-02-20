@@ -11,8 +11,8 @@ enum AppThemeMode { system, light, dark }
 
 enum AppLanguage {
   zhHans('zh-Hans', '简体中文'),
-  zhHant('zh-Hant', '繁體中文'),
-  zhHk('zh-HK', '繁體中文（香港）'),
+  zhHant('zh-Hant', '繁體中文(臺灣)'),
+  zhHk('zh-HK', '繁體中文(香港)'),
   en('en', 'English'),
   es('es', 'Español'),
   fr('fr', 'Français'),
@@ -229,6 +229,7 @@ class AppSettings {
   final bool autoGenerateEmbedding;
   final bool enableNetworkSearch;
   final AppThemeMode themeMode;
+  final bool followSystemLanguage;
   final AppLanguage language;
   final List<String> searchHistory;
 
@@ -262,6 +263,7 @@ class AppSettings {
     this.autoGenerateEmbedding = true,
     this.enableNetworkSearch = false,
     this.themeMode = AppThemeMode.system,
+    this.followSystemLanguage = true,
     this.language = AppLanguage.zhHans,
     this.searchHistory = const [],
     this.chatModelProvider = ChatModelProvider.local,
@@ -348,6 +350,7 @@ class AppSettings {
     bool? autoGenerateEmbedding,
     bool? enableNetworkSearch,
     AppThemeMode? themeMode,
+    bool? followSystemLanguage,
     AppLanguage? language,
     List<String>? searchHistory,
     ChatModelProvider? chatModelProvider,
@@ -377,6 +380,7 @@ class AppSettings {
           autoGenerateEmbedding ?? this.autoGenerateEmbedding,
       enableNetworkSearch: enableNetworkSearch ?? this.enableNetworkSearch,
       themeMode: themeMode ?? this.themeMode,
+      followSystemLanguage: followSystemLanguage ?? this.followSystemLanguage,
       language: language ?? this.language,
       searchHistory: searchHistory ?? this.searchHistory,
       chatModelProvider: chatModelProvider ?? this.chatModelProvider,
@@ -447,6 +451,9 @@ class SettingsNotifier extends StateNotifier<AppSettings> {
         (mode) => mode.name == themeModeRaw,
         orElse: () => AppThemeMode.system,
       );
+      final followSystemLanguage = decoded['followSystemLanguage'] is bool
+          ? decoded['followSystemLanguage'] as bool
+          : true;
 
       final languageCode = (decoded['language'] as String?)?.trim();
       final language = AppLanguage.fromCode(languageCode ?? '');
@@ -542,6 +549,7 @@ class SettingsNotifier extends StateNotifier<AppSettings> {
         autoGenerateEmbedding: autoGenerateEmbedding,
         enableNetworkSearch: enableNetworkSearch,
         themeMode: themeMode,
+        followSystemLanguage: followSystemLanguage,
         language: language,
         searchHistory: List.unmodifiable(searchHistory),
         chatModelProvider: chatModelProvider,
@@ -588,6 +596,7 @@ class SettingsNotifier extends StateNotifier<AppSettings> {
       'autoGenerateEmbedding': state.autoGenerateEmbedding,
       'enableNetworkSearch': state.enableNetworkSearch,
       'themeMode': state.themeMode.name,
+      'followSystemLanguage': state.followSystemLanguage,
       'language': state.language.code,
       'searchHistory': state.searchHistory,
       'chatModelProvider': state.chatModelProvider.name,
@@ -681,7 +690,19 @@ class SettingsNotifier extends StateNotifier<AppSettings> {
   }
 
   void setLanguage(AppLanguage language) {
-    _setState(state.copyWith(language: language));
+    _setState(state.copyWith(language: language, followSystemLanguage: false));
+  }
+
+  void setLanguagePreference({
+    required bool followSystemLanguage,
+    required AppLanguage language,
+  }) {
+    _setState(
+      state.copyWith(
+        followSystemLanguage: followSystemLanguage,
+        language: language,
+      ),
+    );
   }
 
   void setChatModelProvider(ChatModelProvider provider) {
@@ -831,6 +852,9 @@ class SettingsNotifier extends StateNotifier<AppSettings> {
     final enableNetworkSearch = imported['enableNetworkSearch'] is bool
         ? imported['enableNetworkSearch'] as bool
         : state.enableNetworkSearch;
+    final followSystemLanguage = imported['followSystemLanguage'] is bool
+        ? imported['followSystemLanguage'] as bool
+        : state.followSystemLanguage;
     final derivedPreferLocalAi =
         chatModelProvider == ChatModelProvider.local &&
         voiceRecognitionEngine == VoiceRecognitionEngine.localModel;
@@ -838,6 +862,7 @@ class SettingsNotifier extends StateNotifier<AppSettings> {
     _setState(
       state.copyWith(
         themeMode: themeMode,
+        followSystemLanguage: followSystemLanguage,
         language: language,
         chatModelProvider: chatModelProvider,
         voiceRecognitionEngine: voiceRecognitionEngine,

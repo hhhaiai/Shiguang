@@ -1,0 +1,341 @@
+{
+  "@@locale": "tr",
+  "languageName": "Türkçe",
+  "languageNameEn": "Turkish",
+  "appTitle": "Shiguang",
+  "@appTitle": {
+    "description": "Uygulama adı"
+  },
+  "settings": "Ayarlar",
+  "account": "Hesap",
+  "reminders": "Hatırlatmalar",
+  "language": "Dil",
+  "appLanguage": "Uygulama Dili",
+  "appearance": "Görünüm",
+  "themeMode": "Tema Modu",
+  "dark": "Karanlık",
+  "light": "Aydınlık",
+  "system": "Sistem",
+  "aiService": "AI Hizmeti",
+  "aiChatProvider": "AI Sohbet Sağlayıcı",
+  "chatModel": "Sohbet Modeli",
+  "localModel": "Yerel Model",
+  "localModelDefault": "Yerel Model (Varsayılan)",
+  "ollamaEndpoint": "Ollama Uç Noktası",
+  "ollamaModel": "Ollama Modeli",
+  "openAiEndpoint": "OpenAI Uç Noktası",
+  "openAiApiKey": "OpenAI API Anahtarı",
+  "openAiModel": "OpenAI Modeli",
+  "geminiEndpoint": "Gemini Uç Noktası",
+  "geminiApiKey": "Gemini API Anahtarı",
+  "geminiModel": "Gemini Modeli",
+  "anthropicEndpoint": "Anthropic Uç Noktası",
+  "anthropicApiKey": "Anthropic API Anahtarı",
+  "anthropicModel": "Anthropic Modeli",
+  "customProtocol": "Özel Protokol",
+  "protocol": "Protokol",
+  "customEndpoint": "Özel Uç Nokta",
+  "customApiKey": "Özel API Anahtarı",
+  "customModel": "Özel Model",
+  "optionalForLocalServers": "Yerel/özel sunucular için isteğe bağlı",
+  "speechRecognitionEngine": "Konuşma Tanıma Motoru",
+  "local": "Yerel",
+  "endpoint": "Uç Nokta",
+  "localSpeechModel": "Yerel Konuşma Modeli",
+  "senseVoiceOnnx": "SenseVoice ONNX (cihaz üzerinde)",
+  "systemSpeechRecognition": "Sistem Konuşma Tanıma",
+  "systemRecognitionAndroidIos": "Sistem Tanıma (Android/iOS)",
+  "endpointRecognitionCloudWs": "Uç Nokta Tanıma (Bulut/WS)",
+  "useBuiltInRecognizer": "Yerleşik Android / iOS tanıyıcısını kullanın (bulut kullanabilir)",
+  "voiceAiEndpoint": "Ses AI Uç Noktası",
+  "embeddingModel": "Embedding Modeli",
+  "crossDeviceSync": "Cihazlar Arası Senkronizasyon",
+  "sendToOtherDevices": "Diğer Cihazlara Gönder (LocalSend)",
+  "exportBackupAndSend": "Yedeklemeyi dışa aktar ve paylaşım sheet ile gönder",
+  "importFromLocalSend": "LocalSend'ten İçe Aktar",
+  "selectBackupJson": "Yedekleme JSON seç ve yerel verileri birleştir",
+  "autoGeneration": "Otomatik Oluşturma",
+  "autoGenerateSummary": "Otomatik Özet Oluştur",
+  "generateAiSummaryForNewEntries": "Yeni girdiler için AI özeti oluştur",
+  "autoGenerateEmbedding": "Otomatik Embedding Oluştur",
+  "generateVectorEmbedding": "Arama için vektör embedding oluştur",
+  "enableNetworkSearch": "Ağ Aramasını Etkinleştir",
+  "allowOnlineRetrieval": "Arama ve AI sohbet için çevrimiçi alma izni (varsayılan olarak kapalı)",
+  "about": "Hakkında",
+  "version": "Sürüm {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "database": "Veritabanı",
+  "objectBoxWithHnsw": "HNSW indeksli ObjectBox",
+  "logOut": "Çıkış Yap",
+  "custom": "Özel",
+  "openAiCompatible": "OpenAI Uyumlu",
+  "notSet": "Ayarlanmadı",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... veya http://127.0.0.1:11434",
+  "supportsLocalLanPublic": "Yerel/LAN/ umumî uç noktaları destekler",
+  "shiguangLocalSendBackup": "Shiguang LocalSend Yedeği",
+  "localBackupFromShiguang": "Shiguang'dan yerel yedekleme (LocalSend ile al)",
+  "selectBackupFileFromLocalSend": "LocalSend'ten alınan yedekleme dosyasını seç",
+  "failedToResolveFilePath": "Seçilen dosya yolu çözülemedi",
+  "importOptions": "İçe Aktarma Seçenekleri",
+  "importSettingsAsWell": "Ayarları da içe aktar?\n(API anahtarları üzerine yazılmayacak)",
+  "dataOnly": "Yalnızca Veri",
+  "dataAndSettings": "Veri + Ayarlar",
+  "importCompleted": "İçe Aktarma Tamamlandı",
+  "settingsInBackupWereApplied": "Yedekteki ayarlar uygulandı.",
+  "settingsInBackupWereNotApplied": "Yedekteki ayarlar uygulanmadı.",
+  "ok": "Tamam",
+  "cancel": "İptal",
+  "save": "Kaydet",
+  "delete": "Sil",
+  "clear": "Temizle",
+  "add": "Ekle",
+  "create": "Oluştur",
+  "edit": "Düzenle",
+  "search": "Ara",
+  "areYouSureYouWantToLogOut": "Çıkış yapmak istediğinizden emin misiniz?",
+  "chooseLanguage": "Dil Seçin",
+  "databaseInfo": "Veritabanı Bilgisi",
+  "storage": "Depolama: ObjectBox",
+  "vectorIndex": "Vektör İndeksi: HNSW",
+  "dimensions": "Boyutlar: 384",
+  "embeddingModelBge": "Embedding Modeli: bge-small-zh-v1.5",
+  "takePhoto": "Fotoğraf Çek",
+  "chooseFromGallery": "Galeriden Seç",
+  "editNickname": "Takma Adı Düzenle",
+  "enterNickname": "Takma ad girin",
+  "pleaseEnterNickname": "Lütfen takma ad girin",
+  "nicknameAlreadyExistsOrInvalid": "Takma ad zaten mevcut veya geçersiz",
+  "user": "Kullanıcı",
+  "manageScheduledReminders": "Planlanan hatırlatmaları ve alarmları yönet",
+  "imageFailedToLoad": "Resim yüklenemedi. Lütfen tekrar seçin.",
+  "imageIsStillLoading": "Resim hâlâ yükleniyor",
+  "imageAreaNotReady": "Resim alanı hazır değil. Lütfen tekrar deneyin.",
+  "cropFrameNotReady": "Kırpma çerçevesi hazır değil. Lütfen tekrar deneyin.",
+  "invalidCropArea": "Geçersiz kırpma alanı. Lütfen tekrar deneyin.",
+  "cropFailed": "Kırpma başarısız. Lütfen tekrar deneyin.",
+  "cropAvatar": "Avatarı Kırp",
+  "chooseAgain": "Tekrar Seç",
+  "rotate90": "90° Döndür",
+  "dragFrameToMove": "Taşımak için çerçeveyi sürükleyin, yeniden boyutlandırmak için sağ alt köşeyi sürükleyin; yakınlaştırmak ve resmi taşımak için iki parmağınızla sıkıştırın.",
+  "pleaseFillInAllFields": "Lütfen tüm alanları doldurun",
+  "pinMustBeAtLeast4Digits": "PIN en az 4 basamaklı olmalı",
+  "pinAtLeast4Digits": "PIN en az 4 basamaklı olmalı",
+  "invalidUsernameOrPin": "Geçersiz kullanıcı adı veya PIN",
+  "invalidUsernameOrPinError": "Geçersiz kullanıcı adı veya PIN",
+  "usernameAlreadyExists": "Kullanıcı adı zaten mevcut",
+  "captureMomentsKeepMemories": "Anları yakala, hatıraları koru",
+  "username": "Kullanıcı Adı",
+  "pin": "PIN",
+  "login": "Giriş Yap",
+  "createAccount": "Hesap Oluştur",
+  "dontHaveAccountCreateOne": "Hesabınız yok mu? Bir tane oluşturun",
+  "alreadyHaveAccountLogin": "Zaten hesabınız var mı? Giriş yapın",
+  "pleaseEnterUsername": "Lütfen kullanıcı adı girin",
+  "pinsDoNotMatch": "PIN'ler eşleşmiyor",
+  "tapToAddAvatar": "Avatar eklemek için dokunun",
+  "yourName": "Adınız",
+  "privatePinOptional": "Özel PIN (isteğe bağlı)",
+  "usedToEncryptPrivateRecords": "Özel kayıtları şifrelemek için kullanılır",
+  "privatePin": "Özel PIN",
+  "leaveEmptyForNoEncryption": "Şifreleme için boş bırakın",
+  "confirmPin": "PIN'i Onayla",
+  "getStarted": "Başla",
+  "noReminders": "Hatırlatmalar yok",
+  "addReminder": "Hatırlatıcı Ekle",
+  "title": "Başlık",
+  "descriptionOptional": "Açıklama (isteğe bağlı)",
+  "microphonePermissionRequired": "Mikrofon izni gerekli",
+  "aiAssistant": "AI Asistanı",
+  "listening": "Dinleniyor...",
+  "typeAMessage": "Bir mesaj yazın...",
+  "aiChat": "AI Sohbet",
+  "startAConversation": "Bir konuşma başlat",
+  "typeYourMessage": "Mesajınızı yazın...",
+  "asrReconnecting": "ASR yeniden bağlanıyor...",
+  "write": "Yaz",
+  "writeEntry": "Girdi Yaz",
+  "noMemoriesYet": "Henüz anı yok",
+  "tapPlusToCapture": "Düşüncelerinizi yakalamak için +'ya dokunun",
+  "tapPlusToCaptureYourThoughts": "Düşüncelerinizi yakalamak için +'ya dokunun",
+  "deleteMemory": "Anıyı Sil",
+  "deleteRecord": "Kaydı Sil",
+  "thisEntryWillBeRemoved": "Bu girdi zaman çizelgenizden kaldırılacak.",
+  "thisRecordWillBeRemoved": "Bu kayıt zaman çizelgenizden kaldırılacak.",
+  "searchYourRecords": "Kayıtlarınızı arayın...",
+  "exactMatches": "Tam Eşleşmeler",
+  "noExactMatches": "Tam eşleşme yok",
+  "exact": "Tam",
+  "exactMatch": "Tam Eşleşme",
+  "fuzzyMatches": "Bulanık Eşleşmeler",
+  "noFuzzyMatches": "Bulanık eşleşme yok",
+  "vectorMatch": "Vektör Eşleşmesi",
+  "networkMatches": "Ağ Eşleşmeleri",
+  "noNetworkMatches": "Ağ eşleşmesi yok",
+  "networkSearchIsOff": "Ağ araması kapalı. Ayarlar'da etkinleştirin.",
+  "network": "Ağ",
+  "networkMatch": "Ağ Eşleşmesi",
+  "noSearchHistory": "Arama geçmişi yok",
+  "searchHistory": "Arama Geçmişi",
+  "invalidLink": "Geçersiz bağlantı",
+  "unableToOpenWebPage": "Web sayfası açılamıyor",
+  "imageMemory": "[Resim anısı]",
+  "tapToOpenWebPage": "Web sayfasını açmak için dokunun",
+  "editEntry": "Girdiyi Düzenle",
+  "entryDetails": "Girdi Ayrıntıları",
+  "noContent": "İçerik yok",
+  "diaryNotFound": "Günlük bulunamadı",
+  "diaryNotFoundShort": "Kayıt bulunamadı",
+  "aiSummary": "AI Özeti",
+  "microphoneInterrupted": "Mikrofon kesintiye uğradı, kayıt durduruldu.",
+  "bold": "Kalın",
+  "italic": "İtalik",
+  "strikethrough": "Üstü çizili",
+  "image": "Resim",
+  "asrUnavailableRecordingActive": "ASR kullanılamıyor. Kayıt hâlâ aktif.",
+  "writeYourEntry": "Girdinizi yazın...",
+  "writeYourContent": "İçeriğinizi yazın...",
+  "microphoneStartFailed": "Mikrofon başlatılamadı: {error}",
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "microphoneInterruptedRecordingStopped": "Mikrofon kesintiye uğradı, kayıt durduruldu.",
+  "asrReconnectingError": "ASR yeniden bağlanıyor: {error}",
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "imageInserted": "Resim eklendi: {name}",
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "voiceError": "Ses hatası: {error}",
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "aiServiceUnavailable": "Üzgünüz, AI hizmeti şu anda kullanılamıyor: {error}",
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareFailed": "Paylaşım başarısız: {error}",
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "searchMatchHits": "{matchType} · {count} sonuç",
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "matchCount": "Eşleşme: {count}",
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sourceFromNetwork": "Kaynak: {source}",
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "createNew": "Oluştur",
+  "micStartFailed": "Mikrofon başlatılamadı: {error}",
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importResultAccounts": "Hesaplar: +{created} / güncellendi {updated}",
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {"type": "int"},
+      "updated": {"type": "int"}
+    }
+  },
+  "importResultDiaries": "Günlükler: +{created} / güncellendi {updated}",
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {"type": "int"},
+      "updated": {"type": "int"}
+    }
+  },
+  "importResultReminders": "Hatırlatmalar: +{created} / güncellendi {updated}",
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {"type": "int"},
+      "updated": {"type": "int"}
+    }
+  },
+  "importResultSkipped": "Atlandı: {count}",
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "importResultTotal": "Toplam değişiklik: {count}",
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "settingsApplied": "Yedekteki ayarlar uygulandı.",
+  "settingsNotApplied": "Yedekteki ayarlar uygulanmadı.",
+  "backupExported": "Yedekleme dışa aktarıldı: {path}",
+  "@backupExported": {
+    "placeholders": {
+      "path": {"type": "String"}
+    }
+  },
+  "exportFailed": "Dışa aktarma başarısız: {error}",
+  "@exportFailed": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "importFailed": "İçe aktarma başarısız: {error}",
+  "@importFailed": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  }
+}

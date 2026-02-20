@@ -1,0 +1,363 @@
+{
+  "@@locale": "ms",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Bahasa Melayu",
+  "languageNameEn": "Malay",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "tetapan",
+  "account": "Akaun",
+  "reminders": "Peringatan",
+  "language": "Bahasa",
+  "appLanguage": "Bahasa Apl",
+  "appearance": "Penampilan",
+  "themeMode": "Mod Tema",
+  "dark": "Gelap",
+  "light": "Cahaya",
+  "system": "Sistem",
+  "aiService": "Perkhidmatan AI",
+  "aiChatProvider": "Pembekal Sembang AI",
+  "chatModel": "Model Sembang",
+  "localModel": "Model Tempatan",
+  "localModelDefault": "Model Setempat (Lalai)",
+  "ollamaEndpoint": "Titik Akhir Ollama",
+  "ollamaModel": "Model Ollama",
+  "openAiEndpoint": "Titik Akhir OpenAI",
+  "openAiApiKey": "OpenAI API Key",
+  "openAiModel": "OpenAI Model",
+  "geminiEndpoint": "Titik Akhir Gemini",
+  "geminiApiKey": "Kunci API Gemini",
+  "geminiModel": "Model Gemini",
+  "anthropicEndpoint": "Titik Akhir Antropik",
+  "anthropicApiKey": "Kunci API Anthropic",
+  "anthropicModel": "Model Antropik",
+  "customProtocol": "Protokol Tersuai",
+  "protocol": "Protokol",
+  "customEndpoint": "Titik Akhir Tersuai",
+  "customApiKey": "Kunci API Tersuai",
+  "customModel": "Model Tersuai",
+  "optionalForLocalServers": "Pilihan untuk pelayan tempatan/tersuai",
+  "speechRecognitionEngine": "Enjin Pengecaman Pertuturan",
+  "local": "Tempatan",
+  "endpoint": "Titik akhir",
+  "localSpeechModel": "Model Pertuturan Tempatan",
+  "senseVoiceOnnx": "SenseVoice ONNX (pada peranti)",
+  "systemSpeechRecognition": "Pengecaman Pertuturan Sistem",
+  "systemRecognitionAndroidIos": "Pengecaman Sistem (Android/iOS)",
+  "endpointRecognitionCloudWs": "Pengecaman Titik Akhir (Cloud/WS)",
+  "useBuiltInRecognizer": "Gunakan pengecam Android / iOS terbina dalam (mungkin menggunakan awan)",
+  "voiceAiEndpoint": "Titik Akhir AI Suara",
+  "embeddingModel": "Model Benam",
+  "crossDeviceSync": "Penyegerakan Merentas Peranti",
+  "sendToOtherDevices": "Hantar ke Peranti Lain (LocalSend)",
+  "exportBackupAndSend": "Eksport sandaran dan hantar melalui helaian saham",
+  "importFromLocalSend": "Import daripada LocalSend",
+  "selectBackupJson": "Pilih JSON sandaran dan gabungkan data setempat",
+  "autoGeneration": "Penjanaan Auto",
+  "autoGenerateSummary": "Auto Jana Ringkasan",
+  "generateAiSummaryForNewEntries": "Hasilkan ringkasan AI untuk entri baharu",
+  "autoGenerateEmbedding": "Auto Generate Embedding",
+  "generateVectorEmbedding": "Hasilkan pembenaman vektor untuk carian",
+  "enableNetworkSearch": "Dayakan Carian Rangkaian",
+  "allowOnlineRetrieval": "Benarkan mendapatkan semula dalam talian untuk carian dan sembang AI (dimatikan secara lalai)",
+  "about": "Tentang",
+  "version": "Versi {version}",
+  "database": "Pangkalan data",
+  "objectBoxWithHnsw": "ObjectBox dengan indeks HNSW",
+  "logOut": "Log Keluar",
+  "custom": "Adat",
+  "openAiCompatible": "Serasi OpenAI",
+  "notSet": "Tidak ditetapkan",
+  "supportsLocalLanPublic": "Menyokong titik akhir tempatan/LAN/awam",
+  "shiguangLocalSendBackup": "Sandaran Hantar Tempatan Shiguang",
+  "localBackupFromShiguang": "Sandaran tempatan daripada Shiguang (terima melalui LocalSend)",
+  "selectBackupFileFromLocalSend": "Pilih fail sandaran yang diterima daripada LocalSend",
+  "failedToResolveFilePath": "Gagal menyelesaikan laluan fail yang dipilih",
+  "importOptions": "Pilihan Import",
+  "importSettingsAsWell": "Import tetapan juga?\n(Kunci API tidak akan ditimpa)",
+  "dataOnly": "Data Sahaja",
+  "dataAndSettings": "Data + Tetapan",
+  "importCompleted": "Import Selesai",
+  "settingsInBackupWereApplied": "Tetapan dalam sandaran telah digunakan.",
+  "settingsInBackupWereNotApplied": "Tetapan dalam sandaran tidak digunakan.",
+  "ok": "OK",
+  "cancel": "Batal",
+  "save": "Jimat",
+  "delete": "Padam",
+  "clear": "Jelas",
+  "add": "Tambah",
+  "create": "Buat",
+  "edit": "Sunting",
+  "search": "Cari",
+  "areYouSureYouWantToLogOut": "Adakah anda pasti mahu log keluar?",
+  "chooseLanguage": "Pilih Bahasa",
+  "databaseInfo": "Maklumat Pangkalan Data",
+  "storage": "Penyimpanan: ObjectBox",
+  "vectorIndex": "Indeks Vektor: HNSW",
+  "dimensions": "Saiz: 384",
+  "embeddingModelBge": "Model Benam: bge-small-zh-v1.5",
+  "takePhoto": "Ambil Foto",
+  "chooseFromGallery": "Pilih daripada Galeri",
+  "editNickname": "Edit Nama Panggilan",
+  "enterNickname": "Masukkan nama panggilan",
+  "pleaseEnterNickname": "Sila masukkan nama panggilan",
+  "nicknameAlreadyExistsOrInvalid": "Nama panggilan sudah wujud atau tidak sah",
+  "user": "pengguna",
+  "manageScheduledReminders": "Urus peringatan dan penggera yang dijadualkan",
+  "imageFailedToLoad": "Imej gagal dimuatkan. Sila pilih lagi.",
+  "imageIsStillLoading": "Imej masih dimuatkan",
+  "imageAreaNotReady": "Kawasan imej belum sedia. Sila cuba lagi.",
+  "cropFrameNotReady": "Bingkai pangkas belum siap. Sila cuba lagi.",
+  "invalidCropArea": "Kawasan tanaman tidak sah. Sila cuba lagi.",
+  "cropFailed": "Tanaman gagal. Sila cuba lagi.",
+  "cropAvatar": "Pangkas Avatar",
+  "chooseAgain": "Pilih Lagi",
+  "rotate90": "Putar 90°",
+  "dragFrameToMove": "Seret bingkai untuk bergerak, seret bahagian bawah ke kanan untuk mengubah saiz; cubit untuk zum dan gerakkan imej.",
+  "pleaseFillInAllFields": "Sila isi semua ruangan",
+  "pinMustBeAtLeast4Digits": "PIN mestilah sekurang-kurangnya 4 digit",
+  "pinAtLeast4Digits": "PIN mestilah sekurang-kurangnya 4 digit",
+  "invalidUsernameOrPin": "Nama pengguna atau PIN tidak sah",
+  "invalidUsernameOrPinError": "Nama pengguna atau PIN tidak sah",
+  "usernameAlreadyExists": "Nama pengguna sudah wujud",
+  "captureMomentsKeepMemories": "Abadikan detik, simpan kenangan",
+  "username": "Nama pengguna",
+  "pin": "PIN",
+  "login": "Log masuk",
+  "createAccount": "Buat Akaun",
+  "dontHaveAccountCreateOne": "Tiada akaun? Buat satu",
+  "alreadyHaveAccountLogin": "Sudah mempunyai akaun? Log masuk",
+  "pleaseEnterUsername": "Sila masukkan nama pengguna",
+  "pinsDoNotMatch": "PIN tidak sepadan",
+  "tapToAddAvatar": "Ketik untuk menambah avatar",
+  "yourName": "Nama awak",
+  "privatePinOptional": "PIN peribadi (pilihan)",
+  "usedToEncryptPrivateRecords": "Digunakan untuk menyulitkan rekod peribadi",
+  "privatePin": "PIN peribadi",
+  "leaveEmptyForNoEncryption": "Biarkan kosong untuk tiada penyulitan",
+  "confirmPin": "Sahkan PIN",
+  "getStarted": "Mulakan",
+  "noReminders": "Tiada peringatan",
+  "addReminder": "Tambah Peringatan",
+  "title": "Tajuk",
+  "descriptionOptional": "Penerangan (pilihan)",
+  "microphonePermissionRequired": "Kebenaran mikrofon diperlukan",
+  "aiAssistant": "Penolong AI",
+  "listening": "Mendengar...",
+  "typeAMessage": "Taip mesej...",
+  "aiChat": "Sembang AI",
+  "startAConversation": "Mulakan perbualan",
+  "typeYourMessage": "Taip mesej anda...",
+  "asrReconnecting": "ASR menyambung semula...",
+  "write": "tulis",
+  "writeEntry": "Tulis Entri",
+  "noMemoriesYet": "Tiada kenangan lagi",
+  "tapPlusToCapture": "Ketik + untuk menangkap pemikiran anda",
+  "tapPlusToCaptureYourThoughts": "Ketik + untuk menangkap pemikiran anda",
+  "deleteMemory": "Padamkan Memori",
+  "deleteRecord": "Padam Rekod",
+  "thisEntryWillBeRemoved": "Entri ini akan dialih keluar daripada garis masa anda.",
+  "thisRecordWillBeRemoved": "Rekod ini akan dialih keluar daripada garis masa anda.",
+  "searchYourRecords": "Cari rekod anda...",
+  "exactMatches": "Padanan Tepat",
+  "noExactMatches": "Tiada padanan tepat",
+  "exact": "tepat",
+  "exactMatch": "Padanan Tepat",
+  "fuzzyMatches": "Padanan Kabur",
+  "noFuzzyMatches": "Tiada padanan kabur",
+  "vectorMatch": "Padanan Vektor",
+  "networkMatches": "Padanan Rangkaian",
+  "noNetworkMatches": "Tiada padanan rangkaian",
+  "networkSearchIsOff": "Carian rangkaian dimatikan. Dayakannya dalam Tetapan.",
+  "network": "Rangkaian",
+  "networkMatch": "Padanan Rangkaian",
+  "noSearchHistory": "Tiada sejarah carian",
+  "searchHistory": "Sejarah Carian",
+  "invalidLink": "Pautan tidak sah",
+  "unableToOpenWebPage": "Tidak dapat membuka halaman web",
+  "imageMemory": "[Memori imej]",
+  "tapToOpenWebPage": "Ketik untuk membuka halaman web",
+  "editEntry": "Edit Entri",
+  "entryDetails": "Butiran Kemasukan",
+  "noContent": "Tiada kandungan",
+  "diaryNotFound": "Diari tidak ditemui",
+  "diaryNotFoundShort": "Rekod tidak ditemui",
+  "aiSummary": "Ringkasan AI",
+  "microphoneInterrupted": "Mikrofon terganggu, rakaman berhenti.",
+  "bold": "berani",
+  "italic": "Italic",
+  "strikethrough": "Strikethrough",
+  "image": "Imej",
+  "asrUnavailableRecordingActive": "ASR tidak tersedia. Rakaman masih aktif.",
+  "writeYourEntry": "Tulis entri anda...",
+  "writeYourContent": "Tulis kandungan anda...",
+  "microphoneStartFailed": "Gagal memulakan mikrofon: {error}",
+  "microphoneInterruptedRecordingStopped": "Mikrofon terganggu, rakaman berhenti.",
+  "asrReconnectingError": "ASR menyambung semula: {error}",
+  "imageInserted": "Imej disisipkan: {name}",
+  "voiceError": "Ralat suara: {error}",
+  "aiServiceUnavailable": "Maaf, perkhidmatan AI tidak tersedia pada masa ini: {error}",
+  "shareFailed": "Gagal berkongsi: {error}",
+  "searchMatchHits": "{matchType} · {count} hits",
+  "matchCount": "Padanan: {count}",
+  "sourceFromNetwork": "Sumber: {source}",
+  "createNew": "Buat",
+  "micStartFailed": "Permulaan mikrofon gagal: {error}",
+  "importResultAccounts": "Akaun: +{created} / dikemas kini {updated}",
+  "importResultDiaries": "Diari: +{created} / dikemas kini {updated}",
+  "importResultReminders": "Peringatan: +{created} / dikemas kini {updated}",
+  "importResultSkipped": "Dilangkau: {count}",
+  "importResultTotal": "Jumlah perubahan: {count}",
+  "settingsApplied": "Tetapan dalam sandaran telah digunakan.",
+  "settingsNotApplied": "Tetapan dalam sandaran tidak digunakan.",
+  "backupExported": "Sandaran dieksport: {path}",
+  "exportFailed": "Eksport gagal: {error}",
+  "importFailed": "Import gagal: {error}"
+}

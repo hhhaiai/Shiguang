@@ -1,0 +1,363 @@
+{
+  "@@locale": "hy",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Հայերեն",
+  "languageNameEn": "Armenian",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "Շիգուանգ",
+  "settings": "Կարգավորումներ",
+  "account": "Հաշիվ",
+  "reminders": "Հիշեցումներ",
+  "language": "Լեզու",
+  "appLanguage": "Հավելվածի լեզուն",
+  "appearance": "Արտաքին տեսք",
+  "themeMode": "Թեմայի ռեժիմ",
+  "dark": "Մութ",
+  "light": "Լույս",
+  "system": "Համակարգ",
+  "aiService": "AI ծառայություն",
+  "aiChatProvider": "AI Chat մատակարար",
+  "chatModel": "Զրույցի մոդել",
+  "localModel": "Տեղական մոդել",
+  "localModelDefault": "Տեղական մոդել (կանխադրված)",
+  "ollamaEndpoint": "Օլլամայի վերջնակետ",
+  "ollamaModel": "Օլլամա մոդել",
+  "openAiEndpoint": "OpenAI վերջնակետ",
+  "openAiApiKey": "OpenAI API բանալի",
+  "openAiModel": "OpenAI մոդել",
+  "geminiEndpoint": "Երկվորյակների վերջնակետ",
+  "geminiApiKey": "Gemini API բանալի",
+  "geminiModel": "Երկվորյակ մոդելներ",
+  "anthropicEndpoint": "Անտրոպիկ վերջնակետ",
+  "anthropicApiKey": "Anthropic API բանալի",
+  "anthropicModel": "Անթրոպիկ մոդել",
+  "customProtocol": "Պատվերով արձանագրություն",
+  "protocol": "Արձանագրություն",
+  "customEndpoint": "Պատվերով վերջնակետ",
+  "customApiKey": "Հատուկ API բանալի",
+  "customModel": "Պատվերով մոդել",
+  "optionalForLocalServers": "Լոկալ/մաքսային սերվերների համար կամընտիր",
+  "speechRecognitionEngine": "Խոսքի ճանաչման շարժիչ",
+  "local": "Տեղական",
+  "endpoint": "Վերջնակետ",
+  "localSpeechModel": "Տեղական խոսքի մոդել",
+  "senseVoiceOnnx": "SenseVoice ONNX (սարքի վրա)",
+  "systemSpeechRecognition": "Համակարգի խոսքի ճանաչում",
+  "systemRecognitionAndroidIos": "Համակարգի ճանաչում (Android/iOS)",
+  "endpointRecognitionCloudWs": "Վերջնական կետի ճանաչում (Cloud/WS)",
+  "useBuiltInRecognizer": "Օգտագործեք ներկառուցված Android / iOS ճանաչիչ (կարող է օգտագործել ամպը)",
+  "voiceAiEndpoint": "Ձայնային AI վերջնակետ",
+  "embeddingModel": "Ներդրման մոդել",
+  "crossDeviceSync": "Խաչաձև սարքի համաժամացում",
+  "sendToOtherDevices": "Ուղարկել այլ սարքերի (LocalSend)",
+  "exportBackupAndSend": "Արտահանեք կրկնօրինակը և ուղարկեք համօգտագործվող թերթիկի միջոցով",
+  "importFromLocalSend": "Ներմուծում LocalSend-ից",
+  "selectBackupJson": "Ընտրեք պահուստային JSON և միաձուլեք տեղական տվյալները",
+  "autoGeneration": "Ավտոմատ սերունդ",
+  "autoGenerateSummary": "Ավտոմատ ստեղծման ամփոփում",
+  "generateAiSummaryForNewEntries": "Ստեղծեք AI ամփոփագիր նոր գրառումների համար",
+  "autoGenerateEmbedding": "Ավտոմատ ստեղծեք ներկառուցում",
+  "generateVectorEmbedding": "Ստեղծեք վեկտորի ներդրում որոնման համար",
+  "enableNetworkSearch": "Միացնել ցանցի որոնումը",
+  "allowOnlineRetrieval": "Թույլատրել առցանց որոնումը որոնման և AI զրույցի համար (կանխադրված անջատված է)",
+  "about": "Մոտ",
+  "version": "Տարբերակ {version}",
+  "database": "Տվյալների բազա",
+  "objectBoxWithHnsw": "ObjectBox HNSW ինդեքսով",
+  "logOut": "Դուրս գալ",
+  "custom": "Պատվերով",
+  "openAiCompatible": "OpenAI Համատեղելի",
+  "notSet": "Սահմանված չէ",
+  "supportsLocalLanPublic": "Աջակցում է տեղական / LAN / հանրային վերջնակետերին",
+  "shiguangLocalSendBackup": "Shiguang LocalSend Backup",
+  "localBackupFromShiguang": "Տեղական կրկնօրինակում Shiguang-ից (ստացեք LocalSend-ի միջոցով)",
+  "selectBackupFileFromLocalSend": "Ընտրեք LocalSend-ից ստացված կրկնօրինակ ֆայլը",
+  "failedToResolveFilePath": "Չհաջողվեց լուծել ընտրված ֆայլի ուղին",
+  "importOptions": "Ներմուծման ընտրանքներ",
+  "importSettingsAsWell": "Նաև ներմուծե՞լ կարգավորումները:\n(API ստեղները չեն վերագրվի)",
+  "dataOnly": "Միայն տվյալներ",
+  "dataAndSettings": "Տվյալներ + Կարգավորումներ",
+  "importCompleted": "Ներմուծումն ավարտված է",
+  "settingsInBackupWereApplied": "Կիրառվել են պահուստավորման կարգավորումները:",
+  "settingsInBackupWereNotApplied": "Պահուստավորման կարգավորումները չեն կիրառվել:",
+  "ok": "Լավ",
+  "cancel": "Չեղարկել",
+  "save": "Պահպանել",
+  "delete": "Ջնջել",
+  "clear": "Պարզ",
+  "add": "Ավելացնել",
+  "create": "Ստեղծել",
+  "edit": "Խմբագրել",
+  "search": "Որոնում",
+  "areYouSureYouWantToLogOut": "Իսկապե՞ս ուզում եք դուրս գալ:",
+  "chooseLanguage": "Ընտրեք Լեզուն",
+  "databaseInfo": "Տվյալների բազայի տեղեկատվությունը",
+  "storage": "Պահպանում՝ ObjectBox",
+  "vectorIndex": "Վեկտորային ինդեքս՝ HNSW",
+  "dimensions": "Չափերը՝ 384",
+  "embeddingModelBge": "Ներկառուցման մոդել՝ bge-small-zh-v1.5",
+  "takePhoto": "Լուսանկարեք",
+  "chooseFromGallery": "Ընտրեք Պատկերասրահից",
+  "editNickname": "Խմբագրել մականունը",
+  "enterNickname": "Մուտքագրեք մականունը",
+  "pleaseEnterNickname": "Խնդրում ենք մուտքագրել մականուն",
+  "nicknameAlreadyExistsOrInvalid": "Մականունն արդեն գոյություն ունի կամ անվավեր է",
+  "user": "Օգտագործող",
+  "manageScheduledReminders": "Կառավարեք պլանավորված հիշեցումները և ահազանգերը",
+  "imageFailedToLoad": "Պատկերը չհաջողվեց բեռնել: Խնդրում ենք կրկին ընտրել:",
+  "imageIsStillLoading": "Պատկերը դեռ բեռնվում է",
+  "imageAreaNotReady": "Պատկերի տարածքը պատրաստ չէ: Խնդրում ենք կրկին փորձել:",
+  "cropFrameNotReady": "Կտրման շրջանակը պատրաստ չէ: Խնդրում ենք կրկին փորձել:",
+  "invalidCropArea": "Անվավեր բերքի տարածք: Խնդրում ենք կրկին փորձել:",
+  "cropFailed": "Կտրումը ձախողվեց: Խնդրում ենք կրկին փորձել:",
+  "cropAvatar": "Կտրել ավատար",
+  "chooseAgain": "Ընտրեք Կրկին",
+  "rotate90": "Պտտել 90°",
+  "dragFrameToMove": "Քաշեք շրջանակը՝ տեղափոխելու համար, քաշեք ներքևից աջ՝ չափափոխելու համար; սեղմել պատկերը մեծացնելու և տեղափոխելու համար:",
+  "pleaseFillInAllFields": "Խնդրում ենք լրացնել բոլոր դաշտերը",
+  "pinMustBeAtLeast4Digits": "PIN կոդը պետք է լինի առնվազն 4 նիշ",
+  "pinAtLeast4Digits": "PIN կոդը պետք է լինի առնվազն 4 նիշ",
+  "invalidUsernameOrPin": "Անվավեր օգտանուն կամ PIN",
+  "invalidUsernameOrPinError": "Անվավեր օգտանուն կամ PIN",
+  "usernameAlreadyExists": "Օգտանուն արդեն գոյություն ունի",
+  "captureMomentsKeepMemories": "Գրեք պահեր, պահեք հիշողություններ",
+  "username": "Օգտվողի անունը",
+  "pin": "PIN",
+  "login": "Մուտք գործել",
+  "createAccount": "Ստեղծել հաշիվ",
+  "dontHaveAccountCreateOne": "Չունե՞ք հաշիվ: Ստեղծեք մեկը",
+  "alreadyHaveAccountLogin": "Արդեն ունե՞ք հաշիվ: Մուտք գործել",
+  "pleaseEnterUsername": "Խնդրում ենք մուտքագրել օգտվողի անուն",
+  "pinsDoNotMatch": "PIN-ները չեն համընկնում",
+  "tapToAddAvatar": "Հպեք՝ ավատար ավելացնելու համար",
+  "yourName": "Ձեր անունը",
+  "privatePinOptional": "Անձնական PIN (ըստ ցանկության)",
+  "usedToEncryptPrivateRecords": "Օգտագործվում է մասնավոր գրառումները գաղտնագրելու համար",
+  "privatePin": "Անձնական PIN",
+  "leaveEmptyForNoEncryption": "Թողեք դատարկ՝ առանց կոդավորման",
+  "confirmPin": "Հաստատեք PIN կոդը",
+  "getStarted": "Սկսեք",
+  "noReminders": "Հիշեցումներ չկան",
+  "addReminder": "Ավելացնել հիշեցում",
+  "title": "Վերնագիր",
+  "descriptionOptional": "Նկարագրություն (ըստ ցանկության)",
+  "microphonePermissionRequired": "Պահանջվում է խոսափողի թույլտվություն",
+  "aiAssistant": "AI օգնական",
+  "listening": "Լսելով...",
+  "typeAMessage": "Մուտքագրեք հաղորդագրություն...",
+  "aiChat": "AI Chat",
+  "startAConversation": "Սկսեք զրույց",
+  "typeYourMessage": "Մուտքագրեք ձեր հաղորդագրությունը...",
+  "asrReconnecting": "ASR-ը նորից միանում է...",
+  "write": "Գրել",
+  "writeEntry": "Գրել Մուտք",
+  "noMemoriesYet": "Դեռ հիշողություններ չկան",
+  "tapPlusToCapture": "Հպեք +՝ ձեր մտքերը գրավելու համար",
+  "tapPlusToCaptureYourThoughts": "Հպեք +՝ ձեր մտքերը գրավելու համար",
+  "deleteMemory": "Ջնջել հիշողությունը",
+  "deleteRecord": "Ջնջել գրառումը",
+  "thisEntryWillBeRemoved": "Այս գրառումը կհեռացվի ձեր ժամանակացույցից:",
+  "thisRecordWillBeRemoved": "Այս գրառումը կհեռացվի ձեր ժամանակացույցից:",
+  "searchYourRecords": "Որոնեք ձեր գրառումները...",
+  "exactMatches": "Ճշգրիտ համընկնումներ",
+  "noExactMatches": "Ճշգրիտ համընկնումներ չկան",
+  "exact": "Ճշգրիտ",
+  "exactMatch": "Ճշգրիտ համընկնում",
+  "fuzzyMatches": "Fuzzy Maches",
+  "noFuzzyMatches": "Ոչ մի անորոշ համընկնում",
+  "vectorMatch": "Վեկտորային համընկնում",
+  "networkMatches": "Ցանցային համընկնումներ",
+  "noNetworkMatches": "Ցանցի համընկնում չկա",
+  "networkSearchIsOff": "Ցանցային որոնումն անջատված է: Միացրեք այն Կարգավորումներում:",
+  "network": "Ցանց",
+  "networkMatch": "Ցանցային համընկնում",
+  "noSearchHistory": "Որոնման պատմություն չկա",
+  "searchHistory": "Որոնման պատմություն",
+  "invalidLink": "Անվավեր հղում",
+  "unableToOpenWebPage": "Հնարավոր չէ բացել վեբ էջը",
+  "imageMemory": "[Պատկերի հիշողություն]",
+  "tapToOpenWebPage": "Հպեք՝ վեբ էջը բացելու համար",
+  "editEntry": "Խմբագրել մուտքը",
+  "entryDetails": "Մուտքի մանրամասները",
+  "noContent": "Բովանդակություն չկա",
+  "diaryNotFound": "Օրագիր չի գտնվել",
+  "diaryNotFoundShort": "Գրառումը չի գտնվել",
+  "aiSummary": "AI ամփոփում",
+  "microphoneInterrupted": "Խոսափողն ընդհատվեց, ձայնագրությունը դադարեց:",
+  "bold": "Համարձակ",
+  "italic": "Շեղագիր",
+  "strikethrough": "Strikethrough",
+  "image": "Պատկեր",
+  "asrUnavailableRecordingActive": "ASR-ն անհասանելի է: Ձայնագրումը դեռ ակտիվ է:",
+  "writeYourEntry": "Գրեք ձեր գրառումը...",
+  "writeYourContent": "Գրեք ձեր բովանդակությունը...",
+  "microphoneStartFailed": "Չհաջողվեց միացնել խոսափողը. {error}",
+  "microphoneInterruptedRecordingStopped": "Խոսափողն ընդհատվեց, ձայնագրությունը դադարեց:",
+  "asrReconnectingError": "ASR-ի վերամիացում՝ {error}",
+  "imageInserted": "Պատկերը տեղադրված է՝ {name}",
+  "voiceError": "Ձայնային սխալ՝ {error}",
+  "aiServiceUnavailable": "Ներողություն, AI ծառայությունը ներկայումս անհասանելի է. {error}",
+  "shareFailed": "Չհաջողվեց կիսվել՝ {error}",
+  "searchMatchHits": "{matchType} · {count} հարվածներ",
+  "matchCount": "Համընկնումը՝ {count}",
+  "sourceFromNetwork": "Աղբյուր՝ {source}",
+  "createNew": "Ստեղծել",
+  "micStartFailed": "Խոսափողի գործարկումը ձախողվեց՝ {error}",
+  "importResultAccounts": "Հաշիվներ՝ +{created} / թարմացված {updated}",
+  "importResultDiaries": "Օրագրեր՝ +{created} / թարմացված {updated}",
+  "importResultReminders": "Հիշեցումներ՝ +{created} / թարմացված {updated}",
+  "importResultSkipped": "Բաց թողնված՝ {count}",
+  "importResultTotal": "Ընդհանուր փոխվել է՝ {count}",
+  "settingsApplied": "Կիրառվել են պահուստավորման կարգավորումները:",
+  "settingsNotApplied": "Պահուստավորման կարգավորումները չեն կիրառվել:",
+  "backupExported": "Արտահանված կրկնօրինակը՝ {path}",
+  "exportFailed": "Չհաջողվեց արտահանել՝ {error}",
+  "importFailed": "Չհաջողվեց ներմուծել՝ {error}"
+}

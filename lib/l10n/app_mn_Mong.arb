@@ -1,0 +1,363 @@
+{
+  "@@locale": "mn_Mong",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "ᠮᠣᠩᠭᠣᠯ",
+  "languageNameEn": "Mongolian (Traditional script)",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "Шигуан",
+  "settings": "Тохиргоо",
+  "account": "Данс",
+  "reminders": "Сануулга",
+  "language": "Хэл",
+  "appLanguage": "Програмын хэл",
+  "appearance": "Гадаад төрх",
+  "themeMode": "Загварын горим",
+  "dark": "Харанхуй",
+  "light": "Гэрэл",
+  "system": "Систем",
+  "aiService": "AI үйлчилгээ",
+  "aiChatProvider": "AI чат үйлчилгээ үзүүлэгч",
+  "chatModel": "Чатын загвар",
+  "localModel": "Орон нутгийн загвар",
+  "localModelDefault": "Орон нутгийн загвар (Өгөгдмөл)",
+  "ollamaEndpoint": "Оллама төгсгөлийн цэг",
+  "ollamaModel": "Оллама загвар",
+  "openAiEndpoint": "OpenAI төгсгөлийн цэг",
+  "openAiApiKey": "OpenAI API түлхүүр",
+  "openAiModel": "OpenAI загвар",
+  "geminiEndpoint": "Gemini төгсгөлийн цэг",
+  "geminiApiKey": "Gemini API түлхүүр",
+  "geminiModel": "Gemini загварууд",
+  "anthropicEndpoint": "Антропик төгсгөлийн цэг",
+  "anthropicApiKey": "Антропик API түлхүүр",
+  "anthropicModel": "Антроп загвар",
+  "customProtocol": "Захиалгат протокол",
+  "protocol": "Протокол",
+  "customEndpoint": "Захиалгат төгсгөлийн цэг",
+  "customApiKey": "Тусгай API түлхүүр",
+  "customModel": "Захиалгат загвар",
+  "optionalForLocalServers": "Орон нутгийн/захиалгат серверүүдэд нэмэлт",
+  "speechRecognitionEngine": "Яриа таних хөдөлгүүр",
+  "local": "Орон нутгийн",
+  "endpoint": "Төгсгөлийн цэг",
+  "localSpeechModel": "Орон нутгийн ярианы загвар",
+  "senseVoiceOnnx": "SenseVoice ONNX (төхөөрөмж дээр)",
+  "systemSpeechRecognition": "Системийн яриа таних",
+  "systemRecognitionAndroidIos": "Системийг таних (Android/iOS)",
+  "endpointRecognitionCloudWs": "Төгсгөлийн цэгийг таних (Cloud/WS)",
+  "useBuiltInRecognizer": "Суурилагдсан Android / iOS танигч ашиглах (үүл ашиглаж болно)",
+  "voiceAiEndpoint": "Дуут хиймэл оюун ухааны төгсгөлийн цэг",
+  "embeddingModel": "Оруулсан загвар",
+  "crossDeviceSync": "Төхөөрөмж хоорондын синк",
+  "sendToOtherDevices": "Бусад төхөөрөмж рүү илгээх (LocalSend)",
+  "exportBackupAndSend": "Нөөцлөлтийг экспорт хийж, хуваалцах хуудсыг ашиглан илгээнэ үү",
+  "importFromLocalSend": "LocalSend-ээс импортлох",
+  "selectBackupJson": "Нөөц JSON-г сонгоод дотоод өгөгдлийг нэгтгэнэ үү",
+  "autoGeneration": "Автомат үүсгэх",
+  "autoGenerateSummary": "Хураангуйг автоматаар үүсгэх",
+  "generateAiSummaryForNewEntries": "Шинэ оруулгуудад зориулж AI-ийн хураангуйг үүсгэх",
+  "autoGenerateEmbedding": "Оруулсан суулгацыг автоматаар үүсгэх",
+  "generateVectorEmbedding": "Хайлтын хувьд вектор оруулга үүсгэх",
+  "enableNetworkSearch": "Сүлжээний хайлтыг идэвхжүүл",
+  "allowOnlineRetrieval": "Хайлт болон AI чатын онлайн хайлтыг зөвшөөрөх (өгөгдмөлөөр унтраалттай)",
+  "about": "тухай",
+  "version": "Хувилбар {version}",
+  "database": "Өгөгдлийн сан",
+  "objectBoxWithHnsw": "HNSW индекстэй ObjectBox",
+  "logOut": "Гарах",
+  "custom": "Захиалгат",
+  "openAiCompatible": "OpenAI нийцтэй",
+  "notSet": "Тохируулаагүй",
+  "supportsLocalLanPublic": "Орон нутгийн/LAN/нийтийн төгсгөлийн цэгүүдийг дэмждэг",
+  "shiguangLocalSendBackup": "Shiguang LocalSend нөөцлөлт",
+  "localBackupFromShiguang": "Шигуангаас локал нөөцлөлт (LocalSend-ээр хүлээн авах)",
+  "selectBackupFileFromLocalSend": "LocalSend-ээс хүлээн авсан нөөц файлыг сонгоно уу",
+  "failedToResolveFilePath": "Сонгосон файлын замыг шийдэж чадсангүй",
+  "importOptions": "Импортын сонголтууд",
+  "importSettingsAsWell": "Тохиргоог бас импортлох уу?\n(API түлхүүрүүдийг дарж бичихгүй)",
+  "dataOnly": "Зөвхөн өгөгдөл",
+  "dataAndSettings": "Өгөгдөл + Тохиргоо",
+  "importCompleted": "Импорт хийж дууслаа",
+  "settingsInBackupWereApplied": "Нөөцлөлтийн тохиргоог ашигласан.",
+  "settingsInBackupWereNotApplied": "Нөөцлөлтийн тохиргоог ашиглаагүй.",
+  "ok": "OK",
+  "cancel": "Цуцлах",
+  "save": "Хадгалах",
+  "delete": "Устгах",
+  "clear": "Тодорхой",
+  "add": "Нэмэх",
+  "create": "Үүсгэх",
+  "edit": "Засварлах",
+  "search": "Хайх",
+  "areYouSureYouWantToLogOut": "Та гарахдаа итгэлтэй байна уу?",
+  "chooseLanguage": "Хэл сонгоно уу",
+  "databaseInfo": "Өгөгдлийн сангийн мэдээлэл",
+  "storage": "Хадгалах: ObjectBox",
+  "vectorIndex": "Вектор индекс: HNSW",
+  "dimensions": "Хэмжээ: 384",
+  "embeddingModelBge": "Оруулсан загвар: bge-small-zh-v1.5",
+  "takePhoto": "Зураг авах",
+  "chooseFromGallery": "Галерейгаас сонгоно уу",
+  "editNickname": "Хоч засах",
+  "enterNickname": "Хоч оруулна уу",
+  "pleaseEnterNickname": "Хоч оруулна уу",
+  "nicknameAlreadyExistsOrInvalid": "Хоч аль хэдийн байгаа эсвэл хүчингүй байна",
+  "user": "Хэрэглэгч",
+  "manageScheduledReminders": "Хуваарьт сануулагч болон сэрүүлгийг удирдах",
+  "imageFailedToLoad": "Зургийг ачаалж чадсангүй. Дахин сонгоно уу.",
+  "imageIsStillLoading": "Зургийг ачаалж байна",
+  "imageAreaNotReady": "Зургийн хэсэг бэлэн биш байна. Дахин оролдоно уу.",
+  "cropFrameNotReady": "Тайрах хүрээ бэлэн биш байна. Дахин оролдоно уу.",
+  "invalidCropArea": "Тариалангийн талбай буруу байна. Дахин оролдоно уу.",
+  "cropFailed": "Тасалж чадсангүй. Дахин оролдоно уу.",
+  "cropAvatar": "Аватар тайрах",
+  "chooseAgain": "Дахин сонгоно уу",
+  "rotate90": "90° эргүүлнэ",
+  "dragFrameToMove": "Зөөх бол хүрээг чирнэ үү, хэмжээг өөрчлөхийн тулд баруун доод талд чирнэ үү; зургийг томруулж, зөөхийн тулд чимхээрэй.",
+  "pleaseFillInAllFields": "Бүх талбарыг бөглөнө үү",
+  "pinMustBeAtLeast4Digits": "ПИН код дор хаяж 4 оронтой байх ёстой",
+  "pinAtLeast4Digits": "ПИН код дор хаяж 4 оронтой байх ёстой",
+  "invalidUsernameOrPin": "Хэрэглэгчийн нэр эсвэл ПИН код буруу байна",
+  "invalidUsernameOrPinError": "Хэрэглэгчийн нэр эсвэл ПИН код буруу байна",
+  "usernameAlreadyExists": "Хэрэглэгчийн нэр аль хэдийн байна",
+  "captureMomentsKeepMemories": "Агшин мөчүүдийг авч, дурсамж үлдээ",
+  "username": "Хэрэглэгчийн нэр",
+  "pin": "ПИН",
+  "login": "Нэвтрэх",
+  "createAccount": "Бүртгэл үүсгэх",
+  "dontHaveAccountCreateOne": "Бүртгэлгүй юу? Нэгийг үүсгэ",
+  "alreadyHaveAccountLogin": "Бүртгэлтэй юу? Нэвтрэх",
+  "pleaseEnterUsername": "Хэрэглэгчийн нэр оруулна уу",
+  "pinsDoNotMatch": "ПИН код таарахгүй байна",
+  "tapToAddAvatar": "Аватар нэмэхийн тулд товшино уу",
+  "yourName": "Таны нэр",
+  "privatePinOptional": "Хувийн ПИН (заавал биш)",
+  "usedToEncryptPrivateRecords": "Хувийн бичлэгийг шифрлэхэд ашигладаг",
+  "privatePin": "Хувийн ПИН",
+  "leaveEmptyForNoEncryption": "Шифрлэлт хийхгүйн тулд хоосон орхино уу",
+  "confirmPin": "ПИН кодоо баталгаажуулна уу",
+  "getStarted": "Эхлэх",
+  "noReminders": "Сануулагч байхгүй",
+  "addReminder": "Сануулагч нэмэх",
+  "title": "Гарчиг",
+  "descriptionOptional": "Тодорхойлолт (заавал биш)",
+  "microphonePermissionRequired": "Микрофоны зөвшөөрөл шаардлагатай",
+  "aiAssistant": "AI туслах",
+  "listening": "Сонсож байна...",
+  "typeAMessage": "Зурвас бичнэ үү...",
+  "aiChat": "AI чат",
+  "startAConversation": "Ярилцлага эхлүүлэх",
+  "typeYourMessage": "Зурвасаа бичнэ үү...",
+  "asrReconnecting": "ASR дахин холбогдож байна...",
+  "write": "бичих",
+  "writeEntry": "Оруулга бичих",
+  "noMemoriesYet": "Одоохондоо дурсамж байхгүй",
+  "tapPlusToCapture": "Бодол санаагаа бичихийн тулд + дээр товшино уу",
+  "tapPlusToCaptureYourThoughts": "Бодол санаагаа бичихийн тулд + дээр товшино уу",
+  "deleteMemory": "Санах ойг устгах",
+  "deleteRecord": "Бичлэг устгах",
+  "thisEntryWillBeRemoved": "Энэ оруулгыг таны он цагийн хэлхээсээс хасах болно.",
+  "thisRecordWillBeRemoved": "Энэ бичлэгийг таны он цагийн хэлхээсээс хасах болно.",
+  "searchYourRecords": "Бичлэгээ хайх...",
+  "exactMatches": "Яг тохирч байна",
+  "noExactMatches": "Яг тохирох зүйл байхгүй",
+  "exact": "Яг",
+  "exactMatch": "Яг таарч байна",
+  "fuzzyMatches": "Fuzzy matches",
+  "noFuzzyMatches": "Тодорхойгүй тохирол байхгүй",
+  "vectorMatch": "Вектор тохирох",
+  "networkMatches": "Сүлжээний тохирол",
+  "noNetworkMatches": "Сүлжээ таарахгүй байна",
+  "networkSearchIsOff": "Сүлжээний хайлт идэвхгүй байна. Үүнийг Тохиргоо дотроос идэвхжүүлнэ үү.",
+  "network": "Сүлжээ",
+  "networkMatch": "Сүлжээний тохирол",
+  "noSearchHistory": "Хайлтын түүх байхгүй",
+  "searchHistory": "Хайлтын түүх",
+  "invalidLink": "Буруу холбоос",
+  "unableToOpenWebPage": "Вэб хуудсыг нээх боломжгүй байна",
+  "imageMemory": "[Зургийн санах ой]",
+  "tapToOpenWebPage": "Вэб хуудсыг нээхийн тулд товшино уу",
+  "editEntry": "Бичлэгийг засах",
+  "entryDetails": "Нэвтрэх дэлгэрэнгүй мэдээлэл",
+  "noContent": "Агуулга байхгүй",
+  "diaryNotFound": "Өдрийн тэмдэглэл олдсонгүй",
+  "diaryNotFoundShort": "Бичлэг олдсонгүй",
+  "aiSummary": "AI хураангуй",
+  "microphoneInterrupted": "Микрофон тасарсан, бичлэг зогссон.",
+  "bold": "Зоригтой",
+  "italic": "Налуу",
+  "strikethrough": "Зураас",
+  "image": "Зураг",
+  "asrUnavailableRecordingActive": "ASR боломжгүй. Бичлэг идэвхтэй хэвээр байна.",
+  "writeYourEntry": "Бичлэгээ бичээрэй...",
+  "writeYourContent": "Агуулгаа бичээрэй...",
+  "microphoneStartFailed": "Микрофоныг эхлүүлж чадсангүй: {error}",
+  "microphoneInterruptedRecordingStopped": "Микрофон тасарсан, бичлэг зогссон.",
+  "asrReconnectingError": "ASR дахин холбогдож байна: {error}",
+  "imageInserted": "Зураг оруулсан: {name}",
+  "voiceError": "Дууны алдаа: {error}",
+  "aiServiceUnavailable": "Уучлаарай, AI үйлчилгээ одоогоор боломжгүй байна: {error}",
+  "shareFailed": "Хуваалцаж чадсангүй: {error}",
+  "searchMatchHits": "{matchType} · {count} хит",
+  "matchCount": "Тохирох: {count}",
+  "sourceFromNetwork": "Эх сурвалж: {source}",
+  "createNew": "Үүсгэх",
+  "micStartFailed": "Микрофоныг эхлүүлж чадсангүй: {error}",
+  "importResultAccounts": "Бүртгэлүүд: +{created} / шинэчлэгдсэн {updated}",
+  "importResultDiaries": "Өдрийн тэмдэглэл: +{created} / шинэчлэгдсэн {updated}",
+  "importResultReminders": "Сануулагч: +{created} / шинэчлэгдсэн {updated}",
+  "importResultSkipped": "Алгассан: {count}",
+  "importResultTotal": "Нийт өөрчлөгдсөн: {count}",
+  "settingsApplied": "Нөөцлөлтийн тохиргоог ашигласан.",
+  "settingsNotApplied": "Нөөцлөлтийн тохиргоог ашиглаагүй.",
+  "backupExported": "Нөөцлөлтийг экспорт хийсэн: {path}",
+  "exportFailed": "Экспорт хийж чадсангүй: {error}",
+  "importFailed": "Импорт хийж чадсангүй: {error}"
+}

@@ -1,0 +1,363 @@
+{
+  "@@locale": "zu",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "isiZulu",
+  "languageNameEn": "Zulu",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Izilungiselelo",
+  "account": "I-akhawunti",
+  "reminders": "Izikhumbuzi",
+  "language": "Ulimi",
+  "appLanguage": "Ulimi Lokusebenza",
+  "appearance": "Ukubukeka",
+  "themeMode": "Imodi yetimu",
+  "dark": "Kumnyama",
+  "light": "Ukukhanya",
+  "system": "Uhlelo",
+  "aiService": "Isevisi ye-AI",
+  "aiChatProvider": "I-AI Chat Provider",
+  "chatModel": "Imodeli Yengxoxo",
+  "localModel": "Imodeli Yasendaweni",
+  "localModelDefault": "Imodeli Yasendaweni (Okuzenzakalelayo)",
+  "ollamaEndpoint": "I-Ollama Endpoint",
+  "ollamaModel": "Ollama Model",
+  "openAiEndpoint": "Iphoyinti lokugcina le-OpenAI",
+  "openAiApiKey": "Ukhiye we-OpenAI API",
+  "openAiModel": "Imodeli ye-OpenAI",
+  "geminiEndpoint": "I-Gemini Endpoint",
+  "geminiApiKey": "Ukhiye we-Gemini API",
+  "geminiModel": "Amamodeli weGemini",
+  "anthropicEndpoint": "I-Anthropic Endpoint",
+  "anthropicApiKey": "Ukhiye we-Anthropic API",
+  "anthropicModel": "Imodeli ye-Anthropic",
+  "customProtocol": "Iphrothokholi Yangokwezifiso",
+  "protocol": "Iphrothokholi",
+  "customEndpoint": "Iphoyinti lokugcina langokwezifiso",
+  "customApiKey": "Ukhiye we-API wangokwezifiso",
+  "customModel": "Imodeli Yangokwezifiso",
+  "optionalForLocalServers": "Ongakukhetha kumaseva endawo/angokwezifiso",
+  "speechRecognitionEngine": "Injini Yokuqaphela Inkulumo",
+  "local": "Indawo",
+  "endpoint": "Iphoyinti lokugcina",
+  "localSpeechModel": "Imodeli Yenkulumo Yasendaweni",
+  "senseVoiceOnnx": "I-SenseVoice ONNX (kudivayisi)",
+  "systemSpeechRecognition": "Ukuqashelwa Kwenkulumo Yesistimu",
+  "systemRecognitionAndroidIos": "Ukuqashelwa Kwesistimu (Android/iOS)",
+  "endpointRecognitionCloudWs": "I-Endpoint Recognition (Cloud/WS)",
+  "useBuiltInRecognizer": "Sebenzisa isiboni se-Android/iOS esakhelwe ngaphakathi (singasebenzisa ifu)",
+  "voiceAiEndpoint": "I-Voice AI Endpoint",
+  "embeddingModel": "Imodeli yokushumeka",
+  "crossDeviceSync": "I-Cross-Device Sync",
+  "sendToOtherDevices": "Thumela kwamanye Amadivayisi (LocalSend)",
+  "exportBackupAndSend": "Khipha isipele futhi uthumele ngeshidi lokwabelana",
+  "importFromLocalSend": "Ngenisa kusuka ku-LocalSend",
+  "selectBackupJson": "Khetha i-JSON eyisipele bese uhlanganisa idatha yendawo",
+  "autoGeneration": "Auto Generation",
+  "autoGenerateSummary": "Khiqiza Okuzenzakalelayo Isifinyezo",
+  "generateAiSummaryForNewEntries": "Khiqiza isifinyezo se-AI kokufakiwe okusha",
+  "autoGenerateEmbedding": "Khiqiza Okuzenzakalelayo Ukushumeka",
+  "generateVectorEmbedding": "Khiqiza ukushumeka kwe-vector ukuze useshe",
+  "enableNetworkSearch": "Nika amandla Usesho Lwenethiwekhi",
+  "allowOnlineRetrieval": "Vumela ukubuyiswa ku-inthanethi kokusesha kanye nengxoxo ye-AI (ivaliwe ngokuzenzakalelayo)",
+  "about": "Mayelana",
+  "version": "Inguqulo {version}",
+  "database": "Isizindalwazi",
+  "objectBoxWithHnsw": "ObjectBox nge HNSW index",
+  "logOut": "Phuma",
+  "custom": "Ngokwezifiso",
+  "openAiCompatible": "I-OpenAI Iyahambisana",
+  "notSet": "Akusethiwe",
+  "supportsLocalLanPublic": "Isekela iziphetho zendawo/LAN/zomphakathi",
+  "shiguangLocalSendBackup": "Shiguang LocalThumela Isipele",
+  "localBackupFromShiguang": "Ikhophi yasenqolobaneni yendawo evela ku-Shiguang (thola nge-LocalSend)",
+  "selectBackupFileFromLocalSend": "Khetha ifayela eliyisipele elitholwe ku-LocalSend",
+  "failedToResolveFilePath": "Yehlulekile ukuxazulula indlela yefayela ekhethiwe",
+  "importOptions": "Izinketho Zokungenisa",
+  "importSettingsAsWell": "Ngenisa nezilungiselelo?\n(Okhiye be-API ngeke babhalwe ngaphezulu)",
+  "dataOnly": "Idatha Kuphela",
+  "dataAndSettings": "Idatha + Izilungiselelo",
+  "importCompleted": "Ukungenisa Kuqediwe",
+  "settingsInBackupWereApplied": "Izilungiselelo eziyisipele zisetshenzisiwe.",
+  "settingsInBackupWereNotApplied": "Izilungiselelo eziyisipele azizange zisetshenziswe.",
+  "ok": "KULUNGILE",
+  "cancel": "Khansela",
+  "save": "Londoloza",
+  "delete": "Susa",
+  "clear": "Kucace",
+  "add": "Engeza",
+  "create": "Dala",
+  "edit": "Hlela",
+  "search": "Sesha",
+  "areYouSureYouWantToLogOut": "Uqinisekile ukuthi ufuna ukuphuma?",
+  "chooseLanguage": "Khetha Ulimi",
+  "databaseInfo": "Ulwazi Lwesizindalwazi",
+  "storage": "Isitoreji: ObjectBox",
+  "vectorIndex": "Inkomba yeVector: HNSW",
+  "dimensions": "Ubukhulu: 384",
+  "embeddingModelBge": "Imodeli yokushumeka: bge-small-zh-v1.5",
+  "takePhoto": "Thatha Isithombe",
+  "chooseFromGallery": "Khetha kokuthi Igalari",
+  "editNickname": "Hlela isiteketiso",
+  "enterNickname": "Faka isiteketiso",
+  "pleaseEnterNickname": "Sicela ufake isiteketiso",
+  "nicknameAlreadyExistsOrInvalid": "Isiteketiso sesivele sikhona noma asivumelekile",
+  "user": "Umsebenzisi",
+  "manageScheduledReminders": "Phatha izikhumbuzi ezihleliwe nama-alamu",
+  "imageFailedToLoad": "Isithombe sihlulekile ukulayishwa. Sicela ukhethe futhi.",
+  "imageIsStillLoading": "Isithombe sisalayisha",
+  "imageAreaNotReady": "Indawo yesithombe ayilungile. Sicela uzame futhi.",
+  "cropFrameNotReady": "Uhlaka lokunqampuna alulungile. Sicela uzame futhi.",
+  "invalidCropArea": "Indawo yokunqampuna engavumelekile. Sicela uzame futhi.",
+  "cropFailed": "Ukunqampuna kuhlulekile. Sicela uzame futhi.",
+  "cropAvatar": "Nqampuna i-Avatar",
+  "chooseAgain": "Khetha Futhi",
+  "rotate90": "Zungezisa ngo-90°",
+  "dragFrameToMove": "Hudula uhlaka ukuze uhambe, hudula phansi kwesokudla ukuze ushintshe usayizi; ncinza ukuze usondeze futhi uhambise isithombe.",
+  "pleaseFillInAllFields": "Sicela ugcwalise zonke izinkambu",
+  "pinMustBeAtLeast4Digits": "Iphinikhodi kufanele okungenani ibe namadijithi angu-4",
+  "pinAtLeast4Digits": "Iphinikhodi kufanele okungenani ibe namadijithi angu-4",
+  "invalidUsernameOrPin": "Igama lomsebenzisi elingavumelekile noma i-PIN",
+  "invalidUsernameOrPinError": "Igama lomsebenzisi elingavumelekile noma i-PIN",
+  "usernameAlreadyExists": "Igama lomsebenzisi selivele likhona",
+  "captureMomentsKeepMemories": "Thatha izikhathi, gcina izinkumbulo",
+  "username": "Igama lomsebenzisi",
+  "pin": "I-PIN",
+  "login": "Ngena ngemvume",
+  "createAccount": "Yenza i-akhawunti",
+  "dontHaveAccountCreateOne": "Awunayo i-akhawunti? Dala eyodwa",
+  "alreadyHaveAccountLogin": "Usuvele unayo i-akhawunti? Ngena ngemvume",
+  "pleaseEnterUsername": "Sicela ufake igama lomsebenzisi",
+  "pinsDoNotMatch": "Ama-PIN awafani",
+  "tapToAddAvatar": "Thepha ukuze wengeze isithombe",
+  "yourName": "Igama lakho",
+  "privatePinOptional": "Iphinikhodi eyimfihlo (uyazikhethela)",
+  "usedToEncryptPrivateRecords": "Isetshenziselwa ukubethela amarekhodi ayimfihlo",
+  "privatePin": "Iphinikhodi eyimfihlo",
+  "leaveEmptyForNoEncryption": "Shiya kungenalutho lapho kungekho ukubethela",
+  "confirmPin": "Qinisekisa iphinikhodi",
+  "getStarted": "Qalisa",
+  "noReminders": "Azikho izikhumbuzi",
+  "addReminder": "Engeza Isikhumbuzi",
+  "title": "Isihloko",
+  "descriptionOptional": "Incazelo (kuyakhetheka)",
+  "microphonePermissionRequired": "Kudingeka imvume yemakrofoni",
+  "aiAssistant": "Umsizi we-AI",
+  "listening": "Ilalele...",
+  "typeAMessage": "Thayipha umlayezo...",
+  "aiChat": "Ingxoxo ye-AI",
+  "startAConversation": "Qala ingxoxo",
+  "typeYourMessage": "Thayipha umlayezo wakho...",
+  "asrReconnecting": "I-ASR iyaxhuma kabusha...",
+  "write": "Bhala",
+  "writeEntry": "Bhala Okufakiwe",
+  "noMemoriesYet": "Azikho izinkumbulo okwamanje",
+  "tapPlusToCapture": "Thepha + ukuze uthwebule imicabango yakho",
+  "tapPlusToCaptureYourThoughts": "Thepha + ukuze uthwebule imicabango yakho",
+  "deleteMemory": "Susa Inkumbulo",
+  "deleteRecord": "Susa Irekhodi",
+  "thisEntryWillBeRemoved": "Lokhu okufakile kuzosuswa emugqeni wakho wesikhathi.",
+  "thisRecordWillBeRemoved": "Leli rekhodi lizosuswa emugqeni wakho wesikhathi.",
+  "searchYourRecords": "Sesha amarekhodi akho...",
+  "exactMatches": "Ukufana Okuqondile",
+  "noExactMatches": "Akukho okufanayo okuqondile",
+  "exact": "Impela",
+  "exactMatch": "Ukufana Okuqondile",
+  "fuzzyMatches": "Ukufana Okungaqondakali",
+  "noFuzzyMatches": "Akukho okufanayo okungaqondakali",
+  "vectorMatch": "I-Vector Match",
+  "networkMatches": "Okufanayo Kwenethiwekhi",
+  "noNetworkMatches": "Akukho okufanayo kwenethiwekhi",
+  "networkSearchIsOff": "Ukusesha kwenethiwekhi kuvaliwe. Inike amandla kokuthi Izilungiselelo.",
+  "network": "Inethiwekhi",
+  "networkMatch": "I-Network Match",
+  "noSearchHistory": "Awukho umlando wosesho",
+  "searchHistory": "Umlando Wokusesha",
+  "invalidLink": "Isixhumanisi esingavumelekile",
+  "unableToOpenWebPage": "Ayikwazi ukuvula ikhasi lewebhu",
+  "imageMemory": "[Inkumbulo yesithombe]",
+  "tapToOpenWebPage": "Thepha ukuze uvule ikhasi lewebhu",
+  "editEntry": "Hlela Okungenayo",
+  "entryDetails": "Imininingwane Yokungena",
+  "noContent": "Akukho okuqukethwe",
+  "diaryNotFound": "Idayari ayitholakali",
+  "diaryNotFoundShort": "Irekhodi alitholakali",
+  "aiSummary": "Isifinyezo se-AI",
+  "microphoneInterrupted": "Imakrofoni iphazamisekile, ukurekhoda kumisiwe.",
+  "bold": "Okugqamile",
+  "italic": "I-ithalikhi",
+  "strikethrough": "I-Strikethrough",
+  "image": "Isithombe",
+  "asrUnavailableRecordingActive": "I-ASR ayitholakali. Ukurekhoda kusasebenza.",
+  "writeYourEntry": "Bhala okufakile...",
+  "writeYourContent": "Bhala okuqukethwe kwakho...",
+  "microphoneStartFailed": "Yehlulekile ukuqalisa imakrofoni: {error}",
+  "microphoneInterruptedRecordingStopped": "Imakrofoni iphazamisekile, ukurekhoda kumisiwe.",
+  "asrReconnectingError": "I-ASR iyaxhuma kabusha: {error}",
+  "imageInserted": "Isithombe sifakiwe: {name}",
+  "voiceError": "Iphutha lezwi: {error}",
+  "aiServiceUnavailable": "Uxolo, isevisi ye-AI ayitholakali okwamanje: {error}",
+  "shareFailed": "Yehlulekile ukwabelana: {error}",
+  "searchMatchHits": "{matchType} · {count} amahithi",
+  "matchCount": "Fanisa: {count}",
+  "sourceFromNetwork": "Umthombo: {source}",
+  "createNew": "Dala",
+  "micStartFailed": "Ukuqala kwemakrofoni kuhlulekile: {error}",
+  "importResultAccounts": "Ama-akhawunti: +{created} / abuyekeziwe {updated}",
+  "importResultDiaries": "Idayari: +{created} / ibuyekeziwe {updated}",
+  "importResultReminders": "Izikhumbuzi: +{created} / zibuyekeziwe {updated}",
+  "importResultSkipped": "Kweqiwe: {count}",
+  "importResultTotal": "Inani elishintshiwe: {count}",
+  "settingsApplied": "Izilungiselelo eziyisipele zisetshenzisiwe.",
+  "settingsNotApplied": "Izilungiselelo eziyisipele azizange zisetshenziswe.",
+  "backupExported": "Isipele sikhishiwe: {path}",
+  "exportFailed": "Ukukhipha kuhlulekile: {error}",
+  "importFailed": "Ukungenisa kwehlulekile: {error}"
+}

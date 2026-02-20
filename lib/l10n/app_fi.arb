@@ -1,0 +1,363 @@
+{
+  "@@locale": "fi",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Suomi",
+  "languageNameEn": "Finnish",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... tai http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Asetukset",
+  "account": "Tili",
+  "reminders": "Muistutukset",
+  "language": "Kieli",
+  "appLanguage": "Sovelluksen kieli",
+  "appearance": "Ulkonäkö",
+  "themeMode": "Teematila",
+  "dark": "Tumma",
+  "light": "Kevyt",
+  "system": "Järjestelmä",
+  "aiService": "AI-palvelu",
+  "aiChatProvider": "AI Chat Provider",
+  "chatModel": "Chat-malli",
+  "localModel": "Paikallinen malli",
+  "localModelDefault": "Paikallinen malli (oletus)",
+  "ollamaEndpoint": "Ollaman päätepiste",
+  "ollamaModel": "Ollama malli",
+  "openAiEndpoint": "OpenAI-päätepiste",
+  "openAiApiKey": "OpenAI API-avain",
+  "openAiModel": "OpenAI malli",
+  "geminiEndpoint": "Gemini päätepiste",
+  "geminiApiKey": "Gemini API-avain",
+  "geminiModel": "Gemini mallit",
+  "anthropicEndpoint": "Antrooppinen päätepiste",
+  "anthropicApiKey": "Antrooppinen API-avain",
+  "anthropicModel": "Antrooppinen malli",
+  "customProtocol": "Mukautettu protokolla",
+  "protocol": "pöytäkirja",
+  "customEndpoint": "Mukautettu päätepiste",
+  "customApiKey": "Mukautettu API-avain",
+  "customModel": "Mukautettu malli",
+  "optionalForLocalServers": "Valinnainen paikallisille/muokatuille palvelimille",
+  "speechRecognitionEngine": "Puheentunnistusmoottori",
+  "local": "Paikallinen",
+  "endpoint": "Päätepiste",
+  "localSpeechModel": "Paikallinen puhemalli",
+  "senseVoiceOnnx": "SenseVoice ONNX (laitteessa)",
+  "systemSpeechRecognition": "Järjestelmän puheentunnistus",
+  "systemRecognitionAndroidIos": "Järjestelmän tunnistus (Android/iOS)",
+  "endpointRecognitionCloudWs": "Päätepisteen tunnistus (pilvi/WS)",
+  "useBuiltInRecognizer": "Käytä sisäänrakennettua Android/iOS-tunnistinta (voi käyttää pilvipalvelua)",
+  "voiceAiEndpoint": "Voice AI -päätepiste",
+  "embeddingModel": "Upotusmalli",
+  "crossDeviceSync": "Laitteiden välinen synkronointi",
+  "sendToOtherDevices": "Lähetä muihin laitteisiin (LocalSend)",
+  "exportBackupAndSend": "Vie varmuuskopio ja lähetä jakoarkin kautta",
+  "importFromLocalSend": "Tuo LocalSendistä",
+  "selectBackupJson": "Valitse varmuuskopio JSON ja yhdistä paikalliset tiedot",
+  "autoGeneration": "Automaattinen sukupolvi",
+  "autoGenerateSummary": "Luo yhteenveto automaattisesti",
+  "generateAiSummaryForNewEntries": "Luo tekoälyn yhteenveto uusille merkinnöille",
+  "autoGenerateEmbedding": "Luo upottaminen automaattisesti",
+  "generateVectorEmbedding": "Luo vektori upotus hakua varten",
+  "enableNetworkSearch": "Ota verkkohaku käyttöön",
+  "allowOnlineRetrieval": "Salli online-haku haulle ja tekoälykeskusteluille (oletuksena pois päältä)",
+  "about": "Noin",
+  "version": "Versio {version}",
+  "database": "Tietokanta",
+  "objectBoxWithHnsw": "ObjectBox HNSW-indeksillä",
+  "logOut": "Kirjaudu ulos",
+  "custom": "Mukautettu",
+  "openAiCompatible": "OpenAI-yhteensopiva",
+  "notSet": "Ei asetettu",
+  "supportsLocalLanPublic": "Tukee paikallisia/LAN/julkisia päätepisteitä",
+  "shiguangLocalSendBackup": "Shiguang LocalSend varmuuskopio",
+  "localBackupFromShiguang": "Paikallinen varmuuskopio Shiguangista (vastaanota LocalSendin kautta)",
+  "selectBackupFileFromLocalSend": "Valitse LocalSendistä vastaanotettu varmuuskopiotiedosto",
+  "failedToResolveFilePath": "Valitun tiedostopolun selvittäminen epäonnistui",
+  "importOptions": "Tuontiasetukset",
+  "importSettingsAsWell": "Tuodaanko myös asetukset?\n(API-avaimia ei korvata)",
+  "dataOnly": "Vain tiedot",
+  "dataAndSettings": "Data + Asetukset",
+  "importCompleted": "Tuonti valmis",
+  "settingsInBackupWereApplied": "Varmuuskopion asetukset otettiin käyttöön.",
+  "settingsInBackupWereNotApplied": "Varmuuskopion asetuksia ei käytetty.",
+  "ok": "OK",
+  "cancel": "Peruuttaa",
+  "save": "Tallentaa",
+  "delete": "Poistaa",
+  "clear": "Selkeä",
+  "add": "Lisätä",
+  "create": "Luoda",
+  "edit": "Muokata",
+  "search": "Haku",
+  "areYouSureYouWantToLogOut": "Haluatko varmasti kirjautua ulos?",
+  "chooseLanguage": "Valitse Kieli",
+  "databaseInfo": "Tietokannan tiedot",
+  "storage": "Tallennus: ObjectBox",
+  "vectorIndex": "Vektoriindeksi: HNSW",
+  "dimensions": "Mitat: 384",
+  "embeddingModelBge": "Upotusmalli: bge-small-zh-v1.5",
+  "takePhoto": "Ota valokuva",
+  "chooseFromGallery": "Valitse Galleriasta",
+  "editNickname": "Muokkaa lempinimeä",
+  "enterNickname": "Anna lempinimi",
+  "pleaseEnterNickname": "Anna lempinimi",
+  "nicknameAlreadyExistsOrInvalid": "Lempinimi on jo olemassa tai se on virheellinen",
+  "user": "Käyttäjä",
+  "manageScheduledReminders": "Hallitse ajoitettuja muistutuksia ja hälytyksiä",
+  "imageFailedToLoad": "Kuvan lataaminen epäonnistui. Valitse uudelleen.",
+  "imageIsStillLoading": "Kuva latautuu edelleen",
+  "imageAreaNotReady": "Kuva-alue ei ole valmis. Yritä uudelleen.",
+  "cropFrameNotReady": "Rajauskehys ei ole valmis. Yritä uudelleen.",
+  "invalidCropArea": "Virheellinen rajausalue. Yritä uudelleen.",
+  "cropFailed": "Rajaus epäonnistui. Yritä uudelleen.",
+  "cropAvatar": "Rajaa Avatar",
+  "chooseAgain": "Valitse uudelleen",
+  "rotate90": "Kierrä 90°",
+  "dragFrameToMove": "Siirrä kehystä vetämällä, muuta kokoa vetämällä alaoikealle. nipistämällä voit zoomata ja siirtää kuvaa.",
+  "pleaseFillInAllFields": "Täytä kaikki kentät",
+  "pinMustBeAtLeast4Digits": "PIN-koodissa on oltava vähintään 4 numeroa",
+  "pinAtLeast4Digits": "PIN-koodissa on oltava vähintään 4 numeroa",
+  "invalidUsernameOrPin": "Virheellinen käyttäjänimi tai PIN-koodi",
+  "invalidUsernameOrPinError": "Virheellinen käyttäjänimi tai PIN-koodi",
+  "usernameAlreadyExists": "Käyttäjätunnus on jo olemassa",
+  "captureMomentsKeepMemories": "Ikuista hetkiä, säilytä muistoja",
+  "username": "Käyttäjätunnus",
+  "pin": "PIN-koodi",
+  "login": "Kirjaudu sisään",
+  "createAccount": "Luo tili",
+  "dontHaveAccountCreateOne": "Eikö sinulla ole tiliä? Luo sellainen",
+  "alreadyHaveAccountLogin": "Onko sinulla jo tili? Kirjaudu sisään",
+  "pleaseEnterUsername": "Anna käyttäjänimi",
+  "pinsDoNotMatch": "PIN-koodit eivät täsmää",
+  "tapToAddAvatar": "Lisää avatar napauttamalla",
+  "yourName": "Nimesi",
+  "privatePinOptional": "Yksityinen PIN-koodi (valinnainen)",
+  "usedToEncryptPrivateRecords": "Käytetään yksityisten tietueiden salaamiseen",
+  "privatePin": "Yksityinen PIN-koodi",
+  "leaveEmptyForNoEncryption": "Jätä tyhjäksi, jos et salaa",
+  "confirmPin": "Vahvista PIN",
+  "getStarted": "Aloita",
+  "noReminders": "Ei muistutuksia",
+  "addReminder": "Lisää muistutus",
+  "title": "Otsikko",
+  "descriptionOptional": "Kuvaus (valinnainen)",
+  "microphonePermissionRequired": "Mikrofonilupa vaaditaan",
+  "aiAssistant": "AI Assistant",
+  "listening": "Kuuntelee...",
+  "typeAMessage": "Kirjoita viesti...",
+  "aiChat": "AI Chat",
+  "startAConversation": "Aloita keskustelu",
+  "typeYourMessage": "Kirjoita viestisi...",
+  "asrReconnecting": "ASR yhdistetään uudelleen...",
+  "write": "Kirjoittaa",
+  "writeEntry": "Kirjoita merkintä",
+  "noMemoriesYet": "Ei vielä muistoja",
+  "tapPlusToCapture": "Napauta + napauttaaksesi ajatuksesi",
+  "tapPlusToCaptureYourThoughts": "Napauta + napauttaaksesi ajatuksesi",
+  "deleteMemory": "Poista muisti",
+  "deleteRecord": "Poista tietue",
+  "thisEntryWillBeRemoved": "Tämä merkintä poistetaan aikajanaltasi.",
+  "thisRecordWillBeRemoved": "Tämä tietue poistetaan aikajanaltasi.",
+  "searchYourRecords": "Etsi tietueistasi...",
+  "exactMatches": "Tarkat ottelut",
+  "noExactMatches": "Ei tarkkoja osumia",
+  "exact": "Tarkka",
+  "exactMatch": "Tarkka ottelu",
+  "fuzzyMatches": "Sumeat ottelut",
+  "noFuzzyMatches": "Ei sumeita otteluita",
+  "vectorMatch": "Vector Match",
+  "networkMatches": "Verkko-ottelut",
+  "noNetworkMatches": "Verkko ei täsmää",
+  "networkSearchIsOff": "Verkkohaku on pois päältä. Ota se käyttöön asetuksista.",
+  "network": "Verkko",
+  "networkMatch": "Network Match",
+  "noSearchHistory": "Ei hakuhistoriaa",
+  "searchHistory": "Hakuhistoria",
+  "invalidLink": "Virheellinen linkki",
+  "unableToOpenWebPage": "Verkkosivua ei voi avata",
+  "imageMemory": "[Kuvamuisti]",
+  "tapToOpenWebPage": "Napauta avataksesi verkkosivun",
+  "editEntry": "Muokkaa merkintää",
+  "entryDetails": "Sisäänpääsyn tiedot",
+  "noContent": "Ei sisältöä",
+  "diaryNotFound": "Päiväkirjaa ei löydy",
+  "diaryNotFoundShort": "Tietuetta ei löydy",
+  "aiSummary": "AI yhteenveto",
+  "microphoneInterrupted": "Mikrofoni keskeytetty, tallennus pysäytetty.",
+  "bold": "Lihavoitu",
+  "italic": "Kursiivi",
+  "strikethrough": "Yliviivattu",
+  "image": "Kuva",
+  "asrUnavailableRecordingActive": "ASR ei ole saatavilla. Tallennus on edelleen aktiivinen.",
+  "writeYourEntry": "Kirjoita kirjoituksesi...",
+  "writeYourContent": "Kirjoita sisältösi...",
+  "microphoneStartFailed": "Mikrofonin käynnistys epäonnistui: {error}",
+  "microphoneInterruptedRecordingStopped": "Mikrofoni keskeytetty, tallennus pysäytetty.",
+  "asrReconnectingError": "ASR-yhteys muodostetaan uudelleen: {error}",
+  "imageInserted": "Lisätty kuva: {name}",
+  "voiceError": "Äänivirhe: {error}",
+  "aiServiceUnavailable": "Anteeksi, tekoälypalvelu ei ole tällä hetkellä saatavilla: {error}",
+  "shareFailed": "Jakaminen epäonnistui: {error}",
+  "searchMatchHits": "{matchType} · {count} osumaa",
+  "matchCount": "Ottelu: {count}",
+  "sourceFromNetwork": "Lähde: {source}",
+  "createNew": "Luoda",
+  "micStartFailed": "Mikrofonin käynnistys epäonnistui: {error}",
+  "importResultAccounts": "Tilit: +{created} / päivitetty {updated}",
+  "importResultDiaries": "Päiväkirjat: +{created} / päivitetty {updated}",
+  "importResultReminders": "Muistutukset: +{created} / päivitetty {updated}",
+  "importResultSkipped": "Ohitettu: {count}",
+  "importResultTotal": "Muutoksia yhteensä: {count}",
+  "settingsApplied": "Varmuuskopion asetukset otettiin käyttöön.",
+  "settingsNotApplied": "Varmuuskopion asetuksia ei käytetty.",
+  "backupExported": "Varmuuskopio viety: {path}",
+  "exportFailed": "Vienti epäonnistui: {error}",
+  "importFailed": "Tuonti epäonnistui: {error}"
+}

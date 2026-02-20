@@ -1,0 +1,363 @@
+{
+  "@@locale": "ro",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Română",
+  "languageNameEn": "Romanian",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... sau http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Setări",
+  "account": "Cont",
+  "reminders": "Mementouri",
+  "language": "Limbă",
+  "appLanguage": "Limba aplicației",
+  "appearance": "Aspect",
+  "themeMode": "Modul Temă",
+  "dark": "Întuneric",
+  "light": "Aprinde",
+  "system": "Sistem",
+  "aiService": "Serviciul AI",
+  "aiChatProvider": "Furnizor de chat AI",
+  "chatModel": "Model de chat",
+  "localModel": "Model local",
+  "localModelDefault": "Model local (implicit)",
+  "ollamaEndpoint": "Ollama Endpoint",
+  "ollamaModel": "Modelul Ollama",
+  "openAiEndpoint": "OpenAI Endpoint",
+  "openAiApiKey": "Cheia API OpenAI",
+  "openAiModel": "Model OpenAI",
+  "geminiEndpoint": "Punctul final Gemeni",
+  "geminiApiKey": "Cheia API Gemini",
+  "geminiModel": "Modele Gemeni",
+  "anthropicEndpoint": "Punctul final antropic",
+  "anthropicApiKey": "Cheie API antropică",
+  "anthropicModel": "Model antropic",
+  "customProtocol": "Protocol personalizat",
+  "protocol": "Protocol",
+  "customEndpoint": "Punct final personalizat",
+  "customApiKey": "Cheie API personalizată",
+  "customModel": "Model personalizat",
+  "optionalForLocalServers": "Opțional pentru serverele locale/personalizate",
+  "speechRecognitionEngine": "Motor de recunoaștere a vorbirii",
+  "local": "Local",
+  "endpoint": "Punct final",
+  "localSpeechModel": "Model local de vorbire",
+  "senseVoiceOnnx": "SenseVoice ONNX (pe dispozitiv)",
+  "systemSpeechRecognition": "Sistem de recunoaștere a vorbirii",
+  "systemRecognitionAndroidIos": "Recunoașterea sistemului (Android/iOS)",
+  "endpointRecognitionCloudWs": "Recunoaștere endpoint (Cloud/WS)",
+  "useBuiltInRecognizer": "Utilizați dispozitivul de recunoaștere Android / iOS încorporat (poate folosi cloud)",
+  "voiceAiEndpoint": "Voice AI Endpoint",
+  "embeddingModel": "Model de încorporare",
+  "crossDeviceSync": "Sincronizare pe mai multe dispozitive",
+  "sendToOtherDevices": "Trimiteți către alte dispozitive (LocalSend)",
+  "exportBackupAndSend": "Exportați backup și trimiteți prin foaie de partajare",
+  "importFromLocalSend": "Importați din LocalSend",
+  "selectBackupJson": "Selectați JSON de rezervă și îmbinați datele locale",
+  "autoGeneration": "Generare automată",
+  "autoGenerateSummary": "Generare automată a rezumatului",
+  "generateAiSummaryForNewEntries": "Generați un rezumat AI pentru noile intrări",
+  "autoGenerateEmbedding": "Generare automată încorporare",
+  "generateVectorEmbedding": "Generați încorporare vectorială pentru căutare",
+  "enableNetworkSearch": "Activați căutarea în rețea",
+  "allowOnlineRetrieval": "Permiteți preluarea online pentru căutare și chat AI (dezactivat în mod prestabilit)",
+  "about": "Despre",
+  "version": "Versiunea {version}",
+  "database": "Baza de date",
+  "objectBoxWithHnsw": "ObjectBox cu index HNSW",
+  "logOut": "Deconectați-vă",
+  "custom": "Personalizat",
+  "openAiCompatible": "Compatibil cu OpenAI",
+  "notSet": "Nu setat",
+  "supportsLocalLanPublic": "Suportă puncte finale locale/LAN/publice",
+  "shiguangLocalSendBackup": "Shiguang LocalSend Backup",
+  "localBackupFromShiguang": "Backup local de la Shiguang (primire prin LocalSend)",
+  "selectBackupFileFromLocalSend": "Selectați fișierul de rezervă primit de la LocalSend",
+  "failedToResolveFilePath": "Nu s-a putut rezolva calea fișierului selectat",
+  "importOptions": "Opțiuni de import",
+  "importSettingsAsWell": "Import și setări?\n(Cheile API nu vor fi suprascrise)",
+  "dataOnly": "Numai date",
+  "dataAndSettings": "Date + Setări",
+  "importCompleted": "Import finalizat",
+  "settingsInBackupWereApplied": "Au fost aplicate setările din backup.",
+  "settingsInBackupWereNotApplied": "Setările din backup nu au fost aplicate.",
+  "ok": "Bine",
+  "cancel": "Anula",
+  "save": "Salva",
+  "delete": "Şterge",
+  "clear": "Clar",
+  "add": "Adăuga",
+  "create": "Crea",
+  "edit": "Edita",
+  "search": "Căutare",
+  "areYouSureYouWantToLogOut": "Sigur doriți să vă deconectați?",
+  "chooseLanguage": "Alegeți limba",
+  "databaseInfo": "Informații baza de date",
+  "storage": "Stocare: ObjectBox",
+  "vectorIndex": "Index vectorial: HNSW",
+  "dimensions": "Dimensiuni: 384",
+  "embeddingModelBge": "Model de încorporare: bge-small-zh-v1.5",
+  "takePhoto": "Faceți o fotografie",
+  "chooseFromGallery": "Alegeți din Galerie",
+  "editNickname": "Editați porecla",
+  "enterNickname": "Introduceți porecla",
+  "pleaseEnterNickname": "Vă rugăm să introduceți o poreclă",
+  "nicknameAlreadyExistsOrInvalid": "Pseudomul există deja sau este invalid",
+  "user": "Utilizator",
+  "manageScheduledReminders": "Gestionați mementourile și alarmele programate",
+  "imageFailedToLoad": "Imaginea nu s-a încărcat. Vă rugăm să alegeți din nou.",
+  "imageIsStillLoading": "Imaginea încă se încarcă",
+  "imageAreaNotReady": "Zona de imagine nu este pregătită. Vă rugăm să încercați din nou.",
+  "cropFrameNotReady": "Cadrul de decupare nu este pregătit. Vă rugăm să încercați din nou.",
+  "invalidCropArea": "Zona de decupare nevalidă. Vă rugăm să încercați din nou.",
+  "cropFailed": "Decuparea a eșuat. Vă rugăm să încercați din nou.",
+  "cropAvatar": "Decupați avatarul",
+  "chooseAgain": "Alege din nou",
+  "rotate90": "Rotiți 90°",
+  "dragFrameToMove": "Trageți cadrul pentru a muta, trageți în dreapta jos pentru a redimensiona; ciupiți pentru a mări și muta imaginea.",
+  "pleaseFillInAllFields": "Vă rugăm să completați toate câmpurile",
+  "pinMustBeAtLeast4Digits": "PIN-ul trebuie să aibă cel puțin 4 cifre",
+  "pinAtLeast4Digits": "PIN-ul trebuie să aibă cel puțin 4 cifre",
+  "invalidUsernameOrPin": "Nume de utilizator sau PIN nevalid",
+  "invalidUsernameOrPinError": "Nume de utilizator sau PIN nevalid",
+  "usernameAlreadyExists": "Numele de utilizator există deja",
+  "captureMomentsKeepMemories": "Captează momente, păstrează amintiri",
+  "username": "Nume de utilizator",
+  "pin": "PIN",
+  "login": "Log in",
+  "createAccount": "Creează cont",
+  "dontHaveAccountCreateOne": "Nu ai un cont? Creați unul",
+  "alreadyHaveAccountLogin": "Aveți deja un cont? Log in",
+  "pleaseEnterUsername": "Vă rugăm să introduceți un nume de utilizator",
+  "pinsDoNotMatch": "PIN-urile nu se potrivesc",
+  "tapToAddAvatar": "Atingeți pentru a adăuga un avatar",
+  "yourName": "Numele dumneavoastră",
+  "privatePinOptional": "PIN privat (opțional)",
+  "usedToEncryptPrivateRecords": "Folosit pentru a cripta înregistrările private",
+  "privatePin": "PIN privat",
+  "leaveEmptyForNoEncryption": "Lăsați gol pentru nicio criptare",
+  "confirmPin": "Confirmați codul PIN",
+  "getStarted": "Începeți",
+  "noReminders": "Fără mementouri",
+  "addReminder": "Adăugați un memento",
+  "title": "Titlu",
+  "descriptionOptional": "Descriere (opțional)",
+  "microphonePermissionRequired": "Este necesară permisiunea microfonului",
+  "aiAssistant": "Asistent AI",
+  "listening": "Ascultare...",
+  "typeAMessage": "Tastați un mesaj...",
+  "aiChat": "AI Chat",
+  "startAConversation": "Începeți o conversație",
+  "typeYourMessage": "Introduceți mesajul dvs....",
+  "asrReconnecting": "ASR se reconecta...",
+  "write": "Scrie",
+  "writeEntry": "Scrieți intrarea",
+  "noMemoriesYet": "Nicio amintire încă",
+  "tapPlusToCapture": "Atingeți + pentru a vă surprinde gândurile",
+  "tapPlusToCaptureYourThoughts": "Atingeți + pentru a vă surprinde gândurile",
+  "deleteMemory": "Ștergeți memoria",
+  "deleteRecord": "Șterge înregistrarea",
+  "thisEntryWillBeRemoved": "Această intrare va fi eliminată din cronologia dvs.",
+  "thisRecordWillBeRemoved": "Această înregistrare va fi eliminată din cronologia dvs.",
+  "searchYourRecords": "Căutați înregistrările dvs....",
+  "exactMatches": "Potriviri exacte",
+  "noExactMatches": "Fără potriviri exacte",
+  "exact": "Corect",
+  "exactMatch": "Potrivire exactă",
+  "fuzzyMatches": "Meciuri neclare",
+  "noFuzzyMatches": "Fără potriviri neclare",
+  "vectorMatch": "Potrivire vectorială",
+  "networkMatches": "Potriviri în rețea",
+  "noNetworkMatches": "Nicio potrivire de rețea",
+  "networkSearchIsOff": "Căutarea în rețea este dezactivată. Activați-l în Setări.",
+  "network": "Reţea",
+  "networkMatch": "Potrivire în rețea",
+  "noSearchHistory": "Fără istoric de căutare",
+  "searchHistory": "Istoricul căutărilor",
+  "invalidLink": "Link nevalid",
+  "unableToOpenWebPage": "Pagina web nu poate fi deschisă",
+  "imageMemory": "[Memorie imagine]",
+  "tapToOpenWebPage": "Atingeți pentru a deschide pagina web",
+  "editEntry": "Editați intrarea",
+  "entryDetails": "Detalii de intrare",
+  "noContent": "Fără conținut",
+  "diaryNotFound": "Jurnalul nu a fost găsit",
+  "diaryNotFoundShort": "Înregistrare nu a fost găsită",
+  "aiSummary": "Rezumat AI",
+  "microphoneInterrupted": "Microfonul întrerupt, înregistrarea oprită.",
+  "bold": "Îndrăzneţ",
+  "italic": "Cursiv",
+  "strikethrough": "Striat",
+  "image": "Imagine",
+  "asrUnavailableRecordingActive": "ASR indisponibil. Înregistrarea este încă activă.",
+  "writeYourEntry": "Scrie-ți intrarea...",
+  "writeYourContent": "Scrie-ți conținutul...",
+  "microphoneStartFailed": "Nu s-a pornit microfonul: {error}",
+  "microphoneInterruptedRecordingStopped": "Microfonul întrerupt, înregistrarea oprită.",
+  "asrReconnectingError": "Reconectare ASR: {error}",
+  "imageInserted": "Imaginea inserată: {name}",
+  "voiceError": "Eroare de voce: {error}",
+  "aiServiceUnavailable": "Ne pare rău, serviciul AI este momentan indisponibil: {error}",
+  "shareFailed": "Partajarea eșuată: {error}",
+  "searchMatchHits": "{matchType} · {count} accesări",
+  "matchCount": "Potrivire: {count}",
+  "sourceFromNetwork": "Sursa: {source}",
+  "createNew": "Crea",
+  "micStartFailed": "Pornirea microfonului a eșuat: {error}",
+  "importResultAccounts": "Conturi: +{created} / actualizat {updated}",
+  "importResultDiaries": "Jurnale: +{created} / actualizat {updated}",
+  "importResultReminders": "Mementouri: +{created} / actualizat {updated}",
+  "importResultSkipped": "Omis: {count}",
+  "importResultTotal": "Total schimbat: {count}",
+  "settingsApplied": "Au fost aplicate setările din backup.",
+  "settingsNotApplied": "Setările din backup nu au fost aplicate.",
+  "backupExported": "Backup exportat: {path}",
+  "exportFailed": "Export eșuat: {error}",
+  "importFailed": "Import eșuat: {error}"
+}

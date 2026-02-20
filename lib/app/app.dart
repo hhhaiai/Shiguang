@@ -48,20 +48,15 @@ class _AppState extends ConsumerState<App> {
       AppThemeMode.dark => ThemeMode.dark,
       AppThemeMode.system => ThemeMode.system,
     };
-    final appTitle = settings.language.isChinese ? '拾光' : 'Shiguang';
-    final configuredLocale = settings.language.locale;
-    final locale =
-        GlobalMaterialLocalizations.delegate.isSupported(configuredLocale)
-        ? configuredLocale
-        : const Locale('en');
-    final supportedLocales = <Locale>{};
-    for (final language in AppLanguage.values) {
-      final appLocale = language.locale;
-      if (GlobalMaterialLocalizations.delegate.isSupported(appLocale)) {
-        supportedLocales.add(appLocale);
-      }
-    }
-    supportedLocales.add(const Locale('en'));
+    final effectiveLanguage = settings.followSystemLanguage
+        ? AppLanguage.fromCode(
+            WidgetsBinding.instance.platformDispatcher.locale.toLanguageTag(),
+          )
+        : settings.language;
+    final appTitle = effectiveLanguage.isChinese ? '拾光' : 'Shiguang';
+    final locale = settings.followSystemLanguage
+        ? null
+        : settings.language.locale;
 
     return MaterialApp.router(
       title: appTitle,

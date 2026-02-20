@@ -1,0 +1,363 @@
+{
+  "@@locale": "am",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "አማርኛ",
+  "languageNameEn": "Amharic",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "ሽጉዋንግ",
+  "settings": "ቅንብሮች",
+  "account": "መለያ",
+  "reminders": "አስታዋሾች",
+  "language": "ቋንቋ",
+  "appLanguage": "የመተግበሪያ ቋንቋ",
+  "appearance": "መልክ",
+  "themeMode": "ገጽታ ሁነታ",
+  "dark": "ጨለማ",
+  "light": "ብርሃን",
+  "system": "ስርዓት",
+  "aiService": "AI አገልግሎት",
+  "aiChatProvider": "AI ውይይት አቅራቢ",
+  "chatModel": "የውይይት ሞዴል",
+  "localModel": "የአካባቢ ሞዴል",
+  "localModelDefault": "የአካባቢ ሞዴል (ነባሪ)",
+  "ollamaEndpoint": "ኦላማ የመጨረሻ ነጥብ",
+  "ollamaModel": "ኦላማ ሞዴል",
+  "openAiEndpoint": "ክፍት AI የመጨረሻ ነጥብ",
+  "openAiApiKey": "ኤፒአይ ቁልፍን ክፈት",
+  "openAiModel": "ክፍት AI ሞዴል",
+  "geminiEndpoint": "ጀሚኒ የመጨረሻ ነጥብ",
+  "geminiApiKey": "የጌሚኒ ኤፒአይ ቁልፍ",
+  "geminiModel": "የጌሚኒ ሞዴሎች",
+  "anthropicEndpoint": "አንትሮፖኒክ የመጨረሻ ነጥብ",
+  "anthropicApiKey": "አንትሮፒክ ኤፒአይ ቁልፍ",
+  "anthropicModel": "አንትሮፖክ ሞዴል",
+  "customProtocol": "ብጁ ፕሮቶኮል",
+  "protocol": "ፕሮቶኮል",
+  "customEndpoint": "ብጁ የመጨረሻ ነጥብ",
+  "customApiKey": "ብጁ የኤፒአይ ቁልፍ",
+  "customModel": "ብጁ ሞዴል",
+  "optionalForLocalServers": "ለአካባቢያዊ/ብጁ አገልጋዮች አማራጭ",
+  "speechRecognitionEngine": "የንግግር ማወቂያ ሞተር",
+  "local": "አካባቢያዊ",
+  "endpoint": "የመጨረሻ ነጥብ",
+  "localSpeechModel": "የአካባቢ የንግግር ሞዴል",
+  "senseVoiceOnnx": "SenseVoice ONNX (በመሣሪያ ላይ)",
+  "systemSpeechRecognition": "የስርዓት ንግግር እውቅና",
+  "systemRecognitionAndroidIos": "የስርዓት እውቅና (አንድሮይድ/አይኦኤስ)",
+  "endpointRecognitionCloudWs": "የመጨረሻ ነጥብ ማወቂያ (ክላውድ/ደብሊውኤስ)",
+  "useBuiltInRecognizer": "አብሮ የተሰራ አንድሮይድ/iOS ማወቂያን ተጠቀም (ዳመናን ሊጠቀም ይችላል)",
+  "voiceAiEndpoint": "የድምጽ AI የመጨረሻ ነጥብ",
+  "embeddingModel": "መክተቻ ሞዴል",
+  "crossDeviceSync": "መሳሪያ ተሻጋሪ ማመሳሰል",
+  "sendToOtherDevices": "ወደ ሌሎች መሳሪያዎች ላክ (አካባቢያዊ ላክ)",
+  "exportBackupAndSend": "ምትኬን ወደ ውጭ ይላኩ እና በአጋራ ሉህ ይላኩ።",
+  "importFromLocalSend": "ከLocalSend አስመጣ",
+  "selectBackupJson": "JSON ምትኬን ይምረጡ እና የአካባቢ ውሂብን ያዋህዱ",
+  "autoGeneration": "አውቶማቲክ ማመንጨት",
+  "autoGenerateSummary": "ራስ-ሰር ማጠቃለያ",
+  "generateAiSummaryForNewEntries": "ለአዲስ ግቤቶች የ AI ማጠቃለያ ይፍጠሩ",
+  "autoGenerateEmbedding": "መክተትን በራስ-ሰር ይፍጠሩ",
+  "generateVectorEmbedding": "ለፍለጋ የቬክተር መክተትን ይፍጠሩ",
+  "enableNetworkSearch": "የአውታረ መረብ ፍለጋን አንቃ",
+  "allowOnlineRetrieval": "ለፍለጋ እና AI ውይይት በመስመር ላይ ሰርስሮ ለማውጣት ፍቀድ (በነባሪ ጠፍቷል)",
+  "about": "ስለ",
+  "version": "ስሪት {version}",
+  "database": "የውሂብ ጎታ",
+  "objectBoxWithHnsw": "ObjectBox ከHNSW መረጃ ጠቋሚ ጋር",
+  "logOut": "ውጣ",
+  "custom": "ብጁ",
+  "openAiCompatible": "ክፍት AI ተኳሃኝ",
+  "notSet": "አልተዘጋጀም።",
+  "supportsLocalLanPublic": "የአካባቢ/ላን/የሕዝብ የመጨረሻ ነጥቦችን ይደግፋል",
+  "shiguangLocalSendBackup": "Shiguang የአካባቢ ላክ ምትኬ",
+  "localBackupFromShiguang": "ከShiguang የአካባቢ ምትኬ (በ LocalSend በኩል መቀበል)",
+  "selectBackupFileFromLocalSend": "ከLocalSend የተቀበለውን የመጠባበቂያ ፋይል ይምረጡ",
+  "failedToResolveFilePath": "የተመረጠውን የፋይል መንገድ መፍታት አልተሳካም።",
+  "importOptions": "የማስመጣት አማራጮች",
+  "importSettingsAsWell": "ቅንጅቶችም ያስመጡ?\n(ኤፒአይ ቁልፎች አይገለበጡም)",
+  "dataOnly": "ውሂብ ብቻ",
+  "dataAndSettings": "ውሂብ + ቅንብሮች",
+  "importCompleted": "ማስመጣት ተጠናቅቋል",
+  "settingsInBackupWereApplied": "በመጠባበቂያ ውስጥ ያሉ ቅንብሮች ተተግብረዋል።",
+  "settingsInBackupWereNotApplied": "በመጠባበቂያ ውስጥ ያሉ ቅንብሮች አልተተገበሩም።",
+  "ok": "እሺ",
+  "cancel": "ሰርዝ",
+  "save": "አስቀምጥ",
+  "delete": "ሰርዝ",
+  "clear": "ግልጽ",
+  "add": "አክል",
+  "create": "ፍጠር",
+  "edit": "አርትዕ",
+  "search": "ፈልግ",
+  "areYouSureYouWantToLogOut": "እርግጠኛ ነህ ዘግተህ መውጣት ትፈልጋለህ?",
+  "chooseLanguage": "ቋንቋ ይምረጡ",
+  "databaseInfo": "የውሂብ ጎታ መረጃ",
+  "storage": "ማከማቻ፡ ObjectBox",
+  "vectorIndex": "የቬክተር መረጃ ጠቋሚ፡ HNSW",
+  "dimensions": "መጠን፡ 384",
+  "embeddingModelBge": "የመክተት ሞዴል፡ bge-small-zh-v1.5",
+  "takePhoto": "ፎቶ አንሳ",
+  "chooseFromGallery": "ከጋለሪ ይምረጡ",
+  "editNickname": "ቅጽል ስም ያርትዑ",
+  "enterNickname": "ቅጽል ስም አስገባ",
+  "pleaseEnterNickname": "እባክዎ ቅጽል ስም ያስገቡ",
+  "nicknameAlreadyExistsOrInvalid": "ቅጽል ስም አስቀድሞ አለ ወይም ልክ ያልሆነ ነው።",
+  "user": "ተጠቃሚ",
+  "manageScheduledReminders": "የታቀዱ አስታዋሾችን እና ማንቂያዎችን ያስተዳድሩ",
+  "imageFailedToLoad": "ምስል መጫን አልቻለም። እባክዎ እንደገና ይምረጡ።",
+  "imageIsStillLoading": "ምስል አሁንም እየተጫነ ነው።",
+  "imageAreaNotReady": "የምስል ቦታ ዝግጁ አይደለም። እባክህ እንደገና ሞክር።",
+  "cropFrameNotReady": "ፍሬም ከርክም ዝግጁ አይደለም። እባክህ እንደገና ሞክር።",
+  "invalidCropArea": "ልክ ያልሆነ የሰብል አካባቢ። እባክህ እንደገና ሞክር።",
+  "cropFailed": "መከሩ አልተሳካም። እባክህ እንደገና ሞክር።",
+  "cropAvatar": "አምሳያ ይከርክሙ",
+  "chooseAgain": "እንደገና ይምረጡ",
+  "rotate90": "90° አሽከርክር",
+  "dragFrameToMove": "ለማንቀሳቀስ ክፈፉን ይጎትቱት፣ መጠኑን ለመቀየር ከታች ወደ ቀኝ ይጎትቱ። ምስልን ለማጉላት እና ለማንቀሳቀስ መቆንጠጥ።",
+  "pleaseFillInAllFields": "እባክዎ ሁሉንም መስኮች ይሙሉ",
+  "pinMustBeAtLeast4Digits": "ፒን ቢያንስ 4 አሃዞች መሆን አለበት።",
+  "pinAtLeast4Digits": "ፒን ቢያንስ 4 አሃዞች መሆን አለበት።",
+  "invalidUsernameOrPin": "የተሳሳተ የተጠቃሚ ስም ወይም ፒን",
+  "invalidUsernameOrPinError": "የተሳሳተ የተጠቃሚ ስም ወይም ፒን",
+  "usernameAlreadyExists": "የተጠቃሚ ስም አስቀድሞ አለ።",
+  "captureMomentsKeepMemories": "አፍታዎችን ያንሱ፣ ትውስታዎችን ያስቀምጡ",
+  "username": "የተጠቃሚ ስም",
+  "pin": "ፒን",
+  "login": "ግባ",
+  "createAccount": "መለያ ፍጠር",
+  "dontHaveAccountCreateOne": "መለያ የለህም? አንድ ፍጠር",
+  "alreadyHaveAccountLogin": "መለያ አለህ? ግባ",
+  "pleaseEnterUsername": "እባክዎ የተጠቃሚ ስም ያስገቡ",
+  "pinsDoNotMatch": "ፒኖች አይዛመዱም።",
+  "tapToAddAvatar": "አምሳያ ለመጨመር መታ ያድርጉ",
+  "yourName": "የእርስዎ ስም",
+  "privatePinOptional": "የግል ፒን (አማራጭ)",
+  "usedToEncryptPrivateRecords": "የግል መዝገቦችን ለማመስጠር ይጠቅማል",
+  "privatePin": "የግል ፒን",
+  "leaveEmptyForNoEncryption": "ምንም ምስጠራ እንዳይኖር ባዶ ይተውት።",
+  "confirmPin": "ፒን ያረጋግጡ",
+  "getStarted": "እንጀምር",
+  "noReminders": "ምንም አስታዋሾች የሉም",
+  "addReminder": "አስታዋሽ ጨምር",
+  "title": "ርዕስ",
+  "descriptionOptional": "መግለጫ (አማራጭ)",
+  "microphonePermissionRequired": "የማይክሮፎን ፍቃድ ያስፈልጋል",
+  "aiAssistant": "AI ረዳት",
+  "listening": "በማዳመጥ ላይ...",
+  "typeAMessage": "መልዕክት ይተይቡ...",
+  "aiChat": "AI ውይይት",
+  "startAConversation": "ውይይት ጀምር",
+  "typeYourMessage": "መልእክትህን ተይብ...",
+  "asrReconnecting": "ASR እንደገና በማገናኘት ላይ...",
+  "write": "ጻፍ",
+  "writeEntry": "ግቤት ፃፍ",
+  "noMemoriesYet": "እስካሁን ምንም ትውስታዎች የሉም",
+  "tapPlusToCapture": "ሃሳቦችዎን ለመያዝ + ነካ ያድርጉ",
+  "tapPlusToCaptureYourThoughts": "ሃሳቦችዎን ለመያዝ + ነካ ያድርጉ",
+  "deleteMemory": "ማህደረ ትውስታን ሰርዝ",
+  "deleteRecord": "መዝገብ ሰርዝ",
+  "thisEntryWillBeRemoved": "ይህ ግቤት ከጊዜ መስመርዎ ይወገዳል።",
+  "thisRecordWillBeRemoved": "ይህ መዝገብ በጊዜ መስመርዎ ላይ ይወገዳል።",
+  "searchYourRecords": "መዝገቦችህን ፈልግ...",
+  "exactMatches": "ትክክለኛ ግጥሚያዎች",
+  "noExactMatches": "ምንም ትክክለኛ ተዛማጅ የለም።",
+  "exact": "በትክክል",
+  "exactMatch": "ትክክለኛ ግጥሚያ",
+  "fuzzyMatches": "ደብዛዛ ግጥሚያዎች",
+  "noFuzzyMatches": "ምንም ደብዛዛ ግጥሚያዎች የሉም",
+  "vectorMatch": "የቬክተር ተዛማጅ",
+  "networkMatches": "የአውታረ መረብ ግጥሚያዎች",
+  "noNetworkMatches": "ምንም የአውታረ መረብ ግጥሚያ የለም።",
+  "networkSearchIsOff": "የአውታረ መረብ ፍለጋ ጠፍቷል። በቅንብሮች ውስጥ አንቃው።",
+  "network": "አውታረ መረብ",
+  "networkMatch": "የአውታረ መረብ ተዛማጅ",
+  "noSearchHistory": "የፍለጋ ታሪክ የለም።",
+  "searchHistory": "የፍለጋ ታሪክ",
+  "invalidLink": "ልክ ያልሆነ አገናኝ",
+  "unableToOpenWebPage": "ድረ-ገጽ መክፈት አልተቻለም",
+  "imageMemory": "[የምስል ማህደረ ትውስታ]",
+  "tapToOpenWebPage": "ድረ-ገጽ ለመክፈት መታ ያድርጉ",
+  "editEntry": "ግቤትን ያርትዑ",
+  "entryDetails": "የመግቢያ ዝርዝሮች",
+  "noContent": "ምንም ይዘት የለም።",
+  "diaryNotFound": "ማስታወሻ ደብተር አልተገኘም።",
+  "diaryNotFoundShort": "መዝገብ አልተገኘም።",
+  "aiSummary": "AI ማጠቃለያ",
+  "microphoneInterrupted": "ማይክሮፎን ተቋርጧል፣ ቀረጻ ቆሟል።",
+  "bold": "ደፋር",
+  "italic": "ኢታሊክ",
+  "strikethrough": "አድማ",
+  "image": "ምስል",
+  "asrUnavailableRecordingActive": "ASR አይገኝም። ቀረጻ አሁንም ንቁ ነው።",
+  "writeYourEntry": "ግቤትህን ጻፍ...",
+  "writeYourContent": "ይዘትህን ጻፍ...",
+  "microphoneStartFailed": "ማይክሮፎን መጀመር አልተሳካም፦ _PH_0__",
+  "microphoneInterruptedRecordingStopped": "ማይክሮፎን ተቋርጧል፣ ቀረጻ ቆሟል።",
+  "asrReconnectingError": "ASR እንደገና በመገናኘት ላይ፡ _PH_0__",
+  "imageInserted": "ምስል ገብቷል፡ _PH_0__",
+  "voiceError": "የድምጽ ስህተት፡ _PH_0__",
+  "aiServiceUnavailable": "ይቅርታ፣ የAI አገልግሎት በአሁኑ ጊዜ የለም፡ {error}",
+  "shareFailed": "ማጋራት አልተሳካም፦ _PH_0__",
+  "searchMatchHits": "_PH_0__ · _PH_1__ መታ",
+  "matchCount": "ተዛማጅ፡ _PH_0__",
+  "sourceFromNetwork": "ምንጭ፡ _PH_0__",
+  "createNew": "ፍጠር",
+  "micStartFailed": "የማይክሮፎን ጅምር አልተሳካም፦ _PH_0__",
+  "importResultAccounts": "መለያዎች፡ +{created} / የዘመነ {updated}",
+  "importResultDiaries": "ማስታወሻ ደብተር፦ +{created} / የዘመነ {updated}",
+  "importResultReminders": "አስታዋሾች፡ +{created} / የዘመነ {updated}",
+  "importResultSkipped": "ተዘሏል፡ _PH_0__",
+  "importResultTotal": "ጠቅላላ ተቀይሯል፡ _PH_0__",
+  "settingsApplied": "በመጠባበቂያ ውስጥ ያሉ ቅንብሮች ተተግብረዋል።",
+  "settingsNotApplied": "በመጠባበቂያ ውስጥ ያሉ ቅንብሮች አልተተገበሩም።",
+  "backupExported": "ምትኬ ወደ ውጭ ተልኳል፡ _PH_0__",
+  "exportFailed": "ወደ ውጭ መላክ አልተሳካም፦ _PH_0__",
+  "importFailed": "ማስመጣት አልተሳካም፦ _PH_0__"
+}

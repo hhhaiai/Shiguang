@@ -1,0 +1,363 @@
+{
+  "@@locale": "so",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Soomaali",
+  "languageNameEn": "Somali",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Dejinta",
+  "account": "Xisaab",
+  "reminders": "Xusuusin",
+  "language": "Luuqad",
+  "appLanguage": "Luuqada App-ka",
+  "appearance": "Muuqashada",
+  "themeMode": "Qaabka Mawduuca",
+  "dark": "Madow",
+  "light": "Iftiin",
+  "system": "Nidaamka",
+  "aiService": "Adeegga AI",
+  "aiChatProvider": "Bixiyaha Chat AI",
+  "chatModel": "Qaab sheekeysi",
+  "localModel": "Qaabka Maxalliga",
+  "localModelDefault": "Qaabka Maxalliga ah (Ugu tala galay)",
+  "ollamaEndpoint": "Ollama Endpoint",
+  "ollamaModel": "Ollaama Model",
+  "openAiEndpoint": "Meesha dhamaadka AI ee furan",
+  "openAiApiKey": "Furaha API Furaha",
+  "openAiModel": "Modelka OpenAI",
+  "geminiEndpoint": "Gemini Endpoint",
+  "geminiApiKey": "Gemini API Furaha",
+  "geminiModel": "Noocyada Gemini",
+  "anthropicEndpoint": "Dhibicda Anthropic",
+  "anthropicApiKey": "Furaha API Anthropic",
+  "anthropicModel": "Qaabka Anthropic",
+  "customProtocol": "Hab-maamuuska gaarka ah",
+  "protocol": "Baratakoolka",
+  "customEndpoint": "Meesha dhamaadka gaarka ah",
+  "customApiKey": "Furaha API Custom",
+  "customModel": "Qaabka gaarka ah",
+  "optionalForLocalServers": "Ikhtiyaar u ah adeegayaasha maxalliga ah/caadada",
+  "speechRecognitionEngine": "Mashiinka Aqoonsiga Hadalka",
+  "local": "Deegaanka",
+  "endpoint": "Dhamaadka",
+  "localSpeechModel": "Qaabka Hadalka Maxaliga",
+  "senseVoiceOnnx": "SenseVoice ONNX (qalabka)",
+  "systemSpeechRecognition": "Aqoonsiga Hadalka Nidaamka",
+  "systemRecognitionAndroidIos": "Aqoonsiga Nidaamka (Android/iOS)",
+  "endpointRecognitionCloudWs": "Aqoonsiga barta dhamaadka (Cloud/WS)",
+  "useBuiltInRecognizer": "Adeegso garashada Android/iOS ee ku dhex dhisan (waxa laga yaabaa inay isticmaasho daruur)",
+  "voiceAiEndpoint": "Goobta dhamaadka Codka AI",
+  "embeddingModel": "Model-ku-xidhka",
+  "crossDeviceSync": "Isku-darka Qalabka",
+  "sendToOtherDevices": "U dir Aalado Kale (LocalSend)",
+  "exportBackupAndSend": "Soo rar kaydinta kuna soo dir xaashi wadaag",
+  "importFromLocalSend": "Ka soo dejinta LocalSend",
+  "selectBackupJson": "Dooro kaydka JSON oo ku biir xogta deegaanka",
+  "autoGeneration": "Jiilkii Baabuurka",
+  "autoGenerateSummary": "Soo koobid Atooto ah",
+  "generateAiSummaryForNewEntries": "Samee soo koobida AI ee gelitaannada cusub",
+  "autoGenerateEmbedding": "Soo-saar otomaatig ah Isku-xidhka",
+  "generateVectorEmbedding": "Abuur vector-ka-soo-saarka raadinta",
+  "enableNetworkSearch": "Daar raadinta Shabakadda",
+  "allowOnlineRetrieval": "Oggolow dib u soo celinta khadka tooska ah raadinta iyo wada sheekeysiga AI (damsan si caadi ah)",
+  "about": "Ku saabsan",
+  "version": "Nooca {version}",
+  "database": "Database",
+  "objectBoxWithHnsw": "ObjectBox oo leh index HNSW",
+  "logOut": "Ka bax",
+  "custom": "Caadiyan",
+  "openAiCompatible": "FurAI Waafaqsan",
+  "notSet": "Lama dejin",
+  "supportsLocalLanPublic": "Waxay taageertaa meelaha ugu dambeeya ee deegaanka/LAN/dadweynaha",
+  "shiguangLocalSendBackup": "Shiguang LocalSend Backup",
+  "localBackupFromShiguang": "Kaabta maxaliga ah ee Shiguang (ku hel LocalSend)",
+  "selectBackupFileFromLocalSend": "Dooro faylka kaydka ah ee laga helay LocalSend",
+  "failedToResolveFilePath": "Ku guuldareystay in la xaliyo dariiqa faylka la doortay",
+  "importOptions": "Soo dejinta Ikhtiyaarada",
+  "importSettingsAsWell": "Soo deji dejinta sidoo kale?\n(furayaasha API dib looma qori doono)",
+  "dataOnly": "Xogta Kaliya",
+  "dataAndSettings": "Xogta + Dejinta",
+  "importCompleted": "Soo dejinta waa la dhameeyay",
+  "settingsInBackupWereApplied": "Dejinta kaydinta ayaa lagu dabaqay",
+  "settingsInBackupWereNotApplied": "Dejinta kaydinta lama dabaqin",
+  "ok": "OK",
+  "cancel": "Jooji",
+  "save": "Badbaadin",
+  "delete": "Tirtir",
+  "clear": "Cad",
+  "add": "Ku darso",
+  "create": "Abuur",
+  "edit": "Wax ka beddel",
+  "search": "Raadi",
+  "areYouSureYouWantToLogOut": "Ma hubtaa inaad doonayso inaad ka baxdo?",
+  "chooseLanguage": "Dooro Luuqad",
+  "databaseInfo": "Xogta Keydka",
+  "storage": "Kaydinta: ObjectBox",
+  "vectorIndex": "Tusmada Vector: HNSW",
+  "dimensions": "Cabirka: 384",
+  "embeddingModelBge": "Model ku dhejisan: bge-small-zh-v1.5",
+  "takePhoto": "Sawir qaad",
+  "chooseFromGallery": "Ka dooro Gallery",
+  "editNickname": "Wax ka beddel naaneesta",
+  "enterNickname": "Geli naanays",
+  "pleaseEnterNickname": "Fadlan geli naaneyska",
+  "nicknameAlreadyExistsOrInvalid": "Naanaysta ayaa horay u jirtay ama aan sax ahayn",
+  "user": "Isticmaale",
+  "manageScheduledReminders": "Maamul xasuusinta la qorsheeyay iyo qaylo dhaanta",
+  "imageFailedToLoad": "Sawirku wuu ku guul daraystay in la shubo Fadlan mar kale dooro",
+  "imageIsStillLoading": "Sawirku wali waa soo raraya",
+  "imageAreaNotReady": "Goobta sawirku diyaar uma aha Fadlan isku day mar kale",
+  "cropFrameNotReady": "Qaabka dalaggu diyaar uma aha Fadlan isku day mar kale",
+  "invalidCropArea": "Aagga dalagga aan ansax ahayn Fadlan isku day mar kale",
+  "cropFailed": "Dalagga ayaa fashilmay Fadlan isku day mar kale",
+  "cropAvatar": "Dalagga Avatar",
+  "chooseAgain": "Mar labaad dooro",
+  "rotate90": "Wareeg 90°",
+  "dragFrameToMove": "Jiid jirku si aad u dhaqaaqdo, jiid xagga hoose-midig si aad u cabbirto; qanji si aad u soo dhawayso oo u dhaqaajiso sawirka.",
+  "pleaseFillInAllFields": "Fadlan buuxi dhammaan goobaha",
+  "pinMustBeAtLeast4Digits": "PIN waa inuu noqdaa ugu yaraan 4 nambar",
+  "pinAtLeast4Digits": "PIN waa inuu noqdaa ugu yaraan 4 nambar",
+  "invalidUsernameOrPin": "Magaca isticmaale ama PIN aan sax ahayn",
+  "invalidUsernameOrPinError": "Magaca isticmaale ama PIN aan sax ahayn",
+  "usernameAlreadyExists": "Magaca isticmaalaha ayaa hore u jiray",
+  "captureMomentsKeepMemories": "Qabo daqiiqado, xasuuso",
+  "username": "Magaca isticmaale",
+  "pin": "PIN",
+  "login": "Soo gal",
+  "createAccount": "Abuur Account",
+  "dontHaveAccountCreateOne": "Xisaab ma lihid? Hal abuur",
+  "alreadyHaveAccountLogin": "Horeba akoon baad u leedahay? Soo gal",
+  "pleaseEnterUsername": "Fadlan geli magaca isticmaale",
+  "pinsDoNotMatch": "PIN-yadu isma dhigmaan",
+  "tapToAddAvatar": "Taabo si aad ugu darto avatar",
+  "yourName": "Magacaaga",
+  "privatePinOptional": "PIN gaar ah (ikhtiyaar)",
+  "usedToEncryptPrivateRecords": "Loo isticmaalo in lagu sireeyo diiwaannada gaarka ah",
+  "privatePin": "PIN gaar ah",
+  "leaveEmptyForNoEncryption": "Ka tag faaruq si aan qarsoodi lahayn",
+  "confirmPin": "Xaqiiji PIN",
+  "getStarted": "Bilow",
+  "noReminders": "Xusuusin",
+  "addReminder": "Kudar Xusuusin",
+  "title": "Ciwaanka",
+  "descriptionOptional": "Sharaxaad (ikhtiyaar)",
+  "microphonePermissionRequired": "Ogolaanshaha makarafoonka ayaa loo baahan yahay",
+  "aiAssistant": "Kaaliyaha AI",
+  "listening": "Dhegeysi...",
+  "typeAMessage": "Ku qor fariin...",
+  "aiChat": "AI Chat",
+  "startAConversation": "Bilow wada hadal",
+  "typeYourMessage": "Ku qor fariintaada...",
+  "asrReconnecting": "ASR dib u xidhidh...",
+  "write": "Qor",
+  "writeEntry": "Qor Gelitaanka",
+  "noMemoriesYet": "Wali xasuus malaha",
+  "tapPlusToCapture": "Taabo + si aad fikradahaaga u qabsato",
+  "tapPlusToCaptureYourThoughts": "Taabo + si aad u qabsato fikradahaaga",
+  "deleteMemory": "Tirtir Xusuusta",
+  "deleteRecord": "Tirtir Diiwaanka",
+  "thisEntryWillBeRemoved": "Gelitaankan ayaa laga saari doonaa wakhtigaaga",
+  "thisRecordWillBeRemoved": "Diiwaankan ayaa laga saari doonaa wakhtigaaga",
+  "searchYourRecords": "Raadi diiwaankaaga...",
+  "exactMatches": "Kulamada saxda ah",
+  "noExactMatches": "Ma jiraan wax u dhigma",
+  "exact": "Sax",
+  "exactMatch": "Ciyaarta saxda ah",
+  "fuzzyMatches": "Kulamada Dawakhsan",
+  "noFuzzyMatches": "Ma jiro kulan dawakhsan",
+  "vectorMatch": "Ciyaarta Vector",
+  "networkMatches": "Ciyaaraha Shabakadda",
+  "noNetworkMatches": "Ma jiro shabakad u dhigma",
+  "networkSearchIsOff": "Raadinta shabakadu waa dansan tahay Ka yeel Settings",
+  "network": "Shabakadda",
+  "networkMatch": "Isku xirka Shabakadda",
+  "noSearchHistory": "Taariikh raadin ma jirto",
+  "searchHistory": "Taariikhda Raadinta",
+  "invalidLink": "Xiriirin aan sax ahayn",
+  "unableToOpenWebPage": "Ma furi karo bogga shabakadda",
+  "imageMemory": "[Xusuusta sawirka]",
+  "tapToOpenWebPage": "Taabo si aad u furto bogga shabakadda",
+  "editEntry": "Wax ka beddel gelida",
+  "entryDetails": "Faahfaahinta Gelitaanka",
+  "noContent": "Ma jiro wax ka kooban",
+  "diaryNotFound": "Xusuus qorka lama helin",
+  "diaryNotFoundShort": "Diiwaanka lama helin",
+  "aiSummary": "AI oo kooban",
+  "microphoneInterrupted": "Makarafoonku waa go'ay, duubistii waa la joojiyay.",
+  "bold": "Dhiirran",
+  "italic": "Italic",
+  "strikethrough": "Guul-daro",
+  "image": "Sawirka",
+  "asrUnavailableRecordingActive": "ASR lama heli karo Duubista ayaa wali shaqaynaysa",
+  "writeYourEntry": "Qor gelidaada...",
+  "writeYourContent": "Qor nuxurkaaga...",
+  "microphoneStartFailed": "Ku guuldareystay inuu bilaabo makarafoon: _PH_0__",
+  "microphoneInterruptedRecordingStopped": "Makarafoonku waa go'ay, duubistii waa la joojiyay.",
+  "asrReconnectingError": "ASR dib u xidhidh: _PH_0__",
+  "imageInserted": "Sawirka la galiyay: _PH_0__",
+  "voiceError": "Khaladka codka: _PH_0__",
+  "aiServiceUnavailable": "Waan ka xunahay, adeegga AI hadda lama heli karo: {error}",
+  "shareFailed": "Ku guuldareystay in la wadaago: _PH_0__",
+  "searchMatchHits": "_PH_0__ · {count} garaacid",
+  "matchCount": "Ciyaarta: _PH_0__",
+  "sourceFromNetwork": "Xigasho: {source}",
+  "createNew": "Abuur",
+  "micStartFailed": "Bilawga makarafoonku wuu fashilmay: _PH_0__",
+  "importResultAccounts": "Xisaabaadka: +{created} / la cusboonaysiiyay {updated}",
+  "importResultDiaries": "Xusuus qor: +{created} / la cusboonaysiiyay {updated}",
+  "importResultReminders": "Xusuusin: +{created} / la cusboonaysiiyay {updated}",
+  "importResultSkipped": "Ka booday: _PH_0__",
+  "importResultTotal": "Wadarta la beddelay: _PH_0__",
+  "settingsApplied": "Dejinta kaydinta ayaa lagu dabaqay",
+  "settingsNotApplied": "Dejinta kaydinta lama dabaqin",
+  "backupExported": "Kaabta waa la dhoofiyay: _PH_0__",
+  "exportFailed": "Dhoofintu waa fashilantay: _PH_0__",
+  "importFailed": "Soo dejinta waa fashilantay: _PH_0__"
+}

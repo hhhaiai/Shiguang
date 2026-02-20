@@ -1,0 +1,363 @@
+{
+  "@@locale": "ml",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "മലയാളം",
+  "languageNameEn": "Malayalam",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "ഷിഗുവാങ്",
+  "settings": "ക്രമീകരണങ്ങൾ",
+  "account": "അക്കൗണ്ട്",
+  "reminders": "ഓർമ്മപ്പെടുത്തലുകൾ",
+  "language": "ഭാഷ",
+  "appLanguage": "അപ്ലിക്കേഷൻ ഭാഷ",
+  "appearance": "രൂപഭാവം",
+  "themeMode": "തീം മോഡ്",
+  "dark": "ഇരുട്ട്",
+  "light": "വെളിച്ചം",
+  "system": "സിസ്റ്റം",
+  "aiService": "AI സേവനം",
+  "aiChatProvider": "AI ചാറ്റ് ദാതാവ്",
+  "chatModel": "ചാറ്റ് മോഡൽ",
+  "localModel": "പ്രാദേശിക മോഡൽ",
+  "localModelDefault": "പ്രാദേശിക മോഡൽ (ഡിഫോൾട്ട്)",
+  "ollamaEndpoint": "ഒല്ലമ എൻഡ്‌പോയിൻ്റ്",
+  "ollamaModel": "ഒല്ലമ മോഡൽ",
+  "openAiEndpoint": "OpenAI എൻഡ്‌പോയിൻ്റ്",
+  "openAiApiKey": "OpenAI API കീ",
+  "openAiModel": "OpenAI മോഡൽ",
+  "geminiEndpoint": "ജെമിനി എൻഡ് പോയിൻ്റ്",
+  "geminiApiKey": "ജെമിനി API കീ",
+  "geminiModel": "ജെമിനി മോഡലുകൾ",
+  "anthropicEndpoint": "ആന്ത്രോപിക് എൻഡ് പോയിൻ്റ്",
+  "anthropicApiKey": "ആന്ത്രോപിക് API കീ",
+  "anthropicModel": "ആന്ത്രോപിക് മോഡൽ",
+  "customProtocol": "കസ്റ്റം പ്രോട്ടോക്കോൾ",
+  "protocol": "പ്രോട്ടോക്കോൾ",
+  "customEndpoint": "കസ്റ്റം എൻഡ്‌പോയിൻ്റ്",
+  "customApiKey": "ഇഷ്‌ടാനുസൃത API കീ",
+  "customModel": "ഇഷ്ടാനുസൃത മോഡൽ",
+  "optionalForLocalServers": "പ്രാദേശിക/ഇഷ്‌ടാനുസൃത സെർവറുകൾക്ക് ഓപ്‌ഷണൽ",
+  "speechRecognitionEngine": "സ്പീച്ച് റെക്കഗ്നിഷൻ എഞ്ചിൻ",
+  "local": "പ്രാദേശിക",
+  "endpoint": "അവസാന പോയിൻ്റ്",
+  "localSpeechModel": "പ്രാദേശിക സംഭാഷണ മാതൃക",
+  "senseVoiceOnnx": "SenseVoice ONNX (ഉപകരണത്തിൽ)",
+  "systemSpeechRecognition": "സിസ്റ്റം സ്പീച്ച് തിരിച്ചറിയൽ",
+  "systemRecognitionAndroidIos": "സിസ്റ്റം തിരിച്ചറിയൽ (Android/iOS)",
+  "endpointRecognitionCloudWs": "എൻഡ്‌പോയിൻ്റ് തിരിച്ചറിയൽ (ക്ലൗഡ്/ഡബ്ല്യുഎസ്)",
+  "useBuiltInRecognizer": "അന്തർനിർമ്മിത Android / iOS തിരിച്ചറിയൽ ഉപയോഗിക്കുക (ക്ലൗഡ് ഉപയോഗിക്കാം)",
+  "voiceAiEndpoint": "വോയ്‌സ് AI എൻഡ്‌പോയിൻ്റ്",
+  "embeddingModel": "ഉൾച്ചേർക്കൽ മോഡൽ",
+  "crossDeviceSync": "ക്രോസ്-ഡിവൈസ് സമന്വയം",
+  "sendToOtherDevices": "മറ്റ് ഉപകരണങ്ങളിലേക്ക് അയയ്‌ക്കുക (ലോക്കൽസെൻഡ്)",
+  "exportBackupAndSend": "ബാക്കപ്പ് കയറ്റുമതി ചെയ്യുക, ഷെയർ ഷീറ്റ് വഴി അയയ്ക്കുക",
+  "importFromLocalSend": "LocalSend-ൽ നിന്ന് ഇറക്കുമതി ചെയ്യുക",
+  "selectBackupJson": "ബാക്കപ്പ് JSON തിരഞ്ഞെടുത്ത് പ്രാദേശിക ഡാറ്റ ലയിപ്പിക്കുക",
+  "autoGeneration": "ഓട്ടോ ജനറേഷൻ",
+  "autoGenerateSummary": "സ്വയമേവ സൃഷ്‌ടിക്കുന്ന സംഗ്രഹം",
+  "generateAiSummaryForNewEntries": "പുതിയ എൻട്രികൾക്കായി AI സംഗ്രഹം സൃഷ്ടിക്കുക",
+  "autoGenerateEmbedding": "സ്വയം ജനറേറ്റ് എംബഡിംഗ്",
+  "generateVectorEmbedding": "തിരയലിനായി വെക്റ്റർ എംബെഡിംഗ് സൃഷ്ടിക്കുക",
+  "enableNetworkSearch": "നെറ്റ്‌വർക്ക് തിരയൽ പ്രവർത്തനക്ഷമമാക്കുക",
+  "allowOnlineRetrieval": "തിരയലിനും AI ചാറ്റിനും ഓൺലൈൻ വീണ്ടെടുക്കൽ അനുവദിക്കുക (സ്ഥിരസ്ഥിതിയായി ഓഫ്)",
+  "about": "കുറിച്ച്",
+  "version": "പതിപ്പ് {version}",
+  "database": "ഡാറ്റാബേസ്",
+  "objectBoxWithHnsw": "HNSW സൂചികയുള്ള ഒബ്ജക്റ്റ്ബോക്സ്",
+  "logOut": "ലോഗ് ഔട്ട് ചെയ്യുക",
+  "custom": "കസ്റ്റം",
+  "openAiCompatible": "OpenAI അനുയോജ്യമാണ്",
+  "notSet": "സജ്ജമാക്കിയിട്ടില്ല",
+  "supportsLocalLanPublic": "ലോക്കൽ/ലാൻ/പബ്ലിക് എൻഡ് പോയിൻ്റുകൾ പിന്തുണയ്ക്കുന്നു",
+  "shiguangLocalSendBackup": "Shiguang LocalSend ബാക്കപ്പ്",
+  "localBackupFromShiguang": "Shiguang-ൽ നിന്നുള്ള പ്രാദേശിക ബാക്കപ്പ് (LocalSend വഴി സ്വീകരിക്കുക)",
+  "selectBackupFileFromLocalSend": "LocalSend-ൽ നിന്ന് ലഭിച്ച ബാക്കപ്പ് ഫയൽ തിരഞ്ഞെടുക്കുക",
+  "failedToResolveFilePath": "തിരഞ്ഞെടുത്ത ഫയൽ പാത്ത് പരിഹരിക്കുന്നതിൽ പരാജയപ്പെട്ടു",
+  "importOptions": "ഇറക്കുമതി ഓപ്ഷനുകൾ",
+  "importSettingsAsWell": "ക്രമീകരണങ്ങളും ഇറക്കുമതി ചെയ്യണോ?\n(API കീകൾ തിരുത്തിയെഴുതപ്പെടില്ല)",
+  "dataOnly": "ഡാറ്റ മാത്രം",
+  "dataAndSettings": "ഡാറ്റ + ക്രമീകരണങ്ങൾ",
+  "importCompleted": "ഇറക്കുമതി പൂർത്തിയായി",
+  "settingsInBackupWereApplied": "ബാക്കപ്പിലെ ക്രമീകരണങ്ങൾ പ്രയോഗിച്ചു.",
+  "settingsInBackupWereNotApplied": "ബാക്കപ്പിലെ ക്രമീകരണങ്ങൾ പ്രയോഗിച്ചില്ല.",
+  "ok": "ശരി",
+  "cancel": "റദ്ദാക്കുക",
+  "save": "സംരക്ഷിക്കുക",
+  "delete": "ഇല്ലാതാക്കുക",
+  "clear": "ക്ലിയർ",
+  "add": "ചേർക്കുക",
+  "create": "സൃഷ്ടിക്കുക",
+  "edit": "എഡിറ്റ് ചെയ്യുക",
+  "search": "തിരയുക",
+  "areYouSureYouWantToLogOut": "ലോഗ് ഔട്ട് ചെയ്യണമെന്ന് തീർച്ചയാണോ?",
+  "chooseLanguage": "ഭാഷ തിരഞ്ഞെടുക്കുക",
+  "databaseInfo": "ഡാറ്റാബേസ് വിവരം",
+  "storage": "സംഭരണം: ഒബ്ജക്റ്റ്ബോക്സ്",
+  "vectorIndex": "വെക്റ്റർ സൂചിക: HNSW",
+  "dimensions": "അളവുകൾ: 384",
+  "embeddingModelBge": "ഉൾച്ചേർക്കൽ മോഡൽ: bge-small-zh-v1.5",
+  "takePhoto": "ഫോട്ടോ എടുക്കുക",
+  "chooseFromGallery": "ഗാലറിയിൽ നിന്ന് തിരഞ്ഞെടുക്കുക",
+  "editNickname": "വിളിപ്പേര് എഡിറ്റ് ചെയ്യുക",
+  "enterNickname": "വിളിപ്പേര് നൽകുക",
+  "pleaseEnterNickname": "ദയവായി ഒരു വിളിപ്പേര് നൽകുക",
+  "nicknameAlreadyExistsOrInvalid": "വിളിപ്പേര് ഇതിനകം നിലവിലുണ്ട് അല്ലെങ്കിൽ അസാധുവാണ്",
+  "user": "ഉപയോക്താവ്",
+  "manageScheduledReminders": "ഷെഡ്യൂൾ ചെയ്ത ഓർമ്മപ്പെടുത്തലുകളും അലാറങ്ങളും നിയന്ത്രിക്കുക",
+  "imageFailedToLoad": "ചിത്രം ലോഡ് ചെയ്യാനായില്ല. ദയവായി വീണ്ടും തിരഞ്ഞെടുക്കുക.",
+  "imageIsStillLoading": "ചിത്രം ഇപ്പോഴും ലോഡ് ചെയ്യുന്നു",
+  "imageAreaNotReady": "ഇമേജ് ഏരിയ തയ്യാറായിട്ടില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക.",
+  "cropFrameNotReady": "ക്രോപ്പ് ഫ്രെയിം തയ്യാറായിട്ടില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക.",
+  "invalidCropArea": "വിള പ്രദേശം അസാധുവാണ്. ദയവായി വീണ്ടും ശ്രമിക്കുക.",
+  "cropFailed": "ക്രോപ്പ് പരാജയപ്പെട്ടു. ദയവായി വീണ്ടും ശ്രമിക്കുക.",
+  "cropAvatar": "അവതാർ ക്രോപ്പ് ചെയ്യുക",
+  "chooseAgain": "വീണ്ടും തിരഞ്ഞെടുക്കുക",
+  "rotate90": "90° തിരിക്കുക",
+  "dragFrameToMove": "നീക്കാൻ ഫ്രെയിം വലിച്ചിടുക, വലുപ്പം മാറ്റാൻ താഴെ-വലത്തേക്ക് വലിച്ചിടുക; ചിത്രം സൂം ചെയ്യാനും നീക്കാനും പിഞ്ച് ചെയ്യുക.",
+  "pleaseFillInAllFields": "എല്ലാ ഫീൽഡുകളും പൂരിപ്പിക്കുക",
+  "pinMustBeAtLeast4Digits": "പിൻ കുറഞ്ഞത് 4 അക്കങ്ങൾ ആയിരിക്കണം",
+  "pinAtLeast4Digits": "പിൻ കുറഞ്ഞത് 4 അക്കങ്ങൾ ആയിരിക്കണം",
+  "invalidUsernameOrPin": "അസാധുവായ ഉപയോക്തൃനാമം അല്ലെങ്കിൽ പിൻ",
+  "invalidUsernameOrPinError": "അസാധുവായ ഉപയോക്തൃനാമം അല്ലെങ്കിൽ പിൻ",
+  "usernameAlreadyExists": "ഉപയോക്തൃനാമം ഇതിനകം നിലവിലുണ്ട്",
+  "captureMomentsKeepMemories": "നിമിഷങ്ങൾ പകർത്തുക, ഓർമ്മകൾ സൂക്ഷിക്കുക",
+  "username": "ഉപയോക്തൃനാമം",
+  "pin": "പിൻ",
+  "login": "ലോഗിൻ",
+  "createAccount": "അക്കൗണ്ട് സൃഷ്ടിക്കുക",
+  "dontHaveAccountCreateOne": "അക്കൗണ്ട് ഇല്ലേ? ഒരെണ്ണം സൃഷ്ടിക്കുക",
+  "alreadyHaveAccountLogin": "ഇതിനകം ഒരു അക്കൗണ്ട് ഉണ്ടോ? ലോഗിൻ",
+  "pleaseEnterUsername": "ദയവായി ഒരു ഉപയോക്തൃനാമം നൽകുക",
+  "pinsDoNotMatch": "PIN-കൾ പൊരുത്തപ്പെടുന്നില്ല",
+  "tapToAddAvatar": "അവതാർ ചേർക്കാൻ ടാപ്പ് ചെയ്യുക",
+  "yourName": "നിങ്ങളുടെ പേര്",
+  "privatePinOptional": "സ്വകാര്യ പിൻ (ഓപ്ഷണൽ)",
+  "usedToEncryptPrivateRecords": "സ്വകാര്യ റെക്കോർഡുകൾ എൻക്രിപ്റ്റ് ചെയ്യാൻ ഉപയോഗിക്കുന്നു",
+  "privatePin": "സ്വകാര്യ പിൻ",
+  "leaveEmptyForNoEncryption": "എൻക്രിപ്ഷൻ ഇല്ലാതെ ശൂന്യമായി വിടുക",
+  "confirmPin": "പിൻ സ്ഥിരീകരിക്കുക",
+  "getStarted": "ആരംഭിക്കുക",
+  "noReminders": "ഓർമ്മപ്പെടുത്തലുകളൊന്നുമില്ല",
+  "addReminder": "ഓർമ്മപ്പെടുത്തൽ ചേർക്കുക",
+  "title": "തലക്കെട്ട്",
+  "descriptionOptional": "വിവരണം (ഓപ്ഷണൽ)",
+  "microphonePermissionRequired": "മൈക്രോഫോൺ അനുമതി ആവശ്യമാണ്",
+  "aiAssistant": "AI അസിസ്റ്റൻ്റ്",
+  "listening": "കേൾക്കുന്നു...",
+  "typeAMessage": "ഒരു സന്ദേശം ടൈപ്പ് ചെയ്യുക...",
+  "aiChat": "AI ചാറ്റ്",
+  "startAConversation": "ഒരു സംഭാഷണം ആരംഭിക്കുക",
+  "typeYourMessage": "നിങ്ങളുടെ സന്ദേശം ടൈപ്പ് ചെയ്യുക...",
+  "asrReconnecting": "ASR വീണ്ടും ബന്ധിപ്പിക്കുന്നു...",
+  "write": "എഴുതുക",
+  "writeEntry": "എൻട്രി എഴുതുക",
+  "noMemoriesYet": "ഇതുവരെ ഓർമ്മകളൊന്നുമില്ല",
+  "tapPlusToCapture": "നിങ്ങളുടെ ചിന്തകൾ പകർത്താൻ + ടാപ്പുചെയ്യുക",
+  "tapPlusToCaptureYourThoughts": "നിങ്ങളുടെ ചിന്തകൾ പകർത്താൻ + ടാപ്പുചെയ്യുക",
+  "deleteMemory": "മെമ്മറി ഇല്ലാതാക്കുക",
+  "deleteRecord": "റെക്കോർഡ് ഇല്ലാതാക്കുക",
+  "thisEntryWillBeRemoved": "നിങ്ങളുടെ ടൈംലൈനിൽ നിന്ന് ഈ എൻട്രി നീക്കം ചെയ്യപ്പെടും.",
+  "thisRecordWillBeRemoved": "നിങ്ങളുടെ ടൈംലൈനിൽ നിന്ന് ഈ റെക്കോർഡ് നീക്കം ചെയ്യപ്പെടും.",
+  "searchYourRecords": "നിങ്ങളുടെ രേഖകൾ തിരയുക...",
+  "exactMatches": "കൃത്യമായ പൊരുത്തങ്ങൾ",
+  "noExactMatches": "കൃത്യമായ പൊരുത്തങ്ങളൊന്നുമില്ല",
+  "exact": "കൃത്യം",
+  "exactMatch": "കൃത്യമായ പൊരുത്തം",
+  "fuzzyMatches": "അവ്യക്തമായ മത്സരങ്ങൾ",
+  "noFuzzyMatches": "അവ്യക്തമായ പൊരുത്തങ്ങളൊന്നുമില്ല",
+  "vectorMatch": "വെക്റ്റർ പൊരുത്തം",
+  "networkMatches": "നെറ്റ്‌വർക്ക് പൊരുത്തങ്ങൾ",
+  "noNetworkMatches": "നെറ്റ്‌വർക്ക് പൊരുത്തപ്പെടുന്നില്ല",
+  "networkSearchIsOff": "നെറ്റ്‌വർക്ക് തിരയൽ ഓഫാണ്. ക്രമീകരണങ്ങളിൽ ഇത് പ്രവർത്തനക്ഷമമാക്കുക.",
+  "network": "നെറ്റ്വർക്ക്",
+  "networkMatch": "നെറ്റ്‌വർക്ക് പൊരുത്തം",
+  "noSearchHistory": "തിരയൽ ചരിത്രമില്ല",
+  "searchHistory": "തിരയൽ ചരിത്രം",
+  "invalidLink": "അസാധുവായ ലിങ്ക്",
+  "unableToOpenWebPage": "വെബ് പേജ് തുറക്കാനായില്ല",
+  "imageMemory": "[ചിത്ര മെമ്മറി]",
+  "tapToOpenWebPage": "വെബ് പേജ് തുറക്കാൻ ടാപ്പ് ചെയ്യുക",
+  "editEntry": "എൻട്രി എഡിറ്റ് ചെയ്യുക",
+  "entryDetails": "എൻട്രി വിശദാംശങ്ങൾ",
+  "noContent": "ഉള്ളടക്കമില്ല",
+  "diaryNotFound": "ഡയറി കണ്ടില്ല",
+  "diaryNotFoundShort": "രേഖ കണ്ടെത്തിയില്ല",
+  "aiSummary": "AI സംഗ്രഹം",
+  "microphoneInterrupted": "മൈക്രോഫോൺ തടസ്സപ്പെട്ടു, റെക്കോർഡിംഗ് നിർത്തി.",
+  "bold": "ബോൾഡ്",
+  "italic": "ഇറ്റാലിക്",
+  "strikethrough": "സ്ട്രൈക്ക്ത്രൂ",
+  "image": "ചിത്രം",
+  "asrUnavailableRecordingActive": "ASR ലഭ്യമല്ല. റെക്കോർഡിംഗ് ഇപ്പോഴും സജീവമാണ്.",
+  "writeYourEntry": "നിങ്ങളുടെ എൻട്രി എഴുതൂ...",
+  "writeYourContent": "നിങ്ങളുടെ ഉള്ളടക്കം എഴുതുക...",
+  "microphoneStartFailed": "മൈക്രോഫോൺ ആരംഭിക്കുന്നതിൽ പരാജയപ്പെട്ടു: {error}",
+  "microphoneInterruptedRecordingStopped": "മൈക്രോഫോൺ തടസ്സപ്പെട്ടു, റെക്കോർഡിംഗ് നിർത്തി.",
+  "asrReconnectingError": "ASR വീണ്ടും ബന്ധിപ്പിക്കുന്നു: {error}",
+  "imageInserted": "ചിത്രം ചേർത്തു: {name}",
+  "voiceError": "ശബ്ദ പിശക്: {error}",
+  "aiServiceUnavailable": "ക്ഷമിക്കണം, AI സേവനം നിലവിൽ ലഭ്യമല്ല: {error}",
+  "shareFailed": "പങ്കിടുന്നതിൽ പരാജയപ്പെട്ടു: {error}",
+  "searchMatchHits": "{matchType} · {count} ഹിറ്റുകൾ",
+  "matchCount": "പൊരുത്തം: {count}",
+  "sourceFromNetwork": "ഉറവിടം: {source}",
+  "createNew": "സൃഷ്ടിക്കുക",
+  "micStartFailed": "മൈക്ക് സ്റ്റാർട്ട് പരാജയപ്പെട്ടു: {error}",
+  "importResultAccounts": "അക്കൗണ്ടുകൾ: +{created} / അപ്ഡേറ്റ് {updated}",
+  "importResultDiaries": "ഡയറിക്കുറിപ്പുകൾ: +{created} / അപ്ഡേറ്റ് {updated}",
+  "importResultReminders": "ഓർമ്മപ്പെടുത്തലുകൾ: +{created} / അപ്ഡേറ്റ് {updated}",
+  "importResultSkipped": "ഒഴിവാക്കി: {count}",
+  "importResultTotal": "ആകെ മാറ്റിയത്: {count}",
+  "settingsApplied": "ബാക്കപ്പിലെ ക്രമീകരണങ്ങൾ പ്രയോഗിച്ചു.",
+  "settingsNotApplied": "ബാക്കപ്പിലെ ക്രമീകരണങ്ങൾ പ്രയോഗിച്ചില്ല.",
+  "backupExported": "ബാക്കപ്പ് കയറ്റുമതി ചെയ്തു: {path}",
+  "exportFailed": "കയറ്റുമതി പരാജയപ്പെട്ടു: {error}",
+  "importFailed": "ഇറക്കുമതി പരാജയപ്പെട്ടു: {error}"
+}

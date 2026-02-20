@@ -1,0 +1,363 @@
+{
+  "@@locale": "sw",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Kiswahili",
+  "languageNameEn": "Swahili",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Mipangilio",
+  "account": "Akaunti",
+  "reminders": "Vikumbusho",
+  "language": "Lugha",
+  "appLanguage": "Lugha ya Programu",
+  "appearance": "Muonekano",
+  "themeMode": "Hali ya Mandhari",
+  "dark": "Giza",
+  "light": "Mwanga",
+  "system": "Mfumo",
+  "aiService": "Huduma ya AI",
+  "aiChatProvider": "Mtoa Gumzo wa AI",
+  "chatModel": "Mfano wa Gumzo",
+  "localModel": "Mfano wa Mitaa",
+  "localModelDefault": "Muundo wa Karibu (Chaguomsingi)",
+  "ollamaEndpoint": "Mwisho wa Ollama",
+  "ollamaModel": "Mfano wa Ollama",
+  "openAiEndpoint": "Mwisho wa OpenAI",
+  "openAiApiKey": "Kitufe cha OpenAI API",
+  "openAiModel": "Mfano wa OpenAI",
+  "geminiEndpoint": "Mwisho wa Gemini",
+  "geminiApiKey": "Ufunguo wa API ya Gemini",
+  "geminiModel": "Mifano ya Gemini",
+  "anthropicEndpoint": "Mwisho wa Anthropic",
+  "anthropicApiKey": "Ufunguo wa API ya Anthropic",
+  "anthropicModel": "Mfano wa Anthropic",
+  "customProtocol": "Itifaki Maalum",
+  "protocol": "Itifaki",
+  "customEndpoint": "Sehemu Maalum ya Mwisho",
+  "customApiKey": "Ufunguo Maalum wa API",
+  "customModel": "Muundo Maalum",
+  "optionalForLocalServers": "Hiari kwa seva za kawaida/maalum",
+  "speechRecognitionEngine": "Injini ya Utambuzi wa Hotuba",
+  "local": "Ndani",
+  "endpoint": "Mwisho",
+  "localSpeechModel": "Muundo wa Usemi wa Karibu",
+  "senseVoiceOnnx": "SenseVoice ONNX (kwenye kifaa)",
+  "systemSpeechRecognition": "Utambuzi wa Usemi wa Mfumo",
+  "systemRecognitionAndroidIos": "Utambuzi wa Mfumo (Android/iOS)",
+  "endpointRecognitionCloudWs": "Utambuzi wa sehemu ya mwisho (Wingu/WS)",
+  "useBuiltInRecognizer": "Tumia kitambuaji cha ndani cha Android / iOS (kinaweza kutumia wingu)",
+  "voiceAiEndpoint": "Sehemu ya Mwisho ya Sauti AI",
+  "embeddingModel": "Muundo wa Kupachika",
+  "crossDeviceSync": "Usawazishaji wa Kifaa Mtambuka",
+  "sendToOtherDevices": "Tuma kwa Vifaa Vingine (LocalSend)",
+  "exportBackupAndSend": "Hamisha nakala rudufu na utume kupitia laha ya kushiriki",
+  "importFromLocalSend": "Ingiza kutoka kwa LocalSend",
+  "selectBackupJson": "Chagua nakala ya JSON na uunganishe data ya ndani",
+  "autoGeneration": "Kizazi Otomatiki",
+  "autoGenerateSummary": "Tengeneza Muhtasari Otomatiki",
+  "generateAiSummaryForNewEntries": "Tengeneza muhtasari wa AI kwa maingizo mapya",
+  "autoGenerateEmbedding": "Tengeneza Upachikaji Kiotomatiki",
+  "generateVectorEmbedding": "Tengeneza upachikaji wa vekta kwa utafutaji",
+  "enableNetworkSearch": "Washa Utafutaji wa Mtandao",
+  "allowOnlineRetrieval": "Ruhusu urejeshaji mtandaoni kwa utafutaji na gumzo la AI (zimwa kwa chaguomsingi)",
+  "about": "Kuhusu",
+  "version": "Toleo la {version}",
+  "database": "Hifadhidata",
+  "objectBoxWithHnsw": "ObjectBox na HNSW index",
+  "logOut": "Toka nje",
+  "custom": "Desturi",
+  "openAiCompatible": "OpenAI Sambamba",
+  "notSet": "Haijawekwa",
+  "supportsLocalLanPublic": "Inaauni miisho ya ndani/LAN/ya umma",
+  "shiguangLocalSendBackup": "Shiguang LocalTuma Backup",
+  "localBackupFromShiguang": "Hifadhi nakala ya ndani kutoka kwa Shiguang (pokea kupitia LocalSend)",
+  "selectBackupFileFromLocalSend": "Chagua faili ya chelezo iliyopokelewa kutoka kwa LocalSend",
+  "failedToResolveFilePath": "Imeshindwa kutatua njia ya faili iliyochaguliwa",
+  "importOptions": "Chaguzi za Kuingiza",
+  "importSettingsAsWell": "Leta mipangilio pia?\n(Vifunguo vya API hazitafutwa)",
+  "dataOnly": "Data Pekee",
+  "dataAndSettings": "Data + Mipangilio",
+  "importCompleted": "Uingizaji Umekamilika",
+  "settingsInBackupWereApplied": "Mipangilio katika chelezo ilitumika.",
+  "settingsInBackupWereNotApplied": "Mipangilio katika chelezo haikutumika.",
+  "ok": "Sawa",
+  "cancel": "Ghairi",
+  "save": "Hifadhi",
+  "delete": "Futa",
+  "clear": "Wazi",
+  "add": "Ongeza",
+  "create": "Unda",
+  "edit": "Hariri",
+  "search": "Tafuta",
+  "areYouSureYouWantToLogOut": "Je, una uhakika unataka kutoka?",
+  "chooseLanguage": "Chagua Lugha",
+  "databaseInfo": "Maelezo ya Hifadhidata",
+  "storage": "Hifadhi: ObjectBox",
+  "vectorIndex": "Kielezo cha Vekta: HNSW",
+  "dimensions": "Vipimo: 384",
+  "embeddingModelBge": "Muundo wa Kupachika: bge-ndogo-zh-v1.5",
+  "takePhoto": "Piga Picha",
+  "chooseFromGallery": "Chagua kutoka kwenye Matunzio",
+  "editNickname": "Hariri Jina la Utani",
+  "enterNickname": "Weka jina la utani",
+  "pleaseEnterNickname": "Tafadhali weka jina la utani",
+  "nicknameAlreadyExistsOrInvalid": "Jina la utani tayari lipo au ni batili",
+  "user": "Mtumiaji",
+  "manageScheduledReminders": "Dhibiti vikumbusho na kengele zilizoratibiwa",
+  "imageFailedToLoad": "Picha imeshindwa kupakia. Tafadhali chagua tena.",
+  "imageIsStillLoading": "Picha bado inapakia",
+  "imageAreaNotReady": "Eneo la picha haliko tayari. Tafadhali jaribu tena.",
+  "cropFrameNotReady": "Fremu ya mazao haiko tayari. Tafadhali jaribu tena.",
+  "invalidCropArea": "Eneo la upunguzaji batili. Tafadhali jaribu tena.",
+  "cropFailed": "Imeshindwa kupunguza. Tafadhali jaribu tena.",
+  "cropAvatar": "Avatar ya mazao",
+  "chooseAgain": "Chagua Tena",
+  "rotate90": "Zungusha 90 °",
+  "dragFrameToMove": "Buruta fremu ili usogeze, buruta chini kulia ili kubadilisha ukubwa; Bana ili kukuza na kusogeza picha.",
+  "pleaseFillInAllFields": "Tafadhali jaza sehemu zote",
+  "pinMustBeAtLeast4Digits": "PIN lazima iwe na angalau tarakimu 4",
+  "pinAtLeast4Digits": "PIN lazima iwe na angalau tarakimu 4",
+  "invalidUsernameOrPin": "Jina la mtumiaji au PIN si sahihi",
+  "invalidUsernameOrPinError": "Jina la mtumiaji au PIN si sahihi",
+  "usernameAlreadyExists": "Jina la mtumiaji tayari lipo",
+  "captureMomentsKeepMemories": "Nasa matukio, weka kumbukumbu",
+  "username": "Jina la mtumiaji",
+  "pin": "PIN",
+  "login": "Ingia",
+  "createAccount": "Fungua Akaunti",
+  "dontHaveAccountCreateOne": "Je, huna akaunti? Unda moja",
+  "alreadyHaveAccountLogin": "Je, tayari una akaunti? Ingia",
+  "pleaseEnterUsername": "Tafadhali weka jina la mtumiaji",
+  "pinsDoNotMatch": "PIN hazilingani",
+  "tapToAddAvatar": "Gusa ili kuongeza avatar",
+  "yourName": "Jina Lako",
+  "privatePinOptional": "PIN ya Faragha (si lazima)",
+  "usedToEncryptPrivateRecords": "Inatumika kusimba rekodi za kibinafsi",
+  "privatePin": "PIN ya faragha",
+  "leaveEmptyForNoEncryption": "Acha tupu bila usimbaji fiche",
+  "confirmPin": "Thibitisha PIN",
+  "getStarted": "Anza",
+  "noReminders": "Hakuna vikumbusho",
+  "addReminder": "Ongeza Kikumbusho",
+  "title": "Kichwa",
+  "descriptionOptional": "Maelezo (ya hiari)",
+  "microphonePermissionRequired": "Ruhusa ya maikrofoni inahitajika",
+  "aiAssistant": "Msaidizi wa AI",
+  "listening": "Inasikiliza...",
+  "typeAMessage": "Andika ujumbe...",
+  "aiChat": "Gumzo la AI",
+  "startAConversation": "Anzisha mazungumzo",
+  "typeYourMessage": "Andika ujumbe wako...",
+  "asrReconnecting": "ASR inaunganisha upya...",
+  "write": "Andika",
+  "writeEntry": "Andika Ingizo",
+  "noMemoriesYet": "Hakuna kumbukumbu bado",
+  "tapPlusToCapture": "Gonga + ili kunasa mawazo yako",
+  "tapPlusToCaptureYourThoughts": "Gonga + ili kunasa mawazo yako",
+  "deleteMemory": "Futa Kumbukumbu",
+  "deleteRecord": "Futa Rekodi",
+  "thisEntryWillBeRemoved": "Ingizo hili litaondolewa kwenye rekodi yako ya matukio.",
+  "thisRecordWillBeRemoved": "Rekodi hii itaondolewa kwenye rekodi yako ya matukio.",
+  "searchYourRecords": "Tafuta rekodi zako...",
+  "exactMatches": "Mechi Halisi",
+  "noExactMatches": "Hakuna zinazolingana kabisa",
+  "exact": "Hasa",
+  "exactMatch": "Mechi Halisi",
+  "fuzzyMatches": "Mechi za Fuzzy",
+  "noFuzzyMatches": "Hakuna mechi za fuzzy",
+  "vectorMatch": "Mechi ya Vector",
+  "networkMatches": "Mechi za Mtandao",
+  "noNetworkMatches": "Hakuna mtandao unaolingana",
+  "networkSearchIsOff": "Utafutaji wa mtandao umezimwa. Iwashe katika Mipangilio.",
+  "network": "Mtandao",
+  "networkMatch": "Mechi ya Mtandao",
+  "noSearchHistory": "Hakuna historia ya utafutaji",
+  "searchHistory": "Historia ya Utafutaji",
+  "invalidLink": "Kiungo batili",
+  "unableToOpenWebPage": "Imeshindwa kufungua ukurasa wa wavuti",
+  "imageMemory": "[Kumbukumbu ya picha]",
+  "tapToOpenWebPage": "Gusa ili kufungua ukurasa wa wavuti",
+  "editEntry": "Badilisha Ingizo",
+  "entryDetails": "Maelezo ya Kuingia",
+  "noContent": "Hakuna maudhui",
+  "diaryNotFound": "Shajara haijapatikana",
+  "diaryNotFoundShort": "Rekodi haijapatikana",
+  "aiSummary": "Muhtasari wa AI",
+  "microphoneInterrupted": "Maikrofoni imekatizwa, kurekodi kumesimamishwa.",
+  "bold": "Ujasiri",
+  "italic": "Italiki",
+  "strikethrough": "Mgomo",
+  "image": "Picha",
+  "asrUnavailableRecordingActive": "ASR haipatikani. Kurekodi bado kunatumika.",
+  "writeYourEntry": "Andika ingizo lako...",
+  "writeYourContent": "Andika maudhui yako...",
+  "microphoneStartFailed": "Imeshindwa kuwasha maikrofoni: {error}",
+  "microphoneInterruptedRecordingStopped": "Maikrofoni imekatizwa, kurekodi kumesimamishwa.",
+  "asrReconnectingError": "ASR inaunganisha upya: {error}",
+  "imageInserted": "Picha imeingizwa: {name}",
+  "voiceError": "Hitilafu ya sauti: {error}",
+  "aiServiceUnavailable": "Samahani, huduma ya AI haipatikani kwa sasa: {error}",
+  "shareFailed": "Imeshindwa kushiriki: {error}",
+  "searchMatchHits": "{matchType} · {count} vibao",
+  "matchCount": "Inayolingana: {count}",
+  "sourceFromNetwork": "Chanzo: {source}",
+  "createNew": "Unda",
+  "micStartFailed": "Kuanza kwa maikrofoni kumeshindwa: {error}",
+  "importResultAccounts": "Akaunti: +{created} / imesasishwa {updated}",
+  "importResultDiaries": "Shajara: +{created} / imesasishwa {updated}",
+  "importResultReminders": "Vikumbusho: +{created} / imesasishwa {updated}",
+  "importResultSkipped": "Imeruka: {count}",
+  "importResultTotal": "Jumla imebadilishwa: {count}",
+  "settingsApplied": "Mipangilio katika chelezo ilitumika.",
+  "settingsNotApplied": "Mipangilio katika chelezo haikutumika.",
+  "backupExported": "Hifadhi rudufu imehamishwa: {path}",
+  "exportFailed": "Uhamishaji haukufaulu: {error}",
+  "importFailed": "Imeshindwa kuleta: {error}"
+}

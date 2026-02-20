@@ -1,0 +1,363 @@
+{
+  "@@locale": "af",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Afrikaans",
+  "languageNameEn": "Afrikaans",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Instellings",
+  "account": "Rekening",
+  "reminders": "Herinneringe",
+  "language": "Taal",
+  "appLanguage": "App Taal",
+  "appearance": "Voorkoms",
+  "themeMode": "Tema-modus",
+  "dark": "Donker",
+  "light": "Lig",
+  "system": "Stelsel",
+  "aiService": "KI diens",
+  "aiChatProvider": "AI Chat Verskaffer",
+  "chatModel": "Kletsmodel",
+  "localModel": "Plaaslike Model",
+  "localModelDefault": "Plaaslike model (verstek)",
+  "ollamaEndpoint": "Ollama Eindpunt",
+  "ollamaModel": "Ollama Model",
+  "openAiEndpoint": "OpenAI Eindpunt",
+  "openAiApiKey": "OpenAI API-sleutel",
+  "openAiModel": "OpenAI Model",
+  "geminiEndpoint": "Tweeling eindpunt",
+  "geminiApiKey": "Tweeling API-sleutel",
+  "geminiModel": "Tweeling modelle",
+  "anthropicEndpoint": "Antropiese eindpunt",
+  "anthropicApiKey": "Antropiese API-sleutel",
+  "anthropicModel": "Antropiese model",
+  "customProtocol": "Pasgemaakte protokol",
+  "protocol": "Protokol",
+  "customEndpoint": "Pasgemaakte eindpunt",
+  "customApiKey": "Pasgemaakte API-sleutel",
+  "customModel": "Pasgemaakte model",
+  "optionalForLocalServers": "Opsioneel vir plaaslike/pasgemaakte bedieners",
+  "speechRecognitionEngine": "Spraakherkenningsenjin",
+  "local": "Plaaslik",
+  "endpoint": "Eindpunt",
+  "localSpeechModel": "Plaaslike spraakmodel",
+  "senseVoiceOnnx": "SenseVoice ONNX (op toestel)",
+  "systemSpeechRecognition": "Stelsel spraakherkenning",
+  "systemRecognitionAndroidIos": "Stelselherkenning (Android/iOS)",
+  "endpointRecognitionCloudWs": "Eindpuntherkenning (Wolk/WS)",
+  "useBuiltInRecognizer": "Gebruik ingeboude Android / iOS-herkenner (kan wolk gebruik)",
+  "voiceAiEndpoint": "Stem AI Eindpunt",
+  "embeddingModel": "Inbedding Model",
+  "crossDeviceSync": "Kruis-toestel-sinkronisering",
+  "sendToOtherDevices": "Stuur na ander toestelle (LocalSend)",
+  "exportBackupAndSend": "Voer rugsteun uit en stuur via deelblad",
+  "importFromLocalSend": "Voer in vanaf LocalSend",
+  "selectBackupJson": "Kies rugsteun JSON en voeg plaaslike data saam",
+  "autoGeneration": "Auto Generasie",
+  "autoGenerateSummary": "Genereer outomaties opsomming",
+  "generateAiSummaryForNewEntries": "Genereer KI-opsomming vir nuwe inskrywings",
+  "autoGenerateEmbedding": "Genereer outomaties inbedding",
+  "generateVectorEmbedding": "Genereer vektor-inbedding vir soek",
+  "enableNetworkSearch": "Aktiveer netwerksoektog",
+  "allowOnlineRetrieval": "Laat aanlyn herwinning toe vir soektog en KI-klets (by verstek af)",
+  "about": "Oor",
+  "version": "Weergawe {version}",
+  "database": "Databasis",
+  "objectBoxWithHnsw": "ObjectBox met HNSW-indeks",
+  "logOut": "Teken uit",
+  "custom": "Pasgemaak",
+  "openAiCompatible": "OpenAI-versoenbaar",
+  "notSet": "Nie gestel nie",
+  "supportsLocalLanPublic": "Ondersteun plaaslike/LAN/publieke eindpunte",
+  "shiguangLocalSendBackup": "Shiguang Plaaslik Stuur rugsteun",
+  "localBackupFromShiguang": "Plaaslike rugsteun van Shiguang (ontvang via LocalSend)",
+  "selectBackupFileFromLocalSend": "Kies rugsteunlêer wat vanaf LocalSend ontvang is",
+  "failedToResolveFilePath": "Kon nie geselekteerde lêerpad oplos nie",
+  "importOptions": "Invoeropsies",
+  "importSettingsAsWell": "Voer instellings ook in?\n(API-sleutels sal nie oorskryf word nie)",
+  "dataOnly": "Slegs data",
+  "dataAndSettings": "Data + instellings",
+  "importCompleted": "Invoer voltooi",
+  "settingsInBackupWereApplied": "Instellings in rugsteun is toegepas.",
+  "settingsInBackupWereNotApplied": "Instellings in rugsteun is nie toegepas nie.",
+  "ok": "OK",
+  "cancel": "Kanselleer",
+  "save": "Stoor",
+  "delete": "Vee uit",
+  "clear": "Duidelik",
+  "add": "Voeg by",
+  "create": "Skep",
+  "edit": "Wysig",
+  "search": "Soek",
+  "areYouSureYouWantToLogOut": "Is jy seker jy wil afmeld?",
+  "chooseLanguage": "Kies Taal",
+  "databaseInfo": "Databasis inligting",
+  "storage": "Berging: ObjectBox",
+  "vectorIndex": "Vektorindeks: HNSW",
+  "dimensions": "Afmetings: 384",
+  "embeddingModelBge": "Inbeddingsmodel: bge-small-zh-v1.5",
+  "takePhoto": "Neem Foto",
+  "chooseFromGallery": "Kies uit Gallery",
+  "editNickname": "Wysig bynaam",
+  "enterNickname": "Voer bynaam in",
+  "pleaseEnterNickname": "Voer asseblief 'n bynaam in",
+  "nicknameAlreadyExistsOrInvalid": "Bynaam bestaan ​​reeds of is ongeldig",
+  "user": "Gebruiker",
+  "manageScheduledReminders": "Bestuur geskeduleerde aanmanings en alarms",
+  "imageFailedToLoad": "Kon nie prent laai nie. Kies asseblief weer.",
+  "imageIsStillLoading": "Prent laai steeds",
+  "imageAreaNotReady": "Prentarea is nie gereed nie. Probeer asseblief weer.",
+  "cropFrameNotReady": "Snyraam is nie gereed nie. Probeer asseblief weer.",
+  "invalidCropArea": "Ongeldige oesarea. Probeer asseblief weer.",
+  "cropFailed": "Sny het misluk. Probeer asseblief weer.",
+  "cropAvatar": "Sny Avatar",
+  "chooseAgain": "Kies weer",
+  "rotate90": "Draai 90°",
+  "dragFrameToMove": "Sleep die raam om te beweeg, sleep regs onder om die grootte te verander; knyp om te zoem en prent te skuif.",
+  "pleaseFillInAllFields": "Vul asseblief alle velde in",
+  "pinMustBeAtLeast4Digits": "PIN moet ten minste 4 syfers wees",
+  "pinAtLeast4Digits": "PIN moet ten minste 4 syfers wees",
+  "invalidUsernameOrPin": "Ongeldige gebruikernaam of PIN",
+  "invalidUsernameOrPinError": "Ongeldige gebruikernaam of PIN",
+  "usernameAlreadyExists": "Gebruikersnaam bestaan ​​reeds",
+  "captureMomentsKeepMemories": "Vang oomblikke vas, hou herinneringe",
+  "username": "Gebruikersnaam",
+  "pin": "PIN",
+  "login": "Teken in",
+  "createAccount": "Skep rekening",
+  "dontHaveAccountCreateOne": "Het jy nie 'n rekening nie? Skep een",
+  "alreadyHaveAccountLogin": "Het jy reeds 'n rekening? Teken in",
+  "pleaseEnterUsername": "Voer asseblief 'n gebruikernaam in",
+  "pinsDoNotMatch": "PIN's stem nie ooreen nie",
+  "tapToAddAvatar": "Tik om avatar by te voeg",
+  "yourName": "Jou Naam",
+  "privatePinOptional": "Privaat PIN (opsioneel)",
+  "usedToEncryptPrivateRecords": "Word gebruik om privaat rekords te enkripteer",
+  "privatePin": "Privaat PIN",
+  "leaveEmptyForNoEncryption": "Laat leeg vir geen enkripsie",
+  "confirmPin": "Bevestig PIN",
+  "getStarted": "Begin",
+  "noReminders": "Geen aanmanings nie",
+  "addReminder": "Voeg herinnering by",
+  "title": "Titel",
+  "descriptionOptional": "Beskrywing (opsioneel)",
+  "microphonePermissionRequired": "Mikrofoontoestemming word vereis",
+  "aiAssistant": "KI assistent",
+  "listening": "Luister tans...",
+  "typeAMessage": "Tik 'n boodskap...",
+  "aiChat": "AI Chat",
+  "startAConversation": "Begin 'n gesprek",
+  "typeYourMessage": "Tik jou boodskap...",
+  "asrReconnecting": "ASR koppel tans weer …",
+  "write": "Skryf",
+  "writeEntry": "Skryf Inskrywing",
+  "noMemoriesYet": "Nog geen herinneringe nie",
+  "tapPlusToCapture": "Tik op + om jou gedagtes vas te vang",
+  "tapPlusToCaptureYourThoughts": "Tik op + om jou gedagtes vas te vang",
+  "deleteMemory": "Vee geheue uit",
+  "deleteRecord": "Vee Rekord uit",
+  "thisEntryWillBeRemoved": "Hierdie inskrywing sal van jou tydlyn verwyder word.",
+  "thisRecordWillBeRemoved": "Hierdie rekord sal van jou tydlyn verwyder word.",
+  "searchYourRecords": "Deursoek jou rekords...",
+  "exactMatches": "Presiese passings",
+  "noExactMatches": "Geen presiese passings nie",
+  "exact": "Presies",
+  "exactMatch": "Presiese passing",
+  "fuzzyMatches": "Fuzzy Wedstryde",
+  "noFuzzyMatches": "Geen fuzzy wedstryde nie",
+  "vectorMatch": "Vector Match",
+  "networkMatches": "Netwerk wedstryde",
+  "noNetworkMatches": "Geen netwerk pas nie",
+  "networkSearchIsOff": "Netwerksoektog is af. Aktiveer dit in Instellings.",
+  "network": "Netwerk",
+  "networkMatch": "Netwerk Match",
+  "noSearchHistory": "Geen soekgeskiedenis nie",
+  "searchHistory": "Soek Geskiedenis",
+  "invalidLink": "Ongeldige skakel",
+  "unableToOpenWebPage": "Kan nie webblad oopmaak nie",
+  "imageMemory": "[Beeld geheue]",
+  "tapToOpenWebPage": "Tik om webblad oop te maak",
+  "editEntry": "Wysig inskrywing",
+  "entryDetails": "Inskrywing Besonderhede",
+  "noContent": "Geen inhoud nie",
+  "diaryNotFound": "Dagboek nie gevind nie",
+  "diaryNotFoundShort": "Rekord nie gevind nie",
+  "aiSummary": "KI Opsomming",
+  "microphoneInterrupted": "Mikrofoon onderbreek, opname gestop.",
+  "bold": "Vet",
+  "italic": "Kursief",
+  "strikethrough": "Strek deur",
+  "image": "Beeld",
+  "asrUnavailableRecordingActive": "ASR nie beskikbaar nie. Opname is steeds aktief.",
+  "writeYourEntry": "Skryf jou inskrywing...",
+  "writeYourContent": "Skryf jou inhoud...",
+  "microphoneStartFailed": "Kon nie mikrofoon begin nie: {error}",
+  "microphoneInterruptedRecordingStopped": "Mikrofoon onderbreek, opname gestop.",
+  "asrReconnectingError": "ASR herkoppel: {error}",
+  "imageInserted": "Prent ingevoeg: {name}",
+  "voiceError": "Stemfout: {error}",
+  "aiServiceUnavailable": "Jammer, KI-diens is tans nie beskikbaar nie: {error}",
+  "shareFailed": "Kon nie deel nie: {error}",
+  "searchMatchHits": "{matchType} · {count} treffers",
+  "matchCount": "Pas: {count}",
+  "sourceFromNetwork": "Bron: {source}",
+  "createNew": "Skep",
+  "micStartFailed": "Kon nie mikrofoon begin nie: {error}",
+  "importResultAccounts": "Rekeninge: +{created} / opgedateer {updated}",
+  "importResultDiaries": "Dagboeke: +{created} / opgedateer {updated}",
+  "importResultReminders": "Onthounotas: +{created} / opgedateer {updated}",
+  "importResultSkipped": "Oorgeslaan: {count}",
+  "importResultTotal": "Totaal verander: {count}",
+  "settingsApplied": "Instellings in rugsteun is toegepas.",
+  "settingsNotApplied": "Instellings in rugsteun is nie toegepas nie.",
+  "backupExported": "Rugsteun uitgevoer: {path}",
+  "exportFailed": "Uitvoer het misluk: {error}",
+  "importFailed": "Invoer het misluk: {error}"
+}

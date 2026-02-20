@@ -451,6 +451,7 @@ class LocalSyncBackupService {
   }) {
     return {
       'themeMode': settings.themeMode.name,
+      'followSystemLanguage': settings.followSystemLanguage,
       'language': settings.language.code,
       'chatModelProvider': settings.chatModelProvider.name,
       'voiceRecognitionEngine': settings.voiceRecognitionEngine.name,

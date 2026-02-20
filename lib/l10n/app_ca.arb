@@ -1,0 +1,363 @@
+{
+  "@@locale": "ca",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Català",
+  "languageNameEn": "Catalan",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... o http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Configuració",
+  "account": "Compte",
+  "reminders": "Recordatoris",
+  "language": "Llengua",
+  "appLanguage": "Idioma de l'aplicació",
+  "appearance": "Aparença",
+  "themeMode": "Mode de tema",
+  "dark": "Fosc",
+  "light": "Llum",
+  "system": "Sistema",
+  "aiService": "Servei d'IA",
+  "aiChatProvider": "Proveïdor de xat AI",
+  "chatModel": "Model de xat",
+  "localModel": "Model local",
+  "localModelDefault": "Model local (predeterminat)",
+  "ollamaEndpoint": "Ollama Endpoint",
+  "ollamaModel": "Model Ollama",
+  "openAiEndpoint": "Punt final d'OpenAI",
+  "openAiApiKey": "Clau de l'API OpenAI",
+  "openAiModel": "Model OpenAI",
+  "geminiEndpoint": "Punt final Gemini",
+  "geminiApiKey": "Clau de l'API Gemini",
+  "geminiModel": "Models Bessons",
+  "anthropicEndpoint": "Punt final antròpic",
+  "anthropicApiKey": "Clau de l'API antròpica",
+  "anthropicModel": "Model antròpic",
+  "customProtocol": "Protocol personalitzat",
+  "protocol": "Protocol",
+  "customEndpoint": "Punt final personalitzat",
+  "customApiKey": "Clau d'API personalitzada",
+  "customModel": "Model personalitzat",
+  "optionalForLocalServers": "Opcional per a servidors locals/personalitzats",
+  "speechRecognitionEngine": "Motor de reconeixement de veu",
+  "local": "Local",
+  "endpoint": "Punt final",
+  "localSpeechModel": "Model de parla local",
+  "senseVoiceOnnx": "SenseVoice ONNX (al dispositiu)",
+  "systemSpeechRecognition": "Sistema de reconeixement de veu",
+  "systemRecognitionAndroidIos": "Reconeixement del sistema (Android/iOS)",
+  "endpointRecognitionCloudWs": "Reconeixement de punt final (núvol/WS)",
+  "useBuiltInRecognizer": "Utilitzeu el reconeixement integrat d'Android/iOS (pot utilitzar el núvol)",
+  "voiceAiEndpoint": "Punt final d'IA de veu",
+  "embeddingModel": "Model d'incrustació",
+  "crossDeviceSync": "Sincronització entre dispositius",
+  "sendToOtherDevices": "Envia a altres dispositius (LocalSend)",
+  "exportBackupAndSend": "Exporta la còpia de seguretat i envia'l mitjançant un full de compartició",
+  "importFromLocalSend": "Importa des de LocalSend",
+  "selectBackupJson": "Seleccioneu JSON de còpia de seguretat i fusioneu les dades locals",
+  "autoGeneration": "Generació automàtica",
+  "autoGenerateSummary": "Generació automàtica de resum",
+  "generateAiSummaryForNewEntries": "Genereu un resum d'IA per a noves entrades",
+  "autoGenerateEmbedding": "Incrustació de generació automàtica",
+  "generateVectorEmbedding": "Generar incrustació vectorial per a la cerca",
+  "enableNetworkSearch": "Activa la cerca a la xarxa",
+  "allowOnlineRetrieval": "Permet la recuperació en línia per a la cerca i el xat AI (desactivat per defecte)",
+  "about": "Sobre",
+  "version": "Versió {version}",
+  "database": "Base de dades",
+  "objectBoxWithHnsw": "ObjectBox amb índex HNSW",
+  "logOut": "Tanca la sessió",
+  "custom": "Personalitzat",
+  "openAiCompatible": "Compatible amb OpenAI",
+  "notSet": "No configurat",
+  "supportsLocalLanPublic": "Admet punts finals locals/LAN/públics",
+  "shiguangLocalSendBackup": "Còpia de seguretat de Shiguang LocalSend",
+  "localBackupFromShiguang": "Còpia de seguretat local de Shiguang (rebre mitjançant LocalSend)",
+  "selectBackupFileFromLocalSend": "Seleccioneu el fitxer de còpia de seguretat rebut de LocalSend",
+  "failedToResolveFilePath": "No s'ha pogut resoldre el camí del fitxer seleccionat",
+  "importOptions": "Opcions d'importació",
+  "importSettingsAsWell": "També importar la configuració?\n(Les claus API no es sobreescriuran)",
+  "dataOnly": "Només dades",
+  "dataAndSettings": "Dades + Configuració",
+  "importCompleted": "Importació completada",
+  "settingsInBackupWereApplied": "S'ha aplicat la configuració de la còpia de seguretat.",
+  "settingsInBackupWereNotApplied": "La configuració de la còpia de seguretat no s'ha aplicat.",
+  "ok": "D'acord",
+  "cancel": "Cancel·la",
+  "save": "Desa",
+  "delete": "Suprimeix",
+  "clear": "Clar",
+  "add": "Afegeix",
+  "create": "Crear",
+  "edit": "Edita",
+  "search": "Cerca",
+  "areYouSureYouWantToLogOut": "Esteu segur que voleu tancar la sessió?",
+  "chooseLanguage": "Trieu Idioma",
+  "databaseInfo": "Informació de la base de dades",
+  "storage": "Emmagatzematge: ObjectBox",
+  "vectorIndex": "Índex vectorial: HNSW",
+  "dimensions": "Mides: 384",
+  "embeddingModelBge": "Model d'incrustació: bge-small-zh-v1.5",
+  "takePhoto": "Fes una foto",
+  "chooseFromGallery": "Trieu a la Galeria",
+  "editNickname": "Edita el sobrenom",
+  "enterNickname": "Introduïu l'àlies",
+  "pleaseEnterNickname": "Introduïu un àlies",
+  "nicknameAlreadyExistsOrInvalid": "El sobrenom ja existeix o no és vàlid",
+  "user": "Usuari",
+  "manageScheduledReminders": "Gestioneu els recordatoris i les alarmes programades",
+  "imageFailedToLoad": "La imatge no s'ha pogut carregar. Si us plau, torna a triar.",
+  "imageIsStillLoading": "La imatge encara s'està carregant",
+  "imageAreaNotReady": "L'àrea d'imatge no està preparada. Si us plau, torna-ho a provar.",
+  "cropFrameNotReady": "El marc de retall no està preparat. Si us plau, torna-ho a provar.",
+  "invalidCropArea": "Àrea de tall no vàlida. Si us plau, torna-ho a provar.",
+  "cropFailed": "El retall ha fallat. Si us plau, torna-ho a provar.",
+  "cropAvatar": "Retalla l'avatar",
+  "chooseAgain": "Trieu de nou",
+  "rotate90": "Gira 90°",
+  "dragFrameToMove": "Arrossegueu el marc per moure's, arrossegueu la part inferior dreta per canviar la mida; pessigueu per fer zoom i moure la imatge.",
+  "pleaseFillInAllFields": "Si us plau, ompliu tots els camps",
+  "pinMustBeAtLeast4Digits": "El PIN ha de tenir almenys 4 dígits",
+  "pinAtLeast4Digits": "El PIN ha de tenir almenys 4 dígits",
+  "invalidUsernameOrPin": "Nom d'usuari o PIN no vàlid",
+  "invalidUsernameOrPinError": "Nom d'usuari o PIN no vàlid",
+  "usernameAlreadyExists": "El nom d'usuari ja existeix",
+  "captureMomentsKeepMemories": "Captura moments, guarda records",
+  "username": "Nom d'usuari",
+  "pin": "PIN",
+  "login": "Inicieu sessió",
+  "createAccount": "Crea un compte",
+  "dontHaveAccountCreateOne": "No tens un compte? Crea'n un",
+  "alreadyHaveAccountLogin": "Ja tens un compte? Inicieu sessió",
+  "pleaseEnterUsername": "Introduïu un nom d'usuari",
+  "pinsDoNotMatch": "Els PIN no coincideixen",
+  "tapToAddAvatar": "Toca per afegir un avatar",
+  "yourName": "El teu nom",
+  "privatePinOptional": "PIN privat (opcional)",
+  "usedToEncryptPrivateRecords": "S'utilitza per xifrar registres privats",
+  "privatePin": "PIN privat",
+  "leaveEmptyForNoEncryption": "Deixeu buit per no xifrar",
+  "confirmPin": "Confirmeu el PIN",
+  "getStarted": "Comença",
+  "noReminders": "Sense recordatoris",
+  "addReminder": "Afegeix un recordatori",
+  "title": "Títol",
+  "descriptionOptional": "Descripció (opcional)",
+  "microphonePermissionRequired": "Cal permís de micròfon",
+  "aiAssistant": "Assistent d'IA",
+  "listening": "Escoltant...",
+  "typeAMessage": "Escriu un missatge...",
+  "aiChat": "Xat amb IA",
+  "startAConversation": "Iniciar una conversa",
+  "typeYourMessage": "Escriu el teu missatge...",
+  "asrReconnecting": "ASR tornant a connectar...",
+  "write": "Escriu",
+  "writeEntry": "Escriu l'entrada",
+  "noMemoriesYet": "Encara no hi ha records",
+  "tapPlusToCapture": "Toca + per capturar els teus pensaments",
+  "tapPlusToCaptureYourThoughts": "Toca + per capturar els teus pensaments",
+  "deleteMemory": "Suprimeix la memòria",
+  "deleteRecord": "Suprimeix el registre",
+  "thisEntryWillBeRemoved": "Aquesta entrada s'eliminarà de la vostra línia de temps.",
+  "thisRecordWillBeRemoved": "Aquest registre s'eliminarà de la vostra línia de temps.",
+  "searchYourRecords": "Cerca els teus registres...",
+  "exactMatches": "Coincidències exactes",
+  "noExactMatches": "Sense coincidències exactes",
+  "exact": "Exacte",
+  "exactMatch": "Coincidència exacta",
+  "fuzzyMatches": "Partits difusos",
+  "noFuzzyMatches": "Sense coincidències difuses",
+  "vectorMatch": "Concordança vectorial",
+  "networkMatches": "Coincidències de xarxa",
+  "noNetworkMatches": "No hi ha coincidències de xarxa",
+  "networkSearchIsOff": "La cerca a la xarxa està desactivada. Activeu-lo a Configuració.",
+  "network": "Xarxa",
+  "networkMatch": "Coincidència de xarxa",
+  "noSearchHistory": "No hi ha historial de cerques",
+  "searchHistory": "Historial de cerques",
+  "invalidLink": "Enllaç no vàlid",
+  "unableToOpenWebPage": "No es pot obrir la pàgina web",
+  "imageMemory": "[Memòria d'imatge]",
+  "tapToOpenWebPage": "Toqueu per obrir la pàgina web",
+  "editEntry": "Edita l'entrada",
+  "entryDetails": "Detalls de l'entrada",
+  "noContent": "Sense contingut",
+  "diaryNotFound": "No s'ha trobat el diari",
+  "diaryNotFoundShort": "No s'ha trobat el registre",
+  "aiSummary": "Resum de l'IA",
+  "microphoneInterrupted": "S'ha interromput el micròfon, la gravació s'ha aturat.",
+  "bold": "Atrevit",
+  "italic": "Cursiva",
+  "strikethrough": "Tallat",
+  "image": "Imatge",
+  "asrUnavailableRecordingActive": "ASR no disponible. La gravació encara està activa.",
+  "writeYourEntry": "Escriu la teva entrada...",
+  "writeYourContent": "Escriu el teu contingut...",
+  "microphoneStartFailed": "No s'ha pogut iniciar el micròfon: {error}",
+  "microphoneInterruptedRecordingStopped": "S'ha interromput el micròfon, la gravació s'ha aturat.",
+  "asrReconnectingError": "S'està tornant a connectar: ​​{error}",
+  "imageInserted": "Imatge inserida: {name}",
+  "voiceError": "Error de veu: {error}",
+  "aiServiceUnavailable": "Ho sentim, el servei d'IA no està disponible actualment: {error}",
+  "shareFailed": "No s'ha pogut compartir: {error}",
+  "searchMatchHits": "{matchType} · {count} visites",
+  "matchCount": "Coincidència: {count}",
+  "sourceFromNetwork": "Font: {source}",
+  "createNew": "Crear",
+  "micStartFailed": "Ha fallat l'inici del micròfon: {error}",
+  "importResultAccounts": "Comptes: +{created} / actualitzat {updated}",
+  "importResultDiaries": "Diaris: +{created} / actualitzat {updated}",
+  "importResultReminders": "Recordatoris: +{created} / actualitzat {updated}",
+  "importResultSkipped": "S'ha omès: {count}",
+  "importResultTotal": "Total canviat: {count}",
+  "settingsApplied": "S'ha aplicat la configuració de la còpia de seguretat.",
+  "settingsNotApplied": "La configuració de la còpia de seguretat no s'ha aplicat.",
+  "backupExported": "Còpia de seguretat exportada: {path}",
+  "exportFailed": "Ha fallat l'exportació: {error}",
+  "importFailed": "La importació ha fallat: {error}"
+}

@@ -1,0 +1,363 @@
+{
+  "@@locale": "lv",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Latviešu",
+  "languageNameEn": "Latvian",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... vai http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Iestatījumi",
+  "account": "Konts",
+  "reminders": "Atgādinājumi",
+  "language": "Valoda",
+  "appLanguage": "Lietotnes valoda",
+  "appearance": "Izskats",
+  "themeMode": "Motīva režīms",
+  "dark": "Tumšs",
+  "light": "Gaisma",
+  "system": "Sistēma",
+  "aiService": "AI pakalpojums",
+  "aiChatProvider": "AI tērzēšanas nodrošinātājs",
+  "chatModel": "Tērzēšanas modelis",
+  "localModel": "Vietējais modelis",
+  "localModelDefault": "Vietējais modelis (noklusējums)",
+  "ollamaEndpoint": "Ollama galapunkts",
+  "ollamaModel": "Ollama modelis",
+  "openAiEndpoint": "OpenAI galapunkts",
+  "openAiApiKey": "OpenAI API atslēga",
+  "openAiModel": "OpenAI modelis",
+  "geminiEndpoint": "Gemini galapunkts",
+  "geminiApiKey": "Gemini API atslēga",
+  "geminiModel": "Dvīņu modeļi",
+  "anthropicEndpoint": "Antropiskais galapunkts",
+  "anthropicApiKey": "Antropiskā API atslēga",
+  "anthropicModel": "Antropiskais modelis",
+  "customProtocol": "Pielāgots protokols",
+  "protocol": "Protokols",
+  "customEndpoint": "Pielāgots galapunkts",
+  "customApiKey": "Pielāgota API atslēga",
+  "customModel": "Pielāgots modelis",
+  "optionalForLocalServers": "Pēc izvēles vietējiem/pielāgotiem serveriem",
+  "speechRecognitionEngine": "Runas atpazīšanas dzinējs",
+  "local": "Vietējais",
+  "endpoint": "Gala punkts",
+  "localSpeechModel": "Vietējais runas modelis",
+  "senseVoiceOnnx": "SenseVoice ONNX (ierīcē)",
+  "systemSpeechRecognition": "Sistēmas runas atpazīšana",
+  "systemRecognitionAndroidIos": "Sistēmas atpazīšana (Android/iOS)",
+  "endpointRecognitionCloudWs": "Galapunkta atpazīšana (mākonis/WS)",
+  "useBuiltInRecognizer": "Izmantojiet iebūvēto Android/iOS atpazinēju (var izmantot mākoni)",
+  "voiceAiEndpoint": "Balss AI galapunkts",
+  "embeddingModel": "Modeļa iegulšana",
+  "crossDeviceSync": "Vairāku ierīču sinhronizācija",
+  "sendToOtherDevices": "Sūtīt uz citām ierīcēm (LocalSend)",
+  "exportBackupAndSend": "Eksportējiet dublējumu un nosūtiet, izmantojot koplietošanas lapu",
+  "importFromLocalSend": "Importēt no LocalSend",
+  "selectBackupJson": "Atlasiet dublējuma JSON un sapludiniet vietējos datus",
+  "autoGeneration": "Auto ģenerēšana",
+  "autoGenerateSummary": "Automātiski ģenerēt kopsavilkumu",
+  "generateAiSummaryForNewEntries": "Izveidojiet AI kopsavilkumu jauniem ierakstiem",
+  "autoGenerateEmbedding": "Automātiski ģenerēt iegulšanu",
+  "generateVectorEmbedding": "Ģenerējiet vektora iegulšanu meklēšanai",
+  "enableNetworkSearch": "Iespējot tīkla meklēšanu",
+  "allowOnlineRetrieval": "Atļaut tiešsaistes izgūšanu meklēšanai un AI tērzēšanai (pēc noklusējuma izslēgts)",
+  "about": "Par",
+  "version": "Versija {version}",
+  "database": "Datu bāze",
+  "objectBoxWithHnsw": "ObjectBox ar HNSW indeksu",
+  "logOut": "Iziet",
+  "custom": "Pielāgots",
+  "openAiCompatible": "OpenAI savietojams",
+  "notSet": "Nav iestatīts",
+  "supportsLocalLanPublic": "Atbalsta vietējos/LAN/publiskos galapunktus",
+  "shiguangLocalSendBackup": "Shiguang LocalSend dublējums",
+  "localBackupFromShiguang": "Vietējais dublējums no Shiguang (saņemt, izmantojot LocalSend)",
+  "selectBackupFileFromLocalSend": "Atlasiet dublējuma failu, kas saņemts no LocalSend",
+  "failedToResolveFilePath": "Neizdevās atrisināt atlasītā faila ceļu",
+  "importOptions": "Importēšanas opcijas",
+  "importSettingsAsWell": "Vai arī importēt iestatījumus?\n(API atslēgas netiks pārrakstītas)",
+  "dataOnly": "Tikai dati",
+  "dataAndSettings": "Dati + iestatījumi",
+  "importCompleted": "Importēšana pabeigta",
+  "settingsInBackupWereApplied": "Tika lietoti dublējuma iestatījumi.",
+  "settingsInBackupWereNotApplied": "Dublējuma iestatījumi netika lietoti.",
+  "ok": "Labi",
+  "cancel": "Atcelt",
+  "save": "Saglabāt",
+  "delete": "Dzēst",
+  "clear": "Skaidrs",
+  "add": "Pievienot",
+  "create": "Izveidot",
+  "edit": "Rediģēt",
+  "search": "Meklēt",
+  "areYouSureYouWantToLogOut": "Vai tiešām vēlaties atteikties?",
+  "chooseLanguage": "Izvēlieties valodu",
+  "databaseInfo": "Informācija par datu bāzi",
+  "storage": "Uzglabāšana: ObjectBox",
+  "vectorIndex": "Vektoru indekss: HNSW",
+  "dimensions": "Izmēri: 384",
+  "embeddingModelBge": "Iegulšanas modelis: bge-small-zh-v1.5",
+  "takePhoto": "Uzņemiet fotoattēlu",
+  "chooseFromGallery": "Izvēlieties no galerijas",
+  "editNickname": "Rediģēt segvārdu",
+  "enterNickname": "Ievadiet segvārdu",
+  "pleaseEnterNickname": "Lūdzu, ievadiet segvārdu",
+  "nicknameAlreadyExistsOrInvalid": "Segvārds jau pastāv vai ir nederīgs",
+  "user": "Lietotājs",
+  "manageScheduledReminders": "Pārvaldiet ieplānotos atgādinājumus un trauksmes signālus",
+  "imageFailedToLoad": "Attēlu neizdevās ielādēt. Lūdzu, izvēlieties vēlreiz.",
+  "imageIsStillLoading": "Attēls joprojām tiek ielādēts",
+  "imageAreaNotReady": "Attēla apgabals nav gatavs. Lūdzu, mēģiniet vēlreiz.",
+  "cropFrameNotReady": "Apgriešanas rāmis nav gatavs. Lūdzu, mēģiniet vēlreiz.",
+  "invalidCropArea": "Nederīgs apgriešanas laukums. Lūdzu, mēģiniet vēlreiz.",
+  "cropFailed": "Apgriešana neizdevās. Lūdzu, mēģiniet vēlreiz.",
+  "cropAvatar": "Crop Avatar",
+  "chooseAgain": "Izvēlieties vēlreiz",
+  "rotate90": "Pagriezt par 90°",
+  "dragFrameToMove": "Velciet rāmi, lai pārvietotu, velciet apakšā pa labi, lai mainītu izmēru; saspiediet, lai tuvinātu un pārvietotu attēlu.",
+  "pleaseFillInAllFields": "Lūdzu, aizpildiet visus laukus",
+  "pinMustBeAtLeast4Digits": "PIN ir jābūt vismaz 4 cipariem",
+  "pinAtLeast4Digits": "PIN ir jābūt vismaz 4 cipariem",
+  "invalidUsernameOrPin": "Nederīgs lietotājvārds vai PIN",
+  "invalidUsernameOrPinError": "Nederīgs lietotājvārds vai PIN",
+  "usernameAlreadyExists": "Lietotājvārds jau pastāv",
+  "captureMomentsKeepMemories": "Iemūžiniet mirkļus, saglabājiet atmiņas",
+  "username": "Lietotājvārds",
+  "pin": "PIN",
+  "login": "Pieteikties",
+  "createAccount": "Izveidot kontu",
+  "dontHaveAccountCreateOne": "Vai jums nav konta? Izveidojiet vienu",
+  "alreadyHaveAccountLogin": "Vai jums jau ir konts? Pieteikties",
+  "pleaseEnterUsername": "Lūdzu, ievadiet lietotājvārdu",
+  "pinsDoNotMatch": "PIN kodi nesakrīt",
+  "tapToAddAvatar": "Pieskarieties, lai pievienotu iemiesojumu",
+  "yourName": "Jūsu Vārds",
+  "privatePinOptional": "Privāts PIN (pēc izvēles)",
+  "usedToEncryptPrivateRecords": "Izmanto privāto ierakstu šifrēšanai",
+  "privatePin": "Privāts PIN",
+  "leaveEmptyForNoEncryption": "Atstājiet tukšu, lai netiktu veikta šifrēšana",
+  "confirmPin": "Apstipriniet PIN",
+  "getStarted": "Sāciet darbu",
+  "noReminders": "Nav atgādinājumu",
+  "addReminder": "Pievienot atgādinājumu",
+  "title": "Nosaukums",
+  "descriptionOptional": "Apraksts (pēc izvēles)",
+  "microphonePermissionRequired": "Nepieciešama mikrofona atļauja",
+  "aiAssistant": "AI palīgs",
+  "listening": "Klausos...",
+  "typeAMessage": "Ierakstiet ziņojumu...",
+  "aiChat": "AI tērzēšana",
+  "startAConversation": "Sāciet sarunu",
+  "typeYourMessage": "Ierakstiet savu ziņojumu...",
+  "asrReconnecting": "ASR tiek atkārtoti savienots...",
+  "write": "Rakstiet",
+  "writeEntry": "Rakstīt ierakstu",
+  "noMemoriesYet": "Atmiņu vēl nav",
+  "tapPlusToCapture": "Pieskarieties +, lai tvertu savas domas",
+  "tapPlusToCaptureYourThoughts": "Pieskarieties +, lai tvertu savas domas",
+  "deleteMemory": "Dzēst atmiņu",
+  "deleteRecord": "Dzēst ierakstu",
+  "thisEntryWillBeRemoved": "Šis ieraksts tiks noņemts no jūsu laika skalas.",
+  "thisRecordWillBeRemoved": "Šis ieraksts tiks noņemts no jūsu laika skalas.",
+  "searchYourRecords": "Meklējiet savus ierakstus...",
+  "exactMatches": "Precīzās atbilstības",
+  "noExactMatches": "Nav precīzu atbilstību",
+  "exact": "Precīzi",
+  "exactMatch": "Precīza atbilstība",
+  "fuzzyMatches": "Izplūdušie mači",
+  "noFuzzyMatches": "Nav neskaidru sakritību",
+  "vectorMatch": "Vektoru atbilstība",
+  "networkMatches": "Tīkla spēles",
+  "noNetworkMatches": "Nav neviena tīkla atbilstības",
+  "networkSearchIsOff": "Tīkla meklēšana ir izslēgta. Iespējojiet to sadaļā Iestatījumi.",
+  "network": "Tīkls",
+  "networkMatch": "Tīkla atbilstība",
+  "noSearchHistory": "Nav meklēšanas vēstures",
+  "searchHistory": "Meklēšanas vēsture",
+  "invalidLink": "Nederīga saite",
+  "unableToOpenWebPage": "Nevar atvērt tīmekļa lapu",
+  "imageMemory": "[Attēlu atmiņa]",
+  "tapToOpenWebPage": "Pieskarieties, lai atvērtu tīmekļa lapu",
+  "editEntry": "Rediģēt ierakstu",
+  "entryDetails": "Ieejas informācija",
+  "noContent": "Nav satura",
+  "diaryNotFound": "Dienasgrāmata nav atrasta",
+  "diaryNotFoundShort": "Ieraksts nav atrasts",
+  "aiSummary": "AI kopsavilkums",
+  "microphoneInterrupted": "Mikrofons pārtraukts, ierakstīšana pārtraukta.",
+  "bold": "Treknrakstā",
+  "italic": "Kursīvs",
+  "strikethrough": "Pārsvītrots",
+  "image": "Attēls",
+  "asrUnavailableRecordingActive": "ASR nav pieejams. Ieraksts joprojām ir aktīvs.",
+  "writeYourEntry": "Uzraksti savu ierakstu...",
+  "writeYourContent": "Uzrakstiet savu saturu...",
+  "microphoneStartFailed": "Neizdevās palaist mikrofonu: {error}",
+  "microphoneInterruptedRecordingStopped": "Mikrofons pārtraukts, ierakstīšana pārtraukta.",
+  "asrReconnectingError": "ASR atkārtota savienojuma izveide: {error}",
+  "imageInserted": "Ievietots attēls: {name}",
+  "voiceError": "Balss kļūda: {error}",
+  "aiServiceUnavailable": "Diemžēl AI pakalpojums pašlaik nav pieejams: {error}",
+  "shareFailed": "Neizdevās kopīgot: {error}",
+  "searchMatchHits": "{matchType} · {count} trāpījumi",
+  "matchCount": "Atbilstība: {count}",
+  "sourceFromNetwork": "Avots: {source}",
+  "createNew": "Izveidot",
+  "micStartFailed": "Mikrofona palaišana neizdevās: {error}",
+  "importResultAccounts": "Konti: +{created} / atjaunināts {updated}",
+  "importResultDiaries": "Dienasgrāmatas: +{created} / atjaunināta {updated}",
+  "importResultReminders": "Atgādinājumi: +{created} / atjaunināts {updated}",
+  "importResultSkipped": "Izlaists: {count}",
+  "importResultTotal": "Kopējais izmaiņu skaits: {count}",
+  "settingsApplied": "Tika lietoti dublējuma iestatījumi.",
+  "settingsNotApplied": "Dublējuma iestatījumi netika lietoti.",
+  "backupExported": "Dublējums eksportēts: {path}",
+  "exportFailed": "Eksportēšana neizdevās: {error}",
+  "importFailed": "Importēšana neizdevās: {error}"
+}

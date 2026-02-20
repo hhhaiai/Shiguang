@@ -50,9 +50,9 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
     final l10n = AppLocalizations.of(context);
     final username = _usernameController.text.trim();
     if (username.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.pleaseEnterUsername)),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(l10n.pleaseEnterUsername)));
       return;
     }
 
@@ -60,9 +60,9 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
     final confirmPin = _confirmPinController.text;
 
     if (privatePin.isNotEmpty && privatePin != confirmPin) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.pinsDoNotMatch)),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(l10n.pinsDoNotMatch)));
       return;
     }
 

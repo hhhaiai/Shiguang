@@ -1,0 +1,363 @@
+{
+  "@@locale": "lo",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "ລາວ",
+  "languageNameEn": "Lao",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "ຊິ່ງກວາງ",
+  "settings": "ການຕັ້ງຄ່າ",
+  "account": "ບັນຊີ",
+  "reminders": "ການແຈ້ງເຕືອນ",
+  "language": "ພາສາ",
+  "appLanguage": "ພາສາແອັບ",
+  "appearance": "ຮູບລັກສະນະ",
+  "themeMode": "ຮູບແບບສີສັນ",
+  "dark": "ມືດ",
+  "light": "ແສງສະຫວ່າງ",
+  "system": "ລະບົບ",
+  "aiService": "ບໍລິການ AI",
+  "aiChatProvider": "ຜູ້ໃຫ້ບໍລິການສົນທະນາ AI",
+  "chatModel": "ຮູບແບບການສົນທະນາ",
+  "localModel": "ຕົວແບບທ້ອງຖິ່ນ",
+  "localModelDefault": "ຕົວແບບທ້ອງຖິ່ນ (ຄ່າເລີ່ມຕົ້ນ)",
+  "ollamaEndpoint": "Ollama Endpoint",
+  "ollamaModel": "Ollama Model",
+  "openAiEndpoint": "OpenAI Endpoint",
+  "openAiApiKey": "OpenAI API Key",
+  "openAiModel": "ແບບ OpenAI",
+  "geminiEndpoint": "Gemini Endpoint",
+  "geminiApiKey": "Gemini API Key",
+  "geminiModel": "ຕົວແບບ Gemini",
+  "anthropicEndpoint": "Anthropic Endpoint",
+  "anthropicApiKey": "Anthropic API Key",
+  "anthropicModel": "ຕົວແບບ Anthropic",
+  "customProtocol": "ພິທີການກຳນົດເອງ",
+  "protocol": "ພິທີການ",
+  "customEndpoint": "ຈຸດສິ້ນສຸດແບບກຳນົດເອງ",
+  "customApiKey": "ລະຫັດ API ແບບກຳນົດເອງ",
+  "customModel": "ຮູບແບບທີ່ກໍາຫນົດເອງ",
+  "optionalForLocalServers": "ທາງເລືອກສຳລັບເຊີບເວີທ້ອງຖິ່ນ/ແບບກຳນົດເອງ",
+  "speechRecognitionEngine": "ເຄື່ອງຈັກຮັບຮູ້ສຽງເວົ້າ",
+  "local": "ທ້ອງຖິ່ນ",
+  "endpoint": "ຈຸດສິ້ນສຸດ",
+  "localSpeechModel": "ຮູບແບບການປາກເວົ້າໃນທ້ອງຖິ່ນ",
+  "senseVoiceOnnx": "SenseVoice ONNX (ໃນອຸປະກອນ)",
+  "systemSpeechRecognition": "ການຮັບຮູ້ສຽງເວົ້າຂອງລະບົບ",
+  "systemRecognitionAndroidIos": "ການຮັບຮູ້ລະບົບ (Android/iOS)",
+  "endpointRecognitionCloudWs": "ການຮັບຮູ້ຈຸດສິ້ນສຸດ (Cloud/WS)",
+  "useBuiltInRecognizer": "ໃຊ້ຕົວຮັບຮູ້ Android / iOS ໃນຕົວ (ອາດຈະໃຊ້ຄລາວ)",
+  "voiceAiEndpoint": "Voice AI Endpoint",
+  "embeddingModel": "ການຝັງຕົວແບບ",
+  "crossDeviceSync": "Sync ຂ້າມອຸປະກອນ",
+  "sendToOtherDevices": "ສົ່ງໄປຫາອຸປະກອນອື່ນ (LocalSend)",
+  "exportBackupAndSend": "ສົ່ງອອກສໍາຮອງຂໍ້ມູນແລະສົ່ງຜ່ານແຜ່ນແບ່ງປັນ",
+  "importFromLocalSend": "ນໍາເຂົ້າຈາກ LocalSend",
+  "selectBackupJson": "ເລືອກ JSON ສໍາຮອງຂໍ້ມູນແລະລວມຂໍ້ມູນທ້ອງຖິ່ນ",
+  "autoGeneration": "ການຜະລິດອັດຕະໂນມັດ",
+  "autoGenerateSummary": "ສ້າງບົດສະຫຼຸບອັດຕະໂນມັດ",
+  "generateAiSummaryForNewEntries": "ສ້າງບົດສະຫຼຸບ AI ສໍາລັບລາຍການໃຫມ່",
+  "autoGenerateEmbedding": "ອັດຕະໂນມັດສ້າງການຝັງ",
+  "generateVectorEmbedding": "ສ້າງການຝັງ vector ສໍາລັບການຊອກຫາ",
+  "enableNetworkSearch": "ເປີດໃຊ້ການຊອກຫາເຄືອຂ່າຍ",
+  "allowOnlineRetrieval": "ອະ​ນຸ​ຍາດ​ໃຫ້​ການ​ດຶງ​ຂໍ້​ມູນ​ອອນ​ໄລ​ນ​໌​ສໍາ​ລັບ​ການ​ຊອກ​ຫາ​ແລະ AI ສົນ (ປິດ​ເປັນ​ຄ່າ​ເລີ່ມ​ຕົ້ນ​)",
+  "about": "ກ່ຽວກັບ",
+  "version": "ລຸ້ນ {version}",
+  "database": "ຖານຂໍ້ມູນ",
+  "objectBoxWithHnsw": "ObjectBox ທີ່ມີດັດຊະນີ HNSW",
+  "logOut": "ອອກຈາກລະບົບ",
+  "custom": "ກຳນົດເອງ",
+  "openAiCompatible": "OpenAI ເຂົ້າກັນໄດ້",
+  "notSet": "ບໍ່ໄດ້ຕັ້ງ",
+  "supportsLocalLanPublic": "ຮອງຮັບຈຸດສິ້ນສຸດທ້ອງຖິ່ນ/LAN/ສາທາລະນະ",
+  "shiguangLocalSendBackup": "Shiguang LocalSend Backup",
+  "localBackupFromShiguang": "ການ​ສໍາ​ຮອງ​ຂໍ້​ມູນ​ທ້ອງ​ຖິ່ນ​ຈາກ Shiguang (ຮັບ​ຜ່ານ LocalSend​)",
+  "selectBackupFileFromLocalSend": "ເລືອກໄຟລ໌ສຳຮອງທີ່ໄດ້ຮັບຈາກ LocalSend",
+  "failedToResolveFilePath": "ລົ້ມເຫລວໃນການແກ້ໄຂເສັ້ນທາງໄຟລ໌ທີ່ເລືອກ",
+  "importOptions": "ທາງເລືອກໃນການນໍາເຂົ້າ",
+  "importSettingsAsWell": "ນໍາເຂົ້າການຕັ້ງຄ່າເຊັ່ນກັນບໍ?\n(ກະແຈ API ຈະບໍ່ຖືກຂຽນທັບ)",
+  "dataOnly": "ຂໍ້ມູນເທົ່ານັ້ນ",
+  "dataAndSettings": "ຂໍ້ມູນ + ການຕັ້ງຄ່າ",
+  "importCompleted": "ການນໍາເຂົ້າສໍາເລັດ",
+  "settingsInBackupWereApplied": "ນຳໃຊ້ການຕັ້ງຄ່າໃນການສຳຮອງຂໍ້ມູນ.",
+  "settingsInBackupWereNotApplied": "ການຕັ້ງຄ່າໃນການສຳຮອງຂໍ້ມູນບໍ່ໄດ້ນຳໃຊ້.",
+  "ok": "ຕົກລົງ",
+  "cancel": "ຍົກເລີກ",
+  "save": "ບັນທຶກ",
+  "delete": "ລຶບ",
+  "clear": "ຈະແຈ້ງ",
+  "add": "ຕື່ມ",
+  "create": "ສ້າງ",
+  "edit": "ແກ້ໄຂ",
+  "search": "ຊອກຫາ",
+  "areYouSureYouWantToLogOut": "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການອອກຈາກລະບົບ?",
+  "chooseLanguage": "ເລືອກພາສາ",
+  "databaseInfo": "ຂໍ້ມູນຖານຂໍ້ມູນ",
+  "storage": "ການເກັບຮັກສາ: ObjectBox",
+  "vectorIndex": "ດັດຊະນີ vector: HNSW",
+  "dimensions": "ຂະໜາດ: 384",
+  "embeddingModelBge": "ຮູບແບບການຝັງ: bge-small-zh-v1.5",
+  "takePhoto": "ຖ່າຍຮູບ",
+  "chooseFromGallery": "ເລືອກຈາກຄັງຮູບ",
+  "editNickname": "ແກ້ໄຂຊື່ຫຼິ້ນ",
+  "enterNickname": "ໃສ່ຊື່ຫຼິ້ນ",
+  "pleaseEnterNickname": "ກະລຸນາໃສ່ຊື່ຫຼິ້ນ",
+  "nicknameAlreadyExistsOrInvalid": "ຊື່ຫຼິ້ນມີຢູ່ແລ້ວ ຫຼືບໍ່ຖືກຕ້ອງ",
+  "user": "ຜູ້ໃຊ້",
+  "manageScheduledReminders": "ຈັດການການແຈ້ງເຕືອນ ແລະໂມງປຸກທີ່ກຳນົດເວລາໄວ້",
+  "imageFailedToLoad": "ໂຫຼດຮູບບໍ່ສຳເລັດ. ກະລຸນາເລືອກອີກຄັ້ງ.",
+  "imageIsStillLoading": "ກຳລັງໂຫຼດຮູບພາບຢູ່",
+  "imageAreaNotReady": "ພື້ນທີ່ຮູບພາບບໍ່ພ້ອມ. ກະລຸນາລອງອີກຄັ້ງ.",
+  "cropFrameNotReady": "ກອບການປູກພືດບໍ່ພ້ອມ. ກະລຸນາລອງອີກຄັ້ງ.",
+  "invalidCropArea": "ເນື້ອທີ່ປູກຝັງບໍ່ຖືກຕ້ອງ. ກະລຸນາລອງອີກຄັ້ງ.",
+  "cropFailed": "ການປູກພືດລົ້ມເຫລວ. ກະລຸນາລອງອີກຄັ້ງ.",
+  "cropAvatar": "Crop Avatar",
+  "chooseAgain": "ເລືອກອີກເທື່ອຫນຶ່ງ",
+  "rotate90": "ໝຸນ 90°",
+  "dragFrameToMove": "ລາກກອບເພື່ອຍ້າຍ, ລາກລຸ່ມຂວາເພື່ອປັບຂະໜາດ; pinch ເພື່ອຊູມແລະຍ້າຍຮູບພາບ.",
+  "pleaseFillInAllFields": "ກະລຸນາຕື່ມຂໍ້ມູນໃສ່ໃນທຸກຊ່ອງ",
+  "pinMustBeAtLeast4Digits": "PIN ຕ້ອງມີຢ່າງໜ້ອຍ 4 ຕົວເລກ",
+  "pinAtLeast4Digits": "PIN ຕ້ອງມີຢ່າງໜ້ອຍ 4 ຕົວເລກ",
+  "invalidUsernameOrPin": "ຊື່ຜູ້ໃຊ້ ຫຼື PIN ບໍ່ຖືກຕ້ອງ",
+  "invalidUsernameOrPinError": "ຊື່ຜູ້ໃຊ້ ຫຼື PIN ບໍ່ຖືກຕ້ອງ",
+  "usernameAlreadyExists": "ຊື່ຜູ້ໃຊ້ມີຢູ່ແລ້ວ",
+  "captureMomentsKeepMemories": "ບັນທຶກຊ່ວງເວລາ, ຮັກສາຄວາມຊົງຈຳ",
+  "username": "ຊື່ຜູ້ໃຊ້",
+  "pin": "PIN",
+  "login": "ເຂົ້າສູ່ລະບົບ",
+  "createAccount": "ສ້າງບັນຊີ",
+  "dontHaveAccountCreateOne": "ບໍ່ມີບັນຊີບໍ? ສ້າງຫນຶ່ງ",
+  "alreadyHaveAccountLogin": "ມີບັນຊີຢູ່ແລ້ວບໍ? ເຂົ້າສູ່ລະບົບ",
+  "pleaseEnterUsername": "ກະລຸນາໃສ່ຊື່ຜູ້ໃຊ້",
+  "pinsDoNotMatch": "PIN ບໍ່ກົງກັນ",
+  "tapToAddAvatar": "ແຕະເພື່ອເພີ່ມຮູບແທນຕົວ",
+  "yourName": "ຊື່ຂອງເຈົ້າ",
+  "privatePinOptional": "PIN ສ່ວນຕົວ (ທາງເລືອກ)",
+  "usedToEncryptPrivateRecords": "ໃຊ້ເພື່ອເຂົ້າລະຫັດບັນທຶກສ່ວນຕົວ",
+  "privatePin": "PIN ສ່ວນຕົວ",
+  "leaveEmptyForNoEncryption": "ປ່ອຍຫວ່າງໄວ້ເພື່ອບໍ່ມີການເຂົ້າລະຫັດ",
+  "confirmPin": "ຢືນຢັນ PIN",
+  "getStarted": "ເລີ່ມຕົ້ນ",
+  "noReminders": "ບໍ່ມີການແຈ້ງເຕືອນ",
+  "addReminder": "ເພີ່ມການແຈ້ງເຕືອນ",
+  "title": "ຫົວຂໍ້",
+  "descriptionOptional": "ຄຳອະທິບາຍ (ທາງເລືອກ)",
+  "microphonePermissionRequired": "ຕ້ອງມີການອະນຸຍາດໄມໂຄຣໂຟນ",
+  "aiAssistant": "ຜູ້ຊ່ວຍ AI",
+  "listening": "ກຳລັງຟັງ...",
+  "typeAMessage": "ພິມຂໍ້ຄວາມ...",
+  "aiChat": "AI Chat",
+  "startAConversation": "ເລີ່ມການສົນທະນາ",
+  "typeYourMessage": "ພິມຂໍ້ຄວາມຂອງເຈົ້າ...",
+  "asrReconnecting": "ASR ກຳລັງເຊື່ອມຕໍ່ຄືນໃໝ່...",
+  "write": "ຂຽນ",
+  "writeEntry": "ຂຽນເຂົ້າ",
+  "noMemoriesYet": "ບໍ່ມີຄວາມຊົງຈໍາເທື່ອ",
+  "tapPlusToCapture": "ແຕະ + ເພື່ອບັນທຶກຄວາມຄິດຂອງທ່ານ",
+  "tapPlusToCaptureYourThoughts": "ແຕະ + ເພື່ອບັນທຶກຄວາມຄິດຂອງທ່ານ",
+  "deleteMemory": "ລຶບຄວາມຊົງຈໍາ",
+  "deleteRecord": "ລຶບບັນທຶກ",
+  "thisEntryWillBeRemoved": "ລາຍການນີ້ຈະຖືກລຶບອອກຈາກທາມລາຍຂອງເຈົ້າ.",
+  "thisRecordWillBeRemoved": "ບັນທຶກນີ້ຈະຖືກລຶບອອກຈາກທາມລາຍຂອງເຈົ້າ.",
+  "searchYourRecords": "ຊອກຫາບັນທຶກຂອງທ່ານ...",
+  "exactMatches": "ກົງກັນແທ້",
+  "noExactMatches": "ບໍ່ມີການແຂ່ງຂັນທີ່ແນ່ນອນ",
+  "exact": "ແນ່ນອນ",
+  "exactMatch": "ກົງກັນແທ້",
+  "fuzzyMatches": "Fuzzy Matches",
+  "noFuzzyMatches": "ບໍ່ມີຂໍ້ມູນທີ່ກົງກັນ",
+  "vectorMatch": "ການຈັບຄູ່ vector",
+  "networkMatches": "ການຈັບຄູ່ເຄືອຂ່າຍ",
+  "noNetworkMatches": "ບໍ່ມີເຄືອຂ່າຍທີ່ກົງກັນ",
+  "networkSearchIsOff": "ການຊອກຫາເຄືອຂ່າຍປິດຢູ່. ເປີດໃຊ້ມັນຢູ່ໃນການຕັ້ງຄ່າ.",
+  "network": "ເຄືອຂ່າຍ",
+  "networkMatch": "ການຈັບຄູ່ເຄືອຂ່າຍ",
+  "noSearchHistory": "ບໍ່ມີປະຫວັດການຄົ້ນຫາ",
+  "searchHistory": "ປະຫວັດການຄົ້ນຫາ",
+  "invalidLink": "ລິ້ງບໍ່ຖືກຕ້ອງ",
+  "unableToOpenWebPage": "ບໍ່ສາມາດເປີດຫນ້າເວັບໄດ້",
+  "imageMemory": "[ຄວາມ​ຊົງ​ຈໍາ​ຮູບ​ພາບ​]",
+  "tapToOpenWebPage": "ແຕະເພື່ອເປີດໜ້າເວັບ",
+  "editEntry": "ແກ້ໄຂການເຂົ້າ",
+  "entryDetails": "ລາຍລະອຽດການເຂົ້າ",
+  "noContent": "ບໍ່ມີເນື້ອຫາ",
+  "diaryNotFound": "ບໍ່ພົບ Diary",
+  "diaryNotFoundShort": "ບໍ່ພົບບັນທຶກ",
+  "aiSummary": "ບົດສະຫຼຸບ AI",
+  "microphoneInterrupted": "ໄມໂຄຣໂຟນຖືກລົບກວນ, ການບັນທຶກຢຸດ.",
+  "bold": "ກ້າຫານ",
+  "italic": "ຕົວອຽງ",
+  "strikethrough": "ບຸກທະລຸ",
+  "image": "ຮູບພາບ",
+  "asrUnavailableRecordingActive": "ASR ບໍ່ສາມາດໃຊ້ໄດ້. ການບັນທຶກຍັງເຮັດວຽກຢູ່.",
+  "writeYourEntry": "ຂຽນບົດບັນທຶກຂອງທ່ານ ...",
+  "writeYourContent": "ຂຽນເນື້ອຫາຂອງທ່ານ...",
+  "microphoneStartFailed": "ເລີ່ມໄມໂຄຣໂຟນບໍ່ສຳເລັດ: {error}",
+  "microphoneInterruptedRecordingStopped": "ໄມໂຄຣໂຟນຖືກລົບກວນ, ການບັນທຶກຢຸດ.",
+  "asrReconnectingError": "ASR ກຳລັງເຊື່ອມຕໍ່ຄືນໃໝ່: {error}",
+  "imageInserted": "ໃສ່ຮູບແລ້ວ: {name}",
+  "voiceError": "ຄວາມຜິດພາດທາງສຽງ: {error}",
+  "aiServiceUnavailable": "ຂໍອະໄພ, ບໍລິການ AI ບໍ່ສາມາດໃຊ້ໄດ້ໃນຂະນະນີ້: {error}",
+  "shareFailed": "ແບ່ງປັນບໍ່ສຳເລັດ: {error}",
+  "searchMatchHits": "{matchType} · {count} hits",
+  "matchCount": "ກົງກັນ: {count}",
+  "sourceFromNetwork": "ທີ່ມາ: {source}",
+  "createNew": "ສ້າງ",
+  "micStartFailed": "ເລີ່ມໄມບໍ່ສຳເລັດ: {error}",
+  "importResultAccounts": "ບັນຊີ: +{created} / ອັບເດດ {updated}",
+  "importResultDiaries": "Diaries: +{created} / ອັບເດດ {updated}",
+  "importResultReminders": "ການແຈ້ງເຕືອນ: +{created} / ອັບເດດ {updated}",
+  "importResultSkipped": "ຂ້າມ: {count}",
+  "importResultTotal": "ປ່ຽນແປງທັງໝົດ: {count}",
+  "settingsApplied": "ນຳໃຊ້ການຕັ້ງຄ່າໃນການສຳຮອງຂໍ້ມູນ.",
+  "settingsNotApplied": "ການຕັ້ງຄ່າໃນການສຳຮອງຂໍ້ມູນບໍ່ໄດ້ນຳໃຊ້.",
+  "backupExported": "ສົ່ງອອກສຳຮອງ: {path}",
+  "exportFailed": "ສົ່ງອອກລົ້ມເຫລວ: {error}",
+  "importFailed": "ການນຳເຂົ້າລົ້ມເຫລວ: {error}"
+}

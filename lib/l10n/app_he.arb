@@ -1,0 +1,351 @@
+{
+  "@@locale": "he",
+  "languageName": "עברית",
+  "languageNameEn": "Hebrew",
+  "appTitle": "Shiguang",
+  "@appTitle": {
+    "description": "שם האפליקציה"
+  },
+
+  "settings": "הגדרות",
+  "account": "חשבון",
+  "reminders": "תזכורות",
+  "language": "שפה",
+  "appLanguage": "שפת האפליקציה",
+  "appearance": "מראה",
+  "themeMode": "מצב ערכת נושא",
+  "dark": "כהה",
+  "light": "בהיר",
+  "system": "מערכת",
+  "aiService": "שירות AI",
+  "aiChatProvider": "ספק צ'אט AI",
+  "chatModel": "מודל צ'אט",
+  "localModel": "מודל מקומי",
+  "localModelDefault": "מודל מקומי (ברירת מחדל)",
+  "ollamaEndpoint": "נקודת קצה Ollama",
+  "ollamaModel": "מודל Ollama",
+  "openAiEndpoint": "נקודת קצה OpenAI",
+  "openAiApiKey": "מפתח API OpenAI",
+  "openAiModel": "מודל OpenAI",
+  "geminiEndpoint": "נקודת קצה Gemini",
+  "geminiApiKey": "מפתח API Gemini",
+  "geminiModel": "מודל Gemini",
+  "anthropicEndpoint": "נקודת קצה Anthropic",
+  "anthropicApiKey": "מפתח API Anthropic",
+  "anthropicModel": "מודל Anthropic",
+  "customProtocol": "פרוטוקול מותאם",
+  "protocol": "פרוטוקול",
+  "customEndpoint": "נקודת קצה מותאמת",
+  "customApiKey": "מפתח API מותאם",
+  "customModel": "מודל מותאם",
+  "optionalForLocalServers": "אופציונלי עבור שרתים מקומיים/מותאמים",
+  "speechRecognitionEngine": "מנוע זיהוי דיבור",
+  "local": "מקומי",
+  "endpoint": "נקודת קצה",
+  "localSpeechModel": "מודל דיבור מקומי",
+  "senseVoiceOnnx": "SenseVoice ONNX (במכשיר)",
+  "systemSpeechRecognition": "זיהוי דיבור של המערכת",
+  "systemRecognitionAndroidIos": "זיהוי מערכת (Android/iOS)",
+  "endpointRecognitionCloudWs": "זיהוי נקודת קצה (Cloud/WS)",
+  "useBuiltInRecognizer": "השתמש בזיהוי המובנה של Android/iOS (עשוי להשתמש בענן)",
+  "voiceAiEndpoint": "נקודת קצה Voice AI",
+  "embeddingModel": "מודל Embedding",
+  "crossDeviceSync": "סנכרון בין מכשירים",
+  "sendToOtherDevices": "שלח למכשירים אחרים (LocalSend)",
+  "exportBackupAndSend": "ייצא גיבוי ושלח דרך שיתוף",
+  "importFromLocalSend": "ייבא מ-LocalSend",
+  "selectBackupJson": "בחר גיבוי JSON ומזג נתונים מקומיים",
+  "autoGeneration": "יצירה אוטומטית",
+  "autoGenerateSummary": "צור סיכום אוטומטי",
+  "generateAiSummaryForNewEntries": "צור סיכום AI עבור ערכים חדשים",
+  "autoGenerateEmbedding": "צור Embedding אוטומטי",
+  "generateVectorEmbedding": "צור הטמעה וקטורית לחיפוש",
+  "enableNetworkSearch": "אפשר חיפוש ברשת",
+  "allowOnlineRetrieval": "אפשר שליפה מקוונת לחיפוש וצ'אט AI (כבוי כברירת מחדל)",
+  "about": "אודות",
+  "version": "גרסה {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "database": "מסד נתונים",
+  "objectBoxWithHnsw": "ObjectBox עם אינדקס HNSW",
+  "logOut": "התנתק",
+  "custom": "מותאם",
+  "openAiCompatible": "תואם OpenAI",
+  "notSet": "לא הוגדר",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... או http://127.0.0.1:11434",
+  "supportsLocalLanPublic": "תומך בנקודות קצה מקומיות/LAN/ציבוריות",
+  "shiguangLocalSendBackup": "גיבוי LocalSend של Shiguang",
+  "localBackupFromShiguang": "גיבוי מקומי מ-Shiguang (קבל דרך LocalSend)",
+  "selectBackupFileFromLocalSend": "בחר קובץ גיבוי שהתקבל מ-LocalSend",
+  "failedToResolveFilePath": "נכשל בפתרון נתיב הקובץ שנבחר",
+  "importOptions": "אפשרויות ייבוא",
+  "importSettingsAsWell": "לייבא גם הגדרות?\n(מפתחות API לא יידרסו)",
+  "dataOnly": "נתונים בלבד",
+  "dataAndSettings": "נתונים + הגדרות",
+  "importCompleted": "הייבוא הושלם",
+  "settingsInBackupWereApplied": "ההגדרות מהגיבוי הוחלו.",
+  "settingsInBackupWereNotApplied": "ההגדרות מהגיבוי לא הוחלו.",
+  "ok": "אישור",
+  "cancel": "ביטול",
+  "save": "שמור",
+  "delete": "מחק",
+  "clear": "נקה",
+  "add": "הוסף",
+  "create": "צור",
+  "edit": "ערוך",
+  "search": "חפש",
+  "areYouSureYouWantToLogOut": "האם אתה בטוח שאתה רוצה להתנתק?",
+  "chooseLanguage": "בחר שפה",
+  "databaseInfo": "מידע על מסד הנתונים",
+  "storage": "אחסון: ObjectBox",
+  "vectorIndex": "אינדקס וקטורי: HNSW",
+  "dimensions": "ממדים: 384",
+  "embeddingModelBge": "מודל Embedding: bge-small-zh-v1.5",
+
+  "takePhoto": "צלם תמונה",
+  "chooseFromGallery": "בחר מהגלריה",
+  "editNickname": "ערוך כינוי",
+  "enterNickname": "הזן כינוי",
+  "pleaseEnterNickname": "אנא הזן כינוי",
+  "nicknameAlreadyExistsOrInvalid": "הכינוי כבר קיים או לא תקין",
+  "user": "משתמש",
+  "manageScheduledReminders": "נהל תזכורות ושעונים מתוכננים",
+
+  "imageFailedToLoad": "התמונה נכשלה בטעינה. אנא בחר שוב.",
+  "imageIsStillLoading": "התמונה עדיין נטענת",
+  "imageAreaNotReady": "אזור התמונה לא מוכן. אנא נסה שוב.",
+  "cropFrameNotReady": "מסגרת החיתוך לא מוכנה. אנא נסה שוב.",
+  "invalidCropArea": "אזור חיתוך לא תקין. אנא נסה שוב.",
+  "cropFailed": "החיתוך נכשל. אנא נסה שוב.",
+  "cropAvatar": "חתוך תמונת פרופיל",
+  "chooseAgain": "בחר שוב",
+  "rotate90": "סובב 90 מעלות",
+  "dragFrameToMove": "גרור את המסגרת להזזה, גרור את הפינה הימנית התחתונה לשינוי גודל; צביטה להתמקדות והזזת התמונה.",
+
+  "pleaseFillInAllFields": "אנא מלא את כל השדות",
+  "pinMustBeAtLeast4Digits": "ה-PIN חייב להכיל לפחות 4 ספרות",
+  "pinAtLeast4Digits": "ה-PIN חייב להכיל לפחות 4 ספרות",
+  "invalidUsernameOrPin": "שם משתמש או PIN לא תקין",
+  "invalidUsernameOrPinError": "שם משתמש או PIN לא תקין",
+  "usernameAlreadyExists": "שם המשתמש כבר קיים",
+  "captureMomentsKeepMemories": "לכדו רגעים, שמרו זיכרונות",
+  "username": "שם משתמש",
+  "pin": "PIN",
+  "login": "התחברות",
+  "createAccount": "צור חשבון",
+  "dontHaveAccountCreateOne": "אין לך חשבון? צור אחד",
+  "alreadyHaveAccountLogin": "יש לך כבר חשבון? התחבר",
+  "pleaseEnterUsername": "אנא הזן שם משתמש",
+  "pinsDoNotMatch": "ה-PINים לא תואמים",
+  "tapToAddAvatar": "הקש כדי להוסיף תמונת פרופיל",
+  "yourName": "השם שלך",
+  "privatePinOptional": "PIN פרטי (אופציונלי)",
+  "usedToEncryptPrivateRecords": "משמש להצפנת רשומות פרטיות",
+  "privatePin": "PIN פרטי",
+  "leaveEmptyForNoEncryption": "השאר ריק עבור ללא הצפנה",
+  "confirmPin": "אשר PIN",
+  "getStarted": "התחל",
+
+  "noReminders": "אין תזכורות",
+  "addReminder": "הוסף תזכורת",
+  "title": "כותרת",
+  "descriptionOptional": "תיאור (אופציונלי)",
+  "microphonePermissionRequired": "נדרשת הרשאת מיקרופון",
+
+  "aiAssistant": "עוזר AI",
+  "listening": "מקשיב...",
+  "typeAMessage": "הקלד הודעה...",
+  "aiChat": "צ'אט AI",
+  "startAConversation": "התחל שיחה",
+  "typeYourMessage": "הקלד את ההודעה שלך...",
+  "asrReconnecting": "ASR מתחבר מחדש...",
+  "write": "כתוב",
+  "writeEntry": "כתוב ערך",
+  "noMemoriesYet": "אין עדיין זיכרונות",
+  "tapPlusToCapture": "הקש על + כדי ללכוד את המחשבות שלך",
+  "tapPlusToCaptureYourThoughts": "הקש על + כדי ללכוד את המחשבות שלך",
+  "deleteMemory": "מחק זיכרון",
+  "deleteRecord": "מחק רשומה",
+  "thisEntryWillBeRemoved": "ערך זה יוסר מציר הזמן שלך.",
+  "thisRecordWillBeRemoved": "רשומה זו תוסר מציר הזמן שלך.",
+
+  "searchYourRecords": "חפש ברשומות שלך...",
+  "exactMatches": "התאמות מדויקות",
+  "noExactMatches": "אין התאמות מדויקות",
+  "exact": "מדויק",
+  "exactMatch": "התאמה מדויקת",
+  "fuzzyMatches": "התאמות מקורבות",
+  "noFuzzyMatches": "אין התאמות מקורבות",
+  "vectorMatch": "התאמה וקטורית",
+  "networkMatches": "התאמות רשת",
+  "noNetworkMatches": "אין התאמות רשת",
+  "networkSearchIsOff": "חיפוש ברשת כבוי. הפעל אותו בהגדרות.",
+  "network": "רשת",
+  "networkMatch": "התאמת רשת",
+  "noSearchHistory": "אין היסטוריית חיפוש",
+  "searchHistory": "היסטוריית חיפוש",
+
+  "invalidLink": "קישור לא תקין",
+  "unableToOpenWebPage": "לא ניתן לפתוח דף אינטרנט",
+  "imageMemory": "[זיכרון תמונה]",
+  "tapToOpenWebPage": "הקש כדי לפתוח דף אינטרנט",
+  "editEntry": "ערוך ערך",
+  "entryDetails": "פרטי ערך",
+  "noContent": "אין תוכן",
+  "diaryNotFound": "יומן לא נמצא",
+  "diaryNotFoundShort": "רשומה לא נמצאה",
+  "aiSummary": "סיכום AI",
+  "microphoneInterrupted": "המיקרופון נקטע, ההקלטה נעצרה.",
+
+  "bold": "מודגש",
+  "italic": "נטוי",
+  "strikethrough": "קו חוצה",
+  "image": "תמונה",
+  "asrUnavailableRecordingActive": "ASR לא זמין. ההקלטה עדיין פעילה.",
+  "writeYourEntry": "כתוב את הערך שלך...",
+  "writeYourContent": "כתוב את התוכן שלך...",
+
+  "microphoneStartFailed": "נכשל בהפעלת המיקרופון: {error}",
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "microphoneInterruptedRecordingStopped": "המיקרופון נקטע, ההקלטה נעצרה.",
+  "asrReconnectingError": "ASR מתחבר מחדש: {error}",
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "imageInserted": "תמונה הוכנסה: {name}",
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "voiceError": "שגיאת קול: {error}",
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "aiServiceUnavailable": "מצטערים, שירות AI אינו זמין כרגע: {error}",
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareFailed": "נכשל בשיתוף: {error}",
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "searchMatchHits": "{matchType} - {count} תוצאות",
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "matchCount": "התאמה: {count}",
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sourceFromNetwork": "מקור: {source}",
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "createNew": "צור",
+  "micStartFailed": "נכשל בהפעלת המיקרופון: {error}",
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importResultAccounts": "חשבונות: +{created} / עודכנו {updated}",
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {"type": "int"},
+      "updated": {"type": "int"}
+    }
+  },
+  "importResultDiaries": "יומנים: +{created} / עודכנו {updated}",
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {"type": "int"},
+      "updated": {"type": "int"}
+    }
+  },
+  "importResultReminders": "תזכורות: +{created} / עודכנו {updated}",
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {"type": "int"},
+      "updated": {"type": "int"}
+    }
+  },
+  "importResultSkipped": "דולגו: {count}",
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "importResultTotal": "סה\"כ שונה: {count}",
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "settingsApplied": "ההגדרות מהגיבוי הוחלו.",
+  "settingsNotApplied": "ההגדרות מהגיבוי לא הוחלו.",
+  "backupExported": "הגיבוי יוצא: {path}",
+  "@backupExported": {
+    "placeholders": {
+      "path": {"type": "String"}
+    }
+  },
+  "exportFailed": "הייצוא נכשל: {error}",
+  "@exportFailed": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "importFailed": "הייבוא נכשל: {error}",
+  "@importFailed": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  }
+}

@@ -1,0 +1,363 @@
+{
+  "@@locale": "qu",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Runasimi",
+  "languageNameEn": "Quechua",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Ajustes",
+  "account": "Cuenta",
+  "reminders": "Recordatorios",
+  "language": "Idioma",
+  "appLanguage": "Idioma de la aplicación",
+  "appearance": "Apariencia",
+  "themeMode": "Modo temático",
+  "dark": "Oscuro",
+  "light": "Luz",
+  "system": "Sistema",
+  "aiService": "Servicio de IA",
+  "aiChatProvider": "Proveedor de chat de IA",
+  "chatModel": "Modelo de chat",
+  "localModel": "Modelo local",
+  "localModelDefault": "Modelo local (predeterminado)",
+  "ollamaEndpoint": "Punto final de Ollama",
+  "ollamaModel": "Modelo Ollama",
+  "openAiEndpoint": "Punto final OpenAI",
+  "openAiApiKey": "Clave API de OpenAI",
+  "openAiModel": "Modelo abierto de IA",
+  "geminiEndpoint": "Punto final de Géminis",
+  "geminiApiKey": "Clave API de Géminis",
+  "geminiModel": "Modelos Géminis",
+  "anthropicEndpoint": "Punto final antrópico",
+  "anthropicApiKey": "Clave API antrópica",
+  "anthropicModel": "Modelo antrópico",
+  "customProtocol": "Protocolo personalizado",
+  "protocol": "Protocolo",
+  "customEndpoint": "Punto final personalizado",
+  "customApiKey": "Clave API personalizada",
+  "customModel": "Modelo personalizado",
+  "optionalForLocalServers": "Opcional para servidores locales/personalizados",
+  "speechRecognitionEngine": "Motor de reconocimiento de voz",
+  "local": "Local",
+  "endpoint": "Punto final",
+  "localSpeechModel": "Modelo de habla local",
+  "senseVoiceOnnx": "SenseVoice ONNX (en el dispositivo)",
+  "systemSpeechRecognition": "Sistema de reconocimiento de voz",
+  "systemRecognitionAndroidIos": "Reconocimiento del sistema (Android/iOS)",
+  "endpointRecognitionCloudWs": "Reconocimiento de terminales (nube/WS)",
+  "useBuiltInRecognizer": "Utilice el reconocedor integrado de Android/iOS (puede utilizar la nube)",
+  "voiceAiEndpoint": "Punto final de IA de voz",
+  "embeddingModel": "Modelo de incrustación",
+  "crossDeviceSync": "Sincronización entre dispositivos",
+  "sendToOtherDevices": "Enviar a otros dispositivos (LocalSend)",
+  "exportBackupAndSend": "Exportar copia de seguridad y enviar mediante hoja compartida",
+  "importFromLocalSend": "Importar desde LocalSend",
+  "selectBackupJson": "Seleccione la copia de seguridad JSON y combine los datos locales",
+  "autoGeneration": "Generación automática",
+  "autoGenerateSummary": "Resumen de generación automática",
+  "generateAiSummaryForNewEntries": "Generar resumen de IA para nuevas entradas",
+  "autoGenerateEmbedding": "Generar automáticamente incrustación",
+  "generateVectorEmbedding": "Generar incrustación de vectores para búsqueda",
+  "enableNetworkSearch": "Habilitar búsqueda de red",
+  "allowOnlineRetrieval": "Permitir la recuperación en línea para búsqueda y chat AI (desactivado de forma predeterminada)",
+  "about": "Acerca de",
+  "version": "Versión {version}",
+  "database": "Base de datos",
+  "objectBoxWithHnsw": "ObjectBox con índice HNSW",
+  "logOut": "Finalizar la sesión",
+  "custom": "Costumbre",
+  "openAiCompatible": "Compatible con OpenAI",
+  "notSet": "No establecido",
+  "supportsLocalLanPublic": "Admite puntos finales locales/LAN/públicos",
+  "shiguangLocalSendBackup": "Copia de seguridad de Shiguang LocalSend",
+  "localBackupFromShiguang": "Copia de seguridad local de Shiguang (recibir a través de LocalSend)",
+  "selectBackupFileFromLocalSend": "Seleccione el archivo de copia de seguridad recibido de LocalSend",
+  "failedToResolveFilePath": "No se pudo resolver la ruta del archivo seleccionado",
+  "importOptions": "Opciones de importación",
+  "importSettingsAsWell": "¿Importar configuraciones también?\n(Las claves API no se sobrescribirán)",
+  "dataOnly": "Sólo datos",
+  "dataAndSettings": "Datos + Configuración",
+  "importCompleted": "Importación completada",
+  "settingsInBackupWereApplied": "Se aplicaron las configuraciones en la copia de seguridad.",
+  "settingsInBackupWereNotApplied": "No se aplicaron las configuraciones en la copia de seguridad.",
+  "ok": "DE ACUERDO",
+  "cancel": "Cancelar",
+  "save": "Ahorrar",
+  "delete": "Borrar",
+  "clear": "Claro",
+  "add": "Agregar",
+  "create": "Crear",
+  "edit": "Editar",
+  "search": "Buscar",
+  "areYouSureYouWantToLogOut": "¿Está seguro de que desea cerrar sesión?",
+  "chooseLanguage": "Elija idioma",
+  "databaseInfo": "Información de la base de datos",
+  "storage": "Almacenamiento: Caja de objetos",
+  "vectorIndex": "Índice de vectores: HNSW",
+  "dimensions": "Dimensiones: 384",
+  "embeddingModelBge": "Modelo de incrustación: bge-small-zh-v1.5",
+  "takePhoto": "tomar foto",
+  "chooseFromGallery": "Elige de la galería",
+  "editNickname": "Editar apodo",
+  "enterNickname": "Introduce el apodo",
+  "pleaseEnterNickname": "Por favor ingresa un apodo",
+  "nicknameAlreadyExistsOrInvalid": "El apodo ya existe o no es válido",
+  "user": "Usuario",
+  "manageScheduledReminders": "Gestionar recordatorios y alarmas programadas",
+  "imageFailedToLoad": "La imagen no se pudo cargar. Por favor elige de nuevo.",
+  "imageIsStillLoading": "La imagen aún se está cargando",
+  "imageAreaNotReady": "El área de la imagen no está lista. Por favor inténtalo de nuevo.",
+  "cropFrameNotReady": "El marco de recorte no está listo. Por favor inténtalo de nuevo.",
+  "invalidCropArea": "Área de cultivo no válida. Por favor inténtalo de nuevo.",
+  "cropFailed": "La cosecha falló. Por favor inténtalo de nuevo.",
+  "cropAvatar": "Avatar de cultivo",
+  "chooseAgain": "Elige de nuevo",
+  "rotate90": "Girar 90°",
+  "dragFrameToMove": "Arrastre el marco para moverlo, arrastre hacia abajo a la derecha para cambiar el tamaño; pellizcar para hacer zoom y mover la imagen.",
+  "pleaseFillInAllFields": "Por favor complete todos los campos",
+  "pinMustBeAtLeast4Digits": "El PIN debe tener al menos 4 dígitos",
+  "pinAtLeast4Digits": "El PIN debe tener al menos 4 dígitos",
+  "invalidUsernameOrPin": "Nombre de usuario o PIN no válido",
+  "invalidUsernameOrPinError": "Nombre de usuario o PIN no válido",
+  "usernameAlreadyExists": "El nombre de usuario ya existe",
+  "captureMomentsKeepMemories": "Captura momentos, guarda recuerdos",
+  "username": "Nombre de usuario",
+  "pin": "ALFILER",
+  "login": "Acceso",
+  "createAccount": "Crear una cuenta",
+  "dontHaveAccountCreateOne": "¿No tienes una cuenta? Crea uno",
+  "alreadyHaveAccountLogin": "¿Ya tienes una cuenta? Acceso",
+  "pleaseEnterUsername": "Por favor ingrese un nombre de usuario",
+  "pinsDoNotMatch": "Los PIN no coinciden",
+  "tapToAddAvatar": "Toca para agregar avatar",
+  "yourName": "Su nombre",
+  "privatePinOptional": "PIN privado (opcional)",
+  "usedToEncryptPrivateRecords": "Se utiliza para cifrar registros privados.",
+  "privatePin": "PIN privado",
+  "leaveEmptyForNoEncryption": "Déjelo vacío para no cifrar",
+  "confirmPin": "Confirmar PIN",
+  "getStarted": "Empezar",
+  "noReminders": "No reminders",
+  "addReminder": "Agregar recordatorio",
+  "title": "Título",
+  "descriptionOptional": "Descripción (opcional)",
+  "microphonePermissionRequired": "Se requiere permiso para el micrófono",
+  "aiAssistant": "Asistente de IA",
+  "listening": "Escuchando...",
+  "typeAMessage": "Escribe un mensaje...",
+  "aiChat": "Chat de IA",
+  "startAConversation": "iniciar una conversación",
+  "typeYourMessage": "Escribe tu mensaje...",
+  "asrReconnecting": "ASR reconectando...",
+  "write": "Escribir",
+  "writeEntry": "Escribir entrada",
+  "noMemoriesYet": "Aún no hay recuerdos",
+  "tapPlusToCapture": "Toca + para capturar tus pensamientos",
+  "tapPlusToCaptureYourThoughts": "Toca + para capturar tus pensamientos",
+  "deleteMemory": "Eliminar memoria",
+  "deleteRecord": "Eliminar registro",
+  "thisEntryWillBeRemoved": "Esta entrada será eliminada de tu línea de tiempo.",
+  "thisRecordWillBeRemoved": "Este registro se eliminará de su línea de tiempo.",
+  "searchYourRecords": "Busca en tus registros...",
+  "exactMatches": "Coincidencias exactas",
+  "noExactMatches": "No exact matches",
+  "exact": "Exacto",
+  "exactMatch": "Coincidencia exacta",
+  "fuzzyMatches": "Coincidencias difusas",
+  "noFuzzyMatches": "No hay coincidencias difusas",
+  "vectorMatch": "Coincidencia de vectores",
+  "networkMatches": "Coincidencias de red",
+  "noNetworkMatches": "No hay coincidencias de red",
+  "networkSearchIsOff": "La búsqueda de red está desactivada. Habilítelo en Configuración.",
+  "network": "Red",
+  "networkMatch": "Coincidencia de red",
+  "noSearchHistory": "Sin historial de búsqueda",
+  "searchHistory": "Historial de búsqueda",
+  "invalidLink": "Enlace no válido",
+  "unableToOpenWebPage": "No se puede abrir la página web",
+  "imageMemory": "[Memoria de imagen]",
+  "tapToOpenWebPage": "Toque para abrir la página web",
+  "editEntry": "Editar entrada",
+  "entryDetails": "Detalles de entrada",
+  "noContent": "Sin contenido",
+  "diaryNotFound": "Diario no encontrado",
+  "diaryNotFoundShort": "Registro no encontrado",
+  "aiSummary": "Resumen de IA",
+  "microphoneInterrupted": "Micrófono interrumpido, grabación detenida.",
+  "bold": "Atrevido",
+  "italic": "Itálico",
+  "strikethrough": "Tachado",
+  "image": "Imagen",
+  "asrUnavailableRecordingActive": "ASR no disponible. La grabación aún está activa.",
+  "writeYourEntry": "Escribe tu entrada...",
+  "writeYourContent": "Escribe tu contenido...",
+  "microphoneStartFailed": "No se pudo iniciar el micrófono: {error}",
+  "microphoneInterruptedRecordingStopped": "Micrófono interrumpido, grabación detenida.",
+  "asrReconnectingError": "ASR reconectándose: {error}",
+  "imageInserted": "Imagen insertada: {name}",
+  "voiceError": "Error de voz: {error}",
+  "aiServiceUnavailable": "Lo sentimos, el servicio de IA no está disponible actualmente: {error}",
+  "shareFailed": "No se pudo compartir: {error}",
+  "searchMatchHits": "{matchType} · {count} visitas",
+  "matchCount": "Coincidencia: {count}",
+  "sourceFromNetwork": "Fuente: {source}",
+  "createNew": "Crear",
+  "micStartFailed": "Error al iniciar el micrófono: {error}",
+  "importResultAccounts": "Cuentas: +{created} / actualizado {updated}",
+  "importResultDiaries": "Diarios: +{created} / actualizado {updated}",
+  "importResultReminders": "Recordatorios: +{created} / actualizado {updated}",
+  "importResultSkipped": "Omitido: {count}",
+  "importResultTotal": "Total cambiado: {count}",
+  "settingsApplied": "Se aplicaron las configuraciones en la copia de seguridad.",
+  "settingsNotApplied": "No se aplicaron las configuraciones en la copia de seguridad.",
+  "backupExported": "Copia de seguridad exportada: {path}",
+  "exportFailed": "Error al exportar: {error}",
+  "importFailed": "Error de importación: {error}"
+}

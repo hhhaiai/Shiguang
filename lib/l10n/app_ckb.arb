@@ -1,0 +1,363 @@
+{
+  "@@locale": "ckb",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "کوردی سۆرانی",
+  "languageNameEn": "Kurdish (Sorani)",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Settings",
+  "account": "Konto",
+  "reminders": "Reminders",
+  "language": "Ziman",
+  "appLanguage": "Ziman App",
+  "appearance": "Xuyabûnî",
+  "themeMode": "Moda Mijarê",
+  "dark": "Tarî",
+  "light": "Sivik",
+  "system": "Sîstem",
+  "aiService": "AI Service",
+  "aiChatProvider": "AI Chat Provider",
+  "chatModel": "Modela Chat",
+  "localModel": "Modela Herêmî",
+  "localModelDefault": "Modela Herêmî (Destpêk)",
+  "ollamaEndpoint": "Ollama Endpoint",
+  "ollamaModel": "Modela Olama",
+  "openAiEndpoint": "OpenAI Endpoint",
+  "openAiApiKey": "Mifteya API-ya OpenAI",
+  "openAiModel": "Modela OpenAI",
+  "geminiEndpoint": "Gemini Endpoint",
+  "geminiApiKey": "Bişkojka API-ê ya Gemini",
+  "geminiModel": "Modelên Gemini",
+  "anthropicEndpoint": "Anthropic Endpoint",
+  "anthropicApiKey": "Mifteya API-ya Antropîk",
+  "anthropicModel": "Modela Antropîk",
+  "customProtocol": "Protokola Custom",
+  "protocol": "Protokol",
+  "customEndpoint": "Endpoint Custom",
+  "customApiKey": "Mifteya API-ê ya Xweser",
+  "customModel": "Model Custom",
+  "optionalForLocalServers": "Ji bo pêşkêşkerên herêmî / xwerû vebijarkî",
+  "speechRecognitionEngine": "Motora naskirina axaftinê",
+  "local": "Herêmî",
+  "endpoint": "Endpoint",
+  "localSpeechModel": "Modela Axaftina Herêmî",
+  "senseVoiceOnnx": "SenseVoice ONNX (li ser cîhazê)",
+  "systemSpeechRecognition": "Naskirina Axaftina Pergalê",
+  "systemRecognitionAndroidIos": "Naskirina Pergalê (Android/iOS)",
+  "endpointRecognitionCloudWs": "Naskirina xala dawîn (Ewr/WS)",
+  "useBuiltInRecognizer": "Nasnameya Android / iOS-ê ya çêkirî bikar bînin (dibe ku ewr bikar bînin)",
+  "voiceAiEndpoint": "Deng AI Endpoint",
+  "embeddingModel": "Modela Embedding",
+  "crossDeviceSync": "Cross-Device Sync",
+  "sendToOtherDevices": "Bişîne Amûrên Din (LocalSend)",
+  "exportBackupAndSend": "Piştgiriyê derxînin û bi riya pelê parvekirinê bişînin",
+  "importFromLocalSend": "Import ji LocalSend",
+  "selectBackupJson": "JSON hilanînê hilbijêrin û daneyên herêmî bi hev re bikin",
+  "autoGeneration": "Auto Generation",
+  "autoGenerateSummary": "Xweseriya Xweseriya Xweseriyê",
+  "generateAiSummaryForNewEntries": "Ji bo navnîşên nû kurteya AI-ê biafirînin",
+  "autoGenerateEmbedding": "Veavakirina Xweserî Hilberîne",
+  "generateVectorEmbedding": "Ji bo lêgerînê vektora vektorê biafirînin",
+  "enableNetworkSearch": "Lêgerîna torê çalak bike",
+  "allowOnlineRetrieval": "Destûrê bide vegerandina serhêl ji bo lêgerîn û sohbeta AI (ji hêla xwerû veqetandî)",
+  "about": "Ji dor",
+  "version": "Guhertoya {version}",
+  "database": "Database",
+  "objectBoxWithHnsw": "ObjectBox bi index HNSW",
+  "logOut": "Derkeve",
+  "custom": "Hûnbunî",
+  "openAiCompatible": "OpenAI Compatible",
+  "notSet": "Not set",
+  "supportsLocalLanPublic": "Xalên dawî yên herêmî / LAN / gelemperî piştgirî dike",
+  "shiguangLocalSendBackup": "Backup Shiguang LocalSend",
+  "localBackupFromShiguang": "Piştgiriya herêmî ji Shiguang (bi navgîniya LocalSend bistînin)",
+  "selectBackupFileFromLocalSend": "Pelê hilanînê ku ji LocalSend hatî wergirtin hilbijêrin",
+  "failedToResolveFilePath": "Çareserkirina riya pelê hilbijartî bi ser neket",
+  "importOptions": "Vebijêrkên Import",
+  "importSettingsAsWell": "Mîhengên import jî?\n(Bişkojkên API-ê dê neyên nivîsandin)",
+  "dataOnly": "Daneyên Tenê",
+  "dataAndSettings": "Daneyên + Mîhengan",
+  "importCompleted": "Import Qediya",
+  "settingsInBackupWereApplied": "Mîhengên di hilanînê de hatin sepandin.",
+  "settingsInBackupWereNotApplied": "Mîhengên di hilanînê de nehatin sepandin.",
+  "ok": "OK",
+  "cancel": "Bişûndekirin",
+  "save": "Rizgarkirin",
+  "delete": "Jêbirin",
+  "clear": "Zelal",
+  "add": "Lêzêdekirin",
+  "create": "Xûliqandin",
+  "edit": "Weşandin",
+  "search": "Gerr",
+  "areYouSureYouWantToLogOut": "Ma tu bi rastî dixwazî ​​derkevî?",
+  "chooseLanguage": "Ziman hilbijêrin",
+  "databaseInfo": "Database Info",
+  "storage": "Storage: ObjectBox",
+  "vectorIndex": "Indeksa Vektor: HNSW",
+  "dimensions": "Pîvan: 384",
+  "embeddingModelBge": "Modela vegirtinê: bge-small-zh-v1.5",
+  "takePhoto": "Wêne bigirin",
+  "chooseFromGallery": "Ji Galeriyê hilbijêrin",
+  "editNickname": "Biguherîne Nasnav",
+  "enterNickname": "Nasnavê binivîse",
+  "pleaseEnterNickname": "Ji kerema xwe navekî binivîsin",
+  "nicknameAlreadyExistsOrInvalid": "Nasnav jixwe heye an nederbasdar e",
+  "user": "Bikaranîvan",
+  "manageScheduledReminders": "Bîranîn û alarmên plansazkirî birêve bibin",
+  "imageFailedToLoad": "Wêne nehat barkirin. Ji kerema xwe dîsa hilbijêre.",
+  "imageIsStillLoading": "Wêne hîn jî tê barkirin",
+  "imageAreaNotReady": "Qada wêneyê ne amade ye. Ji kerema xwe dîsa biceribîne.",
+  "cropFrameNotReady": "Çarçoveya çandiniyê ne amade ye. Ji kerema xwe dîsa biceribîne.",
+  "invalidCropArea": "Qada çandina nederbasdar. Ji kerema xwe dîsa biceribîne.",
+  "cropFailed": "Crop têk çû. Ji kerema xwe dîsa biceribîne.",
+  "cropAvatar": "Crop Avatar",
+  "chooseAgain": "Dîsa Hilbijêre",
+  "rotate90": "Bizivirîne 90°",
+  "dragFrameToMove": "Çarçoveyê kaş bikin da ku biguhezînin, ji bo mezinbûnê li jêr-rastê kaş bikin; pêç bikin ku wêneyê mezin bikin û biguhezînin.",
+  "pleaseFillInAllFields": "Ji kerema xwe hemû qadan dagirin",
+  "pinMustBeAtLeast4Digits": "PIN divê herî kêm 4 jimar be",
+  "pinAtLeast4Digits": "PIN divê herî kêm 4 jimar be",
+  "invalidUsernameOrPin": "Navê bikarhêner an PIN nederbasdar e",
+  "invalidUsernameOrPinError": "Navê bikarhêner an PIN nederbasdar e",
+  "usernameAlreadyExists": "Ev nav tê bikaranîn",
+  "captureMomentsKeepMemories": "Deqan bikişîne, bîranînan biparêze",
+  "username": "Navê bikarhêner",
+  "pin": "DERZÎ",
+  "login": "Login",
+  "createAccount": "Hesab biafirîne",
+  "dontHaveAccountCreateOne": "Hesabê we tune? Yek çêbikin",
+  "alreadyHaveAccountLogin": "Jixwe hesabek heye? Login",
+  "pleaseEnterUsername": "Ji kerema xwe navekî bikarhêner binivîse",
+  "pinsDoNotMatch": "PIN li hev nakin",
+  "tapToAddAvatar": "Ji bo lê zêdekirina avatarê bikirtînin",
+  "yourName": "Navê te",
+  "privatePinOptional": "PIN-a taybet (vebijarkî)",
+  "usedToEncryptPrivateRecords": "Ji bo şîfrekirina tomarên taybet tê bikar anîn",
+  "privatePin": "PIN taybet",
+  "leaveEmptyForNoEncryption": "Ji bo tu şîfrekirinê vala bihêlin",
+  "confirmPin": "PIN-ê piştrast bikin",
+  "getStarted": "Dest pê bike",
+  "noReminders": "Bê bîranîn",
+  "addReminder": "Bîranîn lê zêde bike",
+  "title": "Nav",
+  "descriptionOptional": "Danasîn (vebijarkî)",
+  "microphonePermissionRequired": "Destûra mîkrofonê pêwîst e",
+  "aiAssistant": "Alîkarê AI",
+  "listening": "Guhdarîkirin...",
+  "typeAMessage": "Peyamek binivîse...",
+  "aiChat": "AI Chat",
+  "startAConversation": "Axaftinek dest pê bikin",
+  "typeYourMessage": "Peyama xwe binivîse...",
+  "asrReconnecting": "ASR ji nû ve tê girêdan...",
+  "write": "Nivîsîn",
+  "writeEntry": "Têketinê binivîse",
+  "noMemoriesYet": "Bîranîn tune",
+  "tapPlusToCapture": "Bikirtînin + da ku ramanên xwe bigirin",
+  "tapPlusToCaptureYourThoughts": "Bikirtînin + da ku ramanên xwe bigirin",
+  "deleteMemory": "Bîra jêbirin",
+  "deleteRecord": "Record jêbirin",
+  "thisEntryWillBeRemoved": "Ev têketin dê ji rêzika we were rakirin.",
+  "thisRecordWillBeRemoved": "Ev tomar dê ji rêzika we were rakirin.",
+  "searchYourRecords": "Li tomarên xwe bigerin...",
+  "exactMatches": "Maçên Rast",
+  "noExactMatches": "Maçên rast tune",
+  "exact": "Tam",
+  "exactMatch": "Maça Rast",
+  "fuzzyMatches": "Matches Fuzzy",
+  "noFuzzyMatches": "No maçên fuzzy",
+  "vectorMatch": "Vector Match",
+  "networkMatches": "Maçên Torê",
+  "noNetworkMatches": "No maçên torê",
+  "networkSearchIsOff": "Lêgerîna torê qut e. Di Mîhengan de çalak bike.",
+  "network": "Network",
+  "networkMatch": "Tora Match",
+  "noSearchHistory": "Dîroka lêgerînê tune",
+  "searchHistory": "Dîroka Lêgerînê",
+  "invalidLink": "Girêdana nederbasdar",
+  "unableToOpenWebPage": "Nikare rûpela malperê veke",
+  "imageMemory": "[bîra wêneyê]",
+  "tapToOpenWebPage": "Ji bo vekirina rûpela malperê bikirtînin",
+  "editEntry": "Edit Entry",
+  "entryDetails": "Details Entry",
+  "noContent": "Naverok tune",
+  "diaryNotFound": "Rojnivîsk nehat dîtin",
+  "diaryNotFoundShort": "Qeyd nehat dîtin",
+  "aiSummary": "AI Summary",
+  "microphoneInterrupted": "Mîkrofon qut bû, tomar rawestiya.",
+  "bold": "Hesabî",
+  "italic": "Îtalîk",
+  "strikethrough": "Strikethrough",
+  "image": "Wêne",
+  "asrUnavailableRecordingActive": "ASR ne berdest e. Tomarkirin hîn çalak e.",
+  "writeYourEntry": "Têketina xwe binivîsin...",
+  "writeYourContent": "Naveroka xwe binivîsin...",
+  "microphoneStartFailed": "Mîkrofon dest pê nekir: {error}",
+  "microphoneInterruptedRecordingStopped": "Mîkrofon qut bû, tomar rawestiya.",
+  "asrReconnectingError": "ASR ji nû ve tê girêdan: {error}",
+  "imageInserted": "Wêneyê têxe: {name}",
+  "voiceError": "Çewtiya deng: {error}",
+  "aiServiceUnavailable": "Bibore, karûbarê AI-ê niha ne berdest e: {error}",
+  "shareFailed": "Parvekirin têkçû: {error}",
+  "searchMatchHits": "{matchType} · {count} lêdan",
+  "matchCount": "Maç: {count}",
+  "sourceFromNetwork": "Çavkanî: {source}",
+  "createNew": "Xûliqandin",
+  "micStartFailed": "Destpêka mîkrofê têk çû: {error}",
+  "importResultAccounts": "Hesab: +{created} / nûkirin {updated}",
+  "importResultDiaries": "Rojnivîsk: +{created} / nûkirin {updated}",
+  "importResultReminders": "Bîranîn: +{created} / nûkirin {updated}",
+  "importResultSkipped": "Derket: {count}",
+  "importResultTotal": "Tevahiya guhertin: {count}",
+  "settingsApplied": "Mîhengên di hilanînê de hatin sepandin.",
+  "settingsNotApplied": "Mîhengên di hilanînê de nehatin sepandin.",
+  "backupExported": "Backup hat hinartin: {path}",
+  "exportFailed": "Hinardekirin têk çû: {error}",
+  "importFailed": "Import têk çû: {error}"
+}

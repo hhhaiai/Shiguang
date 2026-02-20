@@ -1,0 +1,363 @@
+{
+  "@@locale": "jv",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Basa Jawa",
+  "languageNameEn": "Javanese",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Setelan",
+  "account": "Akun",
+  "reminders": "Pangeling-eling",
+  "language": "Basa",
+  "appLanguage": "Basa App",
+  "appearance": "Penampilan",
+  "themeMode": "Mode Tema",
+  "dark": "peteng",
+  "light": "cahya",
+  "system": "Sistem",
+  "aiService": "Layanan AI",
+  "aiChatProvider": "AI Chat Provider",
+  "chatModel": "Model Chat",
+  "localModel": "Model Lokal",
+  "localModelDefault": "Model Lokal (Default)",
+  "ollamaEndpoint": "Ollama Endpoint",
+  "ollamaModel": "Model Olam",
+  "openAiEndpoint": "OpenAI Endpoint",
+  "openAiApiKey": "Kunci API OpenAI",
+  "openAiModel": "Model OpenAI",
+  "geminiEndpoint": "Gemini Endpoint",
+  "geminiApiKey": "Gemini API Key",
+  "geminiModel": "Model Gemini",
+  "anthropicEndpoint": "Titik Akhir Antropik",
+  "anthropicApiKey": "Kunci API Antropik",
+  "anthropicModel": "Model Antropologi",
+  "customProtocol": "Protokol Kustom",
+  "protocol": "Protokol",
+  "customEndpoint": "Custom Endpoint",
+  "customApiKey": "Custom API Key",
+  "customModel": "Model Custom",
+  "optionalForLocalServers": "Opsional kanggo server lokal / khusus",
+  "speechRecognitionEngine": "Speech Recognition Engine",
+  "local": "Lokal",
+  "endpoint": "Titik pungkasan",
+  "localSpeechModel": "Model Wicara Lokal",
+  "senseVoiceOnnx": "SenseVoice ONNX (ing piranti)",
+  "systemSpeechRecognition": "Sistem Pangenalan Wicara",
+  "systemRecognitionAndroidIos": "Pangenalan Sistem (Android/iOS)",
+  "endpointRecognitionCloudWs": "Pangenalan Titik Akhir (Cloud/WS)",
+  "useBuiltInRecognizer": "Gunakake pangenalan Android / iOS sing dibangun (bisa uga nggunakake awan)",
+  "voiceAiEndpoint": "Voice AI Endpoint",
+  "embeddingModel": "Model Embedding",
+  "crossDeviceSync": "Sinkronisasi lintas-piranti",
+  "sendToOtherDevices": "Kirim menyang Piranti Liyane (LocalSend)",
+  "exportBackupAndSend": "Ekspor serep lan kirim liwat sheet nuduhake",
+  "importFromLocalSend": "Impor saka LocalSend",
+  "selectBackupJson": "Pilih serep JSON lan gabungke data lokal",
+  "autoGeneration": "Generasi otomatis",
+  "autoGenerateSummary": "Auto Generate Ringkesan",
+  "generateAiSummaryForNewEntries": "Gawe ringkesan AI kanggo entri anyar",
+  "autoGenerateEmbedding": "Auto Generate Embedding",
+  "generateVectorEmbedding": "Gawe semat vektor kanggo telusuran",
+  "enableNetworkSearch": "Aktifake Panelusuran Jaringan",
+  "allowOnlineRetrieval": "Ngidini goleki online kanggo telusuran lan obrolan AI (mateni standar)",
+  "about": "Babagan",
+  "version": "Versi {version}",
+  "database": "Database",
+  "objectBoxWithHnsw": "ObjectBox kanthi indeks HNSW",
+  "logOut": "Log Out",
+  "custom": "adat",
+  "openAiCompatible": "Kompatibel OpenAI",
+  "notSet": "Ora disetel",
+  "supportsLocalLanPublic": "Mendukung endpoint lokal/LAN/publik",
+  "shiguangLocalSendBackup": "Shiguang LocalSend Backup",
+  "localBackupFromShiguang": "Cadangan lokal saka Shiguang (nampa liwat LocalSend)",
+  "selectBackupFileFromLocalSend": "Pilih file serep sing ditampa saka LocalSend",
+  "failedToResolveFilePath": "Gagal ngrampungake path file sing dipilih",
+  "importOptions": "Pilihan Impor",
+  "importSettingsAsWell": "Setelan impor uga?\n(Kunci API ora bakal ditimpa)",
+  "dataOnly": "Mung Data",
+  "dataAndSettings": "Data + Setelan",
+  "importCompleted": "Impor Rampung",
+  "settingsInBackupWereApplied": "Setelan ing serep ditrapake.",
+  "settingsInBackupWereNotApplied": "Setelan ing serep ora ditrapake.",
+  "ok": "OK",
+  "cancel": "Batal",
+  "save": "Simpen",
+  "delete": "Mbusak",
+  "clear": "Cetha",
+  "add": "Tambah",
+  "create": "Nggawe",
+  "edit": "Sunting",
+  "search": "Nggoleki",
+  "areYouSureYouWantToLogOut": "Apa sampeyan yakin arep metu?",
+  "chooseLanguage": "Pilih Basa",
+  "databaseInfo": "Informasi Database",
+  "storage": "Panyimpenan: ObjectBox",
+  "vectorIndex": "Indeks Vektor: HNSW",
+  "dimensions": "Ukuran: 384",
+  "embeddingModelBge": "Model Semat: bge-cilik-zh-v1.5",
+  "takePhoto": "Njupuk Foto",
+  "chooseFromGallery": "Pilih saka Galeri",
+  "editNickname": "Sunting Nickname",
+  "enterNickname": "Ketik jeneng celukan",
+  "pleaseEnterNickname": "Mangga ketik celukan",
+  "nicknameAlreadyExistsOrInvalid": "Jeneng julukan wis ana utawa ora sah",
+  "user": "panganggo",
+  "manageScheduledReminders": "Ngatur pangeling lan weker sing wis dijadwal",
+  "imageFailedToLoad": "Gambar gagal dimuat. Mangga milih maneh.",
+  "imageIsStillLoading": "Gambar isih dimuat",
+  "imageAreaNotReady": "Area gambar durung siyap. Coba maneh.",
+  "cropFrameNotReady": "Bingkai potong durung siap. Coba maneh.",
+  "invalidCropArea": "Area pamotongan ora sah. Coba maneh.",
+  "cropFailed": "Potong gagal. Coba maneh.",
+  "cropAvatar": "Potong Avatar",
+  "chooseAgain": "Pilih maneh",
+  "rotate90": "Puter 90 °",
+  "dragFrameToMove": "Seret pigura kanggo mindhah, seret ngisor-tengen kanggo ngowahi ukuran; jiwitake kanggo nggedhekake lan mindhah gambar.",
+  "pleaseFillInAllFields": "Mangga isi kabeh kolom",
+  "pinMustBeAtLeast4Digits": "PIN kudu paling sethithik 4 digit",
+  "pinAtLeast4Digits": "PIN kudu paling sethithik 4 digit",
+  "invalidUsernameOrPin": "Jeneng pangguna utawa PIN ora bener",
+  "invalidUsernameOrPinError": "Jeneng pangguna utawa PIN ora bener",
+  "usernameAlreadyExists": "Jeneng pangguna wis ana",
+  "captureMomentsKeepMemories": "Abadikan momen, simpen kenangan",
+  "username": "Jeneng panganggo",
+  "pin": "PIN",
+  "login": "mlebu",
+  "createAccount": "Nggawe Akun",
+  "dontHaveAccountCreateOne": "Ora duwe akun? Nggawe siji",
+  "alreadyHaveAccountLogin": "Wis duwe akun? mlebu",
+  "pleaseEnterUsername": "Mangga ketik jeneng panganggo",
+  "pinsDoNotMatch": "PIN ora cocog",
+  "tapToAddAvatar": "Tutul kanggo nambah avatar",
+  "yourName": "Jenengmu",
+  "privatePinOptional": "PIN pribadi (opsional)",
+  "usedToEncryptPrivateRecords": "Digunakake kanggo encrypt cathetan pribadi",
+  "privatePin": "PIN pribadi",
+  "leaveEmptyForNoEncryption": "Ninggalake kosong kanggo ora ana enkripsi",
+  "confirmPin": "Konfirmasi PIN",
+  "getStarted": "Miwiti",
+  "noReminders": "Ora ana pangeling",
+  "addReminder": "Tambah Pangeling",
+  "title": "judhul",
+  "descriptionOptional": "Deskripsi (opsional)",
+  "microphonePermissionRequired": "Ijin mikropon dibutuhake",
+  "aiAssistant": "Asisten AI",
+  "listening": "Ngrungokake...",
+  "typeAMessage": "Ketik pesen...",
+  "aiChat": "AI Chat",
+  "startAConversation": "Miwiti obrolan",
+  "typeYourMessage": "Ketik pesen sampeyan...",
+  "asrReconnecting": "ASR nyambung maneh...",
+  "write": "Tulis",
+  "writeEntry": "Tulis Entri",
+  "noMemoriesYet": "Durung kenangan",
+  "tapPlusToCapture": "Tutul + kanggo njupuk pikirane",
+  "tapPlusToCaptureYourThoughts": "Tutul + kanggo njupuk pikirane",
+  "deleteMemory": "Mbusak Memori",
+  "deleteRecord": "Mbusak Rekam",
+  "thisEntryWillBeRemoved": "Entri iki bakal dibusak saka timeline sampeyan.",
+  "thisRecordWillBeRemoved": "Rekaman iki bakal dibusak saka timeline sampeyan.",
+  "searchYourRecords": "Telusuri cathetan sampeyan ...",
+  "exactMatches": "Cocokake persis",
+  "noExactMatches": "Ora cocog persis",
+  "exact": "persis",
+  "exactMatch": "Cocokake Persis",
+  "fuzzyMatches": "Cocokake Fuzzy",
+  "noFuzzyMatches": "Ora cocog fuzzy",
+  "vectorMatch": "Pertandhingan Vektor",
+  "networkMatches": "Cocokake Jaringan",
+  "noNetworkMatches": "Ora ana jaringan sing cocog",
+  "networkSearchIsOff": "Panelusuran jaringan mati. Aktifake ing Setelan.",
+  "network": "Jaringan",
+  "networkMatch": "Cocokake Jaringan",
+  "noSearchHistory": "Ora ana riwayat telusuran",
+  "searchHistory": "Riwayat Panelusuran",
+  "invalidLink": "Link ora sah",
+  "unableToOpenWebPage": "Ora bisa mbukak kaca web",
+  "imageMemory": "[Memori gambar]",
+  "tapToOpenWebPage": "Tutul kanggo mbukak kaca web",
+  "editEntry": "Sunting Entri",
+  "entryDetails": "Rincian Entri",
+  "noContent": "Ora ana isi",
+  "diaryNotFound": "Diary ora ditemokake",
+  "diaryNotFoundShort": "Rekaman ora ditemokake",
+  "aiSummary": "Ringkesan AI",
+  "microphoneInterrupted": "Mikropon diselani, rekaman mandheg.",
+  "bold": "Kandel",
+  "italic": "miring",
+  "strikethrough": "Strikethrough",
+  "image": "Gambar",
+  "asrUnavailableRecordingActive": "ASR ora kasedhiya. Rekaman isih aktif.",
+  "writeYourEntry": "Tulis entri sampeyan ...",
+  "writeYourContent": "Tulis konten sampeyan ...",
+  "microphoneStartFailed": "Gagal miwiti mikropon: {error}",
+  "microphoneInterruptedRecordingStopped": "Mikropon diselani, rekaman mandheg.",
+  "asrReconnectingError": "ASR nyambungake maneh: {error}",
+  "imageInserted": "Gambar dilebokake: {name}",
+  "voiceError": "Kesalahan swara: {error}",
+  "aiServiceUnavailable": "Nuwun sewu, layanan AI saiki ora kasedhiya: {error}",
+  "shareFailed": "Gagal nuduhake: {error}",
+  "searchMatchHits": "{matchType} · {count} hits",
+  "matchCount": "Cocokake: {count}",
+  "sourceFromNetwork": "Sumber: {source}",
+  "createNew": "Nggawe",
+  "micStartFailed": "Mic wiwitan gagal: {error}",
+  "importResultAccounts": "Akun: +{created} / dianyari {updated}",
+  "importResultDiaries": "Diary: +{created} / dianyari {updated}",
+  "importResultReminders": "Pangeling: +{created} / dianyari {updated}",
+  "importResultSkipped": "Dilewati: {count}",
+  "importResultTotal": "Total owah-owahan: {count}",
+  "settingsApplied": "Setelan ing serep ditrapake.",
+  "settingsNotApplied": "Setelan ing serep ora ditrapake.",
+  "backupExported": "Gawe serep diekspor: {path}",
+  "exportFailed": "Ekspor gagal: {error}",
+  "importFailed": "Impor gagal: {error}"
+}

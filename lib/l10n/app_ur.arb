@@ -1,0 +1,363 @@
+{
+  "@@locale": "ur",
+  "languageName": "اردو",
+  "languageNameEn": "Urdu",
+  "appTitle": "شگوانگ",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "settings": "ترتیبات",
+  "account": "اکاؤنٹ",
+  "reminders": "یاد دہانیاں",
+  "language": "زبان",
+  "appLanguage": "ایپ زبان",
+  "appearance": "ظہور",
+  "themeMode": "تھیم موڈ",
+  "dark": "اندھرا",
+  "light": "روشن",
+  "system": "سسٹم",
+  "aiService": "AI سروس",
+  "aiChatProvider": "AI چیٹ فراہم کنندہ",
+  "chatModel": "چیٹ ماڈل",
+  "localModel": "لوکل ماڈل",
+  "localModelDefault": "لوکل ماڈل (طے شدہ)",
+  "ollamaEndpoint": "Ollama اینڈپوائنٹ",
+  "ollamaModel": "Ollama ماڈل",
+  "openAiEndpoint": "OpenAI اینڈپوائنٹ",
+  "openAiApiKey": "OpenAI API کلید",
+  "openAiModel": "OpenAI ماڈل",
+  "geminiEndpoint": "Gemini اینڈپوائنٹ",
+  "geminiApiKey": "Gemini API کلید",
+  "geminiModel": "Gemini ماڈل",
+  "anthropicEndpoint": "Anthropic اینڈپوائنٹ",
+  "anthropicApiKey": "Anthropic API کلید",
+  "anthropicModel": "Anthropic ماڈل",
+  "customProtocol": "اکثری پروٹوکول",
+  "protocol": "پروٹوکول",
+  "customEndpoint": "اکثری اینڈپوائنٹ",
+  "customApiKey": "اکثری API کلید",
+  "customModel": "اکثری ماڈل",
+  "optionalForLocalServers": "لوکل/اکثری سرورز کے لیے اخیتیاری",
+  "speechRecognitionEngine": "تقریر شناسی انجن",
+  "local": "لوکل",
+  "endpoint": "اینڈپوائنٹ",
+  "localSpeechModel": "لوکل تقریر ماڈل",
+  "senseVoiceOnnx": "SenseVoice ONNX (ڈیوائس پر)",
+  "systemSpeechRecognition": "سسٹم تقریر شناسی",
+  "systemRecognitionAndroidIos": "سسٹم شناسی (Android/iOS)",
+  "endpointRecognitionCloudWs": "اینڈپوائنٹ شناسی (کلاؤڈ/WS)",
+  "useBuiltInRecognizer": "بِلٹ ان Android / iOS ریکگنائزر کااستعمال کریں (کلاؤڈ کااستعمال کرسکتا ہے)",
+  "voiceAiEndpoint": "ووائس AI اینڈپوائنٹ",
+  "embeddingModel": "ایمبیڈنگ ماڈل",
+  "crossDeviceSync": "کراس ڈیوائسزامنک",
+  "sendToOtherDevices": "دیگر ڈیوائسز کو بھیجیں (LocalSend)",
+  "exportBackupAndSend": "بیک اپ ایکسپورٹ کریں اور شیئر شیٹ کے ذریعے بھیجیں",
+  "importFromLocalSend": "LocalSend سے امپورٹ کریں",
+  "selectBackupJson": "بیک اپ JSON سلیکٹ کریں اور لوکل ڈیٹا مارج کریں",
+  "autoGeneration": "آٹو جنریشن",
+  "autoGenerateSummary": "آٹو سمری جنریٹ",
+  "generateAiSummaryForNewEntries": "نو انٹریز کے لیے AI سمری جنریٹ کریں",
+  "autoGenerateEmbedding": "آٹو ایمبیڈنگ جنریٹ",
+  "generateVectorEmbedding": "سرچ کے لیے ویکٹر ایمبیڈنگ جنریٹ کریں",
+  "enableNetworkSearch": "نیٹ ورک سرچ فعال کریں",
+  "allowOnlineRetrieval": "سرچ اور AI چیٹ کے لیے آن لائن ریٹریول کی اجازت دیں (طے شدہ طور پر بند)",
+  "about": "کے بارے میں",
+  "version": "ورژن {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "database": "ڈیٹابیس",
+  "objectBoxWithHnsw": "HNSW انڈیکس کے ساتھ ObjectBox",
+  "logOut": "لاگ آؤٹ",
+  "custom": "اکثری",
+  "openAiCompatible": "OpenAI موافق",
+  "notSet": "سیٹ نہیں کیا گیا",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... یا http://127.0.0.1:11434",
+  "supportsLocalLanPublic": "لوکل/LAN/پبلک اینڈپوائنٹس کی حمایت کرتا ہے",
+  "shiguangLocalSendBackup": "Shiguang LocalSend بیک اپ",
+  "localBackupFromShiguang": "Shiguang سے لوکل بیک اپ (LocalSend کے ذریعے موصول کریں)",
+  "selectBackupFileFromLocalSend": "LocalSend سے موصول بیک اپ فائل سلیکٹ کریں",
+  "failedToResolveFilePath": "سلیکٹ کردہ فائل پاتھ حل کرنے میں ناکام",
+  "importOptions": "امپورٹ آپشنز",
+  "importSettingsAsWell": "ترتیبات بھی امپورٹ کریں؟\n(API کلیدز اوور رائٹ نہیں ہوں گی)",
+  "dataOnly": "ڈیٹا فقط",
+  "dataAndSettings": "ڈیٹا + ترتیبات",
+  "importCompleted": "امپورٹ مکمل",
+  "settingsInBackupWereApplied": "بیک اپ کی ترتیبات لاگو کی گئیں۔",
+  "settingsInBackupWereNotApplied": "بیک اپ کی ترتیبات لاگو نہیں کی گئیں۔",
+  "ok": "ٹھیک ہے",
+  "cancel": "منسوخ",
+  "save": "محفوظ کریں",
+  "delete": "حذف کریں",
+  "clear": "صاف کریں",
+  "add": "شامل کریں",
+  "create": "بنائیں",
+  "edit": "ترمیم کریں",
+  "search": "تلاش",
+  "areYouSureYouWantToLogOut": "کیا آپ واقعی لاگ آؤٹ کرنا چاہتے ہیں؟",
+  "chooseLanguage": "زبان چنیں",
+  "databaseInfo": "ڈیٹابیس معلومات",
+  "storage": "اسٹوریج: ObjectBox",
+  "vectorIndex": "ویکٹر انڈیکس: HNSW",
+  "dimensions": "جہتیں: 384",
+  "embeddingModelBge": "ایمبیڈنگ ماڈل: bge-small-zh-v1.5",
+  "takePhoto": "فوٹو لیں",
+  "chooseFromGallery": "گیلری سے چنیں",
+  "editNickname": "عرف ترمیم کریں",
+  "enterNickname": "عرف درج کریں",
+  "pleaseEnterNickname": "براہ کرم ایک عرف درج کریں",
+  "nicknameAlreadyExistsOrInvalid": "عرف پہلے سے موجود ہے یا غلط ہے",
+  "user": "صارف",
+  "manageScheduledReminders": "مقررہ یاد دہانیاں اور الارمز کا انتظام کریں",
+  "imageFailedToLoad": "تصویر لوڈ ہونے میں ناکام۔ براہ کرم دوبارہ چنیں۔",
+  "imageIsStillLoading": "تصویر ابھی لوڈ ہو رہی ہے",
+  "imageAreaNotReady": "تصویر کا علاقہ تیار نہیں ہے۔ براہ کرم دوبارہ کوشش کریں۔",
+  "cropFrameNotReady": "کراپ فریم تیار نہیں ہے۔ براہ کرم دوبارہ کوشش کریں۔",
+  "invalidCropArea": "غلط کراپ علاقہ۔ براہ کرم دوبارہ کوشش کریں۔",
+  "cropFailed": "کراپ ناکام۔ براہ کرم دوبارہ کوشش کریں۔",
+  "cropAvatar": "اوتار کراپ کریں",
+  "chooseAgain": "دوبارہ چنیں",
+  "rotate90": "90° گھمائیں",
+  "dragFrameToMove": "موومنٹ کے لیے فریم کو گھسیٹیں، سائز کے لیے نیچے-دائیں گھسیٹیں؛ زوم اور امیج موومنٹ کے لیے پنچ کریں۔",
+  "pleaseFillInAllFields": "براہ کرم تمام فیلڈز پر کریں",
+  "pinMustBeAtLeast4Digits": "PIN کم از کم 4 ہندسے کا ہونا چاہیے",
+  "pinAtLeast4Digits": "PIN کم از کم 4 ہندسے کا ہونا چاہیے",
+  "invalidUsernameOrPin": "غلط صارف نام یا PIN",
+  "invalidUsernameOrPinError": "غلط صارف نام یا PIN",
+  "usernameAlreadyExists": "صارف نام پہلے سے موجود ہے",
+  "captureMomentsKeepMemories": "لمحات کیپچر کریں، یادیں محفوظ کریں",
+  "username": "صارف نام",
+  "pin": "PIN",
+  "login": "لاگ ان",
+  "createAccount": "اکاؤنٹ بنائیں",
+  "dontHaveAccountCreateOne": "اکاؤنٹ نہیں ہے؟ ایک بنائیں",
+  "alreadyHaveAccountLogin": "پہلے سے اکاؤنٹ ہے؟ لاگ ان کریں",
+  "pleaseEnterUsername": "براہ کرم صارف نام درج کریں",
+  "pinsDoNotMatch": "PIN مماثل نہیں ہیں",
+  "tapToAddAvatar": "اوتار شامل کرنے کے لیے ٹیپ کریں",
+  "yourName": "آپ کا نام",
+  "privatePinOptional": "پرائیویٹ PIN (اختیاری)",
+  "usedToEncryptPrivateRecords": "پرائیویٹ ریکارڈز انکرپٹ کرنے کے لیے_used",
+  "privatePin": "پرائیویٹ PIN",
+  "leaveEmptyForNoEncryption": "انکرپشن کے لیے خالی چھوڑیں",
+  "confirmPin": "PIN کی تصدیق کریں",
+  "getStarted": "شروع کریں",
+  "noReminders": "کوئی یاد دہانی نہیں",
+  "addReminder": "یاد دہانی شامل کریں",
+  "title": "عنوان",
+  "descriptionOptional": "تفصیل (اختیاری)",
+  "microphonePermissionRequired": "مائیکروفون کی اجازت درکار ہے",
+  "aiAssistant": "AI اسسٹنٹ",
+  "listening": "سنا...",
+  "typeAMessage": "ایک پیغام ٹائپ کریں...",
+  "aiChat": "AI چیٹ",
+  "startAConversation": "ایک گفتگو شروع کریں",
+  "typeYourMessage": "اپنا پیغام ٹائپ کریں...",
+  "asrReconnecting": "ASR دوبارہ جڑ رہا ہے...",
+  "write": "لکھیں",
+  "writeEntry": "انٹری لکھیں",
+  "noMemoriesYet": "ابھی تک کوئی یادیں نہیں",
+  "tapPlusToCapture": "اپنے خیالات کیپچر کرنے کے لیے + ٹیپ کریں",
+  "tapPlusToCaptureYourThoughts": "اپنے خیالات کیپچر کرنے کے لیے + ٹیپ کریں",
+  "deleteMemory": "یاد حذف کریں",
+  "deleteRecord": "ریکارڈ حذف کریں",
+  "thisEntryWillBeRemoved": "یہ انٹری آپ کی ٹائم لائن سے ہٹا دی جائے گی۔",
+  "thisRecordWillBeRemoved": "یہ ریکارڈ آپ کی ٹائم لائن سے ہٹا دیا جائے گا۔",
+  "searchYourRecords": "اپنے ریکارڈز تلاش کریں...",
+  "exactMatches": "بالکل مماثل",
+  "noExactMatches": "کوئی بالکل مماثل نہیں",
+  "exact": "بالکل",
+  "exactMatch": "بالکل مماثل",
+  "fuzzyMatches": "فازی مماثل",
+  "noFuzzyMatches": "کوئی فازی مماثل نہیں",
+  "vectorMatch": "ویکٹر مماثل",
+  "networkMatches": "نیٹ ورک مماثل",
+  "noNetworkMatches": "کوئی نیٹ ورک مماثل نہیں",
+  "networkSearchIsOff": "نیٹ ورک سرچ بند ہے۔ ترتیبات میں اسے فعال کریں۔",
+  "network": "نیٹ ورک",
+  "networkMatch": "نیٹ ورک مماثل",
+  "noSearchHistory": "کوئی سرچ ہسٹری نہیں",
+  "searchHistory": "سرچ ہسٹری",
+  "invalidLink": "غلط لنک",
+  "unableToOpenWebPage": "ویب پیج کھولنے سے قاصر",
+  "imageMemory": "[تصویر کی یاد]",
+  "tapToOpenWebPage": "ویب پیج کھولنے کے لیے ٹیپ کریں",
+  "editEntry": "انٹری ترمیم کریں",
+  "entryDetails": "انٹری کی تفصیلات",
+  "noContent": "کوئی مواد نہیں",
+  "diaryNotFound": "ڈائری نہیں ملی",
+  "diaryNotFoundShort": "ریکارڈ نہیں ملا",
+  "aiSummary": "AI سمری",
+  "microphoneInterrupted": "مائیکروفون مکس ہو گیا، ریکارڈنگ رک گئی۔",
+  "bold": "بولڈ",
+  "italic": "اٹیلک",
+  "strikethrough": "اسٹرائیک تھرو",
+  "image": "تصویر",
+  "asrUnavailableRecordingActive": "ASR دستیاب نہیں۔ ریکارڈنگ ابھی بھی سرگرم ہے۔",
+  "writeYourEntry": "اپنی انٹری لکھیں...",
+  "writeYourContent": "اپنا مواد لکھیں...",
+  "microphoneStartFailed": "مائیکروفون شروع کرنے میں ناکام: {error}",
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "microphoneInterruptedRecordingStopped": "مائیکروفون مکس ہو گیا، ریکارڈنگ رک گئی۔",
+  "asrReconnectingError": "ASR دوبارہ جڑ رہا ہے: {error}",
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "imageInserted": "تصویر داخل کی گئی: {name}",
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "voiceError": "ووائس ارر: {error}",
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "aiServiceUnavailable": "معذرت، AI سروس فی الوقت دستیاب نہیں ہے: {error}",
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareFailed": "شیئر کرنے میں ناکام: {error}",
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "searchMatchHits": "{matchType} · {count} ہٹس",
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "matchCount": "مطابقت: {count}",
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sourceFromNetwork": "ذریعہ: {source}",
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "createNew": "بنائیں",
+  "micStartFailed": "مائک شروع کرنے میں ناکام: {error}",
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importResultAccounts": "اکاؤنٹس: +{created} / اپڈیٹ {updated}",
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultDiaries": "ڈائریز: +{created} / اپڈیٹ {updated}",
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultReminders": "یاد دہانیاں: +{created} / اپڈیٹ {updated}",
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultSkipped": "چھوڑا گیا: {count}",
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultTotal": "کل تبدیلیاں: {count}",
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsApplied": "بیک اپ کی ترتیبات لاگو کی گئیں۔",
+  "settingsNotApplied": "بیک اپ کی ترتیبات لاگو نہیں کی گئیں۔",
+  "backupExported": "بیک اپ ایکسپورٹ ہوا: {path}",
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "exportFailed": "ایکسپورٹ ناکام: {error}",
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importFailed": "امپورٹ ناکام: {error}",
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
+}

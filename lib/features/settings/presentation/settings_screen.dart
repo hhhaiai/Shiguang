@@ -69,16 +69,12 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           children: [
             ListTile(
               leading: const Icon(Icons.camera_alt_outlined),
-              title: Text(
-                l10n.takePhoto,
-              ),
+              title: Text(l10n.takePhoto),
               onTap: () => Navigator.pop(context, ImageSource.camera),
             ),
             ListTile(
               leading: const Icon(Icons.photo_library_outlined),
-              title: Text(
-                l10n.chooseFromGallery,
-              ),
+              title: Text(l10n.chooseFromGallery),
               onTap: () => Navigator.pop(context, ImageSource.gallery),
             ),
             ListTile(
@@ -99,9 +95,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     final nextName = await showDialog<String?>(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(
-          l10n.editNickname,
-        ),
+        title: Text(l10n.editNickname),
         content: TextField(
           controller: controller,
           focusNode: focusNode,
@@ -132,11 +126,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     final ok = await ref.read(authProvider.notifier).updateUsername(nextName);
     if (!ok && mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            l10n.nicknameAlreadyExistsOrInvalid,
-          ),
-        ),
+        SnackBar(content: Text(l10n.nicknameAlreadyExistsOrInvalid)),
       );
       return;
     }
@@ -156,18 +146,12 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     final avatarInitial = rawName.isNotEmpty
         ? rawName.substring(0, 1).toUpperCase()
         : 'U';
-    final defaultUsername = _i18n(
-      zhHans: '用户',
-      zhHant: '使用者',
-      en: 'User',
-    );
+    final defaultUsername = _i18n(zhHans: '用户', zhHant: '使用者', en: 'User');
 
     return Scaffold(
       appBar: AppBar(
         centerTitle: isCupertino,
-        title: Text(
-          _i18n(zhHans: '设置', zhHant: '設定', en: 'Settings'),
-        ),
+        title: Text(_i18n(zhHans: '设置', zhHant: '設定', en: 'Settings')),
       ),
       body: ListView(
         children: [
@@ -261,9 +245,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           ),
           ListTile(
             leading: const Icon(Icons.notifications_outlined),
-            title: Text(
-              _i18n(zhHans: '定时提醒', zhHant: '定時提醒', en: 'Reminders'),
-            ),
+            title: Text(_i18n(zhHans: '定时提醒', zhHant: '定時提醒', en: 'Reminders')),
             subtitle: Text(
               _i18n(
                 zhHans: '管理日程提醒和闹钟',
@@ -284,15 +266,20 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           ListTile(
             leading: const Icon(Icons.language),
             title: Text(
-              _i18n(
-                zhHans: '界面语言',
-                zhHant: '介面語言',
-                en: 'App Language',
-              ),
+              _i18n(zhHans: '界面语言', zhHant: '介面語言', en: 'App Language'),
             ),
-            subtitle: Text(settings.language.displayName),
+            subtitle: Text(
+              settings.followSystemLanguage
+                  ? '${_i18n(zhHans: '跟随系统', zhHant: '跟隨系統', en: 'Follow system language')} (${settings.language.displayName})'
+                  : settings.language.displayName,
+            ),
             trailing: const Icon(Icons.chevron_right),
-            onTap: () => _showLanguageDialog(context, ref, settings.language),
+            onTap: () => _showLanguageDialog(
+              context,
+              ref,
+              settings.language,
+              settings.followSystemLanguage,
+            ),
           ),
           const Divider(),
 
@@ -321,23 +308,17 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 ButtonSegment<AppThemeMode>(
                   value: AppThemeMode.dark,
                   icon: const Icon(Icons.dark_mode_outlined),
-                  label: Text(
-                    _i18n(zhHans: '深色', zhHant: '深色', en: 'Dark'),
-                  ),
+                  label: Text(_i18n(zhHans: '深色', zhHant: '深色', en: 'Dark')),
                 ),
                 ButtonSegment<AppThemeMode>(
                   value: AppThemeMode.light,
                   icon: const Icon(Icons.light_mode_outlined),
-                  label: Text(
-                    _i18n(zhHans: '浅色', zhHant: '淺色', en: 'Light'),
-                  ),
+                  label: Text(_i18n(zhHans: '浅色', zhHant: '淺色', en: 'Light')),
                 ),
                 ButtonSegment<AppThemeMode>(
                   value: AppThemeMode.system,
                   icon: const Icon(Icons.phone_android),
-                  label: Text(
-                    _i18n(zhHans: '系统', zhHant: '系統', en: 'System'),
-                  ),
+                  label: Text(_i18n(zhHans: '系统', zhHant: '系統', en: 'System')),
                 ),
               ],
               selected: {settings.themeMode},
@@ -364,9 +345,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 en: 'AI Chat Provider',
               ),
             ),
-            subtitle: Text(
-              _chatProviderLabel(settings.chatModelProvider),
-            ),
+            subtitle: Text(_chatProviderLabel(settings.chatModelProvider)),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
@@ -398,11 +377,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             ListTile(
               leading: const Icon(Icons.memory),
               title: Text(
-                _i18n(
-                  zhHans: '本地模型',
-                  zhHant: '本地模型',
-                  en: 'Local Model',
-                ),
+                _i18n(zhHans: '本地模型', zhHant: '本地模型', en: 'Local Model'),
               ),
               subtitle: Text(
                 Platform.isAndroid
@@ -712,15 +687,9 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             ListTile(
               leading: const Icon(Icons.settings_suggest_outlined),
               title: Text(
-                _i18n(
-                  zhHans: '自定义协议',
-                  zhHant: '自訂協議',
-                  en: 'Custom Protocol',
-                ),
+                _i18n(zhHans: '自定义协议', zhHant: '自訂協議', en: 'Custom Protocol'),
               ),
-              subtitle: Text(
-                _customProtocolLabel(settings.customLlmProtocol),
-              ),
+              subtitle: Text(_customProtocolLabel(settings.customLlmProtocol)),
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
@@ -753,11 +722,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             ListTile(
               leading: const Icon(Icons.link),
               title: Text(
-                _i18n(
-                  zhHans: '自定义端点',
-                  zhHant: '自訂端點',
-                  en: 'Custom Endpoint',
-                ),
+                _i18n(zhHans: '自定义端点', zhHant: '自訂端點', en: 'Custom Endpoint'),
               ),
               subtitle: Text(
                 settings.customEndpoint,
@@ -808,11 +773,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             ListTile(
               leading: const Icon(Icons.token),
               title: Text(
-                _i18n(
-                  zhHans: '自定义模型',
-                  zhHant: '自訂模型',
-                  en: 'Custom Model',
-                ),
+                _i18n(zhHans: '自定义模型', zhHant: '自訂模型', en: 'Custom Model'),
               ),
               subtitle: Text(settings.customModel),
               onTap: () => _showTextDialog(
@@ -844,9 +805,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 en: 'Speech Recognition Engine',
               ),
             ),
-            subtitle: Text(
-              _voiceEngineLabel(settings.voiceRecognitionEngine),
-            ),
+            subtitle: Text(_voiceEngineLabel(settings.voiceRecognitionEngine)),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
@@ -856,33 +815,21 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   value: VoiceRecognitionEngine.localModel,
                   icon: const Icon(Icons.memory_outlined),
                   label: Text(
-                    _i18n(
-                      zhHans: '本地模型',
-                      zhHant: '本地模型',
-                      en: 'Local',
-                    ),
+                    _i18n(zhHans: '本地模型', zhHant: '本地模型', en: 'Local'),
                   ),
                 ),
                 ButtonSegment<VoiceRecognitionEngine>(
                   value: VoiceRecognitionEngine.systemNative,
                   icon: const Icon(Icons.phone_android_outlined),
                   label: Text(
-                    _i18n(
-                      zhHans: '系统识别',
-                      zhHant: '系統辨識',
-                      en: 'System',
-                    ),
+                    _i18n(zhHans: '系统识别', zhHant: '系統辨識', en: 'System'),
                   ),
                 ),
                 ButtonSegment<VoiceRecognitionEngine>(
                   value: VoiceRecognitionEngine.endpointCloud,
                   icon: const Icon(Icons.cloud_outlined),
                   label: Text(
-                    _i18n(
-                      zhHans: '端点识别',
-                      zhHant: '端點辨識',
-                      en: 'Endpoint',
-                    ),
+                    _i18n(zhHans: '端点识别', zhHant: '端點辨識', en: 'Endpoint'),
                   ),
                 ),
               ],
@@ -965,11 +912,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           ListTile(
             leading: const Icon(Icons.hub),
             title: Text(
-              _i18n(
-                zhHans: '向量模型',
-                zhHant: '向量模型',
-                en: 'Embedding Model',
-              ),
+              _i18n(zhHans: '向量模型', zhHant: '向量模型', en: 'Embedding Model'),
             ),
             subtitle: Text(
               _i18n(
@@ -984,11 +927,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           const Divider(),
           _buildSectionHeader(
             context,
-            _i18n(
-              zhHans: '多端同步',
-              zhHant: '多端同步',
-              en: 'Cross-Device Sync',
-            ),
+            _i18n(zhHans: '多端同步', zhHant: '多端同步', en: 'Cross-Device Sync'),
           ),
           ListTile(
             leading: const Icon(Icons.sync_alt_outlined),
@@ -1031,11 +970,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           const Divider(),
           _buildSectionHeader(
             context,
-            _i18n(
-              zhHans: '自动生成',
-              zhHant: '自動生成',
-              en: 'Auto Generation',
-            ),
+            _i18n(zhHans: '自动生成', zhHant: '自動生成', en: 'Auto Generation'),
           ),
           SwitchListTile(
             secondary: const Icon(Icons.summarize),
@@ -1109,9 +1044,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           ),
           ListTile(
             leading: Icon(Icons.info),
-            title: Text(
-              _i18n(zhHans: '拾光', zhHant: '拾光', en: 'Shiguang'),
-            ),
+            title: Text(_i18n(zhHans: '拾光', zhHant: '拾光', en: 'Shiguang')),
             subtitle: Text(
               _i18n(
                 zhHans: '版本 1.0.0',
@@ -1122,9 +1055,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           ),
           ListTile(
             leading: const Icon(Icons.storage),
-            title: Text(
-              _i18n(zhHans: '数据库', zhHant: '資料庫', en: 'Database'),
-            ),
+            title: Text(_i18n(zhHans: '数据库', zhHant: '資料庫', en: 'Database')),
             subtitle: Text(
               _i18n(
                 zhHans: 'ObjectBox + HNSW 向量索引',
@@ -1149,13 +1080,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 children: [
                   const Icon(Icons.logout),
                   const SizedBox(width: 8),
-                  Text(
-                    _i18n(
-                      zhHans: '退出登录',
-                      zhHant: '登出',
-                      en: 'Log Out',
-                    ),
-                  ),
+                  Text(_i18n(zhHans: '退出登录', zhHant: '登出', en: 'Log Out')),
                 ],
               ),
             ),
@@ -1179,29 +1104,200 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     );
   }
 
-  String _i18n({
-    required String zhHans,
-    String? zhHant,
-    required String en,
-  }) {
+  String _i18n({required String zhHans, String? zhHant, required String en}) {
     final locale = l10n.localeName;
-    if (locale.startsWith('zh_Hant')) {
+    if (locale.startsWith('zh_Hant') || locale == 'zh_HK') {
       return zhHant ?? zhHans;
     }
     if (locale.startsWith('zh')) {
       return zhHans;
     }
-    return en;
+    return _localizeEn(en);
+  }
+
+  String _localizeEn(String en) {
+    switch (en) {
+      case 'User':
+        return l10n.user;
+      case 'Settings':
+        return l10n.settings;
+      case 'Account':
+        return l10n.account;
+      case 'Reminders':
+        return l10n.reminders;
+      case 'Manage scheduled reminders and alarms':
+        return l10n.manageScheduledReminders;
+      case 'Language':
+        return l10n.language;
+      case 'App Language':
+        return l10n.appLanguage;
+      case 'Appearance':
+        return l10n.appearance;
+      case 'Theme Mode':
+        return l10n.themeMode;
+      case 'Light / Dark / Follow System':
+        return '${l10n.light} / ${l10n.dark} / ${l10n.system}';
+      case 'Dark':
+        return l10n.dark;
+      case 'Light':
+        return l10n.light;
+      case 'System':
+        return l10n.system;
+      case 'AI Service':
+        return l10n.aiService;
+      case 'AI Chat Provider':
+        return l10n.aiChatProvider;
+      case 'Chat Model':
+        return l10n.chatModel;
+      case 'Local Model':
+        return l10n.localModel;
+      case 'Ollama Endpoint':
+        return l10n.ollamaEndpoint;
+      case 'Ollama Model':
+        return l10n.ollamaModel;
+      case 'OpenAI Endpoint':
+        return l10n.openAiEndpoint;
+      case 'OpenAI API Key':
+        return l10n.openAiApiKey;
+      case 'OpenAI Model':
+        return l10n.openAiModel;
+      case 'Gemini Endpoint':
+        return l10n.geminiEndpoint;
+      case 'Gemini API Key':
+        return l10n.geminiApiKey;
+      case 'Gemini Model':
+        return l10n.geminiModel;
+      case 'Anthropic Endpoint':
+        return l10n.anthropicEndpoint;
+      case 'Anthropic API Key':
+        return l10n.anthropicApiKey;
+      case 'Anthropic Model':
+        return l10n.anthropicModel;
+      case 'Custom Protocol':
+        return l10n.customProtocol;
+      case 'Protocol':
+        return l10n.protocol;
+      case 'Custom Endpoint':
+        return l10n.customEndpoint;
+      case 'Custom API Key':
+        return l10n.customApiKey;
+      case 'Optional for local/custom servers':
+        return l10n.optionalForLocalServers;
+      case 'Custom Model':
+        return l10n.customModel;
+      case 'Speech Recognition Engine':
+        return l10n.speechRecognitionEngine;
+      case 'Local':
+        return l10n.local;
+      case 'Endpoint':
+        return l10n.endpoint;
+      case 'Local Speech Model':
+        return l10n.localSpeechModel;
+      case 'SenseVoice ONNX (on-device)':
+        return l10n.senseVoiceOnnx;
+      case 'System Speech Recognition':
+        return l10n.systemSpeechRecognition;
+      case 'Use built-in Android / iOS recognizer (may use cloud)':
+        return l10n.useBuiltInRecognizer;
+      case 'Voice AI Endpoint':
+        return l10n.voiceAiEndpoint;
+      case 'Embedding Model':
+        return l10n.embeddingModel;
+      case 'Cross-Device Sync':
+        return l10n.crossDeviceSync;
+      case 'Send to Other Devices (LocalSend)':
+        return l10n.sendToOtherDevices;
+      case 'Export backup and send via share sheet':
+        return l10n.exportBackupAndSend;
+      case 'Import from LocalSend':
+        return l10n.importFromLocalSend;
+      case 'Select backup JSON and merge local data':
+        return l10n.selectBackupJson;
+      case 'Auto Generation':
+        return l10n.autoGeneration;
+      case 'Auto Generate Summary':
+        return l10n.autoGenerateSummary;
+      case 'Generate AI summary for new entries':
+        return l10n.generateAiSummaryForNewEntries;
+      case 'Auto Generate Embedding':
+        return l10n.autoGenerateEmbedding;
+      case 'Generate vector embedding for search':
+        return l10n.generateVectorEmbedding;
+      case 'Enable Network Search':
+        return l10n.enableNetworkSearch;
+      case 'Allow online retrieval for search and AI chat (off by default)':
+        return l10n.allowOnlineRetrieval;
+      case 'About':
+        return l10n.about;
+      case 'Shiguang':
+        return l10n.appTitle;
+      case 'Version 1.0.0':
+        return l10n.version('1.0.0');
+      case 'Database':
+        return l10n.database;
+      case 'ObjectBox with HNSW index':
+        return l10n.objectBoxWithHnsw;
+      case 'Log Out':
+        return l10n.logOut;
+      case 'Custom':
+        return l10n.custom;
+      case 'OpenAI Compatible':
+        return l10n.openAiCompatible;
+      case 'Local Model (Default)':
+        return l10n.localModelDefault;
+      case 'System Recognition (Android/iOS)':
+        return l10n.systemRecognitionAndroidIos;
+      case 'Endpoint Recognition (Cloud/WS)':
+        return l10n.endpointRecognitionCloudWs;
+      case 'Not set':
+        return l10n.notSet;
+      case 'ws://127.0.0.1:8008/... or http://127.0.0.1:11434':
+        return l10n.ws1270018008OrHttp12700111434;
+      case 'Supports local/LAN/public endpoints':
+        return l10n.supportsLocalLanPublic;
+      case 'Cancel':
+        return l10n.cancel;
+      case 'Save':
+        return l10n.save;
+      case 'Done':
+        return l10n.ok;
+      case 'Follow system language':
+        return l10n.system;
+      case 'Are you sure you want to log out?':
+        return l10n.areYouSureYouWantToLogOut;
+      case 'Set Language':
+        return l10n.chooseLanguage;
+      case 'Model ID':
+        return l10n.chatModel;
+      case 'On-device bge-small-zh-v1.5-ONNX (model.onnx + model.onnx_data)':
+        return l10n.embeddingModelBge;
+      case 'iOS: fllama local model':
+        return 'iOS: ${l10n.localModel}';
+      case 'Android: ${QwenGgufLocalLLM.modelFileName}':
+        return 'Android: ${QwenGgufLocalLLM.modelFileName}';
+      case 'Desktop: use local Ollama endpoint':
+        return 'Desktop: ${l10n.ollamaEndpoint}';
+      case 'Database Info':
+        return l10n.databaseInfo;
+      case 'Storage: ObjectBox':
+        return l10n.storage;
+      case 'Vector Index: HNSW':
+        return l10n.vectorIndex;
+      case 'Dimensions: 384':
+        return l10n.dimensions;
+      case 'Embedding Model: bge-small-zh-v1.5':
+        return l10n.embeddingModelBge;
+      case 'OK':
+        return l10n.ok;
+      default:
+        return en;
+    }
   }
 
   String _chatProviderLabel(ChatModelProvider provider) {
     switch (provider) {
       case ChatModelProvider.local:
-        return _i18n(
-          zhHans: '本地模型',
-          zhHant: '本地模型',
-          en: 'Local Model',
-        );
+        return _i18n(zhHans: '本地模型', zhHant: '本地模型', en: 'Local Model');
       case ChatModelProvider.openai:
         return 'OpenAI';
       case ChatModelProvider.gemini:
@@ -1215,9 +1311,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     }
   }
 
-  String _customProtocolLabel(
-    CustomLlmProtocol protocol,
-  ) {
+  String _customProtocolLabel(CustomLlmProtocol protocol) {
     switch (protocol) {
       case CustomLlmProtocol.openai:
         return _i18n(
@@ -1234,9 +1328,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     }
   }
 
-  String _voiceEngineLabel(
-    VoiceRecognitionEngine engine,
-  ) {
+  String _voiceEngineLabel(VoiceRecognitionEngine engine) {
     switch (engine) {
       case VoiceRecognitionEngine.localModel:
         return _i18n(
@@ -1305,18 +1397,14 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text(
-              _i18n(zhHans: '取消', zhHant: '取消', en: 'Cancel'),
-            ),
+            child: Text(_i18n(zhHans: '取消', zhHant: '取消', en: 'Cancel')),
           ),
           FilledButton(
             onPressed: () {
               onSave(controller.text.trim());
               Navigator.pop(context);
             },
-            child: Text(
-              _i18n(zhHans: '保存', zhHant: '保存', en: 'Save'),
-            ),
+            child: Text(_i18n(zhHans: '保存', zhHant: '保存', en: 'Save')),
           ),
         ],
       ),
@@ -1357,18 +1445,14 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text(
-              _i18n(zhHans: '取消', zhHant: '取消', en: 'Cancel'),
-            ),
+            child: Text(_i18n(zhHans: '取消', zhHant: '取消', en: 'Cancel')),
           ),
           FilledButton(
             onPressed: () {
               onSave(controller.text.trim());
               Navigator.pop(context);
             },
-            child: Text(
-              _i18n(zhHans: '保存', zhHant: '保存', en: 'Save'),
-            ),
+            child: Text(_i18n(zhHans: '保存', zhHant: '保存', en: 'Save')),
           ),
         ],
       ),
@@ -1392,11 +1476,9 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       );
 
       if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(l10n.backupExported(file.path)),
-        ),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(l10n.backupExported(file.path))));
     } catch (error) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
@@ -1451,9 +1533,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(
-            l10n.importFailed(error.toString()),
-          ),
+          content: Text(l10n.importFailed(error.toString())),
           backgroundColor: Colors.red,
         ),
       );
@@ -1464,12 +1544,8 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     return showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(
-          l10n.importOptions,
-        ),
-        content: Text(
-          l10n.importSettingsAsWell,
-        ),
+        title: Text(l10n.importOptions),
+        content: Text(l10n.importSettingsAsWell),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
@@ -1477,15 +1553,11 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           ),
           TextButton(
             onPressed: () => Navigator.pop(context, false),
-            child: Text(
-              l10n.dataOnly,
-            ),
+            child: Text(l10n.dataOnly),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(context, true),
-            child: Text(
-              l10n.dataAndSettings,
-            ),
+            child: Text(l10n.dataAndSettings),
           ),
         ],
       ),
@@ -1499,33 +1571,34 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(
-          l10n.importCompleted,
-        ),
+        title: Text(l10n.importCompleted),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              l10n.importResultAccounts(result.createdAccounts, result.updatedAccounts),
+              l10n.importResultAccounts(
+                result.createdAccounts,
+                result.updatedAccounts,
+              ),
             ),
             Text(
-              l10n.importResultDiaries(result.createdDiaries, result.updatedDiaries),
+              l10n.importResultDiaries(
+                result.createdDiaries,
+                result.updatedDiaries,
+              ),
             ),
             Text(
-              l10n.importResultReminders(result.createdReminders, result.updatedReminders),
+              l10n.importResultReminders(
+                result.createdReminders,
+                result.updatedReminders,
+              ),
             ),
-            Text(
-              l10n.importResultSkipped(result.skipped),
-            ),
-            Text(
-              l10n.importResultTotal(result.totalChanged),
-            ),
+            Text(l10n.importResultSkipped(result.skipped)),
+            Text(l10n.importResultTotal(result.totalChanged)),
             const SizedBox(height: 8),
             Text(
-              appliedSettings
-                  ? l10n.settingsApplied
-                  : l10n.settingsNotApplied,
+              appliedSettings ? l10n.settingsApplied : l10n.settingsNotApplied,
             ),
           ],
         ),
@@ -1543,9 +1616,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(
-          _i18n(zhHans: '退出登录', zhHant: '登出', en: 'Log Out'),
-        ),
+        title: Text(_i18n(zhHans: '退出登录', zhHant: '登出', en: 'Log Out')),
         content: Text(
           _i18n(
             zhHans: '确定要退出当前账号吗？',
@@ -1556,9 +1627,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text(
-              _i18n(zhHans: '取消', zhHant: '取消', en: 'Cancel'),
-            ),
+            child: Text(_i18n(zhHans: '取消', zhHant: '取消', en: 'Cancel')),
           ),
           FilledButton(
             onPressed: () {
@@ -1567,54 +1636,115 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               context.go('/');
             },
             style: FilledButton.styleFrom(backgroundColor: Colors.red),
-            child: Text(
-              _i18n(zhHans: '退出', zhHant: '登出', en: 'Log Out'),
-            ),
+            child: Text(_i18n(zhHans: '退出', zhHant: '登出', en: 'Log Out')),
           ),
         ],
       ),
     );
   }
 
-  void _showLanguageDialog(
+  String _normalizeLanguageTag(String input) {
+    return input.trim().replaceAll('_', '-').toLowerCase();
+  }
+
+  String _localeToLanguageTag(Locale locale) {
+    final parts = <String>[locale.languageCode];
+    final script = locale.scriptCode;
+    if (script != null && script.isNotEmpty) {
+      parts.add(script);
+    }
+    final country = locale.countryCode;
+    if (country != null && country.isNotEmpty) {
+      parts.add(country);
+    }
+    return _normalizeLanguageTag(parts.join('-'));
+  }
+
+  List<AppLanguage> _supportedLanguagesForPicker() {
+    // Keep the picker on production-ready languages to avoid showing
+    // locales that still contain too much untranslated English text.
+    const productionLocales = <AppLanguage>[
+      AppLanguage.zhHans,
+      AppLanguage.zhHant,
+      AppLanguage.zhHk,
+      AppLanguage.en,
+      AppLanguage.ar,
+      AppLanguage.bn,
+      AppLanguage.de,
+      AppLanguage.es,
+      AppLanguage.fa,
+      AppLanguage.fr,
+      AppLanguage.gu,
+      AppLanguage.he,
+      AppLanguage.hi,
+      AppLanguage.id,
+      AppLanguage.it,
+      AppLanguage.ja,
+      AppLanguage.kn,
+      AppLanguage.ko,
+      AppLanguage.mr,
+      AppLanguage.ms,
+      AppLanguage.ne,
+      AppLanguage.nl,
+      AppLanguage.pa,
+      AppLanguage.pl,
+      AppLanguage.ptBr,
+      AppLanguage.ptPt,
+      AppLanguage.ru,
+      AppLanguage.si,
+      AppLanguage.ta,
+      AppLanguage.te,
+      AppLanguage.th,
+      AppLanguage.tr,
+      AppLanguage.uk,
+      AppLanguage.ur,
+      AppLanguage.vi,
+    ];
+    final supportedTags = AppLocalizations.supportedLocales
+        .map(_localeToLanguageTag)
+        .toSet();
+    return productionLocales
+        .where(
+          (lang) => supportedTags.contains(_normalizeLanguageTag(lang.code)),
+        )
+        .toList(growable: false);
+  }
+
+  Future<void> _showLanguageDialog(
     BuildContext context,
     WidgetRef ref,
     AppLanguage currentLanguage,
-  ) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(
-          _i18n(
-            zhHans: '选择语言',
-            zhHant: '選擇語言',
-            en: 'Choose Language',
-          ),
-        ),
-        content: SizedBox(
-          width: double.maxFinite,
-          height: 420,
-          child: ListView.builder(
-            itemCount: AppLanguage.values.length,
-            itemBuilder: (context, index) {
-              final lang = AppLanguage.values[index];
-              final isSelected = lang == currentLanguage;
-              return ListTile(
-                title: Text(lang.displayName),
-                subtitle: Text(lang.shortName),
-                trailing: isSelected
-                    ? const Icon(Icons.check, color: Colors.green)
-                    : null,
-                onTap: () {
-                  ref.read(settingsProvider.notifier).setLanguage(lang);
-                  Navigator.pop(context);
-                },
-              );
-            },
+    bool followSystemLanguage,
+  ) async {
+    final languages = _supportedLanguagesForPicker().toList(growable: true);
+    if (!languages.contains(currentLanguage)) {
+      languages.insert(0, currentLanguage);
+    }
+    final result = await Navigator.of(context).push<_LanguageSelectionResult>(
+      MaterialPageRoute<_LanguageSelectionResult>(
+        fullscreenDialog: true,
+        builder: (context) => _LanguageSelectionPage(
+          languages: languages,
+          initialLanguage: currentLanguage,
+          initialFollowSystemLanguage: followSystemLanguage,
+          title: _i18n(zhHans: '设置语言', zhHant: '設定語言', en: 'Set Language'),
+          cancelText: _i18n(zhHans: '取消', zhHant: '取消', en: 'Cancel'),
+          doneText: _i18n(zhHans: '完成', zhHant: '完成', en: 'Done'),
+          followSystemText: _i18n(
+            zhHans: '同步系统语言设置',
+            zhHant: '同步系統語言設定',
+            en: 'Follow system language',
           ),
         ),
       ),
     );
+    if (result == null) return;
+    ref
+        .read(settingsProvider.notifier)
+        .setLanguagePreference(
+          followSystemLanguage: result.followSystemLanguage,
+          language: result.language,
+        );
   }
 
   void _showDatabaseInfo(BuildContext context) {
@@ -1622,11 +1752,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(
-          _i18n(
-            zhHans: '数据库信息',
-            zhHant: '資料庫資訊',
-            en: 'Database Info',
-          ),
+          _i18n(zhHans: '数据库信息', zhHant: '資料庫資訊', en: 'Database Info'),
         ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
@@ -1673,6 +1799,142 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
   }
 }
 
+class _LanguageSelectionResult {
+  final AppLanguage language;
+  final bool followSystemLanguage;
+
+  const _LanguageSelectionResult({
+    required this.language,
+    required this.followSystemLanguage,
+  });
+}
+
+class _LanguageSelectionPage extends StatefulWidget {
+  final List<AppLanguage> languages;
+  final AppLanguage initialLanguage;
+  final bool initialFollowSystemLanguage;
+  final String title;
+  final String cancelText;
+  final String doneText;
+  final String followSystemText;
+
+  const _LanguageSelectionPage({
+    required this.languages,
+    required this.initialLanguage,
+    required this.initialFollowSystemLanguage,
+    required this.title,
+    required this.cancelText,
+    required this.doneText,
+    required this.followSystemText,
+  });
+
+  @override
+  State<_LanguageSelectionPage> createState() => _LanguageSelectionPageState();
+}
+
+class _LanguageSelectionPageState extends State<_LanguageSelectionPage> {
+  late AppLanguage _selectedLanguage;
+  late bool _followSystemLanguage;
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedLanguage = widget.initialLanguage;
+    _followSystemLanguage = widget.initialFollowSystemLanguage;
+  }
+
+  bool get _hasChanges {
+    return _selectedLanguage != widget.initialLanguage ||
+        _followSystemLanguage != widget.initialFollowSystemLanguage;
+  }
+
+  void _submitSelection() {
+    Navigator.of(context).pop(
+      _LanguageSelectionResult(
+        language: _selectedLanguage,
+        followSystemLanguage: _followSystemLanguage,
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final doneColor = Theme.of(context).colorScheme.primary;
+    final dividerColor = Theme.of(context).dividerColor;
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        leadingWidth: 86,
+        leading: TextButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: Text(widget.cancelText),
+        ),
+        title: Text(widget.title),
+        centerTitle: true,
+        actions: [
+          TextButton(
+            onPressed: _hasChanges ? _submitSelection : null,
+            child: Text(
+              widget.doneText,
+              style: TextStyle(
+                color: _hasChanges
+                    ? doneColor
+                    : Theme.of(context).disabledColor,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          const SizedBox(width: 8),
+        ],
+      ),
+      body: Column(
+        children: [
+          Divider(height: 1, thickness: 1, color: dividerColor),
+          Expanded(
+            child: ListView.separated(
+              itemCount: widget.languages.length + 1,
+              separatorBuilder: (_, index) =>
+                  Divider(height: 1, thickness: 1, color: dividerColor),
+              itemBuilder: (context, index) {
+                if (index == 0) {
+                  return ListTile(
+                    title: Text(widget.followSystemText),
+                    trailing: _followSystemLanguage
+                        ? Icon(Icons.check, color: doneColor)
+                        : null,
+                    onTap: () {
+                      setState(() {
+                        _followSystemLanguage = true;
+                      });
+                      _submitSelection();
+                    },
+                  );
+                }
+                final lang = widget.languages[index - 1];
+                final selected =
+                    !_followSystemLanguage && lang == _selectedLanguage;
+                return ListTile(
+                  title: Text(lang.displayName),
+                  trailing: selected
+                      ? Icon(Icons.check, color: doneColor)
+                      : null,
+                  onTap: () {
+                    setState(() {
+                      _selectedLanguage = lang;
+                      _followSystemLanguage = false;
+                    });
+                    _submitSelection();
+                  },
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class _AvatarCropperScreen extends StatefulWidget {
   final File file;
 
@@ -1690,8 +1952,40 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
 
   String _t({required String zhHans, String? zhHant, required String en}) {
     final locale = l10n.localeName;
-    if (locale == 'zh_Hant') return zhHant ?? zhHans;
-    return en;
+    if (locale.startsWith('zh_Hant') || locale == 'zh_HK') {
+      return zhHant ?? zhHans;
+    }
+    if (locale.startsWith('zh')) {
+      return zhHans;
+    }
+    return _localizeEn(en);
+  }
+
+  String _localizeEn(String en) {
+    switch (en) {
+      case 'Crop Avatar':
+        return l10n.cropAvatar;
+      case 'Choose Again':
+        return l10n.chooseAgain;
+      case 'Rotate 90°':
+        return l10n.rotate90;
+      case 'Drag the frame to move, drag bottom-right to resize; pinch to zoom and move image.':
+        return l10n.dragFrameToMove;
+      case 'Image failed to load. Please choose again.':
+        return l10n.imageFailedToLoad;
+      case 'Image is still loading':
+        return l10n.imageIsStillLoading;
+      case 'Image area is not ready. Please try again.':
+        return l10n.imageAreaNotReady;
+      case 'Crop frame is not ready. Please try again.':
+        return l10n.cropFrameNotReady;
+      case 'Invalid crop area. Please try again.':
+        return l10n.invalidCropArea;
+      case 'Crop failed. Please try again.':
+        return l10n.cropFailed;
+      default:
+        return en;
+    }
   }
 
   static const double _cropMinSize = 140;

@@ -1,0 +1,363 @@
+{
+  "@@locale": "ga",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Gaeilge",
+  "languageNameEn": "Irish",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/… nó http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Socruithe",
+  "account": "Cuntas",
+  "reminders": "Meabhrúcháin",
+  "language": "Teanga",
+  "appLanguage": "Teanga App",
+  "appearance": "Dealramh",
+  "themeMode": "Mód Téama",
+  "dark": "Dorcha",
+  "light": "Solas",
+  "system": "Córas",
+  "aiService": "Seirbhís AI",
+  "aiChatProvider": "Soláthraí Comhrá AI",
+  "chatModel": "Múnla Comhrá",
+  "localModel": "Múnla Áitiúil",
+  "localModelDefault": "Múnla Áitiúil (Réamhshocrú)",
+  "ollamaEndpoint": "Críochphointe Olama",
+  "ollamaModel": "Múnla Olama",
+  "openAiEndpoint": "Críochphointe OpenAI",
+  "openAiApiKey": "Eochair OpenAI API",
+  "openAiModel": "Múnla OpenAI",
+  "geminiEndpoint": "Críochphointe Cúpla",
+  "geminiApiKey": "Eochair Gemini API",
+  "geminiModel": "Múnla Gemini",
+  "anthropicEndpoint": "Críochphointe Antraipeach",
+  "anthropicApiKey": "Eochair Anthropic API",
+  "anthropicModel": "Múnla Antraipeach",
+  "customProtocol": "Prótacal Saincheaptha",
+  "protocol": "Prótacal",
+  "customEndpoint": "Críochphointe Saincheaptha",
+  "customApiKey": "Eochair Saincheaptha API",
+  "customModel": "Múnla Saincheaptha",
+  "optionalForLocalServers": "Roghnach do fhreastalaithe áitiúla/saincheaptha",
+  "speechRecognitionEngine": "Inneall Aitheanta Cainte",
+  "local": "Áitiúil",
+  "endpoint": "Críochphointe",
+  "localSpeechModel": "Múnla Cainte Áitiúil",
+  "senseVoiceOnnx": "SenseVoice ONNX (ar an ngléas)",
+  "systemSpeechRecognition": "Aitheantas Urlabhra an Chórais",
+  "systemRecognitionAndroidIos": "Aitheantas Córais (Android/iOS)",
+  "endpointRecognitionCloudWs": "Aitheantas Críochphointe (Scamall/WS)",
+  "useBuiltInRecognizer": "Úsáid aitheantóir ionsuite Android / iOS (is féidir scamall a úsáid)",
+  "voiceAiEndpoint": "Guth AI Críochphointe",
+  "embeddingModel": "Múnla Leabú",
+  "crossDeviceSync": "Sync Tras-Ghléas",
+  "sendToOtherDevices": "Seol chuig Gléasanna Eile (LocalSend)",
+  "exportBackupAndSend": "Easpórtáil cúltaca agus seol trí scairbhileog",
+  "importFromLocalSend": "Iompórtáil ó LocalSend",
+  "selectBackupJson": "Roghnaigh cúltaca JSON agus cumasc sonraí áitiúla",
+  "autoGeneration": "Giniúint Uathoibríoch",
+  "autoGenerateSummary": "Auto Gin Achoimre",
+  "generateAiSummaryForNewEntries": "Gin achoimre AI le haghaidh iontrálacha nua",
+  "autoGenerateEmbedding": "Uath-Gin Leabú",
+  "generateVectorEmbedding": "Gin leabú veicteora le haghaidh cuardaigh",
+  "enableNetworkSearch": "Cumasaigh Cuardach Líonra",
+  "allowOnlineRetrieval": "Ceadaigh aisghabháil ar líne le haghaidh cuardaigh agus comhrá AI (mídhleathach de réir réamhshocraithe)",
+  "about": "Maidir",
+  "version": "Leagan _PH_0__",
+  "database": "Bunachar Sonraí",
+  "objectBoxWithHnsw": "ObjectBox le hinnéacs HNSW",
+  "logOut": "Logáil Amach",
+  "custom": "Saincheaptha",
+  "openAiCompatible": "Comhoiriúnach le OpenAI",
+  "notSet": "Gan socraithe",
+  "supportsLocalLanPublic": "Tacaíonn críochphointí áitiúla/LAN/poiblí",
+  "shiguangLocalSendBackup": "Cúltaca Shiguang LocalSend",
+  "localBackupFromShiguang": "Cúltaca áitiúil ó Shiguang (faigh trí LocalSend)",
+  "selectBackupFileFromLocalSend": "Roghnaigh comhad cúltaca a fuarthas ó LocalSend",
+  "failedToResolveFilePath": "Theip ar chonair an chomhaid roghnaithe a réiteach",
+  "importOptions": "Roghanna Iompórtála",
+  "importSettingsAsWell": "Iompórtáil socruithe chomh maith?\n(Ní dhéanfar eochracha API a fhorscríobh)",
+  "dataOnly": "Sonraí amháin",
+  "dataAndSettings": "Sonraí + Socruithe",
+  "importCompleted": "Iompórtáil Críochnaithe",
+  "settingsInBackupWereApplied": "Cuireadh socruithe sa chúltaca i bhfeidhm.",
+  "settingsInBackupWereNotApplied": "Níor cuireadh socruithe sa chúltaca i bhfeidhm.",
+  "ok": "ceart go leor",
+  "cancel": "Cealaigh",
+  "save": "Sábháil",
+  "delete": "Scrios",
+  "clear": "Glan",
+  "add": "Cuir",
+  "create": "Cruthaigh",
+  "edit": "Cuir in eagar",
+  "search": "Cuardach",
+  "areYouSureYouWantToLogOut": "An bhfuil tú cinnte gur mhaith leat logáil amach?",
+  "chooseLanguage": "Roghnaigh Teanga",
+  "databaseInfo": "Eolas Bunachar Sonraí",
+  "storage": "Stóráil: ObjectBox",
+  "vectorIndex": "Innéacs Veicteoir: HNSW",
+  "dimensions": "Toisí: 384",
+  "embeddingModelBge": "Múnla Leabú: bge-small-zh-v1.5",
+  "takePhoto": "Tóg Grianghraf",
+  "chooseFromGallery": "Roghnaigh ón nGailearaí",
+  "editNickname": "Cuir Leasainm in eagar",
+  "enterNickname": "Cuir isteach leasainm",
+  "pleaseEnterNickname": "Cuir isteach leasainm le do thoil",
+  "nicknameAlreadyExistsOrInvalid": "Tá leasainm ann cheana nó tá sé neamhbhailí",
+  "user": "Úsáideoir",
+  "manageScheduledReminders": "Bainistigh meabhrúcháin agus aláraim sceidealaithe",
+  "imageFailedToLoad": "Theip ar lódáil an íomhá. Roghnaigh arís le do thoil.",
+  "imageIsStillLoading": "Tá an íomhá fós á luchtú",
+  "imageAreaNotReady": "Níl an limistéar íomhá réidh. Bain triail eile as.",
+  "cropFrameNotReady": "Níl fráma na mbarr réidh. Bain triail eile as.",
+  "invalidCropArea": "Limistéar barr neamhbhailí. Bain triail eile as.",
+  "cropFailed": "Theip ar an mbarr. Bain triail eile as.",
+  "cropAvatar": "Avatar Barraí",
+  "chooseAgain": "Roghnaigh Arís",
+  "rotate90": "Rothlaigh 90°",
+  "dragFrameToMove": "Tarraing an fráma le bogadh, tarraing bun ar dheis chun méid a athrú; pinch chun zúmáil agus bogadh íomhá.",
+  "pleaseFillInAllFields": "Líon isteach gach réimse le do thoil",
+  "pinMustBeAtLeast4Digits": "Ní mór go mbeadh 4 dhigit ar a laghad ag an UAP",
+  "pinAtLeast4Digits": "Ní mór go mbeadh 4 dhigit ar a laghad ag an UAP",
+  "invalidUsernameOrPin": "Ainm úsáideora nó UAP neamhbhailí",
+  "invalidUsernameOrPinError": "Ainm úsáideora nó UAP neamhbhailí",
+  "usernameAlreadyExists": "Tá an t-ainm úsáideora ann cheana féin",
+  "captureMomentsKeepMemories": "Gabh chuimhneacháin, coinnigh cuimhní cinn",
+  "username": "Ainm úsáideora",
+  "pin": "PIN",
+  "login": "Logáil isteach",
+  "createAccount": "Cruthaigh Cuntas",
+  "dontHaveAccountCreateOne": "Nach bhfuil cuntas agat? Cruthaigh ceann",
+  "alreadyHaveAccountLogin": "An bhfuil cuntas agat cheana féin? Logáil isteach",
+  "pleaseEnterUsername": "Cuir isteach ainm úsáideora le do thoil",
+  "pinsDoNotMatch": "Ní hionann PINanna",
+  "tapToAddAvatar": "Tapáil chun avatar a chur leis",
+  "yourName": "D'Ainm",
+  "privatePinOptional": "UAP príobháideach (roghnach)",
+  "usedToEncryptPrivateRecords": "Úsáidtear é chun taifid phríobháideacha a chriptiú",
+  "privatePin": "UAP príobháideach",
+  "leaveEmptyForNoEncryption": "Fág folamh gan aon chriptiú",
+  "confirmPin": "Deimhnigh UAP",
+  "getStarted": "Faigh Tosaigh",
+  "noReminders": "Gan meabhrúcháin",
+  "addReminder": "Cuir Meabhrúchán leis",
+  "title": "Teideal",
+  "descriptionOptional": "Cur síos (roghnach)",
+  "microphonePermissionRequired": "Teastaíonn cead micreafón",
+  "aiAssistant": "Cúntóir AI",
+  "listening": "Ag éisteacht...",
+  "typeAMessage": "Clóscríobh teachtaireacht...",
+  "aiChat": "Comhrá AI",
+  "startAConversation": "Cuir tús le comhrá",
+  "typeYourMessage": "Clóscríobh do theachtaireacht...",
+  "asrReconnecting": "ASR á athcheangal...",
+  "write": "Scríobh",
+  "writeEntry": "Scríobh Iontráil",
+  "noMemoriesYet": "Gan cuimhní cinn fós",
+  "tapPlusToCapture": "Tapáil + chun do chuid smaointe a ghabháil",
+  "tapPlusToCaptureYourThoughts": "Tapáil + chun do chuid smaointe a ghabháil",
+  "deleteMemory": "Scrios Cuimhne",
+  "deleteRecord": "Scrios Taifead",
+  "thisEntryWillBeRemoved": "Bainfear an iontráil seo de d'amlíne.",
+  "thisRecordWillBeRemoved": "Bainfear an taifead seo de d'amlíne.",
+  "searchYourRecords": "Cuardaigh do thaifid...",
+  "exactMatches": "Meaitseanna beachta",
+  "noExactMatches": "Níl aon mheaitseáil chruinn ann",
+  "exact": "Beacht",
+  "exactMatch": "Match Beacht",
+  "fuzzyMatches": "Meaitseanna Doiléir",
+  "noFuzzyMatches": "Uimh cluichí doiléir",
+  "vectorMatch": "Cluiche Veicteoir",
+  "networkMatches": "Meaitseanna Líonra",
+  "noNetworkMatches": "Ní mheaitseálann líonra",
+  "networkSearchIsOff": "Tá cuardach líonra múchta. Cumasaigh é i Socruithe.",
+  "network": "Líonra",
+  "networkMatch": "Cluiche Líonra",
+  "noSearchHistory": "Gan stair chuardaigh",
+  "searchHistory": "Stair Chuardaigh",
+  "invalidLink": "Nasc neamhbhailí",
+  "unableToOpenWebPage": "Ní féidir leathanach gréasáin a oscailt",
+  "imageMemory": "[Cuimhne íomhá]",
+  "tapToOpenWebPage": "Tapáil chun leathanach gréasáin a oscailt",
+  "editEntry": "Cuir Iontráil in Eagar",
+  "entryDetails": "Sonraí Iontrála",
+  "noContent": "Gan ábhar",
+  "diaryNotFound": "Dialann gan aimsiú",
+  "diaryNotFoundShort": "Taifead gan aimsiú",
+  "aiSummary": "Achoimre AI",
+  "microphoneInterrupted": "Idirbhriseadh an micreafón, cuireadh stop leis an taifeadadh.",
+  "bold": "Trom",
+  "italic": "iodálach",
+  "strikethrough": "Stailc tríd",
+  "image": "Íomhá",
+  "asrUnavailableRecordingActive": "Níl ASR ar fáil. Tá an taifeadadh fós gníomhach.",
+  "writeYourEntry": "Scríobh d’iontráil...",
+  "writeYourContent": "Scríobh d’ábhar...",
+  "microphoneStartFailed": "Theip ar an micreafón a thosú: _PH_0__",
+  "microphoneInterruptedRecordingStopped": "Idirbhriseadh an micreafón, cuireadh stop leis an taifeadadh.",
+  "asrReconnectingError": "ASR ag athcheangal: _PH_0__",
+  "imageInserted": "Íomhá curtha isteach: _PH_0__",
+  "voiceError": "Earráid ghutha: _PH_0__",
+  "aiServiceUnavailable": "Ár leithscéal, níl seirbhís AI ar fáil faoi láthair: {error}",
+  "shareFailed": "Theip ar roinnt: _PH_0__",
+  "searchMatchHits": "{matchType} · {count} amas",
+  "matchCount": "Meaitseáil: _PH_0__",
+  "sourceFromNetwork": "Foinse: _PH_0__",
+  "createNew": "Cruthaigh",
+  "micStartFailed": "Theip ar thús an mhicreafóin: _PH_0__",
+  "importResultAccounts": "Cuntais: +_PH_0__ / nuashonraithe {updated}",
+  "importResultDiaries": "Dialanna: +_PH_0__ / nuashonraithe {updated}",
+  "importResultReminders": "Meabhrúcháin: +_PH_0__ / nuashonraithe {updated}",
+  "importResultSkipped": "Léimte: _PH_0__",
+  "importResultTotal": "Iomlán athraithe: _PH_0__",
+  "settingsApplied": "Cuireadh socruithe sa chúltaca i bhfeidhm.",
+  "settingsNotApplied": "Níor cuireadh socruithe sa chúltaca i bhfeidhm.",
+  "backupExported": "Easpórtáil an cúltaca: _PH_0__",
+  "exportFailed": "Theip ar easpórtáil: _PH_0__",
+  "importFailed": "Theip ar an iompórtáil: _PH_0__"
+}

@@ -1,0 +1,363 @@
+{
+  "@@locale": "si",
+  "languageName": "සිංහල",
+  "languageNameEn": "Sinhala",
+  "appTitle": "Shiguang",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "settings": "සැකසුම්",
+  "account": "ගිණුම",
+  "reminders": "මතක් කිරීම්",
+  "language": "භාෂාව",
+  "appLanguage": "යෙදුම් භාෂාව",
+  "appearance": "පෙනුම",
+  "themeMode": "තේමා මාතෘකාව",
+  "dark": "අඳුරු",
+  "light": "ආලෝක",
+  "system": "පද්ධතිය",
+  "aiService": "AI සේවාව",
+  "aiChatProvider": "AI කතාබස් සපයන්නා",
+  "chatModel": "කතාබස් ආකෘතිය",
+  "localModel": "දේශීය ආකෘතිය",
+  "localModelDefault": "දේශීය ආකෘතිය (පෙරනිමිය)",
+  "ollamaEndpoint": "Ollama අවසාන ලක්ෂය",
+  "ollamaModel": "Ollama ආකෘතිය",
+  "openAiEndpoint": "OpenAI අවසාන ලක්ෂය",
+  "openAiApiKey": "OpenAI API යතුර",
+  "openAiModel": "OpenAI ආකෘතිය",
+  "geminiEndpoint": "Gemini අවසාන ලක්ෂය",
+  "geminiApiKey": "Gemini API යතුර",
+  "geminiModel": "Gemini ආකෘතිය",
+  "anthropicEndpoint": "Anthropic අවසාන ලක්ෂය",
+  "anthropicApiKey": "Anthropic API යතුර",
+  "anthropicModel": "Anthropic ආකෘතිය",
+  "customProtocol": "අභිරුචි ප්‍රොටොකෝලය",
+  "protocol": "ප්‍රොටොකෝලය",
+  "customEndpoint": "අභිරුචි අවසාන ලක්ෂය",
+  "customApiKey": "අභිරුචි API යතුර",
+  "customModel": "අභිරුචි ආකෘතිය",
+  "optionalForLocalServers": "දේශීය/අභිරුචි සේවාදායකයන් සඳහා විකල්ප",
+  "speechRecognitionEngine": "ස්ථානගත කිරීමේ එන්ජිනය",
+  "local": "දේශීය",
+  "endpoint": "අවසාන ලක්ෂය",
+  "localSpeechModel": "දේශීය ස්ථානගත කිරීමේ ආකෘතිය",
+  "senseVoiceOnnx": "SenseVoice ONNX (උපකරණයේ)",
+  "systemSpeechRecognition": "පද්ධතියේ ස්ථානගත කිරීම",
+  "systemRecognitionAndroidIos": "පද්ධතියේ හඳුනාගැනීම (Android/iOS)",
+  "endpointRecognitionCloudWs": "අවසාන ලක්ෂය හඳුනාගැනීම (Cloud/WS)",
+  "useBuiltInRecognizer": "අන්තර්ගත Android / iOS හඳුනාගැනීමේ උපකරණය භාවිතා කරන්න (cloud භාවිතා කළ හැක)",
+  "voiceAiEndpoint": "හඬ AI අවසාන ලක්ෂය",
+  "embeddingModel": "Embedding ආකෘතිය",
+  "crossDeviceSync": "ක්‍රොස්-උපකරණ සමමුහුර්තකරණය",
+  "sendToOtherDevices": "其他 උපකරණවලට යවන්න (LocalSend)",
+  "exportBackupAndSend": "උපකරණය අපනයනය කර share sheet හරහා යවන්න",
+  "importFromLocalSend": "LocalSend වෙතින් ආයාත කරන්න",
+  "selectBackupJson": "උපකරණ JSON තෝරන්න සහ දේශීය දත්ත එක් කරන්න",
+  "autoGeneration": "යම්කෝමයෙන් උත්පාදනය",
+  "autoGenerateSummary": "යම්කෝමයෙන් සාරාංශය උත්පාදනය කරන්න",
+  "generateAiSummaryForNewEntries": "නව ඇතුළු කිරීම් සඳහා AI සාරාංශය උත්පාදනය කරන්න",
+  "autoGenerateEmbedding": "යම්කෝමයෙන් Embedding උත්පාදනය කරන්න",
+  "generateVectorEmbedding": "සෙවීම සඳහා Vector Embedding උත්පාදනය කරන්න",
+  "enableNetworkSearch": "ජාල සෙවීම ක්‍රියාත්මක කරන්න",
+  "allowOnlineRetrieval": "සෙවීම සහ AI කතාබස් සඳහා මාර්ගයෙන් ලබා ගැනීමට ඉඩ දෙන්න (පෙරනිමියෙන් ක්‍රියා නොකරයි)",
+  "about": "පිළිබඳ",
+  "version": "අනුපිටපත් {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "database": "දත්ත ගබඩාව",
+  "objectBoxWithHnsw": "HNSW දර්ශකය සමග ObjectBox",
+  "logOut": "පිටවීම",
+  "custom": "අභිරුචි",
+  "openAiCompatible": "OpenAI අනුකූල",
+  "notSet": "සැකසා නැත",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... හෝ http://127.0.0.1:11434",
+  "supportsLocalLanPublic": "දේශීය/LAN/පොදු අවසාන ලක්ෂවලට සහාය දක්වයි",
+  "shiguangLocalSendBackup": "Shiguang LocalSend උපකරණ",
+  "localBackupFromShiguang": "Shiguang වෙතින් දේශීය උපකරණ (LocalSend හරහා ලබා ගන්න)",
+  "selectBackupFileFromLocalSend": "LocalSend වෙතින් ලබාගත් උපකරණ ගොනුව තෝරන්න",
+  "failedToResolveFilePath": "තෝරන ලද ගොනු මාර්ගය විසඳීමට අපොහොසත් විය",
+  "importOptions": "ආයාත කිරීමේ විකල්ප",
+  "importSettingsAsWell": "සැකසුම් ද ආයාත කිරීමට අවශ්‍යද?\n(API යතුරු අත්හැර දැමෙන නොමැත)",
+  "dataOnly": "දත්ත පමණයි",
+  "dataAndSettings": "දත්ත + සැකසුම්",
+  "importCompleted": "ආයාත කිරීම සම්පූර්ණයි",
+  "settingsInBackupWereApplied": "උපකරණයේ සැකසුම් යොදන ලදී.",
+  "settingsInBackupWereNotApplied": "උපකරණයේ සැකසුම් යොදන ලද්දේ නැත.",
+  "ok": "හරි",
+  "cancel": "අවලංගු කරන්න",
+  "save": "සුරකින්න",
+  "delete": "මකන්න",
+  "clear": "මුදා හරින්න",
+  "add": "එක් කරන්න",
+  "create": "සාදන්න",
+  "edit": "සංස්කරණය කරන්න",
+  "search": "සොයන්න",
+  "areYouSureYouWantToLogOut": "ඔබ පිටවීමට අවශ්‍ය බව විශ්වාසද?",
+  "chooseLanguage": "භාෂාව තෝරන්න",
+  "databaseInfo": "දත්ත ගබඩාව තොරතුරු",
+  "storage": "ගබඩාව: ObjectBox",
+  "vectorIndex": "Vector දර්ශකය: HNSW",
+  "dimensions": "මාන: 384",
+  "embeddingModelBge": "Embedding ආකෘතිය: bge-small-zh-v1.5",
+  "takePhoto": "පින්තූරයක් ගන්න",
+  "chooseFromGallery": "ගැලරියෙන් තෝරන්න",
+  "editNickname": "අන්වර්ථ නාමය සංස්කරණය කරන්න",
+  "enterNickname": "අන්වර්ථ නාමය ඇතුළත් කරන්න",
+  "pleaseEnterNickname": "කරුණාකර අන්වර්ථ නාමය ඇතුළත් කරන්න",
+  "nicknameAlreadyExistsOrInvalid": "අන්වර්ථ නාමය දැනටමත් තිබේ අත්‍යවශ්‍යයෙන් නොවේ",
+  "user": "පරිශීලකයා",
+  "manageScheduledReminders": "නියමිත මතක් කිරීම් සහ අලාර්ම කළමනාකරණය කරන්න",
+  "imageFailedToLoad": "පින්තූරය පූරණය කිරීමට අපොහොසත් විය. කරුණාකර නැවත තෝරන්න.",
+  "imageIsStillLoading": "පින්තූරය තවමත් පූරණය වෙමින් පවතී",
+  "imageAreaNotReady": "පින්තූරය ප්‍රදේශය සූදානම් නොවේ. කරුණාකර නැවත උත්සහ කරන්න.",
+  "cropFrameNotReady": "කොප් ෆ්‍රේමය සූදානම් නොවේ. කරුණාකර නැවත උත්සහ කරන්න.",
+  "invalidCropArea": "අත්‍යවශ්‍ය නොවන කොප් ප්‍රදේශය. කරුණාකර නැවත උත්සහ කරන්න.",
+  "cropFailed": "කොප් අසාර්ථක විය. කරුණාකර නැවත උත්සහ කරන්න.",
+  "cropAvatar": "අවාසියාලා කොප් කරන්න",
+  "chooseAgain": "නැවත තෝරන්න",
+  "rotate90": "90° කරන්න",
+  "dragFrameToMove": "ස්ථානගත කිරීමට ෆ්‍රේමය ඇදගෙන යන්න, ප්‍රමාණය වෙනස් කිරීමට පහළ-දකුණු පස ඇදගෙන යන්න; ප්‍රමාණය වෙනස් කිරීමට සහ පින්තූරය ගෙන යාමට pinch කරන්න.",
+  "pleaseFillInAllFields": "කරුණාකර සියලු ක්‍ෂේත්‍ර පුරවන්න",
+  "pinMustBeAtLeast4Digits": "PIN කෙලවරින් අකුරු 4 ක් විය යුතුය",
+  "pinAtLeast4Digits": "PIN කෙලවරින් අකුරු 4 ක් විය යුතුය",
+  "invalidUsernameOrPin": "අත්‍යවශ්‍ය නොවන පරිශීලක නාමය හෝ PIN",
+  "invalidUsernameOrPinError": "අත්‍යවශ්‍ය නොවන පරිශීලක නාමය හෝ PIN",
+  "usernameAlreadyExists": "පරිශීලක නාමය දැනටමත් තිබේ",
+  "captureMomentsKeepMemories": "මොහොත් අල්ලා ගන්න, මතකයන් රැක ගන්න",
+  "username": "පරිශීලක නාමය",
+  "pin": "PIN",
+  "login": "පිවිසීම",
+  "createAccount": "ගිණුමක් සාදන්න",
+  "dontHaveAccountCreateOne": "ගිණුමක් නැද්ද? එකක් සාදන්න",
+  "alreadyHaveAccountLogin": "ගිණුමක් තිබේද? පිවිසෙන්න",
+  "pleaseEnterUsername": "කරුණාකර පරිශීලක නාමය ඇතුළත් කරන්න",
+  "pinsDoNotMatch": "PIN එකින් එක නොගැලපේ",
+  "tapToAddAvatar": "අවාසියාලා එක් කිරීමට tap කරන්න",
+  "yourName": "ඔබේ නාමය",
+  "privatePinOptional": "පෞද්ගල PIN (විකල්ප)",
+  "usedToEncryptPrivateRecords": "පෞද්ගල වාර්තා එන්ක්‍රිප්ට් කිරීමට භාවිතා කරයි",
+  "privatePin": "පෞද්ගල PIN",
+  "leaveEmptyForNoEncryption": "එන්ක්‍රිප්ට් නොකිරීමට හිස් ලෙස තැබිය යුතුය",
+  "confirmPin": "PIN තහවරු කරන්න",
+  "getStarted": "පටන් ගන්න",
+  "noReminders": "මතක් කිරීම් නැත",
+  "addReminder": "මතක් කිරීමක් එක් කරන්න",
+  "title": "මාතෘකාව",
+  "descriptionOptional": "විස්තරය (විකල්ප)",
+  "microphonePermissionRequired": "මයික්‍රෆෝනයේ අවසරය අවශ්‍යයි",
+  "aiAssistant": "AI සහයේ",
+  "listening": " слуша...",
+  "typeAMessage": "පණිවිඩයක් ටයිප් කරන්න...",
+  "aiChat": "AI කතාබස්",
+  "startAConversation": "සංවායක් පටන් ගන්න",
+  "typeYourMessage": "ඔබේ පණිවිඩය ටයිප් කරන්න...",
+  "asrReconnecting": "ASR නැවත සම්බන්ධ වෙමින්...",
+  "write": "ලියන්න",
+  "writeEntry": "ඇතුළු කිරීම ලියන්න",
+  "noMemoriesYet": "තවමත් මතකයන් නැත",
+  "tapPlusToCapture": "ඔබේ අදහස් අල්ලා ගැනීමට + tap කරන්න",
+  "tapPlusToCaptureYourThoughts": "ඔබේ අදහස් අල්ලා ගැනීමට + tap කරන්න",
+  "deleteMemory": "මතකය මකන්න",
+  "deleteRecord": "වාර්තාව මකන්න",
+  "thisEntryWillBeRemoved": "මෙම ඇතුළු කිරීම ඔබේ කාල රේඛාවෙන් ඉවත් කෙරෙනු ඇත.",
+  "thisRecordWillBeRemoved": "මෙම වාර්තාව ඔබේ කාල රේඛාවෙන් ඉවත් කෙරෙනු ඇත.",
+  "searchYourRecords": "ඔබේ වාර්තා සොයන්න...",
+  "exactMatches": "නිවැරදි ගැලපීම්",
+  "noExactMatches": "නිවැරදි ගැලපීම් නැත",
+  "exact": "නිවැරදි",
+  "exactMatch": "නිවැරදි ගැලපීම",
+  "fuzzyMatches": "Fuzzy ගැලපීම්",
+  "noFuzzyMatches": "Fuzzy ගැලපීම් නැත",
+  "vectorMatch": "Vector ගැලපීම",
+  "networkMatches": "ජාල ගැලපීම්",
+  "noNetworkMatches": "ජාල ගැලපීම් නැත",
+  "networkSearchIsOff": "ජාල සෙවීම ක්‍රියා නොකරයි. සැකසුම් තුළ ක්‍රියාත්මක කරන්න.",
+  "network": "ජාලය",
+  "networkMatch": "ජාල ගැලපීම",
+  "noSearchHistory": "සෙවීම් ඉතිහාසයක් නැත",
+  "searchHistory": "සෙවීම් ඉතිහාසය",
+  "invalidLink": "අත්‍යවශ්‍ය නොවන සබැඳුම",
+  "unableToOpenWebPage": "වෙබ් පිටුව අවරෝධනය කළ නොහැක",
+  "imageMemory": "[පින්තූර මතකය]",
+  "tapToOpenWebPage": "වෙබ් පිටුව අරින ලද කිරීමට tap කරන්න",
+  "editEntry": "ඇතුළු කිරීම සංස්කරණය කරන්න",
+  "entryDetails": "ඇතුළු කිරීම් විස්තර",
+  "noContent": "අන්තර්ගතයක් නැත",
+  "diaryNotFound": "ඩයරි සොයා ගැනීමට නොහැක",
+  "diaryNotFoundShort": "වාර්තාව සොයා ගැනීමට නොහැක",
+  "aiSummary": "AI සාරාංශය",
+  "microphoneInterrupted": "මයික්‍රෆෝනය බාධා වූ අතර, පටිපාටානය නතර විය.",
+  "bold": "බොල්ඩ්",
+  "italic": "ඉතාලික්",
+  "strikethrough": "කතුරු මාර්ගය",
+  "image": "පින්තූරය",
+  "asrUnavailableRecordingActive": "ASR නොලබේ. පටිපාටානය තවමත් සක්‍රිය වේ.",
+  "writeYourEntry": "ඔබේ ඇතුළු කිරීම ලියන්න...",
+  "writeYourContent": "ඔබේ අන්තර්ගතය ලියන්න...",
+  "microphoneStartFailed": "මයික්‍රෆෝනය ආරම්භ කිරීමට අපොහොසත් විය: {error}",
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "microphoneInterruptedRecordingStopped": "මයික්‍රෆෝනය බාධා වූ අතර, පටිපාටානය නතර විය.",
+  "asrReconnectingError": "ASR නැවත සම්බන්ධ වෙමින්: {error}",
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "imageInserted": "පින්තූරය ඇතුළත් කරන ලදී: {name}",
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "voiceError": "හඬ දෝශය: {error}",
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "aiServiceUnavailable": "සමාවෙන්න, AI සේවාව මේ අවස්ථාවේදී නොලබේ: {error}",
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareFailed": "බෙදා හැරීම අසාර්ථක විය: {error}",
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "searchMatchHits": "{matchType} · {count} හිමිකම්",
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "matchCount": "ගැලපීම: {count}",
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sourceFromNetwork": "මූලාරම්යය: {source}",
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "createNew": "සාදන්න",
+  "micStartFailed": "මයික් ආරම්භ කිරීමට අපොහොසත් විය: {error}",
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importResultAccounts": "ගිණුම්: +{created} / යාවත්කාලීන {updated}",
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultDiaries": "ඩයරි: +{created} / යාවත්කාලීන {updated}",
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultReminders": "මතක් කිරීම්: +{created} / යාවත්කාලීන {updated}",
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultSkipped": "මග හැර යන ලදී: {count}",
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultTotal": "මුළු වෙනස්කම්: {count}",
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsApplied": "උපකරණයේ සැකසුම් යොදන ලදී.",
+  "settingsNotApplied": "උපකරණයේ සැකසුම් යොදන ලද්දේ නැත.",
+  "backupExported": "උපකරණය අපනයනය කරන ලදී: {path}",
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "exportFailed": "අපනයනය අසාර්ථක විය: {error}",
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importFailed": "ආයාත කිරීම අසාර්ථක විය: {error}",
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
+}

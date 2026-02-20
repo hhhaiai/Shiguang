@@ -1,0 +1,363 @@
+{
+  "@@locale": "cs",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Čeština",
+  "languageNameEn": "Czech",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... nebo http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Nastavení",
+  "account": "Účet",
+  "reminders": "Připomenutí",
+  "language": "Jazyk",
+  "appLanguage": "Jazyk aplikace",
+  "appearance": "Vzhled",
+  "themeMode": "Režim motivu",
+  "dark": "Tmavý",
+  "light": "Světlo",
+  "system": "Systém",
+  "aiService": "Služba AI",
+  "aiChatProvider": "Poskytovatel chatu AI",
+  "chatModel": "Model chatu",
+  "localModel": "Místní model",
+  "localModelDefault": "Místní model (výchozí)",
+  "ollamaEndpoint": "Koncový bod Ollama",
+  "ollamaModel": "Model Ollama",
+  "openAiEndpoint": "OpenAI Endpoint",
+  "openAiApiKey": "Klíč API OpenAI",
+  "openAiModel": "Model OpenAI",
+  "geminiEndpoint": "Koncový bod Gemini",
+  "geminiApiKey": "Gemini API klíč",
+  "geminiModel": "Modely Blíženců",
+  "anthropicEndpoint": "Antropický koncový bod",
+  "anthropicApiKey": "Antropický klíč API",
+  "anthropicModel": "Antropický model",
+  "customProtocol": "Vlastní protokol",
+  "protocol": "Protokol",
+  "customEndpoint": "Vlastní koncový bod",
+  "customApiKey": "Vlastní klíč API",
+  "customModel": "Vlastní model",
+  "optionalForLocalServers": "Volitelné pro místní/vlastní servery",
+  "speechRecognitionEngine": "Engine pro rozpoznávání řeči",
+  "local": "Místní",
+  "endpoint": "Koncový bod",
+  "localSpeechModel": "Model místní řeči",
+  "senseVoiceOnnx": "SenseVoice ONNX (na zařízení)",
+  "systemSpeechRecognition": "Systémové rozpoznávání řeči",
+  "systemRecognitionAndroidIos": "Rozpoznávání systému (Android/iOS)",
+  "endpointRecognitionCloudWs": "Rozpoznávání koncových bodů (Cloud/WS)",
+  "useBuiltInRecognizer": "Použít vestavěný rozpoznávač Android / iOS (může používat cloud)",
+  "voiceAiEndpoint": "Koncový bod hlasové umělé inteligence",
+  "embeddingModel": "Model vkládání",
+  "crossDeviceSync": "Synchronizace mezi zařízeními",
+  "sendToOtherDevices": "Odeslat na jiná zařízení (LocalSend)",
+  "exportBackupAndSend": "Exportujte zálohu a odešlete ji prostřednictvím sdíleného listu",
+  "importFromLocalSend": "Import z LocalSend",
+  "selectBackupJson": "Vyberte záložní JSON a sloučte místní data",
+  "autoGeneration": "Automatické generování",
+  "autoGenerateSummary": "Automatické generování souhrnu",
+  "generateAiSummaryForNewEntries": "Generovat souhrn AI pro nové položky",
+  "autoGenerateEmbedding": "Automatické generování vkládání",
+  "generateVectorEmbedding": "Vygenerujte vektorové vkládání pro vyhledávání",
+  "enableNetworkSearch": "Povolit vyhledávání v síti",
+  "allowOnlineRetrieval": "Povolit online načítání pro vyhledávání a chat AI (ve výchozím nastavení vypnuto)",
+  "about": "O",
+  "version": "Verze {version}",
+  "database": "Databáze",
+  "objectBoxWithHnsw": "ObjectBox s indexem HNSW",
+  "logOut": "Odhlásit se",
+  "custom": "Zvyk",
+  "openAiCompatible": "Kompatibilní s OpenAI",
+  "notSet": "Nenastaveno",
+  "supportsLocalLanPublic": "Podporuje místní/LAN/veřejné koncové body",
+  "shiguangLocalSendBackup": "Shiguang LocalSend Backup",
+  "localBackupFromShiguang": "Místní záloha z Shiguang (příjem přes LocalSend)",
+  "selectBackupFileFromLocalSend": "Vyberte záložní soubor přijatý z LocalSend",
+  "failedToResolveFilePath": "Nepodařilo se vyřešit vybranou cestu k souboru",
+  "importOptions": "Možnosti importu",
+  "importSettingsAsWell": "Importovat také nastavení?\n(klíče API nebudou přepsány)",
+  "dataOnly": "Pouze data",
+  "dataAndSettings": "Data + Nastavení",
+  "importCompleted": "Import dokončen",
+  "settingsInBackupWereApplied": "Nastavení v záloze byla použita.",
+  "settingsInBackupWereNotApplied": "Nastavení v záloze nebyla použita.",
+  "ok": "OK",
+  "cancel": "Zrušit",
+  "save": "Uložit",
+  "delete": "Vymazat",
+  "clear": "Jasný",
+  "add": "Přidat",
+  "create": "Vytvořit",
+  "edit": "Upravit",
+  "search": "Vyhledávání",
+  "areYouSureYouWantToLogOut": "Opravdu se chcete odhlásit?",
+  "chooseLanguage": "Vyberte Jazyk",
+  "databaseInfo": "Informace o databázi",
+  "storage": "Úložiště: ObjectBox",
+  "vectorIndex": "Index vektoru: HNSW",
+  "dimensions": "Rozměry: 384",
+  "embeddingModelBge": "Model vkládání: bge-small-zh-v1.5",
+  "takePhoto": "Vyfotit",
+  "chooseFromGallery": "Vyberte si z Galerie",
+  "editNickname": "Upravit přezdívku",
+  "enterNickname": "Zadejte přezdívku",
+  "pleaseEnterNickname": "Zadejte přezdívku",
+  "nicknameAlreadyExistsOrInvalid": "Přezdívka již existuje nebo je neplatná",
+  "user": "Uživatel",
+  "manageScheduledReminders": "Správa naplánovaných připomenutí a budíků",
+  "imageFailedToLoad": "Obrázek se nepodařilo načíst. Vyberte prosím znovu.",
+  "imageIsStillLoading": "Obrázek se stále načítá",
+  "imageAreaNotReady": "Obrazová oblast není připravena. Zkuste to znovu.",
+  "cropFrameNotReady": "Rám oříznutí není připraven. Zkuste to znovu.",
+  "invalidCropArea": "Neplatná oblast oříznutí. Zkuste to znovu.",
+  "cropFailed": "Oříznutí se nezdařilo. Zkuste to znovu.",
+  "cropAvatar": "Oříznout avatara",
+  "chooseAgain": "Vyberte znovu",
+  "rotate90": "Otočit o 90°",
+  "dragFrameToMove": "Přetažením rámečku přesunete, přetažením vpravo dole změníte velikost; sevřením prstů přiblížíte a přesunete obrázek.",
+  "pleaseFillInAllFields": "Vyplňte prosím všechna pole",
+  "pinMustBeAtLeast4Digits": "PIN musí mít alespoň 4 číslice",
+  "pinAtLeast4Digits": "PIN musí mít alespoň 4 číslice",
+  "invalidUsernameOrPin": "Neplatné uživatelské jméno nebo PIN",
+  "invalidUsernameOrPinError": "Neplatné uživatelské jméno nebo PIN",
+  "usernameAlreadyExists": "Uživatelské jméno již existuje",
+  "captureMomentsKeepMemories": "Zachyťte okamžiky, uchovejte vzpomínky",
+  "username": "Uživatelské jméno",
+  "pin": "KOLÍK",
+  "login": "Přihlášení",
+  "createAccount": "Vytvořit účet",
+  "dontHaveAccountCreateOne": "Nemáte účet? Vytvořte jeden",
+  "alreadyHaveAccountLogin": "Už máte účet? Přihlášení",
+  "pleaseEnterUsername": "Zadejte uživatelské jméno",
+  "pinsDoNotMatch": "Kódy PIN se neshodují",
+  "tapToAddAvatar": "Klepnutím přidáte avatara",
+  "yourName": "Vaše jméno",
+  "privatePinOptional": "Soukromý PIN (volitelné)",
+  "usedToEncryptPrivateRecords": "Používá se k šifrování soukromých záznamů",
+  "privatePin": "Soukromý PIN",
+  "leaveEmptyForNoEncryption": "Nechejte prázdné, nechcete-li šifrovat",
+  "confirmPin": "Potvrďte PIN",
+  "getStarted": "Začněte",
+  "noReminders": "Žádné připomenutí",
+  "addReminder": "Přidat připomenutí",
+  "title": "Titul",
+  "descriptionOptional": "Popis (volitelné)",
+  "microphonePermissionRequired": "Je vyžadováno povolení k mikrofonu",
+  "aiAssistant": "Asistent AI",
+  "listening": "Naslouchání...",
+  "typeAMessage": "Napište zprávu...",
+  "aiChat": "AI chat",
+  "startAConversation": "Zahajte konverzaci",
+  "typeYourMessage": "Napište svou zprávu...",
+  "asrReconnecting": "ASR se znovu připojuje...",
+  "write": "Napsat",
+  "writeEntry": "Napište Vstup",
+  "noMemoriesYet": "Zatím žádné vzpomínky",
+  "tapPlusToCapture": "Klepnutím na + zachytíte své myšlenky",
+  "tapPlusToCaptureYourThoughts": "Klepnutím na + zachytíte své myšlenky",
+  "deleteMemory": "Vymazat paměť",
+  "deleteRecord": "Smazat záznam",
+  "thisEntryWillBeRemoved": "Tento záznam bude odstraněn z vaší časové osy.",
+  "thisRecordWillBeRemoved": "Tento záznam bude odstraněn z vaší časové osy.",
+  "searchYourRecords": "Prohledejte své záznamy...",
+  "exactMatches": "Přesné shody",
+  "noExactMatches": "Žádné přesné shody",
+  "exact": "Přesný",
+  "exactMatch": "Přesná shoda",
+  "fuzzyMatches": "Fuzzy zápasy",
+  "noFuzzyMatches": "Žádné nejasné shody",
+  "vectorMatch": "Vektorový zápas",
+  "networkMatches": "Síťové shody",
+  "noNetworkMatches": "Žádná síť neodpovídá",
+  "networkSearchIsOff": "Vyhledávání sítě je vypnuté. Povolte jej v Nastavení.",
+  "network": "Síť",
+  "networkMatch": "Network Match",
+  "noSearchHistory": "Žádná historie vyhledávání",
+  "searchHistory": "Historie vyhledávání",
+  "invalidLink": "Neplatný odkaz",
+  "unableToOpenWebPage": "Nelze otevřít webovou stránku",
+  "imageMemory": "[Obrazová paměť]",
+  "tapToOpenWebPage": "Klepnutím otevřete webovou stránku",
+  "editEntry": "Upravit záznam",
+  "entryDetails": "Vstupní podrobnosti",
+  "noContent": "Žádný obsah",
+  "diaryNotFound": "Deník nenalezen",
+  "diaryNotFoundShort": "Záznam nenalezen",
+  "aiSummary": "Shrnutí AI",
+  "microphoneInterrupted": "Mikrofon přerušen, nahrávání zastaveno.",
+  "bold": "Tučné",
+  "italic": "kurzíva",
+  "strikethrough": "Přeškrtnutí",
+  "image": "Obraz",
+  "asrUnavailableRecordingActive": "ASR není k dispozici. Nahrávání je stále aktivní.",
+  "writeYourEntry": "Napište svůj příspěvek...",
+  "writeYourContent": "Napište svůj obsah...",
+  "microphoneStartFailed": "Nepodařilo se spustit mikrofon: {error}",
+  "microphoneInterruptedRecordingStopped": "Mikrofon přerušen, nahrávání zastaveno.",
+  "asrReconnectingError": "Opětovné připojení ASR: {error}",
+  "imageInserted": "Vložený obrázek: {name}",
+  "voiceError": "Chyba hlasu: {error}",
+  "aiServiceUnavailable": "Omlouváme se, služba AI je momentálně nedostupná: {error}",
+  "shareFailed": "Sdílení se nezdařilo: {error}",
+  "searchMatchHits": "{matchType} · {count} zásahů",
+  "matchCount": "Shoda: {count}",
+  "sourceFromNetwork": "Zdroj: {source}",
+  "createNew": "Vytvořit",
+  "micStartFailed": "Spuštění mikrofonu se nezdařilo: {error}",
+  "importResultAccounts": "Účty: +{created} / aktualizováno {updated}",
+  "importResultDiaries": "Deníky: +{created} / aktualizováno {updated}",
+  "importResultReminders": "Připomenutí: +{created} / aktualizováno {updated}",
+  "importResultSkipped": "Přeskočeno: {count}",
+  "importResultTotal": "Celkem změněno: {count}",
+  "settingsApplied": "Nastavení v záloze byla použita.",
+  "settingsNotApplied": "Nastavení v záloze nebyla použita.",
+  "backupExported": "Exportovaná záloha: {path}",
+  "exportFailed": "Export se nezdařil: {error}",
+  "importFailed": "Import se nezdařil: {error}"
+}

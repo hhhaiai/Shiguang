@@ -1,0 +1,363 @@
+{
+  "@@locale": "cy",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Cymraeg",
+  "languageNameEn": "Welsh",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... neu http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Gosodiadau",
+  "account": "Cyfrif",
+  "reminders": "Atgofion",
+  "language": "Iaith",
+  "appLanguage": "Iaith Ap",
+  "appearance": "Ymddangosiad",
+  "themeMode": "Modd Thema",
+  "dark": "Tywyll",
+  "light": "Ysgafn",
+  "system": "System",
+  "aiService": "Gwasanaeth AI",
+  "aiChatProvider": "Darparwr Sgwrs AI",
+  "chatModel": "Model Sgwrsio",
+  "localModel": "Model Lleol",
+  "localModelDefault": "Model Lleol (Diofyn)",
+  "ollamaEndpoint": "Ollama Endpoint",
+  "ollamaModel": "Model Olama",
+  "openAiEndpoint": "Diweddbwynt OpenAI",
+  "openAiApiKey": "Allwedd API OpenAI",
+  "openAiModel": "Model OpenAI",
+  "geminiEndpoint": "Diweddbwynt Gemini",
+  "geminiApiKey": "Allwedd Gemini API",
+  "geminiModel": "Modelau Gemini",
+  "anthropicEndpoint": "Diweddbwynt Anthropig",
+  "anthropicApiKey": "Allwedd API Anthropig",
+  "anthropicModel": "Model Anthropig",
+  "customProtocol": "Protocol Personol",
+  "protocol": "Protocol",
+  "customEndpoint": "Diweddbwynt Personol",
+  "customApiKey": "Allwedd API Custom",
+  "customModel": "Model Custom",
+  "optionalForLocalServers": "Dewisol ar gyfer gweinyddwyr lleol/custom",
+  "speechRecognitionEngine": "Peiriant Adnabod Lleferydd",
+  "local": "Lleol",
+  "endpoint": "Diweddbwynt",
+  "localSpeechModel": "Model Lleferydd Lleol",
+  "senseVoiceOnnx": "SenseVoice ONNX (ar y ddyfais)",
+  "systemSpeechRecognition": "Cydnabod Lleferydd System",
+  "systemRecognitionAndroidIos": "Cydnabod System (Android/iOS)",
+  "endpointRecognitionCloudWs": "Cydnabod Diweddbwynt (Cloud/WS)",
+  "useBuiltInRecognizer": "Defnyddiwch adnabyddydd Android / iOS adeiledig (gall ddefnyddio cwmwl)",
+  "voiceAiEndpoint": "Llais AI Diweddbwynt",
+  "embeddingModel": "Model Ymgorffori",
+  "crossDeviceSync": "Cysoni Traws-Dyfais",
+  "sendToOtherDevices": "Anfon i Ddyfeisiadau Eraill (LocalSend)",
+  "exportBackupAndSend": "Allforio copi wrth gefn a'i anfon trwy daflen rannu",
+  "importFromLocalSend": "Mewnforio o LocalSend",
+  "selectBackupJson": "Dewiswch JSON wrth gefn ac uno data lleol",
+  "autoGeneration": "Cynhyrchu Auto",
+  "autoGenerateSummary": "Awto Cynhyrchu Crynodeb",
+  "generateAiSummaryForNewEntries": "Cynhyrchu crynodeb AI ar gyfer cofnodion newydd",
+  "autoGenerateEmbedding": "Auto Cynhyrchu Mewnosod",
+  "generateVectorEmbedding": "Cynhyrchu mewnosod fector ar gyfer chwilio",
+  "enableNetworkSearch": "Galluogi Chwiliad Rhwydwaith",
+  "allowOnlineRetrieval": "Caniatáu adalw ar-lein ar gyfer chwilio a sgwrsio AI (i ffwrdd yn ddiofyn)",
+  "about": "Ynghylch",
+  "version": "Fersiwn _PH_0__",
+  "database": "Cronfa Ddata",
+  "objectBoxWithHnsw": "ObjectBox gyda mynegai HNSW",
+  "logOut": "Allgofnodi",
+  "custom": "Custom",
+  "openAiCompatible": "Yn gydnaws ag OpenAI",
+  "notSet": "Heb ei osod",
+  "supportsLocalLanPublic": "Yn cefnogi pwyntiau terfyn lleol/LAN/cyhoeddus",
+  "shiguangLocalSendBackup": "Shiguang LocalSend wrth gefn",
+  "localBackupFromShiguang": "Copi wrth gefn lleol gan Shiguang (derbyn trwy LocalSend)",
+  "selectBackupFileFromLocalSend": "Dewiswch ffeil wrth gefn a dderbyniwyd gan LocalSend",
+  "failedToResolveFilePath": "Wedi methu â datrys y llwybr ffeil a ddewiswyd",
+  "importOptions": "Opsiynau Mewnforio",
+  "importSettingsAsWell": "Mewnforio gosodiadau hefyd?\n(Ni fydd allweddi API yn cael eu trosysgrifo)",
+  "dataOnly": "Data yn unig",
+  "dataAndSettings": "Data + Gosodiadau",
+  "importCompleted": "Mewnforio wedi'i Gwblhau",
+  "settingsInBackupWereApplied": "Gosodwyd gosodiadau wrth gefn.",
+  "settingsInBackupWereNotApplied": "Ni weithredwyd gosodiadau wrth gefn.",
+  "ok": "iawn",
+  "cancel": "Canslo",
+  "save": "Arbed",
+  "delete": "Dileu",
+  "clear": "Clir",
+  "add": "Ychwanegu",
+  "create": "Creu",
+  "edit": "Golygu",
+  "search": "Chwiliwch",
+  "areYouSureYouWantToLogOut": "Ydych chi'n siŵr eich bod am allgofnodi?",
+  "chooseLanguage": "Dewiswch Iaith",
+  "databaseInfo": "Gwybodaeth Cronfa Ddata",
+  "storage": "Storio: ObjectBox",
+  "vectorIndex": "Mynegai Fector: HNSW",
+  "dimensions": "Dimensiynau: 384",
+  "embeddingModelBge": "Model Ymgorffori: bge-small-zh-v1.5",
+  "takePhoto": "Tynnu Llun",
+  "chooseFromGallery": "Dewiswch o'r Oriel",
+  "editNickname": "Golygu Llysenw",
+  "enterNickname": "Rhowch y llysenw",
+  "pleaseEnterNickname": "Rhowch lysenw",
+  "nicknameAlreadyExistsOrInvalid": "Mae llysenw eisoes yn bodoli neu'n annilys",
+  "user": "Defnyddiwr",
+  "manageScheduledReminders": "Rheoli nodiadau atgoffa a larymau sydd wedi'u hamserlennu",
+  "imageFailedToLoad": "Ni fu modd llwytho'r ddelwedd. Dewiswch eto.",
+  "imageIsStillLoading": "Mae'r llun yn dal i lwytho",
+  "imageAreaNotReady": "Nid yw ardal y ddelwedd yn barod. Ceisiwch eto.",
+  "cropFrameNotReady": "Nid yw ffrâm cnwd yn barod. Ceisiwch eto.",
+  "invalidCropArea": "Ardal gnwd annilys. Ceisiwch eto.",
+  "cropFailed": "Methodd y cnwd. Ceisiwch eto.",
+  "cropAvatar": "Avatar Cnwd",
+  "chooseAgain": "Dewiswch Eto",
+  "rotate90": "Cylchdroi 90°",
+  "dragFrameToMove": "Llusgwch y ffrâm i symud, llusgo gwaelod-dde i newid maint; pinsio i chwyddo a symud delwedd.",
+  "pleaseFillInAllFields": "Llenwch bob maes",
+  "pinMustBeAtLeast4Digits": "Rhaid i'r PIN fod o leiaf 4 digid",
+  "pinAtLeast4Digits": "Rhaid i PIN fod o leiaf 4 digid",
+  "invalidUsernameOrPin": "Enw defnyddiwr neu PIN annilys",
+  "invalidUsernameOrPinError": "Enw defnyddiwr neu PIN annilys",
+  "usernameAlreadyExists": "Mae enw defnyddiwr eisoes yn bodoli",
+  "captureMomentsKeepMemories": "Dal eiliadau, cadw atgofion",
+  "username": "Enw defnyddiwr",
+  "pin": "PIN",
+  "login": "Mewngofnodi",
+  "createAccount": "Creu Cyfrif",
+  "dontHaveAccountCreateOne": "Dim cyfrif? Creu un",
+  "alreadyHaveAccountLogin": "Oes gennych chi gyfrif yn barod? Mewngofnodi",
+  "pleaseEnterUsername": "Rhowch enw defnyddiwr",
+  "pinsDoNotMatch": "Nid yw PINs yn cyfateb",
+  "tapToAddAvatar": "Tapiwch i ychwanegu avatar",
+  "yourName": "Eich Enw",
+  "privatePinOptional": "PIN preifat (dewisol)",
+  "usedToEncryptPrivateRecords": "Fe'i defnyddir i amgryptio cofnodion preifat",
+  "privatePin": "PIN preifat",
+  "leaveEmptyForNoEncryption": "Gadewch yn wag heb unrhyw amgryptio",
+  "confirmPin": "Cadarnhau PIN",
+  "getStarted": "Cychwyn Arni",
+  "noReminders": "Dim nodiadau atgoffa",
+  "addReminder": "Ychwanegu Nodyn Atgoffa",
+  "title": "Teitl",
+  "descriptionOptional": "Disgrifiad (dewisol)",
+  "microphonePermissionRequired": "Mae angen caniatâd meicroffon",
+  "aiAssistant": "Cynorthwy-ydd AI",
+  "listening": "Wrth wrando...",
+  "typeAMessage": "Teipiwch neges...",
+  "aiChat": "Sgwrs AI",
+  "startAConversation": "Dechreuwch sgwrs",
+  "typeYourMessage": "Teipiwch eich neges...",
+  "asrReconnecting": "ASR yn ailgysylltu...",
+  "write": "Ysgrifena",
+  "writeEntry": "Ysgrifennu Cofnod",
+  "noMemoriesYet": "Dim atgofion eto",
+  "tapPlusToCapture": "Tap + i ddal eich meddyliau",
+  "tapPlusToCaptureYourThoughts": "Tap + i ddal eich meddyliau",
+  "deleteMemory": "Dileu Cof",
+  "deleteRecord": "Dileu Cofnod",
+  "thisEntryWillBeRemoved": "Bydd y cofnod hwn yn cael ei ddileu o'ch llinell amser.",
+  "thisRecordWillBeRemoved": "Bydd y cofnod hwn yn cael ei ddileu o'ch llinell amser.",
+  "searchYourRecords": "Chwiliwch eich cofnodion...",
+  "exactMatches": "Cyfatebiaethau Union",
+  "noExactMatches": "Dim cyfatebiaeth union",
+  "exact": "Yn union",
+  "exactMatch": "Cydweddiad Union",
+  "fuzzyMatches": "Gemau Fuzzy",
+  "noFuzzyMatches": "Dim gemau niwlog",
+  "vectorMatch": "Gêm Fector",
+  "networkMatches": "Gemau Rhwydwaith",
+  "noNetworkMatches": "Dim rhwydwaith yn cyfateb",
+  "networkSearchIsOff": "Mae chwiliad rhwydwaith wedi'i ddiffodd. Ei alluogi yn y Gosodiadau.",
+  "network": "Rhwydwaith",
+  "networkMatch": "Cydweddiad Rhwydwaith",
+  "noSearchHistory": "Dim hanes chwilio",
+  "searchHistory": "Hanes Chwilio",
+  "invalidLink": "Dolen annilys",
+  "unableToOpenWebPage": "Methu agor tudalen we",
+  "imageMemory": "[Cof delwedd]",
+  "tapToOpenWebPage": "Tapiwch i agor tudalen we",
+  "editEntry": "Golygu Cofnod",
+  "entryDetails": "Manylion Mynediad",
+  "noContent": "Dim cynnwys",
+  "diaryNotFound": "Dyddiadur heb ei ddarganfod",
+  "diaryNotFoundShort": "Heb ganfod y cofnod",
+  "aiSummary": "Crynodeb AI",
+  "microphoneInterrupted": "Torri ar draws meicroffon, stopiodd recordio.",
+  "bold": "Beiddgar",
+  "italic": "Italaidd",
+  "strikethrough": "Streic drwodd",
+  "image": "Delwedd",
+  "asrUnavailableRecordingActive": "Nid yw ASR ar gael. Mae recordio yn dal yn weithredol.",
+  "writeYourEntry": "Ysgrifennwch eich cofnod...",
+  "writeYourContent": "Ysgrifennwch eich cynnwys...",
+  "microphoneStartFailed": "Wedi methu cychwyn meicroffon: {error}",
+  "microphoneInterruptedRecordingStopped": "Torri ar draws meicroffon, stopiodd recordio.",
+  "asrReconnectingError": "Ailgysylltu ASR: {error}",
+  "imageInserted": "Delwedd wedi'i mewnosod: _PH_0__",
+  "voiceError": "Gwall llais: _PH_0__",
+  "aiServiceUnavailable": "Mae'n ddrwg gennym, nid yw gwasanaeth AI ar gael ar hyn o bryd: {error}",
+  "shareFailed": "Wedi methu rhannu: _PH_0__",
+  "searchMatchHits": "_PH_0__ · {count} hits",
+  "matchCount": "Cyfateb: _PH_0__",
+  "sourceFromNetwork": "Ffynhonnell: _PH_0__",
+  "createNew": "Creu",
+  "micStartFailed": "Methodd cychwyn y meic: _PH_0__",
+  "importResultAccounts": "Cyfrifon: +{created} / diweddaru {updated}",
+  "importResultDiaries": "Dyddiaduron: +{created} / diweddaru {updated}",
+  "importResultReminders": "Nodyn atgoffa: +_PH_0__ / diweddaru {updated}",
+  "importResultSkipped": "Wedi'i hepgor: _PH_0__",
+  "importResultTotal": "Cyfanswm wedi'i newid: _PH_0__",
+  "settingsApplied": "Gosodwyd gosodiadau wrth gefn.",
+  "settingsNotApplied": "Ni weithredwyd gosodiadau wrth gefn.",
+  "backupExported": "Copi wrth gefn wedi'i allforio: _PH_0__",
+  "exportFailed": "Wedi methu allforio: _PH_0__",
+  "importFailed": "Methodd mewnforio: _PH_0__"
+}

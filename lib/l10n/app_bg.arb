@@ -1,0 +1,363 @@
+{
+  "@@locale": "bg",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Български",
+  "languageNameEn": "Bulgarian",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... или http://127.0.0.1:11434",
+  "appTitle": "Шигуанг",
+  "settings": "Настройки",
+  "account": "акаунт",
+  "reminders": "Напомняния",
+  "language": "език",
+  "appLanguage": "Език на приложението",
+  "appearance": "Външен вид",
+  "themeMode": "Тематичен режим",
+  "dark": "Тъмно",
+  "light": "светлина",
+  "system": "система",
+  "aiService": "AI услуга",
+  "aiChatProvider": "Доставчик на AI чат",
+  "chatModel": "Модел на чат",
+  "localModel": "Местен модел",
+  "localModelDefault": "Локален модел (по подразбиране)",
+  "ollamaEndpoint": "Крайна точка Олама",
+  "ollamaModel": "Модел Олама",
+  "openAiEndpoint": "Крайна точка на OpenAI",
+  "openAiApiKey": "OpenAI API ключ",
+  "openAiModel": "Модел OpenAI",
+  "geminiEndpoint": "Крайна точка Близнаци",
+  "geminiApiKey": "Gemini API ключ",
+  "geminiModel": "Модели Близнаци",
+  "anthropicEndpoint": "Антропна крайна точка",
+  "anthropicApiKey": "Anthropic API ключ",
+  "anthropicModel": "Антропен модел",
+  "customProtocol": "Персонализиран протокол",
+  "protocol": "протокол",
+  "customEndpoint": "Персонализирана крайна точка",
+  "customApiKey": "Персонализиран API ключ",
+  "customModel": "Персонализиран модел",
+  "optionalForLocalServers": "По избор за локални/персонализирани сървъри",
+  "speechRecognitionEngine": "Механизъм за разпознаване на реч",
+  "local": "Местен",
+  "endpoint": "Крайна точка",
+  "localSpeechModel": "Модел на местната реч",
+  "senseVoiceOnnx": "SenseVoice ONNX (на устройството)",
+  "systemSpeechRecognition": "Системно разпознаване на реч",
+  "systemRecognitionAndroidIos": "Системно разпознаване (Android/iOS)",
+  "endpointRecognitionCloudWs": "Разпознаване на крайна точка (облак/WS)",
+  "useBuiltInRecognizer": "Използвайте вградения разпознавач за Android / iOS (може да използва облак)",
+  "voiceAiEndpoint": "Гласова крайна точка на AI",
+  "embeddingModel": "Модел на вграждане",
+  "crossDeviceSync": "Синхронизиране между устройства",
+  "sendToOtherDevices": "Изпращане до други устройства (LocalSend)",
+  "exportBackupAndSend": "Експортиране на резервно копие и изпращане чрез лист за споделяне",
+  "importFromLocalSend": "Импортиране от LocalSend",
+  "selectBackupJson": "Изберете архивиране на JSON и обединете локални данни",
+  "autoGeneration": "Автоматично генериране",
+  "autoGenerateSummary": "Автоматично генериране на резюме",
+  "generateAiSummaryForNewEntries": "Генериране на AI резюме за нови записи",
+  "autoGenerateEmbedding": "Автоматично генериране на вграждане",
+  "generateVectorEmbedding": "Генериране на векторно вграждане за търсене",
+  "enableNetworkSearch": "Активирайте мрежовото търсене",
+  "allowOnlineRetrieval": "Разрешаване на онлайн извличане за търсене и AI чат (изключено по подразбиране)",
+  "about": "За",
+  "version": "Версия {version}",
+  "database": "База данни",
+  "objectBoxWithHnsw": "ObjectBox с HNSW индекс",
+  "logOut": "Излезте",
+  "custom": "По поръчка",
+  "openAiCompatible": "Съвместим с OpenAI",
+  "notSet": "Не е зададено",
+  "supportsLocalLanPublic": "Поддържа локални/LAN/публични крайни точки",
+  "shiguangLocalSendBackup": "Архивиране на Shiguang LocalSend",
+  "localBackupFromShiguang": "Локално архивиране от Shiguang (получаване чрез LocalSend)",
+  "selectBackupFileFromLocalSend": "Изберете архивен файл, получен от LocalSend",
+  "failedToResolveFilePath": "Неуспешно разрешаване на избрания файлов път",
+  "importOptions": "Опции за импортиране",
+  "importSettingsAsWell": "Импортиране на настройки?\n(API ключовете няма да бъдат презаписани)",
+  "dataOnly": "Само данни",
+  "dataAndSettings": "Данни + Настройки",
+  "importCompleted": "Импортирането е завършено",
+  "settingsInBackupWereApplied": "Настройките в резервното копие бяха приложени.",
+  "settingsInBackupWereNotApplied": "Настройките в резервното копие не бяха приложени.",
+  "ok": "добре",
+  "cancel": "Отказ",
+  "save": "Запазване",
+  "delete": "Изтриване",
+  "clear": "ясно",
+  "add": "Добавете",
+  "create": "Създавайте",
+  "edit": "Редактиране",
+  "search": "Търсене",
+  "areYouSureYouWantToLogOut": "Сигурни ли сте, че искате да излезете?",
+  "chooseLanguage": "Изберете език",
+  "databaseInfo": "Информация за база данни",
+  "storage": "Съхранение: ObjectBox",
+  "vectorIndex": "Векторен индекс: HNSW",
+  "dimensions": "Размери: 384",
+  "embeddingModelBge": "Модел за вграждане: bge-small-zh-v1.5",
+  "takePhoto": "Направете снимка",
+  "chooseFromGallery": "Изберете от Галерия",
+  "editNickname": "Редактиране на псевдоним",
+  "enterNickname": "Въведете псевдоним",
+  "pleaseEnterNickname": "Моля, въведете псевдоним",
+  "nicknameAlreadyExistsOrInvalid": "Псевдонимът вече съществува или е невалиден",
+  "user": "Потребител",
+  "manageScheduledReminders": "Управлявайте планирани напомняния и аларми",
+  "imageFailedToLoad": "Изображението не успя да се зареди. Моля, изберете отново.",
+  "imageIsStillLoading": "Изображението все още се зарежда",
+  "imageAreaNotReady": "Областта на изображението не е готова. Моля, опитайте отново.",
+  "cropFrameNotReady": "Рамката за изрязване не е готова. Моля, опитайте отново.",
+  "invalidCropArea": "Невалидна площ за отглеждане. Моля, опитайте отново.",
+  "cropFailed": "Изрязването е неуспешно. Моля, опитайте отново.",
+  "cropAvatar": "Изрязване на аватар",
+  "chooseAgain": "Изберете отново",
+  "rotate90": "Завъртане на 90°",
+  "dragFrameToMove": "Плъзнете рамката, за да я преместите, плъзнете долу-вдясно, за да преоразмерите; щипнете, за да увеличите и преместите изображението.",
+  "pleaseFillInAllFields": "Моля, попълнете всички полета",
+  "pinMustBeAtLeast4Digits": "ПИН трябва да е поне 4 цифри",
+  "pinAtLeast4Digits": "ПИН трябва да е поне 4 цифри",
+  "invalidUsernameOrPin": "Невалидно потребителско име или ПИН",
+  "invalidUsernameOrPinError": "Невалидно потребителско име или ПИН",
+  "usernameAlreadyExists": "Потребителското име вече съществува",
+  "captureMomentsKeepMemories": "Уловете моменти, запазете спомени",
+  "username": "Потребителско име",
+  "pin": "ПИН",
+  "login": "Вход",
+  "createAccount": "Създаване на акаунт",
+  "dontHaveAccountCreateOne": "Нямате акаунт? Създайте такъв",
+  "alreadyHaveAccountLogin": "Вече имате акаунт? Вход",
+  "pleaseEnterUsername": "Моля, въведете потребителско име",
+  "pinsDoNotMatch": "ПИН кодовете не съвпадат",
+  "tapToAddAvatar": "Докоснете, за да добавите аватар",
+  "yourName": "Вашето име",
+  "privatePinOptional": "Личен ПИН (по избор)",
+  "usedToEncryptPrivateRecords": "Използва се за криптиране на лични записи",
+  "privatePin": "Личен ПИН",
+  "leaveEmptyForNoEncryption": "Оставете празно за липса на криптиране",
+  "confirmPin": "Потвърдете PIN",
+  "getStarted": "Започнете",
+  "noReminders": "Без напомняния",
+  "addReminder": "Добавяне на напомняне",
+  "title": "Заглавие",
+  "descriptionOptional": "Описание (по избор)",
+  "microphonePermissionRequired": "Изисква се разрешение за микрофон",
+  "aiAssistant": "AI асистент",
+  "listening": "Слушам...",
+  "typeAMessage": "Въведете съобщение...",
+  "aiChat": "AI Чат",
+  "startAConversation": "Започнете разговор",
+  "typeYourMessage": "Въведете вашето съобщение...",
+  "asrReconnecting": "ASR се свързва отново...",
+  "write": "Пишете",
+  "writeEntry": "Напишете вход",
+  "noMemoriesYet": "Още няма спомени",
+  "tapPlusToCapture": "Докоснете +, за да заснемете мислите си",
+  "tapPlusToCaptureYourThoughts": "Докоснете +, за да заснемете мислите си",
+  "deleteMemory": "Изтриване на паметта",
+  "deleteRecord": "Изтриване на запис",
+  "thisEntryWillBeRemoved": "Този запис ще бъде премахнат от вашата хронология.",
+  "thisRecordWillBeRemoved": "Този запис ще бъде премахнат от вашата хронология.",
+  "searchYourRecords": "Търсете вашите записи...",
+  "exactMatches": "Точни съвпадения",
+  "noExactMatches": "Няма точни съвпадения",
+  "exact": "Точно",
+  "exactMatch": "Точно съвпадение",
+  "fuzzyMatches": "Неясни съвпадения",
+  "noFuzzyMatches": "Няма неясни съвпадения",
+  "vectorMatch": "Векторно съвпадение",
+  "networkMatches": "Мрежови съвпадения",
+  "noNetworkMatches": "Няма мрежови съвпадения",
+  "networkSearchIsOff": "Мрежовото търсене е изключено. Активирайте го в Настройки.",
+  "network": "мрежа",
+  "networkMatch": "Мрежово съвпадение",
+  "noSearchHistory": "Няма история на търсенията",
+  "searchHistory": "История на търсенето",
+  "invalidLink": "Невалидна връзка",
+  "unableToOpenWebPage": "Не може да се отвори уеб страница",
+  "imageMemory": "[Памет за изображения]",
+  "tapToOpenWebPage": "Докоснете, за да отворите уеб страница",
+  "editEntry": "Редактиране на запис",
+  "entryDetails": "Подробности за влизане",
+  "noContent": "Без съдържание",
+  "diaryNotFound": "Дневникът не е намерен",
+  "diaryNotFoundShort": "Записът не е намерен",
+  "aiSummary": "AI Резюме",
+  "microphoneInterrupted": "Микрофонът прекъсна, записът спря.",
+  "bold": "Удебелен",
+  "italic": "Курсив",
+  "strikethrough": "Зачертано",
+  "image": "Изображение",
+  "asrUnavailableRecordingActive": "ASR не е наличен. Записът все още е активен.",
+  "writeYourEntry": "Напишете своя запис...",
+  "writeYourContent": "Напишете вашето съдържание...",
+  "microphoneStartFailed": "Неуспешно стартиране на микрофона: {error}",
+  "microphoneInterruptedRecordingStopped": "Микрофонът прекъсна, записът спря.",
+  "asrReconnectingError": "ASR се свързва повторно: {error}",
+  "imageInserted": "Вмъкнато изображение: {name}",
+  "voiceError": "Гласова грешка: {error}",
+  "aiServiceUnavailable": "За съжаление услугата AI в момента не е налична: {error}",
+  "shareFailed": "Неуспешно споделяне: {error}",
+  "searchMatchHits": "{matchType} · {count} посещения",
+  "matchCount": "Съвпадение: {count}",
+  "sourceFromNetwork": "Източник: {source}",
+  "createNew": "Създавайте",
+  "micStartFailed": "Неуспешно стартиране на микрофона: {error}",
+  "importResultAccounts": "Акаунти: +{created} / актуализиран {updated}",
+  "importResultDiaries": "Дневници: +{created} / актуализиран {updated}",
+  "importResultReminders": "Напомняния: +{created} / актуализирано {updated}",
+  "importResultSkipped": "Пропуснати: {count}",
+  "importResultTotal": "Общо променени: {count}",
+  "settingsApplied": "Настройките в резервното копие бяха приложени.",
+  "settingsNotApplied": "Настройките в резервното копие не бяха приложени.",
+  "backupExported": "Експортирано резервно копие: {path}",
+  "exportFailed": "Неуспешно експортиране: {error}",
+  "importFailed": "Неуспешно импортиране: {error}"
+}

@@ -1,0 +1,363 @@
+{
+  "@@locale": "ka",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "ქართული",
+  "languageNameEn": "Georgian",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "შიგუანგი",
+  "settings": "პარამეტრები",
+  "account": "ანგარიში",
+  "reminders": "შეხსენებები",
+  "language": "ენა",
+  "appLanguage": "აპლიკაციის ენა",
+  "appearance": "გარეგნობა",
+  "themeMode": "თემის რეჟიმი",
+  "dark": "ბნელი",
+  "light": "სინათლე",
+  "system": "სისტემა",
+  "aiService": "AI სერვისი",
+  "aiChatProvider": "AI ჩატის პროვაიდერი",
+  "chatModel": "ჩატის მოდელი",
+  "localModel": "ლოკალური მოდელი",
+  "localModelDefault": "ადგილობრივი მოდელი (ნაგულისხმევი)",
+  "ollamaEndpoint": "ოლამა ბოლო წერტილი",
+  "ollamaModel": "ოლამა მოდელი",
+  "openAiEndpoint": "OpenAI საბოლოო წერტილი",
+  "openAiApiKey": "OpenAI API გასაღები",
+  "openAiModel": "OpenAI მოდელი",
+  "geminiEndpoint": "ტყუპების ბოლო წერტილი",
+  "geminiApiKey": "Gemini API გასაღები",
+  "geminiModel": "ტყუპების მოდელები",
+  "anthropicEndpoint": "ანთროპიული საბოლოო წერტილი",
+  "anthropicApiKey": "Anthropic API გასაღები",
+  "anthropicModel": "ანთროპიული მოდელი",
+  "customProtocol": "მორგებული პროტოკოლი",
+  "protocol": "პროტოკოლი",
+  "customEndpoint": "მორგებული საბოლოო წერტილი",
+  "customApiKey": "მორგებული API გასაღები",
+  "customModel": "მორგებული მოდელი",
+  "optionalForLocalServers": "არჩევითი ლოკალური/საბაჟო სერვერებისთვის",
+  "speechRecognitionEngine": "მეტყველების ამოცნობის ძრავა",
+  "local": "ადგილობრივი",
+  "endpoint": "ბოლო წერტილი",
+  "localSpeechModel": "ლოკალური მეტყველების მოდელი",
+  "senseVoiceOnnx": "SenseVoice ONNX (მოწყობილობაზე)",
+  "systemSpeechRecognition": "სისტემური მეტყველების ამოცნობა",
+  "systemRecognitionAndroidIos": "სისტემის ამოცნობა (Android/iOS)",
+  "endpointRecognitionCloudWs": "ბოლო წერტილის ამოცნობა (Cloud/WS)",
+  "useBuiltInRecognizer": "გამოიყენეთ ჩაშენებული Android / iOS ამომცნობი (შეიძლება გამოიყენოთ ღრუბელი)",
+  "voiceAiEndpoint": "ხმის AI ბოლო წერტილი",
+  "embeddingModel": "ჩანერგვის მოდელი",
+  "crossDeviceSync": "მოწყობილობებს შორის სინქრონიზაცია",
+  "sendToOtherDevices": "სხვა მოწყობილობებზე გაგზავნა (LocalSend)",
+  "exportBackupAndSend": "სარეზერვო ასლის ექსპორტი და გაგზავნა გაზიარების ფურცლის მეშვეობით",
+  "importFromLocalSend": "იმპორტი LocalSend-დან",
+  "selectBackupJson": "აირჩიეთ სარეზერვო JSON და შეაერთეთ ადგილობრივი მონაცემები",
+  "autoGeneration": "ავტო თაობა",
+  "autoGenerateSummary": "ავტო გენერირება შეჯამება",
+  "generateAiSummaryForNewEntries": "შექმენით AI რეზიუმე ახალი ჩანაწერებისთვის",
+  "autoGenerateEmbedding": "ჩაშენების ავტომატური გენერირება",
+  "generateVectorEmbedding": "შექმენით ვექტორული ჩაშენება საძიებლად",
+  "enableNetworkSearch": "ჩართეთ ქსელის ძებნა",
+  "allowOnlineRetrieval": "ძიების და AI ჩეთისთვის ონლაინ მოძიების დაშვება (ნაგულისხმევად გამორთულია)",
+  "about": "შესახებ",
+  "version": "ვერსია {version}",
+  "database": "მონაცემთა ბაზა",
+  "objectBoxWithHnsw": "ObjectBox HNSW ინდექსით",
+  "logOut": "გასვლა",
+  "custom": "საბაჟო",
+  "openAiCompatible": "OpenAI თავსებადი",
+  "notSet": "არ არის დაყენებული",
+  "supportsLocalLanPublic": "მხარს უჭერს ლოკალურ/LAN/საჯარო ბოლო წერტილებს",
+  "shiguangLocalSendBackup": "Shiguang LocalSend სარეზერვო",
+  "localBackupFromShiguang": "ადგილობრივი სარეზერვო ასლი Shiguang-ისგან (მიიღეთ LocalSend-ის საშუალებით)",
+  "selectBackupFileFromLocalSend": "აირჩიეთ LocalSend-დან მიღებული სარეზერვო ფაილი",
+  "failedToResolveFilePath": "ფაილის არჩეული გზის გადაჭრა ვერ მოხერხდა",
+  "importOptions": "იმპორტის პარამეტრები",
+  "importSettingsAsWell": "პარამეტრების იმპორტიც?\n(API კლავიშები არ გადაიწერება)",
+  "dataOnly": "მხოლოდ მონაცემები",
+  "dataAndSettings": "მონაცემები + პარამეტრები",
+  "importCompleted": "იმპორტი დასრულდა",
+  "settingsInBackupWereApplied": "გამოყენებული იქნა სარეზერვო ასლის პარამეტრები.",
+  "settingsInBackupWereNotApplied": "სარეზერვო ასლის პარამეტრები არ იყო გამოყენებული.",
+  "ok": "OK",
+  "cancel": "გაუქმება",
+  "save": "შენახვა",
+  "delete": "წაშლა",
+  "clear": "წმინდა",
+  "add": "დამატება",
+  "create": "შექმნა",
+  "edit": "რედაქტირება",
+  "search": "ძიება",
+  "areYouSureYouWantToLogOut": "დარწმუნებული ხართ, რომ გსურთ გამოსვლა?",
+  "chooseLanguage": "აირჩიეთ ენა",
+  "databaseInfo": "მონაცემთა ბაზის ინფორმაცია",
+  "storage": "შენახვა: ObjectBox",
+  "vectorIndex": "ვექტორული ინდექსი: HNSW",
+  "dimensions": "ზომები: 384",
+  "embeddingModelBge": "ჩაშენების მოდელი: bge-small-zh-v1.5",
+  "takePhoto": "ფოტოს გადაღება",
+  "chooseFromGallery": "აირჩიეთ გალერეიდან",
+  "editNickname": "მეტსახელის რედაქტირება",
+  "enterNickname": "შეიყვანეთ მეტსახელი",
+  "pleaseEnterNickname": "გთხოვთ, შეიყვანოთ მეტსახელი",
+  "nicknameAlreadyExistsOrInvalid": "მეტსახელი უკვე არსებობს ან არასწორია",
+  "user": "მომხმარებელი",
+  "manageScheduledReminders": "მართეთ დაგეგმილი შეხსენებები და სიგნალიზაცია",
+  "imageFailedToLoad": "სურათი ვერ ჩაიტვირთა. გთხოვთ ხელახლა აირჩიოთ.",
+  "imageIsStillLoading": "სურათი კვლავ იტვირთება",
+  "imageAreaNotReady": "სურათის არე არ არის მზად. გთხოვთ, სცადოთ ხელახლა.",
+  "cropFrameNotReady": "ჩამოჭრის ჩარჩო მზად არ არის. გთხოვთ, სცადოთ ხელახლა.",
+  "invalidCropArea": "მოსავლის არეალი არასწორია. გთხოვთ, სცადოთ ხელახლა.",
+  "cropFailed": "ჩამოჭრა ვერ მოხერხდა. გთხოვთ, სცადოთ ხელახლა.",
+  "cropAvatar": "ამოჭრა ავატარი",
+  "chooseAgain": "აირჩიეთ ისევ",
+  "rotate90": "შეტრიალეთ 90°",
+  "dragFrameToMove": "გადაიტანეთ ჩარჩო გადასაადგილებლად, გადაათრიეთ ქვედა მარჯვნივ ზომის შესაცვლელად; დააჭირეთ სურათის გასადიდებლად და გადასატანად.",
+  "pleaseFillInAllFields": "გთხოვთ შეავსოთ ყველა ველი",
+  "pinMustBeAtLeast4Digits": "PIN უნდა იყოს მინიმუმ 4 ციფრი",
+  "pinAtLeast4Digits": "PIN უნდა იყოს მინიმუმ 4 ციფრი",
+  "invalidUsernameOrPin": "არასწორი მომხმარებლის სახელი ან PIN",
+  "invalidUsernameOrPinError": "მომხმარებლის სახელი ან PIN არასწორია",
+  "usernameAlreadyExists": "მომხმარებლის სახელი უკვე არსებობს",
+  "captureMomentsKeepMemories": "აღბეჭდეთ მომენტები, შეინახეთ მოგონებები",
+  "username": "მომხმარებლის სახელი",
+  "pin": "PIN",
+  "login": "შესვლა",
+  "createAccount": "ანგარიშის შექმნა",
+  "dontHaveAccountCreateOne": "არ გაქვთ ანგარიში? შექმენით ერთი",
+  "alreadyHaveAccountLogin": "უკვე გაქვთ ანგარიში? შესვლა",
+  "pleaseEnterUsername": "გთხოვთ შეიყვანოთ მომხმარებლის სახელი",
+  "pinsDoNotMatch": "PIN-ები არ ემთხვევა",
+  "tapToAddAvatar": "შეეხეთ ავატარის დასამატებლად",
+  "yourName": "შენი სახელი",
+  "privatePinOptional": "პირადი PIN (არასავალდებულო)",
+  "usedToEncryptPrivateRecords": "გამოიყენება პირადი ჩანაწერების დაშიფვრისთვის",
+  "privatePin": "პირადი PIN",
+  "leaveEmptyForNoEncryption": "დატოვეთ ცარიელი დაშიფვრის გარეშე",
+  "confirmPin": "დაადასტურეთ PIN",
+  "getStarted": "დაიწყეთ",
+  "noReminders": "არანაირი შეხსენება",
+  "addReminder": "შეხსენების დამატება",
+  "title": "სათაური",
+  "descriptionOptional": "აღწერა (სურვილისამებრ)",
+  "microphonePermissionRequired": "საჭიროა მიკროფონის ნებართვა",
+  "aiAssistant": "AI ასისტენტი",
+  "listening": "მოსმენა...",
+  "typeAMessage": "ჩაწერეთ შეტყობინება...",
+  "aiChat": "AI ჩატი",
+  "startAConversation": "დაიწყეთ საუბარი",
+  "typeYourMessage": "ჩაწერეთ თქვენი შეტყობინება...",
+  "asrReconnecting": "ASR ხელახლა დაკავშირება...",
+  "write": "დაწერე",
+  "writeEntry": "ჩაწერეთ ჩანაწერი",
+  "noMemoriesYet": "ჯერ არ არის მოგონებები",
+  "tapPlusToCapture": "შეეხეთ + თქვენი აზრების დასაფიქსირებლად",
+  "tapPlusToCaptureYourThoughts": "შეეხეთ + თქვენი აზრების დასაფიქსირებლად",
+  "deleteMemory": "მეხსიერების წაშლა",
+  "deleteRecord": "ჩანაწერის წაშლა",
+  "thisEntryWillBeRemoved": "ეს ჩანაწერი წაიშლება თქვენი დროის ხაზიდან.",
+  "thisRecordWillBeRemoved": "ეს ჩანაწერი წაიშლება თქვენი დროის ხაზიდან.",
+  "searchYourRecords": "მოძებნეთ თქვენი ჩანაწერები...",
+  "exactMatches": "ზუსტი მატჩები",
+  "noExactMatches": "ზუსტი შესატყვისები არ არის",
+  "exact": "ზუსტი",
+  "exactMatch": "ზუსტი მატჩი",
+  "fuzzyMatches": "ბუნდოვანი მატჩები",
+  "noFuzzyMatches": "არ არის ბუნდოვანი მატჩები",
+  "vectorMatch": "ვექტორული მატჩი",
+  "networkMatches": "ქსელის მატჩები",
+  "noNetworkMatches": "ქსელის შესატყვისი არ არის",
+  "networkSearchIsOff": "ქსელის ძებნა გამორთულია. ჩართეთ ის პარამეტრებში.",
+  "network": "ქსელი",
+  "networkMatch": "ქსელის მატჩი",
+  "noSearchHistory": "ძიების ისტორია არ არის",
+  "searchHistory": "ძიების ისტორია",
+  "invalidLink": "არასწორი ბმული",
+  "unableToOpenWebPage": "ვებგვერდის გახსნა ვერ ხერხდება",
+  "imageMemory": "[გამოსახულების მეხსიერება]",
+  "tapToOpenWebPage": "შეეხეთ ვებ გვერდის გასახსნელად",
+  "editEntry": "ჩანაწერის რედაქტირება",
+  "entryDetails": "შესვლის დეტალები",
+  "noContent": "არანაირი შინაარსი",
+  "diaryNotFound": "დღიური ვერ მოიძებნა",
+  "diaryNotFoundShort": "ჩანაწერი ვერ მოიძებნა",
+  "aiSummary": "AI რეზიუმე",
+  "microphoneInterrupted": "მიკროფონი გაითიშა, ჩაწერა შეწყდა.",
+  "bold": "თამამი",
+  "italic": "დახრილი",
+  "strikethrough": "დარტყმა",
+  "image": "გამოსახულება",
+  "asrUnavailableRecordingActive": "ASR მიუწვდომელია. ჩაწერა ჯერ კიდევ აქტიურია.",
+  "writeYourEntry": "დაწერეთ თქვენი ჩანაწერი...",
+  "writeYourContent": "დაწერეთ თქვენი შინაარსი...",
+  "microphoneStartFailed": "მიკროფონის გაშვება ვერ მოხერხდა: {error}",
+  "microphoneInterruptedRecordingStopped": "მიკროფონი გაითიშა, ჩაწერა შეწყდა.",
+  "asrReconnectingError": "ASR ხელახლა დაკავშირება: {error}",
+  "imageInserted": "ჩასმულია სურათი: {name}",
+  "voiceError": "ხმის შეცდომა: {error}",
+  "aiServiceUnavailable": "უკაცრავად, AI სერვისი ამჟამად მიუწვდომელია: {error}",
+  "shareFailed": "გაზიარება ვერ მოხერხდა: {error}",
+  "searchMatchHits": "{matchType} · {count} ჰიტები",
+  "matchCount": "მატჩი: {count}",
+  "sourceFromNetwork": "წყარო: {source}",
+  "createNew": "შექმნა",
+  "micStartFailed": "მიკროფონის დაწყება ვერ მოხერხდა: {error}",
+  "importResultAccounts": "ანგარიშები: +{created} / განახლებულია {updated}",
+  "importResultDiaries": "დღიურები: +{created} / განახლებულია {updated}",
+  "importResultReminders": "შეხსენებები: +{created} / განახლებულია {updated}",
+  "importResultSkipped": "გამოტოვებული: {count}",
+  "importResultTotal": "სულ შეიცვალა: {count}",
+  "settingsApplied": "გამოყენებული იქნა სარეზერვო ასლის პარამეტრები.",
+  "settingsNotApplied": "სარეზერვო ასლის პარამეტრები არ იყო გამოყენებული.",
+  "backupExported": "სარეზერვო ასლი ექსპორტირებულია: {path}",
+  "exportFailed": "ექსპორტი ვერ მოხერხდა: {error}",
+  "importFailed": "იმპორტი ვერ მოხერხდა: {error}"
+}

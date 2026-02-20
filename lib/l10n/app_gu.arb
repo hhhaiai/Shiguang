@@ -1,0 +1,363 @@
+{
+  "@@locale": "gu",
+  "languageName": "ગુજરાતી",
+  "languageNameEn": "Gujarati",
+  "appTitle": "શિગુઆંગ",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "settings": "સેટિંગ્સ",
+  "account": "એકાઉન્ટ",
+  "reminders": "રિમાઇન્ડર્સ",
+  "language": "ભાષા",
+  "appLanguage": "એપ ભાષા",
+  "appearance": "દેખાવ",
+  "themeMode": "થીમ મોડ",
+  "dark": "અંધારું",
+  "light": "પ્રકાશ",
+  "system": "સિસ્ટમ",
+  "aiService": "AI સેવા",
+  "aiChatProvider": "AI ચૅટ પ્રોવાઈડર",
+  "chatModel": "ચૅટ મોડેલ",
+  "localModel": "લોકલ મોડેલ",
+  "localModelDefault": "લોકલ મોડેલ (ડિફોલ્ટ)",
+  "ollamaEndpoint": "Ollama એન્ડપોઈન્ટ",
+  "ollamaModel": "Ollama મોડેલ",
+  "openAiEndpoint": "OpenAI એન્ડપોઈન્ટ",
+  "openAiApiKey": "OpenAI API કી",
+  "openAiModel": "OpenAI મોડેલ",
+  "geminiEndpoint": "Gemini એન્ડપોઈન્ટ",
+  "geminiApiKey": "Gemini API કી",
+  "geminiModel": "Gemini મોડેલ",
+  "anthropicEndpoint": "Anthropic એન્ડપોઈન્ટ",
+  "anthropicApiKey": "Anthropic API કી",
+  "anthropicModel": "Anthropic મોડેલ",
+  "customProtocol": "કસ્ટમ પ્રોટોકોલ",
+  "protocol": "પ્રોટોકોલ",
+  "customEndpoint": "કસ્ટમ એન્ડપોઈન્ટ",
+  "customApiKey": "કસ્ટમ API કી",
+  "customModel": "કસ્ટમ મોડેલ",
+  "optionalForLocalServers": "લોકલ/કસ્ટમ સર્વર્સ માટે વૈકલ્પિક",
+  "speechRecognitionEngine": "વાણી ઓળખાણ એન્જિન",
+  "local": "લોકલ",
+  "endpoint": "એન્ડપોઈન્ટ",
+  "localSpeechModel": "લોકલ Speech મોડેલ",
+  "senseVoiceOnnx": "SenseVoice ONNX (ડિવાઈસ પર)",
+  "systemSpeechRecognition": "સિસ્ટમ વાણી ઓળખાણ",
+  "systemRecognitionAndroidIos": "સિસ્ટમ ઓળખાણ (Android/iOS)",
+  "endpointRecognitionCloudWs": "એન્ડપોઇન્ટ ઓળખાણ (Cloud/WS)",
+  "useBuiltInRecognizer": "Built-in Android / iOS recognizer નો ઉપયોગ કરો (cloud નો ઉપયોગ કરી શકે છે)",
+  "voiceAiEndpoint": "વોઇસ AI એન્ડપોઇન્ટ",
+  "embeddingModel": "એમ્બેડિંગ મોડેલ",
+  "crossDeviceSync": "ક્રોસ-ડિવાઇસ સમન્વય",
+  "sendToOtherDevices": "અન્ય ડિવાઈસો પર મોકલો (LocalSend)",
+  "exportBackupAndSend": "Backup export કરો અને share sheet દ્વારા મોકલો",
+  "importFromLocalSend": "LocalSend માંથી import કરો",
+  "selectBackupJson": "Backup JSON પસંદ કરો અને local data merge કરો",
+  "autoGeneration": "સ્વચાલિત જનરેશન",
+  "autoGenerateSummary": "સારાંશ સ્વચાલિત રીતે બનાવો",
+  "generateAiSummaryForNewEntries": "New entries માટે AI summary generate કરો",
+  "autoGenerateEmbedding": "એમ્બેડિંગ સ્વચાલિત રીતે બનાવો",
+  "generateVectorEmbedding": "Search માટે vector embedding generate કરો",
+  "enableNetworkSearch": "Network Search Enable કરો",
+  "allowOnlineRetrieval": "Search અને AI Chat માટે online retrieval ની મંજૂરી આપો (default off)",
+  "about": "વિશે",
+  "version": "સંસ્કરણ {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "database": "ડેટાબેઝ",
+  "objectBoxWithHnsw": "HNSW ઇન્ડેક્સ સાથે ObjectBox",
+  "logOut": "લૉગ આઉટ",
+  "custom": "કસ્ટમ",
+  "openAiCompatible": "OpenAI સુસંગત",
+  "notSet": "Set નથી",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... અથવા http://127.0.0.1:11434",
+  "supportsLocalLanPublic": "Local/LAN/public endpoints ને સપોર્ટ કરે છે",
+  "shiguangLocalSendBackup": "Shiguang LocalSend બેકઅપ",
+  "localBackupFromShiguang": "Shiguang માંથી local backup (LocalSend દ્વારા receive કરો)",
+  "selectBackupFileFromLocalSend": "LocalSend માંથી receive કરેલ backup file પસંદ કરો",
+  "failedToResolveFilePath": "Select કરેલ file path resolve કરવામાં નિષ્ફળ",
+  "importOptions": "આયાત વિકલ્પો",
+  "importSettingsAsWell": "Settings પણ import કરવા છે?\n(API keys override થશે નહીં)",
+  "dataOnly": "ફક્ત ડેટા",
+  "dataAndSettings": "ડેટા + સેટિંગ્સ",
+  "importCompleted": "આયાત પૂર્ણ થયું",
+  "settingsInBackupWereApplied": "Backup માંથી settings apply થયા.",
+  "settingsInBackupWereNotApplied": "Backup માંથી settings apply થયા નહીં.",
+  "ok": "બરાબર",
+  "cancel": "રદ કરો",
+  "save": "સાચવો",
+  "delete": "કાઢી નાખો",
+  "clear": "સાફ કરો",
+  "add": "ઉમેરો",
+  "create": "બનાવો",
+  "edit": "સંપાદિત કરો",
+  "search": "શોધો",
+  "areYouSureYouWantToLogOut": " તમે ખરેખર Log Out કરવા માંગો છો?",
+  "chooseLanguage": "Language પસંદ કરો",
+  "databaseInfo": "ડેટાબેઝ માહિતી",
+  "storage": "સ્ટોરેજ: ObjectBox",
+  "vectorIndex": "વેક્ટર ઇન્ડેક્સ: HNSW",
+  "dimensions": "પરિમાણો: 384",
+  "embeddingModelBge": "એમ્બેડિંગ મોડેલ: bge-small-zh-v1.5",
+  "takePhoto": "ફોટો લો",
+  "chooseFromGallery": "Gallery માંથી પસંદ કરો",
+  "editNickname": "ઉપનામ સંપાદિત કરો",
+  "enterNickname": "ઉપનામ દાખલ કરો",
+  "pleaseEnterNickname": "કૃપા કરીને ઉપનામ દાખલ કરો",
+  "nicknameAlreadyExistsOrInvalid": "ઉપનામ પહેલેથી જ છે અથવા અમાન્ય છે",
+  "user": "વપરાશકર્તા",
+  "manageScheduledReminders": "Scheduled reminders and alarms manage કરો",
+  "imageFailedToLoad": "Image load થવામાં નિષ્ફળ. Please choose again.",
+  "imageIsStillLoading": "Image હજુ load થઈ રહી છે",
+  "imageAreaNotReady": "Image area ready નથી. Please try again.",
+  "cropFrameNotReady": "Crop frame ready નથી. Please try again.",
+  "invalidCropArea": "અમાન્ય ક્રોપ વિસ્તાર. કૃપા કરીને ફરી પ્રયાસ કરો.",
+  "cropFailed": "ક્રોપ નિષ્ફળ ગયું. કૃપા કરીને ફરી પ્રયાસ કરો.",
+  "cropAvatar": "અવતાર ક્રોપ કરો",
+  "chooseAgain": "ફરી પસંદ કરો",
+  "rotate90": "90° ફેરવો",
+  "dragFrameToMove": "Frame ને move કરવા માટે drag, resize કરવા માટે bottom-right drag; zoom અને image move કરવા માટે pinch.",
+  "pleaseFillInAllFields": "કૃપા કરીને તમામ ખાણા ભરો",
+  "pinMustBeAtLeast4Digits": "PIN ઓછામાં ઓછા 4 અંકનો હોવો જોઈએ",
+  "pinAtLeast4Digits": "PIN ઓછામાં ઓછા 4 અંકનો હોવો જોઈએ",
+  "invalidUsernameOrPin": "અમાન્ય વપરાશકર્તા નામ અથવા PIN",
+  "invalidUsernameOrPinError": "અમાન્ય વપરાશકર્તા નામ અથવા PIN",
+  "usernameAlreadyExists": "વપરાશકર્તા નામ પહેલેથી જ છે",
+  "captureMomentsKeepMemories": "ક્ષણોને કેદ કરો, યાદોને સાચવો",
+  "username": "વપરાશકર્તા નામ",
+  "pin": "PIN",
+  "login": "લોગિન",
+  "createAccount": "એકાઉન્ટ બનાવો",
+  "dontHaveAccountCreateOne": "એકાઉન્ટ નથી? એક બનાવો",
+  "alreadyHaveAccountLogin": "પહેલેથી એકાઉન્ટ છે? લોગિન કરો",
+  "pleaseEnterUsername": "કૃપા કરીને વપરાશકર્તા નામ દાખલ કરો",
+  "pinsDoNotMatch": "PIN મેળ ખાતા નથી",
+  "tapToAddAvatar": "અવતાર ઉમેરવા ટૅપ કરો",
+  "yourName": "તમારું નામ",
+  "privatePinOptional": "ખાનગી PIN (વૈકલ્પિક)",
+  "usedToEncryptPrivateRecords": "Private records encrypt કરવા માટે ઉપયોગ થાય છે",
+  "privatePin": "ખાનગી PIN",
+  "leaveEmptyForNoEncryption": "Encryption વગર leave empty",
+  "confirmPin": "PIN ની પુષ્ટિ કરો",
+  "getStarted": "શરૂ કરો",
+  "noReminders": "કોઈ રીમાઇન્ડર નથી",
+  "addReminder": "રીમાઇન્ડર ઉમેરો",
+  "title": "શીર્ષક",
+  "descriptionOptional": "વર્ણન (વૈકલ્પિક)",
+  "microphonePermissionRequired": "માઇક્રોફોન પરવાનગી જરૂરી છે",
+  "aiAssistant": "AI સહાયક",
+  "listening": "સાંભળવામાં આવી રહ્યું છે...",
+  "typeAMessage": "સંદેશ લખો...",
+  "aiChat": "AI ચેટ",
+  "startAConversation": "વાર્તાલાપ શરૂ કરો",
+  "typeYourMessage": "તમારો સંદેશ લખો...",
+  "asrReconnecting": "ASR ફરી જોડાઈ રહ્યું છે...",
+  "write": "લખો",
+  "writeEntry": "એન્ટ્રી લખો",
+  "noMemoriesYet": "હજુ યાદો નથી",
+  "tapPlusToCapture": "તમારા વિચારો કેદ કરવા + પર ટૅપ કરો",
+  "tapPlusToCaptureYourThoughts": "તમારા વિચારો કેદ કરવા + પર ટૅપ કરો",
+  "deleteMemory": "સ્મૃતિ કાઢી નાખો",
+  "deleteRecord": "રેકોર્ડ કાઢી નાખો",
+  "thisEntryWillBeRemoved": "આ એન્ટ્રી તમારી સમયરેખામાંથી દૂર થશે.",
+  "thisRecordWillBeRemoved": "આ રેકોર્ડ તમારી સમયરેખામાંથી દૂર થશે.",
+  "searchYourRecords": "તમારા રેકોર્ડ શોધો...",
+  "exactMatches": "ચોક્કસ મેળ",
+  "noExactMatches": "ચોક્કસ મેળ નથી",
+  "exact": "ચોક્કસ",
+  "exactMatch": "ચોક્કસ મેળ",
+  "fuzzyMatches": "અંદાજિત મેળ",
+  "noFuzzyMatches": "અંદાજિત મેળ નથી",
+  "vectorMatch": "વેક્ટર મેળ",
+  "networkMatches": "નેટવર્ક મેળ",
+  "noNetworkMatches": "નેટવર્ક મેળ નથી",
+  "networkSearchIsOff": "નેટવર્ક શોધ બંધ છે. સેટિંગ્સમાં તેને ચાલુ કરો.",
+  "network": "નેટવર્ક",
+  "networkMatch": "નેટવર્ક મેળ",
+  "noSearchHistory": "શોધ ઇતિહાસ નથી",
+  "searchHistory": "શોધ ઇતિહાસ",
+  "invalidLink": "અમાન્ય લિંક",
+  "unableToOpenWebPage": "વેબ પેજ ખોલી શકાયું નથી",
+  "imageMemory": "[છબી સ્મૃતિ]",
+  "tapToOpenWebPage": "વેબ પેજ ખોલવા ટૅપ કરો",
+  "editEntry": "એન્ટ્રી સંપાદિત કરો",
+  "entryDetails": "એન્ટ્રી વિગતો",
+  "noContent": "કોઈ સામગ્રી નથી",
+  "diaryNotFound": "ડાયરી મળી નથી",
+  "diaryNotFoundShort": "રેકોર્ડ મળ્યો નથી",
+  "aiSummary": "AI સારાંશ",
+  "microphoneInterrupted": "માઇક્રોફોનમાં વિક્ષેપ આવ્યો, રેકોર્ડિંગ બંધ થયું.",
+  "bold": "ઘાટું",
+  "italic": "તિરછું",
+  "strikethrough": "મધ્યરેખા",
+  "image": "છબી",
+  "asrUnavailableRecordingActive": "ASR ઉપલબ્ધ નથી. રેકોર્ડિંગ હજુ સક્રિય છે.",
+  "writeYourEntry": "તમારી એન્ટ્રી લખો...",
+  "writeYourContent": "તમારી સામગ્રી લખો...",
+  "microphoneStartFailed": "માઇક્રોફોન શરૂ કરવામાં નિષ્ફળ: {error}",
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "microphoneInterruptedRecordingStopped": "માઇક્રોફોનમાં વિક્ષેપ આવ્યો, રેકોર્ડિંગ બંધ થયું.",
+  "asrReconnectingError": "ASR ફરી જોડાઈ રહ્યું છે: {error}",
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "imageInserted": "છબી ઉમેરાઈ: {name}",
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "voiceError": "વોઇસ ભૂલ: {error}",
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "aiServiceUnavailable": "માફ કરશો, AI સેવા હાલમાં ઉપલબ્ધ નથી: {error}",
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareFailed": "શેર કરવામાં નિષ્ફળ: {error}",
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "searchMatchHits": "{matchType} · {count} પરિણામો",
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "matchCount": "મેળ: {count}",
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sourceFromNetwork": "સ્ત્રોત: {source}",
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "createNew": "બનાવો",
+  "micStartFailed": "માઇક શરૂ કરવામાં નિષ્ફળ: {error}",
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importResultAccounts": "એકાઉન્ટ્સ: +{created} / અપડેટ {updated}",
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultDiaries": "ડાયરીઓ: +{created} / અપડેટ {updated}",
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultReminders": "રીમાઇન્ડર્સ: +{created} / અપડેટ {updated}",
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultSkipped": "છોડી દીધેલ: {count}",
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultTotal": "કુલ બદલાવ: {count}",
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsApplied": "બેકઅપમાંની સેટિંગ્સ લાગુ પડી.",
+  "settingsNotApplied": "બેકઅપમાંની સેટિંગ્સ લાગુ પડી નથી.",
+  "backupExported": "બેકઅપ એક્સપોર્ટ થયું: {path}",
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "exportFailed": "એક્સપોર્ટ નિષ્ફળ: {error}",
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importFailed": "આયાત નિષ્ફળ: {error}",
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
+}

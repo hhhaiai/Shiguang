@@ -1,0 +1,363 @@
+{
+  "@@locale": "el",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Ελληνικά",
+  "languageNameEn": "Greek",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... ή http://127.0.0.1:11434",
+  "appTitle": "Σιγκουάνγκ",
+  "settings": "Ρυθμίσεις",
+  "account": "Λογαριασμός",
+  "reminders": "Υπενθυμίσεις",
+  "language": "Γλώσσα",
+  "appLanguage": "Γλώσσα εφαρμογής",
+  "appearance": "Εμφάνιση",
+  "themeMode": "Λειτουργία θέματος",
+  "dark": "Σκοτάδι",
+  "light": "Φως",
+  "system": "Σύστημα",
+  "aiService": "Υπηρεσία AI",
+  "aiChatProvider": "Πάροχος συνομιλίας AI",
+  "chatModel": "Μοντέλο συνομιλίας",
+  "localModel": "Τοπικό μοντέλο",
+  "localModelDefault": "Τοπικό μοντέλο (Προεπιλογή)",
+  "ollamaEndpoint": "Τελικό σημείο Ollama",
+  "ollamaModel": "Μοντέλο Olama",
+  "openAiEndpoint": "OpenAI Endpoint",
+  "openAiApiKey": "Κλειδί OpenAI API",
+  "openAiModel": "Μοντέλο OpenAI",
+  "geminiEndpoint": "Τελικό σημείο Διδύμων",
+  "geminiApiKey": "Κλειδί API Gemini",
+  "geminiModel": "Μοντέλα Gemini",
+  "anthropicEndpoint": "Anthropic Endpoint",
+  "anthropicApiKey": "Κλειδί API Anthropic",
+  "anthropicModel": "Anthropic Model",
+  "customProtocol": "Προσαρμοσμένο πρωτόκολλο",
+  "protocol": "Πρωτόκολλο",
+  "customEndpoint": "Προσαρμοσμένο τελικό σημείο",
+  "customApiKey": "Προσαρμοσμένο κλειδί API",
+  "customModel": "Προσαρμοσμένο μοντέλο",
+  "optionalForLocalServers": "Προαιρετικό για τοπικούς/προσαρμοσμένους διακομιστές",
+  "speechRecognitionEngine": "Μηχανή αναγνώρισης ομιλίας",
+  "local": "Τοπικός",
+  "endpoint": "Τελικό σημείο",
+  "localSpeechModel": "Τοπικό μοντέλο λόγου",
+  "senseVoiceOnnx": "SenseVoice ONNX (σε συσκευή)",
+  "systemSpeechRecognition": "Αναγνώριση ομιλίας συστήματος",
+  "systemRecognitionAndroidIos": "Αναγνώριση συστήματος (Android/iOS)",
+  "endpointRecognitionCloudWs": "Αναγνώριση τελικού σημείου (Cloud/WS)",
+  "useBuiltInRecognizer": "Χρησιμοποιήστε ενσωματωμένο αναγνωριστικό Android / iOS (μπορεί να χρησιμοποιήσετε σύννεφο)",
+  "voiceAiEndpoint": "Τελικό σημείο τεχνητής νοημοσύνης φωνής",
+  "embeddingModel": "Ενσωμάτωση μοντέλου",
+  "crossDeviceSync": "Συγχρονισμός μεταξύ συσκευών",
+  "sendToOtherDevices": "Αποστολή σε άλλες συσκευές (LocalSend)",
+  "exportBackupAndSend": "Εξαγωγή αντιγράφων ασφαλείας και αποστολή μέσω φύλλου κοινής χρήσης",
+  "importFromLocalSend": "Εισαγωγή από LocalSend",
+  "selectBackupJson": "Επιλέξτε backup JSON και συγχωνεύστε τοπικά δεδομένα",
+  "autoGeneration": "Auto Generation",
+  "autoGenerateSummary": "Αυτόματη δημιουργία σύνοψης",
+  "generateAiSummaryForNewEntries": "Δημιουργήστε σύνοψη AI για νέες καταχωρήσεις",
+  "autoGenerateEmbedding": "Αυτόματη δημιουργία ενσωμάτωσης",
+  "generateVectorEmbedding": "Δημιουργία διανυσματικής ενσωμάτωσης για αναζήτηση",
+  "enableNetworkSearch": "Ενεργοποιήστε την Αναζήτηση δικτύου",
+  "allowOnlineRetrieval": "Να επιτρέπεται η ηλεκτρονική ανάκτηση για αναζήτηση και συνομιλία AI (απενεργοποιημένη από προεπιλογή)",
+  "about": "Για",
+  "version": "Έκδοση {version}",
+  "database": "Βάση δεδομένων",
+  "objectBoxWithHnsw": "ObjectBox με ευρετήριο HNSW",
+  "logOut": "Αποσύνδεση",
+  "custom": "Εθιμο",
+  "openAiCompatible": "Συμβατό με OpenAI",
+  "notSet": "Δεν έχει οριστεί",
+  "supportsLocalLanPublic": "Υποστηρίζει τοπικά/LAN/δημόσια τελικά σημεία",
+  "shiguangLocalSendBackup": "Αντίγραφο ασφαλείας Shiguang LocalSend",
+  "localBackupFromShiguang": "Τοπικό αντίγραφο ασφαλείας από το Shiguang (λήψη μέσω LocalSend)",
+  "selectBackupFileFromLocalSend": "Επιλέξτε το αρχείο αντιγράφου ασφαλείας που ελήφθη από το LocalSend",
+  "failedToResolveFilePath": "Αποτυχία επίλυσης της επιλεγμένης διαδρομής αρχείου",
+  "importOptions": "Επιλογές εισαγωγής",
+  "importSettingsAsWell": "Εισαγωγή ρυθμίσεων επίσης;\n(Τα κλειδιά API δεν θα αντικατασταθούν)",
+  "dataOnly": "Μόνο δεδομένα",
+  "dataAndSettings": "Δεδομένα + Ρυθμίσεις",
+  "importCompleted": "Η εισαγωγή ολοκληρώθηκε",
+  "settingsInBackupWereApplied": "Εφαρμόστηκαν ρυθμίσεις στο backup.",
+  "settingsInBackupWereNotApplied": "Οι ρυθμίσεις στο αντίγραφο ασφαλείας δεν εφαρμόστηκαν.",
+  "ok": "ΕΝΤΑΞΕΙ",
+  "cancel": "Ματαίωση",
+  "save": "Εκτός",
+  "delete": "Διαγράφω",
+  "clear": "Σαφής",
+  "add": "Προσθέτω",
+  "create": "Δημιουργώ",
+  "edit": "Εκδίδω",
+  "search": "Ερευνα",
+  "areYouSureYouWantToLogOut": "Είστε βέβαιοι ότι θέλετε να αποσυνδεθείτε;",
+  "chooseLanguage": "Επιλέξτε Γλώσσα",
+  "databaseInfo": "Πληροφορίες βάσης δεδομένων",
+  "storage": "Αποθήκευση: ObjectBox",
+  "vectorIndex": "Διάνυσμα Ευρετήριο: HNSW",
+  "dimensions": "Διαστάσεις: 384",
+  "embeddingModelBge": "Μοντέλο ενσωμάτωσης: bge-small-zh-v1.5",
+  "takePhoto": "Τραβήξτε φωτογραφία",
+  "chooseFromGallery": "Επιλέξτε από τη Γκαλερί",
+  "editNickname": "Επεξεργασία ψευδώνυμου",
+  "enterNickname": "Εισαγάγετε ψευδώνυμο",
+  "pleaseEnterNickname": "Εισαγάγετε ένα ψευδώνυμο",
+  "nicknameAlreadyExistsOrInvalid": "Το ψευδώνυμο υπάρχει ήδη ή δεν είναι έγκυρο",
+  "user": "Μεταχειριζόμενος",
+  "manageScheduledReminders": "Διαχειριστείτε προγραμματισμένες υπενθυμίσεις και ξυπνητήρια",
+  "imageFailedToLoad": "Η φόρτωση της εικόνας απέτυχε. Επιλέξτε ξανά.",
+  "imageIsStillLoading": "Η εικόνα εξακολουθεί να φορτώνεται",
+  "imageAreaNotReady": "Η περιοχή εικόνας δεν είναι έτοιμη. Δοκιμάστε ξανά.",
+  "cropFrameNotReady": "Το πλαίσιο περικοπής δεν είναι έτοιμο. Δοκιμάστε ξανά.",
+  "invalidCropArea": "Μη έγκυρη περιοχή περικοπής. Δοκιμάστε ξανά.",
+  "cropFailed": "Η περικοπή απέτυχε. Δοκιμάστε ξανά.",
+  "cropAvatar": "Περικοπή Avatar",
+  "chooseAgain": "Επιλέξτε ξανά",
+  "rotate90": "Περιστροφή 90°",
+  "dragFrameToMove": "Σύρετε το πλαίσιο για να μετακινήσετε, σύρετε κάτω δεξιά για αλλαγή μεγέθους. τσιμπήστε για να μεγεθύνετε και να μετακινήσετε την εικόνα.",
+  "pleaseFillInAllFields": "Παρακαλούμε συμπληρώστε όλα τα πεδία",
+  "pinMustBeAtLeast4Digits": "Το PIN πρέπει να είναι τουλάχιστον 4 ψηφία",
+  "pinAtLeast4Digits": "Το PIN πρέπει να είναι τουλάχιστον 4 ψηφία",
+  "invalidUsernameOrPin": "Μη έγκυρο όνομα χρήστη ή PIN",
+  "invalidUsernameOrPinError": "Μη έγκυρο όνομα χρήστη ή PIN",
+  "usernameAlreadyExists": "Το όνομα χρήστη υπάρχει ήδη",
+  "captureMomentsKeepMemories": "Αποτυπώστε στιγμές, κρατήστε αναμνήσεις",
+  "username": "Όνομα χρήστη",
+  "pin": "ΚΑΡΦΙΤΣΑ",
+  "login": "Σύνδεση",
+  "createAccount": "Δημιουργία λογαριασμού",
+  "dontHaveAccountCreateOne": "Δεν έχετε λογαριασμό; Δημιουργήστε ένα",
+  "alreadyHaveAccountLogin": "Έχετε ήδη λογαριασμό; Σύνδεση",
+  "pleaseEnterUsername": "Εισαγάγετε ένα όνομα χρήστη",
+  "pinsDoNotMatch": "Τα PIN δεν ταιριάζουν",
+  "tapToAddAvatar": "Πατήστε για προσθήκη avatar",
+  "yourName": "Το όνομά σας",
+  "privatePinOptional": "Ιδιωτικό PIN (προαιρετικό)",
+  "usedToEncryptPrivateRecords": "Χρησιμοποιείται για την κρυπτογράφηση ιδιωτικών εγγραφών",
+  "privatePin": "Ιδιωτικό PIN",
+  "leaveEmptyForNoEncryption": "Αφήστε κενό χωρίς κρυπτογράφηση",
+  "confirmPin": "Επιβεβαίωση PIN",
+  "getStarted": "Ξεκινήστε",
+  "noReminders": "Χωρίς υπενθυμίσεις",
+  "addReminder": "Προσθήκη υπενθύμισης",
+  "title": "Τίτλος",
+  "descriptionOptional": "Περιγραφή (προαιρετικό)",
+  "microphonePermissionRequired": "Απαιτείται άδεια μικροφώνου",
+  "aiAssistant": "Βοηθός AI",
+  "listening": "Ακούγοντας...",
+  "typeAMessage": "Πληκτρολογήστε ένα μήνυμα...",
+  "aiChat": "AI Chat",
+  "startAConversation": "Ξεκινήστε μια συνομιλία",
+  "typeYourMessage": "Πληκτρολογήστε το μήνυμά σας...",
+  "asrReconnecting": "ASR επανασύνδεση...",
+  "write": "Γράφω",
+  "writeEntry": "Γράψτε την καταχώριση",
+  "noMemoriesYet": "Δεν υπάρχουν ακόμα αναμνήσεις",
+  "tapPlusToCapture": "Πατήστε + για να καταγράψετε τις σκέψεις σας",
+  "tapPlusToCaptureYourThoughts": "Πατήστε + για να καταγράψετε τις σκέψεις σας",
+  "deleteMemory": "Διαγραφή μνήμης",
+  "deleteRecord": "Διαγραφή εγγραφής",
+  "thisEntryWillBeRemoved": "Αυτή η καταχώρηση θα αφαιρεθεί από το χρονολόγιό σας.",
+  "thisRecordWillBeRemoved": "Αυτή η εγγραφή θα αφαιρεθεί από το χρονολόγιό σας.",
+  "searchYourRecords": "Αναζήτηση στα αρχεία σας...",
+  "exactMatches": "Ακριβείς αντιστοιχίσεις",
+  "noExactMatches": "Δεν υπάρχουν ακριβείς αντιστοιχίσεις",
+  "exact": "Ακριβής",
+  "exactMatch": "Ακριβής αντιστοιχία",
+  "fuzzyMatches": "Ασαφείς αγώνες",
+  "noFuzzyMatches": "Χωρίς ασαφείς αντιστοιχίες",
+  "vectorMatch": "Διάνυσμα αγώνα",
+  "networkMatches": "Αντιστοιχίσεις δικτύου",
+  "noNetworkMatches": "Δεν υπάρχουν αντιστοιχίες δικτύου",
+  "networkSearchIsOff": "Η αναζήτηση δικτύου είναι απενεργοποιημένη. Ενεργοποιήστε το στις Ρυθμίσεις.",
+  "network": "Δίκτυο",
+  "networkMatch": "Αντιστοίχιση δικτύου",
+  "noSearchHistory": "Δεν υπάρχει ιστορικό αναζήτησης",
+  "searchHistory": "Ιστορικό αναζήτησης",
+  "invalidLink": "Μη έγκυρος σύνδεσμος",
+  "unableToOpenWebPage": "Δεν είναι δυνατό το άνοιγμα της ιστοσελίδας",
+  "imageMemory": "[Μνήμη εικόνας]",
+  "tapToOpenWebPage": "Πατήστε για να ανοίξετε την ιστοσελίδα",
+  "editEntry": "Επεξεργασία καταχώρισης",
+  "entryDetails": "Στοιχεία Εισόδου",
+  "noContent": "Χωρίς περιεχόμενο",
+  "diaryNotFound": "Το ημερολόγιο δεν βρέθηκε",
+  "diaryNotFoundShort": "Η εγγραφή δεν βρέθηκε",
+  "aiSummary": "Περίληψη AI",
+  "microphoneInterrupted": "Το μικρόφωνο διακόπηκε, η εγγραφή σταμάτησε.",
+  "bold": "Τολμηρός",
+  "italic": "Πλάγια γραφή",
+  "strikethrough": "Strikethrough",
+  "image": "Εικών",
+  "asrUnavailableRecordingActive": "Το ASR δεν είναι διαθέσιμο. Η εγγραφή είναι ακόμα ενεργή.",
+  "writeYourEntry": "Γράψτε την καταχώρισή σας...",
+  "writeYourContent": "Γράψτε το περιεχόμενό σας...",
+  "microphoneStartFailed": "Αποτυχία εκκίνησης μικροφώνου: {error}",
+  "microphoneInterruptedRecordingStopped": "Το μικρόφωνο διακόπηκε, η εγγραφή σταμάτησε.",
+  "asrReconnectingError": "Επανασύνδεση ASR: {error}",
+  "imageInserted": "Εισήχθη εικόνα: {name}",
+  "voiceError": "Σφάλμα φωνής: {error}",
+  "aiServiceUnavailable": "Λυπούμαστε, η υπηρεσία AI δεν είναι διαθέσιμη αυτήν τη στιγμή: {error}",
+  "shareFailed": "Αποτυχία κοινοποίησης: {error}",
+  "searchMatchHits": "{matchType} · {count} επισκέψεις",
+  "matchCount": "Ταίριασμα: {count}",
+  "sourceFromNetwork": "Πηγή: {source}",
+  "createNew": "Δημιουργώ",
+  "micStartFailed": "Η εκκίνηση του μικροφώνου απέτυχε: {error}",
+  "importResultAccounts": "Λογαριασμοί: +{created} / ενημερωμένος {updated}",
+  "importResultDiaries": "Ημερολόγια: +{created} / ενημερώθηκε {updated}",
+  "importResultReminders": "Υπενθυμίσεις: +{created} / ενημερώθηκε {updated}",
+  "importResultSkipped": "Παράβλεψη: {count}",
+  "importResultTotal": "Συνολικές αλλαγές: {count}",
+  "settingsApplied": "Εφαρμόστηκαν οι ρυθμίσεις στο backup.",
+  "settingsNotApplied": "Οι ρυθμίσεις στο αντίγραφο ασφαλείας δεν εφαρμόστηκαν.",
+  "backupExported": "Εξαγωγή αντιγράφων ασφαλείας: {path}",
+  "exportFailed": "Η εξαγωγή απέτυχε: {error}",
+  "importFailed": "Η εισαγωγή απέτυχε: {error}"
+}

@@ -1,0 +1,363 @@
+{
+  "@@locale": "sv",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Svenska",
+  "languageNameEn": "Swedish",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... eller http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Inställningar",
+  "account": "Konto",
+  "reminders": "Påminnelser",
+  "language": "Språk",
+  "appLanguage": "Appens språk",
+  "appearance": "Utseende",
+  "themeMode": "Temaläge",
+  "dark": "Mörk",
+  "light": "Ljus",
+  "system": "System",
+  "aiService": "AI-tjänst",
+  "aiChatProvider": "AI-chattleverantör",
+  "chatModel": "Chattmodell",
+  "localModel": "Lokal modell",
+  "localModelDefault": "Lokal modell (standard)",
+  "ollamaEndpoint": "Ollama slutpunkt",
+  "ollamaModel": "Ollama modell",
+  "openAiEndpoint": "OpenAI Endpoint",
+  "openAiApiKey": "OpenAI API-nyckel",
+  "openAiModel": "OpenAI-modell",
+  "geminiEndpoint": "Gemini Endpoint",
+  "geminiApiKey": "Gemini API-nyckel",
+  "geminiModel": "Gemini modeller",
+  "anthropicEndpoint": "Antropisk slutpunkt",
+  "anthropicApiKey": "Antropisk API-nyckel",
+  "anthropicModel": "Antropisk modell",
+  "customProtocol": "Anpassat protokoll",
+  "protocol": "Protokoll",
+  "customEndpoint": "Anpassad slutpunkt",
+  "customApiKey": "Anpassad API-nyckel",
+  "customModel": "Anpassad modell",
+  "optionalForLocalServers": "Valfritt för lokala/anpassade servrar",
+  "speechRecognitionEngine": "Taligenkänningsmotor",
+  "local": "Lokal",
+  "endpoint": "Slutpunkt",
+  "localSpeechModel": "Lokal talmodell",
+  "senseVoiceOnnx": "SenseVoice ONNX (på enheten)",
+  "systemSpeechRecognition": "System taligenkänning",
+  "systemRecognitionAndroidIos": "Systemigenkänning (Android/iOS)",
+  "endpointRecognitionCloudWs": "Slutpunktsigenkänning (moln/WS)",
+  "useBuiltInRecognizer": "Använd inbyggd Android / iOS-identifierare (kan använda moln)",
+  "voiceAiEndpoint": "Voice AI Endpoint",
+  "embeddingModel": "Inbäddningsmodell",
+  "crossDeviceSync": "Synkronisering över flera enheter",
+  "sendToOtherDevices": "Skicka till andra enheter (LocalSend)",
+  "exportBackupAndSend": "Exportera säkerhetskopia och skicka via delningsark",
+  "importFromLocalSend": "Importera från LocalSend",
+  "selectBackupJson": "Välj backup JSON och slå samman lokala data",
+  "autoGeneration": "Autogenerering",
+  "autoGenerateSummary": "Generera sammanfattning automatiskt",
+  "generateAiSummaryForNewEntries": "Generera AI-sammanfattning för nya poster",
+  "autoGenerateEmbedding": "Generera inbäddning automatiskt",
+  "generateVectorEmbedding": "Generera vektorinbäddning för sökning",
+  "enableNetworkSearch": "Aktivera nätverkssökning",
+  "allowOnlineRetrieval": "Tillåt hämtning online för sökning och AI-chatt (av som standard)",
+  "about": "Om",
+  "version": "Version {version}",
+  "database": "Databas",
+  "objectBoxWithHnsw": "ObjectBox med HNSW-index",
+  "logOut": "Logga ut",
+  "custom": "Beställnings",
+  "openAiCompatible": "OpenAI-kompatibel",
+  "notSet": "Inte inställt",
+  "supportsLocalLanPublic": "Stöder lokala/LAN/publika slutpunkter",
+  "shiguangLocalSendBackup": "Shiguang LocalSend Backup",
+  "localBackupFromShiguang": "Lokal säkerhetskopiering från Shiguang (ta emot via LocalSend)",
+  "selectBackupFileFromLocalSend": "Välj säkerhetskopia som tagits emot från LocalSend",
+  "failedToResolveFilePath": "Det gick inte att lösa den valda filsökvägen",
+  "importOptions": "Importalternativ",
+  "importSettingsAsWell": "Importera inställningar också?\n(API-nycklar kommer inte att skrivas över)",
+  "dataOnly": "Endast data",
+  "dataAndSettings": "Data + Inställningar",
+  "importCompleted": "Importen slutförd",
+  "settingsInBackupWereApplied": "Inställningar för säkerhetskopiering tillämpades.",
+  "settingsInBackupWereNotApplied": "Inställningar för säkerhetskopiering tillämpades inte.",
+  "ok": "OK",
+  "cancel": "Avboka",
+  "save": "Spara",
+  "delete": "Radera",
+  "clear": "Rensa",
+  "add": "Tillägga",
+  "create": "Skapa",
+  "edit": "Redigera",
+  "search": "Söka",
+  "areYouSureYouWantToLogOut": "Är du säker på att du vill logga ut?",
+  "chooseLanguage": "Välj Språk",
+  "databaseInfo": "Databas info",
+  "storage": "Förvaring: ObjectBox",
+  "vectorIndex": "Vektorindex: HNSW",
+  "dimensions": "Mått: 384",
+  "embeddingModelBge": "Inbäddningsmodell: bge-small-zh-v1.5",
+  "takePhoto": "Ta foto",
+  "chooseFromGallery": "Välj från Galleri",
+  "editNickname": "Redigera smeknamn",
+  "enterNickname": "Ange smeknamn",
+  "pleaseEnterNickname": "Vänligen ange ett smeknamn",
+  "nicknameAlreadyExistsOrInvalid": "Smeknamnet finns redan eller är ogiltigt",
+  "user": "Användare",
+  "manageScheduledReminders": "Hantera schemalagda påminnelser och larm",
+  "imageFailedToLoad": "Det gick inte att ladda bilden. Vänligen välj igen.",
+  "imageIsStillLoading": "Bilden laddas fortfarande",
+  "imageAreaNotReady": "Bildområdet är inte klart. Försök igen.",
+  "cropFrameNotReady": "Beskärningsramen är inte klar. Försök igen.",
+  "invalidCropArea": "Ogiltigt odlingsområde. Försök igen.",
+  "cropFailed": "Beskärningen misslyckades. Försök igen.",
+  "cropAvatar": "Beskär Avatar",
+  "chooseAgain": "Välj igen",
+  "rotate90": "Vrid 90°",
+  "dragFrameToMove": "Dra ramen för att flytta, dra nere till höger för att ändra storlek; nyp för att zooma och flytta bilden.",
+  "pleaseFillInAllFields": "Vänligen fyll i alla fält",
+  "pinMustBeAtLeast4Digits": "PIN-koden måste vara minst fyra siffror",
+  "pinAtLeast4Digits": "PIN-koden måste vara minst fyra siffror",
+  "invalidUsernameOrPin": "Ogiltigt användarnamn eller PIN-kod",
+  "invalidUsernameOrPinError": "Ogiltigt användarnamn eller PIN-kod",
+  "usernameAlreadyExists": "Användarnamnet finns redan",
+  "captureMomentsKeepMemories": "Fånga ögonblick, bevara minnen",
+  "username": "Användarnamn",
+  "pin": "STIFT",
+  "login": "Inloggning",
+  "createAccount": "Skapa konto",
+  "dontHaveAccountCreateOne": "Har du inget konto? Skapa en",
+  "alreadyHaveAccountLogin": "Har du redan ett konto? Inloggning",
+  "pleaseEnterUsername": "Vänligen ange ett användarnamn",
+  "pinsDoNotMatch": "PIN-koderna stämmer inte överens",
+  "tapToAddAvatar": "Tryck för att lägga till avatar",
+  "yourName": "Ditt namn",
+  "privatePinOptional": "Privat PIN-kod (valfritt)",
+  "usedToEncryptPrivateRecords": "Används för att kryptera privata register",
+  "privatePin": "Privat PIN-kod",
+  "leaveEmptyForNoEncryption": "Lämna tomt för ingen kryptering",
+  "confirmPin": "Bekräfta PIN-koden",
+  "getStarted": "Kom igång",
+  "noReminders": "Inga påminnelser",
+  "addReminder": "Lägg till påminnelse",
+  "title": "Titel",
+  "descriptionOptional": "Beskrivning (valfritt)",
+  "microphonePermissionRequired": "Mikrofontillstånd krävs",
+  "aiAssistant": "AI-assistent",
+  "listening": "Lyssnande...",
+  "typeAMessage": "Skriv ett meddelande...",
+  "aiChat": "AI Chat",
+  "startAConversation": "Starta en konversation",
+  "typeYourMessage": "Skriv ditt meddelande...",
+  "asrReconnecting": "ASR återansluter...",
+  "write": "Skriva",
+  "writeEntry": "Skriv inlägg",
+  "noMemoriesYet": "Inga minnen än",
+  "tapPlusToCapture": "Tryck på + för att fånga dina tankar",
+  "tapPlusToCaptureYourThoughts": "Tryck på + för att fånga dina tankar",
+  "deleteMemory": "Radera minne",
+  "deleteRecord": "Ta bort post",
+  "thisEntryWillBeRemoved": "Det här inlägget kommer att tas bort från din tidslinje.",
+  "thisRecordWillBeRemoved": "Denna post kommer att tas bort från din tidslinje.",
+  "searchYourRecords": "Sök i dina register...",
+  "exactMatches": "Exakta matchningar",
+  "noExactMatches": "Inga exakta matchningar",
+  "exact": "Exakt",
+  "exactMatch": "Exakt matchning",
+  "fuzzyMatches": "Luddiga matcher",
+  "noFuzzyMatches": "Inga luddiga matcher",
+  "vectorMatch": "Vektor Match",
+  "networkMatches": "Nätverksmatchningar",
+  "noNetworkMatches": "Inga nätverksmatchningar",
+  "networkSearchIsOff": "Nätverkssökning är avstängd. Aktivera det i Inställningar.",
+  "network": "Nätverk",
+  "networkMatch": "Nätverksmatchning",
+  "noSearchHistory": "Ingen sökhistorik",
+  "searchHistory": "Sökhistorik",
+  "invalidLink": "Ogiltig länk",
+  "unableToOpenWebPage": "Det går inte att öppna webbsidan",
+  "imageMemory": "[Bildminne]",
+  "tapToOpenWebPage": "Tryck för att öppna webbsidan",
+  "editEntry": "Redigera post",
+  "entryDetails": "Inträdesdetaljer",
+  "noContent": "Inget innehåll",
+  "diaryNotFound": "Dagbok hittades inte",
+  "diaryNotFoundShort": "Posten hittades inte",
+  "aiSummary": "Sammanfattning av AI",
+  "microphoneInterrupted": "Mikrofonen avbröts, inspelningen stoppades.",
+  "bold": "Djärv",
+  "italic": "Kursiv",
+  "strikethrough": "Genomstruken",
+  "image": "Bild",
+  "asrUnavailableRecordingActive": "ASR inte tillgänglig. Inspelningen är fortfarande aktiv.",
+  "writeYourEntry": "Skriv ditt bidrag...",
+  "writeYourContent": "Skriv ditt innehåll...",
+  "microphoneStartFailed": "Det gick inte att starta mikrofonen: {error}",
+  "microphoneInterruptedRecordingStopped": "Mikrofonen avbröts, inspelningen stoppades.",
+  "asrReconnectingError": "ASR återansluter: {error}",
+  "imageInserted": "Bild infogade: {name}",
+  "voiceError": "Röstfel: {error}",
+  "aiServiceUnavailable": "Tyvärr, AI-tjänsten är inte tillgänglig för närvarande: {error}",
+  "shareFailed": "Det gick inte att dela: {error}",
+  "searchMatchHits": "{matchType} · {count} träffar",
+  "matchCount": "Matchning: {count}",
+  "sourceFromNetwork": "Källa: {source}",
+  "createNew": "Skapa",
+  "micStartFailed": "Mikrofonstart misslyckades: {error}",
+  "importResultAccounts": "Konton: +{created} / uppdaterad {updated}",
+  "importResultDiaries": "Dagböcker: +{created} / uppdaterad {updated}",
+  "importResultReminders": "Påminnelser: +{created} / uppdaterad {updated}",
+  "importResultSkipped": "Hoppade över: {count}",
+  "importResultTotal": "Totalt ändrat: {count}",
+  "settingsApplied": "Inställningar för säkerhetskopiering tillämpades.",
+  "settingsNotApplied": "Inställningar för säkerhetskopiering tillämpades inte.",
+  "backupExported": "Säkerhetskopiering exporterad: {path}",
+  "exportFailed": "Export misslyckades: {error}",
+  "importFailed": "Import misslyckades: {error}"
+}

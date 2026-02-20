@@ -1,0 +1,363 @@
+{
+  "@@locale": "hu",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Magyar",
+  "languageNameEn": "Hungarian",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... vagy http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Beállítások elemre",
+  "account": "fiók",
+  "reminders": "Emlékeztetők",
+  "language": "Nyelv",
+  "appLanguage": "Alkalmazás nyelve",
+  "appearance": "Megjelenés",
+  "themeMode": "Téma mód",
+  "dark": "Sötét",
+  "light": "Fény",
+  "system": "Rendszer",
+  "aiService": "AI szolgáltatás",
+  "aiChatProvider": "AI Chat Provider",
+  "chatModel": "Chat modell",
+  "localModel": "Helyi modell",
+  "localModelDefault": "Helyi modell (alapértelmezett)",
+  "ollamaEndpoint": "Ollama végpont",
+  "ollamaModel": "Ollama modell",
+  "openAiEndpoint": "OpenAI végpont",
+  "openAiApiKey": "OpenAI API kulcs",
+  "openAiModel": "OpenAI modell",
+  "geminiEndpoint": "Gemini végpont",
+  "geminiApiKey": "Gemini API kulcs",
+  "geminiModel": "Gemini modellek",
+  "anthropicEndpoint": "Antropikus végpont",
+  "anthropicApiKey": "Antropikus API kulcs",
+  "anthropicModel": "Antropikus modell",
+  "customProtocol": "Egyéni protokoll",
+  "protocol": "Jegyzőkönyv",
+  "customEndpoint": "Egyéni végpont",
+  "customApiKey": "Egyéni API-kulcs",
+  "customModel": "Egyedi modell",
+  "optionalForLocalServers": "Opcionális helyi/egyéni szerverekhez",
+  "speechRecognitionEngine": "Beszédfelismerő motor",
+  "local": "Helyi",
+  "endpoint": "Végpont",
+  "localSpeechModel": "Helyi beszédmodell",
+  "senseVoiceOnnx": "SenseVoice ONNX (eszközön)",
+  "systemSpeechRecognition": "Rendszerbeszédfelismerés",
+  "systemRecognitionAndroidIos": "Rendszerfelismerés (Android/iOS)",
+  "endpointRecognitionCloudWs": "Végpont felismerés (felhő/WS)",
+  "useBuiltInRecognizer": "Használja a beépített Android / iOS felismerőt (felhőt használhat)",
+  "voiceAiEndpoint": "Voice AI végpont",
+  "embeddingModel": "Modell beágyazása",
+  "crossDeviceSync": "Eszközök közötti szinkronizálás",
+  "sendToOtherDevices": "Küldés más eszközökre (LocalSend)",
+  "exportBackupAndSend": "Exportálja a biztonsági másolatot és küldje el megosztási lapon keresztül",
+  "importFromLocalSend": "Importálás a LocalSendből",
+  "selectBackupJson": "Válassza ki a biztonsági mentési JSON-t, és egyesítse a helyi adatokat",
+  "autoGeneration": "Automatikus generálás",
+  "autoGenerateSummary": "Összegzés automatikus generálása",
+  "generateAiSummaryForNewEntries": "AI összefoglaló létrehozása az új bejegyzésekhez",
+  "autoGenerateEmbedding": "Beágyazás automatikus generálása",
+  "generateVectorEmbedding": "Vektoros beágyazás létrehozása kereséshez",
+  "enableNetworkSearch": "Hálózati keresés engedélyezése",
+  "allowOnlineRetrieval": "Online visszakeresés engedélyezése a kereséshez és az AI-csevegéshez (alapértelmezés szerint ki van kapcsolva)",
+  "about": "Körülbelül",
+  "version": "{version} verzió",
+  "database": "Adatbázis",
+  "objectBoxWithHnsw": "ObjectBox HNSW indexszel",
+  "logOut": "Jelentkezzen ki",
+  "custom": "Szokás",
+  "openAiCompatible": "OpenAI kompatibilis",
+  "notSet": "Nincs beállítva",
+  "supportsLocalLanPublic": "Támogatja a helyi/LAN/nyilvános végpontokat",
+  "shiguangLocalSendBackup": "Shiguang LocalSend biztonsági mentés",
+  "localBackupFromShiguang": "Helyi biztonsági mentés a Shiguangtól (vétel a LocalSend szolgáltatáson keresztül)",
+  "selectBackupFileFromLocalSend": "Válassza ki a LocalSendtől kapott biztonsági mentési fájlt",
+  "failedToResolveFilePath": "Nem sikerült feloldani a kiválasztott fájl elérési útját",
+  "importOptions": "Importálási beállítások",
+  "importSettingsAsWell": "Importálja a beállításokat is?\n(Az API kulcsok nem kerülnek felülírásra)",
+  "dataOnly": "Csak adatok",
+  "dataAndSettings": "Adatok + Beállítások",
+  "importCompleted": "Az importálás befejeződött",
+  "settingsInBackupWereApplied": "A biztonsági mentés beállításai alkalmazva lettek.",
+  "settingsInBackupWereNotApplied": "A biztonsági mentés beállításai nem lettek alkalmazva.",
+  "ok": "RENDBEN",
+  "cancel": "Mégse",
+  "save": "Megtakarítás",
+  "delete": "Töröl",
+  "clear": "Világos",
+  "add": "Hozzáadás",
+  "create": "Teremt",
+  "edit": "Szerkesztés",
+  "search": "Keresés",
+  "areYouSureYouWantToLogOut": "Biztos, hogy ki akar jelentkezni?",
+  "chooseLanguage": "Válassza a Nyelv lehetőséget",
+  "databaseInfo": "Adatbázis Info",
+  "storage": "Tárolás: ObjectBox",
+  "vectorIndex": "Vektor index: HNSW",
+  "dimensions": "Méretek: 384",
+  "embeddingModelBge": "Beágyazási modell: bge-small-zh-v1.5",
+  "takePhoto": "Fotó készítése",
+  "chooseFromGallery": "Válasszon a Galériából",
+  "editNickname": "Becenév szerkesztése",
+  "enterNickname": "Adja meg a becenevet",
+  "pleaseEnterNickname": "Kérjük, adjon meg egy becenevet",
+  "nicknameAlreadyExistsOrInvalid": "A becenév már létezik vagy érvénytelen",
+  "user": "Felhasználó",
+  "manageScheduledReminders": "Az ütemezett emlékeztetők és riasztások kezelése",
+  "imageFailedToLoad": "Nem sikerült betölteni a képet. Kérjük, válasszon újra.",
+  "imageIsStillLoading": "A kép még mindig betöltődik",
+  "imageAreaNotReady": "A képterület nem áll készen. Kérjük, próbálja újra.",
+  "cropFrameNotReady": "A vágási keret nincs készen. Kérjük, próbálja újra.",
+  "invalidCropArea": "Érvénytelen bevetési terület. Kérjük, próbálja újra.",
+  "cropFailed": "A kivágás nem sikerült. Kérjük, próbálja újra.",
+  "cropAvatar": "Crop Avatar",
+  "chooseAgain": "Válassza újra",
+  "rotate90": "90°-kal elforgatni",
+  "dragFrameToMove": "Húzza a keretet a mozgatáshoz, húzza jobbra lent az átméretezéshez; csípje össze a kép nagyításához és mozgatásához.",
+  "pleaseFillInAllFields": "Kérjük, töltse ki az összes mezőt",
+  "pinMustBeAtLeast4Digits": "A PIN-kódnak legalább 4 számjegyből kell állnia",
+  "pinAtLeast4Digits": "A PIN-kódnak legalább 4 számjegyből kell állnia",
+  "invalidUsernameOrPin": "Érvénytelen felhasználónév vagy PIN-kód",
+  "invalidUsernameOrPinError": "Érvénytelen felhasználónév vagy PIN-kód",
+  "usernameAlreadyExists": "A felhasználónév már létezik",
+  "captureMomentsKeepMemories": "Ragadja meg a pillanatokat, őrizze meg az emlékeket",
+  "username": "Felhasználónév",
+  "pin": "PIN kód",
+  "login": "Bejelentkezés",
+  "createAccount": "Fiók létrehozása",
+  "dontHaveAccountCreateOne": "Nincs fiókja? Hozzon létre egyet",
+  "alreadyHaveAccountLogin": "Már van fiókja? Bejelentkezés",
+  "pleaseEnterUsername": "Kérjük, adjon meg egy felhasználónevet",
+  "pinsDoNotMatch": "A PIN-kódok nem egyeznek",
+  "tapToAddAvatar": "Koppintson az avatar hozzáadásához",
+  "yourName": "Az Ön neve",
+  "privatePinOptional": "Privát PIN (nem kötelező)",
+  "usedToEncryptPrivateRecords": "Privát rekordok titkosítására szolgál",
+  "privatePin": "Privát PIN-kód",
+  "leaveEmptyForNoEncryption": "Hagyja üresen, ha nincs titkosítás",
+  "confirmPin": "Erősítse meg a PIN kódot",
+  "getStarted": "Kezdje el",
+  "noReminders": "Nincsenek emlékeztetők",
+  "addReminder": "Emlékeztető hozzáadása",
+  "title": "Cím",
+  "descriptionOptional": "Leírás (nem kötelező)",
+  "microphonePermissionRequired": "Mikrofon engedély szükséges",
+  "aiAssistant": "AI asszisztens",
+  "listening": "Hallgat...",
+  "typeAMessage": "Írjon be egy üzenetet...",
+  "aiChat": "AI Chat",
+  "startAConversation": "Indítson el egy beszélgetést",
+  "typeYourMessage": "Írja be üzenetét...",
+  "asrReconnecting": "ASR újracsatlakozás...",
+  "write": "Írj",
+  "writeEntry": "Bejegyzés írása",
+  "noMemoriesYet": "Még nincsenek emlékek",
+  "tapPlusToCapture": "Koppintson a + gombra a gondolatok rögzítéséhez",
+  "tapPlusToCaptureYourThoughts": "Koppintson a + gombra a gondolatok rögzítéséhez",
+  "deleteMemory": "Memória törlése",
+  "deleteRecord": "Rekord törlése",
+  "thisEntryWillBeRemoved": "Ez a bejegyzés törlődik az idővonaláról.",
+  "thisRecordWillBeRemoved": "Ezt a rekordot eltávolítjuk az idővonaláról.",
+  "searchYourRecords": "Keresés a rekordok között...",
+  "exactMatches": "Pontos egyezések",
+  "noExactMatches": "Nincsenek pontos egyezések",
+  "exact": "Pontos",
+  "exactMatch": "Pontos egyezés",
+  "fuzzyMatches": "Fuzzy Matches",
+  "noFuzzyMatches": "Nincsenek homályos egyezések",
+  "vectorMatch": "Vector Match",
+  "networkMatches": "Hálózati mérkőzések",
+  "noNetworkMatches": "Nincs hálózati egyezés",
+  "networkSearchIsOff": "A hálózati keresés ki van kapcsolva. Engedélyezze a Beállításokban.",
+  "network": "Hálózat",
+  "networkMatch": "Network Match",
+  "noSearchHistory": "Nincs keresési előzmény",
+  "searchHistory": "Keresési előzmények",
+  "invalidLink": "Érvénytelen link",
+  "unableToOpenWebPage": "Nem lehet megnyitni a weboldalt",
+  "imageMemory": "[Képmemória]",
+  "tapToOpenWebPage": "Koppintson a weboldal megnyitásához",
+  "editEntry": "Bejegyzés szerkesztése",
+  "entryDetails": "Belépés részletei",
+  "noContent": "Nincs tartalom",
+  "diaryNotFound": "A napló nem található",
+  "diaryNotFoundShort": "A rekord nem található",
+  "aiSummary": "AI összefoglaló",
+  "microphoneInterrupted": "A mikrofon megszakadt, a felvétel leállt.",
+  "bold": "Bátor",
+  "italic": "Dőlt",
+  "strikethrough": "Áthúzott",
+  "image": "Kép",
+  "asrUnavailableRecordingActive": "ASR nem elérhető. A felvétel továbbra is aktív.",
+  "writeYourEntry": "Írd meg a bejegyzésedet...",
+  "writeYourContent": "Írd meg a tartalmat...",
+  "microphoneStartFailed": "Nem sikerült elindítani a mikrofont: {error}",
+  "microphoneInterruptedRecordingStopped": "A mikrofon megszakadt, a felvétel leállt.",
+  "asrReconnectingError": "ASR újracsatlakozás: {error}",
+  "imageInserted": "Kép beszúrva: {name}",
+  "voiceError": "Hanghiba: {error}",
+  "aiServiceUnavailable": "Sajnáljuk, az AI szolgáltatás jelenleg nem érhető el: {error}",
+  "shareFailed": "Nem sikerült megosztani: {error}",
+  "searchMatchHits": "{matchType} · {count} találat",
+  "matchCount": "Egyezés: {count}",
+  "sourceFromNetwork": "Forrás: {source}",
+  "createNew": "Teremt",
+  "micStartFailed": "A mikrofon indítása nem sikerült: {error}",
+  "importResultAccounts": "Fiókok: +{created} / frissítve {updated}",
+  "importResultDiaries": "Naplók: +{created} / frissítve {updated}",
+  "importResultReminders": "Emlékeztetők: +{created} / frissítve {updated}",
+  "importResultSkipped": "Kihagyva: {count}",
+  "importResultTotal": "Összes módosítás: {count}",
+  "settingsApplied": "A biztonsági mentés beállításai alkalmazva lettek.",
+  "settingsNotApplied": "A biztonsági mentés beállításai nem lettek alkalmazva.",
+  "backupExported": "Biztonsági másolat exportálva: {path}",
+  "exportFailed": "Az exportálás sikertelen: {error}",
+  "importFailed": "Sikertelen importálás: {error}"
+}

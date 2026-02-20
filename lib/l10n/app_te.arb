@@ -1,0 +1,363 @@
+{
+  "@@locale": "te",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "తెలుగు",
+  "languageNameEn": "Telugu",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "షిగువాంగ్",
+  "settings": "సెట్టింగ్‌లు",
+  "account": "ఖాతా",
+  "reminders": "రిమైండర్‌లు",
+  "language": "భాష",
+  "appLanguage": "యాప్ భాష",
+  "appearance": "స్వరూపం",
+  "themeMode": "థీమ్ మోడ్",
+  "dark": "చీకటి",
+  "light": "కాంతి",
+  "system": "వ్యవస్థ",
+  "aiService": "AI సేవ",
+  "aiChatProvider": "AI చాట్ ప్రొవైడర్",
+  "chatModel": "చాట్ మోడల్",
+  "localModel": "స్థానిక మోడల్",
+  "localModelDefault": "స్థానిక మోడల్ (డిఫాల్ట్)",
+  "ollamaEndpoint": "ఒల్లమా ఎండ్ పాయింట్",
+  "ollamaModel": "ఒల్లమా మోడల్",
+  "openAiEndpoint": "OpenAI ఎండ్ పాయింట్",
+  "openAiApiKey": "OpenAI API కీ",
+  "openAiModel": "OpenAI మోడల్",
+  "geminiEndpoint": "జెమిని ఎండ్ పాయింట్",
+  "geminiApiKey": "జెమిని API కీ",
+  "geminiModel": "జెమిని మోడల్స్",
+  "anthropicEndpoint": "ఆంత్రోపిక్ ఎండ్ పాయింట్",
+  "anthropicApiKey": "ఆంత్రోపిక్ API కీ",
+  "anthropicModel": "ఆంత్రోపిక్ మోడల్",
+  "customProtocol": "కస్టమ్ ప్రోటోకాల్",
+  "protocol": "ప్రోటోకాల్",
+  "customEndpoint": "కస్టమ్ ఎండ్ పాయింట్",
+  "customApiKey": "అనుకూల API కీ",
+  "customModel": "కస్టమ్ మోడల్",
+  "optionalForLocalServers": "స్థానిక/కస్టమ్ సర్వర్‌ల కోసం ఐచ్ఛికం",
+  "speechRecognitionEngine": "స్పీచ్ రికగ్నిషన్ ఇంజిన్",
+  "local": "స్థానిక",
+  "endpoint": "ఎండ్ పాయింట్",
+  "localSpeechModel": "స్థానిక ప్రసంగ నమూనా",
+  "senseVoiceOnnx": "SenseVoice ONNX (పరికరంలో)",
+  "systemSpeechRecognition": "సిస్టమ్ స్పీచ్ రికగ్నిషన్",
+  "systemRecognitionAndroidIos": "సిస్టమ్ గుర్తింపు (Android/iOS)",
+  "endpointRecognitionCloudWs": "ఎండ్‌పాయింట్ రికగ్నిషన్ (క్లౌడ్/డబ్ల్యుఎస్)",
+  "useBuiltInRecognizer": "అంతర్నిర్మిత Android / iOS గుర్తింపును ఉపయోగించండి (క్లౌడ్‌ని ఉపయోగించవచ్చు)",
+  "voiceAiEndpoint": "వాయిస్ AI ఎండ్‌పాయింట్",
+  "embeddingModel": "పొందుపరిచే మోడల్",
+  "crossDeviceSync": "క్రాస్-డివైస్ సింక్",
+  "sendToOtherDevices": "ఇతర పరికరాలకు పంపండి (లోకల్‌సెండ్)",
+  "exportBackupAndSend": "బ్యాకప్‌ని ఎగుమతి చేయండి మరియు షేర్ షీట్ ద్వారా పంపండి",
+  "importFromLocalSend": "LocalSend నుండి దిగుమతి చేయండి",
+  "selectBackupJson": "బ్యాకప్ JSONని ఎంచుకుని, స్థానిక డేటాను విలీనం చేయండి",
+  "autoGeneration": "ఆటో జనరేషన్",
+  "autoGenerateSummary": "స్వయంచాలకంగా రూపొందించిన సారాంశం",
+  "generateAiSummaryForNewEntries": "కొత్త ఎంట్రీల కోసం AI సారాంశాన్ని రూపొందించండి",
+  "autoGenerateEmbedding": "స్వయంచాలకంగా పొందుపరచడం",
+  "generateVectorEmbedding": "శోధన కోసం వెక్టార్ ఎంబెడ్డింగ్‌ని రూపొందించండి",
+  "enableNetworkSearch": "నెట్‌వర్క్ శోధనను ప్రారంభించండి",
+  "allowOnlineRetrieval": "శోధన మరియు AI చాట్ కోసం ఆన్‌లైన్ రిట్రీవల్‌ను అనుమతించండి (డిఫాల్ట్‌గా ఆఫ్)",
+  "about": "గురించి",
+  "version": "వెర్షన్ {version}",
+  "database": "డేటాబేస్",
+  "objectBoxWithHnsw": "HNSW సూచికతో ఆబ్జెక్ట్‌బాక్స్",
+  "logOut": "లాగ్ అవుట్ చేయండి",
+  "custom": "కస్టమ్",
+  "openAiCompatible": "OpenAI అనుకూలమైనది",
+  "notSet": "సెట్ కాలేదు",
+  "supportsLocalLanPublic": "స్థానిక/LAN/పబ్లిక్ ఎండ్ పాయింట్‌లకు మద్దతు ఇస్తుంది",
+  "shiguangLocalSendBackup": "Shiguang LocalSend బ్యాకప్",
+  "localBackupFromShiguang": "షిగువాంగ్ నుండి స్థానిక బ్యాకప్ (లోకల్‌సెండ్ ద్వారా స్వీకరించండి)",
+  "selectBackupFileFromLocalSend": "LocalSend నుండి అందుకున్న బ్యాకప్ ఫైల్‌ను ఎంచుకోండి",
+  "failedToResolveFilePath": "ఎంచుకున్న ఫైల్ మార్గాన్ని పరిష్కరించడంలో విఫలమైంది",
+  "importOptions": "దిగుమతి ఎంపికలు",
+  "importSettingsAsWell": "సెట్టింగ్‌లను కూడా దిగుమతి చేయాలా?\n(API కీలు ఓవర్‌రైట్ చేయబడవు)",
+  "dataOnly": "డేటా మాత్రమే",
+  "dataAndSettings": "డేటా + సెట్టింగ్‌లు",
+  "importCompleted": "దిగుమతి పూర్తయింది",
+  "settingsInBackupWereApplied": "బ్యాకప్‌లో సెట్టింగ్‌లు వర్తింపజేయబడ్డాయి.",
+  "settingsInBackupWereNotApplied": "బ్యాకప్‌లోని సెట్టింగ్‌లు వర్తింపజేయబడలేదు.",
+  "ok": "సరే",
+  "cancel": "రద్దు చేయి",
+  "save": "సేవ్ చేయండి",
+  "delete": "తొలగించు",
+  "clear": "క్లియర్",
+  "add": "జోడించు",
+  "create": "సృష్టించు",
+  "edit": "సవరించు",
+  "search": "శోధించండి",
+  "areYouSureYouWantToLogOut": "మీరు ఖచ్చితంగా లాగ్ అవుట్ చేయాలనుకుంటున్నారా?",
+  "chooseLanguage": "భాషను ఎంచుకోండి",
+  "databaseInfo": "డేటాబేస్ సమాచారం",
+  "storage": "నిల్వ: ఆబ్జెక్ట్‌బాక్స్",
+  "vectorIndex": "వెక్టర్ సూచిక: HNSW",
+  "dimensions": "కొలతలు: 384",
+  "embeddingModelBge": "పొందుపరిచే మోడల్: bge-small-zh-v1.5",
+  "takePhoto": "ఫోటో తీయండి",
+  "chooseFromGallery": "గ్యాలరీ నుండి ఎంచుకోండి",
+  "editNickname": "మారుపేరును సవరించండి",
+  "enterNickname": "మారుపేరును నమోదు చేయండి",
+  "pleaseEnterNickname": "దయచేసి మారుపేరును నమోదు చేయండి",
+  "nicknameAlreadyExistsOrInvalid": "మారుపేరు ఇప్పటికే ఉంది లేదా చెల్లదు",
+  "user": "వినియోగదారు",
+  "manageScheduledReminders": "షెడ్యూల్ చేయబడిన రిమైండర్‌లు మరియు అలారాలను నిర్వహించండి",
+  "imageFailedToLoad": "చిత్రం లోడ్ చేయడంలో విఫలమైంది. దయచేసి మళ్లీ ఎంచుకోండి.",
+  "imageIsStillLoading": "చిత్రం ఇప్పటికీ లోడ్ అవుతోంది",
+  "imageAreaNotReady": "చిత్ర ప్రాంతం సిద్ధంగా లేదు. దయచేసి మళ్లీ ప్రయత్నించండి.",
+  "cropFrameNotReady": "క్రాప్ ఫ్రేమ్ సిద్ధంగా లేదు. దయచేసి మళ్లీ ప్రయత్నించండి.",
+  "invalidCropArea": "చెల్లని పంట ప్రాంతం. దయచేసి మళ్లీ ప్రయత్నించండి.",
+  "cropFailed": "క్రాప్ విఫలమైంది. దయచేసి మళ్లీ ప్రయత్నించండి.",
+  "cropAvatar": "అవతార్‌ను కత్తిరించండి",
+  "chooseAgain": "మళ్ళీ ఎంచుకోండి",
+  "rotate90": "90° తిప్పండి",
+  "dragFrameToMove": "తరలించడానికి ఫ్రేమ్‌ను లాగండి, పునఃపరిమాణం చేయడానికి దిగువ-కుడివైపుకు లాగండి; చిత్రాన్ని జూమ్ చేయడానికి మరియు తరలించడానికి చిటికెడు.",
+  "pleaseFillInAllFields": "దయచేసి అన్ని ఫీల్డ్‌లను పూరించండి",
+  "pinMustBeAtLeast4Digits": "పిన్ తప్పనిసరిగా కనీసం 4 అంకెలు ఉండాలి",
+  "pinAtLeast4Digits": "పిన్ తప్పనిసరిగా కనీసం 4 అంకెలు ఉండాలి",
+  "invalidUsernameOrPin": "చెల్లని వినియోగదారు పేరు లేదా పిన్",
+  "invalidUsernameOrPinError": "చెల్లని వినియోగదారు పేరు లేదా పిన్",
+  "usernameAlreadyExists": "వినియోగదారు పేరు ఇప్పటికే ఉంది",
+  "captureMomentsKeepMemories": "క్షణాలను సంగ్రహించండి, జ్ఞాపకాలను ఉంచండి",
+  "username": "వినియోగదారు పేరు",
+  "pin": "పిన్",
+  "login": "లాగిన్ చేయండి",
+  "createAccount": "ఖాతాను సృష్టించండి",
+  "dontHaveAccountCreateOne": "ఖాతా లేదా? ఒకదాన్ని సృష్టించండి",
+  "alreadyHaveAccountLogin": "ఇప్పటికే ఖాతా ఉందా? లాగిన్ చేయండి",
+  "pleaseEnterUsername": "దయచేసి వినియోగదారు పేరును నమోదు చేయండి",
+  "pinsDoNotMatch": "పిన్‌లు సరిపోలడం లేదు",
+  "tapToAddAvatar": "అవతార్‌ను జోడించడానికి నొక్కండి",
+  "yourName": "మీ పేరు",
+  "privatePinOptional": "ప్రైవేట్ పిన్ (ఐచ్ఛికం)",
+  "usedToEncryptPrivateRecords": "ప్రైవేట్ రికార్డ్‌లను గుప్తీకరించడానికి ఉపయోగించబడుతుంది",
+  "privatePin": "ప్రైవేట్ పిన్",
+  "leaveEmptyForNoEncryption": "గుప్తీకరణ లేకుండా ఖాళీగా ఉంచండి",
+  "confirmPin": "PINని నిర్ధారించండి",
+  "getStarted": "ప్రారంభించండి",
+  "noReminders": "రిమైండర్‌లు లేవు",
+  "addReminder": "రిమైండర్‌ని జోడించండి",
+  "title": "శీర్షిక",
+  "descriptionOptional": "వివరణ (ఐచ్ఛికం)",
+  "microphonePermissionRequired": "మైక్రోఫోన్ అనుమతి అవసరం",
+  "aiAssistant": "AI అసిస్టెంట్",
+  "listening": "వింటూ...",
+  "typeAMessage": "సందేశాన్ని టైప్ చేయండి...",
+  "aiChat": "AI చాట్",
+  "startAConversation": "సంభాషణను ప్రారంభించండి",
+  "typeYourMessage": "మీ సందేశాన్ని టైప్ చేయండి...",
+  "asrReconnecting": "ASR మళ్లీ కనెక్ట్ అవుతోంది...",
+  "write": "వ్రాయండి",
+  "writeEntry": "ఎంట్రీని వ్రాయండి",
+  "noMemoriesYet": "ఇంకా జ్ఞాపకాలు లేవు",
+  "tapPlusToCapture": "మీ ఆలోచనలను క్యాప్చర్ చేయడానికి + నొక్కండి",
+  "tapPlusToCaptureYourThoughts": "మీ ఆలోచనలను క్యాప్చర్ చేయడానికి + నొక్కండి",
+  "deleteMemory": "మెమరీని తొలగించండి",
+  "deleteRecord": "రికార్డును తొలగించండి",
+  "thisEntryWillBeRemoved": "ఈ ఎంట్రీ మీ టైమ్‌లైన్ నుండి తీసివేయబడుతుంది.",
+  "thisRecordWillBeRemoved": "ఈ రికార్డ్ మీ టైమ్‌లైన్ నుండి తీసివేయబడుతుంది.",
+  "searchYourRecords": "మీ రికార్డులను శోధించండి...",
+  "exactMatches": "ఖచ్చితమైన సరిపోలికలు",
+  "noExactMatches": "ఖచ్చితమైన సరిపోలికలు లేవు",
+  "exact": "ఖచ్చితమైన",
+  "exactMatch": "ఖచ్చితమైన మ్యాచ్",
+  "fuzzyMatches": "అస్పష్టమైన మ్యాచ్‌లు",
+  "noFuzzyMatches": "అస్పష్టమైన మ్యాచ్‌లు లేవు",
+  "vectorMatch": "వెక్టర్ మ్యాచ్",
+  "networkMatches": "నెట్‌వర్క్ సరిపోలికలు",
+  "noNetworkMatches": "నెట్‌వర్క్ సరిపోలలేదు",
+  "networkSearchIsOff": "నెట్‌వర్క్ శోధన ఆఫ్‌లో ఉంది. దీన్ని సెట్టింగ్‌లలో ప్రారంభించండి.",
+  "network": "నెట్‌వర్క్",
+  "networkMatch": "నెట్‌వర్క్ మ్యాచ్",
+  "noSearchHistory": "శోధన చరిత్ర లేదు",
+  "searchHistory": "శోధన చరిత్ర",
+  "invalidLink": "చెల్లని లింక్",
+  "unableToOpenWebPage": "వెబ్ పేజీని తెరవడం సాధ్యం కాలేదు",
+  "imageMemory": "[చిత్రం మెమరీ]",
+  "tapToOpenWebPage": "వెబ్ పేజీని తెరవడానికి నొక్కండి",
+  "editEntry": "ఎంట్రీని సవరించండి",
+  "entryDetails": "ఎంట్రీ వివరాలు",
+  "noContent": "కంటెంట్ లేదు",
+  "diaryNotFound": "డైరీ దొరకలేదు",
+  "diaryNotFoundShort": "రికార్డు దొరకలేదు",
+  "aiSummary": "AI సారాంశం",
+  "microphoneInterrupted": "మైక్రోఫోన్ అంతరాయం కలిగింది, రికార్డింగ్ ఆగిపోయింది.",
+  "bold": "బోల్డ్",
+  "italic": "ఇటాలిక్",
+  "strikethrough": "స్ట్రైక్‌త్రూ",
+  "image": "చిత్రం",
+  "asrUnavailableRecordingActive": "ASR అందుబాటులో లేదు. రికార్డింగ్ ఇప్పటికీ సక్రియంగా ఉంది.",
+  "writeYourEntry": "మీ ఎంట్రీని వ్రాయండి...",
+  "writeYourContent": "మీ కంటెంట్‌ని వ్రాయండి...",
+  "microphoneStartFailed": "మైక్రోఫోన్‌ను ప్రారంభించడంలో విఫలమైంది: {error}",
+  "microphoneInterruptedRecordingStopped": "మైక్రోఫోన్ అంతరాయం కలిగింది, రికార్డింగ్ ఆగిపోయింది.",
+  "asrReconnectingError": "ASR మళ్లీ కనెక్ట్ చేస్తోంది: {error}",
+  "imageInserted": "చిత్రం చొప్పించబడింది: {name}",
+  "voiceError": "వాయిస్ లోపం: {error}",
+  "aiServiceUnavailable": "క్షమించండి, AI సేవ ప్రస్తుతం అందుబాటులో లేదు: {error}",
+  "shareFailed": "భాగస్వామ్యం చేయడంలో విఫలమైంది: {error}",
+  "searchMatchHits": "{matchType} · {count} హిట్‌లు",
+  "matchCount": "మ్యాచ్: {count}",
+  "sourceFromNetwork": "మూలం: {source}",
+  "createNew": "సృష్టించు",
+  "micStartFailed": "మైక్ ప్రారంభం విఫలమైంది: {error}",
+  "importResultAccounts": "ఖాతాలు: +{created} / నవీకరించబడింది {updated}",
+  "importResultDiaries": "డైరీలు: +{created} / నవీకరించబడింది {updated}",
+  "importResultReminders": "రిమైండర్‌లు: +{created} / నవీకరించబడింది {updated}",
+  "importResultSkipped": "దాటవేయబడింది: {count}",
+  "importResultTotal": "మొత్తం మార్చబడింది: {count}",
+  "settingsApplied": "బ్యాకప్‌లో సెట్టింగ్‌లు వర్తింపజేయబడ్డాయి.",
+  "settingsNotApplied": "బ్యాకప్‌లోని సెట్టింగ్‌లు వర్తింపజేయబడలేదు.",
+  "backupExported": "బ్యాకప్ ఎగుమతి చేయబడింది: {path}",
+  "exportFailed": "ఎగుమతి విఫలమైంది: {error}",
+  "importFailed": "దిగుమతి విఫలమైంది: {error}"
+}

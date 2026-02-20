@@ -1,0 +1,363 @@
+{
+  "@@locale": "da",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Dansk",
+  "languageNameEn": "Danish",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... eller http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Indstillinger",
+  "account": "Konto",
+  "reminders": "Påmindelser",
+  "language": "Sprog",
+  "appLanguage": "App sprog",
+  "appearance": "Udseende",
+  "themeMode": "Tematilstand",
+  "dark": "Mørk",
+  "light": "Lys",
+  "system": "System",
+  "aiService": "AI Service",
+  "aiChatProvider": "AI-chatudbyder",
+  "chatModel": "Chat model",
+  "localModel": "Lokal model",
+  "localModelDefault": "Lokal model (standard)",
+  "ollamaEndpoint": "Ollama endepunkt",
+  "ollamaModel": "Ollama model",
+  "openAiEndpoint": "OpenAI-endepunkt",
+  "openAiApiKey": "OpenAI API nøgle",
+  "openAiModel": "OpenAI model",
+  "geminiEndpoint": "Gemini-endepunkt",
+  "geminiApiKey": "Gemini API nøgle",
+  "geminiModel": "Gemini model",
+  "anthropicEndpoint": "Antropisk endepunkt",
+  "anthropicApiKey": "Antropisk API-nøgle",
+  "anthropicModel": "Antropisk model",
+  "customProtocol": "Brugerdefineret protokol",
+  "protocol": "Protokol",
+  "customEndpoint": "Brugerdefineret slutpunkt",
+  "customApiKey": "Brugerdefineret API-nøgle",
+  "customModel": "Brugerdefineret model",
+  "optionalForLocalServers": "Valgfrit for lokale/brugerdefinerede servere",
+  "speechRecognitionEngine": "Talegenkendelsesmotor",
+  "local": "Lokal",
+  "endpoint": "Slutpunkt",
+  "localSpeechModel": "Lokal talemodel",
+  "senseVoiceOnnx": "SenseVoice ONNX (på enheden)",
+  "systemSpeechRecognition": "System talegenkendelse",
+  "systemRecognitionAndroidIos": "Systemgenkendelse (Android/iOS)",
+  "endpointRecognitionCloudWs": "Endpoint-genkendelse (Cloud/WS)",
+  "useBuiltInRecognizer": "Brug indbygget Android / iOS-genkendelse (kan bruge cloud)",
+  "voiceAiEndpoint": "Voice AI-endepunkt",
+  "embeddingModel": "Indlejringsmodel",
+  "crossDeviceSync": "Synkronisering på tværs af enheder",
+  "sendToOtherDevices": "Send til andre enheder (LocalSend)",
+  "exportBackupAndSend": "Eksporter backup og send via deleark",
+  "importFromLocalSend": "Importer fra LocalSend",
+  "selectBackupJson": "Vælg backup JSON og flet lokale data",
+  "autoGeneration": "Autogenerering",
+  "autoGenerateSummary": "Generer automatisk oversigt",
+  "generateAiSummaryForNewEntries": "Generer AI-oversigt for nye poster",
+  "autoGenerateEmbedding": "Generer automatisk indlejring",
+  "generateVectorEmbedding": "Generer vektorindlejring til søgning",
+  "enableNetworkSearch": "Aktiver netværkssøgning",
+  "allowOnlineRetrieval": "Tillad online-hentning til søgning og AI-chat (deaktiveret som standard)",
+  "about": "Om",
+  "version": "Version {version}",
+  "database": "Database",
+  "objectBoxWithHnsw": "ObjectBox med HNSW indeks",
+  "logOut": "Log ud",
+  "custom": "Skik",
+  "openAiCompatible": "OpenAI-kompatibel",
+  "notSet": "Ikke indstillet",
+  "supportsLocalLanPublic": "Understøtter lokale/LAN/offentlige endepunkter",
+  "shiguangLocalSendBackup": "Shiguang LocalSend Backup",
+  "localBackupFromShiguang": "Lokal backup fra Shiguang (modtag via LocalSend)",
+  "selectBackupFileFromLocalSend": "Vælg backupfil modtaget fra LocalSend",
+  "failedToResolveFilePath": "Den valgte filsti kunne ikke løses",
+  "importOptions": "Importindstillinger",
+  "importSettingsAsWell": "Vil du også importere indstillinger?\n(API-nøgler vil ikke blive overskrevet)",
+  "dataOnly": "Kun data",
+  "dataAndSettings": "Data + Indstillinger",
+  "importCompleted": "Import afsluttet",
+  "settingsInBackupWereApplied": "Indstillinger i backup blev anvendt.",
+  "settingsInBackupWereNotApplied": "Indstillinger i backup blev ikke anvendt.",
+  "ok": "OK",
+  "cancel": "Ophæve",
+  "save": "Spare",
+  "delete": "Slet",
+  "clear": "Klar",
+  "add": "Tilføje",
+  "create": "Skabe",
+  "edit": "Redigere",
+  "search": "Søge",
+  "areYouSureYouWantToLogOut": "Er du sikker på, at du vil logge ud?",
+  "chooseLanguage": "Vælg sprog",
+  "databaseInfo": "Database info",
+  "storage": "Opbevaring: ObjectBox",
+  "vectorIndex": "Vektorindeks: HNSW",
+  "dimensions": "Dimensioner: 384",
+  "embeddingModelBge": "Indlejringsmodel: bge-small-zh-v1.5",
+  "takePhoto": "Tag billede",
+  "chooseFromGallery": "Vælg fra Galleri",
+  "editNickname": "Rediger kaldenavn",
+  "enterNickname": "Indtast kaldenavn",
+  "pleaseEnterNickname": "Indtast venligst et kaldenavn",
+  "nicknameAlreadyExistsOrInvalid": "Kaldenavnet findes allerede eller er ugyldigt",
+  "user": "Bruger",
+  "manageScheduledReminders": "Administrer planlagte påmindelser og alarmer",
+  "imageFailedToLoad": "Billedet kunne ikke indlæses. Vælg venligst igen.",
+  "imageIsStillLoading": "Billedet indlæses stadig",
+  "imageAreaNotReady": "Billedområdet er ikke klar. Prøv venligst igen.",
+  "cropFrameNotReady": "Beskæringsrammen er ikke klar. Prøv venligst igen.",
+  "invalidCropArea": "Ugyldigt afgrødeområde. Prøv venligst igen.",
+  "cropFailed": "Beskæring mislykkedes. Prøv venligst igen.",
+  "cropAvatar": "Beskær avatar",
+  "chooseAgain": "Vælg igen",
+  "rotate90": "Drej 90°",
+  "dragFrameToMove": "Træk rammen for at flytte, træk nederst til højre for at ændre størrelsen; knib for at zoome og flytte billedet.",
+  "pleaseFillInAllFields": "Udfyld venligst alle felter",
+  "pinMustBeAtLeast4Digits": "PIN-koden skal være på mindst 4 cifre",
+  "pinAtLeast4Digits": "PIN-koden skal være på mindst 4 cifre",
+  "invalidUsernameOrPin": "Ugyldigt brugernavn eller pinkode",
+  "invalidUsernameOrPinError": "Ugyldigt brugernavn eller pinkode",
+  "usernameAlreadyExists": "Brugernavn eksisterer allerede",
+  "captureMomentsKeepMemories": "Fang øjeblikke, bevar minder",
+  "username": "Brugernavn",
+  "pin": "STIFT",
+  "login": "Log ind",
+  "createAccount": "Opret konto",
+  "dontHaveAccountCreateOne": "Har du ikke en konto? Opret en",
+  "alreadyHaveAccountLogin": "Har du allerede en konto? Log ind",
+  "pleaseEnterUsername": "Indtast venligst et brugernavn",
+  "pinsDoNotMatch": "PIN-koder stemmer ikke overens",
+  "tapToAddAvatar": "Tryk for at tilføje avatar",
+  "yourName": "Dit navn",
+  "privatePinOptional": "Privat pinkode (valgfrit)",
+  "usedToEncryptPrivateRecords": "Bruges til at kryptere private optegnelser",
+  "privatePin": "Privat pinkode",
+  "leaveEmptyForNoEncryption": "Lad være tomt for ingen kryptering",
+  "confirmPin": "Bekræft PIN-kode",
+  "getStarted": "Kom i gang",
+  "noReminders": "Ingen påmindelser",
+  "addReminder": "Tilføj påmindelse",
+  "title": "Titel",
+  "descriptionOptional": "Beskrivelse (valgfrit)",
+  "microphonePermissionRequired": "Mikrofontilladelse påkrævet",
+  "aiAssistant": "AI assistent",
+  "listening": "Lytter...",
+  "typeAMessage": "Skriv en besked...",
+  "aiChat": "AI Chat",
+  "startAConversation": "Start en samtale",
+  "typeYourMessage": "Skriv din besked...",
+  "asrReconnecting": "ASR genopretter forbindelse...",
+  "write": "Skrive",
+  "writeEntry": "Skriv indlæg",
+  "noMemoriesYet": "Ingen minder endnu",
+  "tapPlusToCapture": "Tryk på + for at fange dine tanker",
+  "tapPlusToCaptureYourThoughts": "Tryk på + for at fange dine tanker",
+  "deleteMemory": "Slet hukommelse",
+  "deleteRecord": "Slet post",
+  "thisEntryWillBeRemoved": "Denne post vil blive fjernet fra din tidslinje.",
+  "thisRecordWillBeRemoved": "Denne registrering vil blive fjernet fra din tidslinje.",
+  "searchYourRecords": "Søg i dine poster...",
+  "exactMatches": "Præcise matcher",
+  "noExactMatches": "Ingen nøjagtige matcher",
+  "exact": "Nøjagtig",
+  "exactMatch": "Præcis match",
+  "fuzzyMatches": "Fuzzy kampe",
+  "noFuzzyMatches": "Ingen fuzzy kampe",
+  "vectorMatch": "Vektor Match",
+  "networkMatches": "Netværkskampe",
+  "noNetworkMatches": "Ingen netværk matcher",
+  "networkSearchIsOff": "Netværkssøgning er slået fra. Aktiver det i Indstillinger.",
+  "network": "Netværk",
+  "networkMatch": "Netværksmatch",
+  "noSearchHistory": "Ingen søgehistorik",
+  "searchHistory": "Søgehistorik",
+  "invalidLink": "Ugyldigt link",
+  "unableToOpenWebPage": "Kan ikke åbne websiden",
+  "imageMemory": "[Billedhukommelse]",
+  "tapToOpenWebPage": "Tryk for at åbne webside",
+  "editEntry": "Rediger indtastning",
+  "entryDetails": "Indgangsdetaljer",
+  "noContent": "Intet indhold",
+  "diaryNotFound": "Dagbog ikke fundet",
+  "diaryNotFoundShort": "Optegnelsen blev ikke fundet",
+  "aiSummary": "AI oversigt",
+  "microphoneInterrupted": "Mikrofon afbrudt, optagelse stoppet.",
+  "bold": "Dristig",
+  "italic": "Kursiv",
+  "strikethrough": "Gennemstregning",
+  "image": "Billede",
+  "asrUnavailableRecordingActive": "ASR er ikke tilgængelig. Optagelsen er stadig aktiv.",
+  "writeYourEntry": "Skriv dit indlæg...",
+  "writeYourContent": "Skriv dit indhold...",
+  "microphoneStartFailed": "Kunne ikke starte mikrofon: {error}",
+  "microphoneInterruptedRecordingStopped": "Mikrofon afbrudt, optagelse stoppet.",
+  "asrReconnectingError": "ASR genopretter forbindelse: {error}",
+  "imageInserted": "Billede indsat: {name}",
+  "voiceError": "Stemmefejl: {error}",
+  "aiServiceUnavailable": "Beklager, AI-tjeneste er i øjeblikket ikke tilgængelig: {error}",
+  "shareFailed": "Kunne ikke dele: {error}",
+  "searchMatchHits": "{matchType} · {count} hits",
+  "matchCount": "Match: {count}",
+  "sourceFromNetwork": "Kilde: {source}",
+  "createNew": "Skabe",
+  "micStartFailed": "Mikrofonstart mislykkedes: {error}",
+  "importResultAccounts": "Konti: +{created} / opdateret {updated}",
+  "importResultDiaries": "Dagbøger: +{created} / opdateret {updated}",
+  "importResultReminders": "Påmindelser: +{created} / opdateret {updated}",
+  "importResultSkipped": "Sprang over: {count}",
+  "importResultTotal": "Samlet ændret: {count}",
+  "settingsApplied": "Indstillinger i backup blev anvendt.",
+  "settingsNotApplied": "Indstillinger i backup blev ikke anvendt.",
+  "backupExported": "Sikkerhedskopiering eksporteret: {path}",
+  "exportFailed": "Eksport mislykkedes: {error}",
+  "importFailed": "Import mislykkedes: {error}"
+}

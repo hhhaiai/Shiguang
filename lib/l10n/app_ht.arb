@@ -1,0 +1,363 @@
+{
+  "@@locale": "ht",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Kreyòl ayisyen",
+  "languageNameEn": "Haitian Creole",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Anviwònman",
+  "account": "Kont",
+  "reminders": "Rapèl",
+  "language": "Lang",
+  "appLanguage": "Lang aplikasyon an",
+  "appearance": "Aparans",
+  "themeMode": "Mòd tèm",
+  "dark": "Fè nwa",
+  "light": "Limyè",
+  "system": "Sistèm",
+  "aiService": "Sèvis AI",
+  "aiChatProvider": "Founisè Chat AI",
+  "chatModel": "Chat Modèl",
+  "localModel": "Modèl lokal",
+  "localModelDefault": "Modèl lokal (default)",
+  "ollamaEndpoint": "Ollama Endpoint",
+  "ollamaModel": "Ollama Modèl",
+  "openAiEndpoint": "OpenAI Endpoint",
+  "openAiApiKey": "OpenAI API kle",
+  "openAiModel": "Modèl OpenAI",
+  "geminiEndpoint": "Gemini Endpoint",
+  "geminiApiKey": "Kle API Gemini",
+  "geminiModel": "Modèl Gemini",
+  "anthropicEndpoint": "Pwen antwopik",
+  "anthropicApiKey": "Kle API antropik",
+  "anthropicModel": "Modèl antropik",
+  "customProtocol": "Pwotokòl Custom",
+  "protocol": "Pwotokòl",
+  "customEndpoint": "Custom endpoint",
+  "customApiKey": "Custom API kle",
+  "customModel": "Modèl Custom",
+  "optionalForLocalServers": "Si ou vle pou serveurs lokal / koutim",
+  "speechRecognitionEngine": "Motè rekonesans lapawòl",
+  "local": "Lokal",
+  "endpoint": "Enfin",
+  "localSpeechModel": "Modèl Lapawòl Lokal",
+  "senseVoiceOnnx": "SenseVoice ONNX (sou aparèy)",
+  "systemSpeechRecognition": "Sistèm Rekonesans Lapawòl",
+  "systemRecognitionAndroidIos": "Rekonesans sistèm (Android/iOS)",
+  "endpointRecognitionCloudWs": "Rekonesans pwen final (Cloud/WS)",
+  "useBuiltInRecognizer": "Sèvi ak rekonesans android / iOS entegre (kapab itilize nwaj)",
+  "voiceAiEndpoint": "Vwa AI Endpoint",
+  "embeddingModel": "Embedding Modèl",
+  "crossDeviceSync": "Sync kwa-aparèy",
+  "sendToOtherDevices": "Voye nan lòt aparèy (LocalSend)",
+  "exportBackupAndSend": "Ekspòte backup epi voye atravè fèy pataje",
+  "importFromLocalSend": "Enpòte soti nan LocalSend",
+  "selectBackupJson": "Chwazi backup JSON epi rantre done lokal yo",
+  "autoGeneration": "Auto Jenerasyon",
+  "autoGenerateSummary": "Auto Jenere Rezime",
+  "generateAiSummaryForNewEntries": "Jenere rezime AI pou nouvo antre",
+  "autoGenerateEmbedding": "Auto Jenere Embedding",
+  "generateVectorEmbedding": "Jenere vektè embedding pou rechèch",
+  "enableNetworkSearch": "Pèmèt rechèch rezo a",
+  "allowOnlineRetrieval": "Pèmèt rekipere sou entènèt pou rechèch ak chat AI (dezafè pa default)",
+  "about": "Konsènan",
+  "version": "Version {version}",
+  "database": "Baz done",
+  "objectBoxWithHnsw": "ObjectBox ak endèks HNSW",
+  "logOut": "Dekonekte",
+  "custom": "Custom",
+  "openAiCompatible": "OpenAI konpatib",
+  "notSet": "Pa mete",
+  "supportsLocalLanPublic": "Sipòte pwen final lokal/LAN/piblik",
+  "shiguangLocalSendBackup": "Shiguang LocalSend Backup",
+  "localBackupFromShiguang": "Sovgad lokal soti nan Shiguang (resevwa atravè LocalSend)",
+  "selectBackupFileFromLocalSend": "Chwazi dosye backup ou resevwa nan men LocalSend",
+  "failedToResolveFilePath": "Echwe pou rezoud chemen fichye chwazi a",
+  "importOptions": "Opsyon enpòte",
+  "importSettingsAsWell": "Enpòte anviwònman tou?\n(Kle API yo pa pral ranplase)",
+  "dataOnly": "Done sèlman",
+  "dataAndSettings": "Done + Anviwònman",
+  "importCompleted": "Enpòte Konplete",
+  "settingsInBackupWereApplied": "Anviwònman nan backup yo te aplike.",
+  "settingsInBackupWereNotApplied": "Anviwònman nan backup pa te aplike.",
+  "ok": "OK",
+  "cancel": "Anile",
+  "save": "Sove",
+  "delete": "Efase",
+  "clear": "Klè",
+  "add": "Ajoute",
+  "create": "Kreye",
+  "edit": "Edit",
+  "search": "Rechèch",
+  "areYouSureYouWantToLogOut": "Èske ou sèten ou vle dekonekte?",
+  "chooseLanguage": "Chwazi Lang",
+  "databaseInfo": "Enfòmasyon sou baz done",
+  "storage": "Depo: ObjectBox",
+  "vectorIndex": "Endèks vektè: HNSW",
+  "dimensions": "Dimansyon: 384",
+  "embeddingModelBge": "Embedding Modèl: bge-small-zh-v1.5",
+  "takePhoto": "Pran Foto",
+  "chooseFromGallery": "Chwazi nan Galeri",
+  "editNickname": "Edit ti non",
+  "enterNickname": "Antre tinon",
+  "pleaseEnterNickname": "Tanpri antre yon tinon",
+  "nicknameAlreadyExistsOrInvalid": "Ti non deja egziste oswa li pa valab",
+  "user": "Itilizatè",
+  "manageScheduledReminders": "Jere rapèl pwograme ak alam",
+  "imageFailedToLoad": "Imaj echwe pou pou chaje. Tanpri chwazi ankò.",
+  "imageIsStillLoading": "Imaj la toujou ap chaje",
+  "imageAreaNotReady": "Zòn imaj la pa pare. Tanpri eseye ankò.",
+  "cropFrameNotReady": "Ankadreman rekòt pa pare. Tanpri eseye ankò.",
+  "invalidCropArea": "Zòn rekòt envalid. Tanpri eseye ankò.",
+  "cropFailed": "Rekòt echwe. Tanpri eseye ankò.",
+  "cropAvatar": "Rekòt Avatar",
+  "chooseAgain": "Chwazi ankò",
+  "rotate90": "Vire 90°",
+  "dragFrameToMove": "Trennen ankadreman an pou avanse pou pi, trennen anba-dwa pou chanje gwosè; zongle pou rale epi deplase imaj.",
+  "pleaseFillInAllFields": "Tanpri ranpli tout jaden yo",
+  "pinMustBeAtLeast4Digits": "PIN dwe gen omwen 4 chif",
+  "pinAtLeast4Digits": "PIN dwe gen omwen 4 chif",
+  "invalidUsernameOrPin": "Non itilizatè oswa PIN pa valab",
+  "invalidUsernameOrPinError": "Non itilizatè oswa PIN pa valab",
+  "usernameAlreadyExists": "Non itilizatè a deja egziste",
+  "captureMomentsKeepMemories": "Kaptire moman, kenbe memwa",
+  "username": "Non itilizatè",
+  "pin": "PIN",
+  "login": "Konekte",
+  "createAccount": "Kreye Kont",
+  "dontHaveAccountCreateOne": "Ou pa gen yon kont? Kreye youn",
+  "alreadyHaveAccountLogin": "Ou deja gen yon kont? Konekte",
+  "pleaseEnterUsername": "Tanpri antre yon non itilizatè",
+  "pinsDoNotMatch": "PIN yo pa matche",
+  "tapToAddAvatar": "Tape pou ajoute avatar",
+  "yourName": "Non ou",
+  "privatePinOptional": "PIN prive (si ou vle)",
+  "usedToEncryptPrivateRecords": "Yo itilize pou ankripte dosye prive",
+  "privatePin": "PIN prive",
+  "leaveEmptyForNoEncryption": "Kite vid pou pa gen chifreman",
+  "confirmPin": "Konfime PIN",
+  "getStarted": "Kòmanse",
+  "noReminders": "Pa gen rapèl",
+  "addReminder": "Ajoute rapèl",
+  "title": "Tit",
+  "descriptionOptional": "Deskripsyon (opsyonèl)",
+  "microphonePermissionRequired": "Mikwofòn pèmisyon obligatwa",
+  "aiAssistant": "AI Asistan",
+  "listening": "Tande...",
+  "typeAMessage": "Tape yon mesaj...",
+  "aiChat": "AI Chat",
+  "startAConversation": "Kòmanse yon konvèsasyon",
+  "typeYourMessage": "Tape mesaj ou a...",
+  "asrReconnecting": "ASR rekonekte...",
+  "write": "Ekri",
+  "writeEntry": "Ekri Antre",
+  "noMemoriesYet": "Pa gen souvni ankò",
+  "tapPlusToCapture": "Tape + pou kaptire panse ou",
+  "tapPlusToCaptureYourThoughts": "Tape + pou kaptire panse ou",
+  "deleteMemory": "Efase memwa",
+  "deleteRecord": "Efase dosye",
+  "thisEntryWillBeRemoved": "Antre sa a pral retire nan kalandriye w la.",
+  "thisRecordWillBeRemoved": "Dosye sa a pral retire nan kalandriye w la.",
+  "searchYourRecords": "Chèche dosye ou...",
+  "exactMatches": "Matche egzak",
+  "noExactMatches": "Pa gen alimèt egzak",
+  "exact": "Egzak",
+  "exactMatch": "Koresponn ak egzak",
+  "fuzzyMatches": "Alimèt flou",
+  "noFuzzyMatches": "Pa gen alimèt flou",
+  "vectorMatch": "Koresponn ak vektè",
+  "networkMatches": "Rezo Match",
+  "noNetworkMatches": "Pa gen alimèt rezo",
+  "networkSearchIsOff": "Rechèch rezo a koupe. Pèmèt li nan Anviwònman.",
+  "network": "Rezo",
+  "networkMatch": "Rezo Match",
+  "noSearchHistory": "Pa gen istwa rechèch",
+  "searchHistory": "Search Istwa",
+  "invalidLink": "Lyen ki pa valab",
+  "unableToOpenWebPage": "Pa kapab louvri paj wèb",
+  "imageMemory": "[Memwa imaj]",
+  "tapToOpenWebPage": "Tape pou ouvri paj wèb",
+  "editEntry": "Edit Antre",
+  "entryDetails": "Detay antre",
+  "noContent": "Pa gen kontni",
+  "diaryNotFound": "Jounal pa jwenn",
+  "diaryNotFoundShort": "Dosye pa jwenn",
+  "aiSummary": "AI Rezime",
+  "microphoneInterrupted": "Mikwofòn koupe, anrejistreman sispann.",
+  "bold": "Bold",
+  "italic": "Italik",
+  "strikethrough": "Strikethrough",
+  "image": "Imaj",
+  "asrUnavailableRecordingActive": "ASR pa disponib. Anrejistreman toujou aktif.",
+  "writeYourEntry": "Ekri antre ou...",
+  "writeYourContent": "Ekri kontni ou...",
+  "microphoneStartFailed": "Echwe pou kòmanse mikwofòn: {error}",
+  "microphoneInterruptedRecordingStopped": "Mikwofòn koupe, anrejistreman sispann.",
+  "asrReconnectingError": "ASR rekonekte: {error}",
+  "imageInserted": "Imaj mete: {name}",
+  "voiceError": "Erè vwa: {error}",
+  "aiServiceUnavailable": "Padon, sèvis AI pa disponib kounye a: {error}",
+  "shareFailed": "Echwe pou pataje: {error}",
+  "searchMatchHits": "{matchType} · {count} frape",
+  "matchCount": "Koresponn ak: {count}",
+  "sourceFromNetwork": "Sous: {source}",
+  "createNew": "Kreye",
+  "micStartFailed": "Mikwo a echwe: {error}",
+  "importResultAccounts": "Kont: +{created} / mete ajou {updated}",
+  "importResultDiaries": "Jounal: +{created} / mete ajou {updated}",
+  "importResultReminders": "Rapèl: +{created} / mete ajou {updated}",
+  "importResultSkipped": "Sote: {count}",
+  "importResultTotal": "Total chanje: {count}",
+  "settingsApplied": "Anviwònman nan backup yo te aplike.",
+  "settingsNotApplied": "Anviwònman nan backup pa te aplike.",
+  "backupExported": "Sovgad ekspòte: {path}",
+  "exportFailed": "Ekspòtasyon echwe: {error}",
+  "importFailed": "Enpòte echwe: {error}"
+}

@@ -1,5 +1,7 @@
 {
   "@@locale": "en",
+  "languageName": "English",
+  "languageNameEn": "English",
   "appTitle": "Shiguang",
   "@appTitle": {
     "description": "App name"

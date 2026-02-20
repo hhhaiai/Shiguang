@@ -1,0 +1,363 @@
+{
+  "@@locale": "ru",
+  "languageName": "Русский",
+  "languageNameEn": "Russian",
+  "appTitle": "Shiguang",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "settings": "Настройки",
+  "account": "Аккаунт",
+  "reminders": "Напоминания",
+  "language": "Язык",
+  "appLanguage": "Язык приложения",
+  "appearance": "Внешний вид",
+  "themeMode": "Режим темы",
+  "dark": "Тёмный",
+  "light": "Светлый",
+  "system": "Системный",
+  "aiService": "ИИ-сервис",
+  "aiChatProvider": "ИИ-провайдер чата",
+  "chatModel": "Модель чата",
+  "localModel": "Локальная модель",
+  "localModelDefault": "Локальная модель (по умолчанию)",
+  "ollamaEndpoint": "Конечная точка Оллама",
+  "ollamaModel": "Ollama модель",
+  "openAiEndpoint": "Конечная точка OpenAI",
+  "openAiApiKey": "OpenAI API ключ",
+  "openAiModel": "OpenAI модель",
+  "geminiEndpoint": "Конечная точка Близнецов",
+  "geminiApiKey": "Gemini API ключ",
+  "geminiModel": "Gemini модель",
+  "anthropicEndpoint": "Антропная конечная точка",
+  "anthropicApiKey": "Anthropic API ключ",
+  "anthropicModel": "Anthropic модель",
+  "customProtocol": "Свой протокол",
+  "protocol": "Протокол",
+  "customEndpoint": "Свой endpoint",
+  "customApiKey": "Свой API ключ",
+  "customModel": "Своя модель",
+  "optionalForLocalServers": "Опционально для локальных/своих серверов",
+  "speechRecognitionEngine": "Движок распознавания речи",
+  "local": "Локальный",
+  "endpoint": "Конечная точка",
+  "localSpeechModel": "Локальная модель речи",
+  "senseVoiceOnnx": "SenseVoice ONNX (на устройстве",
+  "systemSpeechRecognition": "Системное распознавание речи",
+  "systemRecognitionAndroidIos": "Системное распознавание (Android/iOS)",
+  "endpointRecognitionCloudWs": "Endpoint распознавание (Облако/WS)",
+  "useBuiltInRecognizer": "Использовать встроенный распознаватель Android / iOS (может использовать облако)",
+  "voiceAiEndpoint": "Конечная точка голосового ИИ",
+  "embeddingModel": "Модель эмбеддинга",
+  "crossDeviceSync": "Синхронизация между устройствами",
+  "sendToOtherDevices": "Отправить на другие устройства (LocalSend)",
+  "exportBackupAndSend": "Экспортировать резервную копию и отправить через меню",
+  "importFromLocalSend": "Импортировать из LocalSend",
+  "selectBackupJson": "Выбрать JSON резервную копию и объединить локальные данные",
+  "autoGeneration": "Автогенерация",
+  "autoGenerateSummary": "Автогенерация резюме",
+  "generateAiSummaryForNewEntries": "Генерировать ИИ-резюме для новых записей",
+  "autoGenerateEmbedding": "Автогенерация эмбеддинга",
+  "generateVectorEmbedding": "Генерировать векторный эмбеддинг для поиска",
+  "enableNetworkSearch": "Включить сетевой поиск",
+  "allowOnlineRetrieval": "Разрешить онлайн-поиск для поиска и ИИ-чата (выключено по умолчанию)",
+  "about": "О приложении",
+  "version": "Версия {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "database": "База данных",
+  "objectBoxWithHnsw": "ObjectBox с HNSW индексом",
+  "logOut": "Выйти",
+  "custom": "Свой",
+  "openAiCompatible": "OpenAI совместимый",
+  "notSet": "Не установлено",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... или http://127.0.0.1:11434",
+  "supportsLocalLanPublic": "Поддерживает локальные/LAN/публичные endpoints",
+  "shiguangLocalSendBackup": "Shiguang LocalSend резервная копия",
+  "localBackupFromShiguang": "Локальная резервная копия из Shiguang (принять через LocalSend)",
+  "selectBackupFileFromLocalSend": "Выбрать файл резервной копии, полученный от LocalSend",
+  "failedToResolveFilePath": "Не удалось определить путь к выбранному файлу",
+  "importOptions": "Параметры импорта",
+  "importSettingsAsWell": "Импортировать также настройки?\n(API ключи не будут перезаписаны)",
+  "dataOnly": "Только данные",
+  "dataAndSettings": "Данные + Настройки",
+  "importCompleted": "Импорт завершён",
+  "settingsInBackupWereApplied": "Настройки из резервной копии были применены.",
+  "settingsInBackupWereNotApplied": "Настройки из резервной копии не были применены.",
+  "ok": "ОК",
+  "cancel": "Отмена",
+  "save": "Сохранить",
+  "delete": "Удалить",
+  "clear": "Очистить",
+  "add": "Добавить",
+  "create": "Создать",
+  "edit": "Редактировать",
+  "search": "Поиск",
+  "areYouSureYouWantToLogOut": "Вы уверены, что хотите выйти?",
+  "chooseLanguage": "Выберите язык",
+  "databaseInfo": "Информация о базе данных",
+  "storage": "Хранилище: ObjectBox",
+  "vectorIndex": "Векторный индекс: HNSW",
+  "dimensions": "Измерения: 384",
+  "embeddingModelBge": "Модель эмбеддинга: bge-small-zh-v1.5",
+  "takePhoto": "Сделать фото",
+  "chooseFromGallery": "Выбрать из галереи",
+  "editNickname": "Редактировать никнейм",
+  "enterNickname": "Введите никнейм",
+  "pleaseEnterNickname": "Пожалуйста, введите никнейм",
+  "nicknameAlreadyExistsOrInvalid": "Никнейм уже существует или недействителен",
+  "user": "Пользователь",
+  "manageScheduledReminders": "Управление запланированными напоминаниями и будильниками",
+  "imageFailedToLoad": "Не удалось загрузить изображение. Пожалуйста, выберите снова.",
+  "imageIsStillLoading": "Изображение всё ещё загружается",
+  "imageAreaNotReady": "Область изображения не готова. Пожалуйста, попробуйте снова.",
+  "cropFrameNotReady": "Рамка обрезки не готова. Пожалуйста, попробуйте снова.",
+  "invalidCropArea": "Неверная область обрезки. Пожалуйста, попробуйте снова.",
+  "cropFailed": "Обрезка не удалась. Пожалуйста, попробуйте снова.",
+  "cropAvatar": "Обрезать аватар",
+  "chooseAgain": "Выбрать снова",
+  "rotate90": "Повернуть на 90°",
+  "dragFrameToMove": "Перетащите рамку для перемещения, перетащите правый нижний угол для изменения размера; щипок для увеличения и перемещения изображения.",
+  "pleaseFillInAllFields": "Пожалуйста, заполните все поля",
+  "pinMustBeAtLeast4Digits": "PIN должен содержать минимум 4 цифры",
+  "pinAtLeast4Digits": "PIN должен содержать минимум 4 цифры",
+  "invalidUsernameOrPin": "Неверное имя пользователя или PIN",
+  "invalidUsernameOrPinError": "Неверное имя пользователя или PIN",
+  "usernameAlreadyExists": "Имя пользователя уже существует",
+  "captureMomentsKeepMemories": "Ловите моменты, сохраняйте воспоминания",
+  "username": "Имя пользователя",
+  "pin": "PIN",
+  "login": "Войти",
+  "createAccount": "Создать аккаунт",
+  "dontHaveAccountCreateOne": "Нет аккаунта? Создайте один",
+  "alreadyHaveAccountLogin": "Уже есть аккаунт? Войдите",
+  "pleaseEnterUsername": "Пожалуйста, введите имя пользователя",
+  "pinsDoNotMatch": "PIN-коды не совпадают",
+  "tapToAddAvatar": "Нажмите, чтобы добавить аватар",
+  "yourName": "Ваше имя",
+  "privatePinOptional": "Личный PIN (опционально)",
+  "usedToEncryptPrivateRecords": "Используется для шифрования личных записей",
+  "privatePin": "Личный PIN",
+  "leaveEmptyForNoEncryption": "Оставьте пустым для отсутствия шифрования",
+  "confirmPin": "Подтвердите PIN",
+  "getStarted": "Начать",
+  "noReminders": "Нет напоминаний",
+  "addReminder": "Добавить напоминание",
+  "title": "Название",
+  "descriptionOptional": "Описание (опционально)",
+  "microphonePermissionRequired": "Требуется разрешение на использование микрофона",
+  "aiAssistant": "ИИ-ассистент",
+  "listening": "Слушаю...",
+  "typeAMessage": "Введите сообщение...",
+  "aiChat": "ИИ-чат",
+  "startAConversation": "Начните разговор",
+  "typeYourMessage": "Введите ваше сообщение...",
+  "asrReconnecting": "ASR переподключается...",
+  "write": "Писать",
+  "writeEntry": "Написать запись",
+  "noMemoriesYet": "Пока нет воспоминаний",
+  "tapPlusToCapture": "Нажмите +, чтобы записать мысли",
+  "tapPlusToCaptureYourThoughts": "Нажмите +, чтобы записать мысли",
+  "deleteMemory": "Удалить воспоминание",
+  "deleteRecord": "Удалить запись",
+  "thisEntryWillBeRemoved": "Эта запись будет удалена из вашей ленты.",
+  "thisRecordWillBeRemoved": "Эта запись будет удалена из вашей ленты.",
+  "searchYourRecords": "Искать в записях...",
+  "exactMatches": "Точные совпадения",
+  "noExactMatches": "Нет точных совпадений",
+  "exact": "Точно",
+  "exactMatch": "Точное совпадение",
+  "fuzzyMatches": "Нечёткие совпадения",
+  "noFuzzyMatches": "Нет нечётких совпадений",
+  "vectorMatch": "Векторное совпадение",
+  "networkMatches": "Сетевые совпадения",
+  "noNetworkMatches": "Нет сетевых совпадений",
+  "networkSearchIsOff": "Сетевой поиск выключен. Включите его в настройках.",
+  "network": "Сеть",
+  "networkMatch": "Сетевое совпадение",
+  "noSearchHistory": "Нет истории поиска",
+  "searchHistory": "История поиска",
+  "invalidLink": "Неверная ссылка",
+  "unableToOpenWebPage": "Не удалось открыть веб-страницу",
+  "imageMemory": "[Воспоминание с изображением]",
+  "tapToOpenWebPage": "Нажмите, чтобы открыть веб-страницу",
+  "editEntry": "Редактировать запись",
+  "entryDetails": "Детали записи",
+  "noContent": "Нет содержимого",
+  "diaryNotFound": "Дневник не найден",
+  "diaryNotFoundShort": "Запись не найдена",
+  "aiSummary": "ИИ-резюме",
+  "microphoneInterrupted": "Микрофон прерван, запись остановлена.",
+  "bold": "Жирный",
+  "italic": "Курсив",
+  "strikethrough": "Зачёркнутый",
+  "image": "Изображение",
+  "asrUnavailableRecordingActive": "ASR недоступна. Запись всё ещё активна.",
+  "writeYourEntry": "Напишите вашу запись...",
+  "writeYourContent": "Напишите ваш контент...",
+  "microphoneStartFailed": "Не удалось запустить микрофон: {error}",
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "microphoneInterruptedRecordingStopped": "Микрофон прерван, запись остановлена.",
+  "asrReconnectingError": "ASR переподключается: {error}",
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "imageInserted": "Изображение вставлено: {name}",
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "voiceError": "Ошибка голоса: {error}",
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "aiServiceUnavailable": "К сожалению, ИИ-сервис сейчас недоступен: {error}",
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareFailed": "Не удалось поделиться: {error}",
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "searchMatchHits": "{matchType} · {count} результатов",
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "matchCount": "Совпадений: {count}",
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sourceFromNetwork": "Источник: {source}",
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "createNew": "Создать",
+  "micStartFailed": "Не удалось запустить микрофон: {error}",
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importResultAccounts": "Аккаунты: +{created} / обновлено {updated}",
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultDiaries": "Дневники: +{created} / обновлено {updated}",
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultReminders": "Напоминания: +{created} / обновлено {updated}",
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultSkipped": "Пропущено: {count}",
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultTotal": "Всего изменено: {count}",
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsApplied": "Настройки из резервной копии были применены.",
+  "settingsNotApplied": "Настройки из резервной копии не были применены.",
+  "backupExported": "Резервная копия экспортирована: {path}",
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "exportFailed": "Экспорт не удался: {error}",
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importFailed": "Импорт не удался: {error}",
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
+}

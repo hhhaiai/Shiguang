@@ -1,0 +1,363 @@
+{
+  "@@locale": "sq",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Shqip",
+  "languageNameEn": "Albanian",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Cilësimet",
+  "account": "Llogaria",
+  "reminders": "Përkujtues",
+  "language": "Gjuha",
+  "appLanguage": "Gjuha e aplikacionit",
+  "appearance": "Pamja e jashtme",
+  "themeMode": "Modaliteti i temës",
+  "dark": "E errët",
+  "light": "Drita",
+  "system": "Sistemi",
+  "aiService": "Shërbimi i AI",
+  "aiChatProvider": "Ofruesi i bisedës AI",
+  "chatModel": "Modeli i bisedës",
+  "localModel": "Modeli lokal",
+  "localModelDefault": "Modeli lokal (i parazgjedhur)",
+  "ollamaEndpoint": "Ollama Fundpoint",
+  "ollamaModel": "Modeli Olama",
+  "openAiEndpoint": "OpenAI Fundpoint",
+  "openAiApiKey": "Çelësi OpenAI API",
+  "openAiModel": "Modeli OpenAI",
+  "geminiEndpoint": "Pika fundore e Binjakëve",
+  "geminiApiKey": "Çelësi i API-së Gemini",
+  "geminiModel": "Modelet e Binjakëve",
+  "anthropicEndpoint": "Pika përfundimtare antropike",
+  "anthropicApiKey": "Çelësi Antropik API",
+  "anthropicModel": "Modeli Antropik",
+  "customProtocol": "Protokolli i personalizuar",
+  "protocol": "Protokolli",
+  "customEndpoint": "Pika përfundimtare e personalizuar",
+  "customApiKey": "Çelësi i personalizuar API",
+  "customModel": "Modeli i personalizuar",
+  "optionalForLocalServers": "Opsionale për serverët lokalë/me porosi",
+  "speechRecognitionEngine": "Motori i njohjes së të folurit",
+  "local": "Lokale",
+  "endpoint": "Pika përfundimtare",
+  "localSpeechModel": "Modeli lokal i të folurit",
+  "senseVoiceOnnx": "SenseVoice ONNX (në pajisje)",
+  "systemSpeechRecognition": "Sistemi i njohjes së të folurit",
+  "systemRecognitionAndroidIos": "Njohja e sistemit (Android/iOS)",
+  "endpointRecognitionCloudWs": "Njohja e pikës fundore (Cloud/WS)",
+  "useBuiltInRecognizer": "Përdorni njohësin e integruar të Android / iOS (mund të përdorni renë kompjuterike)",
+  "voiceAiEndpoint": "Pika përfundimtare e inteligjencës artificiale zanore",
+  "embeddingModel": "Modeli i ngulitjes",
+  "crossDeviceSync": "Sinkronizimi ndërmjet pajisjeve",
+  "sendToOtherDevices": "Dërgo në pajisje të tjera (LocalSend)",
+  "exportBackupAndSend": "Eksporto kopje rezervë dhe dërgo përmes fletës së ndarjes",
+  "importFromLocalSend": "Importo nga LocalSend",
+  "selectBackupJson": "Zgjidhni JSON rezervë dhe bashkoni të dhënat lokale",
+  "autoGeneration": "Gjenerimi automatik",
+  "autoGenerateSummary": "Përmbledhja e gjenerimit automatik",
+  "generateAiSummaryForNewEntries": "Gjeneroni përmbledhjen e AI për hyrjet e reja",
+  "autoGenerateEmbedding": "Auto Generate Embedding",
+  "generateVectorEmbedding": "Krijo ngulitje vektoriale për kërkim",
+  "enableNetworkSearch": "Aktivizo Kërkimin në Rrjet",
+  "allowOnlineRetrieval": "Lejo rikthimin në internet për kërkimin dhe bisedën me AI (i çaktivizuar si parazgjedhje)",
+  "about": "Rreth",
+  "version": "Versioni {version}",
+  "database": "Baza e të dhënave",
+  "objectBoxWithHnsw": "ObjectBox me indeks HNSW",
+  "logOut": "Dilni",
+  "custom": "Me porosi",
+  "openAiCompatible": "E përputhshme me OpenAI",
+  "notSet": "Nuk është vendosur",
+  "supportsLocalLanPublic": "Mbështet pikat fundore lokale/LAN/publike",
+  "shiguangLocalSendBackup": "Rezervimi i Shiguang LocalSend",
+  "localBackupFromShiguang": "Rezervimi lokal nga Shiguang (merr nëpërmjet LocalSend)",
+  "selectBackupFileFromLocalSend": "Zgjidhni skedarin rezervë të marrë nga LocalSend",
+  "failedToResolveFilePath": "Zgjidhja e shtegut të skedarit të zgjedhur dështoi",
+  "importOptions": "Opsionet e importit",
+  "importSettingsAsWell": "Të importohen edhe cilësimet?\n(Çelësat API nuk do të mbishkruhen)",
+  "dataOnly": "Vetëm të dhëna",
+  "dataAndSettings": "Të dhënat + Cilësimet",
+  "importCompleted": "Importi përfundoi",
+  "settingsInBackupWereApplied": "Janë aplikuar cilësimet në kopje rezervë.",
+  "settingsInBackupWereNotApplied": "Cilësimet në rezervë nuk u zbatuan.",
+  "ok": "OK",
+  "cancel": "Anulo",
+  "save": "Ruaj",
+  "delete": "Fshije",
+  "clear": "E qartë",
+  "add": "Shtoni",
+  "create": "Krijo",
+  "edit": "Redakto",
+  "search": "Kërko",
+  "areYouSureYouWantToLogOut": "Jeni i sigurt që dëshironi të dilni?",
+  "chooseLanguage": "Zgjidhni gjuhën",
+  "databaseInfo": "Informacion mbi bazën e të dhënave",
+  "storage": "Ruajtja: ObjectBox",
+  "vectorIndex": "Indeksi i Vektorit: HNSW",
+  "dimensions": "Përmasat: 384",
+  "embeddingModelBge": "Embedding Model: bge-small-zh-v1.5",
+  "takePhoto": "Bëj foto",
+  "chooseFromGallery": "Zgjidhni nga Galeria",
+  "editNickname": "Redakto pseudonimin",
+  "enterNickname": "Fut pseudonimin",
+  "pleaseEnterNickname": "Ju lutemi shkruani një pseudonim",
+  "nicknameAlreadyExistsOrInvalid": "Pseudonimi ekziston tashmë ose është i pavlefshëm",
+  "user": "Përdoruesi",
+  "manageScheduledReminders": "Menaxho rikujtuesit dhe alarmet e planifikuara",
+  "imageFailedToLoad": "Imazhi nuk u ngarkua. Ju lutemi zgjidhni përsëri.",
+  "imageIsStillLoading": "Imazhi është ende duke u ngarkuar",
+  "imageAreaNotReady": "Zona e imazhit nuk është gati. Ju lutemi provoni përsëri.",
+  "cropFrameNotReady": "Korniza e prerjes nuk është gati. Ju lutemi provoni përsëri.",
+  "invalidCropArea": "Zonë e pavlefshme e prerjes. Ju lutemi provoni përsëri.",
+  "cropFailed": "Prerja dështoi. Ju lutemi provoni përsëri.",
+  "cropAvatar": "Pritini avatarin",
+  "chooseAgain": "Zgjidhni Përsëri",
+  "rotate90": "Rrotulloni 90°",
+  "dragFrameToMove": "Zvarritni kornizën për të lëvizur, zvarriteni poshtë-djathtas për të ndryshuar madhësinë; kapni për të zmadhuar dhe lëvizur imazhin.",
+  "pleaseFillInAllFields": "Ju lutemi plotësoni të gjitha fushat",
+  "pinMustBeAtLeast4Digits": "Kodi PIN duhet të jetë të paktën 4 shifror",
+  "pinAtLeast4Digits": "Kodi PIN duhet të jetë të paktën 4 shifror",
+  "invalidUsernameOrPin": "Emër përdoruesi ose PIN i pavlefshëm",
+  "invalidUsernameOrPinError": "Emër përdoruesi ose PIN i pavlefshëm",
+  "usernameAlreadyExists": "Emri i përdoruesit ekziston tashmë",
+  "captureMomentsKeepMemories": "Kapni momente, mbani kujtime",
+  "username": "Emri i përdoruesit",
+  "pin": "PIN",
+  "login": "Identifikohu",
+  "createAccount": "Krijo llogari",
+  "dontHaveAccountCreateOne": "Nuk keni një llogari? Krijo një",
+  "alreadyHaveAccountLogin": "Keni tashmë një llogari? Identifikohu",
+  "pleaseEnterUsername": "Ju lutemi shkruani një emër përdoruesi",
+  "pinsDoNotMatch": "PIN-et nuk përputhen",
+  "tapToAddAvatar": "Trokit për të shtuar avatar",
+  "yourName": "Emri juaj",
+  "privatePinOptional": "PIN privat (opsionale)",
+  "usedToEncryptPrivateRecords": "Përdoret për të enkriptuar të dhënat private",
+  "privatePin": "PIN-i privat",
+  "leaveEmptyForNoEncryption": "Lëreni bosh pa enkriptim",
+  "confirmPin": "Konfirmo PIN-in",
+  "getStarted": "Filloni",
+  "noReminders": "Asnjë kujtesë",
+  "addReminder": "Shto kujtesë",
+  "title": "Titulli",
+  "descriptionOptional": "Përshkrimi (opsionale)",
+  "microphonePermissionRequired": "Kërkohet leja e mikrofonit",
+  "aiAssistant": "Asistent i AI",
+  "listening": "Duke dëgjuar...",
+  "typeAMessage": "Shkruani një mesazh...",
+  "aiChat": "AI Chat",
+  "startAConversation": "Filloni një bisedë",
+  "typeYourMessage": "Shkruani mesazhin tuaj...",
+  "asrReconnecting": "ASR po rilidhet...",
+  "write": "Shkruani",
+  "writeEntry": "Shkruani hyrjen",
+  "noMemoriesYet": "Ende nuk ka kujtime",
+  "tapPlusToCapture": "Prekni + për të kapur mendimet tuaja",
+  "tapPlusToCaptureYourThoughts": "Prekni + për të kapur mendimet tuaja",
+  "deleteMemory": "Fshi Memory",
+  "deleteRecord": "Fshi regjistrimin",
+  "thisEntryWillBeRemoved": "Kjo hyrje do të hiqet nga kronologjia juaj.",
+  "thisRecordWillBeRemoved": "Ky regjistrim do të hiqet nga kronologjia juaj.",
+  "searchYourRecords": "Kërkoni të dhënat tuaja...",
+  "exactMatches": "Ndeshjet e sakta",
+  "noExactMatches": "Nuk ka ndeshje të sakta",
+  "exact": "E saktë",
+  "exactMatch": "Përputhje e saktë",
+  "fuzzyMatches": "Ndeshjet e paqarta",
+  "noFuzzyMatches": "Nuk ka ndeshje të paqarta",
+  "vectorMatch": "Përputhje vektoriale",
+  "networkMatches": "Ndeshjet e rrjetit",
+  "noNetworkMatches": "Nuk ka përputhje rrjeti",
+  "networkSearchIsOff": "Kërkimi në rrjet është joaktiv. Aktivizojeni atë te \"Cilësimet\".",
+  "network": "Rrjeti",
+  "networkMatch": "Përputhja e rrjetit",
+  "noSearchHistory": "Nuk ka histori kërkimi",
+  "searchHistory": "Historia e Kërkimit",
+  "invalidLink": "Lidhje e pavlefshme",
+  "unableToOpenWebPage": "Faqja e internetit nuk mund të hapet",
+  "imageMemory": "[Kujtesa e imazhit]",
+  "tapToOpenWebPage": "Prekni për të hapur faqen e internetit",
+  "editEntry": "Redakto hyrjen",
+  "entryDetails": "Detajet e hyrjes",
+  "noContent": "Nuk ka përmbajtje",
+  "diaryNotFound": "Ditari nuk u gjet",
+  "diaryNotFoundShort": "Regjistrimi nuk u gjet",
+  "aiSummary": "Përmbledhja e AI",
+  "microphoneInterrupted": "Mikrofoni u ndërpre, regjistrimi u ndal.",
+  "bold": "E guximshme",
+  "italic": "Kursivë",
+  "strikethrough": "Strikethrough",
+  "image": "Imazhi",
+  "asrUnavailableRecordingActive": "ASR nuk disponohet. Regjistrimi është ende aktiv.",
+  "writeYourEntry": "Shkruani hyrjen tuaj...",
+  "writeYourContent": "Shkruani përmbajtjen tuaj...",
+  "microphoneStartFailed": "Nisja e mikrofonit dështoi: {error}",
+  "microphoneInterruptedRecordingStopped": "Mikrofoni u ndërpre, regjistrimi u ndal.",
+  "asrReconnectingError": "ASR rilidhja: {error}",
+  "imageInserted": "Imazhi i futur: {name}",
+  "voiceError": "Gabim zëri: {error}",
+  "aiServiceUnavailable": "Na vjen keq, shërbimi i AI nuk është aktualisht i disponueshëm: {error}",
+  "shareFailed": "Ndarja dështoi: {error}",
+  "searchMatchHits": "{matchType} · {count} goditje",
+  "matchCount": "Ndeshja: {count}",
+  "sourceFromNetwork": "Burimi: {source}",
+  "createNew": "Krijo",
+  "micStartFailed": "Nisja e mikrofonit dështoi: {error}",
+  "importResultAccounts": "Llogaritë: +{created} / përditësuar {updated}",
+  "importResultDiaries": "Ditarët: +{created} / përditësuar {updated}",
+  "importResultReminders": "Përkujtues: +{created} / përditësuar {updated}",
+  "importResultSkipped": "U anashkalua: {count}",
+  "importResultTotal": "Gjithsej i ndryshuar: {count}",
+  "settingsApplied": "Janë aplikuar cilësimet në kopje rezervë.",
+  "settingsNotApplied": "Cilësimet në rezervë nuk u zbatuan.",
+  "backupExported": "Rezervimi u eksportua: {path}",
+  "exportFailed": "Eksporti dështoi: {error}",
+  "importFailed": "Importi dështoi: {error}"
+}

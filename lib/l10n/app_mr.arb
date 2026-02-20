@@ -1,0 +1,363 @@
+{
+  "@@locale": "mr",
+  "languageName": "मराठी",
+  "languageNameEn": "Marathi",
+  "appTitle": "Shiguang",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "settings": "सेटिंग्ज",
+  "account": "खाते",
+  "reminders": "स्मरणपत्रे",
+  "language": "भाषा",
+  "appLanguage": "अॅप भाषा",
+  "appearance": "दिसणे",
+  "themeMode": "थीम मोड",
+  "dark": "डार्क",
+  "light": "लाइट",
+  "system": "सिस्टम",
+  "aiService": "AI सेवा",
+  "aiChatProvider": "AI चैट प्रोव्हाइडर",
+  "chatModel": "चैट मॉडेल",
+  "localModel": "लोकल मॉडेल",
+  "localModelDefault": "लोकल मॉडेल (डिफॉल्ट)",
+  "ollamaEndpoint": "Ollama एंडपॉइंट",
+  "ollamaModel": "Ollama मॉडेल",
+  "openAiEndpoint": "OpenAI एंडपॉइंट",
+  "openAiApiKey": "OpenAI API की",
+  "openAiModel": "OpenAI मॉडेल",
+  "geminiEndpoint": "Gemini एंडपॉइंट",
+  "geminiApiKey": "Gemini API की",
+  "geminiModel": "Gemini मॉडेल",
+  "anthropicEndpoint": "Anthropic एंडपॉइंट",
+  "anthropicApiKey": "Anthropic API की",
+  "anthropicModel": "Anthropic मॉडेल",
+  "customProtocol": "कस्टम प्रोटोकॉल",
+  "protocol": "प्रोटोकॉल",
+  "customEndpoint": "कस्टम एंडपॉइंट",
+  "customApiKey": "कस्टम API की",
+  "customModel": "कस्टम मॉडेल",
+  "optionalForLocalServers": "लोकल/कस्टम सर्वरसाठी ऐच्छिक",
+  "speechRecognitionEngine": "वाक्य ओळख इंजिन",
+  "local": "लोकल",
+  "endpoint": "एंडपॉइंट",
+  "localSpeechModel": "लोकल वाक्य मॉडेल",
+  "senseVoiceOnnx": "SenseVoice ONNX (डिव्हाइसवर)",
+  "systemSpeechRecognition": "सिस्टम वाक्य ओळख",
+  "systemRecognitionAndroidIos": "सिस्टम ओळख (Android/iOS)",
+  "endpointRecognitionCloudWs": "एंडपॉइंट ओळख (Cloud/WS)",
+  "useBuiltInRecognizer": "अंतर्निहित Android / iOS ओळखक वापरा (क्लाउड वापरू शकतो)",
+  "voiceAiEndpoint": "व्हॉइस AI एंडपॉइंट",
+  "embeddingModel": "एम्बेडिंग मॉडेल",
+  "crossDeviceSync": "क्रॉस-डिव्हाइस सिंक",
+  "sendToOtherDevices": "इतर डिव्हाइसवर पाठवा (LocalSend)",
+  "exportBackupAndSend": "बॅकअप एक्सपोर्ट करा आणि शेअर शीटद्वारे पाठवा",
+  "importFromLocalSend": "LocalSend वरून इम्पोर्ट करा",
+  "selectBackupJson": "बॅकअप JSON निवडा आणि लोकल डेटा मर्ज करा",
+  "autoGeneration": "स्वयं निर्माण",
+  "autoGenerateSummary": "स्वयं सारांश निर्माण करा",
+  "generateAiSummaryForNewEntries": "नवीन एंट्रीसाठी AI सारांश निर्माण करा",
+  "autoGenerateEmbedding": "स्वयं एम्बेडिंग निर्माण करा",
+  "generateVectorEmbedding": "शोधासाठी वेक्टर एम्बेडिंग निर्माण करा",
+  "enableNetworkSearch": "नेटवर्क शोध सक्षम करा",
+  "allowOnlineRetrieval": "शोध आणि AI चैटसाठी ऑनलाइन पुनर्प्राप्ती करण्याची अनुमती द्या (डिफॉल्ट बंद)",
+  "about": "बद्दल",
+  "version": "आवृत्ती {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "database": "डेटाबेस",
+  "objectBoxWithHnsw": "HNSW इंडेक्ससह ObjectBox",
+  "logOut": "लॉग आउट",
+  "custom": "कस्टम",
+  "openAiCompatible": "OpenAI सुसंगत",
+  "notSet": "सेट केलेले नाही",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... किंवा http://127.0.0.1:11434",
+  "supportsLocalLanPublic": "लोकल/LAN/पब्लिक एंडपॉइंट्सना समर्थन देतो",
+  "shiguangLocalSendBackup": "Shiguang LocalSend बॅकअप",
+  "localBackupFromShiguang": "Shiguang वरून लोकल बॅकअप (LocalSend द्वारे प्राप्त करा)",
+  "selectBackupFileFromLocalSend": "LocalSend वरून प्राप्त बॅकअप फाइल निवडा",
+  "failedToResolveFilePath": "निवडलेल्या फाइल पथाचे निराकरण करण्यात अयशस्वी",
+  "importOptions": "इम्पोर्ट पर्याय",
+  "importSettingsAsWell": "सेटिंग्जही इम्पोर्ट कराव्यात?\n(API कीज अधिलिखित केल्या जाणार नाहीत)",
+  "dataOnly": "फक्त डेटा",
+  "dataAndSettings": "डेटा + सेटिंग्ज",
+  "importCompleted": "इम्पोर्ट पूर्ण",
+  "settingsInBackupWereApplied": "बॅकअपमधील सेटिंग्ज लागू केल्या गेल्या.",
+  "settingsInBackupWereNotApplied": "बॅकअपमधील सेटिंग्ज लागू केल्या गेल्या नाहीत.",
+  "ok": "ठीक आहे",
+  "cancel": "रद्द करा",
+  "save": "सेव्ह करा",
+  "delete": "डिलीट करा",
+  "clear": "साफ करा",
+  "add": "जोडा",
+  "create": "तयार करा",
+  "edit": "संपादित करा",
+  "search": "शोधा",
+  "areYouSureYouWantToLogOut": "तुम्हाला खात्री आहे की तुम्ही लॉग आउट करू इच्छिता?",
+  "chooseLanguage": "भाषा निवडा",
+  "databaseInfo": "डेटाबेस माहिती",
+  "storage": "स्टोरेज: ObjectBox",
+  "vectorIndex": "वेक्टर इंडेक्स: HNSW",
+  "dimensions": "डायमेंशन्स: 384",
+  "embeddingModelBge": "एम्बेडिंग मॉडेल: bge-small-zh-v1.5",
+  "takePhoto": "फोटो घ्या",
+  "chooseFromGallery": "गॅलरी वरून निवडा",
+  "editNickname": "निकनेम संपादित करा",
+  "enterNickname": "निकनेम प्रविष्ट करा",
+  "pleaseEnterNickname": "कृपया निकनेम प्रविष्ट करा",
+  "nicknameAlreadyExistsOrInvalid": "निकनेम आधीच वापरात आहे किंवा अमान्य आहे",
+  "user": "वापरकर्ता",
+  "manageScheduledReminders": "नियोजित स्मरणपत्रे आणि अलार्म व्यवस्थापित करा",
+  "imageFailedToLoad": "प्रतिमा लोड करण्यात अयशस्वी. कृपया पुन्हा निवडा.",
+  "imageIsStillLoading": "प्रतिमा अद्याप लोड होत आहे",
+  "imageAreaNotReady": "प्रतिमा क्षेत्र तयार नाही. कृपया पुन्हा प्रयत्न करा.",
+  "cropFrameNotReady": "क्रॉप फ्रेम तयार नाही. कृपया पुन्हा प्रयत्न करा.",
+  "invalidCropArea": "अमान्य क्रॉप क्षेत्र. कृपया पुन्हा प्रयत्न करा.",
+  "cropFailed": "क्रॉप अयशस्वी. कृपया पुन्हा प्रयत्न करा.",
+  "cropAvatar": "अवतार क्रॉप करा",
+  "chooseAgain": "पुन्हा निवडा",
+  "rotate90": "90° फिरवा",
+  "dragFrameToMove": "हलविण्यासाठी फ्रेम ड्रॅग करा, आकारासाठी खाली-उजवे ड्र्ग करा; झूम आणि प्रतिमा हलविण्यासाठी पिंच करा.",
+  "pleaseFillInAllFields": "कृपया सर्व फील्ड भरा",
+  "pinMustBeAtLeast4Digits": "PIN कमीत कमी 4 अंकी असावी",
+  "pinAtLeast4Digits": "PIN कमीत कमी 4 अंकी असावी",
+  "invalidUsernameOrPin": "अमान्य वापरकर्ता नाव किंवा PIN",
+  "invalidUsernameOrPinError": "अमान्य वापरकर्ता नाव किंवा PIN",
+  "usernameAlreadyExists": "वापरकर्ता नाव आधीच वापरात आहे",
+  "captureMomentsKeepMemories": "क्षण पकडा, आठवणी जतन करा",
+  "username": "वापरकर्ता नाव",
+  "pin": "PIN",
+  "login": "लॉगिन",
+  "createAccount": "खाते तयार करा",
+  "dontHaveAccountCreateOne": "खाते नाही? एक तयार करा",
+  "alreadyHaveAccountLogin": "खाते आहे? लॉगिन करा",
+  "pleaseEnterUsername": "कृपया वापरकर्ता नाव प्रविष्ट करा",
+  "pinsDoNotMatch": "PIN जुळत नाहीत",
+  "tapToAddAvatar": "अवतार जोडण्यासाठी टॅप करा",
+  "yourName": "तुमचे नाव",
+  "privatePinOptional": "खाजगी PIN (ऐच्छिक)",
+  "usedToEncryptPrivateRecords": "खाजगी रेकॉर्ड एन्क्रिप्ट करण्यासाठी वापरले जाते",
+  "privatePin": "खाजगी PIN",
+  "leaveEmptyForNoEncryption": "एन्क्रिप्शन न करण्यासाठी रिक्त सोडा",
+  "confirmPin": "PIN ची पुष्टी करा",
+  "getStarted": "सुरू करा",
+  "noReminders": "कोणते स्मरणपत्र नाही",
+  "addReminder": "स्मरणपत्र जोडा",
+  "title": "शीर्षक",
+  "descriptionOptional": "वर्णन (ऐच्छिक)",
+  "microphonePermissionRequired": "माइक्रोफोन परवानगी आवश्यक",
+  "aiAssistant": "AI सहायक",
+  "listening": "ऐकत आहे...",
+  "typeAMessage": "संदेश लिहा...",
+  "aiChat": "AI चैट",
+  "startAConversation": "संवाद सुरू करा",
+  "typeYourMessage": "तुमचा संदेश लिहा...",
+  "asrReconnecting": "ASR पुन्हा जोडत आहे...",
+  "write": "लिहा",
+  "writeEntry": "एंट्री लिहा",
+  "noMemoriesYet": "अजून कोणतीही आठवणी नाही",
+  "tapPlusToCapture": "तुमचे विचार पकडण्यासाठी + टॅप करा",
+  "tapPlusToCaptureYourThoughts": "तुमचे विचार पकडण्यासाठी + टॅप करा",
+  "deleteMemory": "आठवणी हटवा",
+  "deleteRecord": "रेकॉर्ड हटवा",
+  "thisEntryWillBeRemoved": "ही एंट्री तुमच्या टाइमलाइनवरून काढली जाईल.",
+  "thisRecordWillBeRemoved": "हा रेकॉर्ड तुमच्या टाइमलाइनवरून काढला जाईल.",
+  "searchYourRecords": "तुमचे रेकॉर्ड शोधा...",
+  "exactMatches": "अचूक जुळतात",
+  "noExactMatches": "अचूक जुळत नाही",
+  "exact": "अचूक",
+  "exactMatch": "अचूक जुळावे",
+  "fuzzyMatches": "फझी जुळतात",
+  "noFuzzyMatches": "फझी जुळत नाही",
+  "vectorMatch": "वेक्टर जुळावे",
+  "networkMatches": "नेटवर्क जुळतात",
+  "noNetworkMatches": "नेटवर्क जुळत नाही",
+  "networkSearchIsOff": "नेटवर्क शोध बंद आहे. सेटिंग्जमध्ये सक्षम करा.",
+  "network": "नेटवर्क",
+  "networkMatch": "नेटवर्क जुळावे",
+  "noSearchHistory": "कोणताही शोध इतिहास नाही",
+  "searchHistory": "शोध इतिहास",
+  "invalidLink": "अमान्य लिंक",
+  "unableToOpenWebPage": "वेब पेज उघडण्यात असमर्थ",
+  "imageMemory": "[प्रतिमा आठवणी]",
+  "tapToOpenWebPage": "वेब पेज उघडण्यासाठी टॅप करा",
+  "editEntry": "एंट्री संपादित करा",
+  "entryDetails": "एंट्री तपशील",
+  "noContent": "कोणतीही सामग्री नाही",
+  "diaryNotFound": "डायरी आढळली नाही",
+  "diaryNotFoundShort": "रेकॉर्ड आढळला नाही",
+  "aiSummary": "AI सारांश",
+  "microphoneInterrupted": "माइक्रोफोन खंडित, ध्वनीमुद्रण थांबले.",
+  "bold": "बोल्ड",
+  "italic": "इटालिक",
+  "strikethrough": "स्ट्राइकथ्रू",
+  "image": "प्रतिमा",
+  "asrUnavailableRecordingActive": "ASR उपलब्ध नाही. ध्वनीमुद्रण अद्याप सक्रिय आहे.",
+  "writeYourEntry": "तुमची एंट्री लिहा...",
+  "writeYourContent": "तुमची सामग्री लिहा...",
+  "microphoneStartFailed": "माइक्रोफोन सुरू करण्यात अयशस्वी: {error}",
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "microphoneInterruptedRecordingStopped": "माइक्रोफोन खंडित, ध्वनीमुद्रण थांबले.",
+  "asrReconnectingError": "ASR पुन्हा जोडत आहे: {error}",
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "imageInserted": "प्रतिमा घातली: {name}",
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "voiceError": "व्हॉइस त्रुटी: {error}",
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "aiServiceUnavailable": "माफ करा, AI सेवा सध्या उपलब्ध नाही: {error}",
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareFailed": "शेअर करण्यात अयशस्वी: {error}",
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "searchMatchHits": "{matchType} · {count} हिट्स",
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "matchCount": "जुळावे: {count}",
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sourceFromNetwork": "स्रोत: {source}",
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "createNew": "तयार करा",
+  "micStartFailed": "माइक सुरू करण्यात अयशस्वी: {error}",
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importResultAccounts": "खाती: +{created} / अपडेट केले {updated}",
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultDiaries": "डायरी: +{created} / अपडेट केले {updated}",
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultReminders": "स्मरणपत्रे: +{created} / अपडेट केले {updated}",
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultSkipped": "वगळले: {count}",
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importResultTotal": "एकूण बदलले: {count}",
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsApplied": "बॅकअपमधील सेटिंग्ज लागू केल्या गेल्या.",
+  "settingsNotApplied": "बॅकअपमधील सेटिंग्ज लागू केल्या गेल्या नाहीत.",
+  "backupExported": "बॅकअप एक्सपोर्ट केला: {path}",
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "exportFailed": "एक्सपोर्ट अयशस्वी: {error}",
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importFailed": "इम्पोर्ट अयशस्वी: {error}",
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
+}

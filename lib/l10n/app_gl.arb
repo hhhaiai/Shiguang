@@ -1,0 +1,363 @@
+{
+  "@@locale": "gl",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Galego",
+  "languageNameEn": "Galician",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Configuración",
+  "account": "Conta",
+  "reminders": "Recordatorios",
+  "language": "Linguaxe",
+  "appLanguage": "Idioma da aplicación",
+  "appearance": "Aparición",
+  "themeMode": "Modo tema",
+  "dark": "Escuro",
+  "light": "Luz",
+  "system": "Sistema",
+  "aiService": "Servizo de IA",
+  "aiChatProvider": "Provedor de chat AI",
+  "chatModel": "Modelo de chat",
+  "localModel": "Modelo Local",
+  "localModelDefault": "Modelo local (predeterminado)",
+  "ollamaEndpoint": "Ollama Endpoint",
+  "ollamaModel": "Modelo Ollama",
+  "openAiEndpoint": "Punto final de OpenAI",
+  "openAiApiKey": "Clave API OpenAI",
+  "openAiModel": "Modelo OpenAI",
+  "geminiEndpoint": "Punto final Gemini",
+  "geminiApiKey": "Chave da API Gemini",
+  "geminiModel": "Modelos Gemini",
+  "anthropicEndpoint": "Punto final antrópico",
+  "anthropicApiKey": "Clave de API antrópica",
+  "anthropicModel": "Modelo antrópico",
+  "customProtocol": "Protocolo personalizado",
+  "protocol": "Protocolo",
+  "customEndpoint": "Punto final personalizado",
+  "customApiKey": "Chave de API personalizada",
+  "customModel": "Modelo personalizado",
+  "optionalForLocalServers": "Opcional para servidores locais/personalizados",
+  "speechRecognitionEngine": "Motor de recoñecemento de voz",
+  "local": "Local",
+  "endpoint": "Punto final",
+  "localSpeechModel": "Modelo de fala local",
+  "senseVoiceOnnx": "SenseVoice ONNX (no dispositivo)",
+  "systemSpeechRecognition": "Sistema de recoñecemento de voz",
+  "systemRecognitionAndroidIos": "Recoñecemento do sistema (Android/iOS)",
+  "endpointRecognitionCloudWs": "Recoñecemento de puntos finais (Cloud/WS)",
+  "useBuiltInRecognizer": "Usa o recoñecemento integrado de Android/iOS (pode usar a nube)",
+  "voiceAiEndpoint": "Punto final de IA de voz",
+  "embeddingModel": "Modelo de incorporación",
+  "crossDeviceSync": "Sincronización entre dispositivos",
+  "sendToOtherDevices": "Enviar a outros dispositivos (LocalSend)",
+  "exportBackupAndSend": "Exportar copia de seguranza e enviar a través da folla de compartición",
+  "importFromLocalSend": "Importar desde LocalSend",
+  "selectBackupJson": "Seleccione JSON de copia de seguridade e combine os datos locais",
+  "autoGeneration": "Xeración automática",
+  "autoGenerateSummary": "Xerar automáticamente un resumo",
+  "generateAiSummaryForNewEntries": "Xera un resumo de AI para novas entradas",
+  "autoGenerateEmbedding": "Xeración automática de incorporación",
+  "generateVectorEmbedding": "Xerar incrustación de vectores para a busca",
+  "enableNetworkSearch": "Activar a busca en rede",
+  "allowOnlineRetrieval": "Permitir a recuperación en liña para a busca e o chat AI (desactivado por defecto)",
+  "about": "Sobre",
+  "version": "Versión {version}",
+  "database": "Base de datos",
+  "objectBoxWithHnsw": "ObjectBox con índice HNSW",
+  "logOut": "Pechar sesión",
+  "custom": "Personalizado",
+  "openAiCompatible": "Compatible con OpenAI",
+  "notSet": "Non definido",
+  "supportsLocalLanPublic": "Admite puntos finais locais/LAN/públicos",
+  "shiguangLocalSendBackup": "Copia de seguranza de Shiguang LocalSend",
+  "localBackupFromShiguang": "Copia de seguridade local de Shiguang (recibir a través de LocalSend)",
+  "selectBackupFileFromLocalSend": "Seleccione o ficheiro de copia de seguranza recibido de LocalSend",
+  "failedToResolveFilePath": "Produciuse un erro ao resolver o camiño do ficheiro seleccionado",
+  "importOptions": "Opcións de importación",
+  "importSettingsAsWell": "Importar a configuración tamén?\n(As claves API non se sobrescribirán)",
+  "dataOnly": "Só datos",
+  "dataAndSettings": "Datos + Configuración",
+  "importCompleted": "Importación completada",
+  "settingsInBackupWereApplied": "Aplicáronse a configuración na copia de seguranza.",
+  "settingsInBackupWereNotApplied": "Non se aplicou a configuración da copia de seguranza.",
+  "ok": "OK",
+  "cancel": "Cancelar",
+  "save": "Gardar",
+  "delete": "Eliminar",
+  "clear": "Limpar",
+  "add": "Engadir",
+  "create": "Crear",
+  "edit": "Editar",
+  "search": "Busca",
+  "areYouSureYouWantToLogOut": "Estás seguro de que queres pechar a sesión?",
+  "chooseLanguage": "Escolla Idioma",
+  "databaseInfo": "Información da base de datos",
+  "storage": "Almacenamento: ObjectBox",
+  "vectorIndex": "Índice vectorial: HNSW",
+  "dimensions": "Dimensións: 384",
+  "embeddingModelBge": "Modelo de incorporación: bge-small-zh-v1.5",
+  "takePhoto": "Sacar a foto",
+  "chooseFromGallery": "Escolle na Galería",
+  "editNickname": "Editar o apelido",
+  "enterNickname": "Introduce o apelido",
+  "pleaseEnterNickname": "Introduce un alcume",
+  "nicknameAlreadyExistsOrInvalid": "O alcume xa existe ou non é válido",
+  "user": "Usuario",
+  "manageScheduledReminders": "Xestiona recordatorios e alarmas programados",
+  "imageFailedToLoad": "Non se puido cargar a imaxe. Escolle de novo.",
+  "imageIsStillLoading": "A imaxe aínda se está cargando",
+  "imageAreaNotReady": "A área da imaxe non está lista. Téntao de novo.",
+  "cropFrameNotReady": "O marco de recorte non está listo. Téntao de novo.",
+  "invalidCropArea": "Área de recorte non válida. Téntao de novo.",
+  "cropFailed": "Fallou o recorte. Téntao de novo.",
+  "cropAvatar": "Recortar avatar",
+  "chooseAgain": "Escolle de novo",
+  "rotate90": "Xirar 90°",
+  "dragFrameToMove": "Arrastra o marco para mover, arrastra a parte inferior dereita para cambiar o tamaño; beliscar para facer zoom e mover a imaxe.",
+  "pleaseFillInAllFields": "Enche todos os campos",
+  "pinMustBeAtLeast4Digits": "O PIN debe ter polo menos 4 díxitos",
+  "pinAtLeast4Digits": "O PIN debe ter polo menos 4 díxitos",
+  "invalidUsernameOrPin": "Nome de usuario ou PIN non válido",
+  "invalidUsernameOrPinError": "Nome de usuario ou PIN non válido",
+  "usernameAlreadyExists": "O nome de usuario xa existe",
+  "captureMomentsKeepMemories": "Captura momentos, garda recordos",
+  "username": "Nome de usuario",
+  "pin": "PIN",
+  "login": "Iniciar sesión",
+  "createAccount": "Crear conta",
+  "dontHaveAccountCreateOne": "Non tes unha conta? Crea un",
+  "alreadyHaveAccountLogin": "Xa tes unha conta? Iniciar sesión",
+  "pleaseEnterUsername": "Introduce un nome de usuario",
+  "pinsDoNotMatch": "Os PIN non coinciden",
+  "tapToAddAvatar": "Toca para engadir un avatar",
+  "yourName": "O teu nome",
+  "privatePinOptional": "PIN privado (opcional)",
+  "usedToEncryptPrivateRecords": "Usado para cifrar rexistros privados",
+  "privatePin": "PIN privado",
+  "leaveEmptyForNoEncryption": "Déixao baleiro sen cifrar",
+  "confirmPin": "Confirmar o PIN",
+  "getStarted": "Comeza",
+  "noReminders": "Sen recordatorios",
+  "addReminder": "Engadir recordatorio",
+  "title": "Título",
+  "descriptionOptional": "Descrición (opcional)",
+  "microphonePermissionRequired": "Requírese permiso de micrófono",
+  "aiAssistant": "Asistente de IA",
+  "listening": "Escoitando...",
+  "typeAMessage": "Escribe unha mensaxe...",
+  "aiChat": "Chat AI",
+  "startAConversation": "Iniciar unha conversa",
+  "typeYourMessage": "Escribe a túa mensaxe...",
+  "asrReconnecting": "ASR reconectando...",
+  "write": "Escribe",
+  "writeEntry": "Escribir entrada",
+  "noMemoriesYet": "Aínda non hai recordos",
+  "tapPlusToCapture": "Toca + para capturar os teus pensamentos",
+  "tapPlusToCaptureYourThoughts": "Toca + para capturar os teus pensamentos",
+  "deleteMemory": "Borrar memoria",
+  "deleteRecord": "Eliminar rexistro",
+  "thisEntryWillBeRemoved": "Esta entrada eliminarase da túa cronoloxía.",
+  "thisRecordWillBeRemoved": "Este rexistro eliminarase da túa cronoloxía.",
+  "searchYourRecords": "Busca nos teus rexistros...",
+  "exactMatches": "Coincidencias exactas",
+  "noExactMatches": "Non hai coincidencias exactas",
+  "exact": "Exacto",
+  "exactMatch": "Coincidencia exacta",
+  "fuzzyMatches": "Partidos difusos",
+  "noFuzzyMatches": "Non hai coincidencias difusas",
+  "vectorMatch": "Partido Vectorial",
+  "networkMatches": "Partidos de rede",
+  "noNetworkMatches": "Non hai coincidencias de rede",
+  "networkSearchIsOff": "A busca na rede está desactivada. Habilitalo en Configuración.",
+  "network": "Rede",
+  "networkMatch": "Correspondencia de rede",
+  "noSearchHistory": "Non hai historial de busca",
+  "searchHistory": "Historial de busca",
+  "invalidLink": "Ligazón non válida",
+  "unableToOpenWebPage": "Non se puido abrir a páxina web",
+  "imageMemory": "[Memoria de imaxe]",
+  "tapToOpenWebPage": "Toca para abrir a páxina web",
+  "editEntry": "Editar entrada",
+  "entryDetails": "Detalles da entrada",
+  "noContent": "Sen contido",
+  "diaryNotFound": "Non se atopou o diario",
+  "diaryNotFoundShort": "Non se atopou o rexistro",
+  "aiSummary": "Resumo da IA",
+  "microphoneInterrupted": "Interrompeuse o micrófono, detívose a gravación.",
+  "bold": "Atrevido",
+  "italic": "Cursiva",
+  "strikethrough": "Tachado",
+  "image": "Imaxe",
+  "asrUnavailableRecordingActive": "ASR non dispoñible. A gravación aínda está activa.",
+  "writeYourEntry": "Escribe a túa entrada...",
+  "writeYourContent": "Escribe o teu contido...",
+  "microphoneStartFailed": "Produciuse un erro ao iniciar o micrófono: {error}",
+  "microphoneInterruptedRecordingStopped": "Interrompeuse o micrófono, detívose a gravación.",
+  "asrReconnectingError": "Reconectando ASR: {error}",
+  "imageInserted": "Imaxe inserida: {name}",
+  "voiceError": "Erro de voz: {error}",
+  "aiServiceUnavailable": "O servizo de intelixencia artificial non está dispoñible actualmente: {error}",
+  "shareFailed": "Produciuse un erro ao compartir: {error}",
+  "searchMatchHits": "{matchType} · {count} visitas",
+  "matchCount": "Coincidencia: {count}",
+  "sourceFromNetwork": "Fonte: {source}",
+  "createNew": "Crear",
+  "micStartFailed": "Fallou o inicio do micrófono: {error}",
+  "importResultAccounts": "Contas: +{created} / actualizadas {updated}",
+  "importResultDiaries": "Diarios: +{created} / actualizado {updated}",
+  "importResultReminders": "Recordatorios: +{created} / actualizado {updated}",
+  "importResultSkipped": "Omitido: {count}",
+  "importResultTotal": "Total de cambios: {count}",
+  "settingsApplied": "Aplicáronse a configuración na copia de seguranza.",
+  "settingsNotApplied": "Non se aplicou a configuración da copia de seguranza.",
+  "backupExported": "Copia de seguranza exportada: {path}",
+  "exportFailed": "Produciuse un erro na exportación: {error}",
+  "importFailed": "Produciuse un erro na importación: {error}"
+}

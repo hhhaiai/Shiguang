@@ -1,0 +1,341 @@
+{
+  "@@locale": "pl",
+  "languageName": "Polski",
+  "languageNameEn": "Polish",
+  "appTitle": "Shiguang",
+  "@appTitle": {
+    "description": "Nazwa aplikacji"
+  },
+  "settings": "Ustawienia",
+  "account": "Konto",
+  "reminders": "Przypomnienia",
+  "language": "Język",
+  "appLanguage": "Język aplikacji",
+  "appearance": "Wygląd",
+  "themeMode": "Tryb motywu",
+  "dark": "Ciemny",
+  "light": "Jasny",
+  "system": "System",
+  "aiService": "Usługa AI",
+  "aiChatProvider": "Dostawca czatu AI",
+  "chatModel": "Model czatu",
+  "localModel": "Model lokalny",
+  "localModelDefault": "Model lokalny (domyślny)",
+  "ollamaEndpoint": "Punkt końcowy Ollama",
+  "ollamaModel": "Model Ollama",
+  "openAiEndpoint": "Punkt końcowy OpenAI",
+  "openAiApiKey": "Klucz API OpenAI",
+  "openAiModel": "Model OpenAI",
+  "geminiEndpoint": "Punkt końcowy Gemini",
+  "geminiApiKey": "Klucz API Gemini",
+  "geminiModel": "Model Gemini",
+  "anthropicEndpoint": "Punkt końcowy Anthropic",
+  "anthropicApiKey": "Klucz API Anthropic",
+  "anthropicModel": "Model Anthropic",
+  "customProtocol": "Protokół niestandardowy",
+  "protocol": "Protokół",
+  "customEndpoint": "Punkt końcowy niestandardowy",
+  "customApiKey": "Klucz API niestandardowy",
+  "customModel": "Model niestandardowy",
+  "optionalForLocalServers": "Opcjonalne dla serwerów lokalnych/niestandardowych",
+  "speechRecognitionEngine": "Silnik rozpoznawania mowy",
+  "local": "Lokalny",
+  "endpoint": "Punkt końcowy",
+  "localSpeechModel": "Lokalny model mowy",
+  "senseVoiceOnnx": "SenseVoice ONNX (na urządzeniu)",
+  "systemSpeechRecognition": "Systemowe rozpoznawanie mowy",
+  "systemRecognitionAndroidIos": "Rozpoznawanie systemowe (Android/iOS)",
+  "endpointRecognitionCloudWs": "Rozpoznawanie punktu końcowego (Chmura/WS)",
+  "useBuiltInRecognizer": "Użyj wbudowanego rozpoznawania Android/iOS (może używać chmury)",
+  "voiceAiEndpoint": "Punkt końcowy Voice AI",
+  "embeddingModel": "Model osadzania",
+  "crossDeviceSync": "Synchronizacja między urządzeniami",
+  "sendToOtherDevices": "Wyślij na inne urządzenia (LocalSend)",
+  "exportBackupAndSend": "Eksportuj kopię zapasową i wyślij przez arkusz udostępniania",
+  "importFromLocalSend": "Importuj z LocalSend",
+  "selectBackupJson": "Wybierz plik JSON kopii zapasowej i scal dane lokalne",
+  "autoGeneration": "Automatyczne generowanie",
+  "autoGenerateSummary": "Automatyczne generowanie podsumowania",
+  "generateAiSummaryForNewEntries": "Generuj podsumowanie AI dla nowych wpisów",
+  "autoGenerateEmbedding": "Automatyczne generowanie osadzania",
+  "generateVectorEmbedding": "Generuj osadzanie wektorowe do wyszukiwania",
+  "enableNetworkSearch": "Włącz wyszukiwanie sieciowe",
+  "allowOnlineRetrieval": "Zezwól na pobieranie online do wyszukiwania i czatu AI (domyślnie wyłączone)",
+  "about": "Informacje",
+  "version": "Wersja {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "database": "Baza danych",
+  "objectBoxWithHnsw": "ObjectBox z indeksem HNSW",
+  "logOut": "Wyloguj",
+  "custom": "Niestandardowy",
+  "openAiCompatible": "Kompatybilny z OpenAI",
+  "notSet": "Nie ustawiono",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... lub http://127.0.0.1:11434",
+  "supportsLocalLanPublic": "Obsługuje punkty końcowe lokalne/LAN/publiczne",
+  "shiguangLocalSendBackup": "Kopia zapasowa Shiguang LocalSend",
+  "localBackupFromShiguang": "Lokalna kopia zapasowa z Shiguang (odbierz przez LocalSend)",
+  "selectBackupFileFromLocalSend": "Wybierz plik kopii zapasowej otrzymany z LocalSend",
+  "failedToResolveFilePath": "Nie udało się rozwiązać wybranej ścieżki pliku",
+  "importOptions": "Opcje importu",
+  "importSettingsAsWell": "Zaimportować również ustawienia?\n(Klucze API nie zostaną nadpisane)",
+  "dataOnly": "Tylko dane",
+  "dataAndSettings": "Dane + Ustawienia",
+  "importCompleted": "Import zakończony",
+  "settingsInBackupWereApplied": "Ustawienia z kopii zapasowej zostały zastosowane.",
+  "settingsInBackupWereNotApplied": "Ustawienia z kopii zapasowej nie zostały zastosowane.",
+  "ok": "OK",
+  "cancel": "Anuluj",
+  "save": "Zapisz",
+  "delete": "Usuń",
+  "clear": "Wyczyść",
+  "add": "Dodaj",
+  "create": "Utwórz",
+  "edit": "Edytuj",
+  "search": "Szukaj",
+  "areYouSureYouWantToLogOut": "Czy na pewno chcesz się wylogować?",
+  "chooseLanguage": "Wybierz język",
+  "databaseInfo": "Informacje o bazie danych",
+  "storage": "Przechowywanie: ObjectBox",
+  "vectorIndex": "Indeks wektorowy: HNSW",
+  "dimensions": "Wymiary: 384",
+  "embeddingModelBge": "Model osadzania: bge-small-zh-v1.5",
+  "takePhoto": "Zrób zdjęcie",
+  "chooseFromGallery": "Wybierz z galerii",
+  "editNickname": "Edytuj pseudonim",
+  "enterNickname": "Wprowadź pseudonim",
+  "pleaseEnterNickname": "Wprowadź pseudonim",
+  "nicknameAlreadyExistsOrInvalid": "Pseudonim już istnieje lub jest nieprawidłowy",
+  "user": "Użytkownik",
+  "manageScheduledReminders": "Zarządzaj zaplanowanymi przypomnieniami i alarmami",
+  "imageFailedToLoad": "Nie udało się załadować obrazu. Wybierz ponownie.",
+  "imageIsStillLoading": "Obraz nadal się ładuje",
+  "imageAreaNotReady": "Obszar obrazu nie jest gotowy. Spróbuj ponownie.",
+  "cropFrameNotReady": "Ramka przycinania nie jest gotowa. Spróbuj ponownie.",
+  "invalidCropArea": "Nieprawidłowy obszar przycinania. Spróbuj ponownie.",
+  "cropFailed": "Przycinanie nie powiodło się. Spróbuj ponownie.",
+  "cropAvatar": "Przytnij awatar",
+  "chooseAgain": "Wybierz ponownie",
+  "rotate90": "Obróć o 90°",
+  "dragFrameToMove": "Przeciągnij ramkę, aby przesunąć, przeciągnij prawy dolny róg, aby zmienić rozmiar; szczypnij, aby powiększyć i przesunąć obraz.",
+  "pleaseFillInAllFields": "Wypełnij wszystkie pola",
+  "pinMustBeAtLeast4Digits": "PIN musi mieć co najmniej 4 cyfry",
+  "pinAtLeast4Digits": "PIN musi mieć co najmniej 4 cyfry",
+  "invalidUsernameOrPin": "Nieprawidłowa nazwa użytkownika lub PIN",
+  "invalidUsernameOrPinError": "Nieprawidłowa nazwa użytkownika lub PIN",
+  "usernameAlreadyExists": "Nazwa użytkownika już istnieje",
+  "captureMomentsKeepMemories": "Uchwyt chwile, zachowaj wspomnienia",
+  "username": "Nazwa użytkownika",
+  "pin": "PIN",
+  "login": "Zaloguj",
+  "createAccount": "Utwórz konto",
+  "dontHaveAccountCreateOne": "Nie masz konta? Utwórz jedno",
+  "alreadyHaveAccountLogin": "Masz już konto? Zaloguj się",
+  "pleaseEnterUsername": "Wprowadź nazwę użytkownika",
+  "pinsDoNotMatch": "PIN-y nie są zgodne",
+  "tapToAddAvatar": "Dotknij, aby dodać awatar",
+  "yourName": "Twoje imię",
+  "privatePinOptional": "Prywatny PIN (opcjonalnie)",
+  "usedToEncryptPrivateRecords": "Służy do szyfrowania prywatnych rekordów",
+  "privatePin": "Prywatny PIN",
+  "leaveEmptyForNoEncryption": "Pozostaw puste, aby nie szyfrować",
+  "confirmPin": "Potwierdź PIN",
+  "getStarted": "Zacznij",
+  "noReminders": "Brak przypomnień",
+  "addReminder": "Dodaj przypomnienie",
+  "title": "Tytuł",
+  "descriptionOptional": "Opis (opcjonalnie)",
+  "microphonePermissionRequired": "Wymagane uprawnienie mikrofonu",
+  "aiAssistant": "Asystent AI",
+  "listening": "Słuchanie...",
+  "typeAMessage": "Wpisz wiadomość...",
+  "aiChat": "Czat AI",
+  "startAConversation": "Rozpocznij rozmowę",
+  "typeYourMessage": "Wpisz swoją wiadomość...",
+  "asrReconnecting": "ASR ponownie łączy...",
+  "write": "Pisz",
+  "writeEntry": "Napisz wpis",
+  "noMemoriesYet": "Jeszcze brak wspomnień",
+  "tapPlusToCapture": "Dotknij +, aby uchwycić swoje myśli",
+  "tapPlusToCaptureYourThoughts": "Dotknij +, aby uchwycić swoje myśli",
+  "deleteMemory": "Usuń wspomnienie",
+  "deleteRecord": "Usuń rekord",
+  "thisEntryWillBeRemoved": "Ten wpis zostanie usunięty z Twojej osi czasu.",
+  "thisRecordWillBeRemoved": "Ten rekord zostanie usunięty z Twojej osi czasu.",
+  "searchYourRecords": "Przeszukaj swoje rekordy...",
+  "exactMatches": "Dokładne dopasowania",
+  "noExactMatches": "Brak dokładnych dopasowań",
+  "exact": "Dokładne",
+  "exactMatch": "Dokładne dopasowanie",
+  "fuzzyMatches": "Mniej dokładne dopasowania",
+  "noFuzzyMatches": "Brak mniej dokładnych dopasowań",
+  "vectorMatch": "Dopasowanie wektorowe",
+  "networkMatches": "Dopasowania sieciowe",
+  "noNetworkMatches": "Brak dopasowań sieciowych",
+  "networkSearchIsOff": "Wyszukiwanie sieciowe jest wyłączone. Włącz je w Ustawieniach.",
+  "network": "Sieć",
+  "networkMatch": "Dopasowanie sieciowe",
+  "noSearchHistory": "Brak historii wyszukiwania",
+  "searchHistory": "Historia wyszukiwania",
+  "invalidLink": "Nieprawidłowy link",
+  "unableToOpenWebPage": "Nie można otworzyć strony internetowej",
+  "imageMemory": "[Wspomnienie obrazkowe]",
+  "tapToOpenWebPage": "Dotknij, aby otworzyć stronę internetową",
+  "editEntry": "Edytuj wpis",
+  "entryDetails": "Szczegóły wpisu",
+  "noContent": "Brak treści",
+  "diaryNotFound": "Nie znaleziono dziennika",
+  "diaryNotFoundShort": "Nie znaleziono rekordu",
+  "aiSummary": "Podsumowanie AI",
+  "microphoneInterrupted": "Mikrofon został przerwany, nagrywanie zatrzymane.",
+  "bold": "Pogrubiony",
+  "italic": "Kursywa",
+  "strikethrough": "Przekreślony",
+  "image": "Obraz",
+  "asrUnavailableRecordingActive": "ASR niedostępny. Nagrywanie nadal trwa.",
+  "writeYourEntry": "Napisz swój wpis...",
+  "writeYourContent": "Napisz swoją treść...",
+  "microphoneStartFailed": "Nie udało się uruchomić mikrofonu: {error}",
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "microphoneInterruptedRecordingStopped": "Mikrofon został przerwany, nagrywanie zatrzymane.",
+  "asrReconnectingError": "ASR ponownie łączy: {error}",
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "imageInserted": "Obraz wstawiony: {name}",
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "voiceError": "Błąd głosu: {error}",
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "aiServiceUnavailable": "Przepraszamy, usługa AI jest obecnie niedostępna: {error}",
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "shareFailed": "Nie udało się udostępnić: {error}",
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "searchMatchHits": "{matchType} · {count} wyników",
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "matchCount": "Dopasowanie: {count}",
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sourceFromNetwork": "Źródło: {source}",
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "createNew": "Utwórz",
+  "micStartFailed": "Nie udało się uruchomić mikrofonu: {error}",
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importResultAccounts": "Konta: +{created} / zaktualizowano {updated}",
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {"type": "int"},
+      "updated": {"type": "int"}
+    }
+  },
+  "importResultDiaries": "Dzienniki: +{created} / zaktualizowano {updated}",
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {"type": "int"},
+      "updated": {"type": "int"}
+    }
+  },
+  "importResultReminders": "Przypomnienia: +{created} / zaktualizowano {updated}",
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {"type": "int"},
+      "updated": {"type": "int"}
+    }
+  },
+  "importResultSkipped": "Pominięto: {count}",
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "importResultTotal": "Łączna zmiana: {count}",
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "settingsApplied": "Ustawienia z kopii zapasowej zostały zastosowane.",
+  "settingsNotApplied": "Ustawienia z kopii zapasowej nie zostały zastosowane.",
+  "backupExported": "Kopia zapasowa wyeksportowana: {path}",
+  "@backupExported": {
+    "placeholders": {
+      "path": {"type": "String"}
+    }
+  },
+  "exportFailed": "Eksport nie powiódł się: {error}",
+  "@exportFailed": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "importFailed": "Import nie powiódł się: {error}",
+  "@importFailed": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  }
+}

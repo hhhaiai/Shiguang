@@ -1,0 +1,363 @@
+{
+  "@@locale": "bs",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Bosanski",
+  "languageNameEn": "Bosnian",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Postavke",
+  "account": "Račun",
+  "reminders": "Podsjetnici",
+  "language": "Jezik",
+  "appLanguage": "Jezik aplikacije",
+  "appearance": "Izgled",
+  "themeMode": "Theme Mode",
+  "dark": "Dark",
+  "light": "Light",
+  "system": "Sistem",
+  "aiService": "AI usluga",
+  "aiChatProvider": "AI Chat Provider",
+  "chatModel": "Chat Model",
+  "localModel": "Lokalni model",
+  "localModelDefault": "Lokalni model (zadano)",
+  "ollamaEndpoint": "Ollama Endpoint",
+  "ollamaModel": "Ollama model",
+  "openAiEndpoint": "OpenAI krajnja tačka",
+  "openAiApiKey": "OpenAI API ključ",
+  "openAiModel": "OpenAI model",
+  "geminiEndpoint": "Gemini Endpoint",
+  "geminiApiKey": "Gemini API ključ",
+  "geminiModel": "Gemini Models",
+  "anthropicEndpoint": "Antropska krajnja tačka",
+  "anthropicApiKey": "Antropski API ključ",
+  "anthropicModel": "Antropski model",
+  "customProtocol": "Custom Protocol",
+  "protocol": "Protokol",
+  "customEndpoint": "Custom Endpoint",
+  "customApiKey": "Prilagođeni API ključ",
+  "customModel": "Custom Model",
+  "optionalForLocalServers": "Opciono za lokalne/prilagođene servere",
+  "speechRecognitionEngine": "Motor za prepoznavanje govora",
+  "local": "Lokalno",
+  "endpoint": "Krajnja tačka",
+  "localSpeechModel": "Lokalni govorni model",
+  "senseVoiceOnnx": "SenseVoice ONNX (na uređaju)",
+  "systemSpeechRecognition": "Sistemsko prepoznavanje govora",
+  "systemRecognitionAndroidIos": "Sistemsko prepoznavanje (Android/iOS)",
+  "endpointRecognitionCloudWs": "Prepoznavanje krajnje tačke (Cloud/WS)",
+  "useBuiltInRecognizer": "Koristite ugrađeni Android / iOS prepoznavač (može koristiti oblak)",
+  "voiceAiEndpoint": "Glasovna AI krajnja tačka",
+  "embeddingModel": "Embedding Model",
+  "crossDeviceSync": "Sinhronizacija na različitim uređajima",
+  "sendToOtherDevices": "Pošalji na druge uređaje (LocalSend)",
+  "exportBackupAndSend": "Izvezite sigurnosnu kopiju i pošaljite putem dijeljenog lista",
+  "importFromLocalSend": "Uvoz iz LocalSenda",
+  "selectBackupJson": "Odaberite rezervni JSON i spojite lokalne podatke",
+  "autoGeneration": "Auto Generation",
+  "autoGenerateSummary": "Auto Generate Summary",
+  "generateAiSummaryForNewEntries": "Generirajte AI sažetak za nove unose",
+  "autoGenerateEmbedding": "Auto Generate Embedding",
+  "generateVectorEmbedding": "Generirajte ugrađivanje vektora za pretragu",
+  "enableNetworkSearch": "Omogućite pretragu mreže",
+  "allowOnlineRetrieval": "Dozvoli online preuzimanje za pretraživanje i AI chat (isključeno prema zadanim postavkama)",
+  "about": "O",
+  "version": "Verzija {version}",
+  "database": "Baza podataka",
+  "objectBoxWithHnsw": "ObjectBox sa HNSW indeksom",
+  "logOut": "Odjavite se",
+  "custom": "Custom",
+  "openAiCompatible": "OpenAI kompatibilan",
+  "notSet": "Nije postavljeno",
+  "supportsLocalLanPublic": "Podržava lokalne/LAN/javne krajnje tačke",
+  "shiguangLocalSendBackup": "Shiguang LocalSend Backup",
+  "localBackupFromShiguang": "Lokalna sigurnosna kopija od Shiguanga (primanje putem LocalSenda)",
+  "selectBackupFileFromLocalSend": "Odaberite datoteku sigurnosne kopije primljene od LocalSenda",
+  "failedToResolveFilePath": "Nije uspjelo rješavanje odabrane putanje datoteke",
+  "importOptions": "Opcije uvoza",
+  "importSettingsAsWell": "I uvesti postavke?\n(API ključevi neće biti prepisani)",
+  "dataOnly": "Samo podaci",
+  "dataAndSettings": "Podaci + postavke",
+  "importCompleted": "Uvoz je završen",
+  "settingsInBackupWereApplied": "Primijenjene su postavke u sigurnosnoj kopiji.",
+  "settingsInBackupWereNotApplied": "Postavke u sigurnosnoj kopiji nisu primijenjene.",
+  "ok": "OK",
+  "cancel": "Otkaži",
+  "save": "Sačuvaj",
+  "delete": "Izbriši",
+  "clear": "Jasno",
+  "add": "Dodaj",
+  "create": "Kreiraj",
+  "edit": "Uredi",
+  "search": "Traži",
+  "areYouSureYouWantToLogOut": "Jeste li sigurni da se želite odjaviti?",
+  "chooseLanguage": "Odaberite Jezik",
+  "databaseInfo": "Podaci o bazi podataka",
+  "storage": "Skladištenje: ObjectBox",
+  "vectorIndex": "Vektorski indeks: HNSW",
+  "dimensions": "Dimenzije: 384",
+  "embeddingModelBge": "Model ugradnje: bge-small-zh-v1.5",
+  "takePhoto": "Snimite fotografiju",
+  "chooseFromGallery": "Odaberite iz Galerije",
+  "editNickname": "Uredi nadimak",
+  "enterNickname": "Unesite nadimak",
+  "pleaseEnterNickname": "Unesite nadimak",
+  "nicknameAlreadyExistsOrInvalid": "Nadimak već postoji ili je nevažeći",
+  "user": "Korisnik",
+  "manageScheduledReminders": "Upravljajte zakazanim podsjetnicima i alarmima",
+  "imageFailedToLoad": "Učitavanje slike nije uspjelo. Molimo izaberite ponovo.",
+  "imageIsStillLoading": "Slika se još uvijek učitava",
+  "imageAreaNotReady": "Područje slike nije spremno. Molimo pokušajte ponovo.",
+  "cropFrameNotReady": "Okvir za izrezivanje nije spreman. Molimo pokušajte ponovo.",
+  "invalidCropArea": "Nevažeća površina izrezivanja. Molimo pokušajte ponovo.",
+  "cropFailed": "Obrezivanje nije uspjelo. Molimo pokušajte ponovo.",
+  "cropAvatar": "Crop Avatar",
+  "chooseAgain": "Izaberite ponovo",
+  "rotate90": "Rotirajte za 90°",
+  "dragFrameToMove": "Prevucite okvir da biste pomerili, prevucite dole desno da biste promenili veličinu; stisnite prste za zumiranje i pomicanje slike.",
+  "pleaseFillInAllFields": "Molimo popunite sva polja",
+  "pinMustBeAtLeast4Digits": "PIN mora imati najmanje 4 cifre",
+  "pinAtLeast4Digits": "PIN mora imati najmanje 4 cifre",
+  "invalidUsernameOrPin": "Nevažeće korisničko ime ili PIN",
+  "invalidUsernameOrPinError": "Nevažeće korisničko ime ili PIN",
+  "usernameAlreadyExists": "Korisničko ime već postoji",
+  "captureMomentsKeepMemories": "Uhvatite trenutke, sačuvajte uspomene",
+  "username": "Korisničko ime",
+  "pin": "PIN",
+  "login": "Prijava",
+  "createAccount": "Kreirajte nalog",
+  "dontHaveAccountCreateOne": "Nemate račun? Napravite jedan",
+  "alreadyHaveAccountLogin": "Već imate račun? Prijava",
+  "pleaseEnterUsername": "Unesite korisničko ime",
+  "pinsDoNotMatch": "PIN-ovi se ne podudaraju",
+  "tapToAddAvatar": "Dodirnite da dodate avatar",
+  "yourName": "Vaše ime",
+  "privatePinOptional": "Privatni PIN (opcionalno)",
+  "usedToEncryptPrivateRecords": "Koristi se za šifriranje privatnih zapisa",
+  "privatePin": "Privatni PIN",
+  "leaveEmptyForNoEncryption": "Ostavite prazno jer nema šifriranja",
+  "confirmPin": "Potvrdite PIN",
+  "getStarted": "Započnite",
+  "noReminders": "Nema podsjetnika",
+  "addReminder": "Dodaj podsjetnik",
+  "title": "Naslov",
+  "descriptionOptional": "Opis (opcionalno)",
+  "microphonePermissionRequired": "Potrebna je dozvola za mikrofon",
+  "aiAssistant": "AI Assistant",
+  "listening": "slušam...",
+  "typeAMessage": "Upišite poruku...",
+  "aiChat": "AI Chat",
+  "startAConversation": "Započnite razgovor",
+  "typeYourMessage": "Upišite svoju poruku...",
+  "asrReconnecting": "ASR se ponovo povezuje...",
+  "write": "Pišite",
+  "writeEntry": "Write Entry",
+  "noMemoriesYet": "Još nema uspomena",
+  "tapPlusToCapture": "Dodirnite + da uhvatite svoje misli",
+  "tapPlusToCaptureYourThoughts": "Dodirnite + da uhvatite svoje misli",
+  "deleteMemory": "Izbriši memoriju",
+  "deleteRecord": "Izbriši zapis",
+  "thisEntryWillBeRemoved": "Ovaj unos će biti uklonjen sa vaše vremenske linije.",
+  "thisRecordWillBeRemoved": "Ovaj zapis će biti uklonjen sa vaše vremenske linije.",
+  "searchYourRecords": "Pretražite svoju evidenciju...",
+  "exactMatches": "Tačna podudaranja",
+  "noExactMatches": "Nema tačnih podudaranja",
+  "exact": "Tačno",
+  "exactMatch": "Tačno podudaranje",
+  "fuzzyMatches": "Fuzzy Matches",
+  "noFuzzyMatches": "Nema nejasnih podudaranja",
+  "vectorMatch": "Vector Match",
+  "networkMatches": "Mrežne utakmice",
+  "noNetworkMatches": "Nema podudaranja mreže",
+  "networkSearchIsOff": "Pretraga mreže je isključena. Omogućite ga u Postavkama.",
+  "network": "Mreža",
+  "networkMatch": "Network Match",
+  "noSearchHistory": "Nema historije pretraživanja",
+  "searchHistory": "Povijest pretraživanja",
+  "invalidLink": "Nevažeći link",
+  "unableToOpenWebPage": "Nije moguće otvoriti web stranicu",
+  "imageMemory": "[Memorija slike]",
+  "tapToOpenWebPage": "Dodirnite da otvorite web stranicu",
+  "editEntry": "Uredi unos",
+  "entryDetails": "Detalji o ulasku",
+  "noContent": "Nema sadržaja",
+  "diaryNotFound": "Dnevnik nije pronađen",
+  "diaryNotFoundShort": "Zapis nije pronađen",
+  "aiSummary": "AI sažetak",
+  "microphoneInterrupted": "Mikrofon je prekinut, snimanje je zaustavljeno.",
+  "bold": "Bold",
+  "italic": "Kurziv",
+  "strikethrough": "Precrtano",
+  "image": "Slika",
+  "asrUnavailableRecordingActive": "ASR nedostupan. Snimanje je i dalje aktivno.",
+  "writeYourEntry": "Napišite svoj unos...",
+  "writeYourContent": "Napišite svoj sadržaj...",
+  "microphoneStartFailed": "Pokretanje mikrofona nije uspjelo: {error}",
+  "microphoneInterruptedRecordingStopped": "Mikrofon je prekinut, snimanje je zaustavljeno.",
+  "asrReconnectingError": "ASR ponovno povezivanje: {error}",
+  "imageInserted": "Slika je umetnuta: {name}",
+  "voiceError": "Glasovna greška: {error}",
+  "aiServiceUnavailable": "Žao nam je, AI usluga trenutno nije dostupna: {error}",
+  "shareFailed": "Dijeljenje nije uspjelo: {error}",
+  "searchMatchHits": "{matchType} · {count} pogodaka",
+  "matchCount": "Utakmica: {count}",
+  "sourceFromNetwork": "Izvor: {source}",
+  "createNew": "Kreiraj",
+  "micStartFailed": "Pokretanje mikrofona nije uspjelo: {error}",
+  "importResultAccounts": "Računi: +{created} / ažurirani {updated}",
+  "importResultDiaries": "Dnevnici: +{created} / ažurirano {updated}",
+  "importResultReminders": "Podsjetnici: +{created} / ažurirano {updated}",
+  "importResultSkipped": "Preskočeno: {count}",
+  "importResultTotal": "Ukupno promijenjeno: {count}",
+  "settingsApplied": "Primijenjene su postavke u sigurnosnoj kopiji.",
+  "settingsNotApplied": "Postavke u sigurnosnoj kopiji nisu primijenjene.",
+  "backupExported": "Izvezena sigurnosna kopija: {path}",
+  "exportFailed": "Izvoz nije uspio: {error}",
+  "importFailed": "Uvoz nije uspio: {error}"
+}

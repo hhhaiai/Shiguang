@@ -1,0 +1,363 @@
+{
+  "@@locale": "yo",
+  "@appTitle": {
+    "description": "App name"
+  },
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@microphoneStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@asrReconnectingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@imageInserted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@voiceError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiServiceUnavailable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@shareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchMatchHits": {
+    "placeholders": {
+      "matchType": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@matchCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@sourceFromNetwork": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "@micStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importResultAccounts": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultDiaries": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultReminders": {
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importResultTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@backupExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@importFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Yorùbá",
+  "languageNameEn": "Yoruba",
+  "ws1270018008OrHttp12700111434": "ws://127.0.0.1:8008/... or http://127.0.0.1:11434",
+  "appTitle": "Shiguang",
+  "settings": "Eto",
+  "account": "Iroyin",
+  "reminders": "Awọn olurannileti",
+  "language": "Ede",
+  "appLanguage": "Ede App",
+  "appearance": "Ifarahan",
+  "themeMode": "Ipo Akori",
+  "dark": "Dudu",
+  "light": "Imọlẹ",
+  "system": "Eto",
+  "aiService": "AI Iṣẹ",
+  "aiChatProvider": "AI Wiregbe Olupese",
+  "chatModel": "Awoṣe iwiregbe",
+  "localModel": "Awoṣe Agbegbe",
+  "localModelDefault": "Awoṣe Agbegbe (Iyipada)",
+  "ollamaEndpoint": "Ollama Ipari",
+  "ollamaModel": "Ollama awoṣe",
+  "openAiEndpoint": "OpenAI Ipari",
+  "openAiApiKey": "Ṣii API Key",
+  "openAiModel": "Ṣii Awoṣe",
+  "geminiEndpoint": "Gemini Ipari",
+  "geminiApiKey": "Gemini API Key",
+  "geminiModel": "Awọn awoṣe Gemini",
+  "anthropicEndpoint": "Anthropic Endpoint",
+  "anthropicApiKey": "Anthropic API Key",
+  "anthropicModel": "Awoṣe Anthropic",
+  "customProtocol": "Ilana ti aṣa",
+  "protocol": "Ilana",
+  "customEndpoint": "Aṣa Ipari",
+  "customApiKey": "Aṣa API Key",
+  "customModel": "Aṣa Aṣa",
+  "optionalForLocalServers": "Iyan fun agbegbe/aṣa olupin",
+  "speechRecognitionEngine": "Engine idanimọ Ọrọ",
+  "local": "Agbegbe",
+  "endpoint": "Opin ipari",
+  "localSpeechModel": "Awoṣe Ọrọ Agbegbe",
+  "senseVoiceOnnx": "SenseVoice ONNX (lori ẹrọ)",
+  "systemSpeechRecognition": "Idanimọ Ọrọ Ọrọ System",
+  "systemRecognitionAndroidIos": "Idanimọ eto (Android/iOS)",
+  "endpointRecognitionCloudWs": "Idanimọ Ipari (Awọsanma/WS)",
+  "useBuiltInRecognizer": "Lo idanimọ Android / iOS ti a ṣe sinu (le lo awọsanma)",
+  "voiceAiEndpoint": "Voice AI Endpoint",
+  "embeddingModel": "Awoṣe ifibọ",
+  "crossDeviceSync": "Agbelebu-Device Sync",
+  "sendToOtherDevices": "Firanṣẹ si Awọn ẹrọ miiran (Send Local)",
+  "exportBackupAndSend": "Ṣe okeere afẹyinti ati firanṣẹ nipasẹ iwe ipin",
+  "importFromLocalSend": "Gbe wọle lati LocalSend",
+  "selectBackupJson": "Yan afẹyinti JSON ki o si da data agbegbe pọ",
+  "autoGeneration": "Auto generation",
+  "autoGenerateSummary": "Auto ina Lakotan",
+  "generateAiSummaryForNewEntries": "Ṣẹda akopọ AI fun awọn titẹ sii tuntun",
+  "autoGenerateEmbedding": "Auto ina ifibọ",
+  "generateVectorEmbedding": "Ṣe ina ifisinu fekito fun wiwa",
+  "enableNetworkSearch": "Mu wiwa nẹtiwọki ṣiṣẹ",
+  "allowOnlineRetrieval": "Gba igbasilẹ lori ayelujara fun wiwa ati iwiregbe AI (pa nipasẹ aiyipada)",
+  "about": "Nipa",
+  "version": "Ẹya _PH_0__",
+  "database": "Aaye data",
+  "objectBoxWithHnsw": "ObjectBox pẹlu atọka HNSW",
+  "logOut": "Jade jade",
+  "custom": "Aṣa",
+  "openAiCompatible": "OpenAI Ibaramu",
+  "notSet": "Ko ṣeto",
+  "supportsLocalLanPublic": "Atilẹyin agbegbe / LAN / àkọsílẹ endpoints",
+  "shiguangLocalSendBackup": "Shiguang LocalSend Afẹyinti",
+  "localBackupFromShiguang": "Afẹyinti agbegbe lati Shiguang (gba nipasẹ LocalSend)",
+  "selectBackupFileFromLocalSend": "Yan faili afẹyinti ti o gba lati LocalSend",
+  "failedToResolveFilePath": "Kuna lati yanju ọna faili ti o yan",
+  "importOptions": "Gbe wọle Aw",
+  "importSettingsAsWell": "Ṣe akowọle awọn eto bi daradara bi?\n(Awọn bọtini API kii yoo tun kọ)",
+  "dataOnly": "Data Nikan",
+  "dataAndSettings": "Data + Eto",
+  "importCompleted": "Wọle ti Pari",
+  "settingsInBackupWereApplied": "Awọn eto ni afẹyinti ni a lo.",
+  "settingsInBackupWereNotApplied": "Awọn eto ni afẹyinti ko lo.",
+  "ok": "O DARA",
+  "cancel": "Fagilee",
+  "save": "Fipamọ",
+  "delete": "Paarẹ",
+  "clear": "Ko o",
+  "add": "Fi kun",
+  "create": "Ṣẹda",
+  "edit": "Ṣatunkọ",
+  "search": "Wa",
+  "areYouSureYouWantToLogOut": "Ṣe o da ọ loju pe o fẹ jade bi?",
+  "chooseLanguage": "Yan Ede",
+  "databaseInfo": "Alaye aaye data",
+  "storage": "Ibi ipamọ: ObjectBox",
+  "vectorIndex": "Atọka Vector: HNSW",
+  "dimensions": "Awọn iwọn: 384",
+  "embeddingModelBge": "Awoṣe ifibọ: bge-small-zh-v1.5",
+  "takePhoto": "Ya Fọto",
+  "chooseFromGallery": "Yan lati Gallery",
+  "editNickname": "Ṣatunkọ Oruko apeso",
+  "enterNickname": "Tẹ orukọ apeso sii",
+  "pleaseEnterNickname": "Jọwọ tẹ orukọ apeso kan sii",
+  "nicknameAlreadyExistsOrInvalid": "Oruko apeso ti wa tẹlẹ tabi ko wulo",
+  "user": "Olumulo",
+  "manageScheduledReminders": "Ṣakoso awọn olurannileti iṣeto ati awọn itaniji",
+  "imageFailedToLoad": "Aworan kuna lati kojọpọ. Jọwọ yan lẹẹkansi.",
+  "imageIsStillLoading": "Aworan ti wa ni ṣi ikojọpọ",
+  "imageAreaNotReady": "Agbegbe aworan ko šetan. Jọwọ gbiyanju lẹẹkansi.",
+  "cropFrameNotReady": "Irugbin irugbin ko šetan. Jọwọ gbiyanju lẹẹkansi.",
+  "invalidCropArea": "Agbegbe irugbin ti ko tọ. Jọwọ gbiyanju lẹẹkansi.",
+  "cropFailed": "Irugbin kuna. Jọwọ gbiyanju lẹẹkansi.",
+  "cropAvatar": "Irugbin Afata",
+  "chooseAgain": "Yan Lẹẹkansi",
+  "rotate90": "Yipada 90°",
+  "dragFrameToMove": "Fa fireemu lati gbe, fa isalẹ-ọtun lati tun iwọn; fun pọ lati sun ati gbe aworan.",
+  "pleaseFillInAllFields": "Jọwọ fọwọsi ni gbogbo awọn aaye",
+  "pinMustBeAtLeast4Digits": "PIN gbọdọ jẹ o kere ju awọn nọmba 4",
+  "pinAtLeast4Digits": "PIN gbọdọ jẹ o kere ju awọn nọmba 4",
+  "invalidUsernameOrPin": "Orukọ olumulo ti ko tọ tabi PIN",
+  "invalidUsernameOrPinError": "Orukọ olumulo ti ko tọ tabi PIN",
+  "usernameAlreadyExists": "Orukọ olumulo ti wa tẹlẹ",
+  "captureMomentsKeepMemories": "Ya awọn akoko, pa awọn iranti",
+  "username": "Orukọ olumulo",
+  "pin": "PIN",
+  "login": "Wo ile",
+  "createAccount": "Se akanti fun ra re",
+  "dontHaveAccountCreateOne": "Ṣe ko ni akọọlẹ kan? Ṣẹda ọkan",
+  "alreadyHaveAccountLogin": "Ti ni iroyin tẹlẹ? Wo ile",
+  "pleaseEnterUsername": "Jọwọ tẹ orukọ olumulo kan sii",
+  "pinsDoNotMatch": "Awọn PIN ko baramu",
+  "tapToAddAvatar": "Fọwọ ba lati fi avatar kun",
+  "yourName": "Orukọ rẹ",
+  "privatePinOptional": "PIN aladani (aṣayan)",
+  "usedToEncryptPrivateRecords": "Lo lati encrypt awọn igbasilẹ ikọkọ",
+  "privatePin": "PIN aladani",
+  "leaveEmptyForNoEncryption": "Fi sofo fun ko si ìsekóòdù",
+  "confirmPin": "Jẹrisi PIN",
+  "getStarted": "Bẹrẹ",
+  "noReminders": "Ko si awọn olurannileti",
+  "addReminder": "Fi Olurannileti kun",
+  "title": "Title",
+  "descriptionOptional": "Description (optional)",
+  "microphonePermissionRequired": "Microphone permission required",
+  "aiAssistant": "AI Assistant",
+  "listening": "Listening...",
+  "typeAMessage": "Type a message...",
+  "aiChat": "AI Chat",
+  "startAConversation": "Start a conversation",
+  "typeYourMessage": "Type your message...",
+  "asrReconnecting": "ASR reconnecting...",
+  "write": "Write",
+  "writeEntry": "Write Entry",
+  "noMemoriesYet": "No memories yet",
+  "tapPlusToCapture": "Tap + to capture your thoughts",
+  "tapPlusToCaptureYourThoughts": "Tap + to capture your thoughts",
+  "deleteMemory": "Delete Memory",
+  "deleteRecord": "Delete Record",
+  "thisEntryWillBeRemoved": "This entry will be removed from your timeline.",
+  "thisRecordWillBeRemoved": "This record will be removed from your timeline.",
+  "searchYourRecords": "Search your records...",
+  "exactMatches": "Exact Matches",
+  "noExactMatches": "No exact matches",
+  "exact": "Exact",
+  "exactMatch": "Exact Match",
+  "fuzzyMatches": "Fuzzy Matches",
+  "noFuzzyMatches": "No fuzzy matches",
+  "vectorMatch": "Vector Match",
+  "networkMatches": "Network Matches",
+  "noNetworkMatches": "No network matches",
+  "networkSearchIsOff": "Network search is off. Enable it in Settings.",
+  "network": "Network",
+  "networkMatch": "Network Match",
+  "noSearchHistory": "No search history",
+  "searchHistory": "Search History",
+  "invalidLink": "Invalid link",
+  "unableToOpenWebPage": "Unable to open web page",
+  "imageMemory": "[Image memory]",
+  "tapToOpenWebPage": "Tap to open web page",
+  "editEntry": "Edit Entry",
+  "entryDetails": "Entry Details",
+  "noContent": "No content",
+  "diaryNotFound": "Diary not found",
+  "diaryNotFoundShort": "Record not found",
+  "aiSummary": "AI Summary",
+  "microphoneInterrupted": "Microphone interrupted, recording stopped.",
+  "bold": "Igboya",
+  "italic": "Italic",
+  "strikethrough": "Isẹgun",
+  "image": "Aworan",
+  "asrUnavailableRecordingActive": "ASR ko si. Gbigbasilẹ ṣi ṣiṣẹ.",
+  "writeYourEntry": "Kọ akọsilẹ rẹ ...",
+  "writeYourContent": "Kọ akoonu rẹ...",
+  "microphoneStartFailed": "Kuna lati bẹrẹ gbohungbohun: _PH_0__",
+  "microphoneInterruptedRecordingStopped": "Gbohungbohun Idilọwọ, gbigbasilẹ duro.",
+  "asrReconnectingError": "ASR tun so pọ: _PH_0__",
+  "imageInserted": "Afi sii: _PH_0__",
+  "voiceError": "Aṣiṣe ohun: _PH_0__",
+  "aiServiceUnavailable": "Ma binu, iṣẹ AI ko si lọwọlọwọ: {error}",
+  "shareFailed": "Kuna lati pin: _PH_0__",
+  "searchMatchHits": "_PH_0__ · _PH_1__ deba",
+  "matchCount": "Baramu: _PH_0__",
+  "sourceFromNetwork": "Orisun: {source}",
+  "createNew": "Ṣẹda",
+  "micStartFailed": "Ibẹrẹ gbohungbohun kuna: _PH_0__",
+  "importResultAccounts": "Awọn akọọlẹ: +{created} / imudojuiwọn {updated}",
+  "importResultDiaries": "Iwe akọọlẹ: +{created} / imudojuiwọn {updated}",
+  "importResultReminders": "Awọn olurannileti: +{created} / imudojuiwọn {updated}",
+  "importResultSkipped": "Ti fo: _PH_0__",
+  "importResultTotal": "Lapapọ ti yipada: _PH_0__",
+  "settingsApplied": "Awọn eto ni afẹyinti ni a lo.",
+  "settingsNotApplied": "Awọn eto ni afẹyinti ko lo.",
+  "backupExported": "Afẹyinti ti a ṣe okeere: _PH_0__",
+  "exportFailed": "Ti kuna: _PH_0__",
+  "importFailed": "Ikuna agbewọle: _PH_0__"
+}
