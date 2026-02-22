@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.personal.brain"
+    namespace = "com.sanbo.shiguang"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "27.0.12077973"
 
@@ -21,7 +21,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.personal.brain"
+        applicationId = "com.sanbo.shiguang"
         minSdk = 28
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode

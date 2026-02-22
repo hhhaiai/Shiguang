@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import '../lib/features/diary/domain/diary_content_codec.dart';
+import 'package:shiguang/features/diary/domain/diary_content_codec.dart';
 
 void main() {
   test('decode extracts image tokens and strips object replacement chars', () {

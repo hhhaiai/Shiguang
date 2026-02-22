@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:record/record.dart';
@@ -19,6 +20,7 @@ import '../../../settings/data/settings_provider.dart';
 import '../../data/ai/sensevoice_local_voice_ai.dart';
 import '../../data/ai/sensevoice_onnx_local_voice_ai.dart';
 import '../../data/ai/system_speech_voice_ai.dart';
+import '../../domain/diary_style_markers.dart';
 import '../../domain/interfaces/i_local_voice_ai.dart';
 import 'live_waveform_bars.dart';
 
@@ -26,12 +28,14 @@ class DiaryInputSheet extends ConsumerStatefulWidget {
   final Function(String text) onSubmit;
   final String? initialRawText;
   final String? title;
+  final bool startInVoiceMode;
 
   const DiaryInputSheet({
     super.key,
     required this.onSubmit,
     this.initialRawText,
     this.title,
+    this.startInVoiceMode = false,
   });
 
   @override
@@ -45,6 +49,9 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
   final _audioRecorder = AudioRecorder();
   final _imagePicker = ImagePicker();
   final List<_EditorBlock> _blocks = <_EditorBlock>[];
+  final Map<String, TextSelection> _lastKnownSelectionByBlockId =
+      <String, TextSelection>{};
+  _TextInsertionAnchor? _lastInsertionAnchor;
   int _nextBlockId = 0;
   String? _activeTextBlockId;
   String? _recordingTargetBlockId;
@@ -61,6 +68,7 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
   bool _asrReady = true;
   bool _isRecoveringAsr = false;
   bool _isStoppingRecording = false;
+  bool _voiceMode = false;
   String _recordingBaseText = '';
   double _scrollProgress = 0;
   bool _showScrollProgress = false;
@@ -78,6 +86,9 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!_editorScrollController.hasClients) return;
       _editorScrollController.jumpTo(0);
+      if (widget.startInVoiceMode) {
+        unawaited(_toggleVoiceMode());
+      }
     });
   }
 
@@ -110,8 +121,33 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
 
   String _nextId() => 'block_${_nextBlockId++}';
 
-  _TextEditorBlock _newTextBlock(String text) =>
-      _TextEditorBlock(id: _nextId(), initialText: text);
+  _TextEditorBlock _newTextBlock(String text) {
+    final block = _TextEditorBlock(id: _nextId(), initialText: text);
+    block.bind(
+      onControllerChanged: () {
+        final selection = block.controller.selection;
+        if (selection.isValid && block.focusNode.hasFocus) {
+          _rememberSelectionForBlock(block);
+        } else if (selection.isValid) {
+          _lastKnownSelectionByBlockId[block.id] = selection;
+        }
+        if (block.focusNode.hasFocus) {
+          _activeTextBlockId = block.id;
+        }
+      },
+      onFocusChanged: () {
+        final selection = block.controller.selection;
+        if (block.focusNode.hasFocus) {
+          _rememberSelectionForBlock(block);
+          return;
+        }
+        if (selection.isValid) {
+          _lastKnownSelectionByBlockId[block.id] = selection;
+        }
+      },
+    );
+    return block;
+  }
 
   _ImageEditorBlock _newImageBlock(String path) =>
       _ImageEditorBlock(id: _nextId(), path: path);
@@ -134,6 +170,15 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
     if (id == null) return null;
     for (final block in _blocks) {
       if (block is _TextEditorBlock && block.id == id) {
+        return block;
+      }
+    }
+    return null;
+  }
+
+  _TextEditorBlock? get _focusedTextBlock {
+    for (final block in _blocks) {
+      if (block is _TextEditorBlock && block.focusNode.hasFocus) {
         return block;
       }
     }
@@ -219,6 +264,11 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
     final clamped = (offset ?? textLength).clamp(0, textLength);
     block.controller.selection = TextSelection.collapsed(offset: clamped);
     _activeTextBlockId = block.id;
+    _rememberSelectionForBlock(
+      block,
+      selection: block.controller.selection,
+      updateActiveBlock: true,
+    );
     if (requestFocus) {
       requestKeyboardFocus(context, block.focusNode);
     }
@@ -292,6 +342,7 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
 
   void _disposeBlock(_EditorBlock block) {
     if (block is _TextEditorBlock) {
+      _lastKnownSelectionByBlockId.remove(block.id);
       block.dispose();
     }
   }
@@ -300,6 +351,8 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
     for (final block in _blocks) {
       _disposeBlock(block);
     }
+    _lastKnownSelectionByBlockId.clear();
+    _lastInsertionAnchor = null;
   }
 
   String _serializeBlocks() {
@@ -398,18 +451,29 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
     setState(() => _hasPermission = status.isGranted);
   }
 
-  Future<void> _toggleRecording() async {
+  Future<void> _toggleVoiceMode() async {
     if (_isStoppingRecording) return;
+    if (_isRecording) {
+      await _stopRecording();
+      if (!mounted) return;
+      setState(() => _voiceMode = false);
+      final target = _ensureActiveTextBlock(moveCursorToEnd: true);
+      requestKeyboardFocus(context, target.focusNode);
+      return;
+    }
 
     if (!_hasPermission) {
       await _requestPermission();
       if (!_hasPermission) return;
     }
 
-    if (_isRecording) {
-      await _stopRecording();
-    } else {
-      await _startRecording();
+    FocusManager.instance.primaryFocus?.unfocus();
+    await SystemChannels.textInput.invokeMethod<void>('TextInput.hide');
+    if (!mounted) return;
+    setState(() => _voiceMode = true);
+    await _startRecording();
+    if (!mounted || !_isRecording) {
+      setState(() => _voiceMode = false);
     }
   }
 
@@ -418,7 +482,6 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
     final target = _ensureActiveTextBlock(moveCursorToEnd: true);
     _recordingTargetBlockId = target.id;
     _recordingBaseText = target.controller.text.trimRight();
-    requestKeyboardFocus(context, target.focusNode);
 
     _voiceAI ??= _createVoiceAi();
     final activeVoiceAi = _voiceAI;
@@ -434,7 +497,6 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
         _isRecording = true;
         _asrReady = true;
       });
-      requestKeyboardFocus(context, target.focusNode);
       return;
     }
 
@@ -478,7 +540,6 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
         _isRecording = true;
         _asrReady = true;
       });
-      requestKeyboardFocus(context, target.focusNode);
     } catch (error) {
       if (mounted) {
         final l10n = AppLocalizations.of(context);
@@ -732,6 +793,7 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
   }
 
   Future<void> _insertImageToken() async {
+    final insertionAnchor = _captureTextInsertionAnchor();
     final source = await _pickImageSource();
     if (source == null) return;
 
@@ -739,13 +801,13 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
     if (picked == null) return;
 
     final persistedPath = await _persistPickedImage(picked) ?? picked.path;
-    _insertInlineImageToken(persistedPath);
+    _insertInlineImageToken(persistedPath, anchor: insertionAnchor);
 
     if (mounted) {
       final l10n = AppLocalizations.of(context);
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.imageInserted(picked.name))),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(l10n.imageInserted(picked.name))));
       _scheduleScrollProgressUpdate();
     }
   }
@@ -779,21 +841,128 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
     );
   }
 
-  void _insertInlineImageToken(String path) {
-    final target = _ensureActiveTextBlock(moveCursorToEnd: true);
+  _TextInsertionAnchor? _captureTextInsertionAnchor() {
+    final focused = _focusedTextBlock;
+    if (focused != null) {
+      final focusedText = focused.controller.text;
+      final selection = focused.controller.selection.isValid
+          ? focused.controller.selection
+          : (_lastKnownSelectionByBlockId[focused.id] ??
+                TextSelection.collapsed(offset: focusedText.length));
+      final anchor = _selectionToAnchor(
+        blockId: focused.id,
+        selection: selection,
+        textLength: focusedText.length,
+      );
+      _activeTextBlockId = focused.id;
+      _lastKnownSelectionByBlockId[focused.id] = selection;
+      _lastInsertionAnchor = anchor;
+      return anchor;
+    }
+
+    final recent = _lastInsertionAnchor;
+    if (recent != null) {
+      final block = _findTextBlockById(recent.blockId);
+      if (block != null) {
+        final length = block.controller.text.length;
+        final anchored = _TextInsertionAnchor(
+          blockId: block.id,
+          start: recent.start.clamp(0, length),
+          end: recent.end.clamp(0, length),
+        );
+        _activeTextBlockId = block.id;
+        return anchored;
+      }
+    }
+
+    final active = _findTextBlockById(_activeTextBlockId);
+    if (active != null) {
+      final text = active.controller.text;
+      final currentSelection = active.controller.selection;
+      final cachedSelection = _lastKnownSelectionByBlockId[active.id];
+      final selection = active.focusNode.hasFocus && currentSelection.isValid
+          ? currentSelection
+          : ((cachedSelection != null && cachedSelection.isValid)
+                ? cachedSelection
+                : (currentSelection.isValid
+                      ? currentSelection
+                      : TextSelection.collapsed(offset: text.length)));
+      final anchor = _selectionToAnchor(
+        blockId: active.id,
+        selection: selection,
+        textLength: text.length,
+      );
+      _lastKnownSelectionByBlockId[active.id] = selection;
+      _lastInsertionAnchor = anchor;
+      return anchor;
+    }
+
+    final last = _lastTextBlock;
+    if (last == null) return null;
+    _activeTextBlockId = last.id;
+    final text = last.controller.text;
+    final currentSelection = last.controller.selection;
+    final selection = currentSelection.isValid
+        ? currentSelection
+        : (_lastKnownSelectionByBlockId[last.id] ??
+              TextSelection.collapsed(offset: text.length));
+    final anchor = _selectionToAnchor(
+      blockId: last.id,
+      selection: selection,
+      textLength: text.length,
+    );
+    _lastInsertionAnchor = anchor;
+    return anchor;
+  }
+
+  _TextInsertionAnchor _selectionToAnchor({
+    required String blockId,
+    required TextSelection selection,
+    required int textLength,
+  }) {
+    final start = math.min(selection.start, selection.end).clamp(0, textLength);
+    final end = math.max(selection.start, selection.end).clamp(0, textLength);
+    return _TextInsertionAnchor(blockId: blockId, start: start, end: end);
+  }
+
+  void _rememberSelectionForBlock(
+    _TextEditorBlock block, {
+    TextSelection? selection,
+    bool updateActiveBlock = true,
+  }) {
+    final resolvedSelection = selection ?? block.controller.selection;
+    if (!resolvedSelection.isValid) return;
+    _lastKnownSelectionByBlockId[block.id] = resolvedSelection;
+    _lastInsertionAnchor = _selectionToAnchor(
+      blockId: block.id,
+      selection: resolvedSelection,
+      textLength: block.controller.text.length,
+    );
+    if (updateActiveBlock) {
+      _activeTextBlockId = block.id;
+    }
+  }
+
+  void _insertInlineImageToken(String path, {_TextInsertionAnchor? anchor}) {
+    final target = (anchor == null)
+        ? _ensureActiveTextBlock(moveCursorToEnd: false)
+        : (_findTextBlockById(anchor.blockId) ??
+              _ensureActiveTextBlock(moveCursorToEnd: false));
     final text = target.controller.text;
     final selection = target.controller.selection;
-    final safeStart = selection.isValid
-        ? math.min(selection.start, selection.end).clamp(0, text.length)
-        : text.length;
-    final safeEnd = selection.isValid
-        ? math.max(selection.start, selection.end).clamp(0, text.length)
-        : text.length;
+    final safeStart = anchor != null
+        ? anchor.start.clamp(0, text.length)
+        : (selection.isValid
+              ? math.min(selection.start, selection.end).clamp(0, text.length)
+              : text.length);
+    final safeEnd = anchor != null
+        ? anchor.end.clamp(0, text.length)
+        : (selection.isValid
+              ? math.max(selection.start, selection.end).clamp(0, text.length)
+              : text.length);
 
-    final before = text
-        .substring(0, safeStart)
-        .replaceFirst(RegExp(r'\n+$'), '');
-    final after = text.substring(safeEnd).replaceFirst(RegExp(r'^\n+'), '');
+    final before = text.substring(0, safeStart);
+    final after = text.substring(safeEnd);
     final blockIndex = _indexOfBlock(target.id);
     if (blockIndex < 0) return;
 
@@ -873,306 +1042,167 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final canSubmit = _hasVisibleText || _hasImages;
-    final theme = Theme.of(context);
     final bottomInset = MediaQuery.viewInsetsOf(context).bottom;
     final keyboardVisible = bottomInset > 0;
-    final recordingOverlayHeight = keyboardVisible && _isRecording ? 64.0 : 0.0;
-    const editorBottomDockHeight = 0.0;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final isDark = theme.brightness == Brightness.dark;
+    final now = DateTime.now();
+    final locale = Localizations.localeOf(context).toLanguageTag();
+    final dateLabel = DateFormat('M月d日', locale).format(now);
+    final weekLabel = DateFormat('EEEE', locale).format(now);
+    final subtleTextColor = isDark
+        ? const Color(0xFFC7D0DD)
+        : scheme.onSurfaceVariant;
+    final toolbarBottom = keyboardVisible ? bottomInset : 0.0;
+    final recordingOverlayHeight = _voiceMode ? 118.0 : 72.0;
 
     return EdgeSwipeBack(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: theme.scaffoldBackgroundColor,
+        backgroundColor: isDark
+            ? const Color(0xFF121316)
+            : const Color(0xFFF8F8F8),
         appBar: AppBar(
           leading: const BackButton(),
-          title: Text(widget.title ?? l10n.writeEntry),
+          backgroundColor: isDark
+              ? const Color(0xFF121316)
+              : const Color(0xFFF8F8F8),
+          foregroundColor: scheme.onSurface,
+          elevation: 0,
+          scrolledUnderElevation: 0,
+          centerTitle: true,
+          title: Column(
+            children: [
+              Text(
+                dateLabel,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                  color: scheme.onSurface,
+                ),
+              ),
+              Text(
+                weekLabel,
+                style: TextStyle(fontSize: 12, color: subtleTextColor),
+              ),
+            ],
+          ),
           actions: [
             TextButton(
               onPressed: canSubmit ? () => unawaited(_submit()) : null,
-              child: Text(l10n.save),
+              child: Text(
+                l10n.save,
+                style: const TextStyle(fontWeight: FontWeight.w600),
+              ),
             ),
           ],
         ),
-        body: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(8, 4, 8, 4),
-                child: Row(
-                  children: [
-                    IconButton(
-                      tooltip: l10n.bold,
-                      onPressed: () => _applyInlineStyle('**', '**'),
-                      icon: const Icon(Icons.format_bold),
-                    ),
-                    IconButton(
-                      tooltip: l10n.italic,
-                      onPressed: () => _applyInlineStyle('*', '*'),
-                      icon: const Icon(Icons.format_italic),
-                    ),
-                    IconButton(
-                      tooltip: l10n.strikethrough,
-                      onPressed: () => _applyInlineStyle('~~', '~~'),
-                      icon: const Icon(Icons.strikethrough_s),
-                    ),
-                    IconButton(
-                      tooltip: l10n.image,
-                      onPressed: () => unawaited(_insertImageToken()),
-                      icon: const Icon(Icons.image_outlined),
-                    ),
-                  ],
+        body: Stack(
+          children: [
+            Positioned.fill(
+              child: SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+                  child: _buildBlockEditor(
+                    bottomInset: keyboardVisible ? bottomInset : 0,
+                    recordingOverlayHeight: recordingOverlayHeight,
+                  ),
                 ),
               ),
-              const Divider(height: 1),
-              Expanded(
-                child: AnimatedPadding(
-                  duration: const Duration(milliseconds: 180),
-                  curve: Curves.easeOut,
-                  padding: EdgeInsets.only(bottom: bottomInset),
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
-                    child: Column(
-                      children: [
-                        Expanded(
-                          child: DecoratedBox(
-                            decoration: BoxDecoration(
-                              color: theme.colorScheme.surfaceContainerHighest
-                                  .withValues(alpha: 0.14),
-                            ),
-                            child: Stack(
-                              children: [
-                                Positioned.fill(
-                                  bottom: editorBottomDockHeight,
-                                  child: Padding(
-                                    padding: const EdgeInsets.fromLTRB(
-                                      2,
-                                      8,
-                                      2,
-                                      0,
-                                    ),
-                                    child: Stack(
-                                      children: [
-                                        _buildBlockEditor(
-                                          bottomInset: bottomInset,
-                                          recordingOverlayHeight:
-                                              recordingOverlayHeight,
-                                        ),
-                                        if (_showScrollProgress)
-                                          Positioned(
-                                            right: 2,
-                                            top: 8,
-                                            bottom: 8,
-                                            child: LayoutBuilder(
-                                              builder: (context, constraints) {
-                                                const thumbHeight = 56.0;
-                                                final travel =
-                                                    constraints.maxHeight -
-                                                    thumbHeight;
-                                                final top = travel <= 0
-                                                    ? 0.0
-                                                    : travel * _scrollProgress;
-                                                return SizedBox(
-                                                  width: 4,
-                                                  child: Stack(
-                                                    children: [
-                                                      Container(
-                                                        width: 4,
-                                                        decoration: BoxDecoration(
-                                                          color: theme
-                                                              .colorScheme
-                                                              .outline
-                                                              .withValues(
-                                                                alpha: 0.22,
-                                                              ),
-                                                          borderRadius:
-                                                              BorderRadius.circular(
-                                                                999,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                      Positioned(
-                                                        top: top,
-                                                        left: 0,
-                                                        right: 0,
-                                                        child: Container(
-                                                          height: thumbHeight,
-                                                          decoration: BoxDecoration(
-                                                            color: theme
-                                                                .colorScheme
-                                                                .primary
-                                                                .withValues(
-                                                                  alpha: 0.9,
-                                                                ),
-                                                            borderRadius:
-                                                                BorderRadius.circular(
-                                                                  999,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                );
-                                              },
-                                            ),
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                if (!keyboardVisible)
-                                  Positioned(
-                                    left: 0,
-                                    right: 0,
-                                    bottom: 0,
-                                    height: editorBottomDockHeight,
-                                    child: IgnorePointer(
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          gradient: LinearGradient(
-                                            begin: Alignment.topCenter,
-                                            end: Alignment.bottomCenter,
-                                            colors: [
-                                              theme.scaffoldBackgroundColor
-                                                  .withValues(alpha: 0),
-                                              theme.scaffoldBackgroundColor
-                                                  .withValues(alpha: 0.55),
-                                              theme.scaffoldBackgroundColor
-                                                  .withValues(alpha: 0.92),
-                                            ],
-                                          ),
-                                          borderRadius:
-                                              const BorderRadius.vertical(
-                                                bottom: Radius.circular(16),
-                                              ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                if (!keyboardVisible)
-                                  Positioned(
-                                    left: 0,
-                                    right: 0,
-                                    bottom: _asrReady ? 12 : 28,
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        AnimatedSwitcher(
-                                          duration: const Duration(
-                                            milliseconds: 180,
-                                          ),
-                                          child: _isRecording
-                                              ? Padding(
-                                                  key: const ValueKey(
-                                                    'waveform-on',
-                                                  ),
-                                                  padding:
-                                                      const EdgeInsets.fromLTRB(
-                                                        16,
-                                                        0,
-                                                        16,
-                                                        10,
-                                                      ),
-                                                  child: LiveWaveformBars(
-                                                    samples: _waveform,
-                                                  ),
-                                                )
-                                              : const SizedBox(
-                                                  key: ValueKey('waveform-off'),
-                                                  height: 82,
-                                                ),
-                                        ),
-                                        Center(
-                                          child: SizedBox(
-                                            width: 78,
-                                            height: 78,
-                                            child: FilledButton(
-                                              onPressed: _toggleRecording,
-                                              style: FilledButton.styleFrom(
-                                                padding: EdgeInsets.zero,
-                                                shape: const CircleBorder(),
-                                                backgroundColor: _isRecording
-                                                    ? Colors.red.shade500
-                                                    : theme.colorScheme.primary,
-                                              ),
-                                              child: const Icon(
-                                                Icons.mic,
-                                                size: 36,
-                                                color: Colors.white,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                if (!keyboardVisible && !_asrReady)
-                                  Positioned(
-                                    left: 16,
-                                    right: 16,
-                                    bottom: 8,
-                                    child: Text(
-                                      l10n.asrUnavailableRecordingActive,
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        color: Colors.orange.shade700,
-                                      ),
-                                    ),
-                                  ),
-                                if (keyboardVisible && _isRecording)
-                                  Positioned(
-                                    left: 12,
-                                    right: 12,
-                                    bottom: 8,
-                                    child: Container(
-                                      padding: const EdgeInsets.symmetric(
-                                        horizontal: 8,
-                                        vertical: 6,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: theme.colorScheme.surface,
-                                        borderRadius: BorderRadius.circular(14),
-                                        border: Border.all(
-                                          color: theme.colorScheme.outline
-                                              .withValues(alpha: 0.2),
-                                        ),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.black.withValues(
-                                              alpha: 0.08,
-                                            ),
-                                            blurRadius: 10,
-                                            offset: const Offset(0, 4),
-                                          ),
-                                        ],
-                                      ),
-                                      child: Row(
-                                        children: [
-                                          Expanded(
-                                            child: LiveWaveformBars(
-                                              samples: _waveform,
-                                              compact: true,
-                                            ),
-                                          ),
-                                          IconButton(
-                                            visualDensity:
-                                                VisualDensity.compact,
-                                            iconSize: 18,
-                                            onPressed: _toggleRecording,
-                                            icon: const Icon(Icons.stop),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
+            ),
+            if (_voiceMode)
+              Positioned(
+                left: 12,
+                right: 12,
+                bottom: toolbarBottom + 56,
+                child: _buildVoicePanel(),
+              ),
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: toolbarBottom,
+              child: _buildEditorToolbar(),
+            ),
+            if (_voiceMode && !_asrReady)
+              Positioned(
+                left: 16,
+                right: 16,
+                bottom: toolbarBottom + 64,
+                child: Text(
+                  l10n.asrUnavailableRecordingActive,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: scheme.error,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildEditorToolbar() {
+    final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final isDark = theme.brightness == Brightness.dark;
+    final toolbarIconColor = scheme.onSurfaceVariant;
+    return Material(
+      color: isDark ? scheme.surfaceContainerLow : scheme.surface,
+      elevation: 10,
+      child: SafeArea(
+        top: false,
+        child: SizedBox(
+          height: 56,
+          child: Row(
+            children: [
+              IconButton(
+                tooltip: l10n.bold,
+                onPressed: () => _applyInlineStyle(
+                  DiaryStyleMarkers.boldOpen,
+                  DiaryStyleMarkers.boldClose,
+                ),
+                icon: Icon(Icons.format_bold, color: toolbarIconColor),
+              ),
+              IconButton(
+                tooltip: l10n.italic,
+                onPressed: () => _applyInlineStyle(
+                  DiaryStyleMarkers.italicOpen,
+                  DiaryStyleMarkers.italicClose,
+                ),
+                icon: Icon(Icons.format_italic, color: toolbarIconColor),
+              ),
+              IconButton(
+                tooltip: l10n.strikethrough,
+                onPressed: () => _applyInlineStyle(
+                  DiaryStyleMarkers.strikeOpen,
+                  DiaryStyleMarkers.strikeClose,
+                ),
+                icon: Icon(Icons.strikethrough_s, color: toolbarIconColor),
+              ),
+              IconButton(
+                tooltip: l10n.image,
+                onPressed: () => unawaited(_insertImageToken()),
+                icon: Icon(Icons.image_outlined, color: toolbarIconColor),
+              ),
+              const Spacer(),
+              Padding(
+                padding: const EdgeInsets.only(right: 12),
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(999),
+                  onTap: () => unawaited(_toggleVoiceMode()),
+                  child: Container(
+                    width: 34,
+                    height: 34,
+                    decoration: BoxDecoration(
+                      color: _voiceMode ? scheme.error : scheme.primary,
+                      shape: BoxShape.circle,
                     ),
+                    child: Icon(Icons.mic, size: 18, color: scheme.onPrimary),
                   ),
                 ),
               ),
@@ -1183,11 +1213,68 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
     );
   }
 
+  Widget _buildVoicePanel() {
+    final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context);
+    final scheme = theme.colorScheme;
+    final isDark = theme.brightness == Brightness.dark;
+    return Container(
+      padding: const EdgeInsets.fromLTRB(12, 10, 8, 8),
+      decoration: BoxDecoration(
+        color: isDark ? scheme.surfaceContainerLow : scheme.surface,
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: scheme.outlineVariant.withValues(alpha: 0.5)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            children: [
+              Icon(
+                _isRecording
+                    ? Icons.graphic_eq_rounded
+                    : Icons.mic_none_rounded,
+                size: 16,
+                color: _isRecording ? scheme.primary : scheme.onSurfaceVariant,
+              ),
+              const SizedBox(width: 6),
+              Text(
+                _isRecording ? l10n.voiceListening : l10n.tapToStartVoice,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: scheme.onSurface,
+                ),
+              ),
+              const Spacer(),
+              IconButton(
+                visualDensity: VisualDensity.compact,
+                onPressed: () => unawaited(_toggleVoiceMode()),
+                icon: Icon(
+                  _isRecording ? Icons.stop_rounded : Icons.mic,
+                  color: _isRecording ? scheme.error : scheme.primary,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: _isRecording ? 8 : 4),
+          if (_isRecording) LiveWaveformBars(samples: _waveform, compact: true),
+        ],
+      ),
+    );
+  }
+
   Widget _buildBlockEditor({
     required double bottomInset,
     required double recordingOverlayHeight,
   }) {
     final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final subtleTextColor = theme.brightness == Brightness.dark
+        ? const Color(0xFFC7D0DD)
+        : scheme.onSurfaceVariant;
     final showHint = !_hasVisibleText && !_hasImages;
     final firstTextId = _firstTextBlock?.id;
     return LayoutBuilder(
@@ -1220,6 +1307,7 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
                             controller: block.controller,
                             focusNode: block.focusNode,
                             autofocus: false,
+                            onTapAlwaysCalled: true,
                             maxLines: null,
                             minLines: 1,
                             textAlignVertical: TextAlignVertical.top,
@@ -1227,16 +1315,22 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
                               fontSize: 16,
                               height: 1.7,
                               fontWeight: FontWeight.w400,
-                            ),
+                            ).copyWith(color: scheme.onSurface),
                             scrollPadding: EdgeInsets.only(
                               bottom: bottomInset + recordingOverlayHeight + 24,
                             ),
                             onTap: () {
                               _activeTextBlockId = block.id;
+                              _rememberSelectionForBlock(block);
                               requestKeyboardFocus(context, block.focusNode);
+                              WidgetsBinding.instance.addPostFrameCallback((_) {
+                                if (!mounted) return;
+                                _rememberSelectionForBlock(block);
+                              });
                             },
                             onChanged: (_) {
                               _activeTextBlockId = block.id;
+                              _rememberSelectionForBlock(block);
                               setState(() {});
                               _scheduleScrollProgressUpdate();
                             },
@@ -1247,6 +1341,7 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
                               border: InputBorder.none,
                               filled: false,
                               isDense: true,
+                              hintStyle: TextStyle(color: subtleTextColor),
                               contentPadding: EdgeInsets.zero,
                             ),
                           ),
@@ -1282,14 +1377,390 @@ abstract class _EditorBlock {
 class _TextEditorBlock extends _EditorBlock {
   final TextEditingController controller;
   final FocusNode focusNode;
+  VoidCallback? _controllerListener;
+  VoidCallback? _focusListener;
 
   _TextEditorBlock({required super.id, required String initialText})
-    : controller = TextEditingController(text: initialText),
+    : controller = _MarkdownStyledTextController(text: initialText),
       focusNode = FocusNode();
 
+  void bind({
+    required VoidCallback onControllerChanged,
+    required VoidCallback onFocusChanged,
+  }) {
+    if (_controllerListener != null) {
+      controller.removeListener(_controllerListener!);
+    }
+    if (_focusListener != null) {
+      focusNode.removeListener(_focusListener!);
+    }
+    _controllerListener = onControllerChanged;
+    _focusListener = onFocusChanged;
+    controller.addListener(onControllerChanged);
+    focusNode.addListener(onFocusChanged);
+  }
+
   void dispose() {
+    if (_controllerListener != null) {
+      controller.removeListener(_controllerListener!);
+      _controllerListener = null;
+    }
+    if (_focusListener != null) {
+      focusNode.removeListener(_focusListener!);
+      _focusListener = null;
+    }
     controller.dispose();
     focusNode.dispose();
+  }
+}
+
+class _MarkdownStyledTextController extends TextEditingController {
+  static final RegExp _headingPattern = RegExp(r'^(#{1,3})\s+');
+  static final RegExp _tokenPattern = RegExp(
+    r'(\uE000[^\uE001\n]+?\uE001|\uE002[^\uE003\n]+?\uE003|\uE004[^\uE005\n]+?\uE005|\uE006[^\uE007\n]+?\uE007|<(?:strong|b)>[^<\n]+?</(?:strong|b)>|<(?:em|i)>[^<\n]+?</(?:em|i)>|<(?:del|strike|s)>[^<\n]+?</(?:del|strike|s)>|<code>[^<\n]+?</code>|\*\*[^*\n]+?\*\*|__[^_\n]+?__|~~[^~\n]+?~~|`[^`\n]+?`|\*(?!\s)[^*\n]+?\*(?<!\s)|_(?!\s)[^_\n]+?_(?<!\s))',
+    caseSensitive: false,
+  );
+
+  _MarkdownStyledTextController({super.text});
+
+  @override
+  TextSpan buildTextSpan({
+    required BuildContext context,
+    TextStyle? style,
+    required bool withComposing,
+  }) {
+    final source = text;
+    final base = style ?? const TextStyle();
+    final hiddenMarkerStyle = base.copyWith(
+      color: Colors.transparent,
+      fontSize: 0.1,
+      height: 0.01,
+      letterSpacing: -0.1,
+    );
+    final codeBackground = Theme.of(context).brightness == Brightness.dark
+        ? const Color(0x26FFFFFF)
+        : const Color(0x14000000);
+
+    final spans = <InlineSpan>[];
+    final lines = source.split('\n');
+    for (var index = 0; index < lines.length; index++) {
+      final line = lines[index];
+      spans.addAll(
+        _buildLineSpans(
+          line: line,
+          base: base,
+          hiddenMarkerStyle: hiddenMarkerStyle,
+          codeBackground: codeBackground,
+        ),
+      );
+      if (index < lines.length - 1) {
+        spans.add(TextSpan(text: '\n', style: base));
+      }
+    }
+    return TextSpan(style: base, children: spans);
+  }
+
+  List<InlineSpan> _buildLineSpans({
+    required String line,
+    required TextStyle base,
+    required TextStyle hiddenMarkerStyle,
+    required Color codeBackground,
+  }) {
+    final spans = <InlineSpan>[];
+    var remaining = line;
+    var contentStyle = base;
+
+    final headingMatch = _headingPattern.firstMatch(line);
+    if (headingMatch != null) {
+      final marker = headingMatch.group(0) ?? '';
+      if (marker.isNotEmpty) {
+        spans.add(TextSpan(text: marker, style: hiddenMarkerStyle));
+      }
+      remaining = line.substring(headingMatch.end);
+
+      final level = headingMatch.group(1)?.length ?? 1;
+      final baseSize = base.fontSize ?? 16;
+      if (level <= 1) {
+        contentStyle = base.copyWith(
+          fontSize: baseSize + 8,
+          height: 1.25,
+          fontWeight: FontWeight.w800,
+        );
+      } else if (level == 2) {
+        contentStyle = base.copyWith(
+          fontSize: baseSize + 5,
+          height: 1.3,
+          fontWeight: FontWeight.w700,
+        );
+      } else {
+        contentStyle = base.copyWith(
+          fontSize: baseSize + 2,
+          height: 1.35,
+          fontWeight: FontWeight.w700,
+        );
+      }
+    }
+
+    spans.addAll(
+      _buildInlineSpans(
+        source: remaining,
+        base: contentStyle,
+        hiddenMarkerStyle: hiddenMarkerStyle,
+        codeBackground: codeBackground,
+      ),
+    );
+    return spans;
+  }
+
+  List<InlineSpan> _buildInlineSpans({
+    required String source,
+    required TextStyle base,
+    required TextStyle hiddenMarkerStyle,
+    required Color codeBackground,
+  }) {
+    if (source.isEmpty) {
+      return const <InlineSpan>[];
+    }
+
+    final spans = <InlineSpan>[];
+    var cursor = 0;
+    for (final match in _tokenPattern.allMatches(source)) {
+      if (match.start > cursor) {
+        spans.add(
+          TextSpan(text: source.substring(cursor, match.start), style: base),
+        );
+      }
+
+      final token = match.group(0)!;
+      final lower = token.toLowerCase();
+      final isBold =
+          (token.startsWith(DiaryStyleMarkers.boldOpen) &&
+              token.endsWith(DiaryStyleMarkers.boldClose) &&
+              token.length > 2) ||
+          (token.startsWith('**') &&
+              token.endsWith('**') &&
+              token.length > 4) ||
+          (token.startsWith('__') &&
+              token.endsWith('__') &&
+              token.length > 4) ||
+          (lower.startsWith('<b>') &&
+              lower.endsWith('</b>') &&
+              token.length > 7) ||
+          (lower.startsWith('<strong>') &&
+              lower.endsWith('</strong>') &&
+              token.length > 17);
+      final isItalic =
+          (token.startsWith(DiaryStyleMarkers.italicOpen) &&
+              token.endsWith(DiaryStyleMarkers.italicClose) &&
+              token.length > 2) ||
+          (token.startsWith('*') && token.endsWith('*') && token.length > 2) ||
+          (token.startsWith('_') && token.endsWith('_') && token.length > 2) ||
+          (lower.startsWith('<i>') &&
+              lower.endsWith('</i>') &&
+              token.length > 7) ||
+          (lower.startsWith('<em>') &&
+              lower.endsWith('</em>') &&
+              token.length > 9);
+      final isStrike =
+          (token.startsWith(DiaryStyleMarkers.strikeOpen) &&
+              token.endsWith(DiaryStyleMarkers.strikeClose) &&
+              token.length > 2) ||
+          (token.startsWith('~~') &&
+              token.endsWith('~~') &&
+              token.length > 4) ||
+          (lower.startsWith('<s>') &&
+              lower.endsWith('</s>') &&
+              token.length > 7) ||
+          (lower.startsWith('<del>') &&
+              lower.endsWith('</del>') &&
+              token.length > 11) ||
+          (lower.startsWith('<strike>') &&
+              lower.endsWith('</strike>') &&
+              token.length > 17);
+      final isCode =
+          (token.startsWith(DiaryStyleMarkers.codeOpen) &&
+              token.endsWith(DiaryStyleMarkers.codeClose) &&
+              token.length > 2) ||
+          (token.startsWith('`') && token.endsWith('`') && token.length > 2) ||
+          (lower.startsWith('<code>') &&
+              lower.endsWith('</code>') &&
+              token.length > 13);
+
+      if (isBold) {
+        _appendStyledToken(
+          spans: spans,
+          token: token,
+          lower: lower,
+          hiddenMarkerStyle: hiddenMarkerStyle,
+          normalStyle: base.copyWith(fontWeight: FontWeight.w700),
+        );
+      } else if (isStrike) {
+        _appendStyledToken(
+          spans: spans,
+          token: token,
+          lower: lower,
+          hiddenMarkerStyle: hiddenMarkerStyle,
+          normalStyle: base.copyWith(decoration: TextDecoration.lineThrough),
+        );
+      } else if (isCode) {
+        _appendStyledToken(
+          spans: spans,
+          token: token,
+          lower: lower,
+          hiddenMarkerStyle: hiddenMarkerStyle,
+          normalStyle: base.copyWith(
+            fontFamily: 'monospace',
+            backgroundColor: codeBackground,
+          ),
+        );
+      } else if (isItalic) {
+        _appendStyledToken(
+          spans: spans,
+          token: token,
+          lower: lower,
+          hiddenMarkerStyle: hiddenMarkerStyle,
+          normalStyle: base.copyWith(fontStyle: FontStyle.italic),
+        );
+      } else {
+        spans.add(TextSpan(text: token, style: base));
+      }
+
+      cursor = match.end;
+    }
+
+    if (cursor < source.length) {
+      spans.add(TextSpan(text: source.substring(cursor), style: base));
+    }
+    return spans;
+  }
+
+  String _unbox(String token) {
+    final lower = token.toLowerCase();
+    if (token.startsWith(DiaryStyleMarkers.boldOpen) &&
+        token.endsWith(DiaryStyleMarkers.boldClose) &&
+        token.length > 2) {
+      return token.substring(1, token.length - 1);
+    }
+    if (token.startsWith(DiaryStyleMarkers.italicOpen) &&
+        token.endsWith(DiaryStyleMarkers.italicClose) &&
+        token.length > 2) {
+      return token.substring(1, token.length - 1);
+    }
+    if (token.startsWith(DiaryStyleMarkers.strikeOpen) &&
+        token.endsWith(DiaryStyleMarkers.strikeClose) &&
+        token.length > 2) {
+      return token.substring(1, token.length - 1);
+    }
+    if (token.startsWith(DiaryStyleMarkers.codeOpen) &&
+        token.endsWith(DiaryStyleMarkers.codeClose) &&
+        token.length > 2) {
+      return token.substring(1, token.length - 1);
+    }
+    if (token.startsWith('**') && token.endsWith('**') && token.length > 4) {
+      return token.substring(2, token.length - 2);
+    }
+    if (token.startsWith('__') && token.endsWith('__') && token.length > 4) {
+      return token.substring(2, token.length - 2);
+    }
+    if (token.startsWith('~~') && token.endsWith('~~') && token.length > 4) {
+      return token.substring(2, token.length - 2);
+    }
+    if (token.startsWith('*') && token.endsWith('*') && token.length > 2) {
+      return token.substring(1, token.length - 1);
+    }
+    if (token.startsWith('_') && token.endsWith('_') && token.length > 2) {
+      return token.substring(1, token.length - 1);
+    }
+    if (token.startsWith('`') && token.endsWith('`') && token.length > 2) {
+      return token.substring(1, token.length - 1);
+    }
+    if (lower.startsWith('<b>') && lower.endsWith('</b>') && token.length > 7) {
+      return token.substring(3, token.length - 4);
+    }
+    if (lower.startsWith('<strong>') &&
+        lower.endsWith('</strong>') &&
+        token.length > 17) {
+      return token.substring(8, token.length - 9);
+    }
+    if (lower.startsWith('<i>') && lower.endsWith('</i>') && token.length > 7) {
+      return token.substring(3, token.length - 4);
+    }
+    if (lower.startsWith('<em>') &&
+        lower.endsWith('</em>') &&
+        token.length > 9) {
+      return token.substring(4, token.length - 5);
+    }
+    if (lower.startsWith('<s>') && lower.endsWith('</s>') && token.length > 7) {
+      return token.substring(3, token.length - 4);
+    }
+    if (lower.startsWith('<del>') &&
+        lower.endsWith('</del>') &&
+        token.length > 11) {
+      return token.substring(5, token.length - 6);
+    }
+    if (lower.startsWith('<strike>') &&
+        lower.endsWith('</strike>') &&
+        token.length > 17) {
+      return token.substring(8, token.length - 9);
+    }
+    if (lower.startsWith('<code>') &&
+        lower.endsWith('</code>') &&
+        token.length > 13) {
+      return token.substring(6, token.length - 7);
+    }
+    return token;
+  }
+
+  void _appendStyledToken({
+    required List<InlineSpan> spans,
+    required String token,
+    required String lower,
+    required TextStyle hiddenMarkerStyle,
+    required TextStyle normalStyle,
+  }) {
+    final content = _unbox(token);
+    if (token.startsWith(DiaryStyleMarkers.boldOpen) ||
+        token.startsWith(DiaryStyleMarkers.italicOpen) ||
+        token.startsWith(DiaryStyleMarkers.strikeOpen) ||
+        token.startsWith(DiaryStyleMarkers.codeOpen)) {
+      final open = token.substring(0, 1);
+      final close = token.substring(token.length - 1);
+      spans.add(TextSpan(text: open, style: hiddenMarkerStyle));
+      spans.add(TextSpan(text: content, style: normalStyle));
+      spans.add(TextSpan(text: close, style: hiddenMarkerStyle));
+      return;
+    }
+    if (lower.startsWith('<')) {
+      final openTagEnd = token.indexOf('>') + 1;
+      final closeTagStart = token.lastIndexOf('</');
+      spans.add(
+        TextSpan(
+          text: token.substring(0, openTagEnd),
+          style: hiddenMarkerStyle,
+        ),
+      );
+      spans.add(TextSpan(text: content, style: normalStyle));
+      spans.add(
+        TextSpan(
+          text: token.substring(closeTagStart),
+          style: hiddenMarkerStyle,
+        ),
+      );
+      return;
+    }
+    if ((token.startsWith('**') && token.endsWith('**')) ||
+        (token.startsWith('__') && token.endsWith('__')) ||
+        (token.startsWith('~~') && token.endsWith('~~'))) {
+      final marker = token.substring(0, 2);
+      spans.add(TextSpan(text: marker, style: hiddenMarkerStyle));
+      spans.add(TextSpan(text: content, style: normalStyle));
+      spans.add(TextSpan(text: marker, style: hiddenMarkerStyle));
+      return;
+    }
+    final marker = token.substring(0, 1);
+    spans.add(TextSpan(text: marker, style: hiddenMarkerStyle));
+    spans.add(TextSpan(text: content, style: normalStyle));
+    spans.add(TextSpan(text: marker, style: hiddenMarkerStyle));
   }
 }
 
@@ -1297,6 +1768,18 @@ class _ImageEditorBlock extends _EditorBlock {
   final String path;
 
   const _ImageEditorBlock({required super.id, required this.path});
+}
+
+class _TextInsertionAnchor {
+  final String blockId;
+  final int start;
+  final int end;
+
+  const _TextInsertionAnchor({
+    required this.blockId,
+    required this.start,
+    required this.end,
+  });
 }
 
 class _BlockEditorPart {
@@ -1433,6 +1916,7 @@ void showDiaryInputSheet(
   required Function(String) onSubmit,
   String? initialRawText,
   String? title,
+  bool startInVoiceMode = false,
 }) {
   Navigator.of(context).push(
     adaptivePageRoute<void>(
@@ -1441,6 +1925,7 @@ void showDiaryInputSheet(
         onSubmit: onSubmit,
         initialRawText: initialRawText,
         title: title,
+        startInVoiceMode: startInVoiceMode,
       ),
     ),
   );

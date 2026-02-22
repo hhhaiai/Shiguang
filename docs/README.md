@@ -64,8 +64,8 @@
 ## 🔗 相关资源
 
 - 主仓库: `/Users/sanbo/Desktop/PersonalAIBrain`
-- Flutter 项目: `/Users/sanbo/Desktop/PersonalAIBrain/aether_diary`
-- 模型下载脚本: `/Users/sanbo/Desktop/PersonalAIBrain/scripts/download_models.sh`
+- Flutter 项目: `/Users/sanbo/Desktop/PersonalAIBrain`
+- 本地服务脚本: `/Users/sanbo/Desktop/PersonalAIBrain/scripts/llm_server.py`
 
 ## 📝 最近更新
 

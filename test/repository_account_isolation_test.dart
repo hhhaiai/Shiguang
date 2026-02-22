@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:brain/core/objectbox/objectbox_service.dart';
-import 'package:brain/features/diary/data/repositories/vector_diary_repository.dart';
-import 'package:brain/features/reminder/data/repositories/reminder_repository.dart';
+import 'package:shiguang/core/objectbox/objectbox_service.dart';
+import 'package:shiguang/features/diary/data/repositories/vector_diary_repository.dart';
+import 'package:shiguang/features/reminder/data/repositories/reminder_repository.dart';
 
 const _skipReason =
     'Requires ObjectBox native host-test setup (libobjectbox.dylib) not available in current CI/runtime.';

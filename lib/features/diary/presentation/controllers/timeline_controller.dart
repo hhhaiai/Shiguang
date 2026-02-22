@@ -18,11 +18,13 @@ class TimelineSearchResult {
   final List<VectorDiary> exactMatches;
   final List<VectorDiary> fuzzyMatches;
   final List<VectorDiary> networkMatches;
+  final Map<int, String> fuzzyExcerpts;
 
   const TimelineSearchResult({
     this.exactMatches = const [],
     this.fuzzyMatches = const [],
     this.networkMatches = const [],
+    this.fuzzyExcerpts = const {},
   });
 }
 
@@ -188,17 +190,29 @@ class Timeline extends _$Timeline {
       normalizedQuery,
     ).take(sectionLimit).toList(growable: false);
     final exactIds = exactMatches.map((item) => item.id).toSet();
-    final fuzzyScores = <_ScoredDiary>[];
+    final fuzzyScoreById = <int, double>{};
 
     try {
       final embedding = await ref
           .read(embeddingServiceProvider)
           .generateEmbedding(normalizedQuery);
+      final vectorCandidates = _repository.searchByVector(
+        accountId: accountId,
+        queryVector: embedding,
+        limit: sectionLimit < 30 ? 30 : sectionLimit * 3,
+      );
+      final fallbackCandidates = all
+          .where((item) => item.embedding != null && item.embedding!.isNotEmpty)
+          .toList(growable: false);
+      final candidates = vectorCandidates.isNotEmpty
+          ? vectorCandidates
+          : fallbackCandidates;
+      final threshold = _dynamicSimilarityThreshold(normalizedQuery);
 
       final supportsFuzzy =
           _normalizedLength(normalizedQuery) >= 2 && embedding.isNotEmpty;
       if (supportsFuzzy) {
-        for (final item in all) {
+        for (final item in candidates) {
           if (exactIds.contains(item.id)) continue;
           final candidate = item.embedding;
           if (candidate == null || candidate.isEmpty) continue;
@@ -207,24 +221,23 @@ class Timeline extends _$Timeline {
             query: normalizedQuery,
             item: item,
             similarity: similarity,
+            threshold: threshold,
           )) {
             continue;
           }
-          fuzzyScores.add(_ScoredDiary(item: item, score: similarity));
+          fuzzyScoreById[item.id] = similarity;
         }
 
-        fuzzyScores.sort((a, b) {
-          final scoreCompare = b.score.compareTo(a.score);
-          if (scoreCompare != 0) return scoreCompare;
-          return b.item.updatedAt.compareTo(a.item.updatedAt);
-        });
-      }
-
-      if (kDebugMode) {
-        final withEmbedding = all.where((d) => d.embedding != null).length;
-        debugPrint(
-          '[Search] query="$normalizedQuery" exact=${exactMatches.length} fuzzy=${fuzzyScores.length} withEmbedding=$withEmbedding/${all.length}',
-        );
+        if (exactMatches.isEmpty && fuzzyScoreById.isEmpty) {
+          for (final item in candidates) {
+            if (exactIds.contains(item.id)) continue;
+            final candidate = item.embedding;
+            if (candidate == null || candidate.isEmpty) continue;
+            final similarity = _cosineSimilarity(embedding, candidate);
+            if (similarity < 0.42) continue;
+            fuzzyScoreById[item.id] = similarity;
+          }
+        }
       }
     } catch (error) {
       if (kDebugMode) {
@@ -233,12 +246,66 @@ class Timeline extends _$Timeline {
       // Keep exact-match search available even if embedding service is unavailable.
     }
 
+    // Local AI-style semantic matcher over local DB text/summary/tags.
+    // This path is fully local and complements vector retrieval.
+    final localAiMatches = _searchByLocalAiDatabase(
+      all: all,
+      query: normalizedQuery,
+      exactIds: exactIds,
+      limit: sectionLimit < 24 ? 24 : sectionLimit * 3,
+    );
+    for (final local in localAiMatches) {
+      final existing = fuzzyScoreById[local.item.id];
+      if (existing != null) {
+        // Keep vector ranking dominant while allowing local semantic match to rerank.
+        final blended = existing * 0.72 + local.score * 0.28;
+        fuzzyScoreById[local.item.id] = max(existing, blended);
+        continue;
+      }
+      // New candidates from local semantic matcher use a stricter floor.
+      if (local.score >= 0.68) {
+        fuzzyScoreById[local.item.id] = local.score;
+      }
+    }
+
+    final fuzzyScores =
+        all
+            .where((item) => fuzzyScoreById.containsKey(item.id))
+            .map(
+              (item) =>
+                  _ScoredDiary(item: item, score: fuzzyScoreById[item.id] ?? 0),
+            )
+            .toList(growable: false)
+          ..sort((a, b) {
+            final scoreCompare = b.score.compareTo(a.score);
+            if (scoreCompare != 0) return scoreCompare;
+            return b.item.updatedAt.compareTo(a.item.updatedAt);
+          });
+
+    if (kDebugMode) {
+      final withEmbedding = all.where((d) => d.embedding != null).length;
+      debugPrint(
+        '[Search] query="$normalizedQuery" exact=${exactMatches.length} '
+        'fuzzy=${fuzzyScores.length} vector+localAi withEmbedding=$withEmbedding/${all.length}',
+      );
+    }
+
+    final fuzzyMatches = fuzzyScores
+        .take(sectionLimit)
+        .map((entry) => entry.item)
+        .toList(growable: false);
+    final fuzzyExcerpts = <int, String>{};
+    for (final item in fuzzyMatches) {
+      final excerpt = _bestSemanticExcerpt(query: normalizedQuery, item: item);
+      if (excerpt.isNotEmpty) {
+        fuzzyExcerpts[item.id] = excerpt;
+      }
+    }
+
     return TimelineSearchResult(
       exactMatches: exactMatches,
-      fuzzyMatches: fuzzyScores
-          .take(sectionLimit)
-          .map((entry) => entry.item)
-          .toList(growable: false),
+      fuzzyMatches: fuzzyMatches,
+      fuzzyExcerpts: fuzzyExcerpts,
     );
   }
 
@@ -269,17 +336,20 @@ class Timeline extends _$Timeline {
           final index = entry.key;
           final item = entry.value;
           final rawText = [
-            item.title.trim(),
-            item.snippet.trim(),
-            item.url.trim(),
+            item.markdown.trim().isNotEmpty
+                ? item.markdown.trim()
+                : item.snippet.trim(),
           ].where((line) => line.isNotEmpty).join('\n');
+          final sanitizedTitle = item.title.replaceAll('\n', ' ').trim();
+          final sanitizedSource = item.source.replaceAll('\n', ' ').trim();
 
           return VectorDiary(
             id: -(index + 1),
             accountId: accountId,
             rawText: rawText,
-            aiSummary: item.url,
-            aiTags: 'network:url:${item.url}\nnetwork:source:${item.source}',
+            aiSummary: sanitizedTitle.isEmpty ? item.url : sanitizedTitle,
+            aiTags:
+                'network:url:${item.url}\nnetwork:source:$sanitizedSource\nnetwork:title:$sanitizedTitle',
             createdAt: now,
             updatedAt: now,
           );
@@ -296,6 +366,219 @@ class Timeline extends _$Timeline {
     }).toList();
   }
 
+  List<_ScoredDiary> _searchByLocalAiDatabase({
+    required List<VectorDiary> all,
+    required String query,
+    required Set<int> exactIds,
+    required int limit,
+  }) {
+    if (_normalizedLength(query) < 2) return const [];
+
+    final scored = <_ScoredDiary>[];
+    for (final item in all) {
+      if (exactIds.contains(item.id)) continue;
+      final score = _localAiDatabaseScore(query: query, item: item);
+      if (score < 0.52) continue;
+      scored.add(_ScoredDiary(item: item, score: score));
+    }
+
+    scored.sort((a, b) {
+      final scoreCompare = b.score.compareTo(a.score);
+      if (scoreCompare != 0) return scoreCompare;
+      return b.item.updatedAt.compareTo(a.item.updatedAt);
+    });
+
+    if (scored.length <= limit) return scored;
+    return scored.take(limit).toList(growable: false);
+  }
+
+  double _localAiDatabaseScore({
+    required String query,
+    required VectorDiary item,
+  }) {
+    final visible = DiaryContentCodec.decode(item.rawText).text;
+    final summary = item.aiSummary ?? '';
+    final tags = item.aiTags ?? '';
+    final searchable = '$summary $tags $visible';
+
+    final normalizedQuery = _normalizeSemanticText(query);
+    final normalizedSearchable = _normalizeSemanticText(searchable);
+    if (normalizedQuery.isEmpty || normalizedSearchable.isEmpty) {
+      return 0;
+    }
+
+    var score = 0.0;
+
+    if (normalizedSearchable.contains(normalizedQuery)) {
+      score += 0.48;
+    }
+
+    final queryRunes = normalizedQuery.runes.toSet();
+    if (queryRunes.isNotEmpty) {
+      var hit = 0;
+      for (final rune in queryRunes) {
+        final char = String.fromCharCode(rune);
+        if (normalizedSearchable.contains(char)) {
+          hit += 1;
+        }
+      }
+      score += (hit / queryRunes.length) * 0.24;
+    }
+
+    final queryTokens = _extractSemanticTokens(query);
+    final searchableTokens = _extractSemanticTokens(searchable).toSet();
+    if (queryTokens.isNotEmpty && searchableTokens.isNotEmpty) {
+      var overlap = 0;
+      for (final token in queryTokens) {
+        if (searchableTokens.contains(token)) {
+          overlap += 1;
+        }
+      }
+      score += (overlap / queryTokens.length) * 0.24;
+    }
+
+    final days = DateTime.now()
+        .difference(DateTime.fromMillisecondsSinceEpoch(item.updatedAt))
+        .inDays;
+    if (days <= 1) {
+      score += 0.05;
+    } else if (days <= 7) {
+      score += 0.03;
+    }
+
+    return score.clamp(0.0, 1.0);
+  }
+
+  String _bestSemanticExcerpt({
+    required String query,
+    required VectorDiary item,
+  }) {
+    final visible = DiaryContentCodec.decode(item.rawText).text.trim();
+    final summary = (item.aiSummary ?? '').trim();
+    final fragments = <String>[
+      ..._collectSemanticFragments(visible),
+      ..._collectSemanticFragments(summary),
+    ];
+    if (fragments.isEmpty) {
+      return visible.isNotEmpty ? visible : summary;
+    }
+
+    var best = '';
+    var bestScore = -1.0;
+    for (final fragment in fragments) {
+      final score = _semanticFragmentScore(query: query, fragment: fragment);
+      if (score > bestScore) {
+        bestScore = score;
+        best = fragment;
+      }
+    }
+
+    if (best.isEmpty) {
+      return visible.isNotEmpty ? visible : summary;
+    }
+    return best;
+  }
+
+  List<String> _collectSemanticFragments(String input) {
+    if (input.isEmpty) return const [];
+    final compact = input.replaceAll(RegExp(r'\s+'), ' ').trim();
+    if (compact.isEmpty) return const [];
+
+    final coarse = compact
+        .split(RegExp(r'[\n\r。！？!?；;]'))
+        .map((part) => part.trim())
+        .where((part) => part.isNotEmpty)
+        .toList(growable: false);
+    if (coarse.isEmpty) return const [];
+
+    final fragments = <String>[];
+    for (final part in coarse) {
+      if (part.runes.length <= 54) {
+        fragments.add(part);
+        continue;
+      }
+      final chars = part.runes.toList(growable: false);
+      for (var i = 0; i < chars.length; i += 24) {
+        final end = min(i + 54, chars.length);
+        final slice = String.fromCharCodes(chars.sublist(i, end)).trim();
+        if (slice.isNotEmpty) {
+          fragments.add(slice);
+        }
+        if (end == chars.length) break;
+      }
+    }
+    return fragments;
+  }
+
+  double _semanticFragmentScore({
+    required String query,
+    required String fragment,
+  }) {
+    final normalizedQuery = _normalizeSemanticText(query);
+    final normalizedFragment = _normalizeSemanticText(fragment);
+    if (normalizedQuery.isEmpty || normalizedFragment.isEmpty) return 0;
+
+    var score = 0.0;
+    if (normalizedFragment.contains(normalizedQuery)) {
+      score += 0.52;
+    }
+
+    final queryRunes = normalizedQuery.runes.toSet();
+    if (queryRunes.isNotEmpty) {
+      var hit = 0;
+      for (final rune in queryRunes) {
+        final char = String.fromCharCode(rune);
+        if (normalizedFragment.contains(char)) {
+          hit += 1;
+        }
+      }
+      score += (hit / queryRunes.length) * 0.24;
+    }
+
+    final queryTokens = _extractSemanticTokens(query);
+    final fragmentTokens = _extractSemanticTokens(fragment).toSet();
+    if (queryTokens.isNotEmpty && fragmentTokens.isNotEmpty) {
+      var overlap = 0;
+      for (final token in queryTokens) {
+        if (fragmentTokens.contains(token)) {
+          overlap += 1;
+        }
+      }
+      score += (overlap / queryTokens.length) * 0.24;
+    }
+    return score.clamp(0.0, 1.0);
+  }
+
+  String _normalizeSemanticText(String input) {
+    return input
+        .toLowerCase()
+        .replaceAll(RegExp(r'\s+'), '')
+        .replaceAll(RegExp(r'[^\u4e00-\u9fffa-z0-9]'), '');
+  }
+
+  List<String> _extractSemanticTokens(String input) {
+    final lower = input.toLowerCase();
+    final tokens = <String>[];
+
+    final latinMatches = RegExp(r'[a-z0-9]+').allMatches(lower);
+    for (final match in latinMatches) {
+      final token = match.group(0);
+      if (token == null || token.length < 2) continue;
+      tokens.add(token);
+    }
+
+    final cjk = lower.replaceAll(RegExp(r'[^\u4e00-\u9fff]'), '');
+    if (cjk.length >= 2) {
+      for (var i = 0; i < cjk.length - 1; i++) {
+        tokens.add(cjk.substring(i, i + 2));
+      }
+    } else if (cjk.isNotEmpty) {
+      tokens.add(cjk);
+    }
+
+    return tokens;
+  }
+
   int _normalizedLength(String query) {
     return query.replaceAll(RegExp(r'\s+'), '').runes.length;
   }
@@ -304,13 +587,14 @@ class Timeline extends _$Timeline {
     required String query,
     required VectorDiary item,
     required double similarity,
+    required double threshold,
   }) {
-    if (similarity.isNaN || similarity < 0.60) {
+    if (similarity.isNaN || similarity < threshold) {
       return false;
     }
 
     final normalized = query.replaceAll(RegExp(r'\s+'), '');
-    if (normalized.runes.length <= 2 && similarity < 0.72) {
+    if (normalized.runes.length <= 2 && similarity < (threshold + 0.12)) {
       return false;
     }
 
@@ -320,12 +604,20 @@ class Timeline extends _$Timeline {
       final hasOverlap = normalized.runes.any(
         (code) => combinedText.contains(String.fromCharCode(code)),
       );
-      if (!hasOverlap && similarity < 0.80) {
+      if (!hasOverlap && similarity < (threshold + 0.20)) {
         return false;
       }
     }
 
     return true;
+  }
+
+  double _dynamicSimilarityThreshold(String query) {
+    final length = _normalizedLength(query);
+    if (length >= 12) return 0.50;
+    if (length >= 8) return 0.54;
+    if (length >= 4) return 0.58;
+    return 0.60;
   }
 
   double _cosineSimilarity(Float32List a, Float32List b) {

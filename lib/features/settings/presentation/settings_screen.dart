@@ -32,6 +32,10 @@ class SettingsScreen extends ConsumerStatefulWidget {
 
 class _SettingsScreenState extends ConsumerState<SettingsScreen> {
   AppLocalizations get l10n => AppLocalizations.of(context);
+  static const int _betaInviteTapTarget = 7;
+
+  int _aboutBrandTapCount = 0;
+  DateTime? _lastAboutBrandTapAt;
 
   Future<void> _editAvatar() async {
     final source = await _pickImageSource();
@@ -133,6 +137,103 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     if (mounted) {
       setState(() {});
     }
+  }
+
+  void _handleAboutBrandTap() {
+    final now = DateTime.now();
+    final lastTapAt = _lastAboutBrandTapAt;
+    if (lastTapAt == null ||
+        now.difference(lastTapAt) > const Duration(seconds: 4)) {
+      _aboutBrandTapCount = 0;
+    }
+
+    _lastAboutBrandTapAt = now;
+    _aboutBrandTapCount += 1;
+    if (_aboutBrandTapCount < _betaInviteTapTarget) {
+      return;
+    }
+
+    _aboutBrandTapCount = 0;
+    _lastAboutBrandTapAt = null;
+    _showBetaInviteDialog();
+  }
+
+  Future<void> _showBetaInviteDialog() async {
+    final inputController = TextEditingController();
+    final inputFocusNode = FocusNode();
+    final inviteCode = await showDialog<String?>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: Text(
+          _i18n(
+            zhHans: '输入内测邀请码',
+            zhHant: '輸入內測邀請碼',
+            en: 'Enter Beta Invite Code',
+          ),
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              _i18n(
+                zhHans: '加入内测后，你可以优先体验新功能。',
+                zhHant: '加入內測後，你可以優先體驗新功能。',
+                en: 'Join beta to access upcoming features early.',
+              ),
+            ),
+            const SizedBox(height: 6),
+            Text(
+              _i18n(
+                zhHans: '包括更强搜索、实验性 AI 能力和界面优化。',
+                zhHant: '包含更強搜尋、實驗性 AI 能力與介面優化。',
+                en: 'Includes enhanced search, experimental AI, and UI updates.',
+              ),
+            ),
+            const SizedBox(height: 12),
+            TextField(
+              controller: inputController,
+              focusNode: inputFocusNode,
+              autofocus: true,
+              onTap: () => requestKeyboardFocus(dialogContext, inputFocusNode),
+              decoration: InputDecoration(
+                border: const OutlineInputBorder(),
+                hintText: _i18n(
+                  zhHans: '请输入邀请码',
+                  zhHant: '請輸入邀請碼',
+                  en: 'Enter invite code',
+                ),
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(dialogContext),
+            child: Text(_i18n(zhHans: '取消', zhHant: '取消', en: 'Cancel')),
+          ),
+          FilledButton(
+            onPressed: () =>
+                Navigator.pop(dialogContext, inputController.text.trim()),
+            child: Text(_i18n(zhHans: '激活', zhHant: '啟用', en: 'Activate')),
+          ),
+        ],
+      ),
+    );
+
+    inputController.dispose();
+    inputFocusNode.dispose();
+
+    if (!mounted) return;
+    if (inviteCode == null || inviteCode.isEmpty) return;
+    ref.read(settingsProvider.notifier).activateBetaAccess(inviteCode);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          _i18n(zhHans: '内测已激活', zhHant: '內測已啟用', en: 'Beta activated'),
+        ),
+      ),
+    );
   }
 
   @override
@@ -350,7 +451,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
             child: DropdownButtonFormField<ChatModelProvider>(
-              value: settings.chatModelProvider,
+              initialValue: settings.chatModelProvider,
               decoration: InputDecoration(
                 border: const OutlineInputBorder(),
                 labelText: _i18n(
@@ -694,7 +795,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
               child: DropdownButtonFormField<CustomLlmProtocol>(
-                value: settings.customLlmProtocol,
+                initialValue: settings.customLlmProtocol,
                 decoration: InputDecoration(
                   border: const OutlineInputBorder(),
                   labelText: _i18n(
@@ -1046,12 +1147,9 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             leading: Icon(Icons.info),
             title: Text(_i18n(zhHans: '拾光', zhHant: '拾光', en: 'Shiguang')),
             subtitle: Text(
-              _i18n(
-                zhHans: '版本 1.0.0',
-                zhHant: '版本 1.0.0',
-                en: 'Version 1.0.0',
-              ),
+              '${_i18n(zhHans: '版本 1.0.0', zhHant: '版本 1.0.0', en: 'Version 1.0.0')}\n${settings.betaAccessEnabled ? _i18n(zhHans: '内测版已激活', zhHant: '內測版已啟用', en: 'Beta enabled') : _i18n(zhHans: '连点 7 次可加入内测', zhHant: '連點 7 次可加入內測', en: 'Tap 7 times to join beta')}',
             ),
+            onTap: _handleAboutBrandTap,
           ),
           ListTile(
             leading: const Icon(Icons.storage),
@@ -2123,8 +2221,8 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
     final dx = (viewportSize.width - imageWidth * scale) / 2;
     final dy = (viewportSize.height - imageHeight * scale) / 2;
     _controller.value = Matrix4.identity()
-      ..translate(dx, dy)
-      ..scale(scale);
+      ..translateByDouble(dx, dy, 0, 1)
+      ..scaleByDouble(scale, scale, 1, 1);
     _lastViewportSize = viewportSize;
   }
 
@@ -2151,8 +2249,8 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
     final dx = (viewport.width - imageWidth * requiredScale) / 2;
     final dy = (viewport.height - imageHeight * requiredScale) / 2;
     _controller.value = Matrix4.identity()
-      ..translate(dx, dy)
-      ..scale(requiredScale);
+      ..translateByDouble(dx, dy, 0, 1)
+      ..scaleByDouble(requiredScale, requiredScale, 1, 1);
   }
 
   void _rotateClockwise() {
@@ -2174,7 +2272,12 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
     }
     setState(() => _isSaving = true);
 
+    ui.Image? fullImage;
+    ui.Image? cropped;
+    var popped = false;
+
     try {
+      await Future<void>.delayed(const Duration(milliseconds: 16));
       final boundary =
           _viewerKey.currentContext?.findRenderObject()
               as RenderRepaintBoundary?;
@@ -2196,8 +2299,8 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
         return;
       }
 
-      final safePixelRatio = pixelRatio.clamp(1.0, 3.0).toDouble();
-      final fullImage = await boundary.toImage(pixelRatio: safePixelRatio);
+      final safePixelRatio = pixelRatio.clamp(1.0, 2.0).toDouble();
+      fullImage = await boundary.toImage(pixelRatio: safePixelRatio);
       final sourceRect =
           Rect.fromLTWH(
             cropRect.left * safePixelRatio,
@@ -2230,7 +2333,7 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
         sourceRect.height,
       );
       canvas.drawImageRect(fullImage, sourceRect, targetRect, Paint());
-      final cropped = await recorder.endRecording().toImage(
+      cropped = await recorder.endRecording().toImage(
         targetRect.width.round(),
         targetRect.height.round(),
       );
@@ -2257,6 +2360,7 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
       await file.writeAsBytes(bytes, flush: true);
 
       if (!mounted) return;
+      popped = true;
       Navigator.pop(context, file.path);
     } catch (_) {
       if (!mounted) return;
@@ -2266,7 +2370,9 @@ class _AvatarCropperScreenState extends State<_AvatarCropperScreen> {
         en: 'Crop failed. Please try again.',
       );
     } finally {
-      if (mounted) {
+      fullImage?.dispose();
+      cropped?.dispose();
+      if (mounted && !popped) {
         setState(() => _isSaving = false);
       }
     }

@@ -607,6 +607,12 @@ class AppLocalizationsPt extends AppLocalizations {
       'ASR indisponível. Gravação ainda ativa.';
 
   @override
+  String get voiceListening => 'Listening...';
+
+  @override
+  String get tapToStartVoice => 'Tap to start voice input';
+
+  @override
   String get writeYourEntry => 'Escreva a sua entrada...';
 
   @override
@@ -715,6 +721,81 @@ class AppLocalizationsPt extends AppLocalizations {
   String importFailed(String error) {
     return 'Falha ao importar: $error';
   }
+
+  @override
+  String get timelineTab => 'Timeline';
+
+  @override
+  String get searchAiTab => 'Search/AI';
+
+  @override
+  String get calendarTab => 'Calendar';
+
+  @override
+  String get searchAiTitle => 'Search & AI';
+
+  @override
+  String get calendarStatsTitle => 'Calendar & Stats';
+
+  @override
+  String get onThisDay => 'On This Day';
+
+  @override
+  String get weekLabel => 'Week';
+
+  @override
+  String dayGap(int days) {
+    return '$days-day gap';
+  }
+
+  @override
+  String get openAiChat => 'Open AI Chat';
+
+  @override
+  String get validateAiQualityHint =>
+      'Ask questions and validate response quality';
+
+  @override
+  String get tapToOpenMarkdownPreview => 'Tap to open markdown preview';
+
+  @override
+  String get totalEntries => 'Entries';
+
+  @override
+  String get streakDays => 'Streak';
+
+  @override
+  String get totalChars => 'Chars';
+
+  @override
+  String get activityCalendarTitle => 'Activity Calendar';
+
+  @override
+  String get activityCalendarHint =>
+      'Darker cells mean more entries on that day.';
+
+  @override
+  String get noActivityYet => 'No activity yet';
+
+  @override
+  String dayEntriesTooltip(int day, int count) {
+    return '$day · $count entries';
+  }
+
+  @override
+  String get noEntryOnThisDay => 'No entries on this date in previous years';
+
+  @override
+  String get networkResult => 'Network Result';
+
+  @override
+  String get noPreviewContent => 'No preview content';
+
+  @override
+  String get imageMemoryPlain => 'Image memory';
+
+  @override
+  String get shareAction => 'Share';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).

@@ -1395,6 +1395,18 @@ abstract class AppLocalizations {
   /// **'ASR unavailable. Recording is still active.'**
   String get asrUnavailableRecordingActive;
 
+  /// No description provided for @voiceListening.
+  ///
+  /// In en, this message translates to:
+  /// **'Listening...'**
+  String get voiceListening;
+
+  /// No description provided for @tapToStartVoice.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to start voice input'**
+  String get tapToStartVoice;
+
   /// No description provided for @writeYourEntry.
   ///
   /// In en, this message translates to:
@@ -1538,6 +1550,144 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Import failed: {error}'**
   String importFailed(String error);
+
+  /// No description provided for @timelineTab.
+  ///
+  /// In en, this message translates to:
+  /// **'Timeline'**
+  String get timelineTab;
+
+  /// No description provided for @searchAiTab.
+  ///
+  /// In en, this message translates to:
+  /// **'Search/AI'**
+  String get searchAiTab;
+
+  /// No description provided for @calendarTab.
+  ///
+  /// In en, this message translates to:
+  /// **'Calendar'**
+  String get calendarTab;
+
+  /// No description provided for @searchAiTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Search & AI'**
+  String get searchAiTitle;
+
+  /// No description provided for @calendarStatsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Calendar & Stats'**
+  String get calendarStatsTitle;
+
+  /// No description provided for @onThisDay.
+  ///
+  /// In en, this message translates to:
+  /// **'On This Day'**
+  String get onThisDay;
+
+  /// No description provided for @weekLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Week'**
+  String get weekLabel;
+
+  /// No description provided for @dayGap.
+  ///
+  /// In en, this message translates to:
+  /// **'{days}-day gap'**
+  String dayGap(int days);
+
+  /// No description provided for @openAiChat.
+  ///
+  /// In en, this message translates to:
+  /// **'Open AI Chat'**
+  String get openAiChat;
+
+  /// No description provided for @validateAiQualityHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask questions and validate response quality'**
+  String get validateAiQualityHint;
+
+  /// No description provided for @tapToOpenMarkdownPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to open markdown preview'**
+  String get tapToOpenMarkdownPreview;
+
+  /// No description provided for @totalEntries.
+  ///
+  /// In en, this message translates to:
+  /// **'Entries'**
+  String get totalEntries;
+
+  /// No description provided for @streakDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Streak'**
+  String get streakDays;
+
+  /// No description provided for @totalChars.
+  ///
+  /// In en, this message translates to:
+  /// **'Chars'**
+  String get totalChars;
+
+  /// No description provided for @activityCalendarTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Activity Calendar'**
+  String get activityCalendarTitle;
+
+  /// No description provided for @activityCalendarHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Darker cells mean more entries on that day.'**
+  String get activityCalendarHint;
+
+  /// No description provided for @noActivityYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No activity yet'**
+  String get noActivityYet;
+
+  /// No description provided for @dayEntriesTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'{day} · {count} entries'**
+  String dayEntriesTooltip(int day, int count);
+
+  /// No description provided for @noEntryOnThisDay.
+  ///
+  /// In en, this message translates to:
+  /// **'No entries on this date in previous years'**
+  String get noEntryOnThisDay;
+
+  /// No description provided for @networkResult.
+  ///
+  /// In en, this message translates to:
+  /// **'Network Result'**
+  String get networkResult;
+
+  /// No description provided for @noPreviewContent.
+  ///
+  /// In en, this message translates to:
+  /// **'No preview content'**
+  String get noPreviewContent;
+
+  /// No description provided for @imageMemoryPlain.
+  ///
+  /// In en, this message translates to:
+  /// **'Image memory'**
+  String get imageMemoryPlain;
+
+  /// No description provided for @shareAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get shareAction;
 }
 
 class _AppLocalizationsDelegate

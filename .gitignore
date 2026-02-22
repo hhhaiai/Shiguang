@@ -58,3 +58,5 @@ app.*.map.json
 /third_party/**/android/local.properties
 /third_party/**/android/.gradle/
 /third_party/**/android/build/
+
+imgs/

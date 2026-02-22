@@ -7,13 +7,31 @@ class WebSearchResultItem {
   final String snippet;
   final String url;
   final String source;
+  final String markdown;
 
   const WebSearchResultItem({
     required this.title,
     required this.snippet,
     required this.url,
     required this.source,
+    this.markdown = '',
   });
+
+  WebSearchResultItem copyWith({
+    String? title,
+    String? snippet,
+    String? url,
+    String? source,
+    String? markdown,
+  }) {
+    return WebSearchResultItem(
+      title: title ?? this.title,
+      snippet: snippet ?? this.snippet,
+      url: url ?? this.url,
+      source: source ?? this.source,
+      markdown: markdown ?? this.markdown,
+    );
+  }
 }
 
 class WebSearchService {
@@ -111,9 +129,123 @@ class WebSearchService {
 
       parseRelated(decoded['RelatedTopics']);
 
-      return dedup.values.take(cappedLimit).toList(growable: false);
+      final baseItems = dedup.values.take(cappedLimit).toList(growable: false);
+      return _withMarkdownPreview(baseItems);
     } catch (_) {
       return const [];
     }
+  }
+
+  Future<List<WebSearchResultItem>> _withMarkdownPreview(
+    List<WebSearchResultItem> items,
+  ) async {
+    if (items.isEmpty) return const [];
+
+    final enriched = <WebSearchResultItem>[];
+    for (var i = 0; i < items.length; i++) {
+      final item = items[i];
+      // Limit full-page fetch count to keep search responsive.
+      if (i >= 4) {
+        enriched.add(item);
+        continue;
+      }
+
+      final markdown = await _fetchMarkdown(item.url);
+      if (markdown.isEmpty) {
+        enriched.add(item);
+        continue;
+      }
+      enriched.add(item.copyWith(markdown: markdown));
+    }
+    return enriched;
+  }
+
+  Future<String> _fetchMarkdown(String url) async {
+    try {
+      final uri = Uri.tryParse(url);
+      if (uri == null || !uri.hasScheme || !uri.hasAuthority) {
+        return '';
+      }
+
+      final response = await http
+          .get(
+            uri,
+            headers: const <String, String>{
+              'User-Agent':
+                  'Mozilla/5.0 (compatible; ShiguangBot/1.0; +https://shiguang.local)',
+            },
+          )
+          .timeout(const Duration(seconds: 8));
+      if (response.statusCode < 200 || response.statusCode >= 300) {
+        return '';
+      }
+
+      final contentType = response.headers['content-type'] ?? '';
+      if (!contentType.contains('text/html')) {
+        return '';
+      }
+
+      final body = utf8.decode(response.bodyBytes, allowMalformed: true);
+      return _htmlToMarkdown(body);
+    } catch (_) {
+      return '';
+    }
+  }
+
+  String _htmlToMarkdown(String html) {
+    if (html.trim().isEmpty) return '';
+
+    var text = html
+        .replaceAll(
+          RegExp(
+            r'<script[^>]*>.*?</script>',
+            caseSensitive: false,
+            dotAll: true,
+          ),
+          '',
+        )
+        .replaceAll(
+          RegExp(
+            r'<style[^>]*>.*?</style>',
+            caseSensitive: false,
+            dotAll: true,
+          ),
+          '',
+        )
+        .replaceAll(
+          RegExp(r'<head[^>]*>.*?</head>', caseSensitive: false, dotAll: true),
+          '',
+        )
+        .replaceAll(RegExp(r'<br\s*/?>', caseSensitive: false), '\n')
+        .replaceAll(RegExp(r'</p>', caseSensitive: false), '\n\n')
+        .replaceAll(RegExp(r'</div>', caseSensitive: false), '\n')
+        .replaceAll(RegExp(r'</h[1-6]>', caseSensitive: false), '\n\n')
+        .replaceAll(RegExp(r'<li[^>]*>', caseSensitive: false), '- ')
+        .replaceAll(RegExp(r'</li>', caseSensitive: false), '\n')
+        .replaceAll(RegExp(r'<[^>]+>', dotAll: true), ' ');
+
+    const htmlEntities = <String, String>{
+      '&nbsp;': ' ',
+      '&amp;': '&',
+      '&lt;': '<',
+      '&gt;': '>',
+      '&quot;': '"',
+      '&#39;': '\'',
+    };
+    htmlEntities.forEach((entity, char) {
+      text = text.replaceAll(entity, char);
+    });
+
+    text = text
+        .replaceAll(RegExp(r'\r\n?'), '\n')
+        .replaceAll(RegExp(r'[ \t]+'), ' ')
+        .replaceAll(RegExp(r'\n{3,}'), '\n\n')
+        .trim();
+
+    if (text.length > 6000) {
+      text = '${text.substring(0, 6000)}\n\n...';
+    }
+
+    return text;
   }
 }

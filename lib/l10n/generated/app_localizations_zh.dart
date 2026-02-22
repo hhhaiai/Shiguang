@@ -576,6 +576,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get asrUnavailableRecordingActive => 'ASR 不可用，录音仍在进行中。';
 
   @override
+  String get voiceListening => '语音录入中';
+
+  @override
+  String get tapToStartVoice => '点击开始语音录入';
+
+  @override
   String get writeYourEntry => '写下你的文章...';
 
   @override
@@ -682,6 +688,79 @@ class AppLocalizationsZh extends AppLocalizations {
   String importFailed(String error) {
     return '导入失败: $error';
   }
+
+  @override
+  String get timelineTab => '时间轴';
+
+  @override
+  String get searchAiTab => '搜索/AI';
+
+  @override
+  String get calendarTab => '日历';
+
+  @override
+  String get searchAiTitle => '搜索与 AI';
+
+  @override
+  String get calendarStatsTitle => '日历与统计';
+
+  @override
+  String get onThisDay => '往昔今日';
+
+  @override
+  String get weekLabel => '周';
+
+  @override
+  String dayGap(int days) {
+    return '空档 $days 天';
+  }
+
+  @override
+  String get openAiChat => '进入 AI 对话';
+
+  @override
+  String get validateAiQualityHint => '在这里提问、压测和验证回复质量';
+
+  @override
+  String get tapToOpenMarkdownPreview => '点击查看 Markdown 预览';
+
+  @override
+  String get totalEntries => '总记录';
+
+  @override
+  String get streakDays => '连续天数';
+
+  @override
+  String get totalChars => '总字数';
+
+  @override
+  String get activityCalendarTitle => '记录活跃度';
+
+  @override
+  String get activityCalendarHint => '颜色越深表示当天记录越多';
+
+  @override
+  String get noActivityYet => '暂无记录';
+
+  @override
+  String dayEntriesTooltip(int day, int count) {
+    return '$day日 · $count条';
+  }
+
+  @override
+  String get noEntryOnThisDay => '往年的今天还没有日记';
+
+  @override
+  String get networkResult => '网络结果';
+
+  @override
+  String get noPreviewContent => '没有可预览内容';
+
+  @override
+  String get imageMemoryPlain => '图片记录';
+
+  @override
+  String get shareAction => '分享';
 }
 
 /// The translations for Chinese, as used in Hong Kong (`zh_HK`).

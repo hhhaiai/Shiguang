@@ -207,6 +207,8 @@
   "strikethrough": "Strikethrough",
   "image": "Image",
   "asrUnavailableRecordingActive": "ASR unavailable. Recording is still active.",
+  "voiceListening": "Listening...",
+  "tapToStartVoice": "Tap to start voice input",
   "writeYourEntry": "Write your entry...",
   "writeYourContent": "Write your content...",
 
@@ -347,5 +349,39 @@
     "placeholders": {
       "error": {"type": "String"}
     }
-  }
+  },
+  "timelineTab": "Timeline",
+  "searchAiTab": "Search/AI",
+  "calendarTab": "Calendar",
+  "searchAiTitle": "Search & AI",
+  "calendarStatsTitle": "Calendar & Stats",
+  "onThisDay": "On This Day",
+  "weekLabel": "Week",
+  "dayGap": "{days}-day gap",
+  "@dayGap": {
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "openAiChat": "Open AI Chat",
+  "validateAiQualityHint": "Ask questions and validate response quality",
+  "tapToOpenMarkdownPreview": "Tap to open markdown preview",
+  "totalEntries": "Entries",
+  "streakDays": "Streak",
+  "totalChars": "Chars",
+  "activityCalendarTitle": "Activity Calendar",
+  "activityCalendarHint": "Darker cells mean more entries on that day.",
+  "noActivityYet": "No activity yet",
+  "dayEntriesTooltip": "{day} · {count} entries",
+  "@dayEntriesTooltip": {
+    "placeholders": {
+      "day": {"type": "int"},
+      "count": {"type": "int"}
+    }
+  },
+  "noEntryOnThisDay": "No entries on this date in previous years",
+  "networkResult": "Network Result",
+  "noPreviewContent": "No preview content",
+  "imageMemoryPlain": "Image memory",
+  "shareAction": "Share"
 }

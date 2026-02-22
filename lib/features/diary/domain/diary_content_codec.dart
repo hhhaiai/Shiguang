@@ -1,3 +1,5 @@
+import 'diary_style_markers.dart';
+
 class DiaryContentBlock {
   final String? text;
   final String? imagePath;
@@ -22,6 +24,13 @@ class DiaryContentCodec {
   static final RegExp _richImagePattern = RegExp(
     r'!\[[^\]]*\]\(([^)]+)\)|\[\[(?:img|mg):([^\]]+)\]\]',
   );
+  static final RegExp _stripHtmlTagPattern = RegExp(
+    r'</?(?:strong|b|em|i|del|strike|s|code)>',
+    caseSensitive: false,
+  );
+  static final RegExp _inlineStylePattern = RegExp(
+    r'(\*\*[^*\n]+?\*\*|__[^_\n]+?__|~~[^~\n]+?~~|`[^`\n]+?`|\*(?!\s)[^*\n]+?\*(?<!\s)|_(?!\s)[^_\n]+?_(?<!\s))',
+  );
   static const String _objectReplacementChar = '\uFFFC';
 
   static String _safeDecodePath(String raw) {
@@ -44,7 +53,7 @@ class DiaryContentCodec {
       if (text != null) {
         final cleaned = text.replaceAll(_objectReplacementChar, '');
         normalizedBlocks.add(DiaryContentBlock.text(cleaned));
-        final trimmed = cleaned.trim();
+        final trimmed = toPlainText(cleaned).trim();
         if (trimmed.isNotEmpty) {
           visibleTextParts.add(trimmed);
         }
@@ -118,5 +127,38 @@ class DiaryContentCodec {
     if (tokens.isEmpty) return normalizedText;
     if (normalizedText.isEmpty) return tokens;
     return '$normalizedText\n$tokens';
+  }
+
+  static String toPlainText(String source) {
+    if (source.isEmpty) return source;
+    var normalized = source.replaceAll(_stripHtmlTagPattern, '');
+    normalized = DiaryStyleMarkers.stripAll(normalized);
+    normalized = normalized.replaceAllMapped(_inlineStylePattern, (match) {
+      final token = match.group(0) ?? '';
+      if (token.startsWith('**') && token.endsWith('**') && token.length > 4) {
+        return token.substring(2, token.length - 2);
+      }
+      if (token.startsWith('__') && token.endsWith('__') && token.length > 4) {
+        return token.substring(2, token.length - 2);
+      }
+      if (token.startsWith('~~') && token.endsWith('~~') && token.length > 4) {
+        return token.substring(2, token.length - 2);
+      }
+      if (token.startsWith('`') && token.endsWith('`') && token.length > 2) {
+        return token.substring(1, token.length - 1);
+      }
+      if (token.startsWith('*') && token.endsWith('*') && token.length > 2) {
+        return token.substring(1, token.length - 1);
+      }
+      if (token.startsWith('_') && token.endsWith('_') && token.length > 2) {
+        return token.substring(1, token.length - 1);
+      }
+      return token;
+    });
+    normalized = normalized.replaceAllMapped(
+      RegExp(r'^\s*#{1,3}\s+', multiLine: true),
+      (_) => '',
+    );
+    return normalized;
   }
 }

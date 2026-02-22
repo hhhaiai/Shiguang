@@ -165,24 +165,27 @@ Server → Client：
 
 ## 8. 代码结构
 
-```
-aether_diary/
+```text
+PersonalAIBrain/
 ├── lib/
 │   ├── main.dart
 │   ├── app/ (app + router)
 │   ├── core/objectbox/ (service + providers)
 │   ├── features/
 │   │   ├── auth/ (LocalAccount + PIN)
-│   │   └── diary/ (VectorDiary + timeline + ai adapters)
+│   │   ├── diary/ (VectorDiary + timeline + ai adapters)
+│   │   ├── reminder/
+│   │   └── settings/
 │   ├── objectbox.g.dart        # 生成代码，禁止改
 │   └── objectbox-model.json
-├── native/
-│   └── sensevoice_ws_server/   # C++ WS 服务（ONNX Runtime）
-└── assets/
-    └── models/                 # 本地模型文件（可离线）
-        ├── sensevoice/
-        ├── embedding/
-        └── llm/
+├── assets/
+│   └── models/                 # 本地模型文件（可离线）
+│       ├── sensevoice-onnx/
+│       ├── embedding/
+│       └── llm/
+└── scripts/
+    ├── llm_server.py
+    └── qwen_server.py
 ```
 
 ---
@@ -300,7 +303,7 @@ class LocalReminder {
 ## 13. 开发命令
 
 ```bash
-cd aether_diary
+# 已在仓库根目录时无需 cd
 flutter pub get
 dart run build_runner build --delete-conflicting-outputs
 flutter devices

@@ -252,6 +252,8 @@ class AppSettings {
   final CustomLlmProtocol customLlmProtocol;
 
   final VoiceRecognitionEngine voiceRecognitionEngine;
+  final bool betaAccessEnabled;
+  final String betaInviteCode;
 
   const AppSettings({
     this.voiceAiEndpoint = defaultVoiceAiEndpoint,
@@ -281,6 +283,8 @@ class AppSettings {
     this.customModel = defaultCustomModel,
     this.customLlmProtocol = CustomLlmProtocol.openai,
     this.voiceRecognitionEngine = VoiceRecognitionEngine.localModel,
+    this.betaAccessEnabled = false,
+    this.betaInviteCode = '',
   });
 
   static bool get _allowPrivateNetwork => !Platform.isAndroid;
@@ -368,6 +372,8 @@ class AppSettings {
     String? customModel,
     CustomLlmProtocol? customLlmProtocol,
     VoiceRecognitionEngine? voiceRecognitionEngine,
+    bool? betaAccessEnabled,
+    String? betaInviteCode,
   }) {
     return AppSettings(
       voiceAiEndpoint: voiceAiEndpoint ?? this.voiceAiEndpoint,
@@ -399,6 +405,8 @@ class AppSettings {
       customLlmProtocol: customLlmProtocol ?? this.customLlmProtocol,
       voiceRecognitionEngine:
           voiceRecognitionEngine ?? this.voiceRecognitionEngine,
+      betaAccessEnabled: betaAccessEnabled ?? this.betaAccessEnabled,
+      betaInviteCode: betaInviteCode ?? this.betaInviteCode,
     );
   }
 }
@@ -526,6 +534,11 @@ class SettingsNotifier extends StateNotifier<AppSettings> {
         (protocol) => protocol.name == customProtocolRaw,
         orElse: () => CustomLlmProtocol.openai,
       );
+      final betaAccessEnabled = decoded['betaAccessEnabled'] is bool
+          ? decoded['betaAccessEnabled'] as bool
+          : false;
+      final betaInviteCode =
+          (decoded['betaInviteCode'] as String?)?.trim() ?? '';
       final derivedPreferLocalAi =
           chatModelProvider == ChatModelProvider.local &&
           voiceRecognitionEngine == VoiceRecognitionEngine.localModel;
@@ -579,6 +592,8 @@ class SettingsNotifier extends StateNotifier<AppSettings> {
         customModel: customModel,
         customLlmProtocol: customLlmProtocol,
         voiceRecognitionEngine: voiceRecognitionEngine,
+        betaAccessEnabled: betaAccessEnabled,
+        betaInviteCode: betaInviteCode,
       );
     } catch (_) {
       // Keep defaults if local settings cannot be restored.
@@ -614,6 +629,8 @@ class SettingsNotifier extends StateNotifier<AppSettings> {
       'customModel': state.customModel,
       'customLlmProtocol': state.customLlmProtocol.name,
       'voiceRecognitionEngine': state.voiceRecognitionEngine.name,
+      'betaAccessEnabled': state.betaAccessEnabled,
+      'betaInviteCode': state.betaInviteCode,
     };
     try {
       await _secureStorage.write(
@@ -973,6 +990,14 @@ class SettingsNotifier extends StateNotifier<AppSettings> {
 
   void clearSearchHistory() {
     _setState(state.copyWith(searchHistory: const []));
+  }
+
+  void activateBetaAccess(String inviteCode) {
+    final normalized = inviteCode.trim();
+    if (normalized.isEmpty) return;
+    _setState(
+      state.copyWith(betaAccessEnabled: true, betaInviteCode: normalized),
+    );
   }
 }
 

@@ -27,13 +27,14 @@ class _ReminderScreenState extends ConsumerState<ReminderScreen> {
   }
 
   void _addReminder() {
-    final l10n = AppLocalizations.of(context);
     final title = _titleController.text.trim();
     final description = _descriptionController.text.trim();
 
     if (title.isEmpty) return;
 
-    ref.read(reminderProvider.notifier).createReminder(
+    ref
+        .read(reminderProvider.notifier)
+        .createReminder(
           title: title,
           body: description.isNotEmpty ? description : null,
           triggerAt: DateTime.now().add(const Duration(hours: 1)),
@@ -49,9 +50,7 @@ class _ReminderScreenState extends ConsumerState<ReminderScreen> {
     final reminders = ref.watch(reminderProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.reminders),
-      ),
+      appBar: AppBar(title: Text(l10n.reminders)),
       body: reminders.isEmpty
           ? Center(child: Text(l10n.noReminders))
           : ListView.builder(
@@ -60,9 +59,7 @@ class _ReminderScreenState extends ConsumerState<ReminderScreen> {
                 final reminder = reminders[index];
                 return ListTile(
                   title: Text(reminder.title),
-                  subtitle: reminder.body != null
-                      ? Text(reminder.body!)
-                      : null,
+                  subtitle: reminder.body != null ? Text(reminder.body!) : null,
                   trailing: IconButton(
                     icon: const Icon(Icons.delete),
                     onPressed: () {
