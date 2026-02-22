@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
 
@@ -5,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gal/gal.dart';
 import 'package:go_router/go_router.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
@@ -41,6 +41,8 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
   final _screenshotController = ScreenshotController();
   final _contentScrollController = ScrollController();
   late final AnimationController _pulseController;
+  OverlayEntry? _shareStatusOverlay;
+  int _shareStatusOverlaySeq = 0;
 
   @override
   void initState() {
@@ -56,6 +58,8 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
 
   @override
   void dispose() {
+    _shareStatusOverlay?.remove();
+    _shareStatusOverlay = null;
     _contentScrollController.dispose();
     _pulseController.dispose();
     super.dispose();
@@ -65,7 +69,9 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
     final diary = ref.read(timelineProvider.notifier).getDiary(widget.diaryId);
     if (diary == null) return;
     final content = DiaryContentCodec.decode(diary.rawText);
-    await _showSharePosterSheet(diary, content);
+    final traceId = _newShareTraceId(diary.id);
+    _shareTrace(traceId, 'share entry tapped');
+    await _showSharePosterSheet(diary, content, traceId: traceId);
   }
 
   void _editDiary() {
@@ -97,118 +103,337 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
     return en;
   }
 
+  String _newShareTraceId(int diaryId) =>
+      '$diaryId-${DateTime.now().millisecondsSinceEpoch}';
+
+  void _shareTrace(String traceId, String message) {
+    debugPrint('[SharePoster][$traceId] $message');
+  }
+
   Future<void> _showSharePosterSheet(
     VectorDiary diary,
-    DiaryContent content,
-  ) async {
+    DiaryContent content, {
+    required String traceId,
+  }) async {
+    const sheetHeightRatio = 0.8;
+    const sheetHorizontalPadding = 12.0;
+    const sheetTopPadding = 4.0;
+    const sheetBottomPadding = 14.0;
+    const actionsTopPadding = 10.0;
+    const actionsBottomPadding = 12.0;
+    const previewToActionsGap = 5.0;
+    const actionButtonHeight = 52.0;
+    const actionsHorizontalPadding = 10.0;
     final l10n = AppLocalizations.of(context);
-    return showModalBottomSheet<void>(
-      context: context,
-      isScrollControlled: true,
-      showDragHandle: true,
-      backgroundColor: const Color(0xFFECECF2),
-      builder: (sheetContext) {
-        final media = MediaQuery.of(sheetContext);
-        final previewHeight = media.size.height * (2 / 3);
-        final previewWidth = (media.size.width - 42).clamp(260.0, 390.0);
-        return SafeArea(
-          child: SizedBox(
-            height: media.size.height * 0.9,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(12, 4, 12, 14),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: previewHeight,
-                    child: Center(
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints(
-                          maxWidth: previewWidth.toDouble(),
-                          maxHeight: previewHeight,
-                        ),
-                        child: SingleChildScrollView(
-                          child: _buildSharePoster(
-                            diary,
-                            content,
-                            width: previewWidth.toDouble(),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: _buildSheetActionButton(
-                            icon: Icons.download_outlined,
-                            label: l10n.save,
-                            onPressed: () => _saveSharePoster(diary, content),
-                          ),
-                        ),
-                        const SizedBox(width: 12),
-                        Expanded(
-                          child: _buildSheetActionButton(
-                            icon: Icons.ios_share_outlined,
-                            label: l10n.shareAction,
-                            onPressed: () {
-                              Navigator.pop(sheetContext);
-                              _exportSharePoster(diary, content);
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+    final isSaving = ValueNotifier<bool>(false);
+    final previewScrollController = ScrollController();
+    final previewRenderWidth =
+        (MediaQuery.of(context).size.width - sheetHorizontalPadding * 2)
+            .clamp(260.0, 1200.0)
+            .toDouble();
+    _shareTrace(traceId, 'open share sheet and start pre-render');
+    final renderFuture =
+        _renderSharePosterPng(
+              diary,
+              content,
+              traceId: traceId,
+              stage: 'sheet_preview_render',
+              posterWidth: previewRenderWidth,
+            )
+            .then((bytes) {
+              _shareTrace(traceId, 'pre-render done, bytes=${bytes.length}');
+              return bytes;
+            })
+            .catchError((error, stackTrace) {
+              _shareTrace(traceId, 'pre-render failed: $error');
+              throw error;
+            });
+    try {
+      return await showModalBottomSheet<void>(
+        context: context,
+        isScrollControlled: true,
+        showDragHandle: true,
+        backgroundColor: const Color(0xFFECECF2),
+        builder: (sheetContext) {
+          final media = MediaQuery.of(sheetContext);
+          final sheetHeight = media.size.height * sheetHeightRatio;
+          final contentHeight =
+              sheetHeight - sheetTopPadding - sheetBottomPadding;
+          final actionSectionHeight =
+              actionsTopPadding + actionButtonHeight + actionsBottomPadding;
+          final previewHeight =
+              (contentHeight - actionSectionHeight - previewToActionsGap)
+                  .clamp(160.0, contentHeight)
+                  .toDouble();
+          return SafeArea(
+            child: SizedBox(
+              height: sheetHeight,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  sheetHorizontalPadding,
+                  sheetTopPadding,
+                  sheetHorizontalPadding,
+                  sheetBottomPadding,
+                ),
+                child: FutureBuilder<Uint8List>(
+                  future: renderFuture,
+                  builder: (context, snapshot) {
+                    final hasImage =
+                        snapshot.connectionState == ConnectionState.done &&
+                        snapshot.hasData;
+                    final imageBytes = snapshot.data;
+                    final hasError = snapshot.hasError;
+                    return ValueListenableBuilder<bool>(
+                      valueListenable: isSaving,
+                      builder: (context, saving, _) {
+                        return Column(
+                          children: [
+                            SizedBox(
+                              height: previewHeight,
+                              width: double.infinity,
+                              child: hasImage && imageBytes != null
+                                  ? Scrollbar(
+                                      controller: previewScrollController,
+                                      thumbVisibility: true,
+                                      thickness: 4,
+                                      radius: const Radius.circular(2),
+                                      child: SingleChildScrollView(
+                                        controller: previewScrollController,
+                                        physics: const BouncingScrollPhysics(
+                                          parent:
+                                              AlwaysScrollableScrollPhysics(),
+                                        ),
+                                        child: LayoutBuilder(
+                                          builder: (context, constraints) {
+                                            return Image.memory(
+                                              imageBytes,
+                                              width: constraints.maxWidth,
+                                              fit: BoxFit.fitWidth,
+                                              alignment: Alignment.topCenter,
+                                            );
+                                          },
+                                        ),
+                                      ),
+                                    )
+                                  : _buildShareLoadingView(
+                                      hasError: hasError,
+                                      errorText: hasError
+                                          ? l10n.shareFailed(
+                                              snapshot.error.toString(),
+                                            )
+                                          : null,
+                                    ),
+                            ),
+                            const SizedBox(height: previewToActionsGap),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                actionsHorizontalPadding,
+                                actionsTopPadding,
+                                actionsHorizontalPadding,
+                                actionsBottomPadding,
+                              ),
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: _buildSheetActionButton(
+                                      icon: saving
+                                          ? Icons.hourglass_top_rounded
+                                          : Icons.download_outlined,
+                                      label: saving
+                                          ? _posterI18n(
+                                              zhHans: '保存中...',
+                                              zhHant: '保存中...',
+                                              en: 'Saving...',
+                                            )
+                                          : l10n.save,
+                                      onPressed:
+                                          hasImage &&
+                                              imageBytes != null &&
+                                              !saving
+                                          ? () {
+                                              _shareTrace(
+                                                traceId,
+                                                'save button tapped, bytes=${imageBytes.length}',
+                                              );
+                                              isSaving.value = true;
+                                              unawaited(
+                                                _saveRenderedPoster(
+                                                  imageBytes,
+                                                  diaryId: diary.id,
+                                                  traceId: traceId,
+                                                ).whenComplete(() {
+                                                  isSaving.value = false;
+                                                }),
+                                              );
+                                            }
+                                          : null,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 12),
+                                  Expanded(
+                                    child: _buildSheetActionButton(
+                                      icon: Icons.ios_share_outlined,
+                                      label: l10n.shareAction,
+                                      onPressed:
+                                          hasImage &&
+                                              imageBytes != null &&
+                                              !saving
+                                          ? () {
+                                              _shareTrace(
+                                                traceId,
+                                                'share button tapped, bytes=${imageBytes.length}',
+                                              );
+                                              Navigator.pop(sheetContext);
+                                              unawaited(
+                                                _exportRenderedPoster(
+                                                  imageBytes,
+                                                  diaryId: diary.id,
+                                                  shareText: content.text,
+                                                  traceId: traceId,
+                                                ),
+                                              );
+                                            }
+                                          : null,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                ),
               ),
             ),
-          ),
-        );
-      },
+          );
+        },
+      );
+    } finally {
+      previewScrollController.dispose();
+      isSaving.dispose();
+    }
+  }
+
+  Widget _buildShareLoadingView({bool hasError = false, String? errorText}) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (!hasError) ...[
+              const SizedBox(
+                width: 34,
+                height: 34,
+                child: CircularProgressIndicator(strokeWidth: 2.8),
+              ),
+              const SizedBox(height: 14),
+              Text(
+                _posterI18n(
+                  zhHans: '正在生成分享图片...',
+                  zhHant: '正在生成分享圖片...',
+                  en: 'Rendering share image...',
+                ),
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 14,
+                  color: Color(0xFF666B76),
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ] else ...[
+              const Icon(
+                Icons.error_outline,
+                size: 32,
+                color: Colors.redAccent,
+              ),
+              const SizedBox(height: 10),
+              Text(
+                errorText ??
+                    _posterI18n(
+                      zhHans: '分享图片生成失败',
+                      zhHant: '分享圖片生成失敗',
+                      en: 'Failed to render share image',
+                    ),
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 13,
+                  color: Color(0xFF666B76),
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ],
+          ],
+        ),
+      ),
     );
   }
 
   Widget _buildSheetActionButton({
     required IconData icon,
     required String label,
-    required VoidCallback onPressed,
+    required VoidCallback? onPressed,
   }) {
     return SizedBox(
       height: 52,
       child: ElevatedButton.icon(
         style: ElevatedButton.styleFrom(
           elevation: 0,
-          backgroundColor: const Color(0xFFF6F6F8),
-          foregroundColor: const Color(0xFF7A808C),
+          backgroundColor: const Color(0xFFFFFFFF),
+          foregroundColor: const Color(0xFF222833),
+          disabledBackgroundColor: const Color(0xFFF0F1F4),
+          disabledForegroundColor: const Color(0xFFB8BDC8),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
-            side: const BorderSide(color: Color(0xFFE3E5EC)),
+            side: const BorderSide(color: Color(0xFFD6DAE3), width: 1.2),
           ),
-          textStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+          textStyle: const TextStyle(
+            fontWeight: FontWeight.w700,
+            fontSize: 17,
+            letterSpacing: 0.2,
+          ),
+          padding: const EdgeInsets.symmetric(horizontal: 14),
         ),
         onPressed: onPressed,
-        icon: Icon(icon, size: 18),
+        icon: Icon(icon, size: 20),
         label: Text(label),
       ),
     );
   }
 
-  Future<void> _exportSharePoster(
-    VectorDiary diary,
-    DiaryContent content,
-  ) async {
+  Future<void> _exportRenderedPoster(
+    Uint8List imageBytes, {
+    required int diaryId,
+    required String shareText,
+    required String traceId,
+  }) async {
     final l10n = AppLocalizations.of(context);
-
+    final totalStopwatch = Stopwatch()..start();
+    _shareTrace(traceId, 'export start');
     try {
-      final image = await _renderSharePosterPng(diary, content);
-      final file = await _writeSharePosterFile(image, diaryId: diary.id);
+      final file = await _writeSharePosterFile(
+        imageBytes,
+        diaryId: diaryId,
+        traceId: traceId,
+        stage: 'export_write_file',
+      );
+      _shareTrace(traceId, 'export invoke Share.shareXFiles');
       await Share.shareXFiles([
         XFile(file.path, mimeType: 'image/png'),
-      ], text: content.text);
+      ], text: shareText);
+      totalStopwatch.stop();
+      _shareTrace(
+        traceId,
+        'export done, total=${totalStopwatch.elapsedMilliseconds}ms',
+      );
     } catch (e) {
+      totalStopwatch.stop();
+      _shareTrace(
+        traceId,
+        'export failed after ${totalStopwatch.elapsedMilliseconds}ms: $e',
+      );
       if (!mounted) return;
       ScaffoldMessenger.of(
         context,
@@ -216,86 +441,238 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
     }
   }
 
-  Future<void> _saveSharePoster(VectorDiary diary, DiaryContent content) async {
+  Future<void> _saveRenderedPoster(
+    Uint8List imageBytes, {
+    required int diaryId,
+    required String traceId,
+  }) async {
+    final totalStopwatch = Stopwatch()..start();
     try {
-      // Platform-specific permission handling
-      if (Platform.isAndroid) {
-        // On Android, check storage permission
-        final status = await Permission.storage.status;
-        if (!status.isGranted) {
-          final requested = await Permission.storage.request();
-          if (!requested.isGranted) {
-            if (!mounted) return;
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(
-                  _posterI18n(
-                    zhHans: '保存需要存储权限',
-                    zhHant: '保存需要存儲權限',
-                    en: 'Save requires storage permission',
-                  ),
-                ),
-              ),
-            );
-            return;
-          }
-        }
-      } else if (Platform.isIOS) {
-        // On iOS, gal handles permissions automatically
-        // No need for explicit permission check
-      }
+      _shareTrace(traceId, 'save start');
+      _showShareStatusToast(
+        message: _posterI18n(
+          zhHans: '正在保存到系统相册...',
+          zhHant: '正在保存到系統相簿...',
+          en: 'Saving to system gallery...',
+        ),
+      );
 
-      final image = await _renderSharePosterPng(diary, content);
-      final file = await _writeSharePosterFile(image, diaryId: diary.id);
-      await Gal.putImage(file.path);
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            _posterI18n(
-              zhHans: '已保存到系统相册',
-              zhHant: '已保存到系統相簿',
-              en: 'Saved to system gallery',
-            ),
-          ),
+      _shareTrace(
+        traceId,
+        'permission pre-check skipped; save via Gal.putImage',
+      );
+
+      final putImageStopwatch = Stopwatch()..start();
+      final saveName =
+          'shiguang_share_${DateTime.now().millisecondsSinceEpoch}';
+      _shareTrace(
+        traceId,
+        'gal.putImageBytes start: album=Shiguang, name=$saveName',
+      );
+      await Gal.putImageBytes(imageBytes, album: 'Shiguang', name: saveName);
+      putImageStopwatch.stop();
+      _shareTrace(
+        traceId,
+        'gal.putImageBytes done in ${putImageStopwatch.elapsedMilliseconds}ms',
+      );
+      totalStopwatch.stop();
+      _shareTrace(
+        traceId,
+        'save done, total=${totalStopwatch.elapsedMilliseconds}ms',
+      );
+      _showShareStatusToast(
+        message: _posterI18n(
+          zhHans: '保存成功，已写入系统相册（Shiguang）',
+          zhHant: '儲存成功，已寫入系統相簿（Shiguang）',
+          en: 'Saved successfully to gallery (Shiguang)',
         ),
       );
     } catch (e) {
+      totalStopwatch.stop();
+      _shareTrace(
+        traceId,
+        'save failed after ${totalStopwatch.elapsedMilliseconds}ms: $e',
+      );
       if (!mounted) return;
+      final looksPermissionDenied = _looksLikePermissionDenied(e);
+      if (looksPermissionDenied) {
+        _showShareStatusToast(
+          message: _posterI18n(
+            zhHans: '保存失败：请允许“照片和视频”权限后重试',
+            zhHant: '保存失敗：請允許「照片和影片」權限後重試',
+            en: 'Save failed: allow Photos & Videos permission and retry',
+          ),
+          isError: true,
+        );
+        return;
+      }
       final l10n = AppLocalizations.of(context);
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text(l10n.shareFailed(e.toString()))));
+      _showShareStatusToast(
+        message: l10n.shareFailed(e.toString()),
+        isError: true,
+      );
     }
+  }
+
+  void _showShareStatusToast({required String message, bool isError = false}) {
+    if (!mounted) return;
+    final overlay = Overlay.of(context, rootOverlay: true);
+    _shareStatusOverlay?.remove();
+    _shareStatusOverlay = null;
+    final seq = ++_shareStatusOverlaySeq;
+    final entry = OverlayEntry(
+      builder: (overlayContext) {
+        return Positioned.fill(
+          child: IgnorePointer(
+            child: Material(
+              color: Colors.transparent,
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxWidth: 520),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 14,
+                        vertical: 11,
+                      ),
+                      decoration: BoxDecoration(
+                        color: isError
+                            ? const Color(0xFFD04444)
+                            : const Color(0xFF1E7A46),
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Color(0x33000000),
+                            blurRadius: 12,
+                            offset: Offset(0, 4),
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            isError
+                                ? Icons.error_outline_rounded
+                                : Icons.check_circle_outline_rounded,
+                            size: 18,
+                            color: Colors.white,
+                          ),
+                          const SizedBox(width: 8),
+                          Flexible(
+                            child: Text(
+                              message,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 14,
+                                height: 1.2,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+    _shareStatusOverlay = entry;
+    overlay.insert(entry);
+
+    unawaited(
+      Future<void>.delayed(const Duration(seconds: 2), () {
+        if (!mounted) return;
+        if (_shareStatusOverlaySeq != seq) return;
+        _shareStatusOverlay?.remove();
+        _shareStatusOverlay = null;
+      }),
+    );
+  }
+
+  bool _looksLikePermissionDenied(Object error) {
+    final message = error.toString().toLowerCase();
+    return message.contains('permission') ||
+        message.contains('denied') ||
+        message.contains('not allowed') ||
+        message.contains('unauthorized');
   }
 
   Future<Uint8List> _renderSharePosterPng(
     VectorDiary diary,
-    DiaryContent content,
-  ) {
-    return _screenshotController.captureFromLongWidget(
-      InheritedTheme.captureAll(
-        context,
-        Material(
-          color: const Color(0xFFFFFFFF),
-          child: _buildSharePoster(diary, content),
+    DiaryContent content, {
+    String? traceId,
+    String stage = 'render',
+    double posterWidth = 392,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    if (traceId != null) {
+      _shareTrace(
+        traceId,
+        '$stage start (pixelRatio=3, posterWidth=${posterWidth.toStringAsFixed(1)})',
+      );
+    }
+    try {
+      final bytes = await _screenshotController.captureFromLongWidget(
+        InheritedTheme.captureAll(
+          context,
+          Material(
+            color: const Color(0xFFFFFFFF),
+            child: _buildSharePoster(diary, content, width: posterWidth),
+          ),
         ),
-      ),
-      context: context,
-      delay: const Duration(milliseconds: 20),
-      pixelRatio: 3,
-    );
+        context: context,
+        delay: const Duration(milliseconds: 20),
+        pixelRatio: 3,
+      );
+      stopwatch.stop();
+      if (traceId != null) {
+        _shareTrace(
+          traceId,
+          '$stage done in ${stopwatch.elapsedMilliseconds}ms, bytes=${bytes.length}',
+        );
+      }
+      return bytes;
+    } catch (e) {
+      stopwatch.stop();
+      if (traceId != null) {
+        _shareTrace(
+          traceId,
+          '$stage failed after ${stopwatch.elapsedMilliseconds}ms: $e',
+        );
+      }
+      rethrow;
+    }
   }
 
   Future<File> _writeSharePosterFile(
     Uint8List imageBytes, {
     required int diaryId,
+    String? traceId,
+    String stage = 'write_file',
   }) async {
+    final stopwatch = Stopwatch()..start();
+    if (traceId != null) {
+      _shareTrace(traceId, '$stage start, bytes=${imageBytes.length}');
+    }
     final rootDir = await getTemporaryDirectory();
     final file = File(
       '${rootDir.path}/shiguang_share_${diaryId}_${DateTime.now().millisecondsSinceEpoch}.png',
     );
     await file.writeAsBytes(imageBytes, flush: true);
+    stopwatch.stop();
+    if (traceId != null) {
+      _shareTrace(
+        traceId,
+        '$stage done in ${stopwatch.elapsedMilliseconds}ms: ${file.path}',
+      );
+    }
     return file;
   }
 
