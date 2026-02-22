@@ -313,15 +313,10 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
         ? DateFormat('MMM').format(date)
         : '${date.month}月';
     final weekLabel = DateFormat.EEEE(locale).format(date);
-    final text = content.text.trim();
-    final safeText = text.isEmpty
-        ? AppLocalizations.of(context).imageMemoryPlain
-        : text;
     const cardSurface = Colors.white;
     const primaryText = Color(0xFF111214);
     const secondaryText = Color(0xFF3A404A);
     const bodyText = Color(0xFF252B34);
-    const imageSurface = Colors.white;
 
     return Container(
       width: width,
@@ -387,46 +382,7 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
             ],
           ),
           const SizedBox(height: 22),
-          RichText(
-            text: DiaryRichText.buildTextSpan(
-              context: context,
-              source: safeText,
-              baseStyle: TextStyle(
-                fontSize: 17.6,
-                height: 1.78,
-                letterSpacing: 0.1,
-                color: bodyText,
-              ),
-            ),
-          ),
-          if (content.imagePaths.isNotEmpty) ...[
-            const SizedBox(height: 22),
-            for (final path in content.imagePaths) ...[
-              ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: Container(
-                  width: double.infinity,
-                  constraints: const BoxConstraints(maxHeight: 420),
-                  color: imageSurface,
-                  child: Image.file(
-                    File(path),
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) => SizedBox(
-                      height: 140,
-                      child: Center(
-                        child: Icon(
-                          Icons.broken_image_outlined,
-                          color: secondaryText,
-                          size: 20,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              if (path != content.imagePaths.last) const SizedBox(height: 14),
-            ],
-          ],
+          ..._buildShareContentWidgets(content, bodyText, secondaryText),
           const SizedBox(height: 28),
           Center(
             child: Row(
@@ -524,6 +480,98 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
     return spans;
   }
 
+  List<Widget> _buildShareContentWidgets(
+    DiaryContent content,
+    Color bodyTextColor,
+    Color secondaryTextColor,
+  ) {
+    final widgets = <Widget>[];
+    String? previousBlockType; // 'text' or 'image'
+
+    for (var i = 0; i < content.blocks.length; i++) {
+      final block = content.blocks[i];
+      final text = block.text;
+      if (text != null) {
+        final raw = text.trim();
+        if (raw.isEmpty) continue;
+        final plain = DiaryRichText.toPlainText(raw).trim();
+        if (plain.isEmpty) continue;
+
+        // Add spacing based on previous block type
+        if (previousBlockType != null) {
+          widgets.add(const SizedBox(height: 22));
+        }
+
+        widgets.add(
+          RichText(
+            text: DiaryRichText.buildTextSpan(
+              context: context,
+              source: raw,
+              baseStyle: TextStyle(
+                fontSize: 17.6,
+                height: 1.78,
+                letterSpacing: 0.1,
+                color: bodyTextColor,
+              ),
+            ),
+          ),
+        );
+        previousBlockType = 'text';
+        continue;
+      }
+
+      final path = block.imagePath;
+      if (path == null || path.isEmpty) continue;
+
+      // Add spacing based on previous block type
+      if (previousBlockType != null) {
+        if (previousBlockType == 'image') {
+          // Image following another image: use 14 spacing
+          widgets.add(const SizedBox(height: 14));
+        } else {
+          // Image following text: use 22 spacing
+          widgets.add(const SizedBox(height: 22));
+        }
+      }
+
+      widgets.add(
+        ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Container(
+            width: double.infinity,
+            constraints: const BoxConstraints(maxHeight: 420),
+            child: Image.file(
+              File(path),
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) => SizedBox(
+                height: 140,
+                child: Center(
+                  child: Icon(
+                    Icons.broken_image_outlined,
+                    color: secondaryTextColor,
+                    size: 20,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+      previousBlockType = 'image';
+    }
+
+    if (widgets.isEmpty) {
+      final l10n = AppLocalizations.of(context);
+      widgets.add(
+        Text(
+          l10n.imageMemoryPlain,
+          style: TextStyle(fontSize: 17.6, height: 1.78, color: bodyTextColor),
+        ),
+      );
+    }
+    return widgets;
+  }
+
   List<Widget> _buildOrderedContentWidgets({
     required List<DiaryContentBlock> blocks,
     required String query,
@@ -583,8 +631,7 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
             child: Container(
               width: double.infinity,
               constraints: const BoxConstraints(maxHeight: 420),
-              color: imageFallbackColor,
-              alignment: Alignment.center,
+              alignment: Alignment.topCenter,
               child: Image.file(
                 File(path),
                 fit: BoxFit.contain,
@@ -690,16 +737,17 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
           foregroundColor: scheme.onSurface,
           elevation: 0,
           scrolledUnderElevation: 0,
+          centerTitle: true,
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () => context.pop(),
           ),
           title: Column(
             mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                DateFormat('yyyy年MM月dd日').format(date),
+                DateFormat('MM月dd日').format(date),
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
