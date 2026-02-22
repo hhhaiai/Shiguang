@@ -1461,6 +1461,66 @@ abstract class AppLocalizations {
   /// **'Failed to share: {error}'**
   String shareFailed(String error);
 
+  /// No description provided for @shareSaving.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving...'**
+  String get shareSaving;
+
+  /// No description provided for @shareRenderingImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Rendering share image...'**
+  String get shareRenderingImage;
+
+  /// No description provided for @shareRenderImageFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to render share image'**
+  String get shareRenderImageFailed;
+
+  /// No description provided for @shareSavingToGallery.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving to system gallery...'**
+  String get shareSavingToGallery;
+
+  /// No description provided for @shareSavedToGallery.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved successfully to gallery (Shiguang)'**
+  String get shareSavedToGallery;
+
+  /// No description provided for @shareSavePermissionRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Save failed: allow Photos & Videos permission and retry'**
+  String get shareSavePermissionRequired;
+
+  /// No description provided for @htmlVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Video'**
+  String get htmlVideo;
+
+  /// No description provided for @htmlAudio.
+  ///
+  /// In en, this message translates to:
+  /// **'Audio'**
+  String get htmlAudio;
+
+  /// No description provided for @htmlOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get htmlOpen;
+
+  /// No description provided for @htmlDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Details'**
+  String get htmlDetails;
+
   /// No description provided for @searchMatchHits.
   ///
   /// In en, this message translates to:

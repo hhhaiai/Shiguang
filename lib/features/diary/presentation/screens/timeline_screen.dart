@@ -1365,6 +1365,42 @@ class _DiaryCard extends StatelessWidget {
     required this.onEdit,
   });
 
+  Widget _buildPreviewImage(String source, BuildContext context) {
+    final trimmed = source.trim();
+    final fallback = Container(
+      width: 102,
+      height: 82,
+      color: Theme.of(context).colorScheme.surfaceContainerHighest,
+      alignment: Alignment.center,
+      child: const Icon(Icons.broken_image_outlined, size: 18),
+    );
+    if (trimmed.isEmpty) return fallback;
+
+    final uri = Uri.tryParse(trimmed);
+    final isRemote =
+        uri != null && (uri.scheme == 'http' || uri.scheme == 'https');
+    final isFileUri = uri != null && uri.scheme == 'file';
+    final path = isFileUri ? uri.toFilePath() : trimmed;
+
+    if (isRemote) {
+      return Image.network(
+        trimmed,
+        width: 102,
+        height: 82,
+        fit: BoxFit.cover,
+        errorBuilder: (context, error, stackTrace) => fallback,
+      );
+    }
+
+    return Image.file(
+      File(path),
+      width: 102,
+      height: 82,
+      fit: BoxFit.cover,
+      errorBuilder: (context, error, stackTrace) => fallback,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
@@ -1479,25 +1515,7 @@ class _DiaryCard extends StatelessWidget {
                           final path = content.imagePaths[index];
                           return ClipRRect(
                             borderRadius: BorderRadius.circular(8),
-                            child: Image.file(
-                              File(path),
-                              width: 102,
-                              height: 82,
-                              fit: BoxFit.cover,
-                              errorBuilder: (context, error, stackTrace) =>
-                                  Container(
-                                    width: 102,
-                                    height: 82,
-                                    color: Theme.of(
-                                      context,
-                                    ).colorScheme.surfaceContainerHighest,
-                                    alignment: Alignment.center,
-                                    child: const Icon(
-                                      Icons.broken_image_outlined,
-                                      size: 18,
-                                    ),
-                                  ),
-                            ),
+                            child: _buildPreviewImage(path, context),
                           );
                         },
                       ),

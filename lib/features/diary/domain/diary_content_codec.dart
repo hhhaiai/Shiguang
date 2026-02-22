@@ -24,6 +24,7 @@ class DiaryContentCodec {
   static final RegExp _richImagePattern = RegExp(
     r'!\[[^\]]*\]\(([^)]+)\)|\[\[(?:img|mg):([^\]]+)\]\]',
   );
+  static final RegExp _fencePattern = RegExp(r'^\s*(```+|~~~+)');
   static final RegExp _stripHtmlTagPattern = RegExp(
     r'</?(?:strong|b|em|i|del|strike|s|code)>',
     caseSensitive: false,
@@ -81,26 +82,69 @@ class DiaryContentCodec {
     }
 
     final result = <DiaryContentBlock>[];
-    var cursor = 0;
-    for (final match in _richImagePattern.allMatches(raw)) {
-      if (match.start > cursor) {
-        result.add(DiaryContentBlock.text(raw.substring(cursor, match.start)));
-      }
+    final textBuffer = StringBuffer();
+    var inFence = false;
+    String? activeFence;
 
-      final markdownPath = match.group(1)?.trim();
-      final tokenPath = match.group(2)?.trim();
-      final resolved = markdownPath?.isNotEmpty == true
-          ? markdownPath!
-          : _safeDecodePath(tokenPath ?? '');
-      if (resolved.isNotEmpty) {
-        result.add(DiaryContentBlock.image(resolved));
-      }
-      cursor = match.end;
+    void flushTextBuffer() {
+      if (textBuffer.isEmpty) return;
+      result.add(DiaryContentBlock.text(textBuffer.toString()));
+      textBuffer.clear();
     }
 
-    if (cursor < raw.length) {
-      result.add(DiaryContentBlock.text(raw.substring(cursor)));
+    final lines = raw.split('\n');
+    for (var lineIndex = 0; lineIndex < lines.length; lineIndex++) {
+      final line = lines[lineIndex];
+      final segment = lineIndex < lines.length - 1 ? '$line\n' : line;
+      final trimmedLine = line.trimLeft();
+      final fenceMatch = _fencePattern.firstMatch(trimmedLine);
+      if (fenceMatch != null) {
+        final fenceToken = fenceMatch.group(1)!;
+        if (!inFence) {
+          inFence = true;
+          activeFence = fenceToken;
+        } else {
+          final sameFenceType =
+              activeFence != null && fenceToken[0] == activeFence[0];
+          final enoughFenceLength =
+              activeFence != null && fenceToken.length >= activeFence.length;
+          if (sameFenceType && enoughFenceLength) {
+            inFence = false;
+            activeFence = null;
+          }
+        }
+        textBuffer.write(segment);
+        continue;
+      }
+
+      if (inFence) {
+        textBuffer.write(segment);
+        continue;
+      }
+
+      var cursor = 0;
+      for (final match in _richImagePattern.allMatches(segment)) {
+        if (match.start > cursor) {
+          textBuffer.write(segment.substring(cursor, match.start));
+        }
+
+        final markdownPath = match.group(1)?.trim();
+        final tokenPath = match.group(2)?.trim();
+        final resolved = markdownPath?.isNotEmpty == true
+            ? markdownPath!
+            : _safeDecodePath(tokenPath ?? '');
+        if (resolved.isNotEmpty) {
+          flushTextBuffer();
+          result.add(DiaryContentBlock.image(resolved));
+        }
+        cursor = match.end;
+      }
+      if (cursor < segment.length) {
+        textBuffer.write(segment.substring(cursor));
+      }
     }
+
+    flushTextBuffer();
 
     if (result.isEmpty) {
       result.add(const DiaryContentBlock.text(''));

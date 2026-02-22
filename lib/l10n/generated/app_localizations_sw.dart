@@ -648,6 +648,37 @@ class AppLocalizationsSw extends AppLocalizations {
   }
 
   @override
+  String get shareSaving => 'Saving...';
+
+  @override
+  String get shareRenderingImage => 'Rendering share image...';
+
+  @override
+  String get shareRenderImageFailed => 'Failed to render share image';
+
+  @override
+  String get shareSavingToGallery => 'Saving to system gallery...';
+
+  @override
+  String get shareSavedToGallery => 'Saved successfully to gallery (Shiguang)';
+
+  @override
+  String get shareSavePermissionRequired =>
+      'Save failed: allow Photos & Videos permission and retry';
+
+  @override
+  String get htmlVideo => 'Video';
+
+  @override
+  String get htmlAudio => 'Audio';
+
+  @override
+  String get htmlOpen => 'Open';
+
+  @override
+  String get htmlDetails => 'Details';
+
+  @override
   String searchMatchHits(String matchType, int count) {
     return '$matchType · $count vibao';
   }

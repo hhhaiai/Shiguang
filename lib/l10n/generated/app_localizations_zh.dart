@@ -621,6 +621,36 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String get shareSaving => '保存中...';
+
+  @override
+  String get shareRenderingImage => '正在生成分享图片...';
+
+  @override
+  String get shareRenderImageFailed => '分享图片生成失败';
+
+  @override
+  String get shareSavingToGallery => '正在保存到系统相册...';
+
+  @override
+  String get shareSavedToGallery => '保存成功，已写入系统相册（Shiguang）';
+
+  @override
+  String get shareSavePermissionRequired => '保存失败：请允许“照片和视频”权限后重试';
+
+  @override
+  String get htmlVideo => '视频';
+
+  @override
+  String get htmlAudio => '音频';
+
+  @override
+  String get htmlOpen => '打开';
+
+  @override
+  String get htmlDetails => '详细内容';
+
+  @override
   String searchMatchHits(String matchType, int count) {
     return '$matchType · $count处';
   }
@@ -2732,6 +2762,36 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String shareFailed(String error) {
     return '分享失敗: $error';
   }
+
+  @override
+  String get shareSaving => '保存中...';
+
+  @override
+  String get shareRenderingImage => '正在生成分享圖片...';
+
+  @override
+  String get shareRenderImageFailed => '分享圖片生成失敗';
+
+  @override
+  String get shareSavingToGallery => '正在保存到系統相簿...';
+
+  @override
+  String get shareSavedToGallery => '儲存成功，已寫入系統相簿（Shiguang）';
+
+  @override
+  String get shareSavePermissionRequired => '保存失敗：請允許「照片和影片」權限後重試';
+
+  @override
+  String get htmlVideo => '影片';
+
+  @override
+  String get htmlAudio => '音訊';
+
+  @override
+  String get htmlOpen => '打開';
+
+  @override
+  String get htmlDetails => '詳細內容';
 
   @override
   String searchMatchHits(String matchType, int count) {

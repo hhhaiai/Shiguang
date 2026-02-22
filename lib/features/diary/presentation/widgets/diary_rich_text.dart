@@ -11,6 +11,26 @@ class DiaryRichText {
     r'</?(?:strong|b|em|i|del|strike|s|code)>',
     caseSensitive: false,
   );
+  static final RegExp _boldHtmlTagPattern = RegExp(
+    r'<(strong|b)>(.*?)</\1>',
+    caseSensitive: false,
+    dotAll: true,
+  );
+  static final RegExp _italicHtmlTagPattern = RegExp(
+    r'<(em|i)>(.*?)</\1>',
+    caseSensitive: false,
+    dotAll: true,
+  );
+  static final RegExp _strikeHtmlTagPattern = RegExp(
+    r'<(del|strike|s)>(.*?)</\1>',
+    caseSensitive: false,
+    dotAll: true,
+  );
+  static final RegExp _codeHtmlTagPattern = RegExp(
+    r'<code>(.*?)</code>',
+    caseSensitive: false,
+    dotAll: true,
+  );
   static final RegExp _legacyInlineStylePattern = RegExp(
     r'(\*\*[^*\n]+?\*\*|__[^_\n]+?__|~~[^~\n]+?~~|`[^`\n]+?`|\*(?!\s)[^*\n]+?\*(?<!\s)|_(?!\s)[^_\n]+?_(?<!\s))',
   );
@@ -99,6 +119,62 @@ class DiaryRichText {
       return token;
     });
     return normalized;
+  }
+
+  static String toMarkdownSource(String source) {
+    if (source.isEmpty) return source;
+    var normalized = source;
+    normalized = normalized.replaceAllMapped(
+      _boldHtmlTagPattern,
+      (match) => '**${match.group(2) ?? ''}**',
+    );
+    normalized = normalized.replaceAllMapped(
+      _italicHtmlTagPattern,
+      (match) => '*${match.group(2) ?? ''}*',
+    );
+    normalized = normalized.replaceAllMapped(
+      _strikeHtmlTagPattern,
+      (match) => '~~${match.group(2) ?? ''}~~',
+    );
+    normalized = normalized.replaceAllMapped(
+      _codeHtmlTagPattern,
+      (match) => '`${match.group(1) ?? ''}`',
+    );
+
+    final buffer = StringBuffer();
+    for (var index = 0; index < normalized.length; index++) {
+      final char = normalized[index];
+      final openFormat = DiaryStyleMarkers.formatForOpenMarker(char);
+      if (openFormat != null) {
+        buffer.write(_markdownDelimiterForFormat(openFormat));
+        continue;
+      }
+      final closeFormat = DiaryStyleMarkers.formatForCloseMarker(char);
+      if (closeFormat != null) {
+        buffer.write(_markdownDelimiterForFormat(closeFormat));
+        continue;
+      }
+      if (DiaryStyleMarkers.isAnyMarker(char)) {
+        continue;
+      }
+      buffer.write(char);
+    }
+    return buffer.toString();
+  }
+
+  static String _markdownDelimiterForFormat(String format) {
+    switch (format) {
+      case 'bold':
+        return '**';
+      case 'italic':
+        return '*';
+      case 'strike':
+        return '~~';
+      case 'code':
+        return '`';
+      default:
+        return '';
+    }
   }
 
   static TextStyle _applyInlineStyle({

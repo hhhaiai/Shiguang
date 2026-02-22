@@ -261,6 +261,16 @@
       }
     }
   },
+  "shareSaving": "Saving...",
+  "shareRenderingImage": "Rendering share image...",
+  "shareRenderImageFailed": "Failed to render share image",
+  "shareSavingToGallery": "Saving to system gallery...",
+  "shareSavedToGallery": "Saved successfully to gallery (Shiguang)",
+  "shareSavePermissionRequired": "Save failed: allow Photos & Videos permission and retry",
+  "htmlVideo": "Video",
+  "htmlAudio": "Audio",
+  "htmlOpen": "Open",
+  "htmlDetails": "Details",
   "searchMatchHits": "{matchType} · {count} hits",
   "@searchMatchHits": {
     "placeholders": {
