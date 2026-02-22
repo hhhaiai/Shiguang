@@ -31,7 +31,6 @@ class DiaryContentCodec {
   static final RegExp _inlineStylePattern = RegExp(
     r'(\*\*[^*\n]+?\*\*|__[^_\n]+?__|~~[^~\n]+?~~|`[^`\n]+?`|\*(?!\s)[^*\n]+?\*(?<!\s)|_(?!\s)[^_\n]+?_(?<!\s))',
   );
-  static const String _objectReplacementChar = '\uFFFC';
 
   static String _safeDecodePath(String raw) {
     if (raw.isEmpty) return raw;
@@ -51,9 +50,8 @@ class DiaryContentCodec {
     for (final block in parsedBlocks) {
       final text = block.text;
       if (text != null) {
-        final cleaned = text.replaceAll(_objectReplacementChar, '');
-        normalizedBlocks.add(DiaryContentBlock.text(cleaned));
-        final trimmed = toPlainText(cleaned).trim();
+        normalizedBlocks.add(DiaryContentBlock.text(text));
+        final trimmed = toPlainText(text).trim();
         if (trimmed.isNotEmpty) {
           visibleTextParts.add(trimmed);
         }
@@ -114,7 +112,7 @@ class DiaryContentCodec {
     required String text,
     required List<String> imagePaths,
   }) {
-    final normalizedText = text.replaceAll(_objectReplacementChar, '').trim();
+    final normalizedText = text.trim();
     if (imagePaths.isEmpty) return normalizedText;
 
     final tokens = imagePaths

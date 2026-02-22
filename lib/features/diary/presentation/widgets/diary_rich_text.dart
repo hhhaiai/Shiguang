@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
+
 import '../../domain/diary_style_markers.dart';
 
 class DiaryRichText {
-  static final RegExp _headingPattern = RegExp(r'^(#{1,3})\s+');
-  static final RegExp _tokenPattern = RegExp(
-    r'(\uE000[^\uE001\n]+?\uE001|\uE002[^\uE003\n]+?\uE003|\uE004[^\uE005\n]+?\uE005|\uE006[^\uE007\n]+?\uE007|<(?:strong|b)>[^<\n]+?</(?:strong|b)>|<(?:em|i)>[^<\n]+?</(?:em|i)>|<(?:del|strike|s)>[^<\n]+?</(?:del|strike|s)>|<code>[^<\n]+?</code>|\*\*[^*\n]+?\*\*|__[^_\n]+?__|~~[^~\n]+?~~|`[^`\n]+?`|\*(?!\s)[^*\n]+?\*(?<!\s)|_(?!\s)[^_\n]+?_(?<!\s))',
-    caseSensitive: false,
-  );
-
   static final RegExp _stripHtmlTagPattern = RegExp(
     r'</?(?:strong|b|em|i|del|strike|s|code)>',
     caseSensitive: false,
+  );
+  static final RegExp _legacyInlineStylePattern = RegExp(
+    r'(\*\*[^*\n]+?\*\*|__[^_\n]+?__|~~[^~\n]+?~~|`[^`\n]+?`|\*(?!\s)[^*\n]+?\*(?<!\s)|_(?!\s)[^_\n]+?_(?<!\s))',
   );
 
   static TextSpan buildTextSpan({
@@ -23,317 +21,189 @@ class DiaryRichText {
         : const Color(0x14000000);
     return TextSpan(
       style: baseStyle,
-      children: _buildSpans(source, baseStyle, codeBackground),
+      children: buildStyledSpans(
+        source: source,
+        baseStyle: baseStyle,
+        codeBackground: codeBackground,
+      ),
     );
   }
 
-  static List<InlineSpan> _buildSpans(
-    String source,
-    TextStyle base,
-    Color codeBackground,
-  ) {
-    if (source.isEmpty) return const <InlineSpan>[];
-    final spans = <InlineSpan>[];
-    final lines = source.split('\n');
-    for (var i = 0; i < lines.length; i++) {
-      final line = lines[i];
-      spans.addAll(
-        _buildLineSpans(line: line, base: base, codeBackground: codeBackground),
-      );
-      if (i < lines.length - 1) {
-        spans.add(TextSpan(text: '\n', style: base));
-      }
-    }
-    return spans;
-  }
-
-  static List<InlineSpan> _buildLineSpans({
-    required String line,
-    required TextStyle base,
-    required Color codeBackground,
-  }) {
-    var remaining = line;
-    var contentStyle = base;
-
-    // 检测标题
-    final headingMatch = _headingPattern.firstMatch(line);
-    if (headingMatch != null) {
-      remaining = line.substring(headingMatch.end);
-      final level = headingMatch.group(1)?.length ?? 1;
-      final baseSize = base.fontSize ?? 16;
-      if (level <= 1) {
-        contentStyle = base.copyWith(
-          fontSize: baseSize + 8,
-          height: 1.25,
-          fontWeight: FontWeight.w800,
-        );
-      } else if (level == 2) {
-        contentStyle = base.copyWith(
-          fontSize: baseSize + 5,
-          height: 1.3,
-          fontWeight: FontWeight.w700,
-        );
-      } else {
-        contentStyle = base.copyWith(
-          fontSize: baseSize + 2,
-          height: 1.35,
-          fontWeight: FontWeight.w700,
-        );
-      }
-    }
-
-    // 检测引用块
-    if (line.trim().startsWith('>')) {
-      final trimmed = line.trim();
-      final afterArrow = trimmed.substring(1).trimLeft();
-      remaining = afterArrow.isNotEmpty ? afterArrow : '';
-      contentStyle = base.copyWith(
-        fontStyle: FontStyle.italic,
-        color: base.color?.withValues(alpha: 0.8),
-      );
-    }
-
-    // 检测无序列表项
-    final unorderedListMatch = RegExp(r'^\s*([-*+])\s+').firstMatch(line);
-    if (unorderedListMatch != null) {
-      final marker = unorderedListMatch.group(1)!;
-      remaining = line.substring(unorderedListMatch.end);
-      // 替换标记为 Unicode 项目符号
-      final bullet = marker == '-' ? '•' : (marker == '*' ? '•' : '•');
-      // 保留缩进，但替换标记
-      final indent = line.substring(0, unorderedListMatch.start);
-      remaining = '$indent$bullet $remaining';
-    }
-
-    // 检测有序列表项
-    final orderedListMatch = RegExp(r'^\s*(\d+)\.\s+').firstMatch(line);
-    if (orderedListMatch != null) {
-      remaining = line.substring(orderedListMatch.end);
-      // 保留数字和点，但移除匹配部分后的内容
-      final indent = line.substring(0, orderedListMatch.start);
-      final number = orderedListMatch.group(1)!;
-      remaining = '$indent$number. $remaining';
-    }
-
-    return _buildInlineSpans(
-      source: remaining,
-      base: contentStyle,
-      codeBackground: codeBackground,
-    );
-  }
-
-  static List<InlineSpan> _buildInlineSpans({
+  static List<InlineSpan> buildStyledSpans({
     required String source,
-    required TextStyle base,
+    required TextStyle baseStyle,
     required Color codeBackground,
+    bool includeMarkers = false,
+    TextStyle? markerStyle,
   }) {
     if (source.isEmpty) return const <InlineSpan>[];
+    final markerHiddenStyle =
+        markerStyle ??
+        baseStyle.copyWith(
+          color: Colors.transparent,
+          fontSize: 0.001,
+          height: 0.001,
+          letterSpacing: -1.0,
+        );
     final spans = <InlineSpan>[];
-    var cursor = 0;
-    for (final match in _tokenPattern.allMatches(source)) {
-      if (match.start > cursor) {
-        spans.add(
-          TextSpan(text: source.substring(cursor, match.start), style: base),
-        );
-      }
+    final buffer = StringBuffer();
+    final active = _InlineFormatState();
 
-      final token = match.group(0)!;
-      final lower = token.toLowerCase();
-      if ((token.startsWith('**') &&
-              token.endsWith('**') &&
-              token.length > 4) ||
-          (token.startsWith(DiaryStyleMarkers.boldOpen) &&
-              token.endsWith(DiaryStyleMarkers.boldClose) &&
-              token.length > 2) ||
-          (token.startsWith('__') &&
-              token.endsWith('__') &&
-              token.length > 4) ||
-          (lower.startsWith('<b>') &&
-              lower.endsWith('</b>') &&
-              token.length > 7) ||
-          (lower.startsWith('<strong>') &&
-              lower.endsWith('</strong>') &&
-              token.length > 17)) {
-        spans.add(
-          TextSpan(
-            text: _unbox(token),
-            style: base.copyWith(fontWeight: FontWeight.w700),
+    void flushBuffer() {
+      if (buffer.isEmpty) return;
+      spans.add(
+        TextSpan(
+          text: buffer.toString(),
+          style: _applyInlineStyle(
+            base: baseStyle,
+            state: active,
+            codeBackground: codeBackground,
           ),
-        );
-      } else if ((token.startsWith('~~') &&
-              token.endsWith('~~') &&
-              token.length > 4) ||
-          (token.startsWith(DiaryStyleMarkers.strikeOpen) &&
-              token.endsWith(DiaryStyleMarkers.strikeClose) &&
-              token.length > 2) ||
-          (lower.startsWith('<s>') &&
-              lower.endsWith('</s>') &&
-              token.length > 7) ||
-          (lower.startsWith('<del>') &&
-              lower.endsWith('</del>') &&
-              token.length > 11) ||
-          (lower.startsWith('<strike>') &&
-              lower.endsWith('</strike>') &&
-              token.length > 17)) {
-        spans.add(
-          TextSpan(
-            text: _unbox(token),
-            style: base.copyWith(decoration: TextDecoration.lineThrough),
-          ),
-        );
-      } else if ((token.startsWith('`') &&
-              token.endsWith('`') &&
-              token.length > 2) ||
-          (token.startsWith(DiaryStyleMarkers.codeOpen) &&
-              token.endsWith(DiaryStyleMarkers.codeClose) &&
-              token.length > 2) ||
-          (lower.startsWith('<code>') &&
-              lower.endsWith('</code>') &&
-              token.length > 13)) {
-        spans.add(
-          TextSpan(
-            text: _unbox(token),
-            style: base.copyWith(
-              fontFamily: 'monospace',
-              backgroundColor: codeBackground,
-            ),
-          ),
-        );
-      } else if ((token.startsWith('*') &&
-              token.endsWith('*') &&
-              token.length > 2) ||
-          (token.startsWith(DiaryStyleMarkers.italicOpen) &&
-              token.endsWith(DiaryStyleMarkers.italicClose) &&
-              token.length > 2) ||
-          (token.startsWith('_') && token.endsWith('_') && token.length > 2) ||
-          (lower.startsWith('<i>') &&
-              lower.endsWith('</i>') &&
-              token.length > 7) ||
-          (lower.startsWith('<em>') &&
-              lower.endsWith('</em>') &&
-              token.length > 9)) {
-        spans.add(
-          TextSpan(
-            text: _unbox(token),
-            style: base.copyWith(fontStyle: FontStyle.italic),
-          ),
-        );
-      } else {
-        spans.add(TextSpan(text: token, style: base));
+        ),
+      );
+      buffer.clear();
+    }
+
+    for (var index = 0; index < source.length; index++) {
+      final char = source[index];
+      final openFormat = DiaryStyleMarkers.formatForOpenMarker(char);
+      if (openFormat != null) {
+        flushBuffer();
+        if (includeMarkers) {
+          spans.add(TextSpan(text: char, style: markerHiddenStyle));
+        }
+        active.enable(openFormat);
+        continue;
       }
-      cursor = match.end;
+      final closeFormat = DiaryStyleMarkers.formatForCloseMarker(char);
+      if (closeFormat != null) {
+        flushBuffer();
+        if (includeMarkers) {
+          spans.add(TextSpan(text: char, style: markerHiddenStyle));
+        }
+        active.disable(closeFormat);
+        continue;
+      }
+      if (DiaryStyleMarkers.isAnyMarker(char)) {
+        flushBuffer();
+        if (includeMarkers) {
+          spans.add(TextSpan(text: char, style: markerHiddenStyle));
+        }
+        continue;
+      }
+      buffer.write(char);
     }
-    if (cursor < source.length) {
-      spans.add(TextSpan(text: source.substring(cursor), style: base));
-    }
+    flushBuffer();
     return spans;
-  }
-
-  static String _unbox(String token) {
-    final lower = token.toLowerCase();
-    if (token.startsWith(DiaryStyleMarkers.boldOpen) &&
-        token.endsWith(DiaryStyleMarkers.boldClose) &&
-        token.length > 2) {
-      return token.substring(1, token.length - 1);
-    }
-    if (token.startsWith(DiaryStyleMarkers.italicOpen) &&
-        token.endsWith(DiaryStyleMarkers.italicClose) &&
-        token.length > 2) {
-      return token.substring(1, token.length - 1);
-    }
-    if (token.startsWith(DiaryStyleMarkers.strikeOpen) &&
-        token.endsWith(DiaryStyleMarkers.strikeClose) &&
-        token.length > 2) {
-      return token.substring(1, token.length - 1);
-    }
-    if (token.startsWith(DiaryStyleMarkers.codeOpen) &&
-        token.endsWith(DiaryStyleMarkers.codeClose) &&
-        token.length > 2) {
-      return token.substring(1, token.length - 1);
-    }
-    if (token.startsWith('**') && token.endsWith('**') && token.length > 4) {
-      return token.substring(2, token.length - 2);
-    }
-    if (token.startsWith('__') && token.endsWith('__') && token.length > 4) {
-      return token.substring(2, token.length - 2);
-    }
-    if (token.startsWith('~~') && token.endsWith('~~') && token.length > 4) {
-      return token.substring(2, token.length - 2);
-    }
-    if (token.startsWith('*') && token.endsWith('*') && token.length > 2) {
-      return token.substring(1, token.length - 1);
-    }
-    if (token.startsWith('_') && token.endsWith('_') && token.length > 2) {
-      return token.substring(1, token.length - 1);
-    }
-    if (token.startsWith('`') && token.endsWith('`') && token.length > 2) {
-      return token.substring(1, token.length - 1);
-    }
-    if (lower.startsWith('<b>') && lower.endsWith('</b>') && token.length > 7) {
-      return token.substring(3, token.length - 4);
-    }
-    if (lower.startsWith('<strong>') &&
-        lower.endsWith('</strong>') &&
-        token.length > 17) {
-      return token.substring(8, token.length - 9);
-    }
-    if (lower.startsWith('<i>') && lower.endsWith('</i>') && token.length > 7) {
-      return token.substring(3, token.length - 4);
-    }
-    if (lower.startsWith('<em>') &&
-        lower.endsWith('</em>') &&
-        token.length > 9) {
-      return token.substring(4, token.length - 5);
-    }
-    if (lower.startsWith('<s>') && lower.endsWith('</s>') && token.length > 7) {
-      return token.substring(3, token.length - 4);
-    }
-    if (lower.startsWith('<del>') &&
-        lower.endsWith('</del>') &&
-        token.length > 11) {
-      return token.substring(5, token.length - 6);
-    }
-    if (lower.startsWith('<strike>') &&
-        lower.endsWith('</strike>') &&
-        token.length > 17) {
-      return token.substring(8, token.length - 9);
-    }
-    if (lower.startsWith('<code>') &&
-        lower.endsWith('</code>') &&
-        token.length > 13) {
-      return token.substring(6, token.length - 7);
-    }
-    return token;
   }
 
   static String toPlainText(String source) {
     if (source.isEmpty) return source;
     var normalized = source.replaceAll(_stripHtmlTagPattern, '');
     normalized = DiaryStyleMarkers.stripAll(normalized);
-    normalized = normalized.replaceAllMapped(
-      _tokenPattern,
-      (match) => _unbox(match.group(0) ?? ''),
-    );
-    // 移除标题标记
-    normalized = normalized.replaceAllMapped(
-      RegExp(r'^\s*#{1,3}\s+', multiLine: true),
-      (_) => '',
-    );
-    // 移除引用标记
-    normalized = normalized.replaceAllMapped(
-      RegExp(r'^\s*>\s?', multiLine: true),
-      (_) => '',
-    );
-    // 移除无序列表标记
-    normalized = normalized.replaceAllMapped(
-      RegExp(r'^\s*[-*+]\s+', multiLine: true),
-      (_) => '',
-    );
-    // 移除有序列表标记
-    normalized = normalized.replaceAllMapped(
-      RegExp(r'^\s*\d+\.\s+', multiLine: true),
-      (_) => '',
-    );
+    normalized = normalized.replaceAllMapped(_legacyInlineStylePattern, (
+      match,
+    ) {
+      final token = match.group(0) ?? '';
+      if (token.startsWith('**') && token.endsWith('**') && token.length > 4) {
+        return token.substring(2, token.length - 2);
+      }
+      if (token.startsWith('__') && token.endsWith('__') && token.length > 4) {
+        return token.substring(2, token.length - 2);
+      }
+      if (token.startsWith('~~') && token.endsWith('~~') && token.length > 4) {
+        return token.substring(2, token.length - 2);
+      }
+      if (token.startsWith('`') && token.endsWith('`') && token.length > 2) {
+        return token.substring(1, token.length - 1);
+      }
+      if (token.startsWith('*') && token.endsWith('*') && token.length > 2) {
+        return token.substring(1, token.length - 1);
+      }
+      if (token.startsWith('_') && token.endsWith('_') && token.length > 2) {
+        return token.substring(1, token.length - 1);
+      }
+      return token;
+    });
     return normalized;
+  }
+
+  static TextStyle _applyInlineStyle({
+    required TextStyle base,
+    required _InlineFormatState state,
+    required Color codeBackground,
+  }) {
+    var style = base;
+    if (state.bold) {
+      style = style.copyWith(fontWeight: FontWeight.w700);
+    }
+    if (state.italic) {
+      style = style.copyWith(fontStyle: FontStyle.italic);
+    }
+    if (state.strike) {
+      style = _lineThroughStyle(style);
+    }
+    if (state.code) {
+      style = style.copyWith(
+        fontFamily: 'monospace',
+        backgroundColor: codeBackground,
+      );
+    }
+    return style;
+  }
+
+  static TextStyle _lineThroughStyle(TextStyle base) {
+    final decorations = <TextDecoration>[];
+    if (base.decoration != null && base.decoration != TextDecoration.none) {
+      decorations.add(base.decoration!);
+    }
+    decorations.add(TextDecoration.lineThrough);
+    return base.copyWith(
+      decoration: TextDecoration.combine(decorations),
+      decorationColor: base.color ?? Colors.black,
+      decorationThickness: 2.5,
+      decorationStyle: TextDecorationStyle.solid,
+    );
+  }
+}
+
+class _InlineFormatState {
+  bool bold = false;
+  bool italic = false;
+  bool strike = false;
+  bool code = false;
+
+  void enable(String format) {
+    switch (format) {
+      case 'bold':
+        bold = true;
+        break;
+      case 'italic':
+        italic = true;
+        break;
+      case 'strike':
+        strike = true;
+        break;
+      case 'code':
+        code = true;
+        break;
+    }
+  }
+
+  void disable(String format) {
+    switch (format) {
+      case 'bold':
+        bold = false;
+        break;
+      case 'italic':
+        italic = false;
+        break;
+      case 'strike':
+        strike = false;
+        break;
+      case 'code':
+        code = false;
+        break;
+    }
   }
 }

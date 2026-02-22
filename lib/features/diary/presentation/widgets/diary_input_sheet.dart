@@ -22,6 +22,7 @@ import '../../data/ai/sensevoice_onnx_local_voice_ai.dart';
 import '../../data/ai/system_speech_voice_ai.dart';
 import '../../domain/diary_style_markers.dart';
 import '../../domain/interfaces/i_local_voice_ai.dart';
+import 'diary_rich_text.dart';
 import 'live_waveform_bars.dart';
 
 class DiaryInputSheet extends ConsumerStatefulWidget {
@@ -55,6 +56,9 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
   int _nextBlockId = 0;
   String? _activeTextBlockId;
   String? _recordingTargetBlockId;
+
+  // 激活的格式状态 - 用于"格式刷"模式
+  final Set<String> _activeFormats = {};
 
   ILocalVoiceAI? _voiceAI;
   StreamSubscription<VoiceResult>? _voiceSubscription;
@@ -133,12 +137,14 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
         }
         if (block.focusNode.hasFocus) {
           _activeTextBlockId = block.id;
+          _syncActiveFormatsFromSelection(block, setStateIfChanged: true);
         }
       },
       onFocusChanged: () {
         final selection = block.controller.selection;
         if (block.focusNode.hasFocus) {
           _rememberSelectionForBlock(block);
+          _syncActiveFormatsFromSelection(block, setStateIfChanged: true);
           return;
         }
         if (selection.isValid) {
@@ -214,7 +220,7 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
   bool get _hasVisibleText {
     for (final block in _blocks) {
       if (block is _TextEditorBlock &&
-          block.controller.text.trim().isNotEmpty) {
+          DiaryStyleMarkers.stripAll(block.controller.text).trim().isNotEmpty) {
         return true;
       }
     }
@@ -764,32 +770,112 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
     }
   }
 
-  void _applyInlineStyle(String left, String right) {
+  bool _sameFormatSet(Set<String> left, Set<String> right) {
+    if (left.length != right.length) return false;
+    return left.containsAll(right);
+  }
+
+  TextSelection _safeSelectionFor(_TextEditorBlock block) {
+    final textLength = block.controller.text.length;
+    final selection = block.controller.selection;
+    if (!selection.isValid) {
+      return TextSelection.collapsed(offset: textLength);
+    }
+    final start = math.min(selection.start, selection.end).clamp(0, textLength);
+    final end = math.max(selection.start, selection.end).clamp(0, textLength);
+    return TextSelection(baseOffset: start, extentOffset: end);
+  }
+
+  void _syncActiveFormatsFromSelection(
+    _TextEditorBlock block, {
+    bool setStateIfChanged = false,
+  }) {
+    final selection = _safeSelectionFor(block);
+    final next = DiaryStyleMarkers.resolveActiveFormats(
+      block.controller.text,
+      selection.start,
+    );
+    if (_sameFormatSet(_activeFormats, next)) return;
+    if (setStateIfChanged && mounted) {
+      setState(() {
+        _activeFormats
+          ..clear()
+          ..addAll(next);
+      });
+      return;
+    }
+    _activeFormats
+      ..clear()
+      ..addAll(next);
+  }
+
+  void _toggleFormat(String format) {
+    final openMarker = DiaryStyleMarkers.openMarkerFor(format);
+    final closeMarker = DiaryStyleMarkers.closeMarkerFor(format);
+    if (openMarker == null || closeMarker == null) return;
+
     final block = _ensureActiveTextBlock(moveCursorToEnd: false);
     final text = block.controller.text;
-    final selection = block.controller.selection;
+    final selection = _safeSelectionFor(block);
+    final start = selection.start;
+    final end = selection.end;
+    final hasSelection = start != end;
 
-    final safeStart = selection.isValid
-        ? math.min(selection.start, selection.end).clamp(0, text.length)
-        : text.length;
-    final safeEnd = selection.isValid
-        ? math.max(selection.start, selection.end).clamp(0, text.length)
-        : text.length;
+    String updatedText = text;
+    TextSelection updatedSelection = selection;
 
-    final selected = text.substring(safeStart, safeEnd);
-    final replacement = '$left$selected$right';
-    final updated = text.replaceRange(safeStart, safeEnd, replacement);
-    final cursor = selected.isEmpty
-        ? safeStart + left.length
-        : safeStart + replacement.length;
+    if (hasSelection) {
+      final hasOpenBefore =
+          start >= openMarker.length &&
+          text.substring(start - openMarker.length, start) == openMarker;
+      final hasCloseAfter =
+          end + closeMarker.length <= text.length &&
+          text.substring(end, end + closeMarker.length) == closeMarker;
+
+      if (hasOpenBefore && hasCloseAfter) {
+        updatedText =
+            text.substring(0, start - openMarker.length) +
+            text.substring(start, end) +
+            text.substring(end + closeMarker.length);
+        final newStart = start - openMarker.length;
+        updatedSelection = TextSelection(
+          baseOffset: newStart,
+          extentOffset: newStart + (end - start),
+        );
+      } else {
+        updatedText =
+            text.substring(0, start) +
+            openMarker +
+            text.substring(start, end) +
+            closeMarker +
+            text.substring(end);
+        updatedSelection = TextSelection(
+          baseOffset: start + openMarker.length,
+          extentOffset: end + openMarker.length,
+        );
+      }
+    } else {
+      final active = DiaryStyleMarkers.resolveActiveFormats(
+        text,
+        start,
+      ).contains(format);
+      final marker = active ? closeMarker : openMarker;
+      updatedText =
+          text.substring(0, start) +
+          marker +
+          text.substring(start, text.length);
+      final newOffset = start + marker.length;
+      updatedSelection = TextSelection.collapsed(offset: newOffset);
+    }
 
     block.controller.value = TextEditingValue(
-      text: updated,
-      selection: TextSelection.collapsed(offset: cursor),
+      text: updatedText,
+      selection: updatedSelection,
     );
-    _activeTextBlockId = block.id;
+    _rememberSelectionForBlock(block);
+    _syncActiveFormatsFromSelection(block, setStateIfChanged: true);
     requestKeyboardFocus(context, block.focusNode);
-    setState(() {});
+    _scheduleScrollProgressUpdate();
   }
 
   Future<void> _insertImageToken() async {
@@ -1016,8 +1102,10 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
       await Future<void>.delayed(const Duration(milliseconds: 120));
     }
 
-    final rawText = _serializeBlocks().trim();
-    if (rawText.isNotEmpty) {
+    final serialized = _serializeBlocks();
+    final rawText = serialized.trim();
+    final visibleText = DiaryStyleMarkers.stripAll(rawText).trim();
+    if (visibleText.isNotEmpty || _hasImages) {
       widget.onSubmit(rawText);
     }
     if (mounted) {
@@ -1152,6 +1240,8 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
     final scheme = theme.colorScheme;
     final isDark = theme.brightness == Brightness.dark;
     final toolbarIconColor = scheme.onSurfaceVariant;
+    final activeFormatColor = scheme.primary;
+
     return Material(
       color: isDark ? scheme.surfaceContainerLow : scheme.surface,
       elevation: 10,
@@ -1163,27 +1253,33 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
             children: [
               IconButton(
                 tooltip: l10n.bold,
-                onPressed: () => _applyInlineStyle(
-                  DiaryStyleMarkers.boldOpen,
-                  DiaryStyleMarkers.boldClose,
+                onPressed: () => _toggleFormat('bold'),
+                icon: Icon(
+                  Icons.format_bold,
+                  color: _activeFormats.contains('bold')
+                      ? activeFormatColor
+                      : toolbarIconColor,
                 ),
-                icon: Icon(Icons.format_bold, color: toolbarIconColor),
               ),
               IconButton(
                 tooltip: l10n.italic,
-                onPressed: () => _applyInlineStyle(
-                  DiaryStyleMarkers.italicOpen,
-                  DiaryStyleMarkers.italicClose,
+                onPressed: () => _toggleFormat('italic'),
+                icon: Icon(
+                  Icons.format_italic,
+                  color: _activeFormats.contains('italic')
+                      ? activeFormatColor
+                      : toolbarIconColor,
                 ),
-                icon: Icon(Icons.format_italic, color: toolbarIconColor),
               ),
               IconButton(
                 tooltip: l10n.strikethrough,
-                onPressed: () => _applyInlineStyle(
-                  DiaryStyleMarkers.strikeOpen,
-                  DiaryStyleMarkers.strikeClose,
+                onPressed: () => _toggleFormat('strike'),
+                icon: Icon(
+                  Icons.strikethrough_s,
+                  color: _activeFormats.contains('strike')
+                      ? activeFormatColor
+                      : toolbarIconColor,
                 ),
-                icon: Icon(Icons.strikethrough_s, color: toolbarIconColor),
               ),
               IconButton(
                 tooltip: l10n.image,
@@ -1323,15 +1419,24 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
                             onTap: () {
                               _activeTextBlockId = block.id;
                               _rememberSelectionForBlock(block);
+                              _syncActiveFormatsFromSelection(
+                                block,
+                                setStateIfChanged: true,
+                              );
                               requestKeyboardFocus(context, block.focusNode);
                               WidgetsBinding.instance.addPostFrameCallback((_) {
                                 if (!mounted) return;
                                 _rememberSelectionForBlock(block);
+                                _syncActiveFormatsFromSelection(
+                                  block,
+                                  setStateIfChanged: true,
+                                );
                               });
                             },
-                            onChanged: (_) {
+                            onChanged: (newText) {
                               _activeTextBlockId = block.id;
                               _rememberSelectionForBlock(block);
+                              _syncActiveFormatsFromSelection(block);
                               setState(() {});
                               _scheduleScrollProgressUpdate();
                             },
@@ -1382,7 +1487,7 @@ class _TextEditorBlock extends _EditorBlock {
   VoidCallback? _focusListener;
 
   _TextEditorBlock({required super.id, required String initialText})
-    : controller = _MarkdownStyledTextController(text: initialText),
+    : controller = _RichStyledTextController(text: initialText),
       focusNode = FocusNode();
 
   void bind({
@@ -1415,14 +1520,8 @@ class _TextEditorBlock extends _EditorBlock {
   }
 }
 
-class _MarkdownStyledTextController extends TextEditingController {
-  static final RegExp _headingPattern = RegExp(r'^(#{1,3})\s+');
-  static final RegExp _tokenPattern = RegExp(
-    r'(\uE000[^\uE001\n]+?\uE001|\uE002[^\uE003\n]+?\uE003|\uE004[^\uE005\n]+?\uE005|\uE006[^\uE007\n]+?\uE007|<(?:strong|b)>[^<\n]+?</(?:strong|b)>|<(?:em|i)>[^<\n]+?</(?:em|i)>|<(?:del|strike|s)>[^<\n]+?</(?:del|strike|s)>|<code>[^<\n]+?</code>|\*\*[^*\n]+?\*\*|__[^_\n]+?__|~~[^~\n]+?~~|`[^`\n]+?`|\*(?!\s)[^*\n]+?\*(?<!\s)|_(?!\s)[^_\n]+?_(?<!\s))',
-    caseSensitive: false,
-  );
-
-  _MarkdownStyledTextController({super.text});
+class _RichStyledTextController extends TextEditingController {
+  _RichStyledTextController({super.text});
 
   @override
   TextSpan buildTextSpan({
@@ -1430,371 +1529,27 @@ class _MarkdownStyledTextController extends TextEditingController {
     TextStyle? style,
     required bool withComposing,
   }) {
-    final source = text;
     final base = style ?? const TextStyle();
     final hiddenMarkerStyle = base.copyWith(
       color: Colors.transparent,
-      fontSize: 0.0,
-      height: 0.0,
-      letterSpacing: -0.1,
+      fontSize: 0.001,
+      height: 0.001,
+      letterSpacing: -1.0,
     );
     final codeBackground = Theme.of(context).brightness == Brightness.dark
         ? const Color(0x26FFFFFF)
         : const Color(0x14000000);
 
-    final spans = <InlineSpan>[];
-    final lines = source.split('\n');
-    for (var index = 0; index < lines.length; index++) {
-      final line = lines[index];
-      spans.addAll(
-        _buildLineSpans(
-          line: line,
-          base: base,
-          hiddenMarkerStyle: hiddenMarkerStyle,
-          codeBackground: codeBackground,
-        ),
-      );
-      if (index < lines.length - 1) {
-        spans.add(TextSpan(text: '\n', style: base));
-      }
-    }
-    return TextSpan(style: base, children: spans);
-  }
-
-  List<InlineSpan> _buildLineSpans({
-    required String line,
-    required TextStyle base,
-    required TextStyle hiddenMarkerStyle,
-    required Color codeBackground,
-  }) {
-    final spans = <InlineSpan>[];
-    var remaining = line;
-    var contentStyle = base;
-
-    final headingMatch = _headingPattern.firstMatch(line);
-    if (headingMatch != null) {
-      final marker = headingMatch.group(0) ?? '';
-      if (marker.isNotEmpty) {
-        spans.add(TextSpan(text: marker, style: hiddenMarkerStyle));
-      }
-      remaining = line.substring(headingMatch.end);
-
-      final level = headingMatch.group(1)?.length ?? 1;
-      final baseSize = base.fontSize ?? 16;
-      if (level <= 1) {
-        contentStyle = base.copyWith(
-          fontSize: baseSize + 8,
-          height: 1.25,
-          fontWeight: FontWeight.w800,
-        );
-      } else if (level == 2) {
-        contentStyle = base.copyWith(
-          fontSize: baseSize + 5,
-          height: 1.3,
-          fontWeight: FontWeight.w700,
-        );
-      } else {
-        contentStyle = base.copyWith(
-          fontSize: baseSize + 2,
-          height: 1.35,
-          fontWeight: FontWeight.w700,
-        );
-      }
-    }
-
-    // 检测引用块
-    if (line.trim().startsWith('>')) {
-      final trimmed = line.trim();
-      final afterArrow = trimmed.substring(1).trimLeft();
-      remaining = afterArrow.isNotEmpty ? afterArrow : '';
-      contentStyle = base.copyWith(
-        fontStyle: FontStyle.italic,
-        color: base.color?.withValues(alpha: 0.8),
-      );
-    }
-
-    // 检测无序列表项
-    final unorderedListMatch = RegExp(r'^\s*([-*+])\s+').firstMatch(line);
-    if (unorderedListMatch != null) {
-      final marker = unorderedListMatch.group(1)!;
-      remaining = line.substring(unorderedListMatch.end);
-      // 替换标记为 Unicode 项目符号
-      final bullet = marker == '-' ? '•' : (marker == '*' ? '•' : '•');
-      // 保留缩进，但替换标记
-      final indent = line.substring(0, unorderedListMatch.start);
-      remaining = '$indent$bullet $remaining';
-    }
-
-    // 检测有序列表项
-    final orderedListMatch = RegExp(r'^\s*(\d+)\.\s+').firstMatch(line);
-    if (orderedListMatch != null) {
-      remaining = line.substring(orderedListMatch.end);
-      // 保留数字和点，但移除匹配部分后的内容
-      final indent = line.substring(0, orderedListMatch.start);
-      final number = orderedListMatch.group(1)!;
-      remaining = '$indent$number. $remaining';
-    }
-
-    spans.addAll(
-      _buildInlineSpans(
-        source: remaining,
-        base: contentStyle,
-        hiddenMarkerStyle: hiddenMarkerStyle,
+    return TextSpan(
+      style: base,
+      children: DiaryRichText.buildStyledSpans(
+        source: text,
+        baseStyle: base,
         codeBackground: codeBackground,
+        includeMarkers: true,
+        markerStyle: hiddenMarkerStyle,
       ),
     );
-    return spans;
-  }
-
-  List<InlineSpan> _buildInlineSpans({
-    required String source,
-    required TextStyle base,
-    required TextStyle hiddenMarkerStyle,
-    required Color codeBackground,
-  }) {
-    if (source.isEmpty) {
-      return const <InlineSpan>[];
-    }
-
-    final spans = <InlineSpan>[];
-    var cursor = 0;
-    for (final match in _tokenPattern.allMatches(source)) {
-      if (match.start > cursor) {
-        spans.add(
-          TextSpan(text: source.substring(cursor, match.start), style: base),
-        );
-      }
-
-      final token = match.group(0)!;
-      final lower = token.toLowerCase();
-      final isBold =
-          (token.startsWith(DiaryStyleMarkers.boldOpen) &&
-              token.endsWith(DiaryStyleMarkers.boldClose) &&
-              token.length > 2) ||
-          (token.startsWith('**') &&
-              token.endsWith('**') &&
-              token.length > 4) ||
-          (token.startsWith('__') &&
-              token.endsWith('__') &&
-              token.length > 4) ||
-          (lower.startsWith('<b>') &&
-              lower.endsWith('</b>') &&
-              token.length > 7) ||
-          (lower.startsWith('<strong>') &&
-              lower.endsWith('</strong>') &&
-              token.length > 17);
-      final isItalic =
-          (token.startsWith(DiaryStyleMarkers.italicOpen) &&
-              token.endsWith(DiaryStyleMarkers.italicClose) &&
-              token.length > 2) ||
-          (token.startsWith('*') && token.endsWith('*') && token.length > 2) ||
-          (token.startsWith('_') && token.endsWith('_') && token.length > 2) ||
-          (lower.startsWith('<i>') &&
-              lower.endsWith('</i>') &&
-              token.length > 7) ||
-          (lower.startsWith('<em>') &&
-              lower.endsWith('</em>') &&
-              token.length > 9);
-      final isStrike =
-          (token.startsWith(DiaryStyleMarkers.strikeOpen) &&
-              token.endsWith(DiaryStyleMarkers.strikeClose) &&
-              token.length > 2) ||
-          (token.startsWith('~~') &&
-              token.endsWith('~~') &&
-              token.length > 4) ||
-          (lower.startsWith('<s>') &&
-              lower.endsWith('</s>') &&
-              token.length > 7) ||
-          (lower.startsWith('<del>') &&
-              lower.endsWith('</del>') &&
-              token.length > 11) ||
-          (lower.startsWith('<strike>') &&
-              lower.endsWith('</strike>') &&
-              token.length > 17);
-      final isCode =
-          (token.startsWith(DiaryStyleMarkers.codeOpen) &&
-              token.endsWith(DiaryStyleMarkers.codeClose) &&
-              token.length > 2) ||
-          (token.startsWith('`') && token.endsWith('`') && token.length > 2) ||
-          (lower.startsWith('<code>') &&
-              lower.endsWith('</code>') &&
-              token.length > 13);
-
-      if (isBold) {
-        _appendStyledToken(
-          spans: spans,
-          token: token,
-          lower: lower,
-          hiddenMarkerStyle: hiddenMarkerStyle,
-          normalStyle: base.copyWith(fontWeight: FontWeight.w700),
-        );
-      } else if (isStrike) {
-        _appendStyledToken(
-          spans: spans,
-          token: token,
-          lower: lower,
-          hiddenMarkerStyle: hiddenMarkerStyle,
-          normalStyle: base.copyWith(decoration: TextDecoration.lineThrough),
-        );
-      } else if (isCode) {
-        _appendStyledToken(
-          spans: spans,
-          token: token,
-          lower: lower,
-          hiddenMarkerStyle: hiddenMarkerStyle,
-          normalStyle: base.copyWith(
-            fontFamily: 'monospace',
-            backgroundColor: codeBackground,
-          ),
-        );
-      } else if (isItalic) {
-        _appendStyledToken(
-          spans: spans,
-          token: token,
-          lower: lower,
-          hiddenMarkerStyle: hiddenMarkerStyle,
-          normalStyle: base.copyWith(fontStyle: FontStyle.italic),
-        );
-      } else {
-        spans.add(TextSpan(text: token, style: base));
-      }
-
-      cursor = match.end;
-    }
-
-    if (cursor < source.length) {
-      spans.add(TextSpan(text: source.substring(cursor), style: base));
-    }
-    return spans;
-  }
-
-  String _unbox(String token) {
-    final lower = token.toLowerCase();
-    if (token.startsWith(DiaryStyleMarkers.boldOpen) &&
-        token.endsWith(DiaryStyleMarkers.boldClose) &&
-        token.length > 2) {
-      return token.substring(1, token.length - 1);
-    }
-    if (token.startsWith(DiaryStyleMarkers.italicOpen) &&
-        token.endsWith(DiaryStyleMarkers.italicClose) &&
-        token.length > 2) {
-      return token.substring(1, token.length - 1);
-    }
-    if (token.startsWith(DiaryStyleMarkers.strikeOpen) &&
-        token.endsWith(DiaryStyleMarkers.strikeClose) &&
-        token.length > 2) {
-      return token.substring(1, token.length - 1);
-    }
-    if (token.startsWith(DiaryStyleMarkers.codeOpen) &&
-        token.endsWith(DiaryStyleMarkers.codeClose) &&
-        token.length > 2) {
-      return token.substring(1, token.length - 1);
-    }
-    if (token.startsWith('**') && token.endsWith('**') && token.length > 4) {
-      return token.substring(2, token.length - 2);
-    }
-    if (token.startsWith('__') && token.endsWith('__') && token.length > 4) {
-      return token.substring(2, token.length - 2);
-    }
-    if (token.startsWith('~~') && token.endsWith('~~') && token.length > 4) {
-      return token.substring(2, token.length - 2);
-    }
-    if (token.startsWith('*') && token.endsWith('*') && token.length > 2) {
-      return token.substring(1, token.length - 1);
-    }
-    if (token.startsWith('_') && token.endsWith('_') && token.length > 2) {
-      return token.substring(1, token.length - 1);
-    }
-    if (token.startsWith('`') && token.endsWith('`') && token.length > 2) {
-      return token.substring(1, token.length - 1);
-    }
-    if (lower.startsWith('<b>') && lower.endsWith('</b>') && token.length > 7) {
-      return token.substring(3, token.length - 4);
-    }
-    if (lower.startsWith('<strong>') &&
-        lower.endsWith('</strong>') &&
-        token.length > 17) {
-      return token.substring(8, token.length - 9);
-    }
-    if (lower.startsWith('<i>') && lower.endsWith('</i>') && token.length > 7) {
-      return token.substring(3, token.length - 4);
-    }
-    if (lower.startsWith('<em>') &&
-        lower.endsWith('</em>') &&
-        token.length > 9) {
-      return token.substring(4, token.length - 5);
-    }
-    if (lower.startsWith('<s>') && lower.endsWith('</s>') && token.length > 7) {
-      return token.substring(3, token.length - 4);
-    }
-    if (lower.startsWith('<del>') &&
-        lower.endsWith('</del>') &&
-        token.length > 11) {
-      return token.substring(5, token.length - 6);
-    }
-    if (lower.startsWith('<strike>') &&
-        lower.endsWith('</strike>') &&
-        token.length > 17) {
-      return token.substring(8, token.length - 9);
-    }
-    if (lower.startsWith('<code>') &&
-        lower.endsWith('</code>') &&
-        token.length > 13) {
-      return token.substring(6, token.length - 7);
-    }
-    return token;
-  }
-
-  void _appendStyledToken({
-    required List<InlineSpan> spans,
-    required String token,
-    required String lower,
-    required TextStyle hiddenMarkerStyle,
-    required TextStyle normalStyle,
-  }) {
-    final content = _unbox(token);
-    if (token.startsWith(DiaryStyleMarkers.boldOpen) ||
-        token.startsWith(DiaryStyleMarkers.italicOpen) ||
-        token.startsWith(DiaryStyleMarkers.strikeOpen) ||
-        token.startsWith(DiaryStyleMarkers.codeOpen)) {
-      final open = token.substring(0, 1);
-      final close = token.substring(token.length - 1);
-      spans.add(TextSpan(text: open, style: hiddenMarkerStyle));
-      spans.add(TextSpan(text: content, style: normalStyle));
-      spans.add(TextSpan(text: close, style: hiddenMarkerStyle));
-      return;
-    }
-    if (lower.startsWith('<')) {
-      final openTagEnd = token.indexOf('>') + 1;
-      final closeTagStart = token.lastIndexOf('</');
-      spans.add(
-        TextSpan(
-          text: token.substring(0, openTagEnd),
-          style: hiddenMarkerStyle,
-        ),
-      );
-      spans.add(TextSpan(text: content, style: normalStyle));
-      spans.add(
-        TextSpan(
-          text: token.substring(closeTagStart),
-          style: hiddenMarkerStyle,
-        ),
-      );
-      return;
-    }
-    if ((token.startsWith('**') && token.endsWith('**')) ||
-        (token.startsWith('__') && token.endsWith('__')) ||
-        (token.startsWith('~~') && token.endsWith('~~'))) {
-      final marker = token.substring(0, 2);
-      spans.add(TextSpan(text: marker, style: hiddenMarkerStyle));
-      spans.add(TextSpan(text: content, style: normalStyle));
-      spans.add(TextSpan(text: marker, style: hiddenMarkerStyle));
-      return;
-    }
-    final marker = token.substring(0, 1);
-    spans.add(TextSpan(text: marker, style: hiddenMarkerStyle));
-    spans.add(TextSpan(text: content, style: normalStyle));
-    spans.add(TextSpan(text: marker, style: hiddenMarkerStyle));
   }
 }
 
