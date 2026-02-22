@@ -155,8 +155,24 @@ class DiaryContentCodec {
       }
       return token;
     });
+    // 移除标题标记
     normalized = normalized.replaceAllMapped(
       RegExp(r'^\s*#{1,3}\s+', multiLine: true),
+      (_) => '',
+    );
+    // 移除引用标记
+    normalized = normalized.replaceAllMapped(
+      RegExp(r'^\s*>\s?', multiLine: true),
+      (_) => '',
+    );
+    // 移除无序列表标记
+    normalized = normalized.replaceAllMapped(
+      RegExp(r'^\s*[-*+]\s+', multiLine: true),
+      (_) => '',
+    );
+    // 移除有序列表标记
+    normalized = normalized.replaceAllMapped(
+      RegExp(r'^\s*\d+\.\s+', multiLine: true),
       (_) => '',
     );
     return normalized;

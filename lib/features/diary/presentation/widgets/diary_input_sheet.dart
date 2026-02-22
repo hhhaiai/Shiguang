@@ -842,6 +842,7 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
   }
 
   _TextInsertionAnchor? _captureTextInsertionAnchor() {
+    // 优先使用当前焦点块
     final focused = _focusedTextBlock;
     if (focused != null) {
       final focusedText = focused.controller.text;
@@ -860,6 +861,27 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
       return anchor;
     }
 
+    // 没有焦点块，使用最近活跃的文本块
+    final active = _findTextBlockById(_activeTextBlockId);
+    if (active != null) {
+      final text = active.controller.text;
+      final cachedSelection = _lastKnownSelectionByBlockId[active.id];
+      final selection = cachedSelection != null && cachedSelection.isValid
+          ? cachedSelection
+          : (active.controller.selection.isValid
+                ? active.controller.selection
+                : TextSelection.collapsed(offset: text.length));
+      final anchor = _selectionToAnchor(
+        blockId: active.id,
+        selection: selection,
+        textLength: text.length,
+      );
+      _lastKnownSelectionByBlockId[active.id] = selection;
+      _lastInsertionAnchor = anchor;
+      return anchor;
+    }
+
+    // 回退到最后的插入锚点
     final recent = _lastInsertionAnchor;
     if (recent != null) {
       final block = _findTextBlockById(recent.blockId);
@@ -875,28 +897,7 @@ class _DiaryInputSheetState extends ConsumerState<DiaryInputSheet> {
       }
     }
 
-    final active = _findTextBlockById(_activeTextBlockId);
-    if (active != null) {
-      final text = active.controller.text;
-      final currentSelection = active.controller.selection;
-      final cachedSelection = _lastKnownSelectionByBlockId[active.id];
-      final selection = active.focusNode.hasFocus && currentSelection.isValid
-          ? currentSelection
-          : ((cachedSelection != null && cachedSelection.isValid)
-                ? cachedSelection
-                : (currentSelection.isValid
-                      ? currentSelection
-                      : TextSelection.collapsed(offset: text.length)));
-      final anchor = _selectionToAnchor(
-        blockId: active.id,
-        selection: selection,
-        textLength: text.length,
-      );
-      _lastKnownSelectionByBlockId[active.id] = selection;
-      _lastInsertionAnchor = anchor;
-      return anchor;
-    }
-
+    // 最后使用最后一个文本块
     final last = _lastTextBlock;
     if (last == null) return null;
     _activeTextBlockId = last.id;
@@ -1433,8 +1434,8 @@ class _MarkdownStyledTextController extends TextEditingController {
     final base = style ?? const TextStyle();
     final hiddenMarkerStyle = base.copyWith(
       color: Colors.transparent,
-      fontSize: 0.1,
-      height: 0.01,
+      fontSize: 0.0,
+      height: 0.0,
       letterSpacing: -0.1,
     );
     final codeBackground = Theme.of(context).brightness == Brightness.dark
@@ -1499,6 +1500,39 @@ class _MarkdownStyledTextController extends TextEditingController {
           fontWeight: FontWeight.w700,
         );
       }
+    }
+
+    // 检测引用块
+    if (line.trim().startsWith('>')) {
+      final trimmed = line.trim();
+      final afterArrow = trimmed.substring(1).trimLeft();
+      remaining = afterArrow.isNotEmpty ? afterArrow : '';
+      contentStyle = base.copyWith(
+        fontStyle: FontStyle.italic,
+        color: base.color?.withValues(alpha: 0.8),
+      );
+    }
+
+    // 检测无序列表项
+    final unorderedListMatch = RegExp(r'^\s*([-*+])\s+').firstMatch(line);
+    if (unorderedListMatch != null) {
+      final marker = unorderedListMatch.group(1)!;
+      remaining = line.substring(unorderedListMatch.end);
+      // 替换标记为 Unicode 项目符号
+      final bullet = marker == '-' ? '•' : (marker == '*' ? '•' : '•');
+      // 保留缩进，但替换标记
+      final indent = line.substring(0, unorderedListMatch.start);
+      remaining = '$indent$bullet $remaining';
+    }
+
+    // 检测有序列表项
+    final orderedListMatch = RegExp(r'^\s*(\d+)\.\s+').firstMatch(line);
+    if (orderedListMatch != null) {
+      remaining = line.substring(orderedListMatch.end);
+      // 保留数字和点，但移除匹配部分后的内容
+      final indent = line.substring(0, orderedListMatch.start);
+      final number = orderedListMatch.group(1)!;
+      remaining = '$indent$number. $remaining';
     }
 
     spans.addAll(

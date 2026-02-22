@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gal/gal.dart';
 import 'package:go_router/go_router.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
@@ -217,6 +218,33 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
 
   Future<void> _saveSharePoster(VectorDiary diary, DiaryContent content) async {
     try {
+      // Platform-specific permission handling
+      if (Platform.isAndroid) {
+        // On Android, check storage permission
+        final status = await Permission.storage.status;
+        if (!status.isGranted) {
+          final requested = await Permission.storage.request();
+          if (!requested.isGranted) {
+            if (!mounted) return;
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(
+                  _posterI18n(
+                    zhHans: '保存需要存储权限',
+                    zhHant: '保存需要存儲權限',
+                    en: 'Save requires storage permission',
+                  ),
+                ),
+              ),
+            );
+            return;
+          }
+        }
+      } else if (Platform.isIOS) {
+        // On iOS, gal handles permissions automatically
+        // No need for explicit permission check
+      }
+
       final image = await _renderSharePosterPng(diary, content);
       final file = await _writeSharePosterFile(image, diaryId: diary.id);
       await Gal.putImage(file.path);
@@ -359,13 +387,16 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
             ],
           ),
           const SizedBox(height: 22),
-          Text(
-            safeText,
-            style: TextStyle(
-              fontSize: 17.6,
-              height: 1.78,
-              letterSpacing: 0.1,
-              color: bodyText,
+          RichText(
+            text: DiaryRichText.buildTextSpan(
+              context: context,
+              source: safeText,
+              baseStyle: TextStyle(
+                fontSize: 17.6,
+                height: 1.78,
+                letterSpacing: 0.1,
+                color: bodyText,
+              ),
             ),
           ),
           if (content.imagePaths.isNotEmpty) ...[
@@ -402,15 +433,15 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
               mainAxisSize: MainAxisSize.min,
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(3),
+                  borderRadius: BorderRadius.circular(4),
                   child: Image.asset(
                     'assets/branding/shiguang_app_x.png',
-                    width: 14,
-                    height: 14,
-                    fit: BoxFit.cover,
+                    width: 40,
+                    height: 40,
+                    fit: BoxFit.contain,
                   ),
                 ),
-                const SizedBox(width: 6),
+                const SizedBox(width: 8),
                 Text(
                   _posterI18n(
                     zhHans: 'Shiguang',
@@ -584,6 +615,20 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
     return widgets;
   }
 
+  String _buildSubtitle(DateTime date, VectorDiary diary) {
+    final locale = Localizations.localeOf(context).toLanguageTag();
+    final weekLabel = DateFormat.EEEE(locale).format(date);
+    // TODO: Add location and weather when available
+    final location = ''; // diary.location?
+    final weather = ''; // diary.weather?
+
+    final parts = [weekLabel];
+    if (location.isNotEmpty) parts.add(location);
+    if (weather.isNotEmpty) parts.add(weather);
+
+    return parts.join(' · ');
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
@@ -649,7 +694,26 @@ class _DiaryDetailScreenState extends ConsumerState<DiaryDetailScreen>
             icon: const Icon(Icons.arrow_back),
             onPressed: () => context.pop(),
           ),
-          title: Text(l10n.entryDetails),
+          title: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                DateFormat('yyyy年MM月dd日').format(date),
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              Text(
+                _buildSubtitle(date, diary),
+                style: TextStyle(
+                  fontSize: 12,
+                  color: scheme.onSurface.withValues(alpha: 0.7),
+                ),
+              ),
+            ],
+          ),
           actions: [
             IconButton(
               tooltip: l10n.editEntry,

@@ -54,6 +54,8 @@ class DiaryRichText {
   }) {
     var remaining = line;
     var contentStyle = base;
+
+    // 检测标题
     final headingMatch = _headingPattern.firstMatch(line);
     if (headingMatch != null) {
       remaining = line.substring(headingMatch.end);
@@ -79,6 +81,40 @@ class DiaryRichText {
         );
       }
     }
+
+    // 检测引用块
+    if (line.trim().startsWith('>')) {
+      final trimmed = line.trim();
+      final afterArrow = trimmed.substring(1).trimLeft();
+      remaining = afterArrow.isNotEmpty ? afterArrow : '';
+      contentStyle = base.copyWith(
+        fontStyle: FontStyle.italic,
+        color: base.color?.withValues(alpha: 0.8),
+      );
+    }
+
+    // 检测无序列表项
+    final unorderedListMatch = RegExp(r'^\s*([-*+])\s+').firstMatch(line);
+    if (unorderedListMatch != null) {
+      final marker = unorderedListMatch.group(1)!;
+      remaining = line.substring(unorderedListMatch.end);
+      // 替换标记为 Unicode 项目符号
+      final bullet = marker == '-' ? '•' : (marker == '*' ? '•' : '•');
+      // 保留缩进，但替换标记
+      final indent = line.substring(0, unorderedListMatch.start);
+      remaining = '$indent$bullet $remaining';
+    }
+
+    // 检测有序列表项
+    final orderedListMatch = RegExp(r'^\s*(\d+)\.\s+').firstMatch(line);
+    if (orderedListMatch != null) {
+      remaining = line.substring(orderedListMatch.end);
+      // 保留数字和点，但移除匹配部分后的内容
+      final indent = line.substring(0, orderedListMatch.start);
+      final number = orderedListMatch.group(1)!;
+      remaining = '$indent$number. $remaining';
+    }
+
     return _buildInlineSpans(
       source: remaining,
       base: contentStyle,
@@ -278,8 +314,24 @@ class DiaryRichText {
       _tokenPattern,
       (match) => _unbox(match.group(0) ?? ''),
     );
+    // 移除标题标记
     normalized = normalized.replaceAllMapped(
       RegExp(r'^\s*#{1,3}\s+', multiLine: true),
+      (_) => '',
+    );
+    // 移除引用标记
+    normalized = normalized.replaceAllMapped(
+      RegExp(r'^\s*>\s?', multiLine: true),
+      (_) => '',
+    );
+    // 移除无序列表标记
+    normalized = normalized.replaceAllMapped(
+      RegExp(r'^\s*[-*+]\s+', multiLine: true),
+      (_) => '',
+    );
+    // 移除有序列表标记
+    normalized = normalized.replaceAllMapped(
+      RegExp(r'^\s*\d+\.\s+', multiLine: true),
       (_) => '',
     );
     return normalized;
